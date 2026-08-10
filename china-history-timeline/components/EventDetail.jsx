@@ -1,0 +1,152 @@
+"use client";
+
+import { useRouter } from "next/navigation";
+import {
+  COLORS,
+  CATEGORY_STYLE,
+  HERITAGE_TYPES,
+  resolveMediaUrl,
+  getAdsForEvent,
+  ADSENSE_SLOT_DETAIL,
+} from "@/lib/data";
+import { SealMark, HeritageGrid, AdSenseSlot } from "@/components/Shared";
+
+const MEDIA_TYPES = [
+  { key: "movie", label: "映画・ドラマ" },
+  { key: "game", label: "ゲーム" },
+  { key: "book", label: "書籍・漫画" },
+];
+
+export default function EventDetail({ event, era }) {
+  const router = useRouter();
+  const cat = CATEGORY_STYLE[event.category] || CATEGORY_STYLE["文化"];
+  const ads = getAdsForEvent(event, era);
+
+  const onBack = () => {
+    // Timeline側がsessionStorageの returnToEra を見てスクロール復元する
+    router.push("/");
+  };
+
+  return (
+    <div style={{ backgroundColor: COLORS.paper, minHeight: "100%" }}>
+      <div className="sticky top-0 z-20 px-5 py-3" style={{ backgroundColor: COLORS.paperDeep, borderBottom: `1px solid ${COLORS.mist}` }}>
+        <button onClick={onBack} className="flex items-center gap-2" style={{ color: COLORS.vermilion, fontFamily: "'Noto Serif SC', serif", fontSize: 13 }}>
+          <span aria-hidden>←</span> 年表に戻る
+        </button>
+      </div>
+
+      <div className="max-w-2xl mx-auto px-6 py-8">
+        <div className="flex items-center gap-3 mb-5">
+          <SealMark char={era.seal} active />
+          <div>
+            <div style={{ fontSize: 12, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}>
+              {era.name} ／ {era.period}
+            </div>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-2 mb-2">
+          <span style={{ fontFamily: "'Noto Serif SC', serif", color: COLORS.inkSoft, fontSize: 14 }}>{event.year}</span>
+          <span className="uppercase tracking-wider px-2 py-0.5" style={{ fontSize: 10, color: "#fff", backgroundColor: cat.color, letterSpacing: "0.08em" }}>
+            {cat.label}
+          </span>
+        </div>
+
+        <h1 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginBottom: 16 }}>
+          {event.title}
+        </h1>
+
+        <p style={{ fontSize: 15, lineHeight: 1.9, color: COLORS.inkSoft }}>{event.summary}</p>
+
+        {event.heritage && event.heritage.length > 0 && (
+          <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
+            <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 13, color: COLORS.vermilion, letterSpacing: "0.15em", marginBottom: 4 }}>
+              関連する建造物・国宝・人物
+            </div>
+            <div style={{ fontSize: 10.5, color: COLORS.inkSoft, marginBottom: 12 }}>
+              ※ 画像はWikimedia Commonsのパブリックドメイン／CCライセンス素材を使用しています（各画像下にクレジット表記）
+            </div>
+            {Object.keys(HERITAGE_TYPES).map((typeKey) => {
+              const items = event.heritage.filter((h) => h.type === typeKey);
+              if (!items.length) return null;
+              return (
+                <div key={typeKey} className="mb-5 last:mb-0">
+                  <div style={{ fontSize: 11, color: COLORS.gold, marginBottom: 6, letterSpacing: "0.05em" }}>
+                    {HERITAGE_TYPES[typeKey].label}
+                  </div>
+                  <HeritageGrid items={items} />
+                </div>
+              );
+            })}
+          </div>
+        )}
+
+        <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
+          <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 13, color: COLORS.vermilion, letterSpacing: "0.15em", marginBottom: 4 }}>
+            関連作品
+          </div>
+          <div style={{ fontSize: 10.5, color: COLORS.inkSoft, marginBottom: 12 }}>
+            ※ 一部のリンクはAmazonアソシエイトによるアフィリエイト広告を含みます
+          </div>
+          <div className="grid gap-3" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))" }}>
+            {MEDIA_TYPES.map((m) => {
+              const items = (event.media || []).filter((med) => med.type === m.key);
+              return (
+                <div key={m.key} className="px-3 py-4" style={{ border: items.length ? `1px solid ${COLORS.mist}` : `1px dashed ${COLORS.mist}`, backgroundColor: items.length ? "#fff" : "#FBF8F0" }}>
+                  <div style={{ fontSize: 11, color: COLORS.vermilion, letterSpacing: "0.06em", marginBottom: 8, textAlign: items.length ? "left" : "center" }}>
+                    {m.label}
+                  </div>
+                  {items.length ? (
+                    <ul className="space-y-1.5">
+                      {items.map((med, idx) => {
+                        const href = resolveMediaUrl(med);
+                        return (
+                          <li key={idx} style={{ fontSize: 12.5, color: COLORS.ink, lineHeight: 1.5 }}>
+                            {href ? (
+                              <a href={href} target="_blank" rel="noopener noreferrer sponsored" style={{ color: COLORS.ink, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
+                                {med.title}
+                              </a>
+                            ) : (
+                              med.title
+                            )}
+                            {med.year && <span style={{ color: COLORS.inkSoft, fontSize: 11 }}> （{med.year}）</span>}
+                            {href && (
+                              <span className="ml-1 align-middle" style={{ fontSize: 9, color: "#fff", backgroundColor: COLORS.vermilionSoft, padding: "1px 4px", letterSpacing: "0.05em" }}>
+                                PR
+                              </span>
+                            )}
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  ) : (
+                    <div style={{ fontSize: 11, color: COLORS.mist, textAlign: "center" }}>まだ登録されていません</div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {ads.length > 0 && (
+          <div className="mt-8 pt-5" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
+            <div style={{ fontSize: 10.5, color: COLORS.inkSoft, marginBottom: 8 }}>広告（A8.net）</div>
+            <div className="grid gap-3" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))" }}>
+              {ads.map((ad, idx) => (
+                <a key={idx} href={ad.clickUrl} target="_blank" rel="noopener noreferrer sponsored" className="flex items-center justify-between px-4 py-3" style={{ border: `1px solid ${COLORS.mist}`, backgroundColor: "#F5EFDC", color: COLORS.ink, textDecoration: "none" }}>
+                  <span style={{ fontSize: 13, fontFamily: "'Noto Sans SC', sans-serif" }}>{ad.label}</span>
+                  <span style={{ fontSize: 9, color: "#fff", backgroundColor: COLORS.vermilionSoft, padding: "1px 4px", letterSpacing: "0.05em", marginLeft: 8 }}>PR</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div className="mt-6 pt-5" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
+          <div style={{ fontSize: 10.5, color: COLORS.inkSoft, marginBottom: 8 }}>広告</div>
+          <AdSenseSlot slot={ADSENSE_SLOT_DETAIL} />
+        </div>
+      </div>
+    </div>
+  );
+}
