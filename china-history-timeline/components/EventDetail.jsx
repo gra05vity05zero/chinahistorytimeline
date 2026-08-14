@@ -7,9 +7,11 @@ import {
   HERITAGE_TYPES,
   resolveMediaUrl,
   getAdsForEvent,
+  getNextEvent,
   ADSENSE_SLOT_DETAIL,
 } from "@/lib/data";
 import { SealMark, HeritageGrid, AdSenseSlot } from "@/components/Shared";
+import { RubyText } from "@/components/Ruby";
 
 const MEDIA_TYPES = [
   { key: "movie", label: "映画・ドラマ" },
@@ -21,10 +23,15 @@ export default function EventDetail({ event, era }) {
   const router = useRouter();
   const cat = CATEGORY_STYLE[event.category] || CATEGORY_STYLE["文化"];
   const ads = getAdsForEvent(event, era);
+  const next = getNextEvent(event.slug);
 
   const onBack = () => {
     // Timeline側がsessionStorageの returnToEra を見てスクロール復元する
     router.push("/");
+  };
+
+  const onNext = () => {
+    if (next) router.push(`/events/${next.event.slug}`);
   };
 
   return (
@@ -53,10 +60,12 @@ export default function EventDetail({ event, era }) {
         </div>
 
         <h1 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginBottom: 16 }}>
-          {event.title}
+          <RubyText text={event.title} />
         </h1>
 
-        <p style={{ fontSize: 15, lineHeight: 1.9, color: COLORS.inkSoft }}>{event.summary}</p>
+        <p style={{ fontSize: 15, lineHeight: 1.9, color: COLORS.inkSoft }}>
+          <RubyText text={event.summary} />
+        </p>
 
         {event.heritage && event.heritage.length > 0 && (
           <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
@@ -127,6 +136,26 @@ export default function EventDetail({ event, era }) {
             })}
           </div>
         </div>
+
+        {next ? (
+          <button
+            onClick={onNext}
+            className="w-full mt-10 flex items-center justify-between gap-3 px-5 py-4 text-left"
+            style={{ backgroundColor: COLORS.vermilion, color: "#fff" }}
+          >
+            <div>
+              <div style={{ fontSize: 10.5, letterSpacing: "0.15em", opacity: 0.85 }}>次のイベントへ</div>
+              <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 16, fontWeight: 700, marginTop: 2 }}>
+                {next.event.year}　<RubyText text={next.event.title} />
+              </div>
+            </div>
+            <span aria-hidden style={{ fontSize: 20 }}>→</span>
+          </button>
+        ) : (
+          <div className="mt-10 px-5 py-4 text-center" style={{ backgroundColor: "#F5EFDC", color: COLORS.inkSoft, fontSize: 13 }}>
+            これが年表の最後のイベントです
+          </div>
+        )}
 
         {ads.length > 0 && (
           <div className="mt-8 pt-5" style={{ borderTop: `1px solid ${COLORS.mist}` }}>

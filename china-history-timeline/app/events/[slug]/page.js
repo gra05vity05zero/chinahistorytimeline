@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { ERAS, findEventBySlug } from "@/lib/data";
+import { ERAS, findEventBySlug, stripRuby } from "@/lib/data";
 import EventDetail from "@/components/EventDetail";
 
 // ビルド時に全イベントの静的ページを生成（SSG）
@@ -11,12 +11,14 @@ export function generateMetadata({ params }) {
   const found = findEventBySlug(params.slug);
   if (!found) return {};
   const { event, era } = found;
+  const title = stripRuby(event.title);
+  const description = stripRuby(event.summary);
   return {
-    title: `${event.title}（${event.year}）| 中国五千年史`,
-    description: event.summary,
+    title: `${title}（${event.year}）| 中国五千年史`,
+    description,
     openGraph: {
-      title: `${event.title}（${event.year}）`,
-      description: event.summary,
+      title: `${title}（${event.year}）`,
+      description,
       type: "article",
     },
   };

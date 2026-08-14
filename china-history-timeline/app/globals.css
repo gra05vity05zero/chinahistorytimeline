@@ -10,3 +10,13 @@ html, body {
 * {
   box-sizing: border-box;
 }
+
+ruby {
+  ruby-position: over;
+}
+
+rt {
+  font-size: 0.55em;
+  color: inherit;
+  opacity: 0.75;
+}

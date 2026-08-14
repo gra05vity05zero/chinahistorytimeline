@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { COLORS, CATEGORY_STYLE, ADSENSE_CLIENT_ID } from "@/lib/data";
+import { COLORS, CATEGORY_STYLE, ADSENSE_CLIENT_ID, stripRuby } from "@/lib/data";
+import { RubyText } from "@/components/Ruby";
 
 export function SealMark({ char, active }) {
   return (
@@ -46,7 +47,7 @@ export function EventCard({ event, onOpen }) {
               {event.year}
             </span>
             <span style={{ fontFamily: "'Noto Serif SC', serif", color: COLORS.ink, fontSize: 16, fontWeight: 600 }}>
-              {event.title}
+              <RubyText text={event.title} />
             </span>
           </div>
           <span className="shrink-0 uppercase tracking-wider flex items-center gap-1.5" style={{ fontSize: 10, color: cat.color, letterSpacing: "0.08em" }}>
@@ -64,7 +65,7 @@ export function EventCard({ event, onOpen }) {
             className="pr-4"
             style={{ fontSize: 12.5, lineHeight: 1.6, color: COLORS.inkSoft, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}
           >
-            {event.summary}
+            {stripRuby(event.summary)}
           </p>
           <span className="shrink-0" style={{ color: COLORS.vermilion, fontSize: 13 }}>→</span>
         </div>
@@ -85,18 +86,20 @@ export function HeritageGrid({ items }) {
           >
             {it.imageUrl ? (
               // eslint-disable-next-line @next/next/no-img-element
-              <img src={it.imageUrl} alt={it.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <img src={it.imageUrl} alt={stripRuby(it.name)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             ) : (
               <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 26, fontWeight: 700, color: COLORS.mist }}>
-                {it.name.slice(0, 1)}
+                {stripRuby(it.name).slice(0, 1)}
               </span>
             )}
           </div>
           <div className="px-2.5 py-2">
             <div style={{ fontSize: 12.5, fontWeight: 600, color: COLORS.ink, fontFamily: "'Noto Serif SC', serif" }}>
-              {it.name}
+              <RubyText text={it.name} />
             </div>
-            <div style={{ fontSize: 11, color: COLORS.inkSoft, lineHeight: 1.5, marginTop: 2 }}>{it.description}</div>
+            <div style={{ fontSize: 11, color: COLORS.inkSoft, lineHeight: 1.5, marginTop: 2 }}>
+              <RubyText text={it.description} />
+            </div>
             {it.credit && <div style={{ fontSize: 9.5, color: COLORS.mist, marginTop: 3 }}>{it.credit}</div>}
           </div>
         </div>
