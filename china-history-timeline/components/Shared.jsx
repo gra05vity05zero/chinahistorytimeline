@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { COLORS, CATEGORY_STYLE, ADSENSE_CLIENT_ID, stripRuby } from "@/lib/data";
 import { RubyText } from "@/components/Ruby";
 
@@ -74,6 +74,26 @@ export function EventCard({ event, onOpen }) {
   );
 }
 
+function HeritageThumb({ imageUrl, name }) {
+  const [failed, setFailed] = useState(false);
+  if (imageUrl && !failed) {
+    return (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        src={imageUrl}
+        alt={stripRuby(name)}
+        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+        onError={() => setFailed(true)}
+      />
+    );
+  }
+  return (
+    <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 26, fontWeight: 700, color: COLORS.mist }}>
+      {stripRuby(name).slice(0, 1)}
+    </span>
+  );
+}
+
 export function HeritageGrid({ items }) {
   if (!items || items.length === 0) return null;
   return (
@@ -84,14 +104,7 @@ export function HeritageGrid({ items }) {
             className="flex items-center justify-center"
             style={{ aspectRatio: "4 / 3", backgroundColor: "#EFE7D0", borderBottom: `1px solid ${COLORS.mist}`, overflow: "hidden" }}
           >
-            {it.imageUrl ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={it.imageUrl} alt={stripRuby(it.name)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-            ) : (
-              <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 26, fontWeight: 700, color: COLORS.mist }}>
-                {stripRuby(it.name).slice(0, 1)}
-              </span>
-            )}
+            <HeritageThumb imageUrl={it.imageUrl} name={it.name} />
           </div>
           <div className="px-2.5 py-2">
             <div style={{ fontSize: 12.5, fontWeight: 600, color: COLORS.ink, fontFamily: "'Noto Serif SC', serif" }}>
