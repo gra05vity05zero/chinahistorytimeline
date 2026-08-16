@@ -1,14 +1,12 @@
 import "./globals.css";
 import Script from "next/script";
 import Footer from "@/components/Footer";
+import { ADSENSE_CLIENT_ID } from "@/lib/data";
 
 export const metadata = {
   title: "中国五千年史",
   description: "文明の黎明から現代まで、中国史をたどる年表サイト",
 };
-
-// AdSenseの審査通過後、環境変数 NEXT_PUBLIC_ADSENSE_CLIENT_ID を設定すると自動で読み込まれる
-const ADSENSE_CLIENT_ID = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID;
 
 export default function RootLayout({ children }) {
   return (
@@ -24,7 +22,7 @@ export default function RootLayout({ children }) {
             async
             src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`}
             crossOrigin="anonymous"
-            strategy="afterInteractive"
+            strategy="beforeInteractive"
           />
         )}
       </head>
