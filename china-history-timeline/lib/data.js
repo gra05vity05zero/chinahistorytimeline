@@ -772,6 +772,13 @@ export function getNextEvent(slug) {
   return FLAT_EVENTS[idx + 1];
 }
 
+// 指定したslugの前のイベントを返す（最初のイベントの場合はnull）
+export function getPrevEvent(slug) {
+  const idx = FLAT_EVENTS.findIndex((item) => item.event.slug === slug);
+  if (idx <= 0) return null;
+  return FLAT_EVENTS[idx - 1];
+}
+
 // ルビ記法 {{漢字|ふりがな}} を除去し、素のテキストを返す（メタデータ用）
 export function stripRuby(text) {
   if (!text) return text;

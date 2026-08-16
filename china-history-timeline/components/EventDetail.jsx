@@ -8,6 +8,7 @@ import {
   resolveMediaUrl,
   getAdsForEvent,
   getNextEvent,
+  getPrevEvent,
   ADSENSE_SLOT_DETAIL,
 } from "@/lib/data";
 import { SealMark, HeritageGrid, AdSenseSlot } from "@/components/Shared";
@@ -25,6 +26,7 @@ export default function EventDetail({ event, era }) {
   const cat = CATEGORY_STYLE[event.category] || CATEGORY_STYLE["文化"];
   const ads = getAdsForEvent(event, era);
   const next = getNextEvent(event.slug);
+  const prev = getPrevEvent(event.slug);
 
   const onBack = () => {
     // Timeline側がsessionStorageの returnToEra を見てスクロール復元する
@@ -33,6 +35,10 @@ export default function EventDetail({ event, era }) {
 
   const onNext = () => {
     if (next) router.push(`/events/${next.event.slug}`);
+  };
+
+  const onPrev = () => {
+    if (prev) router.push(`/events/${prev.event.slug}`);
   };
 
   return (
@@ -143,10 +149,26 @@ export default function EventDetail({ event, era }) {
           </div>
         </div>
 
+        {prev && (
+          <button
+            onClick={onPrev}
+            className="w-full mt-10 flex items-center justify-between gap-3 px-5 py-4 text-left"
+            style={{ backgroundColor: COLORS.vermilionSoft, color: "#fff" }}
+          >
+            <span aria-hidden style={{ fontSize: 20 }}>←</span>
+            <div style={{ textAlign: "right" }}>
+              <div style={{ fontSize: 10.5, letterSpacing: "0.15em", opacity: 0.85 }}>前のイベントへ</div>
+              <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 16, fontWeight: 700, marginTop: 2 }}>
+                {prev.event.year}　<RubyText text={prev.event.title} />
+              </div>
+            </div>
+          </button>
+        )}
+
         {next ? (
           <button
             onClick={onNext}
-            className="w-full mt-10 flex items-center justify-between gap-3 px-5 py-4 text-left"
+            className={`w-full flex items-center justify-between gap-3 px-5 py-4 text-left ${prev ? "mt-3" : "mt-10"}`}
             style={{ backgroundColor: COLORS.vermilion, color: "#fff" }}
           >
             <div>
