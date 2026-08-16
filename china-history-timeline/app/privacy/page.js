@@ -95,17 +95,6 @@ export default function PrivacyPage() {
           </p>
         </div>
 
-        <div style={sectionStyle}>
-          <div style={headingStyle}>お問い合わせ</div>
-          <p style={bodyStyle}>
-            本ポリシーに関するお問い合わせは、
-            <a href="/contact" style={{ color: COLORS.vermilion, textDecoration: "underline" }}>
-              お問い合わせページ
-            </a>
-            よりご連絡ください。
-          </p>
-        </div>
-
         <p style={{ fontSize: 11.5, color: COLORS.mist, marginTop: 32 }}>
           制定日: {/* TODO: 公開日を記入 */} ／ 最終改定日: {/* TODO: 改定日を記入 */}
         </p>
