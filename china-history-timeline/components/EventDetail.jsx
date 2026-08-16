@@ -15,6 +15,7 @@ import { RubyText } from "@/components/Ruby";
 
 const MEDIA_TYPES = [
   { key: "movie", label: "映画・ドラマ" },
+  { key: "anime", label: "アニメ" },
   { key: "game", label: "ゲーム" },
   { key: "book", label: "書籍・漫画" },
 ];
@@ -123,6 +124,11 @@ export default function EventDetail({ event, era }) {
                               <span className="ml-1 align-middle" style={{ fontSize: 9, color: "#fff", backgroundColor: COLORS.vermilionSoft, padding: "1px 4px", letterSpacing: "0.05em" }}>
                                 PR
                               </span>
+                            )}
+                            {med.description && (
+                              <div style={{ fontSize: 11, color: COLORS.inkSoft, lineHeight: 1.5, marginTop: 2 }}>
+                                {med.description}
+                              </div>
                             )}
                           </li>
                         );
