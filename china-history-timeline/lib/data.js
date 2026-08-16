@@ -39,27 +39,7 @@ export function resolveMediaUrl(med) {
 
 // ---- Google AdSense 設定 -----------------------------------------------
 export const ADSENSE_CLIENT_ID = "ca-pub-4606423913155675";
-export const ADSENSE_SLOT_DETAIL = "YOUR_AD_SLOT_ID_DETAIL";
 export const ADSENSE_SLOT_TIMELINE = "YOUR_AD_SLOT_ID_TIMELINE";
-
-// ---- A8.net 広告枠（ページ下部・カテゴリ/王朝に応じた興味連動広告） --------
-export const A8_ADS = {
-  byCategory: {
-    戦争: [{ label: "歴史シミュレーションゲーム特集", clickUrl: "https://px.a8.net/svt/ejp?a8mat=PLACEHOLDER_WAR" }],
-    文化: [{ label: "中国茶・工芸品ストア", clickUrl: "https://px.a8.net/svt/ejp?a8mat=PLACEHOLDER_CULTURE" }],
-    王朝: [{ label: "歴史ドキュメンタリー配信サービス", clickUrl: "https://px.a8.net/svt/ejp?a8mat=PLACEHOLDER_DYNASTY" }],
-    対外: [{ label: "中華圏 旅行・ツアー予約", clickUrl: "https://px.a8.net/svt/ejp?a8mat=PLACEHOLDER_TRAVEL" }],
-  },
-  byEra: {
-    // 例: sanguo: [{ label: "三国志グッズ特集", clickUrl: "https://px.a8.net/svt/ejp?a8mat=PLACEHOLDER_SANGUO" }],
-  },
-};
-
-export function getAdsForEvent(event, era) {
-  const eraAds = A8_ADS.byEra[era.id] || [];
-  const categoryAds = A8_ADS.byCategory[event.category] || [];
-  return eraAds.length ? eraAds : categoryAds;
-}
 
 // 戦国時代末期〜秦の統一を描く漫画『キングダム』関連作品（アフィリエイトリンク付き）
 export const KINGDOM_MEDIA = [

@@ -20,9 +20,7 @@ http://localhost:3000 で確認できます。
 
 ## 公開前にやること
 
-1. `lib/data.js` 内の以下を実際の値に置き換える
-   - `AMAZON_ASSOCIATE_TAG`
-   - `A8_ADS` 内の `clickUrl`（A8.netで発行したリンクに差し替え）
+1. `lib/data.js` 内の `AMAZON_ASSOCIATE_TAG` を実際の値に置き換える
 2. AdSenseの `data-ad-client` / `data-ad-slot` は `lib/data.js` の
    `ADSENSE_CLIENT_ID` / `ADSENSE_SLOT_DETAIL` / `ADSENSE_SLOT_TIMELINE` を編集
 3. AdSenseのスクリプト読み込みは `.env.local` に

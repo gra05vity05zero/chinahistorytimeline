@@ -6,12 +6,10 @@ import {
   CATEGORY_STYLE,
   HERITAGE_TYPES,
   resolveMediaUrl,
-  getAdsForEvent,
   getNextEvent,
   getPrevEvent,
-  ADSENSE_SLOT_DETAIL,
 } from "@/lib/data";
-import { SealMark, HeritageGrid, AdSenseSlot } from "@/components/Shared";
+import { SealMark, HeritageGrid } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 
 const MEDIA_TYPES = [
@@ -24,7 +22,6 @@ const MEDIA_TYPES = [
 export default function EventDetail({ event, era }) {
   const router = useRouter();
   const cat = CATEGORY_STYLE[event.category] || CATEGORY_STYLE["文化"];
-  const ads = getAdsForEvent(event, era);
   const next = getNextEvent(event.slug);
   const prev = getPrevEvent(event.slug);
 
@@ -185,24 +182,6 @@ export default function EventDetail({ event, era }) {
           </div>
         )}
 
-        {ads.length > 0 && (
-          <div className="mt-8 pt-5" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
-            <div style={{ fontSize: 10.5, color: COLORS.inkSoft, marginBottom: 8 }}>広告（A8.net）</div>
-            <div className="grid gap-3" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))" }}>
-              {ads.map((ad, idx) => (
-                <a key={idx} href={ad.clickUrl} target="_blank" rel="noopener noreferrer sponsored" className="flex items-center justify-between px-4 py-3" style={{ border: `1px solid ${COLORS.mist}`, backgroundColor: "#F5EFDC", color: COLORS.ink, textDecoration: "none" }}>
-                  <span style={{ fontSize: 13, fontFamily: "'Noto Sans SC', sans-serif" }}>{ad.label}</span>
-                  <span style={{ fontSize: 9, color: "#fff", backgroundColor: COLORS.vermilionSoft, padding: "1px 4px", letterSpacing: "0.05em", marginLeft: 8 }}>PR</span>
-                </a>
-              ))}
-            </div>
-          </div>
-        )}
-
-        <div className="mt-6 pt-5" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
-          <div style={{ fontSize: 10.5, color: COLORS.inkSoft, marginBottom: 8 }}>広告</div>
-          <AdSenseSlot slot={ADSENSE_SLOT_DETAIL} />
-        </div>
       </div>
     </div>
   );
