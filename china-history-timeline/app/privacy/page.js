@@ -1,7 +1,16 @@
-import { COLORS } from "@/lib/data";
+import { COLORS, buildOpenGraph, buildTwitter } from "@/lib/data";
+
+const title = "プライバシーポリシー";
+const fullTitle = "プライバシーポリシー | 中国五千年史";
+const description = "「中国五千年史」における広告配信・アフィリエイトプログラム・個人情報の取り扱いについて説明するプライバシーポリシーページです。";
 
 export const metadata = {
-  title: "プライバシーポリシー | 中国五千年史",
+  title,
+  description,
+  alternates: { canonical: "/privacy" },
+  robots: { index: false, follow: true },
+  openGraph: buildOpenGraph({ title: fullTitle, description, path: "/privacy" }),
+  twitter: buildTwitter({ title: fullTitle, description }),
 };
 
 const sectionStyle = { marginBottom: 28 };

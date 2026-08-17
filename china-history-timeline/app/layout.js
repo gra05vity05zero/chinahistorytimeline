@@ -1,11 +1,34 @@
 import "./globals.css";
 import Script from "next/script";
 import Footer from "@/components/Footer";
-import { ADSENSE_CLIENT_ID } from "@/lib/data";
+import { ADSENSE_CLIENT_ID, SITE_URL, SITE_NAME, SITE_DESCRIPTION, buildOpenGraph, buildTwitter } from "@/lib/data";
+
+const DEFAULT_TITLE = `${SITE_NAME} | 文明の黎明から現代までの年表`;
 
 export const metadata = {
-  title: "中国五千年史",
-  description: "文明の黎明から現代まで、中国史をたどる年表サイト",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: DEFAULT_TITLE,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  alternates: { canonical: "/" },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
+  openGraph: buildOpenGraph({ title: DEFAULT_TITLE, description: SITE_DESCRIPTION, path: "/" }),
+  twitter: buildTwitter({ title: DEFAULT_TITLE, description: SITE_DESCRIPTION }),
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE_NAME,
+  url: SITE_URL,
+  description: SITE_DESCRIPTION,
+  inLanguage: "ja",
 };
 
 export default function RootLayout({ children }) {
@@ -16,6 +39,10 @@ export default function RootLayout({ children }) {
         <link
           href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500&display=swap"
           rel="stylesheet"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
         {ADSENSE_CLIENT_ID && (
           <Script

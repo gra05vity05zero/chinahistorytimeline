@@ -1,3 +1,31 @@
+// ---- サイト基本情報 ---------------------------------------------------
+export const SITE_URL = "https://chinahistorytimeline.com";
+export const SITE_NAME = "中国五千年史";
+export const SITE_DESCRIPTION =
+  "新石器文化から中華人民共和国まで、24王朝・約170の出来事を縦スクロールでたどる中国史年表。関連する映画・ゲーム・書籍、建造物や人物の情報も掲載。";
+
+// Next.jsはopenGraph/twitterをページ単位で完全に上書きする（親と深いマージをしない）ため、
+// 各ページで欠落フィールド（type, siteName, card, image等）が出ないよう共通ヘルパーで組み立てる。
+export function buildOpenGraph({ title, description, path, type = "website" }) {
+  return {
+    type,
+    locale: "ja_JP",
+    url: path,
+    siteName: SITE_NAME,
+    title,
+    description,
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: `${SITE_NAME} — ${SITE_DESCRIPTION}` }],
+  };
+}
+
+export function buildTwitter({ title, description }) {
+  return {
+    card: "summary_large_image",
+    title,
+    description,
+  };
+}
+
 // ---- デザイントークン ------------------------------------------------
 // paper: 経年した絹布のような生成り色 / ink: 墨の黒
 // vermilion: 印章の朱 / gold: 詔勅の金 / jade: 玉の緑（文化イベント用アクセント）

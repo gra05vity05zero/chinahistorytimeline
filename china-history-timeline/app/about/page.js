@@ -1,7 +1,16 @@
-import { COLORS } from "@/lib/data";
+import { COLORS, buildOpenGraph, buildTwitter } from "@/lib/data";
+
+const title = "このサイトについて";
+const fullTitle = "このサイトについて | 中国五千年史";
+const description =
+  "「中国五千年史」は、新石器文化から中華人民共和国まで中国の歴史を王朝ごとにたどれる年表サイトです。サイトの目的や運営方針について紹介します。";
 
 export const metadata = {
-  title: "このサイトについて | 中国五千年史",
+  title,
+  description,
+  alternates: { canonical: "/about" },
+  openGraph: buildOpenGraph({ title: fullTitle, description, path: "/about" }),
+  twitter: buildTwitter({ title: fullTitle, description }),
 };
 
 export default function AboutPage() {
@@ -18,10 +27,6 @@ export default function AboutPage() {
         <p style={{ fontSize: 14, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
           歴史は教科書で学ぶだけでなく、映画やゲーム、実際に残る建造物を通して触れることでより身近に感じられると考え、
           このサイトを作成しました。
-        </p>
-        <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.mist }}>
-          {/* TODO: 運営者情報、連絡先、更新方針などを追記 */}
-          運営者: （記入してください）
         </p>
       </div>
     </div>
