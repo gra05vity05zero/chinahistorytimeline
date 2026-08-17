@@ -69,6 +69,9 @@ export function resolveMediaUrl(med) {
 export const ADSENSE_CLIENT_ID = "ca-pub-4606423913155675";
 export const ADSENSE_SLOT_TIMELINE = "YOUR_AD_SLOT_ID_TIMELINE";
 
+// ---- Google Analytics（GA4）設定 ---------------------------------------
+export const GA_MEASUREMENT_ID = "G-GRELCCWWNV";
+
 // 戦国時代末期〜秦の統一を描く漫画『キングダム』関連作品（アフィリエイトリンク付き）
 export const KINGDOM_MEDIA = [
   { type: "anime", title: "アニメ『キングダム』", url: "https://amzn.to/4g2QxFq", description: "原作漫画をアニメ化。信と政（後の始皇帝）が乱世を駆け上がる姿を描く。" },

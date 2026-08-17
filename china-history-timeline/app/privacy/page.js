@@ -74,9 +74,18 @@ export default function PrivacyPage() {
         <div style={sectionStyle}>
           <div style={headingStyle}>アクセス解析ツールについて</div>
           <p style={bodyStyle}>
-            当サイトでは、サービス向上のためアクセス解析ツールを導入する場合があります。これらはトラフィックデータの収集のためにCookieを使用することがありますが、
+            当サイトでは、サービス向上のためGoogleアナリティクスを導入しています。Googleアナリティクスはトラフィックデータの収集のためにCookieを使用しますが、
             このトラフィックデータは匿名で収集されており、個人を特定するものではありません。
-            {/* TODO: 実際にGoogle Analytics等を導入する場合はここに明記する */}
+            この機能はCookieを無効にすることで収集を拒否することが出来ますので、お使いのブラウザの設定をご確認ください。
+            この規約に関して、詳しくは
+            <a href="https://marketingplatform.google.com/about/analytics/terms/jp/" target="_blank" rel="noopener noreferrer" style={{ color: COLORS.vermilion, textDecoration: "underline" }}>
+              Googleアナリティクス利用規約
+            </a>
+            のページや
+            <a href="https://policies.google.com/technologies/partner-sites?hl=ja" target="_blank" rel="noopener noreferrer" style={{ color: COLORS.vermilion, textDecoration: "underline" }}>
+              Googleポリシーと規約
+            </a>
+            のページをご覧ください。
           </p>
         </div>
 

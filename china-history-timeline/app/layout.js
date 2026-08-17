@@ -1,7 +1,7 @@
 import "./globals.css";
 import Script from "next/script";
 import Footer from "@/components/Footer";
-import { ADSENSE_CLIENT_ID, SITE_URL, SITE_NAME, SITE_DESCRIPTION, buildOpenGraph, buildTwitter } from "@/lib/data";
+import { ADSENSE_CLIENT_ID, GA_MEASUREMENT_ID, SITE_URL, SITE_NAME, SITE_DESCRIPTION, buildOpenGraph, buildTwitter } from "@/lib/data";
 
 const DEFAULT_TITLE = `${SITE_NAME} | 文明の黎明から現代までの年表`;
 
@@ -51,6 +51,23 @@ export default function RootLayout({ children }) {
             crossOrigin="anonymous"
             strategy="beforeInteractive"
           />
+        )}
+        {GA_MEASUREMENT_ID && (
+          <>
+            <Script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga4-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_MEASUREMENT_ID}');
+              `}
+            </Script>
+          </>
         )}
       </head>
       <body>
