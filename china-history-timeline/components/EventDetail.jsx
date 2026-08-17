@@ -101,49 +101,45 @@ export default function EventDetail({ event, era }) {
           <div style={{ fontSize: 10.5, color: COLORS.inkSoft, marginBottom: 12 }}>
             ※ 一部のリンクはAmazonアソシエイトによるアフィリエイト広告を含みます
           </div>
-          <div className="grid gap-3" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))" }}>
-            {MEDIA_TYPES.map((m) => {
-              const items = (event.media || []).filter((med) => med.type === m.key);
-              return (
-                <div key={m.key} className="px-3 py-4" style={{ border: items.length ? `1px solid ${COLORS.mist}` : `1px dashed ${COLORS.mist}`, backgroundColor: items.length ? "#fff" : "#FBF8F0" }}>
-                  <div style={{ fontSize: 11, color: COLORS.vermilion, letterSpacing: "0.06em", marginBottom: 8, textAlign: items.length ? "left" : "center" }}>
-                    {m.label}
+          {event.media && event.media.length > 0 ? (
+            <div className="grid gap-3" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))" }}>
+              {event.media.map((med, idx) => {
+                const href = resolveMediaUrl(med);
+                const typeLabel = MEDIA_TYPES.find((m) => m.key === med.type)?.label || med.type;
+                return (
+                  <div key={idx} className="px-3 py-3" style={{ border: `1px solid ${COLORS.mist}`, backgroundColor: "#fff" }}>
+                    <div style={{ fontSize: 10, color: COLORS.vermilion, letterSpacing: "0.06em", marginBottom: 6 }}>
+                      {typeLabel}
+                    </div>
+                    <div style={{ fontSize: 12.5, color: COLORS.ink, lineHeight: 1.5 }}>
+                      {href ? (
+                        <a href={href} target="_blank" rel="noopener noreferrer sponsored" style={{ color: COLORS.ink, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
+                          {med.title}
+                        </a>
+                      ) : (
+                        med.title
+                      )}
+                      {med.year && <span style={{ color: COLORS.inkSoft, fontSize: 11 }}> （{med.year}）</span>}
+                      {href && (
+                        <span className="ml-1 align-middle" style={{ fontSize: 9, color: "#fff", backgroundColor: COLORS.vermilionSoft, padding: "1px 4px", letterSpacing: "0.05em" }}>
+                          PR
+                        </span>
+                      )}
+                    </div>
+                    {med.description && (
+                      <div style={{ fontSize: 11, color: COLORS.inkSoft, lineHeight: 1.5, marginTop: 4 }}>
+                        {med.description}
+                      </div>
+                    )}
                   </div>
-                  {items.length ? (
-                    <ul className="space-y-1.5">
-                      {items.map((med, idx) => {
-                        const href = resolveMediaUrl(med);
-                        return (
-                          <li key={idx} style={{ fontSize: 12.5, color: COLORS.ink, lineHeight: 1.5 }}>
-                            {href ? (
-                              <a href={href} target="_blank" rel="noopener noreferrer sponsored" style={{ color: COLORS.ink, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
-                                {med.title}
-                              </a>
-                            ) : (
-                              med.title
-                            )}
-                            {med.year && <span style={{ color: COLORS.inkSoft, fontSize: 11 }}> （{med.year}）</span>}
-                            {href && (
-                              <span className="ml-1 align-middle" style={{ fontSize: 9, color: "#fff", backgroundColor: COLORS.vermilionSoft, padding: "1px 4px", letterSpacing: "0.05em" }}>
-                                PR
-                              </span>
-                            )}
-                            {med.description && (
-                              <div style={{ fontSize: 11, color: COLORS.inkSoft, lineHeight: 1.5, marginTop: 2 }}>
-                                {med.description}
-                              </div>
-                            )}
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  ) : (
-                    <div style={{ fontSize: 11, color: COLORS.mist, textAlign: "center" }}>まだ登録されていません</div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
+                );
+              })}
+            </div>
+          ) : (
+            <div className="px-3 py-4" style={{ border: `1px dashed ${COLORS.mist}`, backgroundColor: "#FBF8F0" }}>
+              <div style={{ fontSize: 11, color: COLORS.mist, textAlign: "center" }}>まだ登録されていません</div>
+            </div>
+          )}
         </div>
 
         {prev && (
