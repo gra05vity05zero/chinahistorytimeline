@@ -108,6 +108,9 @@ export default function Timeline() {
             <div className="mb-3">
               <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 20, fontWeight: 700, color: COLORS.ink }}>{era.name}</div>
               <div style={{ fontSize: 12, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}>{era.period}</div>
+              {era.description && (
+                <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginTop: 8 }}>{era.description}</p>
+              )}
             </div>
             <div>
               {era.events.map((ev, i) => (
