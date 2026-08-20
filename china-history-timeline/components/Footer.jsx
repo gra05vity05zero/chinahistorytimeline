@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { COLORS } from "@/lib/data";
+import { A8Banner } from "@/components/Shared";
 
 export default function Footer() {
   const linkStyle = { color: COLORS.inkSoft, textDecoration: "none" };
@@ -10,26 +11,22 @@ export default function Footer() {
     >
       <div style={{ width: "100%", textAlign: "center" }}>
         <div style={{ fontSize: 10.5, color: COLORS.inkSoft, marginBottom: 6 }}>広告</div>
-        <a href="https://px.a8.net/svt/ejp?a8mat=4BA6D9+BJKLSQ+4XZI+HVNAP" rel="nofollow noreferrer sponsored" target="_blank">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            border="0"
-            width="300"
-            height="250"
-            alt=""
-            src="https://www29.a8.net/svt/bgt?aid=260815293698&wid=002&eno=01&mid=s00000023067003003000&mc=1"
-            style={{ display: "inline-block" }}
-          />
-        </a>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          border="0"
-          width="1"
-          height="1"
-          src="https://www17.a8.net/0.gif?a8mat=4BA6D9+BJKLSQ+4XZI+HVNAP"
-          alt=""
-          style={{ display: "none" }}
+        <A8Banner
+          href="https://px.a8.net/svt/ejp?a8mat=4BA6D9+BJKLSQ+4XZI+HVNAP"
+          imgSrc="https://www29.a8.net/svt/bgt?aid=260815293698&wid=002&eno=01&mid=s00000023067003003000&mc=1"
+          gifSrc="https://www17.a8.net/0.gif?a8mat=4BA6D9+BJKLSQ+4XZI+HVNAP"
+          width="300"
+          height="250"
         />
+        <div style={{ marginTop: 10 }}>
+          <A8Banner
+            href="https://px.a8.net/svt/ejp?a8mat=4BA6D9+BFZZEA+39GM+4GVBNL"
+            imgSrc="https://www26.a8.net/svt/bgt?aid=260815293692&wid=001&eno=01&mid=s00000015223027020000&mc=1"
+            gifSrc="https://www18.a8.net/0.gif?a8mat=4BA6D9+BFZZEA+39GM+4GVBNL"
+            width="468"
+            height="60"
+          />
+        </div>
       </div>
       <Link href="/about" style={linkStyle}>このサイトについて</Link>
       <span style={{ color: COLORS.mist }}>|</span>

@@ -121,6 +121,26 @@ export function HeritageGrid({ items }) {
   );
 }
 
+export function A8Banner({ href, imgSrc, gifSrc, width, height }) {
+  return (
+    <div style={{ textAlign: "center" }}>
+      <a href={href} rel="nofollow noreferrer sponsored" target="_blank">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          border="0"
+          width={width}
+          height={height}
+          alt=""
+          src={imgSrc}
+          style={{ display: "inline-block", maxWidth: "100%", height: "auto" }}
+        />
+      </a>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img border="0" width="1" height="1" src={gifSrc} alt="" style={{ display: "none" }} />
+    </div>
+  );
+}
+
 export function AdSenseSlot({ slot }) {
   const loaded = useRef(false);
   useEffect(() => {
