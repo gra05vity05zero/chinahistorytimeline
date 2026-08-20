@@ -74,15 +74,19 @@ export function EventCard({ event, onOpen }) {
   );
 }
 
-function HeritageThumb({ imageUrl, name }) {
+function HeritageThumb({ imageUrl, name, type }) {
   const [failed, setFailed] = useState(false);
   if (imageUrl && !failed) {
+    // 人物の肖像画は縦長の掛け軸などが多く、4:3の枠でcoverすると顔や全身が
+    // 切れてしまうため、containで画像全体が必ず収まるようにする。
+    // 建造物・国宝の写真は横長が多くcoverの方が枠を綺麗に埋められる。
+    const isFigure = type === "figure";
     return (
       // eslint-disable-next-line @next/next/no-img-element
       <img
         src={imageUrl}
         alt={stripRuby(name)}
-        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+        style={{ width: "100%", height: "100%", objectFit: isFigure ? "contain" : "cover", objectPosition: isFigure ? "center" : "top" }}
         onError={() => setFailed(true)}
       />
     );
@@ -104,7 +108,7 @@ export function HeritageGrid({ items }) {
             className="flex items-center justify-center"
             style={{ aspectRatio: "4 / 3", backgroundColor: "#EFE7D0", borderBottom: `1px solid ${COLORS.mist}`, overflow: "hidden" }}
           >
-            <HeritageThumb imageUrl={it.imageUrl} name={it.name} />
+            <HeritageThumb imageUrl={it.imageUrl} name={it.name} type={it.type} />
           </div>
           <div className="px-2.5 py-2">
             <div style={{ fontSize: 12.5, fontWeight: 600, color: COLORS.ink, fontFamily: "'Noto Serif SC', serif" }}>
