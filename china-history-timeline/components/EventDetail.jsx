@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import {
   COLORS,
   CATEGORY_STYLE,
@@ -70,6 +71,16 @@ export default function EventDetail({ event, era }) {
         <p style={{ fontSize: 15, lineHeight: 1.9, color: COLORS.inkSoft }}>
           <RubyText text={event.summary} />
         </p>
+
+        <div className="flex items-center gap-3 mt-5" style={{ fontSize: 12 }}>
+          <Link href={`/people/${era.id}`} style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
+            {era.name}の人物一覧
+          </Link>
+          <span style={{ color: COLORS.mist }}>|</span>
+          <Link href={`/eras/${era.id}`} style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
+            {era.name}の出来事一覧
+          </Link>
+        </div>
 
         {event.heritage && event.heritage.length > 0 && (
           <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>

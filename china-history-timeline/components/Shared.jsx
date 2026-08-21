@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { COLORS, CATEGORY_STYLE, ADSENSE_CLIENT_ID, stripRuby } from "@/lib/data";
 import { RubyText } from "@/components/Ruby";
 
@@ -122,6 +123,88 @@ export function HeritageGrid({ items }) {
         </div>
       ))}
     </div>
+  );
+}
+
+export function PersonCard({ person }) {
+  return (
+    <div style={{ border: `1px solid ${COLORS.mist}`, backgroundColor: "#fff" }}>
+      <div
+        className="flex items-center justify-center"
+        style={{ aspectRatio: "4 / 3", backgroundColor: "#EFE7D0", borderBottom: `1px solid ${COLORS.mist}`, overflow: "hidden" }}
+      >
+        <HeritageThumb imageUrl={person.imageUrl} name={person.name} type="figure" />
+      </div>
+      <div className="px-2.5 py-2.5">
+        <div style={{ fontSize: 13.5, fontWeight: 700, color: COLORS.ink, fontFamily: "'Noto Serif SC', serif" }}>
+          <RubyText text={person.name} />
+        </div>
+        <div style={{ fontSize: 11.5, color: COLORS.inkSoft, lineHeight: 1.6, marginTop: 3 }}>
+          <RubyText text={person.description} />
+        </div>
+        {person.credit && <div style={{ fontSize: 9.5, color: COLORS.mist, marginTop: 3 }}>{person.credit}</div>}
+        {person.events && person.events.length > 0 && (
+          <div className="mt-2.5 pt-2" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
+            <div style={{ fontSize: 10, color: COLORS.gold, marginBottom: 4, letterSpacing: "0.05em" }}>関連する出来事</div>
+            <div className="flex flex-col gap-1">
+              {person.events.map((ev, i) => (
+                <Link
+                  key={i}
+                  href={`/events/${ev.slug}`}
+                  style={{ fontSize: 11.5, color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}
+                >
+                  {ev.year}　{stripRuby(ev.title)}
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+export function PersonGrid({ people }) {
+  if (!people || people.length === 0) return null;
+  return (
+    <div className="grid gap-3" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))" }}>
+      {people.map((person, idx) => (
+        <PersonCard key={idx} person={person} />
+      ))}
+    </div>
+  );
+}
+
+export function EventListItem({ event, eraName }) {
+  const cat = CATEGORY_STYLE[event.category] || CATEGORY_STYLE["文化"];
+  return (
+    <Link href={`/events/${event.slug}`} className="block mb-3 last:mb-0 group">
+      <div
+        className="px-4 py-3 transition-all duration-200 group-hover:shadow-sm"
+        style={{ backgroundColor: "#FBF8F0", border: `1px solid #DCD3B8`, borderLeft: `3px solid ${cat.color}` }}
+      >
+        <div className="flex items-baseline justify-between gap-3">
+          <div className="flex items-baseline gap-2">
+            <span style={{ fontFamily: "'Noto Serif SC', serif", color: COLORS.inkSoft, fontSize: 13 }}>{event.year}</span>
+            <span style={{ fontFamily: "'Noto Serif SC', serif", color: COLORS.ink, fontSize: 16, fontWeight: 600 }}>
+              <RubyText text={event.title} />
+            </span>
+          </div>
+          <span className="shrink-0 uppercase tracking-wider" style={{ fontSize: 10, color: cat.color, letterSpacing: "0.08em" }}>
+            {cat.label}
+          </span>
+        </div>
+        <div className="mt-1 flex items-center justify-between">
+          <p
+            className="pr-4"
+            style={{ fontSize: 12.5, lineHeight: 1.6, color: COLORS.inkSoft, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}
+          >
+            {stripRuby(event.summary)}
+          </p>
+          <span className="shrink-0" style={{ color: COLORS.vermilion, fontSize: 13 }}>→</span>
+        </div>
+      </div>
+    </Link>
   );
 }
 

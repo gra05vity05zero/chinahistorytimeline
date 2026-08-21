@@ -7,6 +7,9 @@ export default function sitemap() {
     { url: `${SITE_URL}/`, lastModified: now, changeFrequency: "monthly", priority: 1 },
     { url: `${SITE_URL}/about`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: `${SITE_URL}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.1 },
+    { url: `${SITE_URL}/search`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${SITE_URL}/people`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${SITE_URL}/eras`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
   ];
 
   const eventRoutes = ERAS.flatMap((era) =>
@@ -18,5 +21,19 @@ export default function sitemap() {
     }))
   );
 
-  return [...staticRoutes, ...eventRoutes];
+  const peopleRoutes = ERAS.map((era) => ({
+    url: `${SITE_URL}/people/${era.id}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
+  const eraRoutes = ERAS.map((era) => ({
+    url: `${SITE_URL}/eras/${era.id}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
+  return [...staticRoutes, ...eventRoutes, ...peopleRoutes, ...eraRoutes];
 }

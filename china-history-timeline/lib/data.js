@@ -856,3 +856,46 @@ export const HERITAGE_TYPES = {
   artifact: { label: "国宝・出土品" },
   figure: { label: "関連する人物" },
 };
+
+// 王朝IDに対応する、検索されやすい通称・別名（人物一覧・出来事一覧ページのタイトルやSEO説明文に使用）
+export const ERA_ALIASES = {
+  sanguo: "三国志",
+  zhanguo: "戦国時代",
+  chunqiu: "春秋時代",
+  sixteenkingdoms: "五胡十六国時代",
+  nanbei: "南北朝時代",
+  wudai: "五代十国時代",
+};
+
+// 指定した王朝内に登場する人物（heritage type: figure）を名前で重複排除し、
+// 各人物が関連する出来事（年・タイトル・slug）の一覧とともに返す
+export function getEraFigures(era) {
+  const map = new Map();
+  era.events.forEach((ev) => {
+    (ev.heritage || []).forEach((h) => {
+      if (h.type !== "figure") return;
+      const key = stripRuby(h.name);
+      if (!map.has(key)) {
+        map.set(key, { ...h, events: [] });
+      }
+      map.get(key).events.push({ slug: ev.slug, year: ev.year, title: ev.title });
+    });
+  });
+  return Array.from(map.values());
+}
+
+// サイト内検索用に、全イベントをルビ除去済みのフラットなインデックスへ変換する
+export function buildSearchIndex() {
+  return ERAS.flatMap((era) =>
+    era.events.map((ev) => ({
+      slug: ev.slug,
+      eraId: era.id,
+      eraName: era.name,
+      year: ev.year,
+      title: stripRuby(ev.title),
+      summary: stripRuby(ev.summary),
+      category: ev.category,
+      figures: (ev.heritage || []).filter((h) => h.type === "figure").map((h) => stripRuby(h.name)),
+    }))
+  );
+}

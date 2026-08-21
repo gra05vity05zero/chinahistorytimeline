@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { ERAS, COLORS, ADSENSE_SLOT_TIMELINE } from "@/lib/data";
 import { SealMark, EventCard, AdSenseSlot } from "@/components/Shared";
 
@@ -95,6 +96,19 @@ export default function Timeline() {
           中国五千年史
         </h1>
         <p style={{ fontSize: 13, color: COLORS.inkSoft, marginTop: 6 }}>文明の黎明から現代まで — スクロールして辿る</p>
+        <div className="flex items-center justify-center gap-3 mt-4" style={{ fontSize: 12 }}>
+          <Link href="/search" style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
+            サイト内検索
+          </Link>
+          <span style={{ color: COLORS.mist }}>|</span>
+          <Link href="/people" style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
+            人物一覧
+          </Link>
+          <span style={{ color: COLORS.mist }}>|</span>
+          <Link href="/eras" style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
+            出来事一覧
+          </Link>
+        </div>
       </div>
 
       <div className="relative max-w-2xl mx-auto px-5 pb-24">
