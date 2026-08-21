@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ERAS, ERA_ALIASES, COLORS, SITE_URL, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { SealMark, EventListItem } from "@/components/Shared";
+import { SealMark, EventListItem, BackToTopButton } from "@/components/Shared";
 
 export function generateStaticParams() {
   return ERAS.map((era) => ({ eraId: era.id }));
@@ -47,9 +47,12 @@ export default function EraEventsPage({ params }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <div className="max-w-2xl mx-auto px-6 py-10">
-        <Link href="/eras" style={{ color: COLORS.vermilion, fontSize: 13 }}>
-          ← 出来事一覧トップへ
-        </Link>
+        <div className="flex items-center justify-between flex-wrap gap-2">
+          <BackToTopButton />
+          <Link href="/eras" style={{ color: COLORS.vermilion, fontSize: 13 }}>
+            ← 出来事一覧トップへ
+          </Link>
+        </div>
 
         <div className="flex items-center gap-3 mt-5 mb-4">
           <SealMark char={era.seal} active />

@@ -2,9 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 import { ERAS, COLORS, ADSENSE_SLOT_TIMELINE } from "@/lib/data";
-import { SealMark, EventCard, AdSenseSlot } from "@/components/Shared";
+import { SealMark, EventCard, AdSenseSlot, NavButton } from "@/components/Shared";
 
 export default function Timeline() {
   const router = useRouter();
@@ -96,18 +95,10 @@ export default function Timeline() {
           中国五千年史
         </h1>
         <p style={{ fontSize: 13, color: COLORS.inkSoft, marginTop: 6 }}>文明の黎明から現代まで — スクロールして辿る</p>
-        <div className="flex items-center justify-center gap-3 mt-4" style={{ fontSize: 12 }}>
-          <Link href="/search" style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
-            サイト内検索
-          </Link>
-          <span style={{ color: COLORS.mist }}>|</span>
-          <Link href="/people" style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
-            人物一覧
-          </Link>
-          <span style={{ color: COLORS.mist }}>|</span>
-          <Link href="/eras" style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
-            出来事一覧
-          </Link>
+        <div className="flex items-center justify-center gap-2.5 mt-5 flex-wrap px-4">
+          <NavButton href="/people" variant="solid">人物一覧</NavButton>
+          <NavButton href="/eras" variant="solid">出来事一覧</NavButton>
+          <NavButton href="/search" variant="outline">サイト内検索</NavButton>
         </div>
       </div>
 

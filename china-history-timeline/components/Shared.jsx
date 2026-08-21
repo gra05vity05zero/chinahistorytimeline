@@ -5,6 +5,40 @@ import Link from "next/link";
 import { COLORS, CATEGORY_STYLE, ADSENSE_CLIENT_ID, stripRuby } from "@/lib/data";
 import { RubyText } from "@/components/Ruby";
 
+export function NavButton({ href, children, variant = "solid" }) {
+  const solid = variant === "solid";
+  return (
+    <Link
+      href={href}
+      className="inline-flex items-center justify-center"
+      style={{
+        fontFamily: "'Noto Serif SC', serif",
+        fontSize: 13,
+        fontWeight: 700,
+        letterSpacing: "0.05em",
+        padding: "9px 18px",
+        color: solid ? "#fff" : COLORS.vermilion,
+        backgroundColor: solid ? COLORS.vermilion : "transparent",
+        border: `1.5px solid ${COLORS.vermilion}`,
+      }}
+    >
+      {children}
+    </Link>
+  );
+}
+
+export function BackToTopButton() {
+  return (
+    <Link
+      href="/"
+      className="inline-flex items-center gap-1.5"
+      style={{ color: COLORS.vermilion, fontFamily: "'Noto Serif SC', serif", fontSize: 13 }}
+    >
+      <span aria-hidden>←</span> 年表トップへ戻る
+    </Link>
+  );
+}
+
 export function SealMark({ char, active }) {
   return (
     <div

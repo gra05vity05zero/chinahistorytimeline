@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ERAS, ERA_ALIASES, COLORS, SITE_NAME, getEraFigures, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { SealMark } from "@/components/Shared";
+import { SealMark, BackToTopButton } from "@/components/Shared";
 
 const title = "人物一覧";
 const fullTitle = `人物一覧 | ${SITE_NAME}`;
@@ -21,7 +21,8 @@ export default function PeopleIndexPage() {
   return (
     <div style={{ backgroundColor: COLORS.paper, minHeight: "100%" }}>
       <div className="max-w-2xl mx-auto px-6 py-12">
-        <h1 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginBottom: 14 }}>
+        <BackToTopButton />
+        <h1 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
           人物一覧
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 24 }}>
