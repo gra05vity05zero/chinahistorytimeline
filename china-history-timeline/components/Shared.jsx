@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { COLORS, CATEGORY_STYLE, ADSENSE_CLIENT_ID, stripRuby } from "@/lib/data";
+import { COLORS, CATEGORY_STYLE, ADSENSE_CLIENT_ID, stripRuby, wikimediaThumb } from "@/lib/constants";
 import { RubyText } from "@/components/Ruby";
 
 export function NavButton({ href, children, variant = "solid" }) {
@@ -119,8 +119,10 @@ function HeritageThumb({ imageUrl, name, type }) {
     return (
       // eslint-disable-next-line @next/next/no-img-element
       <img
-        src={imageUrl}
+        src={wikimediaThumb(imageUrl)}
         alt={stripRuby(name)}
+        loading="lazy"
+        decoding="async"
         style={{ width: "100%", height: "100%", objectFit: isFigure ? "contain" : "cover", objectPosition: isFigure ? "center" : "top" }}
         onError={() => setFailed(true)}
       />
@@ -253,6 +255,8 @@ export function A8Banner({ href, imgSrc, gifSrc, width, height }) {
           height={height}
           alt=""
           src={imgSrc}
+          loading="lazy"
+          decoding="async"
           style={{ display: "inline-block", maxWidth: "100%", height: "auto" }}
         />
       </a>

@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { COLORS, CATEGORY_STYLE, buildSearchIndex } from "@/lib/data";
+import { COLORS, CATEGORY_STYLE } from "@/lib/constants";
 
 // 全角/半角の揺れやひらがな・カタカナの違いを吸収するための簡易正規化
 function normalize(str) {
@@ -11,9 +11,8 @@ function normalize(str) {
     .replace(/[ァ-ヶ]/g, (ch) => String.fromCharCode(ch.charCodeAt(0) - 0x60)); // カタカナ→ひらがな
 }
 
-export default function SearchClient() {
+export default function SearchClient({ index }) {
   const [query, setQuery] = useState("");
-  const index = useMemo(() => buildSearchIndex(), []);
 
   const q = normalize(query.trim());
   const results = useMemo(() => {

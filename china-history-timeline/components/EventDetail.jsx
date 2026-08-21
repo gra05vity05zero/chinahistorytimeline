@@ -2,14 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import {
-  COLORS,
-  CATEGORY_STYLE,
-  HERITAGE_TYPES,
-  resolveMediaUrl,
-  getNextEvent,
-  getPrevEvent,
-} from "@/lib/data";
+import { COLORS, CATEGORY_STYLE, HERITAGE_TYPES, resolveMediaUrl } from "@/lib/constants";
 import { SealMark, HeritageGrid, A8Banner } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 
@@ -20,11 +13,9 @@ const MEDIA_TYPES = [
   { key: "book", label: "書籍・漫画" },
 ];
 
-export default function EventDetail({ event, era }) {
+export default function EventDetail({ event, era, prev, next }) {
   const router = useRouter();
   const cat = CATEGORY_STYLE[event.category] || CATEGORY_STYLE["文化"];
-  const next = getNextEvent(event.slug);
-  const prev = getPrevEvent(event.slug);
 
   const onBack = () => {
     // Timeline側がsessionStorageの returnToEra を見てスクロール復元する

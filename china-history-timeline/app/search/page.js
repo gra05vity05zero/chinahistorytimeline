@@ -1,4 +1,4 @@
-import { COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
+import { COLORS, SITE_NAME, buildOpenGraph, buildTwitter, buildSearchIndex } from "@/lib/data";
 import SearchClient from "@/components/Search";
 
 const title = "サイト内検索";
@@ -14,13 +14,14 @@ export const metadata = {
 };
 
 export default function SearchPage() {
+  const index = buildSearchIndex();
   return (
     <div style={{ backgroundColor: COLORS.paper, minHeight: "100%" }}>
       <div className="max-w-2xl mx-auto px-6 py-12">
         <h1 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 24, fontWeight: 900, color: COLORS.ink, marginBottom: 16 }}>
           サイト内検索
         </h1>
-        <SearchClient />
+        <SearchClient index={index} />
       </div>
     </div>
   );

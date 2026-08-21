@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { ERAS, findEventBySlug, stripRuby, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
+import { ERAS, findEventBySlug, getNextEvent, getPrevEvent, stripRuby, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
 import EventDetail from "@/components/EventDetail";
 
 // ビルド時に全イベントの静的ページを生成（SSG）
@@ -30,6 +30,8 @@ export default function EventPage({ params }) {
   const { event, era } = found;
   const title = stripRuby(event.title);
   const description = stripRuby(event.summary);
+  const next = getNextEvent(event.slug);
+  const prev = getPrevEvent(event.slug);
 
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -69,7 +71,7 @@ export default function EventPage({ params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
-      <EventDetail event={event} era={era} />
+      <EventDetail event={event} era={era} prev={prev} next={next} />
     </>
   );
 }
