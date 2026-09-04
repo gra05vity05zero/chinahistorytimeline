@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { COLORS, CATEGORY_STYLE, ADSENSE_CLIENT_ID, stripRuby, wikimediaThumb } from "@/lib/constants";
+import { COLORS, CATEGORY_STYLE, ADSENSE_CLIENT_ID, stripRuby, wikimediaThumb, personSlug } from "@/lib/constants";
 import { RubyText } from "@/components/Ruby";
 
 export function NavButton({ href, children, variant = "solid" }) {
@@ -109,7 +109,7 @@ export function EventCard({ event, onOpen }) {
   );
 }
 
-function HeritageThumb({ imageUrl, name, type }) {
+export function HeritageThumb({ imageUrl, name, type }) {
   const [failed, setFailed] = useState(false);
   if (imageUrl && !failed) {
     // 人物の肖像画は縦長の掛け軸などが多く、4:3の枠でcoverすると顔や全身が
@@ -135,34 +135,44 @@ function HeritageThumb({ imageUrl, name, type }) {
   );
 }
 
-export function HeritageGrid({ items }) {
+export function HeritageGrid({ items, eraId }) {
   if (!items || items.length === 0) return null;
   return (
     <div className="grid gap-3" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))" }}>
-      {items.map((it, idx) => (
-        <div key={idx} style={{ border: `1px solid ${COLORS.mist}`, backgroundColor: "#fff" }}>
-          <div
-            className="flex items-center justify-center"
-            style={{ aspectRatio: "4 / 3", backgroundColor: "#EFE7D0", borderBottom: `1px solid ${COLORS.mist}`, overflow: "hidden" }}
-          >
-            <HeritageThumb imageUrl={it.imageUrl} name={it.name} type={it.type} />
-          </div>
-          <div className="px-2.5 py-2">
-            <div style={{ fontSize: 12.5, fontWeight: 600, color: COLORS.ink, fontFamily: "'Noto Serif SC', serif" }}>
-              <RubyText text={it.name} />
+      {items.map((it, idx) => {
+        const href = eraId && it.type === "figure" && it.bio ? `/people/${eraId}/${encodeURIComponent(personSlug(it.name))}` : null;
+        return (
+          <div key={idx} style={{ border: `1px solid ${COLORS.mist}`, backgroundColor: "#fff" }}>
+            <div
+              className="flex items-center justify-center"
+              style={{ aspectRatio: "4 / 3", backgroundColor: "#EFE7D0", borderBottom: `1px solid ${COLORS.mist}`, overflow: "hidden" }}
+            >
+              <HeritageThumb imageUrl={it.imageUrl} name={it.name} type={it.type} />
             </div>
-            <div style={{ fontSize: 11, color: COLORS.inkSoft, lineHeight: 1.5, marginTop: 2 }}>
-              <RubyText text={it.description} />
+            <div className="px-2.5 py-2">
+              <div style={{ fontSize: 12.5, fontWeight: 600, color: COLORS.ink, fontFamily: "'Noto Serif SC', serif" }}>
+                {href ? (
+                  <Link href={href} style={{ color: COLORS.ink, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
+                    <RubyText text={it.name} />
+                  </Link>
+                ) : (
+                  <RubyText text={it.name} />
+                )}
+              </div>
+              <div style={{ fontSize: 11, color: COLORS.inkSoft, lineHeight: 1.5, marginTop: 2 }}>
+                <RubyText text={it.description} />
+              </div>
+              {it.credit && <div style={{ fontSize: 9.5, color: COLORS.mist, marginTop: 3 }}>{it.credit}</div>}
             </div>
-            {it.credit && <div style={{ fontSize: 9.5, color: COLORS.mist, marginTop: 3 }}>{it.credit}</div>}
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }
 
-export function PersonCard({ person }) {
+export function PersonCard({ person, eraId }) {
+  const href = eraId && person.bio ? `/people/${eraId}/${encodeURIComponent(personSlug(person.name))}` : null;
   return (
     <div style={{ border: `1px solid ${COLORS.mist}`, backgroundColor: "#fff" }}>
       <div
@@ -173,7 +183,13 @@ export function PersonCard({ person }) {
       </div>
       <div className="px-2.5 py-2.5">
         <div style={{ fontSize: 13.5, fontWeight: 700, color: COLORS.ink, fontFamily: "'Noto Serif SC', serif" }}>
-          <RubyText text={person.name} />
+          {href ? (
+            <Link href={href} style={{ color: COLORS.ink, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
+              <RubyText text={person.name} />
+            </Link>
+          ) : (
+            <RubyText text={person.name} />
+          )}
         </div>
         <div style={{ fontSize: 11.5, color: COLORS.inkSoft, lineHeight: 1.6, marginTop: 3 }}>
           <RubyText text={person.description} />
@@ -200,12 +216,12 @@ export function PersonCard({ person }) {
   );
 }
 
-export function PersonGrid({ people }) {
+export function PersonGrid({ people, eraId }) {
   if (!people || people.length === 0) return null;
   return (
     <div className="grid gap-3" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))" }}>
       {people.map((person, idx) => (
-        <PersonCard key={idx} person={person} />
+        <PersonCard key={idx} person={person} eraId={eraId} />
       ))}
     </div>
   );

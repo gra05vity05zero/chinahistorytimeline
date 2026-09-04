@@ -89,32 +89,32 @@ export default function EventDetail({ event, era, prev, next }) {
                   <div style={{ fontSize: 11, color: COLORS.gold, marginBottom: 6, letterSpacing: "0.05em" }}>
                     {HERITAGE_TYPES[typeKey].label}
                   </div>
-                  <HeritageGrid items={items} />
+                  <HeritageGrid items={items} eraId={era.id} />
                 </div>
               );
             })}
+
+            <div className="mt-8">
+              <div style={{ fontSize: 10.5, color: COLORS.inkSoft, marginBottom: 8, textAlign: "center" }}>広告</div>
+              <A8Banner
+                href="https://px.a8.net/svt/ejp?a8mat=4BA6D9+ADW8OI+5WP8+5ZMCH"
+                imgSrc="https://www21.a8.net/svt/bgt?aid=260815293628&wid=001&eno=01&mid=s00000027566001006000&mc=1"
+                gifSrc="https://www13.a8.net/0.gif?a8mat=4BA6D9+ADW8OI+5WP8+5ZMCH"
+                width="300"
+                height="250"
+              />
+            </div>
           </div>
         )}
 
-        <div className="mt-10">
-          <div style={{ fontSize: 10.5, color: COLORS.inkSoft, marginBottom: 8, textAlign: "center" }}>広告</div>
-          <A8Banner
-            href="https://px.a8.net/svt/ejp?a8mat=4BA6D9+ADW8OI+5WP8+5ZMCH"
-            imgSrc="https://www21.a8.net/svt/bgt?aid=260815293628&wid=001&eno=01&mid=s00000027566001006000&mc=1"
-            gifSrc="https://www13.a8.net/0.gif?a8mat=4BA6D9+ADW8OI+5WP8+5ZMCH"
-            width="300"
-            height="250"
-          />
-        </div>
-
-        <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
-          <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 13, color: COLORS.vermilion, letterSpacing: "0.15em", marginBottom: 4 }}>
-            関連作品
-          </div>
-          <div style={{ fontSize: 10.5, color: COLORS.inkSoft, marginBottom: 12 }}>
-            ※ 一部のリンクはAmazonアソシエイトによるアフィリエイト広告を含みます
-          </div>
-          {event.media && event.media.length > 0 ? (
+        {event.media && event.media.length > 0 && (
+          <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
+            <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 13, color: COLORS.vermilion, letterSpacing: "0.15em", marginBottom: 4 }}>
+              関連作品
+            </div>
+            <div style={{ fontSize: 10.5, color: COLORS.inkSoft, marginBottom: 12 }}>
+              ※ 一部のリンクはAmazonアソシエイトによるアフィリエイト広告を含みます
+            </div>
             <div className="grid gap-3" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))" }}>
               {event.media.map((med, idx) => {
                 const href = resolveMediaUrl(med);
@@ -148,23 +148,19 @@ export default function EventDetail({ event, era, prev, next }) {
                 );
               })}
             </div>
-          ) : (
-            <div className="px-3 py-4" style={{ border: `1px dashed ${COLORS.mist}`, backgroundColor: "#FBF8F0" }}>
-              <div style={{ fontSize: 11, color: COLORS.mist, textAlign: "center" }}>まだ登録されていません</div>
-            </div>
-          )}
-        </div>
 
-        <div className="mt-10">
-          <div style={{ fontSize: 10.5, color: COLORS.inkSoft, marginBottom: 8, textAlign: "center" }}>広告</div>
-          <A8Banner
-            href="https://px.a8.net/svt/ejp?a8mat=4BA6D9+BE7OKY+4R2M+TSQTT"
-            imgSrc="https://www24.a8.net/svt/bgt?aid=260815293689&wid=001&eno=01&mid=s00000022171005005000&mc=1"
-            gifSrc="https://www16.a8.net/0.gif?a8mat=4BA6D9+BE7OKY+4R2M+TSQTT"
-            width="300"
-            height="250"
-          />
-        </div>
+            <div className="mt-8">
+              <div style={{ fontSize: 10.5, color: COLORS.inkSoft, marginBottom: 8, textAlign: "center" }}>広告</div>
+              <A8Banner
+                href="https://px.a8.net/svt/ejp?a8mat=4BA6D9+BE7OKY+4R2M+TSQTT"
+                imgSrc="https://www24.a8.net/svt/bgt?aid=260815293689&wid=001&eno=01&mid=s00000022171005005000&mc=1"
+                gifSrc="https://www16.a8.net/0.gif?a8mat=4BA6D9+BE7OKY+4R2M+TSQTT"
+                width="300"
+                height="250"
+              />
+            </div>
+          </div>
+        )}
 
         {prev && (
           <button

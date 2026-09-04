@@ -54,19 +54,20 @@ export default function RootLayout({ children }) {
         )}
         {GA_MEASUREMENT_ID && (
           <>
-            <Script
-              async
-              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-              strategy="afterInteractive"
-            />
-            <Script id="ga4-init" strategy="afterInteractive">
-              {`
+            {/* Plain <script> tags (not next/script) so Search Console's
+                Google Analytics verification finds a literal snippet in
+                the server-rendered <head>, not Next's __next_s bootstrap. */}
+            <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} />
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
                 gtag('config', '${GA_MEASUREMENT_ID}');
-              `}
-            </Script>
+              `,
+              }}
+            />
           </>
         )}
       </head>

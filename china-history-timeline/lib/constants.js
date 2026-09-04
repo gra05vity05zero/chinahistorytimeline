@@ -92,6 +92,13 @@ export function stripRuby(text) {
   return text.replace(/\{\{(.+?)\|(.+?)\}\}/g, "$1");
 }
 
+// 人物名から個別ページのURLスラッグを作る。
+// 「武帝（劉徹）」のような別名付き表記は括弧より前の主要な呼び名だけを使う。
+export function personSlug(name) {
+  if (!name) return name;
+  return stripRuby(name).replace(/[（(].*$/, "").trim();
+}
+
 export const HERITAGE_TYPES = {
   building: { label: "建造物・遺跡" },
   artifact: { label: "国宝・出土品" },

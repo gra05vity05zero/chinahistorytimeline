@@ -16,12 +16,15 @@ export function generateMetadata({ params }) {
     alias ? `${alias}` : era.name
   }の人物について知りたい方はこちら。`;
   const path = `/people/${era.id}`;
+  const hasFigures = getEraFigures(era).length > 0;
   return {
     title,
     description,
     alternates: { canonical: path },
     openGraph: buildOpenGraph({ title, description, path }),
     twitter: buildTwitter({ title, description }),
+    // 人物情報が未登録のページはインデックス対象から外す
+    ...(hasFigures ? {} : { robots: { index: false, follow: true } }),
   };
 }
 
@@ -73,7 +76,7 @@ export default function EraPeoplePage({ params }) {
 
         <div className="mt-8">
           {people.length > 0 ? (
-            <PersonGrid people={people} />
+            <PersonGrid people={people} eraId={era.id} />
           ) : (
             <div className="px-3 py-6 text-center" style={{ border: `1px dashed ${COLORS.mist}`, backgroundColor: "#FBF8F0" }}>
               <div style={{ fontSize: 12, color: COLORS.mist }}>この時代の人物情報はまだ登録されていません</div>

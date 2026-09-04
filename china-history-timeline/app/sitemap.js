@@ -1,4 +1,4 @@
-import { ERAS, SITE_URL } from "@/lib/data";
+import { ERAS, SITE_URL, getEraFigures, personSlug } from "@/lib/data";
 
 export default function sitemap() {
   const now = new Date();
@@ -21,7 +21,8 @@ export default function sitemap() {
     }))
   );
 
-  const peopleRoutes = ERAS.map((era) => ({
+  // 人物情報が未登録の時代ページは実質空ページのためサイトマップから除外する
+  const peopleRoutes = ERAS.filter((era) => getEraFigures(era).length > 0).map((era) => ({
     url: `${SITE_URL}/people/${era.id}`,
     lastModified: now,
     changeFrequency: "monthly",
@@ -35,5 +36,17 @@ export default function sitemap() {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...eventRoutes, ...peopleRoutes, ...eraRoutes];
+  // 伝記本文（bio）が用意されている人物のみ個別ページをサイトマップに含める
+  const personRoutes = ERAS.flatMap((era) =>
+    getEraFigures(era)
+      .filter((p) => p.bio)
+      .map((p) => ({
+        url: `${SITE_URL}/people/${era.id}/${personSlug(p.name)}`,
+        lastModified: now,
+        changeFrequency: "yearly",
+        priority: 0.6,
+      }))
+  );
+
+  return [...staticRoutes, ...eventRoutes, ...peopleRoutes, ...eraRoutes, ...personRoutes];
 }
