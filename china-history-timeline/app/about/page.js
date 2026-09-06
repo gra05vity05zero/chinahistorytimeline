@@ -1,4 +1,5 @@
 import { COLORS, buildOpenGraph, buildTwitter } from "@/lib/data";
+import { MiscLinksSection } from "@/components/Shared";
 
 const title = "このサイトについて";
 const fullTitle = "このサイトについて | 中国五千年史";
@@ -28,6 +29,10 @@ export default function AboutPage() {
           歴史は教科書で学ぶだけでなく、映画やゲーム、実際に残る建造物を通して触れることでより身近に感じられると考え、
           このサイトを作成しました。
         </p>
+
+        <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
+          <MiscLinksSection />
+        </div>
       </div>
     </div>
   );

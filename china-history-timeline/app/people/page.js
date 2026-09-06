@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ERAS, ERA_ALIASES, COLORS, SITE_NAME, getEraFigures, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { SealMark, BackToTopButton } from "@/components/Shared";
+import { SealMark, BackToTopButton, MiscLinksSection } from "@/components/Shared";
 
 const title = "人物一覧";
 const fullTitle = `人物一覧 | ${SITE_NAME}`;
@@ -52,6 +52,10 @@ export default function PeopleIndexPage() {
               <div style={{ fontSize: 11, color: COLORS.inkSoft, whiteSpace: "nowrap" }}>{count}人</div>
             </Link>
           ))}
+        </div>
+
+        <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
+          <MiscLinksSection />
         </div>
       </div>
     </div>

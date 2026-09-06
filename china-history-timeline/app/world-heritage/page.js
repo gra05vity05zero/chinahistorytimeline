@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, HeritageThumb } from "@/components/Shared";
+import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 
 const title = "中国の世界遺産まとめ";
@@ -102,6 +102,10 @@ export default function WorldHeritagePage() {
             <NavButton href="/eras" variant="outline">出来事一覧を見る</NavButton>
           </div>
         </section>
+
+        <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
+          <MiscLinksSection />
+        </div>
       </div>
     </div>
   );

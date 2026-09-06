@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 
 const title = "日本史・中国史 対照年表";
@@ -181,6 +181,10 @@ export default function JapanChinaTimelinePage() {
             <NavButton href="/mnemonics" variant="outline">王朝の覚え方を見る</NavButton>
           </div>
         </section>
+
+        <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
+          <MiscLinksSection />
+        </div>
       </div>
     </div>
   );

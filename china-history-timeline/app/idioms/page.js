@@ -1,5 +1,5 @@
 import { ERAS, getEraFigures, personSlug, stripRuby, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 
 const title = "中国史から生まれた故事成語・慣用句";
@@ -213,6 +213,10 @@ export default function IdiomsPage() {
             <NavButton href="/mnemonics" variant="outline">王朝の覚え方を見る</NavButton>
           </div>
         </section>
+
+        <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
+          <MiscLinksSection />
+        </div>
       </div>
     </div>
   );

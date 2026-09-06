@@ -40,6 +40,35 @@ export function BackToTopButton() {
   );
 }
 
+const MISC_LINKS = [
+  { href: "/mnemonics", label: "王朝の覚え方" },
+  { href: "/idioms", label: "故事成語（熟語・慣用句）" },
+  { href: "/year-mnemonics", label: "年号ゴロ合わせ集" },
+  { href: "/terracotta-army", label: "兵馬俑・始皇帝陵の謎" },
+  { href: "/world-heritage", label: "中国の世界遺産まとめ" },
+];
+
+// 各ページ末尾などに置く「雑学・豆知識」記事への横断リンク集
+export function MiscLinksSection() {
+  return (
+    <div className="text-center">
+      <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 11, letterSpacing: "0.15em", color: COLORS.gold, marginBottom: 10 }}>
+        雑学・豆知識
+      </div>
+      <div className="flex items-center justify-center gap-2.5 flex-wrap" style={{ fontSize: 12 }}>
+        {MISC_LINKS.map((item, i) => (
+          <span key={item.href} className="flex items-center gap-2.5">
+            <Link href={item.href} style={{ color: COLORS.vermilion }}>
+              {item.label}
+            </Link>
+            {i < MISC_LINKS.length - 1 && <span style={{ color: COLORS.mist }}>|</span>}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function SealMark({ char, active }) {
   return (
     <div

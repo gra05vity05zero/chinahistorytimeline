@@ -1,5 +1,5 @@
 import { ERAS, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 
 const title = "中国王朝の覚え方（語呂合わせ）";
@@ -181,6 +181,10 @@ export default function MnemonicsPage() {
             <NavButton href="/people" variant="outline">人物一覧を見る</NavButton>
           </div>
         </section>
+
+        <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
+          <MiscLinksSection />
+        </div>
       </div>
     </div>
   );

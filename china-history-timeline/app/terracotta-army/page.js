@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, HeritageGrid } from "@/components/Shared";
+import { BackToTopButton, NavButton, HeritageGrid, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 
 const title = "兵馬俑・始皇帝陵の謎";
@@ -95,6 +95,10 @@ export default function TerracottaArmyPage() {
             <NavButton href="/world-heritage" variant="outline">中国の世界遺産まとめを見る</NavButton>
           </div>
         </section>
+
+        <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
+          <MiscLinksSection />
+        </div>
       </div>
     </div>
   );

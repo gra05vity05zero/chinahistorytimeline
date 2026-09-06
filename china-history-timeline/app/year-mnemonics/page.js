@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
 
 const title = "中国史 年号ゴロ合わせ集";
 const fullTitle = `中国史 年号ゴロ合わせ集 | ${SITE_NAME}`;
@@ -168,6 +168,10 @@ export default function YearMnemonicsPage() {
             <NavButton href="/eras" variant="outline">出来事一覧を見る</NavButton>
           </div>
         </section>
+
+        <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
+          <MiscLinksSection />
+        </div>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ERAS, ERA_ALIASES, COLORS, SITE_URL, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { SealMark, EventListItem, BackToTopButton } from "@/components/Shared";
+import { SealMark, EventListItem, BackToTopButton, MiscLinksSection } from "@/components/Shared";
 
 export function generateStaticParams() {
   return ERAS.map((era) => ({ eraId: era.id }));
@@ -80,6 +80,10 @@ export default function EraEventsPage({ params }) {
           <Link href={`/people/${era.id}`} style={{ color: COLORS.vermilion, fontSize: 13, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
             {era.name}の人物一覧を見る →
           </Link>
+        </div>
+
+        <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
+          <MiscLinksSection />
         </div>
       </div>
     </div>

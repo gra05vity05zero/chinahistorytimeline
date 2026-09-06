@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { COLORS, CATEGORY_STYLE, HERITAGE_TYPES, resolveMediaUrl } from "@/lib/constants";
-import { SealMark, HeritageGrid, A8Banner } from "@/components/Shared";
+import { SealMark, HeritageGrid, A8Banner, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 
 const MEDIA_TYPES = [
@@ -198,6 +198,9 @@ export default function EventDetail({ event, era, prev, next }) {
           </div>
         )}
 
+        <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
+          <MiscLinksSection />
+        </div>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import { COLORS, SITE_NAME, buildOpenGraph, buildTwitter, buildSearchIndex } from "@/lib/data";
 import SearchClient from "@/components/Search";
+import { MiscLinksSection } from "@/components/Shared";
 
 const title = "サイト内検索";
 const fullTitle = `サイト内検索 | ${SITE_NAME}`;
@@ -22,6 +23,10 @@ export default function SearchPage() {
           サイト内検索
         </h1>
         <SearchClient index={index} />
+
+        <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
+          <MiscLinksSection />
+        </div>
       </div>
     </div>
   );

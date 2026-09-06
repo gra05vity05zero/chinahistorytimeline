@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { COLORS } from "@/lib/constants";
-import { SealMark, HeritageThumb } from "@/components/Shared";
+import { SealMark, HeritageThumb, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 
 export default function PersonDetail({ person, era }) {
@@ -85,6 +85,10 @@ export default function PersonDetail({ person, era }) {
           <Link href={`/eras/${era.id}`} style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
             {era.name}の出来事一覧
           </Link>
+        </div>
+
+        <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
+          <MiscLinksSection />
         </div>
       </div>
     </div>
