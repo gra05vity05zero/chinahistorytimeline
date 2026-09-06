@@ -11,6 +11,7 @@ export default function sitemap() {
     { url: `${SITE_URL}/people`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${SITE_URL}/eras`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${SITE_URL}/mnemonics`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
+    { url: `${SITE_URL}/idioms`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
   ];
 
   const eventRoutes = ERAS.flatMap((era) =>

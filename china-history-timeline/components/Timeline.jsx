@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { ERAS, COLORS, ADSENSE_SLOT_TIMELINE } from "@/lib/data";
 import { SealMark, EventCard, AdSenseSlot, NavButton } from "@/components/Shared";
+import { RubyText } from "@/components/Ruby";
 
 export default function Timeline() {
   const router = useRouter();
@@ -99,6 +100,9 @@ export default function Timeline() {
           <NavButton href="/people" variant="solid">人物一覧</NavButton>
           <NavButton href="/eras" variant="solid">出来事一覧</NavButton>
           <NavButton href="/mnemonics" variant="solid">王朝の覚え方</NavButton>
+          <NavButton href="/idioms" variant="solid">
+            <RubyText text="{{故事成語|こじせいご}}（熟語・慣用句）" />
+          </NavButton>
           <NavButton href="/search" variant="outline">サイト内検索</NavButton>
         </div>
       </div>
