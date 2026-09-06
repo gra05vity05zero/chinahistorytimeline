@@ -98,6 +98,7 @@ export default function Timeline() {
         <div className="flex items-center justify-center gap-2.5 mt-5 flex-wrap px-4">
           <NavButton href="/people" variant="solid">人物一覧</NavButton>
           <NavButton href="/eras" variant="solid">出来事一覧</NavButton>
+          <NavButton href="/mnemonics" variant="solid">王朝の覚え方</NavButton>
           <NavButton href="/search" variant="outline">サイト内検索</NavButton>
         </div>
       </div>
