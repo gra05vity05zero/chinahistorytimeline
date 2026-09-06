@@ -12,6 +12,10 @@ export default function sitemap() {
     { url: `${SITE_URL}/eras`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${SITE_URL}/mnemonics`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/idioms`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
+    { url: `${SITE_URL}/year-mnemonics`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
+    { url: `${SITE_URL}/japan-china-timeline`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
+    { url: `${SITE_URL}/terracotta-army`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
+    { url: `${SITE_URL}/world-heritage`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
   ];
 
   const eventRoutes = ERAS.flatMap((era) =>

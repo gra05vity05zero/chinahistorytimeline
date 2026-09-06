@@ -38,6 +38,14 @@ export default function Footer() {
       <span style={{ color: COLORS.mist }}>|</span>
       <Link href="/idioms" style={linkStyle}>故事成語</Link>
       <span style={{ color: COLORS.mist }}>|</span>
+      <Link href="/year-mnemonics" style={linkStyle}>年号ゴロ合わせ集</Link>
+      <span style={{ color: COLORS.mist }}>|</span>
+      <Link href="/japan-china-timeline" style={linkStyle}>日中対照年表</Link>
+      <span style={{ color: COLORS.mist }}>|</span>
+      <Link href="/terracotta-army" style={linkStyle}>兵馬俑の謎</Link>
+      <span style={{ color: COLORS.mist }}>|</span>
+      <Link href="/world-heritage" style={linkStyle}>世界遺産まとめ</Link>
+      <span style={{ color: COLORS.mist }}>|</span>
       <Link href="/about" style={linkStyle}>このサイトについて</Link>
       <span style={{ color: COLORS.mist }}>|</span>
       <Link href="/privacy" style={linkStyle}>プライバシーポリシー</Link>

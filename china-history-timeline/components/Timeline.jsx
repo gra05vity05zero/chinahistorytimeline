@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { ERAS, COLORS, ADSENSE_SLOT_TIMELINE } from "@/lib/data";
 import { SealMark, EventCard, AdSenseSlot, NavButton } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
@@ -104,6 +105,15 @@ export default function Timeline() {
             <RubyText text="{{故事成語|こじせいご}}（熟語・慣用句）" />
           </NavButton>
           <NavButton href="/search" variant="outline">サイト内検索</NavButton>
+        </div>
+        <div className="flex items-center justify-center gap-x-3 gap-y-1.5 mt-4 flex-wrap px-4" style={{ fontSize: 11.5 }}>
+          <Link href="/year-mnemonics" style={{ color: COLORS.vermilion }}>年号ゴロ合わせ集</Link>
+          <span style={{ color: COLORS.mist }}>|</span>
+          <Link href="/japan-china-timeline" style={{ color: COLORS.vermilion }}>日本史・中国史 対照年表</Link>
+          <span style={{ color: COLORS.mist }}>|</span>
+          <Link href="/terracotta-army" style={{ color: COLORS.vermilion }}>兵馬俑・始皇帝陵の謎</Link>
+          <span style={{ color: COLORS.mist }}>|</span>
+          <Link href="/world-heritage" style={{ color: COLORS.vermilion }}>中国の世界遺産まとめ</Link>
         </div>
       </div>
 
