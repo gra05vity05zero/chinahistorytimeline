@@ -149,63 +149,67 @@ export default function WorldHeritagePage() {
           ここでは、このサイトの年表に登場する世界遺産を、由来となった時代とあわせて紹介します。
         </p>
 
-        <ChinaMap sites={RESOLVED} />
+        <div className="relative">
+          <div className="sticky top-3 z-10">
+            <ChinaMap sites={RESOLVED} />
+          </div>
 
-        <div className="flex flex-col gap-4">
-          {RESOLVED.map((site, i) => (
-            <div key={i} style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8" }}>
-              <div className="flex gap-3 p-3">
-                <div
-                  className="flex items-center justify-center shrink-0 relative"
-                  style={{ width: 96, height: 96, backgroundColor: "#EFE7D0", border: `1px solid ${COLORS.mist}`, overflow: "hidden" }}
-                >
-                  <HeritageThumb imageUrl={site.imageUrl} name={site.name} type={site.type} />
-                  <span
-                    className="absolute flex items-center justify-center"
-                    style={{
-                      top: 4,
-                      left: 4,
-                      width: 18,
-                      height: 18,
-                      borderRadius: "50%",
-                      backgroundColor: COLORS.vermilion,
-                      color: "#FBF8F0",
-                      fontFamily: "'Noto Serif SC', serif",
-                      fontSize: 10,
-                      fontWeight: 700,
-                    }}
+          <div className="flex flex-col gap-4">
+            {RESOLVED.map((site, i) => (
+              <div key={i} style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8" }}>
+                <div className="flex gap-3 p-3">
+                  <div
+                    className="flex items-center justify-center shrink-0 relative"
+                    style={{ width: 96, height: 96, backgroundColor: "#EFE7D0", border: `1px solid ${COLORS.mist}`, overflow: "hidden" }}
                   >
-                    {i + 1}
-                  </span>
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-baseline justify-between gap-2 flex-wrap">
-                    <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 15, fontWeight: 700, color: COLORS.ink }}>
-                      <RubyText text={site.name} />
+                    <HeritageThumb imageUrl={site.imageUrl} name={site.name} type={site.type} />
+                    <span
+                      className="absolute flex items-center justify-center"
+                      style={{
+                        top: 4,
+                        left: 4,
+                        width: 18,
+                        height: 18,
+                        borderRadius: "50%",
+                        backgroundColor: COLORS.vermilion,
+                        color: "#FBF8F0",
+                        fontFamily: "'Noto Serif SC', serif",
+                        fontSize: 10,
+                        fontWeight: 700,
+                      }}
+                    >
+                      {i + 1}
                     </span>
-                    <span style={{ fontSize: 11, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}>{site.era.name}</span>
                   </div>
-                  {site.location && (
-                    <div style={{ fontSize: 11, color: COLORS.vermilionSoft, marginTop: 2 }}>
-                      <span aria-hidden>📍</span> {site.location}
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-baseline justify-between gap-2 flex-wrap">
+                      <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 15, fontWeight: 700, color: COLORS.ink }}>
+                        <RubyText text={site.name} />
+                      </span>
+                      <span style={{ fontSize: 11, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}>{site.era.name}</span>
                     </div>
-                  )}
-                  <p style={{ fontSize: 12, lineHeight: 1.7, color: COLORS.inkSoft, marginTop: 4 }}>
-                    <RubyText text={site.description} />
-                  </p>
-                  {site.credit && <div style={{ fontSize: 9.5, color: COLORS.mist, marginTop: 4 }}>{site.credit}</div>}
+                    {site.location && (
+                      <div style={{ fontSize: 11, color: COLORS.vermilionSoft, marginTop: 2 }}>
+                        <span aria-hidden>📍</span> {site.location}
+                      </div>
+                    )}
+                    <p style={{ fontSize: 12, lineHeight: 1.7, color: COLORS.inkSoft, marginTop: 4 }}>
+                      <RubyText text={site.description} />
+                    </p>
+                    {site.credit && <div style={{ fontSize: 9.5, color: COLORS.mist, marginTop: 4 }}>{site.credit}</div>}
+                  </div>
+                </div>
+                <div className="px-3 pb-3">
+                  <a
+                    href={`/events/${site.eventSlug}`}
+                    style={{ fontSize: 12, color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}
+                  >
+                    関連する出来事を年表で読む →
+                  </a>
                 </div>
               </div>
-              <div className="px-3 pb-3">
-                <a
-                  href={`/events/${site.eventSlug}`}
-                  style={{ fontSize: 12, color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}
-                >
-                  関連する出来事を年表で読む →
-                </a>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         <section style={{ marginTop: 32 }}>
