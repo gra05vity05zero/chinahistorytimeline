@@ -100,6 +100,7 @@ export default function Timeline() {
           <NavButton href="/eras" variant="solid">出来事一覧</NavButton>
           <NavButton href="/japan-china-timeline" variant="solid">日本史・中国史 対照年表</NavButton>
           <NavButton href="/sanguo-battles" variant="solid">三国時代 合戦マップ</NavButton>
+          <NavButton href="/chuhan-battles" variant="solid">楚漢戦争 合戦マップ</NavButton>
           <NavButton href="/search" variant="outline">サイト内検索</NavButton>
         </div>
         <div className="mt-6">

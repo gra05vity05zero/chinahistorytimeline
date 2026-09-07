@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { COLORS, CATEGORY_STYLE, HERITAGE_TYPES, resolveMediaUrl } from "@/lib/constants";
+import { COLORS, CATEGORY_STYLE, HERITAGE_TYPES, resolveMediaUrl, stripRuby } from "@/lib/constants";
 import { SealMark, HeritageGrid, A8Banner, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 
@@ -12,6 +12,14 @@ const MEDIA_TYPES = [
   { key: "game", label: "ゲーム" },
   { key: "book", label: "書籍・漫画" },
 ];
+
+// 楚漢戦争特集ページに関連する出来事（秦滅亡前後の挙兵・鴻門の会・漢の建国）かどうかを判定する
+function isChuHanEvent(era, event) {
+  const t = stripRuby(event.title);
+  if (era.id === "qin") return t.includes("陳勝") || t.includes("鴻門");
+  if (era.id === "westernhan") return t.includes("劉邦") && t.includes("建国");
+  return false;
+}
 
 export default function EventDetail({ event, era, prev, next }) {
   const router = useRouter();
@@ -76,6 +84,14 @@ export default function EventDetail({ event, era, prev, next }) {
               <span style={{ color: COLORS.mist }}>|</span>
               <Link href="/sanguo-battles" style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
                 三国時代 合戦マップ
+              </Link>
+            </>
+          )}
+          {isChuHanEvent(era, event) && (
+            <>
+              <span style={{ color: COLORS.mist }}>|</span>
+              <Link href="/chuhan-battles" style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
+                楚漢戦争 合戦マップ
               </Link>
             </>
           )}

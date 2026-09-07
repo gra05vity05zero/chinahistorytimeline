@@ -18,6 +18,7 @@ export default function sitemap() {
     { url: `${SITE_URL}/world-heritage`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/novelists`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/sanguo-battles`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
+    { url: `${SITE_URL}/chuhan-battles`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
   ];
 
   const eventRoutes = ERAS.flatMap((era) =>
