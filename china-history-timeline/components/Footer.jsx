@@ -46,6 +46,8 @@ export default function Footer() {
       <span style={{ color: COLORS.mist }}>|</span>
       <Link href="/world-heritage" style={linkStyle}>世界遺産まとめ</Link>
       <span style={{ color: COLORS.mist }}>|</span>
+      <Link href="/novelists" style={linkStyle}>小説家一覧</Link>
+      <span style={{ color: COLORS.mist }}>|</span>
       <Link href="/about" style={linkStyle}>このサイトについて</Link>
       <span style={{ color: COLORS.mist }}>|</span>
       <Link href="/privacy" style={linkStyle}>プライバシーポリシー</Link>

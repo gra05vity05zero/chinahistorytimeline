@@ -46,6 +46,7 @@ const MISC_LINKS = [
   { href: "/year-mnemonics", label: "年号ゴロ合わせ集" },
   { href: "/terracotta-army", label: "兵馬俑・始皇帝陵の謎" },
   { href: "/world-heritage", label: "中国の世界遺産まとめ" },
+  { href: "/novelists", label: "中国史を題材にした日本人小説家一覧" },
 ];
 
 // 各ページ末尾などに置く「雑学・豆知識」記事への横断リンク集
