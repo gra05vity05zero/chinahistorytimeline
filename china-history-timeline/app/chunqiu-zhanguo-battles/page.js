@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 
 const title = "春秋・戦国時代 合戦マップ";
@@ -31,6 +31,14 @@ function findPersonHref(eraId, name) {
   return figure && figure.bio ? `/people/${eraId}/${encodeURIComponent(personSlug(figure.name))}` : null;
 }
 
+// 人物名から、肖像画像（あれば）とクレジットを探す
+function findPersonImage(eraId, name) {
+  const era = ERAS.find((e) => e.id === eraId);
+  if (!era) return null;
+  const figure = getEraFigures(era).find((f) => stripRuby(f.name) === name);
+  return figure ? { imageUrl: figure.imageUrl, credit: figure.credit } : null;
+}
+
 const EV_TOSEN = findEvent("chunqiu", "平王");
 const EV_QIHUANGONG = findEvent("chunqiu", "斉桓公");
 const EV_JOBOKU = findEvent("chunqiu", "城濮");
@@ -45,6 +53,8 @@ const EV_SHUUKETSU = findEvent("zhanguo", "戦国の終結");
 
 const HREF_KOUSHI = findPersonHref("chunqiu", "孔子");
 const HREF_SHOKOUTEI = findPersonHref("qin", "始皇帝（嬴政）");
+
+const IMG_SHOKOUTEI = findPersonImage("qin", "始皇帝（嬴政）");
 
 // 春秋時代（前770〜前403年）の流れ
 const CQ_FLOW = [
@@ -100,6 +110,7 @@ const CQ_BATTLES = [
     relatedLabel: null,
     personHref: null,
     personLabel: null,
+    portrait: { name: "周桓王" },
   },
   {
     no: 2,
@@ -118,6 +129,7 @@ const CQ_BATTLES = [
     relatedLabel: "晋文公の覇権・城濮の戦いを年表で読む",
     personHref: null,
     personLabel: null,
+    portrait: { name: "晋文公" },
   },
   {
     no: 3,
@@ -136,6 +148,7 @@ const CQ_BATTLES = [
     relatedLabel: null,
     personHref: null,
     personLabel: null,
+    portrait: { name: "楚荘王" },
   },
   {
     no: 4,
@@ -154,6 +167,7 @@ const CQ_BATTLES = [
     relatedLabel: null,
     personHref: null,
     personLabel: null,
+    portrait: { name: "楚共王" },
   },
   {
     no: 5,
@@ -172,6 +186,7 @@ const CQ_BATTLES = [
     relatedLabel: "呉越の抗争・臥薪嘗胆を年表で読む",
     personHref: null,
     personLabel: null,
+    portrait: { name: "勾践" },
   },
 ];
 
@@ -193,6 +208,7 @@ const ZG_BATTLES = [
     relatedLabel: null,
     personHref: null,
     personLabel: null,
+    portrait: { name: "孫臏" },
   },
   {
     no: 2,
@@ -211,6 +227,7 @@ const ZG_BATTLES = [
     relatedLabel: null,
     personHref: null,
     personLabel: null,
+    portrait: { name: "白起" },
   },
   {
     no: 3,
@@ -229,6 +246,7 @@ const ZG_BATTLES = [
     relatedLabel: null,
     personHref: null,
     personLabel: null,
+    portrait: { name: "白起" },
   },
   {
     no: 4,
@@ -247,6 +265,7 @@ const ZG_BATTLES = [
     relatedLabel: "長平の戦いを年表で読む",
     personHref: null,
     personLabel: null,
+    portrait: { name: "白起" },
   },
   {
     no: 5,
@@ -265,6 +284,7 @@ const ZG_BATTLES = [
     relatedLabel: null,
     personHref: null,
     personLabel: null,
+    portrait: { name: "信陵君" },
   },
   {
     no: 6,
@@ -283,6 +303,7 @@ const ZG_BATTLES = [
     relatedLabel: "戦国の終結を年表で読む",
     personHref: HREF_SHOKOUTEI,
     personLabel: "始皇帝の生涯を読む",
+    portrait: { name: "始皇帝", ...IMG_SHOKOUTEI },
   },
 ];
 
@@ -376,7 +397,16 @@ function BattleCards({ battles }) {
     <div className="flex flex-col gap-5">
       {battles.map((b) => (
         <div key={b.no} id={b.id} style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", scrollMarginTop: 16 }}>
-          <div className="p-4">
+          <div className="flex gap-3 p-4">
+            {b.portrait && (
+              <div
+                className="flex items-center justify-center shrink-0"
+                style={{ width: 88, height: 88, backgroundColor: "#EFE7D0", border: `1px solid ${COLORS.mist}`, overflow: "hidden" }}
+              >
+                <HeritageThumb imageUrl={b.portrait.imageUrl} name={b.portrait.name} type="figure" />
+              </div>
+            )}
+            <div className="flex-1 min-w-0">
             <div className="flex items-baseline gap-2 flex-wrap">
               <span
                 className="flex items-center justify-center shrink-0"
@@ -415,6 +445,10 @@ function BattleCards({ battles }) {
               <RubyText text={b.body} />
             </p>
 
+            {b.portrait?.credit && (
+              <div style={{ fontSize: 9.5, color: COLORS.mist, marginTop: 4 }}>{b.portrait.credit}</div>
+            )}
+
             <div className="flex items-center gap-3 flex-wrap mt-3" style={{ fontSize: 11.5 }}>
               {b.relatedHref && (
                 <a href={b.relatedHref} style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
@@ -426,6 +460,7 @@ function BattleCards({ battles }) {
                   {b.personLabel} →
                 </a>
               )}
+            </div>
             </div>
           </div>
         </div>

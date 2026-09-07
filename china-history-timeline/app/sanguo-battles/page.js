@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 
 const title = "三国時代 合戦マップ";
@@ -31,6 +31,14 @@ function findPersonHref(eraId, name) {
   return figure && figure.bio ? `/people/${eraId}/${encodeURIComponent(personSlug(figure.name))}` : null;
 }
 
+// 人物名から、肖像画像（あれば）とクレジットを探す
+function findPersonImage(eraId, name) {
+  const era = ERAS.find((e) => e.id === eraId);
+  if (!era) return null;
+  const figure = getEraFigures(era).find((f) => stripRuby(f.name) === name);
+  return figure ? { imageUrl: figure.imageUrl, credit: figure.credit } : null;
+}
+
 const EV_HUANGJIN = findEvent("easternhan", "黄巾の乱");
 const EV_CHIBI = findEvent("sanguo", "赤壁");
 const EV_WEI = findEvent("sanguo", "魏の建国");
@@ -44,6 +52,12 @@ const HREF_ZHUGE = findPersonHref("sanguo", "諸葛亮");
 const HREF_CAOCAO = findPersonHref("sanguo", "曹操");
 const HREF_LIUBEI = findPersonHref("sanguo", "劉備");
 const HREF_SUNQUAN = findPersonHref("sanguo", "孫権");
+
+const IMG_ZHUGE = findPersonImage("sanguo", "諸葛亮");
+const IMG_CAOCAO = findPersonImage("sanguo", "曹操");
+const IMG_LIUBEI = findPersonImage("sanguo", "劉備");
+const IMG_SUNQUAN = findPersonImage("sanguo", "孫権");
+const IMG_SIMAYAN = findPersonImage("westernjin", "司馬炎（{{武帝|ぶてい}}）");
 
 // 時代の流れ（黄巾の乱〜天下統一）。hrefは/eventsへの直接リンク、anchorは本ページ内の合戦セクションへのリンク
 const FLOW = [
@@ -98,6 +112,7 @@ const BATTLES = [
     relatedLabel: "魏の建国（曹丕）を年表で読む",
     personHref: HREF_CAOCAO,
     personLabel: "曹操の生涯を読む",
+    portrait: { name: "曹操", ...IMG_CAOCAO },
   },
   {
     no: 2,
@@ -116,6 +131,7 @@ const BATTLES = [
     relatedLabel: "赤壁の戦いを年表で読む",
     personHref: HREF_ZHUGE,
     personLabel: "諸葛亮の生涯を読む",
+    portrait: { name: "諸葛亮", ...IMG_ZHUGE },
   },
   {
     no: 3,
@@ -134,6 +150,7 @@ const BATTLES = [
     relatedLabel: "呉の建国（孫権）を年表で読む",
     personHref: HREF_SUNQUAN,
     personLabel: "孫権の生涯を読む",
+    portrait: { name: "孫権", ...IMG_SUNQUAN },
   },
   {
     no: 4,
@@ -152,6 +169,7 @@ const BATTLES = [
     relatedLabel: "蜀漢の建国（劉備）を年表で読む",
     personHref: HREF_LIUBEI,
     personLabel: "劉備の生涯を読む",
+    portrait: { name: "劉備", ...IMG_LIUBEI },
   },
   {
     no: 5,
@@ -170,6 +188,7 @@ const BATTLES = [
     relatedLabel: "五丈原の戦い（北伐の顛末）を年表で読む",
     personHref: HREF_ZHUGE,
     personLabel: "諸葛亮の生涯を読む",
+    portrait: { name: "諸葛亮", ...IMG_ZHUGE },
   },
   {
     no: 6,
@@ -188,6 +207,7 @@ const BATTLES = [
     relatedLabel: "五丈原の戦いを年表で読む",
     personHref: HREF_ZHUGE,
     personLabel: "諸葛亮の生涯を読む",
+    portrait: { name: "諸葛亮", ...IMG_ZHUGE },
   },
   {
     no: 7,
@@ -206,6 +226,7 @@ const BATTLES = [
     relatedLabel: "蜀漢の滅亡を年表で読む",
     personHref: HREF_LIUBEI,
     personLabel: "劉備の生涯を読む",
+    portrait: { name: "劉禅", ...findPersonImage("sanguo", "劉禅") },
   },
   {
     no: 8,
@@ -224,6 +245,7 @@ const BATTLES = [
     relatedLabel: "西晋による中国再統一を年表で読む",
     personHref: null,
     personLabel: null,
+    portrait: { name: "司馬炎", ...IMG_SIMAYAN },
   },
 ];
 
@@ -352,56 +374,70 @@ export default function SanguoBattlesPage() {
           <div className="flex flex-col gap-5">
             {BATTLES.map((b) => (
               <div key={b.no} id={b.id} style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", scrollMarginTop: 16 }}>
-                <div className="p-4">
-                  <div className="flex items-baseline gap-2 flex-wrap">
-                    <span
+                <div className="flex gap-3 p-4">
+                  {b.portrait && (
+                    <div
                       className="flex items-center justify-center shrink-0"
-                      style={{
-                        width: 22,
-                        height: 22,
-                        borderRadius: "50%",
-                        backgroundColor: COLORS.vermilion,
-                        color: "#FBF8F0",
-                        fontFamily: "'Noto Serif SC', serif",
-                        fontSize: 11,
-                        fontWeight: 700,
-                      }}
+                      style={{ width: 88, height: 88, backgroundColor: "#EFE7D0", border: `1px solid ${COLORS.mist}`, overflow: "hidden" }}
                     >
-                      {b.no}
-                    </span>
-                    <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 16.5, fontWeight: 700, color: COLORS.ink }}>
-                      <RubyText text={b.name} />
-                    </span>
-                    <span style={{ fontSize: 12, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}>{b.year}年</span>
-                  </div>
-                  <div style={{ fontSize: 11, color: COLORS.vermilionSoft, marginTop: 4 }}>
-                    <span aria-hidden>📍</span> {b.location}
-                  </div>
+                      <HeritageThumb imageUrl={b.portrait.imageUrl} name={b.portrait.name} type="figure" />
+                    </div>
+                  )}
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-baseline gap-2 flex-wrap">
+                      <span
+                        className="flex items-center justify-center shrink-0"
+                        style={{
+                          width: 22,
+                          height: 22,
+                          borderRadius: "50%",
+                          backgroundColor: COLORS.vermilion,
+                          color: "#FBF8F0",
+                          fontFamily: "'Noto Serif SC', serif",
+                          fontSize: 11,
+                          fontWeight: 700,
+                        }}
+                      >
+                        {b.no}
+                      </span>
+                      <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 16.5, fontWeight: 700, color: COLORS.ink }}>
+                        <RubyText text={b.name} />
+                      </span>
+                      <span style={{ fontSize: 12, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}>{b.year}年</span>
+                    </div>
+                    <div style={{ fontSize: 11, color: COLORS.vermilionSoft, marginTop: 4 }}>
+                      <span aria-hidden>📍</span> {b.location}
+                    </div>
 
-                  <div className="flex flex-wrap gap-x-4 gap-y-1 mt-3" style={{ fontSize: 11.5 }}>
-                    {b.factions.map((f, i) => (
-                      <div key={i}>
-                        <span style={{ color: COLORS.gold, fontWeight: 700 }}>{f.side}：</span>
-                        <span style={{ color: COLORS.inkSoft }}><RubyText text={f.people} /></span>
-                      </div>
-                    ))}
-                  </div>
+                    <div className="flex flex-wrap gap-x-4 gap-y-1 mt-3" style={{ fontSize: 11.5 }}>
+                      {b.factions.map((f, i) => (
+                        <div key={i}>
+                          <span style={{ color: COLORS.gold, fontWeight: 700 }}>{f.side}：</span>
+                          <span style={{ color: COLORS.inkSoft }}><RubyText text={f.people} /></span>
+                        </div>
+                      ))}
+                    </div>
 
-                  <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft, marginTop: 10 }}>
-                    <RubyText text={b.body} />
-                  </p>
+                    <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft, marginTop: 10 }}>
+                      <RubyText text={b.body} />
+                    </p>
 
-                  <div className="flex items-center gap-3 flex-wrap mt-3" style={{ fontSize: 11.5 }}>
-                    {b.relatedHref && (
-                      <a href={b.relatedHref} style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
-                        {b.relatedLabel} →
-                      </a>
+                    {b.portrait?.credit && (
+                      <div style={{ fontSize: 9.5, color: COLORS.mist, marginTop: 4 }}>{b.portrait.credit}</div>
                     )}
-                    {b.personHref && (
-                      <a href={b.personHref} style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
-                        {b.personLabel} →
-                      </a>
-                    )}
+
+                    <div className="flex items-center gap-3 flex-wrap mt-3" style={{ fontSize: 11.5 }}>
+                      {b.relatedHref && (
+                        <a href={b.relatedHref} style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
+                          {b.relatedLabel} →
+                        </a>
+                      )}
+                      {b.personHref && (
+                        <a href={b.personHref} style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
+                          {b.personLabel} →
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>

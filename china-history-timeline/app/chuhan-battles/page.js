@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 
 const title = "楚漢戦争 合戦マップ";
@@ -31,12 +31,23 @@ function findPersonHref(eraId, name) {
   return figure && figure.bio ? `/people/${eraId}/${encodeURIComponent(personSlug(figure.name))}` : null;
 }
 
+// 人物名から、肖像画像（あれば）とクレジットを探す
+function findPersonImage(eraId, name) {
+  const era = ERAS.find((e) => e.id === eraId);
+  if (!era) return null;
+  const figure = getEraFigures(era).find((f) => stripRuby(f.name) === name);
+  return figure ? { imageUrl: figure.imageUrl, credit: figure.credit } : null;
+}
+
 const EV_CHENSHENG = findEvent("qin", "陳勝");
 const EV_HONGMEN = findEvent("qin", "鴻門");
 const EV_HANFOUND = findEvent("westernhan", "漢を建国");
 
 const HREF_XIANGYU = findPersonHref("qin", "項羽");
 const HREF_LIUBANG = findPersonHref("westernhan", "劉邦");
+
+const IMG_XIANGYU = findPersonImage("qin", "項羽");
+const IMG_LIUBANG = findPersonImage("westernhan", "劉邦");
 
 // 秦滅亡〜楚漢戦争の流れ。hrefは/eventsへの直接リンク、anchorは本ページ内の合戦セクションへのリンク
 const FLOW = [
@@ -86,6 +97,7 @@ const BATTLES = [
     relatedLabel: "陳勝・呉広の乱を年表で読む",
     personHref: null,
     personLabel: null,
+    portrait: { name: "陳勝" },
   },
   {
     no: 2,
@@ -104,6 +116,7 @@ const BATTLES = [
     relatedLabel: null,
     personHref: HREF_XIANGYU,
     personLabel: "項羽の生涯を読む",
+    portrait: { name: "項羽", ...IMG_XIANGYU },
   },
   {
     no: 3,
@@ -122,6 +135,7 @@ const BATTLES = [
     relatedLabel: "秦の滅亡・鴻門の会を年表で読む",
     personHref: HREF_LIUBANG,
     personLabel: "劉邦の生涯を読む",
+    portrait: { name: "劉邦", ...IMG_LIUBANG },
   },
   {
     no: 4,
@@ -140,6 +154,7 @@ const BATTLES = [
     relatedLabel: "劉邦の漢建国を年表で読む",
     personHref: HREF_LIUBANG,
     personLabel: "劉邦の生涯を読む",
+    portrait: { name: "劉邦", ...IMG_LIUBANG },
   },
   {
     no: 5,
@@ -158,6 +173,7 @@ const BATTLES = [
     relatedLabel: null,
     personHref: HREF_XIANGYU,
     personLabel: "項羽の生涯を読む",
+    portrait: { name: "項羽", ...IMG_XIANGYU },
   },
   {
     no: 6,
@@ -176,6 +192,7 @@ const BATTLES = [
     relatedLabel: null,
     personHref: null,
     personLabel: null,
+    portrait: { name: "韓信" },
   },
   {
     no: 7,
@@ -194,6 +211,7 @@ const BATTLES = [
     relatedLabel: "劉邦の漢建国を年表で読む",
     personHref: HREF_LIUBANG,
     personLabel: "劉邦の生涯を読む",
+    portrait: { name: "劉邦", ...IMG_LIUBANG },
   },
   {
     no: 8,
@@ -212,6 +230,7 @@ const BATTLES = [
     relatedLabel: "劉邦、漢を建国を年表で読む",
     personHref: HREF_XIANGYU,
     personLabel: "項羽の生涯を読む",
+    portrait: { name: "項羽", ...IMG_XIANGYU },
   },
 ];
 
@@ -328,56 +347,70 @@ export default function ChuHanBattlesPage() {
           <div className="flex flex-col gap-5">
             {BATTLES.map((b) => (
               <div key={b.no} id={b.id} style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", scrollMarginTop: 16 }}>
-                <div className="p-4">
-                  <div className="flex items-baseline gap-2 flex-wrap">
-                    <span
+                <div className="flex gap-3 p-4">
+                  {b.portrait && (
+                    <div
                       className="flex items-center justify-center shrink-0"
-                      style={{
-                        width: 22,
-                        height: 22,
-                        borderRadius: "50%",
-                        backgroundColor: COLORS.vermilion,
-                        color: "#FBF8F0",
-                        fontFamily: "'Noto Serif SC', serif",
-                        fontSize: 11,
-                        fontWeight: 700,
-                      }}
+                      style={{ width: 88, height: 88, backgroundColor: "#EFE7D0", border: `1px solid ${COLORS.mist}`, overflow: "hidden" }}
                     >
-                      {b.no}
-                    </span>
-                    <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 16.5, fontWeight: 700, color: COLORS.ink }}>
-                      <RubyText text={b.name} />
-                    </span>
-                    <span style={{ fontSize: 12, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}>{b.year}</span>
-                  </div>
-                  <div style={{ fontSize: 11, color: COLORS.vermilionSoft, marginTop: 4 }}>
-                    <span aria-hidden>📍</span> {b.location}
-                  </div>
+                      <HeritageThumb imageUrl={b.portrait.imageUrl} name={b.portrait.name} type="figure" />
+                    </div>
+                  )}
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-baseline gap-2 flex-wrap">
+                      <span
+                        className="flex items-center justify-center shrink-0"
+                        style={{
+                          width: 22,
+                          height: 22,
+                          borderRadius: "50%",
+                          backgroundColor: COLORS.vermilion,
+                          color: "#FBF8F0",
+                          fontFamily: "'Noto Serif SC', serif",
+                          fontSize: 11,
+                          fontWeight: 700,
+                        }}
+                      >
+                        {b.no}
+                      </span>
+                      <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 16.5, fontWeight: 700, color: COLORS.ink }}>
+                        <RubyText text={b.name} />
+                      </span>
+                      <span style={{ fontSize: 12, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}>{b.year}</span>
+                    </div>
+                    <div style={{ fontSize: 11, color: COLORS.vermilionSoft, marginTop: 4 }}>
+                      <span aria-hidden>📍</span> {b.location}
+                    </div>
 
-                  <div className="flex flex-wrap gap-x-4 gap-y-1 mt-3" style={{ fontSize: 11.5 }}>
-                    {b.factions.map((f, i) => (
-                      <div key={i}>
-                        <span style={{ color: COLORS.gold, fontWeight: 700 }}>{f.side}：</span>
-                        <span style={{ color: COLORS.inkSoft }}><RubyText text={f.people} /></span>
-                      </div>
-                    ))}
-                  </div>
+                    <div className="flex flex-wrap gap-x-4 gap-y-1 mt-3" style={{ fontSize: 11.5 }}>
+                      {b.factions.map((f, i) => (
+                        <div key={i}>
+                          <span style={{ color: COLORS.gold, fontWeight: 700 }}>{f.side}：</span>
+                          <span style={{ color: COLORS.inkSoft }}><RubyText text={f.people} /></span>
+                        </div>
+                      ))}
+                    </div>
 
-                  <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft, marginTop: 10 }}>
-                    <RubyText text={b.body} />
-                  </p>
+                    <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft, marginTop: 10 }}>
+                      <RubyText text={b.body} />
+                    </p>
 
-                  <div className="flex items-center gap-3 flex-wrap mt-3" style={{ fontSize: 11.5 }}>
-                    {b.relatedHref && (
-                      <a href={b.relatedHref} style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
-                        {b.relatedLabel} →
-                      </a>
+                    {b.portrait?.credit && (
+                      <div style={{ fontSize: 9.5, color: COLORS.mist, marginTop: 4 }}>{b.portrait.credit}</div>
                     )}
-                    {b.personHref && (
-                      <a href={b.personHref} style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
-                        {b.personLabel} →
-                      </a>
-                    )}
+
+                    <div className="flex items-center gap-3 flex-wrap mt-3" style={{ fontSize: 11.5 }}>
+                      {b.relatedHref && (
+                        <a href={b.relatedHref} style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
+                          {b.relatedLabel} →
+                        </a>
+                      )}
+                      {b.personHref && (
+                        <a href={b.personHref} style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
+                          {b.personLabel} →
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
