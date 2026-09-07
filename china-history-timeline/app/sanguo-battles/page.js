@@ -412,10 +412,13 @@ export default function SanguoBattlesPage() {
         <section style={{ marginTop: 32 }}>
           <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
             三国時代の各出来事の詳細や関連する人物・建造物については、年表・人物ページもあわせてご覧ください。
+            三国時代の前史にあたる楚漢戦争・春秋戦国の合戦については、下記の特集ページもどうぞ。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
             <NavButton href="/eras/sanguo" variant="solid">三国の出来事一覧を見る</NavButton>
             <NavButton href="/people/sanguo" variant="outline">三国の人物一覧を見る</NavButton>
+            <NavButton href="/chuhan-battles" variant="outline">楚漢戦争 合戦マップを見る</NavButton>
+            <NavButton href="/chunqiu-zhanguo-battles" variant="outline">春秋・戦国 合戦マップを見る</NavButton>
           </div>
         </section>
 

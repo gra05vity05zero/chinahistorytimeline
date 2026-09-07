@@ -21,6 +21,11 @@ function isChuHanEvent(era, event) {
   return false;
 }
 
+// 春秋・戦国時代の合戦特集ページに関連する出来事かどうかを判定する
+function isChunqiuZhanguoEvent(era) {
+  return era.id === "chunqiu" || era.id === "zhanguo";
+}
+
 export default function EventDetail({ event, era, prev, next }) {
   const router = useRouter();
   const cat = CATEGORY_STYLE[event.category] || CATEGORY_STYLE["文化"];
@@ -92,6 +97,14 @@ export default function EventDetail({ event, era, prev, next }) {
               <span style={{ color: COLORS.mist }}>|</span>
               <Link href="/chuhan-battles" style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
                 楚漢戦争 合戦マップ
+              </Link>
+            </>
+          )}
+          {isChunqiuZhanguoEvent(era) && (
+            <>
+              <span style={{ color: COLORS.mist }}>|</span>
+              <Link href="/chunqiu-zhanguo-battles" style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
+                春秋・戦国 合戦マップ
               </Link>
             </>
           )}

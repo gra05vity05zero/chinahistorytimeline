@@ -387,10 +387,12 @@ export default function ChuHanBattlesPage() {
 
         <section style={{ marginTop: 32 }}>
           <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
-            楚漢戦争の後日談にあたる三国時代の合戦については、あわせて下記の特集ページもご覧ください。
+            楚漢戦争の前史にあたる春秋・戦国時代、後日談にあたる三国時代の合戦については、
+            あわせて下記の特集ページもご覧ください。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
             <NavButton href="/eras/qin" variant="solid">秦の出来事一覧を見る</NavButton>
+            <NavButton href="/chunqiu-zhanguo-battles" variant="outline">春秋・戦国 合戦マップを見る</NavButton>
             <NavButton href="/sanguo-battles" variant="outline">三国時代 合戦マップを見る</NavButton>
           </div>
         </section>
