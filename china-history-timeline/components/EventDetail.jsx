@@ -71,6 +71,14 @@ export default function EventDetail({ event, era, prev, next }) {
           <Link href={`/eras/${era.id}`} style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
             {era.name}の出来事一覧
           </Link>
+          {era.id === "sanguo" && (
+            <>
+              <span style={{ color: COLORS.mist }}>|</span>
+              <Link href="/sanguo-battles" style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
+                三国時代 合戦マップ
+              </Link>
+            </>
+          )}
         </div>
 
         {event.heritage && event.heritage.length > 0 && (
