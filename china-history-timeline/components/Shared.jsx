@@ -48,6 +48,7 @@ const MISC_LINKS = [
   { href: "/world-heritage", label: "中国の世界遺産まとめ" },
   { href: "/china-castles", label: "中国の城まとめ" },
   { href: "/china-capitals", label: "歴代王朝の都一覧" },
+  { href: "/silk-road", label: "シルクロードのオアシス都市まとめ" },
   { href: "/novelists", label: "中国史を題材にした日本人小説家一覧" },
 ];
 
@@ -142,7 +143,7 @@ export function EventCard({ event, onOpen }) {
   );
 }
 
-export function HeritageThumb({ imageUrl, name, type }) {
+export function HeritageThumb({ imageUrl, name, type, objectPosition }) {
   const [failed, setFailed] = useState(false);
   if (imageUrl && !failed) {
     // 人物の肖像画は縦長の掛け軸などが多く、4:3の枠でcoverすると顔や全身が
@@ -156,7 +157,12 @@ export function HeritageThumb({ imageUrl, name, type }) {
         alt={stripRuby(name)}
         loading="lazy"
         decoding="async"
-        style={{ width: "100%", height: "100%", objectFit: isFigure ? "contain" : "cover", objectPosition: isFigure ? "center" : "top" }}
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: isFigure ? "contain" : "cover",
+          objectPosition: objectPosition || (isFigure ? "center" : "top"),
+        }}
         onError={() => setFailed(true)}
       />
     );
