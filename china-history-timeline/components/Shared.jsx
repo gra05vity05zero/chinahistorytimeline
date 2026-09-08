@@ -47,6 +47,7 @@ const MISC_LINKS = [
   { href: "/terracotta-army", label: "兵馬俑・始皇帝陵の謎" },
   { href: "/world-heritage", label: "中国の世界遺産まとめ" },
   { href: "/china-castles", label: "中国の城まとめ" },
+  { href: "/china-capitals", label: "歴代王朝の都一覧" },
   { href: "/novelists", label: "中国史を題材にした日本人小説家一覧" },
 ];
 

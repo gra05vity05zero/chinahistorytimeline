@@ -207,11 +207,11 @@ export default function ChinaCastlesPage() {
 
         <section style={{ marginTop: 32 }}>
           <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
-            中国の世界遺産や、時代ごとの合戦マップも別ページで紹介しています。
+            歴代王朝の都の移り変わりや、中国の世界遺産も別ページで紹介しています。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
-            <NavButton href="/world-heritage" variant="solid">中国の世界遺産まとめを見る</NavButton>
-            <NavButton href="/eras" variant="outline">出来事一覧を見る</NavButton>
+            <NavButton href="/china-capitals" variant="solid">歴代王朝の都一覧を見る</NavButton>
+            <NavButton href="/world-heritage" variant="outline">中国の世界遺産まとめを見る</NavButton>
           </div>
         </section>
 

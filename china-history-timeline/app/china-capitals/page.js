@@ -1,0 +1,433 @@
+import { ERAS, stripRuby, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
+import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection } from "@/components/Shared";
+import { RubyText } from "@/components/Ruby";
+
+const title = "中国 歴代王朝の都（古都）一覧";
+const fullTitle = `中国 歴代王朝の都（古都）一覧 | ${SITE_NAME}`;
+const description =
+  "夏の二里頭から前漢・唐の長安、明清の北京まで、中国の歴代王朝がどこに都を置いたのかを地図とあわせてまとめました。遷都の理由や、それぞれの都で起きた出来事も紹介します。";
+
+export const metadata = {
+  title,
+  description,
+  alternates: { canonical: "/china-capitals" },
+  openGraph: buildOpenGraph({ title: fullTitle, description, path: "/china-capitals" }),
+  twitter: buildTwitter({ title: fullTitle, description }),
+};
+
+// 各都を、由来する王朝(era)・その中の該当イベントのタイトル(部分一致)で特定し、
+// 該当すればheritage配列内の建造物(部分一致)から画像も拝借する。
+// location: 所在地情報 / mapX,mapY: 下の地図(viewBox 0 0 500 366)上での位置。
+// 実際の経緯度を/world-heritageと同じ図法（緯度補正付き正距円筒図法）で投影した座標を基準に、
+// 同一都市に複数王朝の都が置かれた場合は視認性のため数px調整している。
+const CAPITALS = [
+  {
+    name: "{{二里頭|にりとう}}",
+    dynasty: "夏",
+    years: "c. 2070 – 1600 BC",
+    location: "河南省偃師",
+    description:
+      "{{禹|う}}が開いたと伝わる中国最古の王朝・夏の都に比定される遺跡。宮殿跡や青銅器工房が発掘され、禅譲から世襲へと移った初期国家の姿を今に伝える。",
+    eraId: "xia",
+    eventTitle: "夏の建国",
+    heritageName: "二里頭",
+    mapX: 317,
+    mapY: 188,
+  },
+  {
+    name: "{{殷|いん}}（{{安陽|あんよう}}）",
+    dynasty: "殷（商）",
+    years: "c. 1300 – 1046 BC",
+    location: "河南省安陽市",
+    description:
+      "第19代王{{盤庚|ばんこう}}が遷都し、以後約250年にわたり殷代後期の都として栄えた地。20世紀の発掘調査で{{甲骨文字|こうこつもじ}}をはじめとする高度な文明の実態が明らかになった。",
+    eraId: "shang",
+    eventTitle: "盤庚の遷都",
+    heritageName: "殷墟",
+    mapX: 325,
+    mapY: 181,
+  },
+  {
+    name: "{{鎬京|こうけい}}",
+    dynasty: "西周",
+    years: "1046 – 771 BC",
+    location: "陝西省西安市",
+    description:
+      "殷を滅ぼした{{武王|ぶおう}}が「天命」思想を掲げて開いた周王朝最初の都。前771年、寵姫を溺愛した{{幽王|ゆうおう}}の代に{{犬戎|けんじゅう}}の侵入を受けて陥落した。",
+    eraId: "westernzhou",
+    eventTitle: "周の建国",
+    mapX: 266,
+    mapY: 180,
+  },
+  {
+    name: "{{洛邑|らくゆう}}",
+    dynasty: "東周・春秋戦国",
+    years: "770 – 256 BC",
+    location: "河南省洛陽市",
+    description:
+      "鎬京を失った{{平王|へいおう}}が遷都した東周の都。以後周王室の実権は縮小して権威は形式化する一方、有力諸侯が覇を競う春秋・戦国の時代が幕を開けた。",
+    eraId: "chunqiu",
+    eventTitle: "平王の東遷",
+    mapX: 310,
+    mapY: 194,
+  },
+  {
+    name: "{{咸陽|かんよう}}",
+    dynasty: "秦",
+    years: "221 – 206 BC",
+    location: "陝西省咸陽市",
+    description:
+      "戦国時代から秦の本拠であった都で、中国統一後は史上初の統一帝国の中枢となった。{{始皇帝|しこうてい}}の死後まもなく{{項羽|こうう}}軍によって焼き払われたと伝わる。",
+    eraId: "qin",
+    eventTitle: "中国統一",
+    mapX: 274,
+    mapY: 189,
+  },
+  {
+    name: "{{長安|ちょうあん}}（前漢）",
+    dynasty: "前漢",
+    years: "202 BC – AD 8",
+    location: "陝西省西安市",
+    description:
+      "{{劉邦|りゅうほう}}が関中の要害の地に定めた漢の都。秦の旧制度を引き継ぎつつ、以後400年におよぶ漢王朝の出発点となり、シルクロード交易の東の起点としても栄えた。",
+    eraId: "westernhan",
+    eventTitle: "漢を建国",
+    mapX: 282,
+    mapY: 197,
+  },
+  {
+    name: "{{洛陽|らくよう}}（後漢）",
+    dynasty: "後漢",
+    years: "AD 25 – 220",
+    location: "河南省洛陽市",
+    description:
+      "{{光武帝|こうぶてい}}劉秀が漢を再興した際、前漢の長安ではなくこの地を都と定めた。この後も{{曹魏|そうぎ}}・西晋が相次いで都とし、中原の政治的中心であり続けた。",
+    eraId: "easternhan",
+    eventTitle: "漢を再興",
+    mapX: 316,
+    mapY: 199,
+  },
+  {
+    name: "{{成都|せいと}}",
+    dynasty: "蜀漢（三国）",
+    years: "221 – 263",
+    location: "四川省成都市",
+    description:
+      "漢王室の後継を称した{{劉備|りゅうび}}が皇帝に即位して定めた蜀の都。丞相{{諸葛亮|しょかつりょう}}のもとで内政が整えられ、天険の地の利を背景に三国中最も長く独立を保った。",
+    eraId: "sanguo",
+    eventTitle: "蜀漢の建国",
+    mapX: 248,
+    mapY: 231,
+  },
+  {
+    name: "{{建業|けんぎょう}}",
+    dynasty: "呉（三国）",
+    years: "229 – 280",
+    location: "江蘇省南京市",
+    description:
+      "{{孫権|そんけん}}が皇帝に即位して定めた呉の都。長江の防衛線と江南開発を背景に三国中最後まで存続し、以後の南朝諸王朝が同地を都とする先例を開いた。",
+    eraId: "sanguo",
+    eventTitle: "呉の建国",
+    mapX: 358,
+    mapY: 218,
+  },
+  {
+    name: "{{建康|けんこう}}",
+    dynasty: "東晋・南朝",
+    years: "317 – 589",
+    location: "江蘇省南京市",
+    description:
+      "華北を追われた{{司馬睿|しばえい}}が建てた東晋、続く宋・斉・梁・陳の南朝四王朝が約270年にわたり都とした地。貴族文化と仏教美術が花開いた江南文化の中心地であった。",
+    eraId: "nanbei",
+    eventTitle: "劉宋の建国",
+    heritageName: "建康城遺跡",
+    mapX: 352,
+    mapY: 224,
+  },
+  {
+    name: "{{長安|ちょうあん}}（隋・唐）",
+    dynasty: "隋・唐",
+    years: "581 – 907",
+    location: "陝西省西安市",
+    description:
+      "隋の{{文帝|ぶんてい}}が新たに造営し、唐代には人口100万を超える国際都市として最盛期を迎えた都。シルクロードを通じて東西の文物が行き交う、当時世界最大級の都市であった。",
+    eraId: "tang",
+    eventTitle: "唐の建国",
+    heritageName: "大明宮",
+    mapX: 292,
+    mapY: 205,
+  },
+  {
+    name: "{{開封|かいほう}}",
+    dynasty: "五代・北宋",
+    years: "907 – 1127",
+    location: "河南省開封市",
+    description:
+      "{{後梁|こうりょう}}以来五代の多くの政権が都とし、{{趙匡胤|ちょうきょういん}}の宋建国後も引き続き都とされた地。運河交通の要衝として栄え、『{{清明上河図|せいめいじょうかず}}』が伝える商業都市文化の最盛期を築いた。",
+    eraId: "northernsong",
+    eventTitle: "宋の建国",
+    mapX: 328,
+    mapY: 190,
+  },
+  {
+    name: "{{臨安|りんあん}}（現・杭州）",
+    dynasty: "南宋",
+    years: "1127 – 1276",
+    location: "浙江省杭州市",
+    description:
+      "{{靖康の変|せいこうのへん}}で開封を失った{{高宗|こうそう}}が落ち着いた地。正式な遷都は宣言されず仮の都「行在」とされたが、江南の富を背景に北宋を凌ぐ経済的繁栄を築いた。",
+    eraId: "southernsong",
+    eventTitle: "南宋の建国",
+    heritageName: "臨安",
+    mapX: 368,
+    mapY: 235,
+  },
+  {
+    name: "{{大都|だいと}}（現・北京）",
+    dynasty: "元",
+    years: "1271 – 1368",
+    location: "北京市",
+    description:
+      "クビライが中国式の宮城・官制を整えて定めた元の都。マルコ・ポーロの旅行記にも描かれた国際色豊かな大都市で、大運河の改修によって江南の物資が直結された。写真は同じくクビライが定めた夏の都・元上都の遺跡。",
+    eraId: "yuan",
+    eventTitle: "元の建国",
+    heritageName: "元上都",
+    mapX: 340,
+    mapY: 145,
+  },
+  {
+    name: "{{北京|ぺきん}}（明・清）",
+    dynasty: "明・清",
+    years: "1421 – 1912",
+    location: "北京市",
+    description:
+      "{{永楽帝|えいらくてい}}が1421年に南京から遷都し、壮麗な{{紫禁城|しきんじょう}}を築いた地。以後清代末期に至るまで約500年にわたり中国の政治的中枢であり続けた。",
+    eraId: "ming",
+    eventTitle: "北京遷都",
+    heritageName: "紫禁城",
+    mapX: 348,
+    mapY: 150,
+  },
+  {
+    name: "{{南京|なんきん}}（中華民国）",
+    dynasty: "中華民国",
+    years: "1912、1927 – 1937・1945 – 1949",
+    location: "江蘇省南京市",
+    description:
+      "{{孫文|そんぶん}}が臨時大総統として臨時政府を樹立した地。国民政府時代にも首都と定められたが、日中戦争の勃発で重慶へ、国共内戦の敗北で台北へと拠点を移すことになった。",
+    eraId: "roc",
+    eventTitle: "中華民国の成立",
+    mapX: 346,
+    mapY: 230,
+  },
+  {
+    name: "{{北京|ぺきん}}（中華人民共和国）",
+    dynasty: "中華人民共和国",
+    years: "1949 –",
+    location: "北京市",
+    description:
+      "{{毛沢東|もうたくとう}}が{{天安門|てんあんもん}}楼上で建国を宣言した地。清朝以来の紫禁城（故宮）や天安門広場は、現在も国家的な政治儀礼の舞台であり続けている。",
+    eraId: "prc",
+    eventTitle: "中華人民共和国の建国",
+    mapX: 332,
+    mapY: 152,
+  },
+];
+
+function resolveCapital(spec) {
+  const era = ERAS.find((e) => e.id === spec.eraId);
+  if (!era) return null;
+  const event = era.events.find((ev) => stripRuby(ev.title).includes(spec.eventTitle));
+  if (!event) return null;
+  const heritage = spec.heritageName ? event.heritage?.find((h) => stripRuby(h.name).includes(spec.heritageName)) : null;
+  return {
+    ...spec,
+    eventSlug: event.slug,
+    imageUrl: heritage?.imageUrl,
+    credit: heritage?.credit,
+    heritageType: heritage?.type || "building",
+  };
+}
+
+const RESOLVED = CAPITALS.map(resolveCapital).filter(Boolean);
+
+// 中国本土＋海南島の輪郭。/world-heritageと同じ海岸線データ（Natural Earthベースの簡略化済み国境ポリゴン、
+// 経緯度→緯度補正付き正距円筒図法で投影）を再利用している。
+const CHINA_OUTLINE =
+  "M294.9,341.64L288.42,346.09L282.27,343.22L282.06,335.26L285.75,331.07L293.94,328.48L298.25,328.7L299.93,332.23L296.64,336.3L294.9,341.64Z " +
+  "M424.75,54.2L437.8,57.16L446.68,63.73L449.72,72.42L461.11,72.43L467.61,68.79L480,66.06L476.06,74.38L473.15,77.76L470.58,87.9L465.54,96.89L456.44,95.25L450,98.52L451.97,106.44L450.9,117.37L447.07,117.62L447.11,122.32L442.27,116.86L439.29,122.04L427.71,126.02L428.88,130.9L422.4,130.56L418.84,127.66L413.69,134.22L405.42,139.19L399.32,145.12L388.84,147.81L383.32,152.14L375.24,154.66L379.23,150.37L377.66,146.77L383.59,140.56L379.63,135.71L373.1,138.98L364.63,145.41L360.01,151.38L352.66,151.82L348.84,156.14L352.79,162.39L358.92,163.91L359.17,168.06L365.11,170.76L373.51,164.16L380.17,167.76L385.01,168L386.23,172.85L375.61,175.43L372.11,180.42L364.82,185.06L360.97,191.54L369.04,196.62L371.99,205.71L376.55,214.19L381.64,221.29L381.52,228.16L376.81,230.69L378.61,235.62L383.02,238.49L381.87,246.02L379.96,253.35L375.78,254.18L370.3,264.19L364.23,276.33L357.26,287.37L346.95,295.9L336.52,303.68L328.07,304.75L323.49,308.85L320.9,305.85L316.66,310.45L306.18,315.08L298.25,316.5L295.69,326.26L291.53,326.81L289.56,320.09L291.34,316.52L281.28,313.56L277.74,315.06L270.19,312.66L266.62,308.91L267.8,303.58L260.95,301.89L257.34,298.42L250.94,303.35L243.65,304.42L237.67,304.37L233.65,306.63L229.76,307.98L230.9,318.56L226.9,318.31L226.23,316.13L226,312.31L220.5,315L217.25,313.3L211.69,309.83L213.87,302.15L209.12,300.36L207.33,291.84L199.42,293.38L200.32,282.41L207.42,274.68L207.72,267.06L207.5,259.98L204.23,257.77L201.72,252.33L197.34,253.02L189.25,251.64L191.78,247.75L188.27,242L182.92,245.9L176.63,243.62L167.99,249.51L161.17,256.39L155.12,257.55L151.84,255.06L147.88,254.84L142.52,252.7L138.47,255.04L133.51,261.92L132.88,254.63L128.31,256.58L119.56,255.67L111.08,253.55L105,249.49L99.17,247.67L96.66,243.23L92.44,241.9L84.87,235.88L78.86,233.03L75.75,235.24L65.33,228.78L57.97,222.92L55.86,212.73L61.24,213.97L61.49,209.25L58.51,204.52L59.27,196.97L51.21,186.13L38.88,182.39L36.66,175.29L31.12,170.98L29.78,168.32L28.66,163.05L28.92,159.46L24.36,157.35L21.9,158.28L20,149.72L22.13,147.61L21.1,145.44L28.26,141.08L33.44,139.27L41.38,140.51L44.21,134.6L53.83,133.5L56.5,129.83L68.32,124.82L69.37,122.73L68.77,117.46L73.92,115.05L67.17,98.99L82.02,95.29L85.86,93.23L91.27,76.68L106.14,79.72L110.31,75.54L110.67,66.27L116.9,65.4L122.6,59.25L125.54,58.49L127.51,64.94L133.81,69.84L144.51,73.32L149.68,80.76L146.79,91.57L149.49,95.58L158.4,97.16L168.5,98.45L177.56,104.21L182.19,105.24L185.61,113.77L190.01,119.26L198.27,119.04L213.75,121.12L223.72,119.83L231.12,121.21L242.21,126.82L251.29,126.82L254.6,129.69L263.33,124.73L275.45,121.52L286.69,121.16L295.45,117.91L300.83,112.96L306.07,109.85L304.86,106.8L302.47,103.24L306.4,97.28L310.62,98.12L318.33,99.99L325.8,95.08L337.23,91.5L342.73,85.39L348,82.76L358.89,81.53L364.81,82.57L365.63,79.28L358.84,72.82L352.82,69.86L347.06,73.28L339.66,71.84L335.42,73.01L333.48,69.23L338.78,59.99L342.43,53.02L351.43,56.51L362,50.66L361.93,46.6L368.7,36.79L372.87,33.82L372.78,28.72L368.66,26.52L374.86,21.92L384.17,20.25L394.11,20L405.34,22.75L411.92,26.16L416.55,35.49L419.36,39.47L421.98,45.14L424.75,54.2Z";
+
+// 台湾。/world-heritageと同じ地物データ（同じ図法・同じ座標系で投影）
+const TAIWAN_OUTLINE =
+  "M380.66,288.78L376.15,303.61L372.94,311.2L368.99,303.39L368.13,296.53L372.54,287.45L378.54,280.45L381.97,283.2L380.66,288.78Z";
+
+// 世界的に知られる主要都市（点＋ラベル）。座標は上の海岸線データと同じ図法で経緯度から算出。
+const REFERENCE_CITIES = [
+  { label: "上海", x: 378, y: 226, dx: 10, dy: -6, anchor: "start" },
+  { label: "広州", x: 317, y: 300, dx: -10, dy: -6, anchor: "end" },
+  { label: "香港", x: 324, y: 308, dx: 10, dy: 13, anchor: "start" },
+  { label: "ラサ", x: 151, y: 240, dx: 0, dy: 17, anchor: "middle" },
+  { label: "ウルムチ", x: 124, y: 109, dx: 0, dy: 16, anchor: "middle" },
+  { label: "フフホト", x: 305, y: 137, dx: 0, dy: -9, anchor: "middle" },
+];
+
+// 世界的に知られる地方・地域名（点なし、範囲を示すラベルのみ）
+const REGION_LABELS = [
+  { label: "内モンゴル自治区", x: 420, y: 90, anchor: "middle" },
+  { label: "新疆・シルクロード", x: 105, y: 165, anchor: "middle" },
+  { label: "チベット", x: 195, y: 265, anchor: "middle" },
+  { label: "台湾", x: 375, y: 296, dx: 10, dy: 4, anchor: "start" },
+  { label: "海南島", x: 290, y: 337, dx: 0, dy: 17, anchor: "middle" },
+];
+
+function ChinaMap({ capitals }) {
+  return (
+    <div style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: 16, marginBottom: 28 }}>
+      <p style={{ fontSize: 11.5, color: COLORS.inkSoft, marginBottom: 10 }}>
+        実際の海岸線をもとにした中国の位置関係図です。朱色の番号は下の一覧の都、白丸は主要都市の目安です。
+        西安・北京・南京・洛陽周辺は複数の王朝が同じ都市を都としたため、番号が近接しています。
+      </p>
+      <svg viewBox="0 0 500 366" style={{ width: "100%", maxHeight: 420, display: "block", margin: "0 auto" }}>
+        <path d={CHINA_OUTLINE} fill="#DCD3B8" stroke={COLORS.mist} strokeWidth="1.2" strokeLinejoin="round" />
+        <path d={TAIWAN_OUTLINE} fill="#DCD3B8" stroke={COLORS.mist} strokeWidth="1.2" strokeLinejoin="round" />
+
+        {REGION_LABELS.map((r, i) => (
+          <text
+            key={`region-${i}`}
+            x={r.x + (r.dx || 0)}
+            y={r.y + (r.dy || 0)}
+            textAnchor={r.anchor}
+            style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 10.5, fill: COLORS.inkSoft, opacity: 0.85 }}
+          >
+            {r.label}
+          </text>
+        ))}
+
+        {REFERENCE_CITIES.map((c, i) => (
+          <g key={`city-${i}`}>
+            <circle cx={c.x} cy={c.y} r="3.5" fill={COLORS.paper} stroke={COLORS.ink} strokeWidth="1.2" />
+            <text
+              x={c.x + c.dx}
+              y={c.y + c.dy}
+              textAnchor={c.anchor}
+              style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 10, fill: COLORS.inkSoft }}
+            >
+              {c.label}
+            </text>
+          </g>
+        ))}
+
+        {capitals.map((cap, i) => (
+          <g key={i}>
+            <circle cx={cap.mapX} cy={cap.mapY} r="7" fill={COLORS.vermilion} stroke={COLORS.paper} strokeWidth="1.3" />
+            <text
+              x={cap.mapX}
+              y={cap.mapY}
+              textAnchor="middle"
+              dominantBaseline="central"
+              style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 8, fontWeight: 700, fill: "#FBF8F0" }}
+            >
+              {i + 1}
+            </text>
+          </g>
+        ))}
+      </svg>
+    </div>
+  );
+}
+
+export default function ChinaCapitalsPage() {
+  return (
+    <div style={{ backgroundColor: COLORS.paper, minHeight: "100%" }}>
+      <div className="max-w-2xl mx-auto px-6 py-12">
+        <BackToTopButton />
+
+        <h1 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
+          中国 歴代王朝の都（古都）一覧
+        </h1>
+        <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 28 }}>
+          中国では王朝が交代するたびに、あるいは同じ王朝の中でも遷都によって、都の位置がたびたび移り変わってきました。
+          ここでは、夏の二里頭から中華人民共和国の北京まで、歴代王朝の都を移り変わりの順に紹介します。
+        </p>
+
+        <div className="relative">
+          <div className="sticky top-3 z-10">
+            <ChinaMap capitals={RESOLVED} />
+          </div>
+
+          <div className="flex flex-col gap-4">
+            {RESOLVED.map((cap, i) => (
+              <div key={i} style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8" }}>
+                <div className="flex gap-3 p-3">
+                  <div
+                    className="flex items-center justify-center shrink-0 relative"
+                    style={{ width: 96, height: 96, backgroundColor: "#EFE7D0", border: `1px solid ${COLORS.mist}`, overflow: "hidden" }}
+                  >
+                    <HeritageThumb imageUrl={cap.imageUrl} name={cap.name} type={cap.heritageType} />
+                    <span
+                      className="absolute flex items-center justify-center"
+                      style={{
+                        top: 4,
+                        left: 4,
+                        width: 18,
+                        height: 18,
+                        borderRadius: "50%",
+                        backgroundColor: COLORS.vermilion,
+                        color: "#FBF8F0",
+                        fontFamily: "'Noto Serif SC', serif",
+                        fontSize: 10,
+                        fontWeight: 700,
+                      }}
+                    >
+                      {i + 1}
+                    </span>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-baseline justify-between gap-2 flex-wrap">
+                      <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 15, fontWeight: 700, color: COLORS.ink }}>
+                        <RubyText text={cap.name} />
+                      </span>
+                      <span style={{ fontSize: 11, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}>{cap.dynasty}</span>
+                    </div>
+                    <div style={{ fontSize: 11, color: COLORS.inkSoft, marginTop: 2 }}>{cap.years}</div>
+                    {cap.location && (
+                      <div style={{ fontSize: 11, color: COLORS.vermilionSoft, marginTop: 2 }}>
+                        <span aria-hidden>📍</span> {cap.location}
+                      </div>
+                    )}
+                    <p style={{ fontSize: 12, lineHeight: 1.7, color: COLORS.inkSoft, marginTop: 4 }}>
+                      <RubyText text={cap.description} />
+                    </p>
+                    {cap.credit && <div style={{ fontSize: 9.5, color: COLORS.mist, marginTop: 4 }}>{cap.credit}</div>}
+                  </div>
+                </div>
+                <div className="px-3 pb-3">
+                  <a
+                    href={`/events/${cap.eventSlug}`}
+                    style={{ fontSize: 12, color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}
+                  >
+                    関連する出来事を年表で読む →
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <section style={{ marginTop: 32 }}>
+          <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
+            城壁や関所など「城」に着目したまとめ、中国の世界遺産まとめも別ページで紹介しています。
+          </p>
+          <div className="flex items-center gap-2.5 flex-wrap">
+            <NavButton href="/china-castles" variant="solid">中国の城まとめを見る</NavButton>
+            <NavButton href="/world-heritage" variant="outline">中国の世界遺産まとめを見る</NavButton>
+          </div>
+        </section>
+
+        <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
+          <MiscLinksSection />
+        </div>
+      </div>
+    </div>
+  );
+}
