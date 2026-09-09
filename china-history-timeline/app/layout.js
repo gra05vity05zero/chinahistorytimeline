@@ -3,7 +3,10 @@ import Script from "next/script";
 import Footer from "@/components/Footer";
 import { ADSENSE_CLIENT_ID, GA_MEASUREMENT_ID, SITE_URL, SITE_NAME, SITE_DESCRIPTION, buildOpenGraph, buildTwitter } from "@/lib/data";
 
-const DEFAULT_TITLE = `${SITE_NAME} | 文明の黎明から現代までの年表`;
+// ホームページの<title>は検索されやすい語を先頭に置き、ブランド名（SITE_NAME）は
+// 他ページと違いあえて付けない（末尾に付けると文字数が伸びSERP上で見切れやすくなるため）。
+// サイト自体のブランド名はWebSiteのJSON-LD（name）やOGP（siteName）側で担保する。
+const DEFAULT_TITLE = "中国史年表｜五千年の歴史・王朝・人物・出来事を年代順に解説";
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),

@@ -8,7 +8,7 @@
 export const SITE_URL = "https://chinahistorytimeline.com";
 export const SITE_NAME = "中国五千年史";
 export const SITE_DESCRIPTION =
-  "新石器文化から中華人民共和国まで、24王朝・約170の出来事を縦スクロールでたどる中国史年表。関連する映画・ゲーム・書籍、建造物や人物の情報も掲載。";
+  "中国史年表サイト。新石器時代から中華人民共和国まで、24王朝・約170の出来事を年代順に解説します。王朝の覚え方や人物一覧、故事成語、兵馬俑・万里の長城といった雑学もあわせて掲載。";
 
 // Next.jsはopenGraph/twitterをページ単位で完全に上書きする（親と深いマージをしない）ため、
 // 各ページで欠落フィールド（type, siteName, card, image等）が出ないよう共通ヘルパーで組み立てる。
