@@ -44,6 +44,7 @@ const MISC_LINKS = [
   { href: "/mnemonics", label: "王朝の覚え方" },
   { href: "/idioms", label: "故事成語（熟語・慣用句）" },
   { href: "/year-mnemonics", label: "年号ゴロ合わせ集" },
+  { href: "/qinshihuang", label: "始皇帝とは" },
   { href: "/terracotta-army", label: "兵馬俑・始皇帝陵の謎" },
   { href: "/world-heritage", label: "中国の世界遺産まとめ" },
   { href: "/china-castles", label: "中国の城まとめ" },
