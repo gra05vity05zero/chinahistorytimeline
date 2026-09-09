@@ -49,7 +49,7 @@ const MISC_LINKS = [
   { href: "/world-heritage", label: "中国の世界遺産まとめ" },
   { href: "/china-castles", label: "中国の城まとめ" },
   { href: "/china-capitals", label: "歴代王朝の都一覧" },
-  { href: "/silk-road", label: "シルクロードのオアシス都市まとめ" },
+  { href: "/silk-road", label: "シルクロードとは" },
   { href: "/novelists", label: "中国史を題材にした日本人小説家一覧" },
 ];
 

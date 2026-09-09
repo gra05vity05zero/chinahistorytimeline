@@ -416,10 +416,10 @@ export default function ChinaCapitalsPage() {
 
         <section style={{ marginTop: 32 }}>
           <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
-            長安から西へ延びるシルクロードのオアシス都市、城壁や関所など「城」に着目したまとめも別ページで紹介しています。
+            長安から西へ延びるシルクロードとその沿線のオアシス都市、城壁や関所など「城」に着目したまとめも別ページで紹介しています。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
-            <NavButton href="/silk-road" variant="solid">シルクロードのオアシス都市まとめを見る</NavButton>
+            <NavButton href="/silk-road" variant="solid">シルクロードを見る</NavButton>
             <NavButton href="/china-castles" variant="outline">中国の城まとめを見る</NavButton>
           </div>
         </section>

@@ -2,10 +2,10 @@ import { ERAS, stripRuby, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from
 import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 
-const title = "シルクロードのオアシス都市まとめ";
-const fullTitle = `シルクロードのオアシス都市まとめ | ${SITE_NAME}`;
+const title = "シルクロードとは？歴史・ルートとオアシス都市を解説";
+const fullTitle = `シルクロードとは？歴史・ルートとオアシス都市を解説 | ${SITE_NAME}`;
 const description =
-  "敦煌・トルファン・カシュガルなど、シルクロード沿いに栄えたオアシス都市を地図とあわせてまとめました。莫高窟や鳴沙山・月牙泉といった見どころに加え、張騫・班超・玄奘・マルコ・ポーロら年表に登場する人物の逸話や、楼蘭の美女・敦煌文書の発見といった面白いエピソードも紹介します。";
+  "シルクロードとは何か、その名前の由来や歴史、ルート、行き交った交易品を解説。あわせて敦煌・トルファン・カシュガルなど沿線に栄えたオアシス都市を地図とともに紹介します。張騫・班超・玄奘・マルコ・ポーロら年表に登場する人物の逸話や、楼蘭の美女・敦煌文書の発見といった面白いエピソードも掲載。";
 
 export const metadata = {
   title,
@@ -374,18 +374,81 @@ export default function SilkRoadPage() {
         <BackToTopButton />
 
         <h1 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
-          シルクロードのオアシス都市まとめ
+          シルクロードとは？
         </h1>
-        <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 28 }}>
+        <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 20 }}>
           <RubyText
             text={
               "前漢の{{張騫|ちょうけん}}が切り開き、後漢の{{班超|はんちょう}}が守り、唐の{{玄奘|げんじょう}}が旅したシルクロード。" +
               "長安を出て河西回廊を抜け、タクラマカン砂漠の縁に点在するオアシス都市を経て中央アジアへと至るこの道は、" +
-              "絹だけでなく紙・仏教・文物が行き交う東西交流の大動脈でした。ここでは、道中に栄えた敦煌をはじめとする" +
-              "オアシス都市を、歴史とあわせて現在の観光地としての見どころも交えて紹介します。"
+              "絹だけでなく紙・仏教・文物が行き交う東西交流の大動脈でした。"
             }
           />
         </p>
+
+        <div
+          className="relative"
+          style={{ width: "100%", height: 220, backgroundColor: "#EFE7D0", border: "1px solid #DCD3B8", overflow: "hidden", marginBottom: 24 }}
+        >
+          <HeritageThumb
+            imageUrl="https://commons.wikimedia.org/wiki/Special:FilePath/Caravane_sur_la_Route_de_la_soie_-_Atlas_catalan.jpg"
+            name="シルクロードを行くキャラバン"
+            type="building"
+          />
+          <span
+            className="absolute"
+            style={{
+              left: 0,
+              right: 0,
+              bottom: 0,
+              padding: "18px 12px 8px",
+              fontSize: 11.5,
+              color: "#FBF8F0",
+              background: "linear-gradient(to top, rgba(30,20,10,0.72), rgba(30,20,10,0))",
+            }}
+          >
+            <RubyText text="シルクロードを行くキャラバン（『{{カタルーニャ地図|カタルーニャちず}}』1375年頃）" />
+          </span>
+        </div>
+        <div style={{ fontSize: 9.5, color: COLORS.mist, marginTop: -18, marginBottom: 24 }}>
+          {"アブラハム・クレスケス作 / Wikimedia Commons（パブリックドメイン）"}
+        </div>
+
+        <section style={{ marginBottom: 32 }}>
+          <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
+            シルクロードとは
+          </h2>
+          <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft, marginBottom: 10 }}>
+            <RubyText
+              text={
+                "シルクロード（絹の道）とは、古代から中世にかけて中国と地中海世界を結んだ東西交易路の総称である。中国から西方へ" +
+                "大量に運ばれた{{絹|きぬ}}に由来する呼び名で、19世紀のドイツ人地理学者{{フェルディナント・フォン・リヒトホーフェン|ふぇるでぃなんと・ふぉん・りひとほーふぇん}}が" +
+                "「{{ザイデンシュトラーセン|Seidenstraßen}}」（絹の道）と名付けたのが始まりとされる。ある一本の決まった道があったわけではなく、" +
+                "オアシスや都市を結ぶ複数のルートの総称である点も特徴である。"
+              }
+            />
+          </p>
+          <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft, marginBottom: 10 }}>
+            <RubyText
+              text={
+                "起点として知られる{{長安|ちょうあん}}（現・西安）を出発し、河西回廊を抜けて{{敦煌|とんこう}}に至ると、道はタクラマカン砂漠の" +
+                "北縁を行く天山南路（北道）と、南縁を行く崑崙山北路（南道）に分かれ、いずれも{{パミール高原|パミールこうげん}}を越えて中央アジア、" +
+                "さらに西アジアや地中海世界へと続いた。開通のきっかけは、前漢の{{武帝|ぶてい}}の命を受けた{{張騫|ちょうけん}}が同盟相手を" +
+                "求めて西域に派遣されたことにあるとされ、後漢の{{班超|はんちょう}}による西域経営を経て交易路として確立し、唐代に最盛期を迎えた。"
+              }
+            />
+          </p>
+          <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft }}>
+            <RubyText
+              text={
+                "シルクロードを通じて西方へは絹だけでなく紙や火薬の製法が伝わり、東方へは仏教やガラス製品、香辛料、{{汗血馬|かんけつば}}などが" +
+                "もたらされた。単なる交易路にとどまらず、宗教・思想・文化が行き交う東西交流の大動脈として機能し、沿線には敦煌をはじめとする" +
+                "数多くのオアシス都市が繁栄した。2014年には、中国・カザフスタン・キルギスにまたがるシルクロードの関連遺跡群がユネスコの" +
+                "世界遺産に登録されている。ここでは、そうしたシルクロード沿いに栄えたオアシス都市を、地図や逸話とあわせて紹介する。"
+              }
+            />
+          </p>
+        </section>
 
         <div className="relative">
           <div className="sticky top-3 z-10">
