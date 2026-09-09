@@ -22,6 +22,25 @@ export const metadata = {
 // 実際の経緯度を/world-heritageと同じ図法（緯度補正付き正距円筒図法）で投影した座標を基準にしている。
 const STOPS = [
   {
+    name: "{{蘭州|らんしゅう}}（{{金城|きんじょう}}）",
+    subtitle: "黄河が貫く河西回廊の玄関口",
+    location: "甘粛省蘭州市",
+    description:
+      "長安から河西回廊へ向かう際に必ず黄河を渡らねばならない交通の要衝で、前漢代には「{{金城|きんじょう}}」の名で郡が置かれ、以後シルクロードを守る軍事拠点として発展した。現在は甘粛省の省都として栄え、市街を貫く黄河には、1907年にドイツの技術協力で架けられ黄河に現存する最古の橋として知られる{{中山橋|ちゅうざんきょう}}が今も残る。",
+    imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Zhongshan_Bridge_in_Lanzhou.jpg",
+    imageCaption: "黄河に架かる中山橋（1907年築、現存最古の黄河橋）",
+    credit: "写真: Ken Marshall / Wikimedia Commons, CC BY 2.0",
+    gallery: [
+      {
+        imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Mother_Huang_He_Lanzhou.jpg",
+        caption: "黄河のほとりに立つ「黄河母親」像",
+        credit: "写真: Brücke-Osteuropa / Wikimedia Commons, CC0",
+      },
+    ],
+    mapX: 262,
+    mapY: 182,
+  },
+  {
     name: "{{武威|ぶい}}（{{涼州|りょうしゅう}}）",
     subtitle: "河西回廊の東の入り口",
     location: "甘粛省武威市",
@@ -145,6 +164,25 @@ const STOPS = [
     ],
     mapX: 136,
     mapY: 117,
+  },
+  {
+    name: "{{焉耆|えんき}}（カラシャール）",
+    subtitle: "天山南路に栄えた仏教王国",
+    location: "新疆ウイグル自治区焉耆回族自治県",
+    description:
+      "天山南路の要衝に栄えた仏教王国{{焉耆|えんき}}（カラシャール）は、西域三十六国の一つに数えられ、{{玄奘|げんじょう}}も『大唐西域記』にその繁栄ぶりを記している。近郊には西域最大の内陸淡水湖{{博斯騰湖|はくしとうこ}}（ボステン湖）が広がり、市街を流れる{{開都河|かいとが}}のほとりには今も緑豊かなオアシスの街並みが残る。",
+    imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Kaidu_river_yanqi_xinjiang.jpg",
+    imageCaption: "焉耆の市街を流れる開都河",
+    credit: "写真: Rolf Müller / Wikimedia Commons, CC BY-SA 3.0",
+    gallery: [
+      {
+        imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Soldiers_from_Karasahr,_8th_century.jpg",
+        caption: "8世紀頃の焉耆の兵士を描いた壁画",
+        credit: "Albert von Le Coq『Von Land und Leuten in Ostturkistan』(1926年) / Wikimedia Commons（パブリックドメイン）",
+      },
+    ],
+    mapX: 113,
+    mapY: 122,
   },
   {
     name: "{{亀茲|きじ}}（クチャ）",
@@ -294,16 +332,25 @@ const TAIWAN_OUTLINE =
 // 起点・長安（現西安）。/china-capitalsの唐代長安と同じ座標。
 const XIAN = { x: 292, y: 205 };
 
-// 幹線ルート：長安〜河西回廊〜敦煌
-const TRUNK_ROUTE = [XIAN, { x: 237, y: 163 }, { x: 220, y: 154 }, { x: 204, y: 146 }, { x: 177, y: 143 }];
-// 敦煌から分岐する天山南路（北道）：トルファン・クチャ・カシュガル方面
-const NORTH_ROUTE = [{ x: 177, y: 143 }, { x: 136, y: 117 }, { x: 89, y: 128 }, { x: 37, y: 149 }];
+// 幹線ルート：長安〜蘭州〜河西回廊〜敦煌
+const TRUNK_ROUTE = [XIAN, { x: 262, y: 182 }, { x: 237, y: 163 }, { x: 220, y: 154 }, { x: 204, y: 146 }, { x: 177, y: 143 }];
+// 敦煌から分岐する天山南路（北道）：トルファン・焉耆・クチャ・カシュガル方面
+const NORTH_ROUTE = [{ x: 177, y: 143 }, { x: 136, y: 117 }, { x: 113, y: 122 }, { x: 89, y: 128 }, { x: 37, y: 149 }];
 // 敦煌から分岐する崑崙山北路（南道）：楼蘭・ホータン方面
 const SOUTH_ROUTE = [{ x: 177, y: 143 }, { x: 141, y: 139 }, { x: 67, y: 171 }];
 
 function toPoints(route) {
   return route.map((p) => `${p.x},${p.y}`).join(" ");
 }
+
+// タクラマカン砂漠のおおよその輪郭（周囲を天山南路・崑崙山北路のオアシス都市が取り囲む位置関係）。
+const TAKLAMAKAN_DESERT =
+  "M55,152 L72,136 L100,138 L128,140 L136,153 L118,169 L88,177 L65,166 Z";
+
+// 漢代以降「西域」と呼ばれた領域のおおよその目安（東は玉門関・陽関、西はパミール高原、
+// 北は天山山脈、南は崑崙山脈に囲まれたタリム盆地一帯）。現代の行政境界ではない。
+const WESTERN_REGIONS_BOUNDARY =
+  "M165,110 L130,103 L95,108 L50,120 L22,152 L35,180 L75,192 L120,178 L155,155 Z";
 
 const REGION_LABELS = [
   { label: "内モンゴル自治区", x: 420, y: 90, anchor: "middle" },
@@ -317,11 +364,40 @@ function SilkRoadMap({ stops }) {
     <div style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: 16, marginBottom: 28 }}>
       <p style={{ fontSize: 11.5, color: COLORS.inkSoft, marginBottom: 10 }}>
         実際の海岸線をもとにした中国の位置関係図です。敦煌で天山南路（北道）と崑崙山北路（南道）に分かれ、
-        いずれもパミール高原を越えて中央アジアへと続きます。朱色の番号は下の一覧のオアシス都市です。
+        いずれもパミール高原を越えて中央アジアへと続きます。朱色の番号は下の一覧のオアシス都市、
+        砂色の部分はタクラマカン砂漠、金色の破線は漢代以降「西域」と呼ばれた領域のおおよその目安です。
       </p>
       <svg viewBox="0 0 500 366" style={{ width: "100%", maxHeight: 420, display: "block", margin: "0 auto" }}>
         <path d={CHINA_OUTLINE} fill="#DCD3B8" stroke={COLORS.mist} strokeWidth="1.2" strokeLinejoin="round" />
         <path d={TAIWAN_OUTLINE} fill="#DCD3B8" stroke={COLORS.mist} strokeWidth="1.2" strokeLinejoin="round" />
+
+        <path
+          d={WESTERN_REGIONS_BOUNDARY}
+          fill={COLORS.gold}
+          fillOpacity="0.07"
+          stroke={COLORS.gold}
+          strokeWidth="1.2"
+          strokeDasharray="6 4"
+          strokeLinejoin="round"
+        />
+        <text
+          x="93"
+          y="100"
+          textAnchor="middle"
+          style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 11, fontWeight: 700, fill: COLORS.gold, letterSpacing: "0.15em" }}
+        >
+          西域
+        </text>
+
+        <path d={TAKLAMAKAN_DESERT} fill="#D8B978" fillOpacity="0.6" stroke="#B99A4E" strokeWidth="1" strokeDasharray="1 2" strokeLinejoin="round" />
+        <text
+          x="95"
+          y="154"
+          textAnchor="middle"
+          style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 9, fill: "#7A5C22", opacity: 0.9 }}
+        >
+          タクラマカン砂漠
+        </text>
 
         {REGION_LABELS.map((r, i) => (
           <text
