@@ -348,7 +348,7 @@ export default function ChuHanBattlesPage() {
             {BATTLES.map((b) => (
               <div key={b.no} id={b.id} style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", scrollMarginTop: 16 }}>
                 <div className="flex gap-3 p-4">
-                  {b.portrait && (
+                  {b.portrait?.imageUrl && (
                     <div
                       className="flex items-center justify-center shrink-0"
                       style={{ width: 88, height: 88, backgroundColor: "#EFE7D0", border: `1px solid ${COLORS.mist}`, overflow: "hidden" }}
