@@ -92,9 +92,11 @@ export default function Timeline() {
           CHINESE HISTORY TIMELINE
         </div>
         <h1 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 32, fontWeight: 900, color: COLORS.ink, marginTop: 6 }}>
-          中国五千年史
+          中国史年表
         </h1>
-        <p style={{ fontSize: 13, color: COLORS.inkSoft, marginTop: 6 }}>文明の黎明から現代まで — スクロールして辿る</p>
+        <p style={{ fontSize: 13, color: COLORS.inkSoft, marginTop: 6 }}>
+          「中国五千年史」－ 新石器時代から現代まで、王朝・人物・出来事をスクロールして辿る
+        </p>
         <div className="flex items-center justify-center gap-2.5 mt-5 flex-wrap px-4">
           <NavButton href="/people" variant="solid">人物一覧</NavButton>
           <NavButton href="/eras" variant="solid">出来事一覧</NavButton>
