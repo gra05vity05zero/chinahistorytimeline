@@ -50,6 +50,9 @@ const MISC_LINKS = [
   { href: "/china-castles", label: "中国の城まとめ" },
   { href: "/china-capitals", label: "歴代王朝の都一覧" },
   { href: "/silk-road", label: "シルクロードとは" },
+  { href: "/great-wall", label: "万里の長城とは" },
+  { href: "/four-inventions", label: "中国の四大発明とは" },
+  { href: "/four-great-novels", label: "中国の四大名著とは" },
   { href: "/novelists", label: "中国史を題材にした日本人小説家一覧" },
 ];
 
