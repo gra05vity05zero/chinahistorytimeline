@@ -1,6 +1,7 @@
 import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
 import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
+import { SanguoBorderMap } from "@/components/SanguoBorderMap";
 
 const title = "三国時代 合戦マップ";
 const fullTitle = `三国時代 合戦マップ | ${SITE_NAME}`;
@@ -365,6 +366,16 @@ export default function SanguoBattlesPage() {
             合戦地図
           </h2>
           <BattleMap />
+        </section>
+
+        <section style={{ marginBottom: 12 }}>
+          <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 12 }}>
+            勢力図の変遷アニメーション
+          </h2>
+          <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginBottom: 12 }}>
+            群雄割拠から魏・蜀・呉の三国鼎立へ、そして西晋による天下統一へ——再生ボタンまたは年代タブで、勢力図が移り変わる様子を確認できます。
+          </p>
+          <SanguoBorderMap />
         </section>
 
         <section>
