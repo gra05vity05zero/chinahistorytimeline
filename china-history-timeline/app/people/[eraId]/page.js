@@ -16,12 +16,13 @@ export function generateMetadata({ params }) {
     alias ? `${alias}` : era.name
   }の人物について知りたい方はこちら。`;
   const path = `/people/${era.id}`;
+  const image = { title: `${era.name}の人物一覧`, subtitle: alias || "", kicker: era.period, seal: era.seal };
   const hasFigures = getEraFigures(era).length > 0;
   return {
     title,
     description,
     alternates: { canonical: path },
-    openGraph: buildOpenGraph({ title, description, path }),
+    openGraph: buildOpenGraph({ title, description, path, image }),
     twitter: buildTwitter({ title, description }),
     // 人物情報が未登録のページはインデックス対象から外す
     ...(hasFigures ? {} : { robots: { index: false, follow: true } }),

@@ -15,11 +15,14 @@ export function generateMetadata({ params }) {
   const description = stripRuby(event.summary);
   const pageTitle = `${title}（${event.year}）`;
   const path = `/events/${event.slug}`;
+  // 「1043 BC」→「前1043年」、「618」→「618年」。「12世紀」などはそのまま
+  const yearLabel = event.year.replace(/^(\d+) BC$/, "前$1").replace(/\d$/, "$&年");
+  const image = { title, kicker: `${era.name} ・ ${yearLabel}`, seal: era.seal };
   return {
     title: pageTitle,
     description,
     alternates: { canonical: path },
-    openGraph: buildOpenGraph({ title: pageTitle, description, path, type: "article" }),
+    openGraph: buildOpenGraph({ title: pageTitle, description, path, type: "article", image }),
     twitter: buildTwitter({ title: pageTitle, description }),
   };
 }

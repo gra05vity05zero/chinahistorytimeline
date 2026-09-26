@@ -12,7 +12,28 @@ export const SITE_DESCRIPTION =
 
 // Next.jsはopenGraph/twitterをページ単位で完全に上書きする（親と深いマージをしない）ため、
 // 各ページで欠落フィールド（type, siteName, card, image等）が出ないよう共通ヘルパーで組み立てる。
-export function buildOpenGraph({ title, description, path, type = "website" }) {
+//
+// OGP画像はトップページだけサイト共通の /opengraph-image を使い、それ以外は
+// /og ルート（app/og/route.js）でページごとにタイトル入りの画像を生成する。
+// image: { title, subtitle, kicker, seal } で画像の文言を指定できる。省略時は
+// title から「 | 中国五千年史」を除き、「？」の後ろをサブタイトルに回して使う。
+export function buildOgImageUrl({ title, image = {} }) {
+  let main = image.title ?? title.replace(new RegExp(`\\s*\\|\\s*${SITE_NAME}$`), "");
+  let subtitle = image.subtitle ?? "";
+  const q = main.indexOf("？");
+  if (!image.title && q > 0 && q < main.length - 1) {
+    subtitle = main.slice(q + 1);
+    main = main.slice(0, q + 1);
+  }
+  const params = new URLSearchParams({ t: main });
+  if (subtitle) params.set("s", subtitle);
+  if (image.kicker) params.set("k", image.kicker);
+  if (image.seal) params.set("m", image.seal);
+  return `/og?${params.toString()}`;
+}
+
+export function buildOpenGraph({ title, description, path, type = "website", image }) {
+  const url = path === "/" ? "/opengraph-image" : buildOgImageUrl({ title, image });
   return {
     type,
     locale: "ja_JP",
@@ -20,10 +41,11 @@ export function buildOpenGraph({ title, description, path, type = "website" }) {
     siteName: SITE_NAME,
     title,
     description,
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: `${SITE_NAME} — ${SITE_DESCRIPTION}` }],
+    images: [{ url, width: 1200, height: 630, alt: title }],
   };
 }
 
+// twitter:image を省略するとXは og:image を使うため、画像はOGP側だけで指定する
 export function buildTwitter({ title, description }) {
   return {
     card: "summary_large_image",

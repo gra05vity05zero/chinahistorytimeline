@@ -16,11 +16,12 @@ export function generateMetadata({ params }) {
     alias ? `${alias}` : era.name
   }の歴史について知りたい方はこちら。`;
   const path = `/eras/${era.id}`;
+  const image = { title: `${era.name}の出来事一覧`, subtitle: alias || "", kicker: era.period, seal: era.seal };
   return {
     title,
     description,
     alternates: { canonical: path },
-    openGraph: buildOpenGraph({ title, description, path }),
+    openGraph: buildOpenGraph({ title, description, path, image }),
     twitter: buildTwitter({ title, description }),
   };
 }

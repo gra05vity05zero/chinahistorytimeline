@@ -28,11 +28,12 @@ export function generateMetadata({ params }) {
   const title = `${name}とは？生涯と業績`;
   const description = stripRuby(person.description);
   const path = `/people/${era.id}/${personSlug(person.name)}`;
+  const image = { title: `${name}とは？`, subtitle: "生涯と業績", kicker: `${era.name}の人物`, seal: era.seal };
   return {
     title,
     description,
     alternates: { canonical: path },
-    openGraph: buildOpenGraph({ title, description, path, type: "article" }),
+    openGraph: buildOpenGraph({ title, description, path, type: "article", image }),
     twitter: buildTwitter({ title, description }),
   };
 }
