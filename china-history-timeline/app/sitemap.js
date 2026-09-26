@@ -25,6 +25,7 @@ export default function sitemap() {
     { url: `${SITE_URL}/four-great-novels`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/novelists`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/sanguo-battles`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
+    { url: `${SITE_URL}/sanguo-comparison`, lastModified: now, changeFrequency: "yearly", priority: 0.6 },
     { url: `${SITE_URL}/chuhan-battles`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/chunqiu-zhanguo-battles`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
   ];

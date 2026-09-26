@@ -463,6 +463,7 @@ export default function SanguoBattlesPage() {
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
             <NavButton href="/eras/sanguo" variant="solid">三国の出来事一覧を見る</NavButton>
+            <NavButton href="/sanguo-comparison" variant="outline">魏・呉・蜀の違いを見る</NavButton>
             <NavButton href="/people/sanguo" variant="outline">三国の人物一覧を見る</NavButton>
             <NavButton href="/chuhan-battles" variant="outline">楚漢戦争 合戦マップを見る</NavButton>
             <NavButton href="/chunqiu-zhanguo-battles" variant="outline">春秋・戦国 合戦マップを見る</NavButton>
