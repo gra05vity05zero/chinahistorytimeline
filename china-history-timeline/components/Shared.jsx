@@ -54,6 +54,7 @@ const MISC_LINKS = [
   { href: "/four-inventions", label: "中国の四大発明とは" },
   { href: "/four-great-novels", label: "中国の四大名著とは" },
   { href: "/sanguo-comparison", label: "魏・呉・蜀の違い" },
+  { href: "/yangjiajiang", label: "楊家将とは" },
   { href: "/novelists", label: "中国史を題材にした日本人小説家一覧" },
 ];
 
