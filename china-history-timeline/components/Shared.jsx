@@ -40,39 +40,111 @@ export function BackToTopButton() {
   );
 }
 
-const MISC_LINKS = [
-  { href: "/mnemonics", label: "王朝の覚え方" },
-  { href: "/idioms", label: "故事成語（熟語・慣用句）" },
-  { href: "/year-mnemonics", label: "年号ゴロ合わせ集" },
-  { href: "/qinshihuang", label: "始皇帝とは" },
-  { href: "/terracotta-army", label: "兵馬俑・始皇帝陵の謎" },
-  { href: "/world-heritage", label: "中国の世界遺産まとめ" },
-  { href: "/china-castles", label: "中国の城まとめ" },
-  { href: "/china-capitals", label: "歴代王朝の都一覧" },
-  { href: "/silk-road", label: "シルクロードとは" },
-  { href: "/great-wall", label: "万里の長城とは" },
-  { href: "/four-inventions", label: "中国の四大発明とは" },
-  { href: "/four-great-novels", label: "中国の四大名著とは" },
-  { href: "/sanguo-comparison", label: "魏・呉・蜀の違い" },
-  { href: "/yangjiajiang", label: "楊家将とは" },
-  { href: "/novelists", label: "中国史を題材にした日本人小説家一覧" },
+// 「雑学・豆知識」記事をカテゴリ別にまとめたリンク定義（トップページと各ページ末尾で共有）
+const MISC_SECTIONS = [
+  {
+    title: "覚える・学ぶ",
+    links: [
+      { href: "/mnemonics", label: "王朝の覚え方" },
+      { href: "/year-mnemonics", label: "年号ゴロ合わせ集" },
+      { href: "/idioms", label: "故事成語" },
+    ],
+  },
+  {
+    title: "人物・王朝",
+    links: [
+      { href: "/qinshihuang", label: "始皇帝とは" },
+      { href: "/terracotta-army", label: "兵馬俑・始皇帝陵の謎" },
+      { href: "/china-capitals", label: "歴代王朝の都一覧" },
+      { href: "/sanguo-comparison", label: "魏・呉・蜀の違い" },
+    ],
+  },
+  {
+    title: "名所・遺産",
+    links: [
+      { href: "/world-heritage", label: "中国の世界遺産" },
+      { href: "/great-wall", label: "万里の長城" },
+      { href: "/silk-road", label: "シルクロード" },
+      { href: "/china-castles", label: "中国の城" },
+    ],
+  },
+  {
+    title: "文化・文学",
+    links: [
+      { href: "/four-inventions", label: "四大発明" },
+      { href: "/four-great-novels", label: "四大名著" },
+      { href: "/yangjiajiang", label: "楊家将とは" },
+      { href: "/novelists", label: "日本人小説家一覧" },
+    ],
+  },
 ];
 
-// 各ページ末尾などに置く「雑学・豆知識」記事への横断リンク集
-export function MiscLinksSection() {
-  return (
-    <div className="text-center">
-      <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 11, letterSpacing: "0.15em", color: COLORS.gold, marginBottom: 10 }}>
-        雑学・豆知識
+// 「雑学・豆知識」記事への横断リンク集。
+// variant="full" はトップページ上部用の4カテゴリ一覧、既定の "compact" は各ページ末尾用の小さい版
+export function MiscLinksSection({ variant = "compact" }) {
+  const heading = (
+    <div
+      className="text-center"
+      style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.15em", color: COLORS.gold, marginBottom: 12 }}
+    >
+      雑学・豆知識
+    </div>
+  );
+
+  if (variant === "full") {
+    return (
+      <div className="max-w-3xl mx-auto text-left">
+        {heading}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          {MISC_SECTIONS.map((section) => (
+            <div key={section.title} className="px-3 pt-2.5 pb-1.5" style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8" }}>
+              <div
+                style={{
+                  fontFamily: "'Noto Serif SC', serif",
+                  fontSize: 12.5,
+                  fontWeight: 700,
+                  color: COLORS.ink,
+                  paddingBottom: 6,
+                  marginBottom: 2,
+                  borderBottom: `1px solid ${COLORS.mist}`,
+                }}
+              >
+                {section.title}
+              </div>
+              <ul>
+                {section.links.map((item) => (
+                  <li key={item.href}>
+                    <Link href={item.href} className="flex items-center gap-1.5 hover:underline" style={{ minHeight: 34, fontSize: 12.5, color: COLORS.vermilion }}>
+                      <span aria-hidden style={{ color: COLORS.mist }}>›</span>
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </div>
-      <div className="flex items-center justify-center gap-2.5 flex-wrap" style={{ fontSize: 12 }}>
-        {MISC_LINKS.map((item, i) => (
-          <span key={item.href} className="flex items-center gap-2.5">
-            <Link href={item.href} style={{ color: COLORS.vermilion }}>
-              {item.label}
-            </Link>
-            {i < MISC_LINKS.length - 1 && <span style={{ color: COLORS.mist }}>|</span>}
-          </span>
+    );
+  }
+
+  return (
+    <div className="max-w-2xl mx-auto text-left">
+      {heading}
+      <div className="flex flex-col gap-2.5">
+        {MISC_SECTIONS.map((section) => (
+          <div key={section.title} className="flex items-baseline gap-3">
+            <div className="shrink-0" style={{ width: 84, fontFamily: "'Noto Serif SC', serif", fontSize: 11.5, fontWeight: 700, color: COLORS.inkSoft }}>
+              {section.title}
+            </div>
+            <div className="flex flex-wrap gap-x-3 gap-y-1.5" style={{ fontSize: 12.5 }}>
+              {section.links.map((item) => (
+                <Link key={item.href} href={item.href} className="hover:underline" style={{ color: COLORS.vermilion }}>
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
         ))}
       </div>
     </div>

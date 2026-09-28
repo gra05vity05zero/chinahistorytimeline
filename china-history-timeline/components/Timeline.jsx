@@ -1,9 +1,25 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ERAS, COLORS, ADSENSE_SLOT_TIMELINE } from "@/lib/data";
-import { SealMark, EventCard, AdSenseSlot, NavButton, MiscLinksSection } from "@/components/Shared";
+import { SealMark, EventCard, AdSenseSlot, MiscLinksSection } from "@/components/Shared";
+
+// トップページ上部の主要な入口
+const PRIMARY_LINKS = [
+  { href: "/people", seal: "人", label: "人物一覧", desc: "時代別の人物事典" },
+  { href: "/eras", seal: "事", label: "出来事一覧", desc: "時代別の主な出来事" },
+  { href: "/japan-china-timeline", seal: "日", label: "日中対照年表", desc: "同じ時期の日本と比較" },
+  { href: "/search", seal: "検", label: "サイト内検索", desc: "人物・出来事を探す" },
+];
+
+// 合戦マップ（時代順）
+const BATTLE_MAP_LINKS = [
+  { href: "/chunqiu-zhanguo-battles", label: "春秋・戦国" },
+  { href: "/chuhan-battles", label: "楚漢戦争" },
+  { href: "/sanguo-battles", label: "三国時代" },
+];
 
 export default function Timeline() {
   const router = useRouter();
@@ -97,17 +113,56 @@ export default function Timeline() {
         <p style={{ fontSize: 13, color: COLORS.inkSoft, marginTop: 6 }}>
           「中国五千年史」－ 新石器時代から現代まで、王朝・人物・出来事をスクロールして辿る
         </p>
-        <div className="flex items-center justify-center gap-2.5 mt-5 flex-wrap px-4">
-          <NavButton href="/people" variant="solid">人物一覧</NavButton>
-          <NavButton href="/eras" variant="solid">出来事一覧</NavButton>
-          <NavButton href="/japan-china-timeline" variant="solid">日本史・中国史 対照年表</NavButton>
-          <NavButton href="/sanguo-battles" variant="solid">三国時代 合戦マップ</NavButton>
-          <NavButton href="/chuhan-battles" variant="solid">楚漢戦争 合戦マップ</NavButton>
-          <NavButton href="/chunqiu-zhanguo-battles" variant="solid">春秋・戦国 合戦マップ</NavButton>
-          <NavButton href="/search" variant="outline">サイト内検索</NavButton>
+        <div className="max-w-3xl mx-auto mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 text-left">
+          {PRIMARY_LINKS.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="flex items-start gap-3 px-3 py-3 transition-shadow hover:shadow-md"
+              style={{ backgroundColor: "#FBF8F0", border: `1.5px solid ${COLORS.vermilion}` }}
+            >
+              <span
+                className="flex items-center justify-center shrink-0"
+                style={{ width: 32, height: 32, backgroundColor: COLORS.vermilion, color: "#fff", fontFamily: "'Noto Serif SC', serif", fontSize: 16, fontWeight: 700 }}
+              >
+                {item.seal}
+              </span>
+              <span className="min-w-0">
+                <span className="block" style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14, fontWeight: 700, color: COLORS.ink }}>
+                  {item.label}
+                </span>
+                <span className="block" style={{ fontSize: 11, lineHeight: 1.5, color: COLORS.inkSoft, marginTop: 2 }}>
+                  {item.desc}
+                </span>
+              </span>
+            </Link>
+          ))}
         </div>
-        <div className="mt-6">
-          <MiscLinksSection />
+        <div className="max-w-3xl mx-auto mt-4 flex items-center justify-center gap-2 flex-wrap">
+          <span className="w-full sm:w-auto sm:mr-1" style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 12, fontWeight: 700, color: COLORS.inkSoft }}>
+            合戦マップ
+          </span>
+          {BATTLE_MAP_LINKS.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="inline-flex items-center"
+              style={{
+                height: 34,
+                padding: "0 14px",
+                fontFamily: "'Noto Serif SC', serif",
+                fontSize: 12.5,
+                fontWeight: 700,
+                color: COLORS.vermilion,
+                border: `1.5px solid ${COLORS.vermilion}`,
+              }}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+        <div className="mt-8">
+          <MiscLinksSection variant="full" />
         </div>
       </div>
 
