@@ -292,6 +292,10 @@ const FAQ = [
     q: "楊業はなぜ「楊無敵」と呼ばれたのですか？",
     a: "980年の雁門関の戦いで、わずか数百の騎兵で遼の大軍の背後を突いて大勝したためです。以後、遼の兵は楊業の旗を見ただけで退いたといわれ、「楊無敵」の異名が生まれました。",
   },
+  {
+    q: "『水滸伝』にも楊家の子孫が登場しますか？",
+    a: "登場します。梁山泊の好漢の一人「青面獣」楊志は、楊業（楊令公）の子孫という設定です。水滸伝については「水滸伝とは」のページで詳しく紹介しています。",
+  },
 ];
 
 function YangMap() {
@@ -631,6 +635,7 @@ export default function YangjiajiangPage() {
             <NavButton href="/people/northernsong" variant="outline">北宋の人物一覧を見る</NavButton>
             <NavButton href="/novelists" variant="outline">中国史を題材にした日本人小説家一覧</NavButton>
             <NavButton href="/four-great-novels" variant="outline">中国の四大名著とは</NavButton>
+            <NavButton href="/suikoden" variant="outline">水滸伝とは</NavButton>
           </div>
         </section>
 

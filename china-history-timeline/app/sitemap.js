@@ -29,6 +29,7 @@ export default function sitemap() {
     { url: `${SITE_URL}/chuhan-battles`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/chunqiu-zhanguo-battles`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/yangjiajiang`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
+    { url: `${SITE_URL}/suikoden`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
   ];
 
   const eventRoutes = ERAS.flatMap((era) =>

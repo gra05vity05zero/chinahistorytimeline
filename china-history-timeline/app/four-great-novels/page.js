@@ -41,6 +41,8 @@ const NOVELS = [
     imageCaption: "『水滸伝』の豪傑・武松を描いた19世紀の壁画（北京・頤和園長廊）",
     credit: "Wikimedia Commons（パブリックドメイン）",
     era: "northernsong",
+    pageHref: "/suikoden",
+    pageLabel: "水滸伝をくわしく読む",
   },
   {
     name: "『{{西遊記|さいゆうき}}』",
@@ -135,14 +137,18 @@ export default function FourGreatNovelsPage() {
                 <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft, marginTop: 6 }}>
                   <RubyText text={n.body} />
                 </p>
-                {n.eraLink && (
-                  <a
-                    href={n.eraLink}
-                    style={{ display: "inline-block", marginTop: 10, fontSize: 12, color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}
-                  >
-                    舞台となった時代を年表で読む →
-                  </a>
-                )}
+                <div className="flex items-center gap-4 flex-wrap" style={{ marginTop: 10 }}>
+                  {n.pageHref && (
+                    <a href={n.pageHref} style={{ fontSize: 12, color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
+                      {n.pageLabel} →
+                    </a>
+                  )}
+                  {n.eraLink && (
+                    <a href={n.eraLink} style={{ fontSize: 12, color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
+                      舞台となった時代を年表で読む →
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           ))}

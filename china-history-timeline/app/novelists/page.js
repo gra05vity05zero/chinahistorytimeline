@@ -61,6 +61,8 @@ const NOVELISTS = [
     body: "ハードボイルド作家として知られる筆致で、三国志や水滸伝など中国の古典を独自の解釈で書き直したシリーズを多数手がける。",
     era: "三国時代・北宋",
     href: eraHref("sanguo"),
+    pageHref: "/suikoden",
+    pageLabel: "水滸伝の解説を読む",
   },
   {
     name: "{{塚本青史|つかもとせいし}}",
@@ -96,6 +98,8 @@ const NOVELISTS = [
     body: "戦後日本を代表する大衆小説家の一人。北宋末の梁山泊に集う好漢たちを描いた『水滸伝』の翻案で知られる。",
     era: "北宋",
     href: eraHref("northernsong"),
+    pageHref: "/suikoden",
+    pageLabel: "水滸伝の解説を読む",
   },
 ];
 
@@ -128,11 +132,18 @@ export default function NovelistsPage() {
               <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginTop: 4 }}>
                 <RubyText text={n.body} />
               </p>
-              {n.href && (
-                <a href={n.href} style={{ display: "inline-block", marginTop: 8, fontSize: 12, color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
-                  舞台となった時代を年表で読む →
-                </a>
-              )}
+              <div className="flex items-center gap-4 flex-wrap" style={{ marginTop: 8 }}>
+                {n.href && (
+                  <a href={n.href} style={{ fontSize: 12, color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
+                    舞台となった時代を年表で読む →
+                  </a>
+                )}
+                {n.pageHref && (
+                  <a href={n.pageHref} style={{ fontSize: 12, color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
+                    {n.pageLabel} →
+                  </a>
+                )}
+              </div>
             </div>
           ))}
         </div>

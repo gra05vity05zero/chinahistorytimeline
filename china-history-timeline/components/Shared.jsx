@@ -74,6 +74,7 @@ const MISC_SECTIONS = [
       { href: "/four-inventions", label: "四大発明" },
       { href: "/four-great-novels", label: "四大名著" },
       { href: "/yangjiajiang", label: "楊家将とは" },
+      { href: "/suikoden", label: "水滸伝とは" },
       { href: "/novelists", label: "日本人小説家一覧" },
     ],
   },
