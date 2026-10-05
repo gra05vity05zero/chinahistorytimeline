@@ -1,6 +1,7 @@
 import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
 import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
+import { ZhanguoBorderMap } from "@/components/ZhanguoBorderMap";
 
 const title = "春秋・戦国時代 合戦マップ";
 const fullTitle = `春秋・戦国時代 合戦マップ | ${SITE_NAME}`;
@@ -559,6 +560,16 @@ export default function ChunqiuZhanguoBattlesPage() {
             regionLabels={ZG_REGION_LABELS}
             note="実際の海岸線をもとにした位置関係図です。朱色の番号は下の各合戦の位置を示しています。"
           />
+        </section>
+
+        <section style={{ marginBottom: 12 }}>
+          <h3 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 15, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
+            勢力図の変遷アニメーション
+          </h3>
+          <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginBottom: 12 }}>
+            戦国七雄の並立から、秦が六国を次々と呑み込んで天下を統一するまで——再生ボタンまたは年代タブで、勢力図が移り変わる様子を確認できます。
+          </p>
+          <ZhanguoBorderMap />
         </section>
 
         <section>
