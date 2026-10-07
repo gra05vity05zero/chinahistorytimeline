@@ -211,6 +211,7 @@ export default function IdiomsPage() {
             <NavButton href="/eras" variant="solid">出来事一覧を見る</NavButton>
             <NavButton href="/people" variant="outline">人物一覧を見る</NavButton>
             <NavButton href="/mnemonics" variant="outline">王朝の覚え方を見る</NavButton>
+            <NavButton href="/funny-episodes" variant="outline">笑えるエピソード集を見る</NavButton>
           </div>
         </section>
 

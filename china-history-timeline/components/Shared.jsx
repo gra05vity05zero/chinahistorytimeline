@@ -48,6 +48,7 @@ const MISC_SECTIONS = [
       { href: "/mnemonics", label: "王朝の覚え方" },
       { href: "/year-mnemonics", label: "年号ゴロ合わせ集" },
       { href: "/idioms", label: "故事成語" },
+      { href: "/funny-episodes", label: "笑えるエピソード集" },
     ],
   },
   {
