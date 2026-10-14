@@ -467,6 +467,7 @@ export default function SanguoBattlesPage() {
             <NavButton href="/people/sanguo" variant="outline">三国の人物一覧を見る</NavButton>
             <NavButton href="/chuhan-battles" variant="outline">楚漢戦争 合戦マップを見る</NavButton>
             <NavButton href="/chunqiu-zhanguo-battles" variant="outline">春秋・戦国 合戦マップを見る</NavButton>
+            <NavButton href="/suitang-battles" variant="outline">隋唐・五代 合戦マップを見る</NavButton>
           </div>
         </section>
 

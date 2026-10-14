@@ -19,6 +19,7 @@ const BATTLE_MAP_LINKS = [
   { href: "/chunqiu-zhanguo-battles", label: "春秋・戦国" },
   { href: "/chuhan-battles", label: "楚漢戦争" },
   { href: "/sanguo-battles", label: "三国時代" },
+  { href: "/suitang-battles", label: "隋唐・五代" },
 ];
 
 export default function Timeline() {
