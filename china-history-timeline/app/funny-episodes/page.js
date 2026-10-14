@@ -1,11 +1,13 @@
 import { ERAS, getEraFigures, personSlug, stripRuby, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
 import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
+import FourKoma from "@/components/FourKoma";
+import { MANGA } from "./manga";
 
 const title = "中国史の笑えるエピソード・おもしろ逸話集";
 const fullTitle = `中国史の笑えるエピソード・おもしろ逸話集 | ${SITE_NAME}`;
 const description =
-  "トイレに落ちて亡くなった君主、自分で自分を大将軍に任命した皇帝、葬儀でロバの鳴きまねをした曹丕など、中国史に残る笑えるエピソード・おもしろい逸話を時代順に紹介。『史記』『世説新語』などの出典と、史実か伝説かの区別もあわせて解説します。";
+  "トイレに落ちて亡くなった君主、自分で自分を大将軍に任命した皇帝、葬儀でロバの鳴きまねをした曹丕など、中国史に残る笑えるエピソード・おもしろい逸話を、4コマ漫画つきで時代順に紹介。『史記』『世説新語』などの出典と、史実か伝説かの区別もあわせて解説します。";
 
 export const metadata = {
   title,
@@ -47,6 +49,7 @@ const GROUPS = [
     lead: "記録が古いぶん伝説色も濃いが、君主たちの「やらかし」は妙に具体的に書き残されている。",
     episodes: [
       {
+        id: "youwang",
         title: "笑わない{{后|きさき}}のために、のろしで諸侯をだました王",
         who: "周の{{幽王|ゆうおう}}・{{褒姒|ほうじ}}",
         when: "西周末（前8世紀）",
@@ -58,6 +61,7 @@ const GROUPS = [
         eraId: "westernzhou",
       },
       {
+        id: "xianggong",
         title: "敵が川を渡り終えるまで待ってあげて大敗",
         who: "宋の{{襄公|じょうこう}}",
         when: "前638年",
@@ -69,6 +73,7 @@ const GROUPS = [
         eraId: "chunqiu",
       },
       {
+        id: "jingong",
         title: "占いを外した巫を処刑した直後、トイレに落ちて亡くなる",
         who: "晋の{{景公|けいこう}}",
         when: "前581年",
@@ -80,6 +85,7 @@ const GROUPS = [
         eraId: "chunqiu",
       },
       {
+        id: "yanying",
         title: "「犬の国に来たなら犬の門から入りましょう」",
         who: "斉の{{晏嬰|あんえい}}（{{晏子|あんし}}）",
         when: "春秋時代後期（前6世紀）",
@@ -98,6 +104,7 @@ const GROUPS = [
     lead: "『史記』『漢書』は人物描写が生々しく、建国の英雄の行儀の悪さまでしっかり書いてある。",
     episodes: [
       {
+        id: "zhaogao",
         title: "鹿を連れてきて「これは馬です」",
         who: "{{趙高|ちょうこう}}・二世皇帝{{胡亥|こがい}}",
         when: "前207年",
@@ -109,6 +116,7 @@ const GROUPS = [
         eraId: "qin",
       },
       {
+        id: "liubangcap",
         title: "儒者の冠を取り上げて、その中に小便をする",
         who: "{{劉邦|りゅうほう}}",
         when: "秦末（前3世紀末）",
@@ -120,6 +128,7 @@ const GROUPS = [
         eraId: "qin",
       },
       {
+        id: "liubangsoup",
         title: "「父を煮るぞ」と脅されて「私にもスープを一杯」",
         who: "劉邦・{{項羽|こうう}}",
         when: "前203年",
@@ -132,6 +141,7 @@ const GROUPS = [
         eraId: "qin",
       },
       {
+        id: "dongfangshuo",
         title: "皇帝への反省文が、いつのまにか自分への絶賛に",
         who: "{{東方朔|とうほうさく}}・前漢の{{武帝|ぶてい}}",
         when: "前漢（前2世紀）",
@@ -142,6 +152,7 @@ const GROUPS = [
         eraId: "westernhan",
       },
       {
+        id: "guangwu",
         title: "若き日の「高望み」を、軽々と超えてしまった男",
         who: "{{光武帝|こうぶてい}}（{{劉秀|りゅうしゅう}}）",
         when: "新末〜後漢初（1世紀）",
@@ -160,6 +171,7 @@ const GROUPS = [
     lead: "この時代は、名士たちの気の利いた言動を集めた『世説新語』のおかげで、おもしろ話の宝庫になっている。",
     episodes: [
       {
+        id: "jilei",
         title: "今夜の合言葉は「鶏のあばら骨」",
         who: "{{曹操|そうそう}}・{{楊修|ようしゅう}}",
         when: "219年",
@@ -172,6 +184,7 @@ const GROUPS = [
         eraId: "sanguo",
       },
       {
+        id: "plum",
         title: "「この先に梅林があるぞ」で行軍を乗り切る",
         who: "曹操",
         when: "後漢末",
@@ -184,6 +197,7 @@ const GROUPS = [
         eraId: "sanguo",
       },
       {
+        id: "wangcan",
         title: "葬儀で参列者全員がロバの鳴きまね",
         who: "{{曹丕|そうひ}}・{{王粲|おうさん}}",
         when: "217年",
@@ -196,6 +210,7 @@ const GROUPS = [
         eraId: "sanguo",
       },
       {
+        id: "zhugejin",
         title: "父の顔をロバにたとえられた息子の、二文字の反撃",
         who: "{{孫権|そんけん}}・{{諸葛瑾|しょかつきん}}・{{諸葛恪|しょかつかく}}",
         when: "三国時代（3世紀前半）",
@@ -207,6 +222,7 @@ const GROUPS = [
         eraId: "sanguo",
       },
       {
+        id: "liushan",
         title: "「ここは楽しいので、蜀のことは思い出しません」",
         who: "{{劉禅|りゅうぜん}}・{{司馬昭|しばしょう}}",
         when: "264年ごろ",
@@ -219,6 +235,7 @@ const GROUPS = [
         eraId: "sanguo",
       },
       {
+        id: "liuling",
         title: "「なぜ君たちは私のふんどしの中に入ってくるのか」",
         who: "{{劉伶|りゅうれい}}（{{竹林の七賢|ちくりんのしちけん}}）",
         when: "魏〜西晋（3世紀）",
@@ -230,6 +247,7 @@ const GROUPS = [
         eraId: "westernjin",
       },
       {
+        id: "panyue",
         title: "美男子をまねて街に出たら、つばを吐かれた",
         who: "{{潘岳|はんがく}}・{{左思|さし}}",
         when: "西晋（3世紀後半）",
@@ -241,6 +259,7 @@ const GROUPS = [
         eraId: "westernjin",
       },
       {
+        id: "huidi",
         title: "「穀物がないなら、肉のおかゆを食べればいいのに」",
         who: "西晋の{{恵帝|けいてい}}（{{司馬衷|しばちゅう}}）",
         when: "西晋（3世紀末）",
@@ -252,6 +271,7 @@ const GROUPS = [
         eraId: "westernjin",
       },
       {
+        id: "shichong",
         title: "皇帝にもらった珊瑚を叩き割られる、大富豪の意地の張り合い",
         who: "{{石崇|せきすう}}・{{王愷|おうがい}}",
         when: "西晋（3世紀後半）",
@@ -262,6 +282,7 @@ const GROUPS = [
         eraId: "westernjin",
       },
       {
+        id: "wangxizhi",
         title: "婿選びの使者が来たのに、腹を出して寝転がっていた青年",
         who: "{{王羲之|おうぎし}}",
         when: "東晋（4世紀前半）",
@@ -280,6 +301,7 @@ const GROUPS = [
     lead: "詩人や文人が主役の時代。当代一流の教養人たちの、どこかずれた日常が随筆に書き留められている。",
     episodes: [
       {
+        id: "loushide",
         title: "「顔につばを吐かれたら、拭かずに乾くのを待て」",
         who: "{{婁師徳|ろうしとく}}",
         when: "唐・{{武則天|ぶそくてん}}の時代（7世紀末）",
@@ -291,6 +313,7 @@ const GROUPS = [
         eraId: "tang",
       },
       {
+        id: "jiadao",
         title: "一文字に悩みすぎて、長官の行列に突っ込む",
         who: "{{賈島|かとう}}・{{韓愈|かんゆ}}",
         when: "唐（9世紀前半）",
@@ -302,6 +325,7 @@ const GROUPS = [
         eraId: "tang",
       },
       {
+        id: "wanganshi",
         title: "「顔色が悪い」と心配されたが、ただの{{垢|あか}}だった",
         who: "{{王安石|おうあんせき}}",
         when: "北宋（11世紀）",
@@ -314,6 +338,7 @@ const GROUPS = [
         eraId: "northernsong",
       },
       {
+        id: "mifu",
         title: "珍しい岩に正装でおじぎをして「兄上」と呼ぶ",
         who: "{{米芾|べいふつ}}",
         when: "北宋（11世紀末〜12世紀初）",
@@ -324,6 +349,7 @@ const GROUPS = [
         eraId: "northernsong",
       },
       {
+        id: "sushi",
         title: "友人の恐妻ぶりを詩にして、千年先まで残してしまう",
         who: "{{蘇軾|そしょく}}・{{陳慥|ちんぞう}}",
         when: "北宋（11世紀後半）",
@@ -342,6 +368,7 @@ const GROUPS = [
     lead: "記録が豊富に残る時代。皇帝たちの個性的すぎる趣味が、公式の史書や現存する文物から確かめられる。",
     episodes: [
       {
+        id: "zhengde",
         title: "自分で自分を大将軍に任命し、自分に給料を払う皇帝",
         who: "明の{{正徳帝|せいとくてい}}（{{武宗|ぶそう}}）",
         when: "1517〜1518年",
@@ -353,6 +380,7 @@ const GROUPS = [
         eraId: "ming",
       },
       {
+        id: "tianqi",
         title: "政治より大工仕事。「もうわかった、よきにはからえ」",
         who: "明の{{天啓帝|てんけいてい}}（{{熹宗|きそう}}）・{{魏忠賢|ぎちゅうけん}}",
         when: "1620年代",
@@ -364,6 +392,7 @@ const GROUPS = [
         eraId: "ming",
       },
       {
+        id: "zhupi",
         title: "臣下の報告書に書き込まれた、皇帝の率直すぎる返事",
         who: "清の{{康熙帝|こうきてい}}・{{雍正帝|ようせいてい}}",
         when: "17世紀末〜18世紀前半",
@@ -375,6 +404,7 @@ const GROUPS = [
         eraId: "qing",
       },
       {
+        id: "qianlong",
         title: "生涯に詩を4万首以上。名画には感想を書き込みまくる",
         who: "清の{{乾隆帝|けんりゅうてい}}",
         when: "18世紀",
@@ -428,7 +458,7 @@ export default function FunnyEpisodesPage() {
             text={
               "中国の歴史書は、王朝の興亡や戦争だけを記録しているわけではありません。トイレに落ちて亡くなった君主、" +
               "儒者の冠に小便をした建国の英雄、自分で自分を大将軍に任命した皇帝など、思わず笑ってしまうような話も、" +
-              `大まじめに書き残されています。ここでは西周から清まで、そうしたエピソードを時代順に${TOTAL}話紹介します。`
+              `大まじめに書き残されています。ここでは西周から清まで、そうしたエピソードを時代順に${TOTAL}話、4コマ漫画つきで紹介します。`
             }
           />
         </p>
@@ -473,7 +503,7 @@ export default function FunnyEpisodesPage() {
             </p>
             <div className="flex flex-col gap-3">
               {group.episodes.map((ep, i) => (
-                <article key={i} style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: "14px 16px" }}>
+                <article key={i} id={ep.id} style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: "14px 16px" }}>
                   <div className="flex items-baseline justify-between gap-3">
                     <span style={{ fontSize: 11, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}>
                       <RubyText text={ep.when} />
@@ -493,6 +523,11 @@ export default function FunnyEpisodesPage() {
                     <p style={{ fontSize: 12, lineHeight: 1.8, color: COLORS.inkSoft, marginTop: 8, paddingLeft: 10, borderLeft: `2px solid ${COLORS.mist}` }}>
                       <RubyText text={ep.note} />
                     </p>
+                  )}
+                  {MANGA[ep.id] && (
+                    <div style={{ marginTop: 14 }}>
+                      <FourKoma id={ep.id} panels={MANGA[ep.id]} title={stripRuby(ep.title)} />
+                    </div>
                   )}
                   <div className="flex items-baseline justify-between gap-x-4 gap-y-1.5 flex-wrap" style={{ marginTop: 10 }}>
                     <span style={{ fontSize: 11, color: COLORS.inkSoft }}>
