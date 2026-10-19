@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ERAS, COLORS, ADSENSE_SLOT_TIMELINE } from "@/lib/data";
 import { SealMark, EventCard, AdSenseSlot, MiscLinksSection } from "@/components/Shared";
+import { SiteTitle } from "@/components/SiteHeader";
 
 // トップページ上部の主要な入口
 const PRIMARY_LINKS = [
@@ -105,15 +106,7 @@ export default function Timeline() {
       )}
 
       <div className="px-6 pt-10 pb-6 text-center">
-        <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 12, letterSpacing: "0.3em", color: COLORS.vermilion }}>
-          CHINESE HISTORY TIMELINE
-        </div>
-        <h1 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 32, fontWeight: 900, color: COLORS.ink, marginTop: 6 }}>
-          中国史年表
-        </h1>
-        <p style={{ fontSize: 13, color: COLORS.inkSoft, marginTop: 6 }}>
-          「中国五千年史」－ 新石器時代から現代まで、王朝・人物・出来事をスクロールして辿る
-        </p>
+        <SiteTitle headingAs="h1" />
         <div className="max-w-3xl mx-auto mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 text-left">
           {PRIMARY_LINKS.map((item) => (
             <Link

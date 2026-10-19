@@ -1,6 +1,7 @@
 import "./globals.css";
 import Script from "next/script";
 import Footer from "@/components/Footer";
+import SiteHeader from "@/components/SiteHeader";
 import { ADSENSE_CLIENT_ID, GA_MEASUREMENT_ID, SITE_URL, SITE_NAME, SITE_DESCRIPTION, buildOpenGraph, buildTwitter } from "@/lib/data";
 
 // ホームページの<title>は検索されやすい語を先頭に置き、ブランド名（SITE_NAME）は
@@ -75,6 +76,7 @@ export default function RootLayout({ children }) {
         )}
       </head>
       <body>
+        <SiteHeader />
         {children}
         <Footer />
       </body>
