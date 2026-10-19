@@ -1,4 +1,4 @@
-import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
+import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter, buildAmazonUrl } from "@/lib/data";
 import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 
@@ -270,6 +270,11 @@ const BOOKS = [
     title: "『{{楊|よう}}家将』",
     meta: "{{北方謙三|きたかたけんぞう}} / 2003年（PHP研究所） / 第38回{{吉川英治|よしかわえいじ}}文学賞",
     body: "{{楊業|ようぎょう}}と{{楊|よう}}家の男たちを主人公に、{{宋|そう}}と{{遼|りょう}}の戦いを{{描|えが}}く。原典である演義を{{大幅|おおはば}}に再構成した、オリジナル色の強い作品。",
+    // Kindle版（PHP文芸文庫・上下巻）のASIN
+    kindle: [
+      { label: "上巻", asin: "B00BS52O8W" },
+      { label: "下巻", asin: "B00BS52OAA" },
+    ],
   },
   {
     no: 2,
@@ -605,10 +610,29 @@ export default function YangjiajiangPage() {
                   <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 16, fontWeight: 700, color: COLORS.ink }}><RubyText text={book.title} /></div>
                   <div style={{ fontSize: 11, color: COLORS.gold, marginTop: 2 }}><RubyText text={book.meta} /></div>
                   <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft, marginTop: 6 }}><RubyText text={book.body} /></p>
+                  {book.kindle && (
+                    <div className="flex items-center gap-2 flex-wrap mt-3">
+                      {book.kindle.map((k) => (
+                        <a
+                          key={k.asin}
+                          href={buildAmazonUrl(k.asin)}
+                          target="_blank"
+                          rel="nofollow noreferrer sponsored"
+                          className="px-3 py-1.5"
+                          style={{ fontSize: 12, fontWeight: 700, color: COLORS.vermilion, border: `1px solid ${COLORS.vermilion}`, backgroundColor: "#FFFDF7" }}
+                        >
+                          {k.label}（Kindle版）をAmazonで見る →
+                        </a>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
           </div>
+          <p style={{ fontSize: 10.5, color: COLORS.mist, marginTop: 8 }}>
+            ※ 一部のリンクはAmazonアソシエイトによるアフィリエイト広告を<ruby>含<rt>ふく</rt></ruby>みます
+          </p>
         </section>
 
         <section style={{ marginBottom: 36 }} id="faq">

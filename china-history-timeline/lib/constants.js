@@ -79,7 +79,7 @@ export const CATEGORY_STYLE = {
 // ---- アフィリエイト設定 ------------------------------------------------
 // Amazonアソシエイトのトラッキングタグ（例: "yourid-22"）をここに設定する。
 // 個々の作品にはASINを指定すれば自動でリンクが組み立てられる。
-export const AMAZON_ASSOCIATE_TAG = "YOUR_AMAZON_TAG-22"; // ← 自分のアソシエイトタグに置き換える
+export const AMAZON_ASSOCIATE_TAG = "gra05vity05-22";
 
 export function buildAmazonUrl(asin) {
   if (!asin) return null;
