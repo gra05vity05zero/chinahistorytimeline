@@ -160,7 +160,7 @@ const ICONS = {
   },
   // 縄文時代（火焔型土器）
   jomon: {
-    label: "{{火焔|かえん}}型土器",
+    label: "{{火焔型|かえんがた}}土器",
     body: (
       <>
         <path d="M13 19 L15 31 H25 L27 19 Z" fill={CLAY} stroke={INK} strokeWidth="1.1" strokeLinejoin="round" />
@@ -198,7 +198,7 @@ const ICONS = {
   },
   // 古墳時代（前方後円墳）
   kofun: {
-    label: "前方後円{{墳|ふん}}",
+    label: "{{前方後円墳|ぜんぽうこうえんふん}}",
     body: (
       <>
         <path d="M20 6 A9.5 9.5 0 0 1 26.5 22.5 L31 33 H9 L13.5 22.5 A9.5 9.5 0 0 1 20 6 Z" fill="#9DB8C0" />
@@ -208,7 +208,7 @@ const ICONS = {
   },
   // 鉄砲伝来（火縄銃）
   teppo: {
-    label: "火縄{{銃|じゅう}}",
+    label: "{{火縄銃|ひなわじゅう}}",
     body: (
       <g transform="rotate(-28 20 20)">
         <rect x="11" y="18.5" width="23" height="2.2" fill={INK} />
@@ -220,7 +220,7 @@ const ICONS = {
   },
   // 遣隋使（帆に網代を張った船）
   kenzuishi: {
-    label: "{{遣隋|けんずい}}使の船",
+    label: "{{遣隋使|けんずいし}}の船",
     body: (
       <>
         <line x1="20" y1="25" x2="20" y2="8.5" stroke={INK} strokeWidth="1.2" />

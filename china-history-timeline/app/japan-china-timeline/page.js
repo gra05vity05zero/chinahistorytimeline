@@ -65,17 +65,17 @@ const CHINA_EVENTS = [
   { sortYear: 1271, icon: "ger", yearLabel: "1271年", event: "クビライが元を建国", era: "元", href: findEventHref("yuan", "元の建国") },
   { sortYear: 1279, yearLabel: "1279年", event: "元が{{南宋|なんそう}}を{{滅|ほろ}}ぼし中国統一", era: "元", href: findEventHref("yuan", "南宋を滅ぼし中国統一") },
   { sortYear: 1368, yearLabel: "1368年", event: "{{朱元璋|しゅげんしょう}}が明を建国", era: "明", href: findEventHref("ming", "明の建国") },
-  { sortYear: 1405, yearLabel: "1405年", event: "{{鄭和|ていわ}}が南海大{{遠征|えんせい}}を開始", era: "明", href: findEventHref("ming", "鄭和") },
+  { sortYear: 1405, yearLabel: "1405年", event: "{{鄭和|ていわ}}が南海{{大遠征|だいえんせい}}を開始", era: "明", href: findEventHref("ming", "鄭和") },
   { sortYear: 1592, yearLabel: "1592年", event: "明が{{朝鮮|ちょうせん}}に{{援軍|えんぐん}}を{{派遣|はけん}}（{{文禄|ぶんろく}}の役）", era: "明", href: findEventHref("ming", "文禄・慶長の役への援軍") },
   { sortYear: 1644, yearLabel: "1644年", event: "清が北京に入城", era: "清", href: findEventHref("qing", "清の北京入城") },
   { sortYear: 1839, icon: "opium", yearLabel: "1839年", event: "アヘン戦争が起こる", era: "清", href: findEventHref("qing", "アヘン戦争") },
   { sortYear: 1894, yearLabel: "1894年", event: "日清戦争が起こる", era: "清", href: findEventHref("qing", "日清戦争") },
   { sortYear: 1911, yearLabel: "1911年", event: "{{辛亥革命|しんがいかくめい}}が起こる", era: "清（末期）", href: findEventHref("qing", "辛亥革命") },
-  { sortYear: 1912, yearLabel: "1912年", event: "{{中華|ちゅうか}}民国が成立", era: "{{中華|ちゅうか}}民国", href: findEventHref("roc", "中華民国の成立") },
-  { sortYear: 1931, yearLabel: "1931年", event: "{{満洲事変|まんしゅうじへん}}が起こる", era: "{{中華|ちゅうか}}民国", href: findEventHref("roc", "満洲事変") },
-  { sortYear: 1937, yearLabel: "1937年", event: "日中戦争が{{勃発|ぼっぱつ}}", era: "{{中華|ちゅうか}}民国", href: findEventHref("roc", "日中戦争の勃発") },
-  { sortYear: 1949, yearLabel: "1949年", event: "{{中華|ちゅうか}}人民共和国が建国", era: "{{中華|ちゅうか}}人民共和国", href: findEventHref("prc", "中華人民共和国の建国") },
-  { sortYear: 1978, yearLabel: "1978年", event: "改革開放政策が始まる", era: "{{中華|ちゅうか}}人民共和国", href: findEventHref("prc", "改革開放") },
+  { sortYear: 1912, yearLabel: "1912年", event: "{{中華民国|ちゅうかみんこく}}が成立", era: "{{中華民国|ちゅうかみんこく}}", href: findEventHref("roc", "中華民国の成立") },
+  { sortYear: 1931, yearLabel: "1931年", event: "{{満洲事変|まんしゅうじへん}}が起こる", era: "{{中華民国|ちゅうかみんこく}}", href: findEventHref("roc", "満洲事変") },
+  { sortYear: 1937, yearLabel: "1937年", event: "日中戦争が{{勃発|ぼっぱつ}}", era: "{{中華民国|ちゅうかみんこく}}", href: findEventHref("roc", "日中戦争の勃発") },
+  { sortYear: 1949, yearLabel: "1949年", event: "{{中華人民共和国|ちゅうかじんみんきょうわこく}}が建国", era: "{{中華人民共和国|ちゅうかじんみんきょうわこく}}", href: findEventHref("prc", "中華人民共和国の建国") },
+  { sortYear: 1978, yearLabel: "1978年", event: "改革開放政策が始まる", era: "{{中華人民共和国|ちゅうかじんみんきょうわこく}}", href: findEventHref("prc", "改革開放") },
 ];
 
 const JAPAN_EVENTS = [
@@ -87,29 +87,29 @@ const JAPAN_EVENTS = [
   { sortYear: 538, yearLabel: "538年{{頃|ごろ}}", event: "百済から仏教が伝わる", era: "{{古墳|こふん}}時代" },
   { sortYear: 593, yearLabel: "593年", event: "{{聖徳太子|しょうとくたいし}}が{{摂政|せっしょう}}となり飛鳥時代がはじまる", era: "飛鳥時代" },
   { sortYear: 604, yearLabel: "604年", event: "十七条の憲法を制定", era: "飛鳥時代" },
-  { sortYear: 607, icon: "kenzuishi", yearLabel: "607年", event: "{{小野妹子|おののいもこ}}を{{遣隋|けんずい}}使として{{派遣|はけん}}", era: "飛鳥時代" },
+  { sortYear: 607, icon: "kenzuishi", yearLabel: "607年", event: "{{小野妹子|おののいもこ}}を{{遣隋使|けんずいし}}として{{派遣|はけん}}", era: "飛鳥時代" },
   { sortYear: 645, yearLabel: "645年", event: "大化の改新がはじまる", era: "飛鳥時代" },
   { sortYear: 663, yearLabel: "663年", event: "{{白村江|はくすきのえ}}の戦いで{{唐|とう}}・{{新羅|しらぎ}}連合軍に敗れる", era: "飛鳥時代" },
   { sortYear: 701, yearLabel: "701年", event: "{{大宝律令|たいほうりつりょう}}を制定", era: "飛鳥時代" },
   { sortYear: 710, yearLabel: "710年", event: "{{平城京|へいじょうきょう}}に{{遷都|せんと}}し奈良時代がはじまる", era: "奈良時代" },
   { sortYear: 752, yearLabel: "752年", event: "東大寺の大仏が開眼", era: "奈良時代" },
   { sortYear: 794, yearLabel: "794年", event: "{{平安京|へいあんきょう}}に{{遷都|せんと}}し平安時代がはじまる", era: "平安時代" },
-  { sortYear: 894, yearLabel: "894年", event: "{{遣唐|けんとう}}使を{{廃止|はいし}}", era: "平安時代" },
+  { sortYear: 894, yearLabel: "894年", event: "{{遣唐使|けんとうし}}を{{廃止|はいし}}", era: "平安時代" },
   { sortYear: 1016, yearLabel: "1016年", event: "{{藤原道長|ふじわらのみちなが}}が{{摂政|せっしょう}}となる（{{摂関|せっかん}}政治の全盛）", era: "平安時代" },
   { sortYear: 1159, yearLabel: "1159年", event: "{{平治|へいじ}}の乱に勝ち{{平清盛|たいらのきよもり}}が実権を{{握|にぎ}}る", era: "平安時代" },
-  { sortYear: 1185, icon: "kabuto", yearLabel: "1185年", event: "{{鎌倉|かまくら}}幕府が成立", era: "{{鎌倉|かまくら}}時代" },
+  { sortYear: 1185, icon: "kabuto", yearLabel: "1185年", event: "{{鎌倉幕府|かまくらばくふ}}が成立", era: "{{鎌倉|かまくら}}時代" },
   { sortYear: 1274, icon: "genko", yearLabel: "1274年", event: "{{元寇|げんこう}}（文永の役）が起こる", era: "{{鎌倉|かまくら}}時代" },
   { sortYear: 1281, yearLabel: "1281年", event: "{{元寇|げんこう}}（{{弘安の役|こうあんのえき}}）が起こる", era: "{{鎌倉|かまくら}}時代" },
-  { sortYear: 1333, yearLabel: "1333年", event: "{{鎌倉|かまくら}}幕府が{{滅亡|めつぼう}}", era: "{{鎌倉|かまくら}}時代" },
+  { sortYear: 1333, yearLabel: "1333年", event: "{{鎌倉幕府|かまくらばくふ}}が{{滅亡|めつぼう}}", era: "{{鎌倉|かまくら}}時代" },
   { sortYear: 1336, yearLabel: "1336年", event: "室町幕府が成立", era: "室町時代" },
   { sortYear: 1404, yearLabel: "1404年", event: "{{勘合貿易|かんごうぼうえき}}（日明貿易）を開始", era: "室町時代" },
   { sortYear: 1467, yearLabel: "1467年", event: "{{応仁|おうにん}}の乱がはじまる", era: "室町時代" },
   { sortYear: 1543, icon: "teppo", yearLabel: "1543年", event: "{{鉄砲|てっぽう}}が伝わる", era: "室町時代" },
-  { sortYear: 1573, yearLabel: "1573年", event: "室町幕府が{{滅亡|めつぼう}}（安土{{桃山|ももやま}}時代はじまる）", era: "安土{{桃山|ももやま}}時代" },
-  { sortYear: 1590, yearLabel: "1590年", event: "{{豊臣秀吉|とよとみひでよし}}が天下統一", era: "安土{{桃山|ももやま}}時代" },
-  { sortYear: 1592, yearLabel: "1592年", event: "{{豊臣秀吉|とよとみひでよし}}が{{朝鮮|ちょうせん}}出兵（{{文禄|ぶんろく}}の役）", era: "安土{{桃山|ももやま}}時代" },
-  { sortYear: 1600, yearLabel: "1600年", event: "{{関ヶ原|せきがはら}}の戦い", era: "安土{{桃山|ももやま}}時代" },
-  { sortYear: 1603, yearLabel: "1603年", event: "{{江戸|えど}}幕府が成立", era: "{{江戸時代|えどじだい}}" },
+  { sortYear: 1573, yearLabel: "1573年", event: "室町幕府が{{滅亡|めつぼう}}（{{安土桃山|あづちももやま}}時代はじまる）", era: "{{安土桃山|あづちももやま}}時代" },
+  { sortYear: 1590, yearLabel: "1590年", event: "{{豊臣秀吉|とよとみひでよし}}が天下統一", era: "{{安土桃山|あづちももやま}}時代" },
+  { sortYear: 1592, yearLabel: "1592年", event: "{{豊臣秀吉|とよとみひでよし}}が{{朝鮮|ちょうせん}}出兵（{{文禄|ぶんろく}}の役）", era: "{{安土桃山|あづちももやま}}時代" },
+  { sortYear: 1600, yearLabel: "1600年", event: "{{関ヶ原|せきがはら}}の戦い", era: "{{安土桃山|あづちももやま}}時代" },
+  { sortYear: 1603, yearLabel: "1603年", event: "{{江戸幕府|えどばくふ}}が成立", era: "{{江戸時代|えどじだい}}" },
   { sortYear: 1639, yearLabel: "1639年", event: "{{鎖国|さこく}}が完成", era: "{{江戸時代|えどじだい}}" },
   { sortYear: 1854, icon: "kurofune", yearLabel: "1854年", event: "{{日米和親条約|にちべいわしんじょうやく}}を結び開国", era: "{{江戸時代|えどじだい}}" },
   { sortYear: 1868, yearLabel: "1868年", event: "明治{{維新|いしん}}が起こる", era: "明治時代" },
@@ -198,7 +198,7 @@ export default function JapanChinaTimelinePage() {
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 28 }}>
           日本と中国では時代区分の年代がそれぞれ異なるため、無理に時代同士を横並びにせず、中国の出来事と日本の出来事を実際の年代順に1本の年表として並べました。
-          <ruby>遣隋<rt>けんずい</rt></ruby>使や<ruby>元寇<rt>げんこう</rt></ruby>のように、両国の出来事が近い時期に重なっていることも見えてきます。
+          <ruby>遣隋使<rt>けんずいし</rt></ruby>や<ruby>元寇<rt>げんこう</rt></ruby>のように、両国の出来事が近い時期に重なっていることも見えてきます。
         </p>
 
         <div className="flex items-center justify-center gap-4 mb-3" style={{ fontSize: 11, color: COLORS.inkSoft }}>

@@ -20,14 +20,14 @@ export const metadata = {
 // location: 所在地情報 / mapX,mapY: 下の地図(viewBox 0 0 500 366)上での位置。
 // 実際の経緯度を/world-heritageと同じ図法（緯度補正付き正距円筒図法）で投影した座標を基準にしている。
 const SITES = [
-  { eraId: "neolithic", eventTitle: "竜山", heritageName: "城子崖", location: "山東省{{章丘|しょうきゅう}}県", mapX: 348, mapY: 175 },
-  { eraId: "shang", eventTitle: "殷の建国", heritageName: "鄭州商城", location: "河南省{{鄭州|ていしゅう}}市", mapX: 319, mapY: 193 },
-  { eraId: "chunqiu", eventTitle: "覇者となる", heritageName: "斉国故城", location: "山東省{{淄博|しはく}}市{{臨淄|りんし}}区", mapX: 354, mapY: 174 },
+  { eraId: "neolithic", eventTitle: "竜山", heritageName: "城子崖", location: "山東省{{章丘県|しょうきゅうけん}}", mapX: 348, mapY: 175 },
+  { eraId: "shang", eventTitle: "殷の建国", heritageName: "鄭州商城", location: "河南省{{鄭州市|ていしゅうし}}", mapX: 319, mapY: 193 },
+  { eraId: "chunqiu", eventTitle: "覇者となる", heritageName: "斉国故城", location: "山東省{{淄博市|しはくし}}{{臨淄区|りんしく}}", mapX: 354, mapY: 174 },
   { eraId: "qin", eventTitle: "万里の長城の修築", heritageName: "万里の長城", location: "北京市（{{八達嶺|はったつれい}}）ほか", mapX: 327, mapY: 132 },
-  { eraId: "nanbei", eventTitle: "劉宋の建国", heritageName: "建康城遺跡", location: "{{江蘇|こうそ}}省南京市", mapX: 358, mapY: 218 },
+  { eraId: "nanbei", eventTitle: "劉宋の建国", heritageName: "建康城遺跡", location: "{{江蘇省|こうそしょう}}南京市", mapX: 358, mapY: 218 },
   { eraId: "ming", eventTitle: "北京遷都", heritageName: "紫禁城", location: "北京市", mapX: 340, mapY: 145 },
-  { eraId: "ming", eventTitle: "土木の変", heritageName: "土木堡遺跡", location: "河北省{{懐|かい}}来県", mapX: 333, mapY: 141 },
-  { eraId: "qing", eventTitle: "清の北京入城", heritageName: "山海関", location: "河北省{{秦皇島|しんこうとう}}市", mapX: 365, mapY: 144 },
+  { eraId: "ming", eventTitle: "土木の変", heritageName: "土木堡遺跡", location: "河北省{{懐来県|かいらいけん}}", mapX: 333, mapY: 141 },
+  { eraId: "qing", eventTitle: "清の北京入城", heritageName: "山海関", location: "河北省{{秦皇島市|しんこうとうし}}", mapX: 365, mapY: 144 },
 ];
 
 function resolveSite(spec) {
