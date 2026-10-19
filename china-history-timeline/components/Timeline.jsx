@@ -24,6 +24,13 @@ const BATTLE_MAP_LINKS = [
   { href: "/suitang-battles", label: "{{隋唐|ずいとう}}・五代" },
 ];
 
+// トップページの導入文（ルビ記法 {{漢字|ふりがな}} 対応）
+const INTRO_PARAGRAPHS = [
+  "中国史は、{{黄河|こうが}}・{{長江|ちょうこう}}流域で生まれた新石器文化から始まります。{{殷|いん}}・周の時代を経て、{{諸侯|しょこう}}が争った春秋・戦国時代のあと、紀元前221年に{{秦|しん}}の{{始皇帝|しこうてい}}が初めて中国を統一しました。",
+  "その後、漢・三国・{{晋|しん}}・南北朝・{{隋|ずい}}・{{唐|とう}}・五代十国・{{宋|そう}}・元・明・{{清|しん}}と、王朝の{{興亡|こうぼう}}を{{繰|く}}り返しながら五千年の歴史が続き、1912年の{{中華|ちゅうか}}民国、1949年の{{中華|ちゅうか}}人民共和国へとつながります。",
+  "このサイトでは、中国の歴史を王朝ごとに区切った年表で、主な出来事・人物・文化を年代順に解説しています。気になる出来事をタップすると、背景や{{影響|えいきょう}}、関連する人物・{{史跡|しせき}}をくわしく読めます。",
+];
+
 export default function Timeline() {
   const router = useRouter();
   const [activeEra, setActiveEra] = useState(ERAS[0].id);
@@ -160,6 +167,21 @@ export default function Timeline() {
           <MiscLinksSection variant="full" />
         </div>
       </div>
+
+      {/* 「中国史」「中国の歴史」で検索した人向けの導入文。年表本体の前に全体の流れを短く示す */}
+      <section className="max-w-2xl mx-auto px-5 pb-8">
+        <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 18, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
+          中国史（中国の歴史）の流れ
+        </h2>
+        {INTRO_PARAGRAPHS.map((text, i) => (
+          <p key={i} style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 10 }}>
+            <RubyText text={text} />
+          </p>
+        ))}
+        <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 18, fontWeight: 700, color: COLORS.ink, marginTop: 24 }}>
+          中国史年表（全{ERAS.length}時代）
+        </h2>
+      </section>
 
       <div className="relative max-w-2xl mx-auto px-5 pb-24">
         <div className="absolute top-0 bottom-0" style={{ left: 20, width: 2, backgroundColor: COLORS.mist }} />
