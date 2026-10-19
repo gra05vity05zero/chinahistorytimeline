@@ -23,6 +23,7 @@ export default function sitemap() {
     { url: `${SITE_URL}/great-wall`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/four-inventions`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/four-great-novels`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
+    { url: `${SITE_URL}/history-books`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/novelists`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/sanguo-battles`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/sanguo-comparison`, lastModified: now, changeFrequency: "yearly", priority: 0.6 },
