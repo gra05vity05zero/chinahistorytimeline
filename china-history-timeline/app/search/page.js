@@ -20,7 +20,7 @@ export default function SearchPage() {
     <div style={{ backgroundColor: COLORS.paper, minHeight: "100%" }}>
       <div className="max-w-2xl mx-auto px-6 py-12">
         <h1 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 24, fontWeight: 900, color: COLORS.ink, marginBottom: 16 }}>
-          サイト内検索
+          サイト内<ruby>検索<rt>けんさく</rt></ruby>
         </h1>
         <SearchClient index={index} />
 

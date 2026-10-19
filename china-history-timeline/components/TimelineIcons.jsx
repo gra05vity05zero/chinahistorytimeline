@@ -1,6 +1,7 @@
 // 日中対照年表の、時代の転換点に添える小さなアイコン（オリジナルSVG）。
 // 40×40の丸い印の中に、墨線と朱・金・翡翠の配色で描く。
 import { COLORS } from "@/lib/constants";
+import { stripRuby } from "@/lib/constants";
 
 const INK = COLORS.ink;
 const CLAY = "#B07A4A";
@@ -9,7 +10,7 @@ const WAVE = <path d="M7 33 q3 -2 6 0 t6 0 t6 0 t6 0" fill="none" stroke={COLORS
 const ICONS = {
   // 仰韶文化の彩陶
   caitao: {
-    label: "彩陶",
+    label: "{{彩陶|さいとう}}",
     body: (
       <>
         <path d="M9 15 H31 C31 23 26 29 20 29 C14 29 9 23 9 15 Z" fill={COLORS.vermilionSoft} stroke={INK} strokeWidth="1.2" />
@@ -22,7 +23,7 @@ const ICONS = {
   },
   // 夏の建国（禹の治水・鋤と水）
   yu: {
-    label: "治水の鋤",
+    label: "治水の{{鋤|すき}}",
     body: (
       <>
         <line x1="20" y1="8" x2="20" y2="22" stroke={CLAY} strokeWidth="2" strokeLinecap="round" />
@@ -35,7 +36,7 @@ const ICONS = {
   },
   // 殷の建国（青銅の鼎）
   ding: {
-    label: "青銅の鼎",
+    label: "青銅の{{鼎|かなえ}}",
     body: (
       <>
         <path d="M13.5 16 V10 H16.5 V16 M23.5 16 V10 H26.5 V16" fill="none" stroke={INK} strokeWidth="1.3" />
@@ -90,7 +91,7 @@ const ICONS = {
   },
   // 秦の統一（皇帝の冕冠）
   qin: {
-    label: "皇帝の冠",
+    label: "{{皇帝|こうてい}}の{{冠|かんむり}}",
     body: (
       <>
         <path d="M13 16 H27 V25 Q20 28 13 25 Z" fill={COLORS.gold} stroke={INK} strokeWidth="1.2" />
@@ -106,7 +107,7 @@ const ICONS = {
   },
   // 赤壁の戦い（炎上する船）
   chibi: {
-    label: "炎上する船",
+    label: "{{炎上|えんじょう}}する船",
     body: (
       <>
         <path d="M14 25 C11 20 15 17 14 11 C18 14 18 17 19.5 16 C20.5 13 22.5 11.5 23 9 C27 14 28 20 25.5 25 Z" fill={COLORS.vermilion} />
@@ -144,7 +145,7 @@ const ICONS = {
   },
   // アヘン戦争（英国の帆船）
   opium: {
-    label: "帆船",
+    label: "{{帆船|はんせん}}",
     body: (
       <>
         <line x1="15" y1="25" x2="15" y2="8.5" stroke={INK} strokeWidth="1.2" />
@@ -159,7 +160,7 @@ const ICONS = {
   },
   // 縄文時代（火焔型土器）
   jomon: {
-    label: "火焔型土器",
+    label: "{{火焔|かえん}}型土器",
     body: (
       <>
         <path d="M13 19 L15 31 H25 L27 19 Z" fill={CLAY} stroke={INK} strokeWidth="1.1" strokeLinejoin="round" />
@@ -197,7 +198,7 @@ const ICONS = {
   },
   // 古墳時代（前方後円墳）
   kofun: {
-    label: "前方後円墳",
+    label: "前方後円{{墳|ふん}}",
     body: (
       <>
         <path d="M20 6 A9.5 9.5 0 0 1 26.5 22.5 L31 33 H9 L13.5 22.5 A9.5 9.5 0 0 1 20 6 Z" fill="#9DB8C0" />
@@ -207,7 +208,7 @@ const ICONS = {
   },
   // 鉄砲伝来（火縄銃）
   teppo: {
-    label: "火縄銃",
+    label: "火縄{{銃|じゅう}}",
     body: (
       <g transform="rotate(-28 20 20)">
         <rect x="11" y="18.5" width="23" height="2.2" fill={INK} />
@@ -219,7 +220,7 @@ const ICONS = {
   },
   // 遣隋使（帆に網代を張った船）
   kenzuishi: {
-    label: "遣隋使の船",
+    label: "{{遣隋|けんずい}}使の船",
     body: (
       <>
         <line x1="20" y1="25" x2="20" y2="8.5" stroke={INK} strokeWidth="1.2" />
@@ -232,7 +233,7 @@ const ICONS = {
   },
   // 鎌倉幕府の成立（武士の兜）
   kabuto: {
-    label: "兜",
+    label: "{{兜|かぶと}}",
     body: (
       <>
         <path d="M17.5 14 L12 5.5 H14.5 L19.5 13 Z M22.5 14 L28 5.5 H25.5 L20.5 13 Z" fill={COLORS.gold} stroke={INK} strokeWidth="0.8" />
@@ -276,8 +277,8 @@ export function TimelineIcon({ name, size = 40 }) {
   const icon = ICONS[name];
   if (!icon) return null;
   return (
-    <svg width={size} height={size} viewBox="0 0 40 40" role="img" aria-label={icon.label} style={{ display: "inline-block", verticalAlign: "top" }}>
-      <title>{icon.label}</title>
+    <svg width={size} height={size} viewBox="0 0 40 40" role="img" aria-label={stripRuby(icon.label)} style={{ display: "inline-block", verticalAlign: "top" }}>
+      <title>{stripRuby(icon.label)}</title>
       <circle cx="20" cy="20" r="19" fill="#F6F0E1" stroke={COLORS.mist} strokeWidth="1" />
       {icon.body}
     </svg>

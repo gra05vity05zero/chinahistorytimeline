@@ -308,7 +308,7 @@ export default function HistoryBooksPage() {
                 <tr style={{ fontFamily: "'Noto Serif SC', serif", color: COLORS.ink }}>
                   {["#", "書名", "主な編者", "成立"].map((h) => (
                     <th key={h} style={{ textAlign: "left", padding: "6px 10px", borderBottom: `2px solid ${COLORS.gold}`, whiteSpace: "nowrap" }}>
-                      {h}
+                      <RubyText text={h} />
                     </th>
                   ))}
                 </tr>

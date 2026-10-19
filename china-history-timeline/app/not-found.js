@@ -21,7 +21,7 @@ export default function NotFound() {
       <p style={{ fontSize: 15, color: COLORS.inkSoft, marginBottom: 24, lineHeight: 1.8 }}>
         お探しのページは見つかりませんでした。
         <br />
-        時代の狭間に消えてしまったようです。
+        時代の<ruby>狭間<rt>はざま</rt></ruby>に消えてしまったようです。
       </p>
       <Link
         href="/"
@@ -33,7 +33,7 @@ export default function NotFound() {
           textDecoration: "none",
         }}
       >
-        年表に戻る
+        年表に<ruby>戻<rt>もど</rt></ruby>る
       </Link>
     </div>
   );

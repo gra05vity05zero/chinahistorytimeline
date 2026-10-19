@@ -62,18 +62,18 @@ const IMG_SIMAYAN = findPersonImage("westernjin", "司馬炎（{{武帝|ぶて�
 
 // 時代の流れ（黄巾の乱〜天下統一）。hrefは/eventsへの直接リンク、anchorは本ページ内の合戦セクションへのリンク
 const FLOW = [
-  { year: "184", title: "{{黄巾|こうきん}}の乱", note: "太平道の信徒による大反乱。群雄割拠の幕開け。", href: EV_HUANGJIN && `/events/${EV_HUANGJIN.slug}` },
-  { year: "190年代", title: "群雄割拠", note: "{{曹操|そうそう}}が{{献帝|けんてい}}を擁立し、袁紹ら群雄が各地に割拠する。", href: null },
-  { year: "200", title: "{{官渡|かんと}}の戦い", note: "曹操が河北の袁紹を破り、華北統一の主導権を握る。", anchor: "battle-1" },
-  { year: "208", title: "{{赤壁|せきへき}}の戦い", note: "孫権・劉備連合軍が曹操の南下を退け、天下三分の形勢を決定づける。", anchor: "battle-2" },
-  { year: "215", title: "{{合肥|がっぴ}}の戦い", note: "魏の{{張遼|ちょうりょう}}が寡兵で孫権の大軍を撃退。", anchor: "battle-3" },
-  { year: "220", title: "魏の建国（{{曹丕|そうひ}}）", note: "後漢が滅び、曹丕が皇帝に即位。", href: EV_WEI && `/events/${EV_WEI.slug}` },
-  { year: "221", title: "蜀漢の建国（{{劉備|りゅうび}}）", note: "劉備が漢の正統を称して皇帝に即位。", href: EV_SHU && `/events/${EV_SHU.slug}` },
-  { year: "222", title: "{{夷陵|いりょう}}の戦い・呉の建国", note: "劉備の呉侵攻が大敗に終わり、孫権が皇帝を称する。", anchor: "battle-4" },
-  { year: "228", title: "{{街亭|がいてい}}の戦い", note: "諸葛亮の第一次北伐が{{馬謖|ばしょく}}の敗戦で頓挫する。", anchor: "battle-5" },
-  { year: "234", title: "{{五丈原|ごじょうげん}}の戦い", note: "諸葛亮、北伐半ばで陣中に没す。", anchor: "battle-6" },
-  { year: "263", title: "蜀漢の滅亡", note: "魏の奇襲により成都が陥落。", anchor: "battle-7" },
-  { year: "280", title: "西晋による中国再統一", note: "呉が滅び、三国時代が名実ともに終わる。", anchor: "battle-8" },
+  { year: "184", title: "{{黄巾|こうきん}}の乱", note: "太平道の信徒による大反乱。{{群雄|ぐんゆう}}{{割拠|かっきょ}}の幕開け。", href: EV_HUANGJIN && `/events/${EV_HUANGJIN.slug}` },
+  { year: "190年代", title: "{{群雄|ぐんゆう}}{{割拠|かっきょ}}", note: "{{曹操|そうそう}}が{{献帝|けんてい}}を{{擁立|ようりつ}}し、{{袁紹|えんしょう}}ら{{群雄|ぐんゆう}}が各地に{{割拠|かっきょ}}する。", href: null },
+  { year: "200", title: "{{官渡|かんと}}の戦い", note: "{{曹操|そうそう}}が河北の{{袁紹|えんしょう}}を破り、{{華北|かほく}}統一の主導権を{{握|にぎ}}る。", anchor: "battle-1" },
+  { year: "208", title: "{{赤壁|せきへき}}の戦い", note: "孫権・{{劉備|りゅうび}}連合軍が{{曹操|そうそう}}の南下を退け、天下三分の形勢を決定づける。", anchor: "battle-2" },
+  { year: "215", title: "{{合肥|がっぴ}}の戦い", note: "{{魏|ぎ}}の{{張遼|ちょうりょう}}が{{寡兵|かへい}}で孫権の大軍を{{撃退|げきたい}}。", anchor: "battle-3" },
+  { year: "220", title: "{{魏|ぎ}}の建国（{{曹丕|そうひ}}）", note: "後漢が{{滅|ほろ}}び、{{曹丕|そうひ}}が{{皇帝|こうてい}}に{{即位|そくい}}。", href: EV_WEI && `/events/${EV_WEI.slug}` },
+  { year: "221", title: "{{蜀漢|しょくかん}}の建国（{{劉備|りゅうび}}）", note: "{{劉備|りゅうび}}が漢の正統を{{称|しょう}}して{{皇帝|こうてい}}に{{即位|そくい}}。", href: EV_SHU && `/events/${EV_SHU.slug}` },
+  { year: "222", title: "{{夷陵|いりょう}}の戦い・{{呉|ご}}の建国", note: "{{劉備|りゅうび}}の{{呉侵攻|ごしんこう}}が大敗に終わり、孫権が{{皇帝|こうてい}}を{{称|しょう}}する。", anchor: "battle-4" },
+  { year: "228", title: "{{街亭|がいてい}}の戦い", note: "{{諸葛亮|しょかつりょう}}の第一次{{北伐|ほくばつ}}が{{馬謖|ばしょく}}の敗戦で{{頓挫|とんざ}}する。", anchor: "battle-5" },
+  { year: "234", title: "{{五丈原|ごじょうげん}}の戦い", note: "{{諸葛亮|しょかつりょう}}、{{北伐|ほくばつ}}半ばで{{陣中|じんちゅう}}に{{没|ぼっ}}す。", anchor: "battle-6" },
+  { year: "263", title: "{{蜀漢|しょくかん}}の{{滅亡|めつぼう}}", note: "{{魏|ぎ}}の{{奇襲|きしゅう}}により成都が{{陥落|かんらく}}。", anchor: "battle-7" },
+  { year: "280", title: "{{西晋|せいしん}}による中国再統一", note: "{{呉|ご}}が{{滅|ほろ}}び、三国時代が名実ともに終わる。", anchor: "battle-8" },
 ];
 
 // 中国本土＋海南島の輪郭（/world-heritageと同じ、実際の海岸線をもとにした投影データ）
@@ -85,13 +85,13 @@ const TAIWAN_OUTLINE =
 
 // 三国それぞれの勢力圏を示す大まかなラベル（範囲を厳密に示すものではない）
 const REGION_LABELS = [
-  { label: "魏（華北）", x: 330, y: 158 },
-  { label: "蜀（益州）", x: 220, y: 258 },
-  { label: "呉（江南）", x: 383, y: 250 },
+  { label: "{{魏|ぎ}}（{{華北|かほく}}）", x: 330, y: 158 },
+  { label: "{{蜀|しょく}}（益州）", x: 220, y: 258 },
+  { label: "{{呉|ご}}（{{江南|こうなん}}）", x: 383, y: 250 },
 ];
 
 // 魏の都・洛陽（参考地点）。座標は/world-heritageの龍門石窟と同一の投影に基づく
-const CAPITAL_REF = { label: "洛陽（魏の都）", x: 310, y: 194, dx: -8, dy: -9, anchor: "end" };
+const CAPITAL_REF = { label: "{{洛陽|らくよう}}（{{魏|ぎ}}の都）", x: 310, y: 194, dx: -8, dy: -9, anchor: "end" };
 
 // 合戦地点。経緯度から/world-heritageと同じ図法（線形近似）で算出した座標
 // X ≈ 340 + 7.495×(経度-116.4) / Y ≈ 145 - 9.343×(緯度-39.9)
@@ -101,56 +101,56 @@ const BATTLES = [
     id: "battle-1",
     year: "200",
     name: "{{官渡|かんと}}の戦い",
-    location: "河南省中牟県付近",
+    location: "河南省{{中牟|ちゅうぼう}}県付近",
     mapX: 322,
     mapY: 193,
     factions: [
-      { side: "曹操軍", people: "{{曹操|そうそう}}・{{荀彧|じゅんいく}}・{{許攸|きょゆう}}" },
-      { side: "袁紹軍", people: "{{袁紹|えんしょう}}・{{顔良|がんりょう}}・{{文醜|ぶんしゅう}}" },
+      { side: "{{曹操|そうそう}}軍", people: "{{曹操|そうそう}}・{{荀彧|じゅんいく}}・{{許攸|きょゆう}}" },
+      { side: "{{袁紹|えんしょう}}軍", people: "{{袁紹|えんしょう}}・{{顔良|がんりょう}}・{{文醜|ぶんしゅう}}" },
     ],
-    body: "華北の覇権を賭け、寡兵の{{曹操|そうそう}}が河北随一の大軍閥{{袁紹|えんしょう}}と対峙した決戦。兵力で圧倒的に劣る曹操軍は苦しい持久戦を強いられたが、袁紹陣営から寝返った{{許攸|きょゆう}}の情報をもとに、兵糧庫のあった{{烏巣|うそう}}を自ら奇襲して焼き払う奇策に打って出た。兵糧を失った袁紹軍は総崩れとなり、この勝利によって曹操は華北統一の主導権を決定的なものとした。",
+    body: "{{華北|かほく}}の{{覇権|はけん}}を{{賭|か}}け、{{寡兵|かへい}}の{{曹操|そうそう}}が河北{{随一|ずいいち}}の大{{軍閥|ぐんばつ}}{{袁紹|えんしょう}}と{{対峙|たいじ}}した決戦。兵力で{{圧倒|あっとう}}的に{{劣|おと}}る{{曹操|そうそう}}軍は苦しい持久戦を強いられたが、{{袁紹|えんしょう}}{{陣営|じんえい}}から{{寝返|ねがえ}}った{{許攸|きょゆう}}の情報をもとに、{{兵糧|ひょうろう}}庫のあった{{烏巣|うそう}}を自ら{{奇襲|きしゅう}}して焼き{{払|はら}}う{{奇策|きさく}}に打って出た。{{兵糧|ひょうろう}}を失った{{袁紹|えんしょう}}軍は{{総崩|そうくず}}れとなり、この勝利によって{{曹操|そうそう}}は{{華北|かほく}}統一の主導権を決定的なものとした。",
     relatedHref: EV_WEI && `/events/${EV_WEI.slug}`,
-    relatedLabel: "魏の建国（曹丕）を年表で読む",
+    relatedLabel: "{{魏|ぎ}}の建国（{{曹丕|そうひ}}）を年表で読む",
     personHref: HREF_CAOCAO,
-    personLabel: "曹操の生涯を読む",
-    portrait: { name: "曹操", ...IMG_CAOCAO },
+    personLabel: "{{曹操|そうそう}}の{{生涯|しょうがい}}を読む",
+    portrait: { name: "{{曹操|そうそう}}", ...IMG_CAOCAO },
   },
   {
     no: 2,
     id: "battle-2",
     year: "208",
     name: "{{赤壁|せきへき}}の戦い",
-    location: "湖北省赤壁市付近（長江沿岸）",
+    location: "湖北省{{赤壁|せきへき}}市付近（{{長江|ちょうこう}}沿岸）",
     mapX: 321,
     mapY: 240,
     factions: [
-      { side: "孫権・劉備連合軍", people: "{{周瑜|しゅうゆ}}・{{魯粛|ろしゅく}}・{{黄蓋|こうがい}}・{{諸葛亮|しょかつりょう}}" },
-      { side: "曹操軍", people: "{{曹操|そうそう}}" },
+      { side: "孫権・{{劉備|りゅうび}}連合軍", people: "{{周瑜|しゅうゆ}}・{{魯粛|ろしゅく}}・{{黄蓋|こうがい}}・{{諸葛亮|しょかつりょう}}" },
+      { side: "{{曹操|そうそう}}軍", people: "{{曹操|そうそう}}" },
     ],
-    body: "華北をほぼ統一した{{曹操|そうそう}}の大軍が長江を渡って南下する中、{{孫権|そんけん}}と{{劉備|りゅうび}}の連合軍がこれを迎え撃った、三国志随一の決戦。船上戦に不慣れな曹操軍は疫病にも苦しめられ、{{黄蓋|こうがい}}の偽りの降伏と火船による奇襲によって水軍が壊滅した。この敗北で曹操の天下統一の野望は挫かれ、魏・呉・蜀による三国鼎立の構図が定まる転機となった。",
+    body: "{{華北|かほく}}をほぼ統一した{{曹操|そうそう}}の大軍が{{長江|ちょうこう}}を{{渡|わた}}って南下する中、{{孫権|そんけん}}と{{劉備|りゅうび}}の連合軍がこれを{{迎|むか}}え{{撃|う}}った、三国志{{随一|ずいいち}}の決戦。船上戦に不慣れな{{曹操|そうそう}}軍は{{疫病|やくびょう}}にも苦しめられ、{{黄蓋|こうがい}}の{{偽|いつわ}}りの{{降伏|こうふく}}と火船による{{奇襲|きしゅう}}によって水軍が{{壊滅|かいめつ}}した。この敗北で{{曹操|そうそう}}の天下統一の野望は{{挫|くじ}}かれ、{{魏|ぎ}}・{{呉|ご}}・{{蜀|しょく}}による三国{{鼎立|ていりつ}}の構図が定まる転機となった。",
     relatedHref: EV_CHIBI && `/events/${EV_CHIBI.slug}`,
-    relatedLabel: "赤壁の戦いを年表で読む",
+    relatedLabel: "{{赤壁|せきへき}}の戦いを年表で読む",
     personHref: HREF_ZHUGE,
-    personLabel: "諸葛亮の生涯を読む",
-    portrait: { name: "諸葛亮", ...IMG_ZHUGE },
+    personLabel: "{{諸葛亮|しょかつりょう}}の{{生涯|しょうがい}}を読む",
+    portrait: { name: "{{諸葛亮|しょかつりょう}}", ...IMG_ZHUGE },
   },
   {
     no: 3,
     id: "battle-3",
     year: "215",
     name: "{{合肥|がっぴ}}の戦い（{{逍遥津|しょうようしん}}の戦い）",
-    location: "安徽省合肥市付近",
+    location: "{{安徽|あんき}}省合肥市付近",
     mapX: 347,
     mapY: 220,
     factions: [
-      { side: "魏軍", people: "{{張遼|ちょうりょう}}・{{楽進|がくしん}}・{{李典|りてん}}" },
-      { side: "呉軍", people: "{{孫権|そんけん}}・{{甘寧|かんねい}}・{{凌統|りょうとう}}" },
+      { side: "{{魏軍|ぎぐん}}", people: "{{張遼|ちょうりょう}}・{{楽進|がくしん}}・{{李典|りてん}}" },
+      { side: "{{呉|ご}}軍", people: "{{孫権|そんけん}}・{{甘寧|かんねい}}・{{凌統|りょうとう}}" },
     ],
-    body: "赤壁の敗戦後も江南への圧力を強める呉に対し、魏の防衛拠点{{合肥|がっぴ}}を守っていた{{張遼|ちょうりょう}}は、寡兵ながら夜明け前に自ら突撃を敢行し、十万ともいわれる孫権の大軍を大混乱に陥れたと伝えられる。孫権自身も危うく討ち取られかけたとされ、以後「{{張遼|ちょうりょう}}が来る（{{遼来来|りょうらいらい}}）」と言うだけで泣く子も黙ったという逸話が残るほど、その武名は呉の兵に恐れられた。",
+    body: "{{赤壁|せきへき}}の敗戦後も{{江南|こうなん}}への圧力を強める{{呉|ご}}に対し、{{魏|ぎ}}の防衛{{拠点|きょてん}}{{合肥|がっぴ}}を守っていた{{張遼|ちょうりょう}}は、{{寡兵|かへい}}ながら夜明け前に自ら{{突撃|とつげき}}を{{敢行|かんこう}}し、十万ともいわれる孫権の大軍を大混乱に{{陥|おとしい}}れたと伝えられる。孫権自身も危うく討ち取られかけたとされ、以後「{{張遼|ちょうりょう}}が来る（{{遼来来|りょうらいらい}}）」と言うだけで泣く子も{{黙|だま}}ったという{{逸話|いつわ}}が残るほど、その武名は{{呉|ご}}の兵に{{恐|おそ}}れられた。",
     relatedHref: EV_WU && `/events/${EV_WU.slug}`,
-    relatedLabel: "呉の建国（孫権）を年表で読む",
+    relatedLabel: "{{呉|ご}}の建国（孫権）を年表で読む",
     personHref: HREF_SUNQUAN,
-    personLabel: "孫権の生涯を読む",
+    personLabel: "孫権の{{生涯|しょうがい}}を読む",
     portrait: { name: "孫権", ...IMG_SUNQUAN },
   },
   {
@@ -158,95 +158,95 @@ const BATTLES = [
     id: "battle-4",
     year: "222",
     name: "{{夷陵|いりょう}}の戦い",
-    location: "湖北省宜昌市付近（長江沿岸）",
+    location: "湖北省{{宜昌|ぎしょう}}市付近（{{長江|ちょうこう}}沿岸）",
     mapX: 302,
     mapY: 231,
     factions: [
-      { side: "蜀漢軍", people: "{{劉備|りゅうび}}・{{馮習|ふうしゅう}}・{{張南|ちょうなん}}" },
-      { side: "呉軍", people: "{{陸遜|りくそん}}・{{朱然|しゅぜん}}・{{韓当|かんとう}}" },
+      { side: "{{蜀漢|しょくかん}}軍", people: "{{劉備|りゅうび}}・{{馮習|ふうしゅう}}・{{張南|ちょうなん}}" },
+      { side: "{{呉|ご}}軍", people: "{{陸遜|りくそん}}・{{朱然|しゅぜん}}・{{韓当|かんとう}}" },
     ],
-    body: "義弟{{関羽|かんう}}を討たれた仇討ちとして、皇帝に即位したばかりの{{劉備|りゅうび}}が自ら大軍を率いて呉へ侵攻した。呉の若き将{{陸遜|りくそん}}は緒戦であえて後退を重ねて劉備軍を長江沿いの山中深くまで誘い込み、酷暑の中で陣営を長々と連ねさせたところを見計らって火計を仕掛け、蜀軍の連なる陣営を一夜にして焼き払った。この大敗で蜀漢は建国直後に多くの将兵を失い、劉備もまもなく病没することになる。",
+    body: "義弟{{関羽|かんう}}を討たれた{{仇討|あだう}}ちとして、{{皇帝|こうてい}}に{{即位|そくい}}したばかりの{{劉備|りゅうび}}が自ら大軍を率いて{{呉|ご}}へ{{侵攻|しんこう}}した。{{呉|ご}}の若き将{{陸遜|りくそん}}は{{緒戦|しょせん}}であえて後退を重ねて{{劉備|りゅうび}}軍を{{長江|ちょうこう}}沿いの山中深くまで{{誘|さそ}}い{{込|こ}}み、{{酷暑|こくしょ}}の中で{{陣営|じんえい}}を長々と連ねさせたところを見計らって火計を{{仕掛|しか}}け、{{蜀|しょく}}軍の連なる{{陣営|じんえい}}を一夜にして焼き{{払|はら}}った。この大敗で{{蜀漢|しょくかん}}は建国直後に多くの将兵を失い、{{劉備|りゅうび}}もまもなく{{病没|びょうぼつ}}することになる。",
     relatedHref: EV_SHU && `/events/${EV_SHU.slug}`,
-    relatedLabel: "蜀漢の建国（劉備）を年表で読む",
+    relatedLabel: "{{蜀漢|しょくかん}}の建国（{{劉備|りゅうび}}）を年表で読む",
     personHref: HREF_LIUBEI,
-    personLabel: "劉備の生涯を読む",
-    portrait: { name: "劉備", ...IMG_LIUBEI },
+    personLabel: "{{劉備|りゅうび}}の{{生涯|しょうがい}}を読む",
+    portrait: { name: "{{劉備|りゅうび}}", ...IMG_LIUBEI },
   },
   {
     no: 5,
     id: "battle-5",
     year: "228",
     name: "{{街亭|がいてい}}の戦い",
-    location: "甘粛省天水市秦安県付近",
+    location: "{{甘粛|かんしゅく}}省天水市{{秦安|しんあん}}県付近",
     mapX: 258,
     mapY: 193,
     factions: [
-      { side: "蜀漢軍", people: "{{諸葛亮|しょかつりょう}}・{{馬謖|ばしょく}}" },
-      { side: "魏軍", people: "{{張郃|ちょうこう}}" },
+      { side: "{{蜀漢|しょくかん}}軍", people: "{{諸葛亮|しょかつりょう}}・{{馬謖|ばしょく}}" },
+      { side: "{{魏軍|ぎぐん}}", people: "{{張郃|ちょうこう}}" },
     ],
-    body: "劉備の死後、丞相{{諸葛亮|しょかつりょう}}が「漢室の再興」を掲げて敢行した第一次北伐。緒戦は順調に進んだが、要衝{{街亭|がいてい}}の守備を託された{{馬謖|ばしょく}}は諸葛亮の指示に反し、水源から離れた山上に布陣する定石破りの采配をとった結果、魏の{{張郃|ちょうこう}}に水路を断たれて大敗を喫する。この敗戦により北伐の前線基盤を失った諸葛亮はやむなく全軍を撤退させ、軍規を守るため愛弟子であった馬謖を涙ながらに処刑した「{{泣斬馬謖|きゅうざんばしょく}}」の故事はあまりにも名高い。",
+    body: "{{劉備|りゅうび}}の死後、{{丞相|じょうしょう}}{{諸葛亮|しょかつりょう}}が「漢室の再興」を{{掲|かか}}げて{{敢行|かんこう}}した第一次{{北伐|ほくばつ}}。{{緒戦|しょせん}}は順調に進んだが、{{要衝|ようしょう}}{{街亭|がいてい}}の守備を{{託|たく}}された{{馬謖|ばしょく}}は{{諸葛亮|しょかつりょう}}の指示に反し、水源から{{離|はな}}れた山上に{{布陣|ふじん}}する定石破りの{{采配|さいはい}}をとった結果、{{魏|ぎ}}の{{張郃|ちょうこう}}に水路を断たれて大敗を{{喫|きっ}}する。この敗戦により{{北伐|ほくばつ}}の前線{{基盤|きばん}}を失った{{諸葛亮|しょかつりょう}}はやむなく全軍を{{撤退|てったい}}させ、軍規を守るため愛弟子であった{{馬謖|ばしょく}}を{{涙|なみだ}}ながらに{{処刑|しょけい}}した「{{泣斬馬謖|きゅうざんばしょく}}」の故事はあまりにも名高い。",
     relatedHref: EV_WUZHANGYUAN && `/events/${EV_WUZHANGYUAN.slug}`,
-    relatedLabel: "五丈原の戦い（北伐の顛末）を年表で読む",
+    relatedLabel: "{{五丈原|ごじょうげん}}の戦い（{{北伐|ほくばつ}}の{{顛末|てんまつ}}）を年表で読む",
     personHref: HREF_ZHUGE,
-    personLabel: "諸葛亮の生涯を読む",
-    portrait: { name: "諸葛亮", ...IMG_ZHUGE },
+    personLabel: "{{諸葛亮|しょかつりょう}}の{{生涯|しょうがい}}を読む",
+    portrait: { name: "{{諸葛亮|しょかつりょう}}", ...IMG_ZHUGE },
   },
   {
     no: 6,
     id: "battle-6",
     year: "234",
     name: "{{五丈原|ごじょうげん}}の戦い",
-    location: "陝西省宝鶏市岐山県付近",
+    location: "{{陝西省|せんせいしょう}}{{宝鶏|ほうけい}}市岐山県付近",
     mapX: 274,
     mapY: 196,
     factions: [
-      { side: "蜀漢軍", people: "{{諸葛亮|しょかつりょう}}・{{姜維|きょうい}}" },
-      { side: "魏軍", people: "{{司馬懿|しばい}}" },
+      { side: "{{蜀漢|しょくかん}}軍", people: "{{諸葛亮|しょかつりょう}}・{{姜維|きょうい}}" },
+      { side: "{{魏軍|ぎぐん}}", people: "{{司馬懿|しばい}}" },
     ],
-    body: "国力で大きく劣る魏に対し、たびたび北伐を繰り返した{{諸葛亮|しょかつりょう}}の最後の戦い。渭水南岸の{{五丈原|ごじょうげん}}に布陣した蜀軍に対し、魏の{{司馬懿|しばい}}は野戦を避けて徹底した持久策をとり、両軍は長期にわたりにらみ合いを続けた。諸葛亮は屯田策で長期戦に備えていたが過労が重なり陣中で病に倒れ、そのまま没する。総司令官を失った蜀軍は撤退を余儀なくされ、以後蜀漢が魏へ大規模な攻勢に出ることは事実上なくなった。",
+    body: "国力で大きく{{劣|おと}}る{{魏|ぎ}}に対し、たびたび{{北伐|ほくばつ}}を{{繰|く}}り返した{{諸葛亮|しょかつりょう}}の最後の戦い。{{渭水|いすい}}南岸の{{五丈原|ごじょうげん}}に{{布陣|ふじん}}した{{蜀|しょく}}軍に対し、{{魏|ぎ}}の{{司馬懿|しばい}}は野戦を{{避|さ}}けて{{徹底|てってい}}した持久策をとり、両軍は長期にわたりにらみ合いを続けた。{{諸葛亮|しょかつりょう}}は{{屯田|とんでん}}策で長期戦に備えていたが過労が重なり{{陣中|じんちゅう}}で病に{{倒|たお}}れ、そのまま{{没|ぼっ}}する。総司令官を失った{{蜀|しょく}}軍は{{撤退|てったい}}を{{余儀|よぎ}}なくされ、以{{後蜀|こうしょく}}漢が{{魏|ぎ}}へ大規模な{{攻勢|こうせい}}に出ることは事実上なくなった。",
     relatedHref: EV_WUZHANGYUAN && `/events/${EV_WUZHANGYUAN.slug}`,
-    relatedLabel: "五丈原の戦いを年表で読む",
+    relatedLabel: "{{五丈原|ごじょうげん}}の戦いを年表で読む",
     personHref: HREF_ZHUGE,
-    personLabel: "諸葛亮の生涯を読む",
-    portrait: { name: "諸葛亮", ...IMG_ZHUGE },
+    personLabel: "{{諸葛亮|しょかつりょう}}の{{生涯|しょうがい}}を読む",
+    portrait: { name: "{{諸葛亮|しょかつりょう}}", ...IMG_ZHUGE },
   },
   {
     no: 7,
     id: "battle-7",
     year: "263",
-    name: "蜀漢の滅亡（成都陥落）",
+    name: "{{蜀漢|しょくかん}}の{{滅亡|めつぼう}}（成都{{陥落|かんらく}}）",
     location: "四川省成都市",
     mapX: 248,
     mapY: 231,
     factions: [
-      { side: "魏軍", people: "{{鄧艾|とうがい}}・{{鍾会|しょうかい}}" },
-      { side: "蜀漢軍", people: "{{姜維|きょうい}}・{{劉禅|りゅうぜん}}" },
+      { side: "{{魏軍|ぎぐん}}", people: "{{鄧艾|とうがい}}・{{鍾会|しょうかい}}" },
+      { side: "{{蜀漢|しょくかん}}軍", people: "{{姜維|きょうい}}・{{劉禅|りゅうぜん}}" },
     ],
-    body: "{{諸葛亮|しょかつりょう}}の死後、その北伐路線を受け継いだ{{姜維|きょうい}}であったが大きな戦果は挙げられず、蜀漢の国力は次第に消耗していった。魏の{{鄧艾|とうがい}}は正面の姜維軍をやり過ごし、道なき険しい山道を踏破して成都に迫るという大胆な奇襲策を敢行する。予期せぬ方面からの敵軍出現に成都の守りは崩れ、皇帝{{劉禅|りゅうぜん}}はほとんど抵抗することなく降伏を選んだ。劉備の建国から43年、蜀漢はここに滅亡し、三国の一角が初めて消え去ることになった。",
+    body: "{{諸葛亮|しょかつりょう}}の死後、その{{北伐|ほくばつ}}路線を受け{{継|つ}}いだ{{姜維|きょうい}}であったが大きな戦果は挙げられず、{{蜀漢|しょくかん}}の国力は次第に{{消耗|しょうもう}}していった。{{魏|ぎ}}の{{鄧艾|とうがい}}は正面の{{姜維|きょうい}}軍をやり過ごし、道なき険しい山道を{{踏破|とうは}}して成都に{{迫|せま}}るという{{大胆|だいたん}}な{{奇襲|きしゅう}}策を{{敢行|かんこう}}する。予期せぬ方面からの敵軍出現に成都の守りは{{崩|くず}}れ、{{皇帝|こうてい}}{{劉禅|りゅうぜん}}はほとんど{{抵抗|ていこう}}することなく{{降伏|こうふく}}を選んだ。{{劉備|りゅうび}}の建国から43年、{{蜀漢|しょくかん}}はここに{{滅亡|めつぼう}}し、三国の一角が初めて消え去ることになった。",
     relatedHref: EV_SHUFALL && `/events/${EV_SHUFALL.slug}`,
-    relatedLabel: "蜀漢の滅亡を年表で読む",
+    relatedLabel: "{{蜀漢|しょくかん}}の{{滅亡|めつぼう}}を年表で読む",
     personHref: HREF_LIUBEI,
-    personLabel: "劉備の生涯を読む",
-    portrait: { name: "劉禅", ...findPersonImage("sanguo", "劉禅") },
+    personLabel: "{{劉備|りゅうび}}の{{生涯|しょうがい}}を読む",
+    portrait: { name: "{{劉禅|りゅうぜん}}", ...findPersonImage("sanguo", "劉禅") },
   },
   {
     no: 8,
     id: "battle-8",
     year: "280",
-    name: "西晋の呉討伐（建業陥落）",
-    location: "江蘇省南京市（呉の都・建業）",
+    name: "{{西晋|せいしん}}の{{呉討伐|ごとうばつ}}（建業{{陥落|かんらく}}）",
+    location: "{{江蘇|こうそ}}省南京市（{{呉|ご}}の都・建業）",
     mapX: 358,
     mapY: 218,
     factions: [
-      { side: "西晋軍", people: "{{王濬|おうしゅん}}・{{杜預|とよ}}" },
-      { side: "呉軍", people: "{{孫皓|そんこう}}" },
+      { side: "{{西晋|せいしん}}軍", people: "{{王濬|おうしゅん}}・{{杜預|とよ}}" },
+      { side: "{{呉|ご}}軍", people: "{{孫皓|そんこう}}" },
     ],
-    body: "魏の禅譲を受けて建った西晋は、三国最後の一角として残る呉への攻勢を強めた。西晋の{{王濬|おうしゅん}}は益州で建造した大規模な水軍を長江に浮かべ、呉が川に張り巡らせた鉄鎖の防柵を焼き切って突破しながら、都{{建業|けんぎょう}}（現在の南京）へと進軍した。暴君として知られた呉の最後の皇帝{{孫皓|そんこう}}はついに降伏し、後漢末の黄巾の乱以来約1世紀近く分裂を続けた中国は、ここに再び統一されることになった。",
+    body: "{{魏|ぎ}}の{{禅譲|ぜんじょう}}を受けて建った{{西晋|せいしん}}は、三国最後の一角として残る{{呉|ご}}への{{攻勢|こうせい}}を強めた。{{西晋|せいしん}}の{{王濬|おうしゅん}}は益州で建造した大規模な水軍を{{長江|ちょうこう}}に{{浮|う}}かべ、{{呉|ご}}が川に張り{{巡|めぐ}}らせた{{鉄鎖|てっさ}}の防{{柵|さく}}を焼き切って{{突破|とっぱ}}しながら、都{{建業|けんぎょう}}（現在の南京）へと進軍した。暴君として知られた{{呉|ご}}の最後の{{皇帝|こうてい}}{{孫皓|そんこう}}はついに{{降伏|こうふく}}し、後漢末の{{黄巾の乱|こうきんのらん}}以来約1世紀近く{{分裂|ぶんれつ}}を続けた中国は、ここに再び統一されることになった。",
     relatedHref: EV_REUNIFY && `/events/${EV_REUNIFY.slug}`,
-    relatedLabel: "西晋による中国再統一を年表で読む",
+    relatedLabel: "{{西晋|せいしん}}による中国再統一を年表で読む",
     personHref: null,
     personLabel: null,
-    portrait: { name: "司馬炎", ...IMG_SIMAYAN },
+    portrait: { name: "{{司馬炎|しばえん}}", ...IMG_SIMAYAN },
   },
 ];
 
@@ -254,7 +254,7 @@ function BattleMap() {
   return (
     <div style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: 16, marginBottom: 28 }}>
       <p style={{ fontSize: 11.5, color: COLORS.inkSoft, marginBottom: 10 }}>
-        実際の海岸線をもとにした位置関係図です。朱色の番号は下の各合戦、金色の丸は魏の都・洛陽の目安です。
+        実際の海岸線をもとにした位置関係図です。<ruby>朱色<rt>しゅいろ</rt></ruby>の番号は下の各合戦、金色の丸は<ruby>魏<rt>ぎ</rt></ruby>の都・<ruby>洛陽<rt>らくよう</rt></ruby>の目安です。
       </p>
       <svg viewBox="0 0 500 366" style={{ width: "100%", maxHeight: 400, display: "block", margin: "0 auto" }}>
         <path d={CHINA_OUTLINE} fill="#DCD3B8" stroke={COLORS.mist} strokeWidth="1.2" strokeLinejoin="round" />
@@ -268,7 +268,7 @@ function BattleMap() {
             textAnchor="middle"
             style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 13, fontWeight: 700, fill: COLORS.inkSoft, opacity: 0.55 }}
           >
-            {r.label}
+            {stripRuby(r.label)}
           </text>
         ))}
 
@@ -280,7 +280,7 @@ function BattleMap() {
             textAnchor={CAPITAL_REF.anchor}
             style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 10, fill: COLORS.inkSoft }}
           >
-            {CAPITAL_REF.label}
+            {stripRuby(CAPITAL_REF.label)}
           </text>
         </g>
 
@@ -313,9 +313,9 @@ export default function SanguoBattlesPage() {
           三国時代 合戦マップ
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 28 }}>
-          184年の黄巾の乱に始まり、280年の天下統一で幕を閉じるまで——三国時代は中国史上もっとも語り継がれる乱世です。
-          このページでは、後漢の滅亡から西晋による再統一までの流れを、官渡・赤壁・夷陵・五丈原など8つの主要な合戦と、
-          そこで活躍した武将たちにスポットを当てて詳しく紹介します。
+          184年の<ruby>黄巾の乱<rt>こうきんのらん</rt></ruby>に始まり、280年の天下統一で幕を閉じるまで——三国時代は中国史上もっとも語り<ruby>継<rt>つ</rt></ruby>がれる乱世です。
+          このページでは、後漢の<ruby>滅亡<rt>めつぼう</rt></ruby>から<ruby>西晋<rt>せいしん</rt></ruby>による再統一までの流れを、<ruby>官渡<rt>かんと</rt></ruby>・<ruby>赤壁<rt>せきへき</rt></ruby>・<ruby>夷陵<rt>いりょう</rt></ruby>・<ruby>五丈原<rt>ごじょうげん</rt></ruby>など8つの主要な合戦と、
+          そこで<ruby>活躍<rt>かつやく</rt></ruby>した武将たちにスポットを当てて<ruby>詳<rt>くわ</rt></ruby>しく<ruby>紹介<rt>しょうかい</rt></ruby>します。
         </p>
 
         <section style={{ marginBottom: 32 }}>
@@ -327,7 +327,7 @@ export default function SanguoBattlesPage() {
               const content = (
                 <div className="flex items-baseline gap-3 px-4 py-2.5" style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", borderLeft: `3px solid ${COLORS.vermilion}` }}>
                   <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 12.5, color: COLORS.inkSoft, whiteSpace: "nowrap" }}>
-                    {f.year}
+                    <RubyText text={f.year} />
                   </span>
                   <div className="flex-1 min-w-0">
                     <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14.5, fontWeight: 700, color: COLORS.ink }}>
@@ -370,10 +370,10 @@ export default function SanguoBattlesPage() {
 
         <section style={{ marginBottom: 12 }}>
           <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 12 }}>
-            勢力図の変遷アニメーション
+            勢力図の<ruby>変遷<rt>へんせん</rt></ruby>アニメーション
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginBottom: 12 }}>
-            群雄割拠から魏・蜀・呉の三国鼎立へ、そして西晋による天下統一へ——再生ボタンまたは年代タブで、勢力図が移り変わる様子を確認できます。
+            <ruby>群雄<rt>ぐんゆう</rt></ruby><ruby>割拠<rt>かっきょ</rt></ruby>から<ruby>魏<rt>ぎ</rt></ruby>・<ruby>蜀<rt>しょく</rt></ruby>・<ruby>呉<rt>ご</rt></ruby>の三国<ruby>鼎立<rt>ていりつ</rt></ruby>へ、そして<ruby>西晋<rt>せいしん</rt></ruby>による天下統一へ——再生ボタンまたは年代タブで、勢力図が移り変わる様子を確認できます。
           </p>
           <SanguoBorderMap />
         </section>
@@ -414,16 +414,16 @@ export default function SanguoBattlesPage() {
                       <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 16.5, fontWeight: 700, color: COLORS.ink }}>
                         <RubyText text={b.name} />
                       </span>
-                      <span style={{ fontSize: 12, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}>{b.year}年</span>
+                      <span style={{ fontSize: 12, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}><RubyText text={b.year} />年</span>
                     </div>
                     <div style={{ fontSize: 11, color: COLORS.vermilionSoft, marginTop: 4 }}>
-                      <span aria-hidden>📍</span> {b.location}
+                      <span aria-hidden>📍</span> <RubyText text={b.location} />
                     </div>
 
                     <div className="flex flex-wrap gap-x-4 gap-y-1 mt-3" style={{ fontSize: 11.5 }}>
                       {b.factions.map((f, i) => (
                         <div key={i}>
-                          <span style={{ color: COLORS.gold, fontWeight: 700 }}>{f.side}：</span>
+                          <span style={{ color: COLORS.gold, fontWeight: 700 }}><RubyText text={f.side} />：</span>
                           <span style={{ color: COLORS.inkSoft }}><RubyText text={f.people} /></span>
                         </div>
                       ))}
@@ -434,18 +434,18 @@ export default function SanguoBattlesPage() {
                     </p>
 
                     {b.portrait?.credit && (
-                      <div style={{ fontSize: 9.5, color: COLORS.mist, marginTop: 4 }}>{b.portrait.credit}</div>
+                      <div style={{ fontSize: 9.5, color: COLORS.mist, marginTop: 4 }}><RubyText text={b.portrait.credit} /></div>
                     )}
 
                     <div className="flex items-center gap-3 flex-wrap mt-3" style={{ fontSize: 11.5 }}>
                       {b.relatedHref && (
                         <a href={b.relatedHref} style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
-                          {b.relatedLabel} →
+                          <RubyText text={b.relatedLabel} /> →
                         </a>
                       )}
                       {b.personHref && (
                         <a href={b.personHref} style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
-                          {b.personLabel} →
+                          <RubyText text={b.personLabel} /> →
                         </a>
                       )}
                     </div>
@@ -458,16 +458,16 @@ export default function SanguoBattlesPage() {
 
         <section style={{ marginTop: 32 }}>
           <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
-            三国時代の各出来事の詳細や関連する人物・建造物については、年表・人物ページもあわせてご覧ください。
-            三国時代の前史にあたる楚漢戦争・春秋戦国の合戦については、下記の特集ページもどうぞ。
+            三国時代の各出来事の<ruby>詳細<rt>しょうさい</rt></ruby>や関連する人物・建造物については、年表・人物ページもあわせてご覧ください。
+            三国時代の前史にあたる<ruby>楚漢戦争<rt>そかんせんそう</rt></ruby>・春秋戦国の合戦については、下記の特集ページもどうぞ。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
             <NavButton href="/eras/sanguo" variant="solid">三国の出来事一覧を見る</NavButton>
-            <NavButton href="/sanguo-comparison" variant="outline">魏・呉・蜀の違いを見る</NavButton>
+            <NavButton href="/sanguo-comparison" variant="outline"><ruby>魏<rt>ぎ</rt></ruby>・<ruby>呉<rt>ご</rt></ruby>・<ruby>蜀<rt>しょく</rt></ruby>の<ruby>違<rt>ちが</rt></ruby>いを見る</NavButton>
             <NavButton href="/people/sanguo" variant="outline">三国の人物一覧を見る</NavButton>
-            <NavButton href="/chuhan-battles" variant="outline">楚漢戦争 合戦マップを見る</NavButton>
+            <NavButton href="/chuhan-battles" variant="outline"><ruby>楚漢戦争<rt>そかんせんそう</rt></ruby> 合戦マップを見る</NavButton>
             <NavButton href="/chunqiu-zhanguo-battles" variant="outline">春秋・戦国 合戦マップを見る</NavButton>
-            <NavButton href="/suitang-battles" variant="outline">隋唐・五代 合戦マップを見る</NavButton>
+            <NavButton href="/suitang-battles" variant="outline"><ruby>隋唐<rt>ずいとう</rt></ruby>・五代 合戦マップを見る</NavButton>
           </div>
         </section>
 

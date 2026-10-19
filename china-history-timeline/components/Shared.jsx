@@ -35,7 +35,7 @@ export function BackToTopButton() {
       className="inline-flex items-center gap-1.5"
       style={{ color: COLORS.vermilion, fontFamily: "'Noto Serif SC', serif", fontSize: 13 }}
     >
-      <span aria-hidden>←</span> 年表トップへ戻る
+      <span aria-hidden>←</span> 年表トップへ<ruby>戻<rt>もど</rt></ruby>る
     </Link>
   );
 }
@@ -54,10 +54,10 @@ const MISC_SECTIONS = [
   {
     title: "人物・王朝",
     links: [
-      { href: "/qinshihuang", label: "始皇帝とは" },
-      { href: "/terracotta-army", label: "兵馬俑・始皇帝陵の謎" },
+      { href: "/qinshihuang", label: "{{始皇帝|しこうてい}}とは" },
+      { href: "/terracotta-army", label: "{{兵馬俑|へいばよう}}・{{始皇帝陵|しこうていりょう}}の{{謎|なぞ}}" },
       { href: "/china-capitals", label: "歴代王朝の都一覧" },
-      { href: "/sanguo-comparison", label: "魏・呉・蜀の違い" },
+      { href: "/sanguo-comparison", label: "{{魏|ぎ}}・{{呉|ご}}・{{蜀|しょく}}の{{違|ちが}}い" },
     ],
   },
   {
@@ -75,8 +75,8 @@ const MISC_SECTIONS = [
       { href: "/four-inventions", label: "四大発明" },
       { href: "/four-great-novels", label: "四大名著" },
       { href: "/history-books", label: "中国の歴史書" },
-      { href: "/yangjiajiang", label: "楊家将とは" },
-      { href: "/suikoden", label: "水滸伝とは" },
+      { href: "/yangjiajiang", label: "{{楊|よう}}家将とは" },
+      { href: "/suikoden", label: "{{水滸伝|すいこでん}}とは" },
       { href: "/saiyuki", label: "西遊記とは" },
       { href: "/novelists", label: "日本人小説家一覧" },
     ],
@@ -113,14 +113,14 @@ export function MiscLinksSection({ variant = "compact" }) {
                   borderBottom: `1px solid ${COLORS.mist}`,
                 }}
               >
-                {section.title}
+                <RubyText text={section.title} />
               </div>
               <ul>
                 {section.links.map((item) => (
                   <li key={item.href}>
                     <Link href={item.href} className="flex items-center gap-1.5 hover:underline" style={{ minHeight: 34, fontSize: 12.5, color: COLORS.vermilion }}>
                       <span aria-hidden style={{ color: COLORS.mist }}>›</span>
-                      {item.label}
+                      <RubyText text={item.label} />
                     </Link>
                   </li>
                 ))}
@@ -139,12 +139,12 @@ export function MiscLinksSection({ variant = "compact" }) {
         {MISC_SECTIONS.map((section) => (
           <div key={section.title} className="flex items-baseline gap-3">
             <div className="shrink-0" style={{ width: 84, fontFamily: "'Noto Serif SC', serif", fontSize: 11.5, fontWeight: 700, color: COLORS.inkSoft }}>
-              {section.title}
+              <RubyText text={section.title} />
             </div>
             <div className="flex flex-wrap gap-x-3 gap-y-1.5" style={{ fontSize: 12.5 }}>
               {section.links.map((item) => (
                 <Link key={item.href} href={item.href} className="hover:underline" style={{ color: COLORS.vermilion }}>
-                  {item.label}
+                  <RubyText text={item.label} />
                 </Link>
               ))}
             </div>
@@ -170,7 +170,7 @@ export function SealMark({ char, active }) {
       }}
     >
       <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 18, fontWeight: 700, transform: "rotate(-2deg)" }}>
-        {char}
+        <RubyText text={char} />
       </span>
     </div>
   );
@@ -195,7 +195,7 @@ export function EventCard({ event, onOpen }) {
         <div className="flex items-baseline justify-between gap-3">
           <div className="flex items-baseline gap-2">
             <span style={{ fontFamily: "'Noto Serif SC', serif", color: COLORS.inkSoft, fontSize: 13 }}>
-              {event.year}
+              <RubyText text={event.year} />
             </span>
             <span style={{ fontFamily: "'Noto Serif SC', serif", color: COLORS.ink, fontSize: 16, fontWeight: 600 }}>
               <RubyText text={event.title} />
@@ -208,15 +208,15 @@ export function EventCard({ event, onOpen }) {
             {event.heritage && event.heritage.length > 0 && (
               <span title="関連する建造物・人物あり" style={{ color: COLORS.gold, fontSize: 11 }}>●</span>
             )}
-            {cat.label}
+            <RubyText text={cat.label} />
           </span>
         </div>
         <div className="mt-1 flex items-center justify-between">
           <p
             className="pr-4"
-            style={{ fontSize: 12.5, lineHeight: 1.6, color: COLORS.inkSoft, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}
+            style={{ fontSize: 12.5, lineHeight: 2, color: COLORS.inkSoft, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}
           >
-            {stripRuby(event.summary)}
+            <RubyText text={event.summary} />
           </p>
           <span className="shrink-0" style={{ color: COLORS.vermilion, fontSize: 13 }}>→</span>
         </div>
@@ -283,7 +283,7 @@ export function HeritageGrid({ items, eraId }) {
               <div style={{ fontSize: 11, color: COLORS.inkSoft, lineHeight: 1.5, marginTop: 2 }}>
                 <RubyText text={it.description} />
               </div>
-              {it.credit && <div style={{ fontSize: 9.5, color: COLORS.mist, marginTop: 3 }}>{it.credit}</div>}
+              {it.credit && <div style={{ fontSize: 9.5, color: COLORS.mist, marginTop: 3 }}><RubyText text={it.credit} /></div>}
             </div>
           </div>
         );
@@ -315,7 +315,7 @@ export function PersonCard({ person, eraId }) {
         <div style={{ fontSize: 11.5, color: COLORS.inkSoft, lineHeight: 1.6, marginTop: 3 }}>
           <RubyText text={person.description} />
         </div>
-        {person.credit && <div style={{ fontSize: 9.5, color: COLORS.mist, marginTop: 3 }}>{person.credit}</div>}
+        {person.credit && <div style={{ fontSize: 9.5, color: COLORS.mist, marginTop: 3 }}><RubyText text={person.credit} /></div>}
         {person.events && person.events.length > 0 && (
           <div className="mt-2.5 pt-2" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
             <div style={{ fontSize: 10, color: COLORS.gold, marginBottom: 4, letterSpacing: "0.05em" }}>関連する出来事</div>
@@ -326,7 +326,7 @@ export function PersonCard({ person, eraId }) {
                   href={`/events/${ev.slug}`}
                   style={{ fontSize: 11.5, color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}
                 >
-                  {ev.year}　{stripRuby(ev.title)}
+                  <RubyText text={ev.year} />　<RubyText text={ev.title} />
                 </Link>
               ))}
             </div>
@@ -358,21 +358,21 @@ export function EventListItem({ event, eraName }) {
       >
         <div className="flex items-baseline justify-between gap-3">
           <div className="flex items-baseline gap-2">
-            <span style={{ fontFamily: "'Noto Serif SC', serif", color: COLORS.inkSoft, fontSize: 13 }}>{event.year}</span>
+            <span style={{ fontFamily: "'Noto Serif SC', serif", color: COLORS.inkSoft, fontSize: 13 }}><RubyText text={event.year} /></span>
             <span style={{ fontFamily: "'Noto Serif SC', serif", color: COLORS.ink, fontSize: 16, fontWeight: 600 }}>
               <RubyText text={event.title} />
             </span>
           </div>
           <span className="shrink-0 uppercase tracking-wider" style={{ fontSize: 10, color: cat.color, letterSpacing: "0.08em" }}>
-            {cat.label}
+            <RubyText text={cat.label} />
           </span>
         </div>
         <div className="mt-1 flex items-center justify-between">
           <p
             className="pr-4"
-            style={{ fontSize: 12.5, lineHeight: 1.6, color: COLORS.inkSoft, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}
+            style={{ fontSize: 12.5, lineHeight: 2, color: COLORS.inkSoft, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}
           >
-            {stripRuby(event.summary)}
+            <RubyText text={event.summary} />
           </p>
           <span className="shrink-0" style={{ color: COLORS.vermilion, fontSize: 13 }}>→</span>
         </div>

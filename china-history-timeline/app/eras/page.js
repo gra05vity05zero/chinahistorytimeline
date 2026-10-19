@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ERAS, ERA_ALIASES, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
 import { SealMark, BackToTopButton, MiscLinksSection } from "@/components/Shared";
+import { RubyText } from "@/components/Ruby";
 
 const title = "王朝・時代別の出来事一覧";
 const fullTitle = `王朝・時代別の出来事一覧 | ${SITE_NAME}`;
@@ -38,14 +39,14 @@ export default function ErasIndexPage() {
               <SealMark char={era.seal} />
               <div className="flex-1">
                 <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 15, fontWeight: 700, color: COLORS.ink }}>
-                  {era.name}
+                  <RubyText text={era.name} />
                   {ERA_ALIASES[era.id] && (
                     <span style={{ fontSize: 11, color: COLORS.inkSoft, fontWeight: 400, marginLeft: 6 }}>
-                      （{ERA_ALIASES[era.id]}）
+                      （<RubyText text={ERA_ALIASES[era.id]} />）
                     </span>
                   )}
                 </div>
-                <div style={{ fontSize: 11, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}>{era.period}</div>
+                <div style={{ fontSize: 11, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}><RubyText text={era.period} /></div>
               </div>
               <div style={{ fontSize: 11, color: COLORS.inkSoft, whiteSpace: "nowrap" }}>{era.events.length}件</div>
             </Link>

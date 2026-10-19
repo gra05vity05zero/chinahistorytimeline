@@ -10,7 +10,7 @@ const MEDIA_TYPES = [
   { key: "movie", label: "映画・ドラマ" },
   { key: "anime", label: "アニメ" },
   { key: "game", label: "ゲーム" },
-  { key: "book", label: "書籍・漫画" },
+  { key: "book", label: "{{書籍|しょせき}}・{{漫画|まんが}}" },
 ];
 
 // 楚漢戦争特集ページに関連する出来事（秦滅亡前後の挙兵・鴻門の会・漢の建国）かどうかを判定する
@@ -51,7 +51,7 @@ export default function EventDetail({ event, era, prev, next }) {
     <div style={{ backgroundColor: COLORS.paper, minHeight: "100%" }}>
       <div className="sticky top-0 z-20 px-5 py-3" style={{ backgroundColor: COLORS.paperDeep, borderBottom: `1px solid ${COLORS.mist}` }}>
         <button onClick={onBack} className="flex items-center gap-2" style={{ color: COLORS.vermilion, fontFamily: "'Noto Serif SC', serif", fontSize: 13 }}>
-          <span aria-hidden>←</span> 年表に戻る
+          <span aria-hidden>←</span> 年表に<ruby>戻<rt>もど</rt></ruby>る
         </button>
       </div>
 
@@ -60,15 +60,15 @@ export default function EventDetail({ event, era, prev, next }) {
           <SealMark char={era.seal} active />
           <div>
             <div style={{ fontSize: 12, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}>
-              {era.name} ／ {era.period}
+              <RubyText text={era.name} /> ／ <RubyText text={era.period} />
             </div>
           </div>
         </div>
 
         <div className="flex items-center gap-2 mb-2">
-          <span style={{ fontFamily: "'Noto Serif SC', serif", color: COLORS.inkSoft, fontSize: 14 }}>{event.year}</span>
+          <span style={{ fontFamily: "'Noto Serif SC', serif", color: COLORS.inkSoft, fontSize: 14 }}><RubyText text={event.year} /></span>
           <span className="uppercase tracking-wider px-2 py-0.5" style={{ fontSize: 10, color: "#fff", backgroundColor: cat.color, letterSpacing: "0.08em" }}>
-            {cat.label}
+            <RubyText text={cat.label} />
           </span>
         </div>
 
@@ -82,11 +82,11 @@ export default function EventDetail({ event, era, prev, next }) {
 
         <div className="flex items-center gap-3 mt-5" style={{ fontSize: 12 }}>
           <Link href={`/people/${era.id}`} style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
-            {era.name}の人物一覧
+            <RubyText text={era.name} />の人物一覧
           </Link>
           <span style={{ color: COLORS.mist }}>|</span>
           <Link href={`/eras/${era.id}`} style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
-            {era.name}の出来事一覧
+            <RubyText text={era.name} />の出来事一覧
           </Link>
           {era.id === "sanguo" && (
             <>
@@ -100,7 +100,7 @@ export default function EventDetail({ event, era, prev, next }) {
             <>
               <span style={{ color: COLORS.mist }}>|</span>
               <Link href="/chuhan-battles" style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
-                楚漢戦争 合戦マップ
+                <ruby>楚漢戦争<rt>そかんせんそう</rt></ruby> 合戦マップ
               </Link>
             </>
           )}
@@ -116,7 +116,7 @@ export default function EventDetail({ event, era, prev, next }) {
             <>
               <span style={{ color: COLORS.mist }}>|</span>
               <Link href="/suitang-battles" style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
-                隋唐・五代 合戦マップ
+                <ruby>隋唐<rt>ずいとう</rt></ruby>・五代 合戦マップ
               </Link>
             </>
           )}
@@ -136,7 +136,7 @@ export default function EventDetail({ event, era, prev, next }) {
               return (
                 <div key={typeKey} className="mb-5 last:mb-0">
                   <div style={{ fontSize: 11, color: COLORS.gold, marginBottom: 6, letterSpacing: "0.05em" }}>
-                    {HERITAGE_TYPES[typeKey].label}
+                    <RubyText text={HERITAGE_TYPES[typeKey].label} />
                   </div>
                   <HeritageGrid items={items} eraId={era.id} />
                 </div>
@@ -162,7 +162,7 @@ export default function EventDetail({ event, era, prev, next }) {
               関連作品
             </div>
             <div style={{ fontSize: 10.5, color: COLORS.inkSoft, marginBottom: 12 }}>
-              ※ 一部のリンクはAmazonアソシエイトによるアフィリエイト広告を含みます
+              ※ 一部のリンクはAmazonアソシエイトによるアフィリエイト広告を<ruby>含<rt>ふく</rt></ruby>みます
             </div>
             <div className="grid gap-3" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))" }}>
               {event.media.map((med, idx) => {
@@ -171,17 +171,17 @@ export default function EventDetail({ event, era, prev, next }) {
                 return (
                   <div key={idx} className="px-3 py-3" style={{ border: `1px solid ${COLORS.mist}`, backgroundColor: "#fff" }}>
                     <div style={{ fontSize: 10, color: COLORS.vermilion, letterSpacing: "0.06em", marginBottom: 6 }}>
-                      {typeLabel}
+                      <RubyText text={typeLabel} />
                     </div>
                     <div style={{ fontSize: 12.5, color: COLORS.ink, lineHeight: 1.5 }}>
                       {href ? (
                         <a href={href} target="_blank" rel="noopener noreferrer sponsored" style={{ color: COLORS.ink, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
-                          {med.title}
+                          <RubyText text={med.title} />
                         </a>
                       ) : (
-                        med.title
+                        <RubyText text={med.title} />
                       )}
-                      {med.year && <span style={{ color: COLORS.inkSoft, fontSize: 11 }}> （{med.year}）</span>}
+                      {med.year && <span style={{ color: COLORS.inkSoft, fontSize: 11 }}> （<RubyText text={med.year} />）</span>}
                       {href && (
                         <span className="ml-1 align-middle" style={{ fontSize: 9, color: "#fff", backgroundColor: COLORS.vermilionSoft, padding: "1px 4px", letterSpacing: "0.05em" }}>
                           PR
@@ -190,7 +190,7 @@ export default function EventDetail({ event, era, prev, next }) {
                     </div>
                     {med.description && (
                       <div style={{ fontSize: 11, color: COLORS.inkSoft, lineHeight: 1.5, marginTop: 4 }}>
-                        {med.description}
+                        <RubyText text={med.description} />
                       </div>
                     )}
                   </div>
@@ -221,7 +221,7 @@ export default function EventDetail({ event, era, prev, next }) {
             <div style={{ textAlign: "right" }}>
               <div style={{ fontSize: 10.5, letterSpacing: "0.15em", opacity: 0.85 }}>前のイベントへ</div>
               <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 16, fontWeight: 700, marginTop: 2 }}>
-                {prev.event.year}　<RubyText text={prev.event.title} />
+                <RubyText text={prev.event.year} />　<RubyText text={prev.event.title} />
               </div>
             </div>
           </button>
@@ -236,7 +236,7 @@ export default function EventDetail({ event, era, prev, next }) {
             <div>
               <div style={{ fontSize: 10.5, letterSpacing: "0.15em", opacity: 0.85 }}>次のイベントへ</div>
               <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 16, fontWeight: 700, marginTop: 2 }}>
-                {next.event.year}　<RubyText text={next.event.title} />
+                <RubyText text={next.event.year} />　<RubyText text={next.event.title} />
               </div>
             </div>
             <span aria-hidden style={{ fontSize: 20 }}>→</span>

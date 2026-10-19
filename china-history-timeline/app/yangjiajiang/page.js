@@ -64,7 +64,7 @@ const KOU_ZHUN = findFigure("寇準");
 // 遼の人物は年表データ（宋側の王朝）に含まれないため、このページ内だけで紹介する
 const XIAO_TAIHOU_IMAGE = {
   imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Empress_Dowager_Xiao_1892.jpg",
-  credit: "清代刊本『北宋志伝（楊家将演義）』挿絵 / Wikimedia Commons（パブリックドメイン）",
+  credit: "清代刊本『{{北宋|ほくそう}}志伝（{{楊|よう}}家将演義）』{{挿絵|さしえ}} / Wikimedia Commons（パブリックドメイン）",
 };
 
 // 地図の投影。/sanguo-battlesなどと同じ線形近似（経緯度→SVG座標）
@@ -88,37 +88,37 @@ const BATTLES = [
     no: 1,
     id: "battle-1",
     year: "979",
-    name: "{{太原|たいげん}}攻略（{{北漢|ほっかん}}の滅亡）",
+    name: "{{太原|たいげん}}{{攻略|こうりゃく}}（{{北漢|ほっかん}}の{{滅亡|めつぼう}}）",
     location: "山西省太原市",
     lon: 112.55,
     lat: 37.87,
     label: "太原",
     labelSide: "right",
     factions: [
-      { side: "宋軍", color: SONG_COLOR, people: "{{太宗|たいそう}}・{{潘美|はんび}}" },
+      { side: "{{宋軍|そうぐん}}", color: SONG_COLOR, people: "{{太宗|たいそう}}・{{潘美|はんび}}" },
       { side: "北漢軍", color: COLORS.gold, people: "{{劉継元|りゅうけいげん}}・{{劉継業|りゅうけいぎょう}}（{{楊業|ようぎょう}}）" },
     ],
-    body: "五代十国で最後まで残った{{北漢|ほっかん}}は、遼の後ろ盾を得て宋に抵抗を続けていた。宋の{{太宗|たいそう}}は自ら大軍を率いて都{{太原|たいげん}}を包囲し、救援に来た遼軍を退けて北漢を降伏させる。最後まで戦い続けた北漢の将・劉継業は、主君の説得を受けてようやく投降した。その武勇を惜しんだ太宗は彼を厚遇し、劉継業は楊姓に戻して{{楊業|ようぎょう}}と名乗り、宋の将として遼と戦うことになる。",
-    portrait: { name: "宋太宗", ...TAIZONG },
+    body: "五代十国で最後まで残った{{北漢|ほっかん}}は、{{遼|りょう}}の後ろ{{盾|だて}}を得て{{宋|そう}}に{{抵抗|ていこう}}を続けていた。{{宋|そう}}の{{太宗|たいそう}}は自ら大軍を率いて都{{太原|たいげん}}を包囲し、{{救援|きゅうえん}}に来た{{遼|りょう}}軍を退けて北漢を{{降伏|こうふく}}させる。最後まで戦い続けた北漢の将・{{劉継業|りゅうけいぎょう}}は、主君の説得を受けてようやく投降した。その武勇を{{惜|お}}しんだ太宗は{{彼|かれ}}を{{厚遇|こうぐう}}し、{{劉継業|りゅうけいぎょう}}は{{楊姓|ようせい}}に{{戻|もど}}して{{楊業|ようぎょう}}と名乗り、{{宋|そう}}の将として{{遼|りょう}}と戦うことになる。",
+    portrait: { name: "{{宋太宗|そうたいそう}}", ...TAIZONG },
     personHref: TAIZONG.href,
-    personLabel: "宋太宗の生涯を読む",
+    personLabel: "{{宋太宗|そうたいそう}}の{{生涯|しょうがい}}を読む",
   },
   {
     no: 2,
     id: "battle-2",
     year: "979",
     name: "{{高梁河|こうりょうが}}の戦い",
-    location: "北京市（遼の南京・幽州）付近",
+    location: "北京市（{{遼|りょう}}の南京・{{幽州|ゆうしゅう}}）付近",
     lon: 116.35,
     lat: 39.95,
-    label: "高梁河",
+    label: "{{高梁河|こうりょうが}}",
     labelSide: "right",
     factions: [
-      { side: "宋軍", color: SONG_COLOR, people: "{{太宗|たいそう}}" },
-      { side: "遼軍", color: LIAO_COLOR, people: "{{耶律休哥|やりつきゅうか}}・{{耶律斜軫|やりつしゃしん}}" },
+      { side: "{{宋軍|そうぐん}}", color: SONG_COLOR, people: "{{太宗|たいそう}}" },
+      { side: "{{遼|りょう}}軍", color: LIAO_COLOR, people: "{{耶律休哥|やりつきゅうか}}・{{耶律斜軫|やりつしゃしん}}" },
     ],
-    body: "北漢を滅ぼした勢いのまま、{{太宗|たいそう}}は休む間もなく軍を北へ進め、{{燕雲十六州|えんうんじゅうろくしゅう}}の中心である遼の{{幽州|ゆうしゅう}}（現在の北京）を包囲した。しかし長い遠征で宋軍は疲弊しており、救援に駆けつけた{{耶律休哥|やりつきゅうか}}らの遼軍に{{高梁河|こうりょうが}}のほとりで大敗する。太宗自身も矢傷を負い、ロバの引く車で逃げ延びたと伝えられる。燕雲奪還の最初の試みは、こうして失敗に終わった。",
-    portrait: { name: "宋太宗", ...TAIZONG },
+    body: "北漢を{{滅|ほろ}}ぼした勢いのまま、{{太宗|たいそう}}は休む間もなく軍を北へ進め、{{燕雲十六州|えんうんじゅうろくしゅう}}の中心である{{遼|りょう}}の{{幽州|ゆうしゅう}}（現在の北京）を包囲した。しかし長い{{遠征|えんせい}}で{{宋軍|そうぐん}}は{{疲弊|ひへい}}しており、{{救援|きゅうえん}}に{{駆|か}}けつけた{{耶律休哥|やりつきゅうか}}らの{{遼|りょう}}軍に{{高梁河|こうりょうが}}のほとりで大敗する。太宗自身も矢傷を負い、ロバの引く車で{{逃|に}}げ延びたと伝えられる。{{燕雲|えんうん}}{{奪還|だっかん}}の最初の試みは、こうして失敗に終わった。",
+    portrait: { name: "{{宋太宗|そうたいそう}}", ...TAIZONG },
     personHref: null,
   },
   {
@@ -126,175 +126,175 @@ const BATTLES = [
     id: "battle-3",
     year: "980",
     name: "{{雁門関|がんもんかん}}の戦い",
-    location: "山西省忻州市代県",
+    location: "山西省{{忻州|きんしゅう}}市代県",
     lon: 112.87,
     lat: 39.18,
-    label: "雁門関",
+    label: "{{雁門関|がんもんかん}}",
     labelSide: "right",
     factions: [
-      { side: "宋軍", color: SONG_COLOR, people: "{{楊業|ようぎょう}}・{{潘美|はんび}}" },
-      { side: "遼軍", color: LIAO_COLOR, people: "遼の大軍" },
+      { side: "{{宋軍|そうぐん}}", color: SONG_COLOR, people: "{{楊業|ようぎょう}}・{{潘美|はんび}}" },
+      { side: "{{遼|りょう}}軍", color: LIAO_COLOR, people: "{{遼|りょう}}の大軍" },
     ],
-    body: "高梁河の勝利の翌年、遼は大軍で長城の要衝{{雁門関|がんもんかん}}に迫った。{{代州|だいしゅう}}を守る{{楊業|ようぎょう}}はわずか数百の騎兵を率いて間道から敵の背後に回り込み、正面の{{潘美|はんび}}の軍と呼応して挟撃し、遼軍を大いに打ち破った。以後、遼の兵は楊業の旗を見ただけで退いたといわれ、彼は「楊無敵」の異名で呼ばれるようになる。",
-    portrait: { name: "楊業", ...YANG_YE },
+    body: "{{高梁河|こうりょうが}}の勝利の翌年、{{遼|りょう}}は大軍で長城の{{要衝|ようしょう}}{{雁門関|がんもんかん}}に{{迫|せま}}った。{{代州|だいしゅう}}を守る{{楊業|ようぎょう}}はわずか数百の{{騎兵|きへい}}を率いて間道から敵の背後に回り{{込|こ}}み、正面の{{潘美|はんび}}の軍と呼応して{{挟撃|きょうげき}}し、{{遼|りょう}}軍を大いに打ち破った。以後、{{遼|りょう}}の兵は{{楊業|ようぎょう}}の旗を見ただけで退いたといわれ、{{彼|かれ}}は「{{楊|よう}}無敵」の異名で呼ばれるようになる。",
+    portrait: { name: "{{楊業|ようぎょう}}", ...YANG_YE },
     personHref: YANG_YE.href,
-    personLabel: "楊業の生涯を読む",
+    personLabel: "{{楊業|ようぎょう}}の{{生涯|しょうがい}}を読む",
   },
   {
     no: 4,
     id: "battle-4",
     year: "986",
-    name: "{{岐溝関|きこうかん}}の戦い（{{雍熙|ようき}}の北伐）",
-    location: "河北省涿州市付近",
+    name: "{{岐溝関|きこうかん}}の戦い（{{雍熙|ようき}}の{{北伐|ほくばつ}}）",
+    location: "河北省{{涿州|たくしゅう}}市付近",
     lon: 115.97,
     lat: 39.49,
-    label: "岐溝関",
+    label: "{{岐溝関|きこうかん}}",
     labelSide: "right",
     factions: [
-      { side: "宋軍（東路）", color: SONG_COLOR, people: "{{曹彬|そうひん}}・{{米信|べいしん}}" },
-      { side: "遼軍", color: LIAO_COLOR, people: "{{耶律休哥|やりつきゅうか}}・{{蕭太后|しょうたいごう}}" },
+      { side: "{{宋軍|そうぐん}}（東路）", color: SONG_COLOR, people: "{{曹彬|そうひん}}・{{米信|べいしん}}" },
+      { side: "{{遼|りょう}}軍", color: LIAO_COLOR, people: "{{耶律休哥|やりつきゅうか}}・{{蕭太后|しょうたいごう}}" },
     ],
-    body: "986年、遼で幼い{{聖宗|せいそう}}が即位したのを好機とみた{{太宗|たいそう}}は、東・中・西の三路から燕雲奪還の大軍を送り出した（{{雍熙|ようき}}の北伐）。主力の東路軍を率いる{{曹彬|そうひん}}は{{涿州|たくしゅう}}まで進んだが、{{耶律休哥|やりつきゅうか}}に補給路を執拗に襲われて撤退を余儀なくされ、退却の途中、{{岐溝関|きこうかん}}で遼軍に追いつかれて壊滅的な敗北を喫する。この敗戦で北伐は総崩れとなり、各方面の軍に撤退が命じられた。",
+    body: "986年、{{遼|りょう}}で幼い{{聖宗|せいそう}}が{{即位|そくい}}したのを好機とみた{{太宗|たいそう}}は、東・中・西の三路から{{燕雲|えんうん}}{{奪還|だっかん}}の大軍を送り出した（{{雍熙|ようき}}の{{北伐|ほくばつ}}）。主力の東路軍を率いる{{曹彬|そうひん}}は{{涿州|たくしゅう}}まで進んだが、{{耶律休哥|やりつきゅうか}}に補給路を{{執拗|しつよう}}に{{襲|おそ}}われて{{撤退|てったい}}を{{余儀|よぎ}}なくされ、{{退却|たいきゃく}}の{{途中|とちゅう}}、{{岐溝関|きこうかん}}で{{遼|りょう}}軍に追いつかれて{{壊滅|かいめつ}}的な敗北を{{喫|きっ}}する。この敗戦で{{北伐|ほくばつ}}は{{総崩|そうくず}}れとなり、各方面の軍に{{撤退|てったい}}が命じられた。",
     portrait: null,
     relatedHref: HREF_YONGXI,
-    relatedLabel: "雍熙の北伐を年表で読む",
+    relatedLabel: "{{雍熙|ようき}}の{{北伐|ほくばつ}}を年表で読む",
   },
   {
     no: 5,
     id: "battle-5",
     year: "986",
     name: "{{陳家谷|ちんかこく}}の戦い（{{楊業|ようぎょう}}の最期）",
-    location: "山西省朔州市付近",
+    location: "山西省{{朔州|さくしゅう}}市付近",
     lon: 112.43,
     lat: 39.33,
-    label: "陳家谷",
+    label: "{{陳家谷|ちんかこく}}",
     labelSide: "left",
     factions: [
-      { side: "宋軍（西路）", color: SONG_COLOR, people: "{{楊業|ようぎょう}}・{{楊延玉|ようえんぎょく}}・{{潘美|はんび}}・{{王侁|おうしん}}" },
-      { side: "遼軍", color: LIAO_COLOR, people: "{{耶律斜軫|やりつしゃしん}}" },
+      { side: "{{宋軍|そうぐん}}（西路）", color: SONG_COLOR, people: "{{楊業|ようぎょう}}・{{楊延玉|ようえんぎょく}}・{{潘美|はんび}}・{{王侁|おうしん}}" },
+      { side: "{{遼|りょう}}軍", color: LIAO_COLOR, people: "{{耶律斜軫|やりつしゃしん}}" },
     ],
-    body: "西路軍の副将{{楊業|ようぎょう}}は、攻略した四州の住民を宋の領内へ逃がす撤退戦の中で、勢いに乗る遼軍との正面衝突は避けるべきだと主張した。しかし監軍{{王侁|おうしん}}に臆病者とそしられ、やむなく出撃する。楊業は{{陳家谷|ちんかこく}}の谷口に援軍を伏せておくよう主将{{潘美|はんび}}に頼んだが、戦いの末に谷口へ退いたとき、そこに味方の姿はなかった。息子{{楊延玉|ようえんぎょく}}も討ち死にし、捕らえられた楊業は食を絶って死んだと伝えられる。この悲劇が、のちの「楊家将」物語の核となった。",
-    portrait: { name: "楊業", ...YANG_YE },
+    body: "西路軍の副将{{楊業|ようぎょう}}は、{{攻略|こうりゃく}}した四州の住民を{{宋|そう}}の領内へ{{逃|に}}がす{{撤退|てったい}}戦の中で、勢いに乗る{{遼|りょう}}軍との正面{{衝突|しょうとつ}}は{{避|さ}}けるべきだと主張した。しかし{{監|かん}}軍{{王侁|おうしん}}に{{臆病|おくびょう}}者とそしられ、やむなく{{出撃|しゅつげき}}する。{{楊業|ようぎょう}}は{{陳家谷|ちんかこく}}の谷口に{{援軍|えんぐん}}を{{伏|ふ}}せておくよう主将{{潘美|はんび}}に{{頼|たの}}んだが、戦いの末に谷口へ退いたとき、そこに味方の姿はなかった。息子{{楊延玉|ようえんぎょく}}も討ち死にし、{{捕|と}}らえられた{{楊業|ようぎょう}}は食を絶って死んだと伝えられる。この悲劇が、のちの「{{楊|よう}}家将」物語の{{核|かく}}となった。",
+    portrait: { name: "{{楊業|ようぎょう}}", ...YANG_YE },
     relatedHref: HREF_YONGXI,
-    relatedLabel: "雍熙の北伐と楊業の戦死を年表で読む",
+    relatedLabel: "{{雍熙|ようき}}の{{北伐|ほくばつ}}と{{楊業|ようぎょう}}の戦死を年表で読む",
     personHref: YANG_YE.href,
-    personLabel: "楊業の生涯を読む",
+    personLabel: "{{楊業|ようぎょう}}の{{生涯|しょうがい}}を読む",
   },
   {
     no: 6,
     id: "battle-6",
     year: "999",
     name: "{{遂城|すいじょう}}の防衛",
-    location: "河北省保定市徐水区付近",
+    location: "河北省保定市{{徐|じょ}}水区付近",
     lon: 115.65,
     lat: 39.02,
-    label: "遂城",
+    label: "{{遂城|すいじょう}}",
     labelSide: "right",
     factions: [
-      { side: "宋軍", color: SONG_COLOR, people: "{{楊延昭|ようえんしょう}}" },
-      { side: "遼軍", color: LIAO_COLOR, people: "{{蕭太后|しょうたいごう}}・{{聖宗|せいそう}}" },
+      { side: "{{宋軍|そうぐん}}", color: SONG_COLOR, people: "{{楊延昭|ようえんしょう}}" },
+      { side: "{{遼|りょう}}軍", color: LIAO_COLOR, people: "{{蕭太后|しょうたいごう}}・{{聖宗|せいそう}}" },
     ],
-    body: "父の死後も国境の守りについていた{{楊延昭|ようえんしょう}}は、999年、{{蕭太后|しょうたいごう}}自らが率いる遼の大軍に小城{{遂城|すいじょう}}を包囲された。兵も少なく城内が動揺する中、楊延昭は厳冬の夜に城壁へ水をかけて一面の氷の壁とし、敵が攀じ登れないようにして城を守り抜いたと伝えられる。楊延昭はその後も20年以上にわたって北辺を守り、物語では「楊六郎」として父に劣らぬ名将に描かれている。",
-    portrait: { name: "楊延昭", ...YANG_YANZHAO },
+    body: "父の死後も国境の守りについていた{{楊延昭|ようえんしょう}}は、999年、{{蕭太后|しょうたいごう}}自らが率いる{{遼|りょう}}の大軍に小城{{遂城|すいじょう}}を包囲された。兵も少なく城内が{{動揺|どうよう}}する中、{{楊延昭|ようえんしょう}}は厳冬の夜に{{城壁|じょうへき}}へ水をかけて一面の氷の{{壁|かべ}}とし、敵が{{攀|よ}}じ登れないようにして城を守り{{抜|ぬ}}いたと伝えられる。{{楊延昭|ようえんしょう}}はその後も20年以上にわたって北辺を守り、物語では「{{楊六郎|ようろくろう}}」として父に{{劣|おと}}らぬ名将に{{描|えが}}かれている。",
+    portrait: { name: "{{楊延昭|ようえんしょう}}", ...YANG_YANZHAO },
     personHref: YANG_YANZHAO.href,
-    personLabel: "楊延昭の生涯を読む",
+    personLabel: "{{楊延昭|ようえんしょう}}の{{生涯|しょうがい}}を読む",
   },
   {
     no: 7,
     id: "battle-7",
     year: "1004",
     name: "{{澶淵|せんえん}}の盟",
-    location: "河南省濮陽市（澶州）",
+    location: "河南省{{濮陽|ぼくよう}}市（{{澶州|せんしゅう}}）",
     lon: 115.03,
     lat: 35.76,
-    label: "澶州",
+    label: "{{澶州|せんしゅう}}",
     labelSide: "right",
     factions: [
-      { side: "宋", color: SONG_COLOR, people: "{{真宗|しんそう}}・{{寇準|こうじゅん}}" },
-      { side: "遼", color: LIAO_COLOR, people: "{{聖宗|せいそう}}・{{蕭太后|しょうたいごう}}" },
+      { side: "{{宋|そう}}", color: SONG_COLOR, people: "{{真宗|しんそう}}・{{寇準|こうじゅん}}" },
+      { side: "{{遼|りょう}}", color: LIAO_COLOR, people: "{{聖宗|せいそう}}・{{蕭太后|しょうたいごう}}" },
     ],
-    body: "{{蕭太后|しょうたいごう}}と{{聖宗|せいそう}}が親征して大軍を南下させ、宋の都{{開封|かいほう}}に近い{{澶州|せんしゅう}}まで迫ると、宋では遷都論も出たが、宰相{{寇準|こうじゅん}}の進言で{{真宗|しんそう}}が前線に出て両軍は講和した。宋が毎年絹20万匹・銀10万両を贈る代わりに国境を現状で確定するこの盟約により、燕雲十六州は遼の領土として固定され、以後約120年にわたって両国の平和が続いた。楊家が戦い続けた宋遼の戦争は、ここにひとまずの終わりを迎える。",
-    portrait: { name: "寇準", ...KOU_ZHUN },
+    body: "{{蕭太后|しょうたいごう}}と{{聖宗|せいそう}}が{{親征|しんせい}}して大軍を南下させ、{{宋|そう}}の都{{開封|かいほう}}に近い{{澶州|せんしゅう}}まで{{迫|せま}}ると、{{宋|そう}}では{{遷都|せんと}}論も出たが、{{宰相|さいしょう}}{{寇準|こうじゅん}}の進言で{{真宗|しんそう}}が前線に出て両軍は講和した。{{宋|そう}}が毎年絹20万{{匹|ひき}}・銀10万両を{{贈|おく}}る代わりに国境を現状で確定するこの盟約により、{{燕雲十六州|えんうんじゅうろくしゅう}}は{{遼|りょう}}の領土として固定され、以後約120年にわたって両国の平和が続いた。{{楊|よう}}家が戦い続けた{{宋遼|そうりょう}}の戦争は、ここにひとまずの終わりを{{迎|むか}}える。",
+    portrait: { name: "{{寇準|こうじゅん}}", ...KOU_ZHUN },
     relatedHref: HREF_CHANYUAN,
-    relatedLabel: "澶淵の盟を年表で読む",
+    relatedLabel: "{{澶淵|せんえん}}の盟を年表で読む",
   },
 ];
 
 // 時代の流れ。hrefは/eventsへの直接リンク、anchorは本ページ内の戦いセクションへのリンク
 const FLOW = [
-  { year: "936", title: "{{燕雲十六州|えんうんじゅうろくしゅう}}の割譲", note: "{{後晋|こうしん}}の{{石敬瑭|せっけいとう}}が建国の援助と引き換えに、長城以南の16州を契丹（遼）に譲る。", href: HREF_YANYUN },
-  { year: "960", title: "宋の建国（{{趙匡胤|ちょうきょういん}}）", note: "燕雲十六州の奪還は、建国当初からの宋の悲願となる。", href: HREF_SONG },
-  { year: "979", title: "{{北漢|ほっかん}}の滅亡", note: "{{太宗|たいそう}}が中国本土の統一を完成。北漢の将・劉継業が宋に降り{{楊業|ようぎょう}}と名乗る。", anchor: "battle-1" },
-  { year: "979", title: "{{高梁河|こうりょうが}}の戦い", note: "燕雲奪還を狙った太宗が、遼の{{耶律休哥|やりつきゅうか}}らに大敗。", anchor: "battle-2" },
-  { year: "980", title: "{{雁門関|がんもんかん}}の戦い", note: "楊業が寡兵で遼の大軍を破り「楊無敵」と恐れられる。", anchor: "battle-3" },
-  { year: "986", title: "{{雍熙|ようき}}の北伐・{{岐溝関|きこうかん}}の戦い", note: "三路からの燕雲奪還作戦。主力の東路軍が耶律休哥に大敗する。", anchor: "battle-4" },
-  { year: "986", title: "{{陳家谷|ちんかこく}}の戦い", note: "撤退戦の中で援軍を得られなかった楊業が捕らわれ、絶食して死ぬ。", anchor: "battle-5" },
-  { year: "999", title: "{{遂城|すいじょう}}の防衛", note: "楊業の子{{楊延昭|ようえんしょう}}が氷の城壁で遼軍を退ける。", anchor: "battle-6" },
-  { year: "1004", title: "{{澶淵|せんえん}}の盟", note: "宋と遼が講和。燕雲十六州は遼領として確定する。", anchor: "battle-7" },
+  { year: "936", title: "{{燕雲十六州|えんうんじゅうろくしゅう}}の{{割譲|かつじょう}}", note: "{{後晋|こうしん}}の{{石敬瑭|せっけいとう}}が建国の{{援助|えんじょ}}と引き{{換|か}}えに、長城以南の16州を{{契丹|きったん}}（{{遼|りょう}}）に{{譲|ゆず}}る。", href: HREF_YANYUN },
+  { year: "960", title: "{{宋|そう}}の建国（{{趙匡胤|ちょうきょういん}}）", note: "{{燕雲十六州|えんうんじゅうろくしゅう}}の{{奪還|だっかん}}は、建国当初からの{{宋|そう}}の悲願となる。", href: HREF_SONG },
+  { year: "979", title: "{{北漢|ほっかん}}の{{滅亡|めつぼう}}", note: "{{太宗|たいそう}}が中国本土の統一を完成。北漢の将・{{劉継業|りゅうけいぎょう}}が{{宋|そう}}に降り{{楊業|ようぎょう}}と名乗る。", anchor: "battle-1" },
+  { year: "979", title: "{{高梁河|こうりょうが}}の戦い", note: "{{燕雲|えんうん}}{{奪還|だっかん}}を{{狙|ねら}}った太宗が、{{遼|りょう}}の{{耶律休哥|やりつきゅうか}}らに大敗。", anchor: "battle-2" },
+  { year: "980", title: "{{雁門関|がんもんかん}}の戦い", note: "{{楊業|ようぎょう}}が{{寡兵|かへい}}で{{遼|りょう}}の大軍を破り「{{楊|よう}}無敵」と{{恐|おそ}}れられる。", anchor: "battle-3" },
+  { year: "986", title: "{{雍熙|ようき}}の{{北伐|ほくばつ}}・{{岐溝関|きこうかん}}の戦い", note: "三路からの{{燕雲|えんうん}}{{奪還|だっかん}}作戦。主力の東路軍が{{耶律休哥|やりつきゅうか}}に大敗する。", anchor: "battle-4" },
+  { year: "986", title: "{{陳家谷|ちんかこく}}の戦い", note: "{{撤退|てったい}}戦の中で{{援軍|えんぐん}}を得られなかった{{楊業|ようぎょう}}が{{捕|と}}らわれ、絶食して死ぬ。", anchor: "battle-5" },
+  { year: "999", title: "{{遂城|すいじょう}}の防衛", note: "{{楊業|ようぎょう}}の子{{楊延昭|ようえんしょう}}が氷の{{城壁|じょうへき}}で{{遼|りょう}}軍を退ける。", anchor: "battle-6" },
+  { year: "1004", title: "{{澶淵|せんえん}}の盟", note: "{{宋|そう}}と{{遼|りょう}}が講和。{{燕雲十六州|えんうんじゅうろくしゅう}}は{{遼|りょう}}領として確定する。", anchor: "battle-7" },
 ];
 
 const PEOPLE = [
   {
-    side: "宋",
+    side: "{{宋|そう}}",
     color: SONG_COLOR,
     members: [
-      { name: "{{楊業|ようぎょう}}", role: "楊家の当主。「楊無敵」", note: "北漢から宋に降った猛将。雁門関で遼を破り、陳家谷で非業の死を遂げた。物語では「楊令公」「楊継業」とも呼ばれる。", ...YANG_YE },
-      { name: "{{楊延昭|ようえんしょう}}", role: "楊業の子。物語の「楊六郎」", note: "父の死後も20年以上にわたって北辺を守り抜いた名将。", ...YANG_YANZHAO },
-      { name: "{{潘美|はんび}}", role: "西路軍の主将", note: "宋初の統一戦争の功臣。陳家谷で楊業を救えず降格され、物語では悪役「潘仁美」とされた。", ...PAN_MEI },
-      { name: "{{宋太宗|そうたいそう}}（{{趙光義|ちょうこうぎ}}）", role: "北宋の第2代皇帝", note: "北漢を滅ぼして統一を完成させたが、燕雲十六州の奪還には二度失敗した。", ...TAIZONG },
+      { name: "{{楊業|ようぎょう}}", role: "{{楊|よう}}家の当主。「{{楊|よう}}無敵」", note: "北漢から{{宋|そう}}に降った{{猛将|もうしょう}}。{{雁門関|がんもんかん}}で{{遼|りょう}}を破り、{{陳家谷|ちんかこく}}で非業の死を{{遂|と}}げた。物語では「{{楊令|ようれい}}公」「{{楊継業|ようけいぎょう}}」とも呼ばれる。", ...YANG_YE },
+      { name: "{{楊延昭|ようえんしょう}}", role: "{{楊業|ようぎょう}}の子。物語の「{{楊六郎|ようろくろう}}」", note: "父の死後も20年以上にわたって北辺を守り{{抜|ぬ}}いた名将。", ...YANG_YANZHAO },
+      { name: "{{潘美|はんび}}", role: "西路軍の主将", note: "{{宋|そう}}初の統一戦争の功臣。{{陳家谷|ちんかこく}}で{{楊業|ようぎょう}}を救えず降格され、物語では悪役「{{潘|はん}}仁美」とされた。", ...PAN_MEI },
+      { name: "{{宋太宗|そうたいそう}}（{{趙光義|ちょうこうぎ}}）", role: "{{北宋|ほくそう}}の第2代{{皇帝|こうてい}}", note: "北漢を{{滅|ほろ}}ぼして統一を完成させたが、{{燕雲十六州|えんうんじゅうろくしゅう}}の{{奪還|だっかん}}には二度失敗した。", ...TAIZONG },
     ],
   },
   {
-    side: "遼",
+    side: "{{遼|りょう}}",
     color: LIAO_COLOR,
     members: [
-      { name: "{{耶律休哥|やりつきゅうか}}", role: "遼の名将", note: "高梁河・岐溝関の両戦で宋軍を撃破し、遼の最高の栄誉である「{{于越|うえつ}}」の称号を与えられた。" },
-      { name: "{{蕭太后|しょうたいごう}}（{{蕭綽|しょうしゃく}}）", role: "聖宗の母・摂政", note: "夫の景宗の死後、幼い聖宗に代わって国政を担った女傑。宋の北伐を退け、澶淵の盟を実現させた。", ...XIAO_TAIHOU_IMAGE },
-      { name: "{{耶律斜軫|やりつしゃしん}}", role: "遼の武将", note: "986年、西路の宋軍を迎え撃ち、陳家谷で楊業を捕らえた。" },
+      { name: "{{耶律休哥|やりつきゅうか}}", role: "{{遼|りょう}}の名将", note: "{{高梁河|こうりょうが}}・{{岐溝関|きこうかん}}の両戦で{{宋軍|そうぐん}}を{{撃破|げきは}}し、{{遼|りょう}}の最高の{{栄誉|えいよ}}である「{{于越|うえつ}}」の{{称号|しょうごう}}を{{与|あた}}えられた。" },
+      { name: "{{蕭太后|しょうたいごう}}（{{蕭綽|しょうしゃく}}）", role: "聖宗の母・{{摂政|せっしょう}}", note: "夫の景宗の死後、幼い聖宗に代わって国政を担った{{女傑|じょけつ}}。{{宋|そう}}の{{北伐|ほくばつ}}を退け、{{澶淵|せんえん}}の盟を実現させた。", ...XIAO_TAIHOU_IMAGE },
+      { name: "{{耶律斜軫|やりつしゃしん}}", role: "{{遼|りょう}}の武将", note: "986年、西路の{{宋軍|そうぐん}}を{{迎|むか}}え{{撃|う}}ち、{{陳家谷|ちんかこく}}で{{楊業|ようぎょう}}を{{捕|と}}らえた。" },
     ],
   },
 ];
 
 // 史実と、明代に成立した演義（『北宋志伝』『楊家府演義』）との違い
 const COMPARE_ROWS = [
-  { label: "楊業の最期", history: "陳家谷で捕らえられ、食を絶って3日後に死去。", legend: "敵に囲まれ、{{李陵|りりょう}}の碑に頭を打ちつけて自害する。" },
-  { label: "潘美", history: "救援を果たせなかった責任で官位を三等下げられたが、のちに復権。", legend: "「潘仁美」の名で、楊家に私怨を抱き楊業父子を死に追いやる奸臣。" },
-  { label: "楊業の妻", history: "名門・{{折|せつ}}氏の出身と伝わるが、事績はほとんど記録にない。", legend: "「{{佘太君|しゃたいくん}}」として、夫や息子の亡き後も一族を率いる女傑。" },
-  { label: "息子たち", history: "7人の男子が記録され、{{楊延玉|ようえんぎょく}}は陳家谷で戦死。家を継いだのは{{楊延昭|ようえんしょう}}。", legend: "「七郎八虎」と呼ばれる勇将ぞろいで、多くが戦場に散る。四郎は遼の捕虜となって遼の公主と結婚する。" },
-  { label: "女性の武将", history: "記録なし。", legend: "{{穆桂英|ぼくけいえい}}をはじめとする「楊門女将」が戦場で活躍する。" },
+  { label: "{{楊業|ようぎょう}}の最期", history: "{{陳家谷|ちんかこく}}で{{捕|と}}らえられ、食を絶って3日後に死去。", legend: "敵に囲まれ、{{李陵|りりょう}}の{{碑|ひ}}に頭を打ちつけて自害する。" },
+  { label: "{{潘美|はんび}}", history: "{{救援|きゅうえん}}を果たせなかった責任で官位を三等下げられたが、のちに復権。", legend: "「{{潘|はん}}仁美」の名で、{{楊|よう}}家に{{私怨|しえん}}を{{抱|いだ}}き{{楊業|ようぎょう}}父子を死に追いやる{{奸臣|かんしん}}。" },
+  { label: "{{楊業|ようぎょう}}の妻", history: "名門・{{折|せつ}}氏の出身と伝わるが、事績はほとんど記録にない。", legend: "「{{佘太君|しゃたいくん}}」として、夫や息子の亡き後も一族を率いる{{女傑|じょけつ}}。" },
+  { label: "息子たち", history: "7人の男子が記録され、{{楊延玉|ようえんぎょく}}は{{陳家谷|ちんかこく}}で戦死。家を{{継|つ}}いだのは{{楊延昭|ようえんしょう}}。", legend: "「{{七郎|しちろう}}八{{虎|とら}}」と呼ばれる勇将ぞろいで、多くが戦場に散る。{{四郎|しろう}}は{{遼|りょう}}の{{捕虜|ほりょ}}となって{{遼|りょう}}の公主と{{結婚|けっこん}}する。" },
+  { label: "女性の武将", history: "記録なし。", legend: "{{穆桂英|ぼくけいえい}}をはじめとする「{{楊|よう}}門女将」が戦場で{{活躍|かつやく}}する。" },
 ];
 
 const BOOKS = [
   {
     no: 1,
-    title: "『楊家将』",
-    meta: "北方謙三 / 2003年（PHP研究所） / 第38回吉川英治文学賞",
-    body: "楊業と楊家の男たちを主人公に、宋と遼の戦いを描く。原典である演義を大幅に再構成した、オリジナル色の強い作品。",
+    title: "『{{楊|よう}}家将』",
+    meta: "{{北方謙三|きたかたけんぞう}} / 2003年（PHP研究所） / 第38回{{吉川英治|よしかわえいじ}}文学賞",
+    body: "{{楊業|ようぎょう}}と{{楊|よう}}家の男たちを主人公に、{{宋|そう}}と{{遼|りょう}}の戦いを{{描|えが}}く。原典である演義を{{大幅|おおはば}}に再構成した、オリジナル色の強い作品。",
   },
   {
     no: 2,
-    title: "『血涙 新楊家将』",
-    meta: "北方謙三 / 2006年（PHP研究所）",
-    body: "『楊家将』の続編。前作に続いて楊家と遼の戦いを描く、同じくオリジナル色の強い作品。『楊家将』を読んでから手に取るのがおすすめ。",
+    title: "『{{血涙|けつるい}} 新{{楊|よう}}家将』",
+    meta: "{{北方謙三|きたかたけんぞう}} / 2006年（PHP研究所）",
+    body: "『{{楊|よう}}家将』の続編。前作に続いて{{楊|よう}}家と{{遼|りょう}}の戦いを{{描|えが}}く、同じくオリジナル色の強い作品。『{{楊|よう}}家将』を読んでから手に取るのがおすすめ。",
   },
 ];
 
 const FAQ = [
   {
-    q: "楊家将は実話ですか？",
-    a: "楊業・楊延昭・楊文広の三代が宋の武将として遼や西夏と戦ったことは、正史『宋史』にも記録された史実です。一方で、佘太君や穆桂英の活躍、七郎八虎の兄弟の物語などは、明代の演義や京劇で脚色・創作された部分が大きく、史実と物語は分けて楽しむのがよいでしょう。",
+    q: "{{楊|よう}}家将は実話ですか？",
+    a: "{{楊業|ようぎょう}}・{{楊延昭|ようえんしょう}}・{{楊文広|ようぶんこう}}の三代が{{宋|そう}}の武将として{{遼|りょう}}や西夏と戦ったことは、正史『{{宋史|そうし}}』にも記録された史実です。一方で、{{佘太君|しゃたいくん}}や{{穆桂英|ぼくけいえい}}の{{活躍|かつやく}}、{{七郎|しちろう}}八{{虎|とら}}の兄弟の物語などは、明代の演義や京劇で{{脚色|きゃくしょく}}・創作された部分が大きく、史実と物語は分けて楽しむのがよいでしょう。",
   },
   {
-    q: "北方謙三の『楊家将』と『血涙』はどちらから読めばいいですか？",
-    a: "刊行順どおり『楊家将』から読むのがおすすめです。『血涙 新楊家将』は『楊家将』の続編にあたります。",
+    q: "{{北方謙三|きたかたけんぞう}}の『{{楊|よう}}家将』と『{{血涙|けつるい}}』はどちらから読めばいいですか？",
+    a: "刊行順どおり『{{楊|よう}}家将』から読むのがおすすめです。『{{血涙|けつるい}} 新{{楊|よう}}家将』は『{{楊|よう}}家将』の続編にあたります。",
   },
   {
-    q: "楊業はなぜ「楊無敵」と呼ばれたのですか？",
-    a: "980年の雁門関の戦いで、わずか数百の騎兵で遼の大軍の背後を突いて大勝したためです。以後、遼の兵は楊業の旗を見ただけで退いたといわれ、「楊無敵」の異名が生まれました。",
+    q: "{{楊業|ようぎょう}}はなぜ「{{楊|よう}}無敵」と呼ばれたのですか？",
+    a: "980年の{{雁門関|がんもんかん}}の戦いで、わずか数百の{{騎兵|きへい}}で{{遼|りょう}}の大軍の背後を{{突|つ}}いて大勝したためです。以後、{{遼|りょう}}の兵は{{楊業|ようぎょう}}の旗を見ただけで退いたといわれ、「{{楊|よう}}無敵」の異名が生まれました。",
   },
   {
-    q: "『水滸伝』にも楊家の子孫が登場しますか？",
-    a: "登場します。梁山泊の好漢の一人「青面獣」楊志は、楊業（楊令公）の子孫という設定です。水滸伝については「水滸伝とは」のページで詳しく紹介しています。",
+    q: "『{{水滸伝|すいこでん}}』にも{{楊|よう}}家の子孫が登場しますか？",
+    a: "登場します。{{梁山泊|りょうざんぱく}}の好漢の一人「{{青面獣|せいめんじゅう}}」{{楊志|ようし}}は、{{楊業|ようぎょう}}（{{楊令|ようれい}}公）の子孫という設定です。{{水滸伝|すいこでん}}については「{{水滸伝|すいこでん}}とは」のページで{{詳|くわ}}しく{{紹介|しょうかい}}しています。",
   },
 ];
 
@@ -304,7 +304,7 @@ function YangMap() {
   return (
     <div style={{ ...card, padding: 16, marginBottom: 28 }}>
       <p style={{ fontSize: 11.5, color: COLORS.inkSoft, marginBottom: 10 }}>
-        実際の海岸線をもとにした華北の位置関係図です。朱色の番号は下の各戦い、斜線の範囲は燕雲十六州のおおよその範囲、金色の丸は宋の都・開封です。
+        実際の海岸線をもとにした<ruby>華北<rt>かほく</rt></ruby>の位置関係図です。<ruby>朱色<rt>しゅいろ</rt></ruby>の番号は下の各戦い、<ruby>斜線<rt>しゃせん</rt></ruby>の<ruby>範囲<rt>はんい</rt></ruby>は<ruby>燕雲十六州<rt>えんうんじゅうろくしゅう</rt></ruby>のおおよその<ruby>範囲<rt>はんい</rt></ruby>、金色の丸は<ruby>宋<rt>そう</rt></ruby>の都・<ruby>開封<rt>かいほう</rt></ruby>です。
       </p>
       <svg viewBox="298 122 64 76" style={{ width: "100%", maxHeight: 460, display: "block", margin: "0 auto" }} role="img" aria-label="宋と遼の戦いの地図">
         <defs>
@@ -345,7 +345,7 @@ function YangMap() {
                 textAnchor={right ? "start" : "end"}
                 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 1.7, fontWeight: 700, fill: COLORS.ink }}
               >
-                {b.label}
+                {stripRuby(b.label)}
               </text>
             </a>
           );
@@ -382,7 +382,7 @@ export default function YangjiajiangPage() {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "年表", item: SITE_URL },
-      { "@type": "ListItem", position: 2, name: "楊家将とは", item: `${SITE_URL}/yangjiajiang` },
+      { "@type": "ListItem", position: 2, name: "{{楊|よう}}家将とは", item: `${SITE_URL}/yangjiajiang` },
     ],
   };
 
@@ -394,45 +394,45 @@ export default function YangjiajiangPage() {
 
   return (
     <div style={{ backgroundColor: COLORS.paper, minHeight: "100%" }}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stripRuby(JSON.stringify(articleJsonLd)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stripRuby(JSON.stringify(breadcrumbJsonLd)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stripRuby(JSON.stringify(faqJsonLd)) }} />
 
       <div className="max-w-2xl mx-auto px-6 py-12">
         <BackToTopButton />
 
         <h1 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 6 }}>
-          楊家将とは？
+          <ruby>楊<rt>よう</rt></ruby>家将とは？
         </h1>
         <p style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14, color: COLORS.gold, marginBottom: 14 }}>
-          北方謙三『楊家将』で読む宋と遼の戦い
+          <ruby>北方謙三<rt>きたかたけんぞう</rt></ruby>『<ruby>楊<rt>よう</rt></ruby>家将』で読む<ruby>宋<rt>そう</rt></ruby>と<ruby>遼<rt>りょう</rt></ruby>の戦い
         </p>
         <p style={{ ...bodyText, fontSize: 13.5, marginBottom: 28 }}>
-          「楊家将（ようかしょう）」とは、北宋の時代に北方の強国・遼と戦い続けた武門、楊一族の物語です。
-          「楊無敵」と恐れられた{" "}<RubyText text="{{楊業|ようぎょう}}" />{" "}と、その子{" "}<RubyText text="{{楊延昭|ようえんしょう}}" />{" "}らの史実の活躍は、
-          民間の語り物や芝居を通じて広まり、明代には小説（演義）としてまとめられ、現代日本では北方謙三の小説『楊家将』によって新たな読者を得ました。
-          このページでは、史実・演義・北方版の3つの視点から、楊家将の舞台となった宋と遼の戦いをたどります。
+          「<ruby>楊<rt>よう</rt></ruby>家将（ようかしょう）」とは、<ruby>北宋<rt>ほくそう</rt></ruby>の時代に北方の強国・<ruby>遼<rt>りょう</rt></ruby>と戦い続けた武門、<ruby>楊<rt>よう</rt></ruby>一族の物語です。
+          「<ruby>楊<rt>よう</rt></ruby>無敵」と<ruby>恐<rt>おそ</rt></ruby>れられた{" "}<RubyText text="{{楊業|ようぎょう}}" />{" "}と、その子{" "}<RubyText text="{{楊延昭|ようえんしょう}}" />{" "}らの史実の<ruby>活躍<rt>かつやく</rt></ruby>は、
+          民間の語り物や<ruby>芝居<rt>しばい</rt></ruby>を通じて広まり、明代には小説（演義）としてまとめられ、現代日本では<ruby>北方謙三<rt>きたかたけんぞう</rt></ruby>の小説『<ruby>楊<rt>よう</rt></ruby>家将』によって新たな読者を得ました。
+          このページでは、史実・演義・北方版の3つの視点から、<ruby>楊<rt>よう</rt></ruby>家将の<ruby>舞台<rt>ぶたい</rt></ruby>となった<ruby>宋<rt>そう</rt></ruby>と<ruby>遼<rt>りょう</rt></ruby>の戦いをたどります。
         </p>
 
         <section style={{ marginBottom: 36 }} id="background">
-          <h2 style={sectionHeading}>時代背景：燕雲十六州をめぐる宋と遼</h2>
+          <h2 style={sectionHeading}>時代背景：<ruby>燕雲十六州<rt>えんうんじゅうろくしゅう</rt></ruby>をめぐる<ruby>宋<rt>そう</rt></ruby>と<ruby>遼<rt>りょう</rt></ruby></h2>
           <div className="flex flex-col gap-3" style={bodyText}>
             <p>
-              <RubyText text="五代十国時代の936年、{{後晋|こうしん}}を建てた{{石敬瑭|せっけいとう}}は、北方の契丹（のちの遼）から建国の援助を受けた見返りに、現在の北京・大同を含む長城以南の16の州を譲り渡しました。これが「{{燕雲十六州|えんうんじゅうろくしゅう}}」です。" />
+              <RubyText text="五代十国時代の936年、{{後晋|こうしん}}を建てた{{石敬瑭|せっけいとう}}は、北方の{{契丹|きったん}}（のちの{{遼|りょう}}）から建国の{{援助|えんじょ}}を受けた見返りに、現在の北京・大同を{{含|ふく}}む長城以南の16の州を{{譲|ゆず}}り{{渡|わた}}しました。これが「{{燕雲十六州|えんうんじゅうろくしゅう}}」です。" />
             </p>
             <p>
-              <RubyText text="長城という天然の防壁を失った中原の王朝は、遼の騎兵に対して無防備な状態に置かれました。960年に建国した宋にとって燕雲十六州の奪還は悲願となり、第2代皇帝{{太宗|たいそう}}は979年と986年の二度にわたって大規模な北伐を行います。楊家の男たちが命を懸けて戦ったのは、まさにこの燕雲十六州をめぐる戦争でした。" />
+              <RubyText text="長城という天然の{{防壁|ぼうへき}}を失った中原の王朝は、{{遼|りょう}}の{{騎兵|きへい}}に対して無防備な状態に置かれました。960年に建国した{{宋|そう}}にとって{{燕雲十六州|えんうんじゅうろくしゅう}}の{{奪還|だっかん}}は悲願となり、第2代{{皇帝|こうてい}}{{太宗|たいそう}}は979年と986年の二度にわたって大規模な{{北伐|ほくばつ}}を行います。{{楊|よう}}家の男たちが命を{{懸|か}}けて戦ったのは、まさにこの{{燕雲十六州|えんうんじゅうろくしゅう}}をめぐる戦争でした。" />
             </p>
           </div>
         </section>
 
         <section style={{ marginBottom: 32 }} id="flow">
-          <h2 style={sectionHeading}>年表：楊家将の時代の流れ</h2>
+          <h2 style={sectionHeading}>年表：<ruby>楊<rt>よう</rt></ruby>家将の時代の流れ</h2>
           <div className="flex flex-col gap-2">
             {FLOW.map((f, i) => {
               const content = (
                 <div className="flex items-baseline gap-3 px-4 py-2.5" style={{ ...card, borderLeft: `3px solid ${COLORS.vermilion}` }}>
-                  <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 12.5, color: COLORS.inkSoft, whiteSpace: "nowrap" }}>{f.year}</span>
+                  <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 12.5, color: COLORS.inkSoft, whiteSpace: "nowrap" }}><RubyText text={f.year} /></span>
                   <div className="flex-1 min-w-0">
                     <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14.5, fontWeight: 700, color: COLORS.ink }}>
                       <RubyText text={f.title} />
@@ -453,12 +453,12 @@ export default function YangjiajiangPage() {
         </section>
 
         <section style={{ marginBottom: 12 }} id="map">
-          <h2 style={sectionHeading}>地図：宋と遼の戦場</h2>
+          <h2 style={sectionHeading}>地図：<ruby>宋<rt>そう</rt></ruby>と<ruby>遼<rt>りょう</rt></ruby>の戦場</h2>
           <YangMap />
         </section>
 
         <section style={{ marginBottom: 36 }} id="battles">
-          <h2 style={sectionHeading}>楊家将ゆかりの戦い</h2>
+          <h2 style={sectionHeading}><ruby>楊<rt>よう</rt></ruby>家将ゆかりの戦い</h2>
           <div className="flex flex-col gap-5">
             {BATTLES.map((b) => (
               <div key={b.no} id={b.id} style={{ ...card, scrollMarginTop: 16 }}>
@@ -475,16 +475,16 @@ export default function YangjiajiangPage() {
                       <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 16.5, fontWeight: 700, color: COLORS.ink }}>
                         <RubyText text={b.name} />
                       </span>
-                      <span style={{ fontSize: 12, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}>{b.year}年</span>
+                      <span style={{ fontSize: 12, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}><RubyText text={b.year} />年</span>
                     </div>
                     <div style={{ fontSize: 11, color: COLORS.vermilionSoft, marginTop: 4 }}>
-                      <span aria-hidden>📍</span> {b.location}
+                      <span aria-hidden>📍</span> <RubyText text={b.location} />
                     </div>
 
                     <div className="flex flex-wrap gap-x-4 gap-y-1 mt-3" style={{ fontSize: 11.5 }}>
                       {b.factions.map((f, i) => (
                         <div key={i}>
-                          <span style={{ color: f.color, fontWeight: 700 }}>{f.side}：</span>
+                          <span style={{ color: f.color, fontWeight: 700 }}><RubyText text={f.side} />：</span>
                           <span style={{ color: COLORS.inkSoft }}><RubyText text={f.people} /></span>
                         </div>
                       ))}
@@ -496,14 +496,14 @@ export default function YangjiajiangPage() {
 
                     {b.portrait?.credit && (
                       <div style={{ fontSize: 9.5, color: COLORS.mist, marginTop: 4 }}>
-                        肖像: {b.portrait.name}（{b.portrait.credit}）
+                        <ruby>肖像<rt>しょうぞう</rt></ruby>: <RubyText text={b.portrait.name} />（<RubyText text={b.portrait.credit} />）
                       </div>
                     )}
 
                     {(b.relatedHref || b.personHref) && (
                       <div className="flex items-center gap-3 flex-wrap mt-3" style={{ fontSize: 11.5 }}>
-                        {b.relatedHref && <a href={b.relatedHref} style={linkStyle}>{b.relatedLabel} →</a>}
-                        {b.personHref && <a href={b.personHref} style={linkStyle}>{b.personLabel} →</a>}
+                        {b.relatedHref && <a href={b.relatedHref} style={linkStyle}><RubyText text={b.relatedLabel} /> →</a>}
+                        {b.personHref && <a href={b.personHref} style={linkStyle}><RubyText text={b.personLabel} /> →</a>}
                       </div>
                     )}
                   </div>
@@ -514,14 +514,14 @@ export default function YangjiajiangPage() {
         </section>
 
         <section style={{ marginBottom: 36 }} id="people">
-          <h2 style={sectionHeading}>主要人物：宋と遼の武将たち</h2>
+          <h2 style={sectionHeading}>主要人物：<ruby>宋<rt>そう</rt></ruby>と<ruby>遼<rt>りょう</rt></ruby>の武将たち</h2>
           <div className="flex flex-col gap-6">
             {PEOPLE.map((group) => (
               <div key={group.side}>
                 <div
                   style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 15, fontWeight: 700, color: group.color, borderBottom: `2px solid ${group.color}`, paddingBottom: 4, marginBottom: 10 }}
                 >
-                  {group.side}
+                  <RubyText text={group.side} />
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {group.members.map((m) => (
@@ -537,7 +537,7 @@ export default function YangjiajiangPage() {
                             <RubyText text={m.name} />
                           )}
                         </div>
-                        <div style={{ fontSize: 11, color: COLORS.gold, marginTop: 2 }}>{m.role}</div>
+                        <div style={{ fontSize: 11, color: COLORS.gold, marginTop: 2 }}><RubyText text={m.role} /></div>
                         <p style={{ fontSize: 12, lineHeight: 1.7, color: COLORS.inkSoft, marginTop: 4 }}>
                           <RubyText text={m.note} />
                         </p>
@@ -551,17 +551,17 @@ export default function YangjiajiangPage() {
         </section>
 
         <section style={{ marginBottom: 36 }} id="history-vs-legend">
-          <h2 style={sectionHeading}>史実と演義の違い</h2>
+          <h2 style={sectionHeading}>史実と演義の<ruby>違<rt>ちが</rt></ruby>い</h2>
           <p style={{ ...bodyText, marginBottom: 12 }}>
-            楊家の物語は、元代の雑劇などを経て、明代に『北宋志伝』『楊家府演義』といった小説（演義）にまとめられ、清代以降は京劇の人気演目にもなりました。
-            演義では史実が大きく脚色されており、よく知られた場面の多くは創作です。
+            <ruby>楊<rt>よう</rt></ruby>家の物語は、元代の雑劇などを経て、明代に『<ruby>北宋<rt>ほくそう</rt></ruby>志伝』『<ruby>楊<rt>よう</rt></ruby>家府演義』といった小説（演義）にまとめられ、清代以降は京劇の人気演目にもなりました。
+            演義では史実が大きく<ruby>脚色<rt>きゃくしょく</rt></ruby>されており、よく知られた場面の多くは創作です。
           </p>
           <div style={{ ...card, overflowX: "auto" }}>
             <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12, minWidth: 460 }}>
               <thead>
                 <tr>
                   <th style={{ width: 84, padding: "10px 8px", borderBottom: "1px solid #DCD3B8" }} />
-                  <th style={{ padding: "10px 8px", borderBottom: `2px solid ${COLORS.ink}`, textAlign: "left", fontFamily: "'Noto Serif SC', serif", fontSize: 14, color: COLORS.ink }}>史実（『宋史』など）</th>
+                  <th style={{ padding: "10px 8px", borderBottom: `2px solid ${COLORS.ink}`, textAlign: "left", fontFamily: "'Noto Serif SC', serif", fontSize: 14, color: COLORS.ink }}>史実（『<ruby>宋史<rt>そうし</rt></ruby>』など）</th>
                   <th style={{ padding: "10px 8px", borderBottom: `2px solid ${COLORS.vermilion}`, textAlign: "left", fontFamily: "'Noto Serif SC', serif", fontSize: 14, color: COLORS.ink }}>演義・京劇</th>
                 </tr>
               </thead>
@@ -572,7 +572,7 @@ export default function YangjiajiangPage() {
                       scope="row"
                       style={{ padding: "9px 8px", textAlign: "left", fontWeight: 700, fontSize: 11.5, color: COLORS.gold, borderTop: "1px solid #E8E0CA", verticalAlign: "top", whiteSpace: "nowrap" }}
                     >
-                      {row.label}
+                      <RubyText text={row.label} />
                     </th>
                     <td style={{ padding: "9px 8px", color: COLORS.ink, lineHeight: 1.6, borderTop: "1px solid #E8E0CA", verticalAlign: "top" }}>
                       <RubyText text={row.history} />
@@ -588,9 +588,9 @@ export default function YangjiajiangPage() {
         </section>
 
         <section style={{ marginBottom: 36 }} id="kitakata">
-          <h2 style={sectionHeading}>北方謙三の『楊家将』を読む順番</h2>
+          <h2 style={sectionHeading}><ruby>北方謙三<rt>きたかたけんぞう</rt></ruby>の『<ruby>楊<rt>よう</rt></ruby>家将』を読む順番</h2>
           <p style={{ ...bodyText, marginBottom: 12 }}>
-            北方謙三の楊家将は2作。いずれも原典を大幅に再構成したオリジナル色の強い作品で、演義とは異なる楊家の物語として楽しめます。
+            <ruby>北方謙三<rt>きたかたけんぞう</rt></ruby>の<ruby>楊<rt>よう</rt></ruby>家将は2作。いずれも原典を<ruby>大幅<rt>おおはば</rt></ruby>に再構成したオリジナル色の強い作品で、演義とは異なる<ruby>楊<rt>よう</rt></ruby>家の物語として楽しめます。
           </p>
           <div className="flex flex-col gap-3">
             {BOOKS.map((book) => (
@@ -602,9 +602,9 @@ export default function YangjiajiangPage() {
                   {book.no}
                 </span>
                 <div className="flex-1 min-w-0">
-                  <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 16, fontWeight: 700, color: COLORS.ink }}>{book.title}</div>
-                  <div style={{ fontSize: 11, color: COLORS.gold, marginTop: 2 }}>{book.meta}</div>
-                  <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft, marginTop: 6 }}>{book.body}</p>
+                  <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 16, fontWeight: 700, color: COLORS.ink }}><RubyText text={book.title} /></div>
+                  <div style={{ fontSize: 11, color: COLORS.gold, marginTop: 2 }}><RubyText text={book.meta} /></div>
+                  <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft, marginTop: 6 }}><RubyText text={book.body} /></p>
                 </div>
               </div>
             ))}
@@ -612,15 +612,15 @@ export default function YangjiajiangPage() {
         </section>
 
         <section style={{ marginBottom: 36 }} id="faq">
-          <h2 style={sectionHeading}>楊家将についてのよくある疑問</h2>
+          <h2 style={sectionHeading}><ruby>楊<rt>よう</rt></ruby>家将についてのよくある疑問</h2>
           <div className="flex flex-col gap-3">
             {FAQ.map((f) => (
               <div key={f.q} style={{ ...card, padding: "14px 16px" }}>
                 <h3 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14.5, fontWeight: 700, color: COLORS.ink }}>
                   <span style={{ color: COLORS.vermilion, marginRight: 6 }}>Q.</span>
-                  {f.q}
+                  <RubyText text={f.q} />
                 </h3>
-                <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft, marginTop: 6 }}>{f.a}</p>
+                <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft, marginTop: 6 }}><RubyText text={f.a} /></p>
               </div>
             ))}
           </div>
@@ -628,14 +628,14 @@ export default function YangjiajiangPage() {
 
         <section style={{ marginTop: 32 }}>
           <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
-            北宋の出来事や人物の詳しい解説は、年表・人物ページもあわせてご覧ください。
+            <ruby>北宋<rt>ほくそう</rt></ruby>の出来事や人物の<ruby>詳<rt>くわ</rt></ruby>しい解説は、年表・人物ページもあわせてご覧ください。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
-            <NavButton href="/eras/northernsong" variant="solid">北宋の出来事一覧を見る</NavButton>
-            <NavButton href="/people/northernsong" variant="outline">北宋の人物一覧を見る</NavButton>
+            <NavButton href="/eras/northernsong" variant="solid"><ruby>北宋<rt>ほくそう</rt></ruby>の出来事一覧を見る</NavButton>
+            <NavButton href="/people/northernsong" variant="outline"><ruby>北宋<rt>ほくそう</rt></ruby>の人物一覧を見る</NavButton>
             <NavButton href="/novelists" variant="outline">中国史を題材にした日本人小説家一覧</NavButton>
             <NavButton href="/four-great-novels" variant="outline">中国の四大名著とは</NavButton>
-            <NavButton href="/suikoden" variant="outline">水滸伝とは</NavButton>
+            <NavButton href="/suikoden" variant="outline"><ruby>水滸伝<rt>すいこでん</rt></ruby>とは</NavButton>
           </div>
         </section>
 

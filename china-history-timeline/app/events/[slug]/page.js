@@ -17,7 +17,7 @@ export function generateMetadata({ params }) {
   const path = `/events/${event.slug}`;
   // 「1043 BC」→「前1043年」、「618」→「618年」。「12世紀」などはそのまま
   const yearLabel = event.year.replace(/^(\d+) BC$/, "前$1").replace(/\d$/, "$&年");
-  const image = { title, kicker: `${era.name} ・ ${yearLabel}`, seal: era.seal };
+  const image = { title, kicker: `${stripRuby(era.name)} ・ ${yearLabel}`, seal: era.seal };
   return {
     title: pageTitle,
     description,
@@ -68,11 +68,11 @@ export default function EventPage({ params }) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: stripRuby(JSON.stringify(articleJsonLd)) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: stripRuby(JSON.stringify(breadcrumbJsonLd)) }}
       />
       <EventDetail event={event} era={era} prev={prev} next={next} />
     </>

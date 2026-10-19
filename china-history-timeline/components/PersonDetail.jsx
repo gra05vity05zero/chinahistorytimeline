@@ -12,7 +12,7 @@ export default function PersonDetail({ person, era }) {
     <div style={{ backgroundColor: COLORS.paper, minHeight: "100%" }}>
       <div className="sticky top-0 z-20 px-5 py-3" style={{ backgroundColor: COLORS.paperDeep, borderBottom: `1px solid ${COLORS.mist}` }}>
         <Link href={`/people/${era.id}`} className="flex items-center gap-2" style={{ color: COLORS.vermilion, fontFamily: "'Noto Serif SC', serif", fontSize: 13 }}>
-          <span aria-hidden>←</span> {era.name}の人物一覧に戻る
+          <span aria-hidden>←</span> <RubyText text={era.name} />の人物一覧に<ruby>戻<rt>もど</rt></ruby>る
         </Link>
       </div>
 
@@ -20,7 +20,7 @@ export default function PersonDetail({ person, era }) {
         <div className="flex items-center gap-3 mb-5">
           <SealMark char={era.seal} active />
           <div style={{ fontSize: 12, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}>
-            {era.name} ／ {era.period}
+            <RubyText text={era.name} /> ／ <RubyText text={era.period} />
           </div>
         </div>
 
@@ -37,14 +37,14 @@ export default function PersonDetail({ person, era }) {
             <div style={{ aspectRatio: "4 / 3", backgroundColor: "#EFE7D0", border: `1px solid ${COLORS.mist}`, overflow: "hidden" }}>
               <HeritageThumb imageUrl={person.imageUrl} name={person.name} type="figure" />
             </div>
-            {person.credit && <div style={{ fontSize: 9.5, color: COLORS.mist, marginTop: 4 }}>{person.credit}</div>}
+            {person.credit && <div style={{ fontSize: 9.5, color: COLORS.mist, marginTop: 4 }}><RubyText text={person.credit} /></div>}
           </div>
         )}
 
         {bioParagraphs.length > 0 && (
           <div className="mt-10">
             <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 16, fontWeight: 900, color: COLORS.vermilion, letterSpacing: "0.1em", marginBottom: 12 }}>
-              生涯・業績
+              <ruby>生涯<rt>しょうがい</rt></ruby>・業績
             </h2>
             {bioParagraphs.map((para, idx) => (
               <p key={idx} style={{ fontSize: 14, lineHeight: 1.9, color: COLORS.inkSoft, marginTop: idx > 0 ? 14 : 0 }}>
@@ -67,7 +67,7 @@ export default function PersonDetail({ person, era }) {
                   className="block px-4 py-3"
                   style={{ backgroundColor: "#FBF8F0", border: `1px solid #DCD3B8`, borderLeft: `3px solid ${COLORS.vermilion}` }}
                 >
-                  <span style={{ fontFamily: "'Noto Serif SC', serif", color: COLORS.inkSoft, fontSize: 13 }}>{ev.year}</span>{"　"}
+                  <span style={{ fontFamily: "'Noto Serif SC', serif", color: COLORS.inkSoft, fontSize: 13 }}><RubyText text={ev.year} /></span>{"　"}
                   <span style={{ fontFamily: "'Noto Serif SC', serif", color: COLORS.ink, fontSize: 15, fontWeight: 600 }}>
                     <RubyText text={ev.title} />
                   </span>
@@ -79,11 +79,11 @@ export default function PersonDetail({ person, era }) {
 
         <div className="flex items-center gap-3 mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}`, fontSize: 12 }}>
           <Link href={`/people/${era.id}`} style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
-            {era.name}の人物一覧
+            <RubyText text={era.name} />の人物一覧
           </Link>
           <span style={{ color: COLORS.mist }}>|</span>
           <Link href={`/eras/${era.id}`} style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
-            {era.name}の出来事一覧
+            <RubyText text={era.name} />の出来事一覧
           </Link>
         </div>
 

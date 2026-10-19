@@ -28,7 +28,7 @@ export function generateMetadata({ params }) {
   const title = `${name}とは？生涯と業績`;
   const description = stripRuby(person.description);
   const path = `/people/${era.id}/${personSlug(person.name)}`;
-  const image = { title: `${name}とは？`, subtitle: "生涯と業績", kicker: `${era.name}の人物`, seal: era.seal };
+  const image = { title: `${name}とは？`, subtitle: "生涯と業績", kicker: `${stripRuby(era.name)}の人物`, seal: era.seal };
   return {
     title,
     description,
@@ -73,11 +73,11 @@ export default function PersonPage({ params }) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: stripRuby(JSON.stringify(personJsonLd)) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: stripRuby(JSON.stringify(breadcrumbJsonLd)) }}
       />
       <PersonDetail person={person} era={era} />
     </>

@@ -43,9 +43,9 @@ const C = {
 
 const FRAMES = [
   {
-    year: "190年頃",
-    era: "群雄割拠",
-    desc: "{{黄巾|こうきん}}の乱の後、後漢の統制は崩れ、各地の群雄がそれぞれ自立した勢力圏を築いていた。",
+    year: "190年{{頃|ごろ}}",
+    era: "{{群雄|ぐんゆう}}{{割拠|かっきょ}}",
+    desc: "{{黄巾|こうきん}}の乱の後、後漢の統制は{{崩|くず}}れ、各地の{{群雄|ぐんゆう}}がそれぞれ自立した勢力{{圏|けん}}を築いていた。",
     factions: [
       { name: "{{公孫瓚|こうそんさん}}", color: C.gongsun, provinces: ["youzhou"], label: { x: 315, y: 116 } },
       { name: "{{袁紹|えんしょう}}", color: C.yuanshao, provinces: ["jizhou"], label: { x: 292, y: 153 } },
@@ -61,7 +61,7 @@ const FRAMES = [
   {
     year: "200年",
     era: "{{官渡|かんと}}の戦い",
-    desc: "{{曹操|そうそう}}が{{兗州|えんしゅう}}・{{豫州|よしゅう}}・徐州・淮南を平定し、河北の{{袁紹|えんしょう}}と華北の覇権を賭けて{{官渡|かんと}}で激突する。",
+    desc: "{{曹操|そうそう}}が{{兗州|えんしゅう}}・{{豫州|よしゅう}}・{{徐州|じょしゅう}}・{{淮南|わいなん}}を平定し、河北の{{袁紹|えんしょう}}と{{華北|かほく}}の{{覇権|はけん}}を{{賭|か}}けて{{官渡|かんと}}で{{激突|げきとつ}}する。",
     factions: [
       { name: "{{袁紹|えんしょう}}", color: C.yuanshao, provinces: ["jizhou", "youzhou"], label: { x: 304, y: 135 } },
       { name: "{{曹操|そうそう}}", color: C.cao, provinces: ["siliyu", "xuzhou", "huainan"], label: { x: 343, y: 190 } },
@@ -74,7 +74,7 @@ const FRAMES = [
   {
     year: "208年",
     era: "{{赤壁|せきへき}}の戦い",
-    desc: "{{官渡|かんと}}の勝利後、{{曹操|そうそう}}は河北を平定して華北をほぼ統一。{{劉表|りゅうひょう}}死後の荊州も接収し、南下する大軍が長江に迫る。",
+    desc: "{{官渡|かんと}}の勝利後、{{曹操|そうそう}}は河北を平定して{{華北|かほく}}をほぼ統一。{{劉表|りゅうひょう}}死後の{{荊州|けいしゅう}}も接収し、南下する大軍が{{長江|ちょうこう}}に{{迫|せま}}る。",
     factions: [
       { name: "{{曹操|そうそう}}", color: C.cao, provinces: ["youzhou", "jizhou", "liangzhou", "guanzhong", "siliyu", "xuzhou", "huainan", "jingzhou"], label: { x: 305, y: 180 } },
       { name: "{{孫権|そんけん}}", color: C.sun, provinces: ["jiangdong"], label: { x: 354, y: 252 } },
@@ -82,41 +82,41 @@ const FRAMES = [
     ],
   },
   {
-    year: "215年頃",
+    year: "215年{{頃|ごろ}}",
     era: "天下三分の形成",
-    desc: "{{赤壁|せきへき}}の敗戦で{{曹操|そうそう}}は長江以北へ退き、{{劉備|りゅうび}}が荊州から{{益州|えきしゅう}}へと勢力を広げて、天下三分の形勢が固まっていく。",
+    desc: "{{赤壁|せきへき}}の敗戦で{{曹操|そうそう}}は{{長江|ちょうこう}}以北へ退き、{{劉備|りゅうび}}が{{荊州|けいしゅう}}から{{益州|えきしゅう}}へと勢力を広げて、天下三分の形勢が固まっていく。",
     factions: [
-      { name: "{{曹操|そうそう}}（魏）", color: C.cao, provinces: ["youzhou", "jizhou", "liangzhou", "guanzhong", "siliyu", "xuzhou", "huainan"], label: { x: 305, y: 172 } },
+      { name: "{{曹操|そうそう}}（{{魏|ぎ}}）", color: C.cao, provinces: ["youzhou", "jizhou", "liangzhou", "guanzhong", "siliyu", "xuzhou", "huainan"], label: { x: 305, y: 172 } },
       { name: "{{劉備|りゅうび}}", color: C.liu, provinces: ["yizhou", "jingzhou"], label: { x: 270, y: 236 } },
       { name: "{{孫権|そんけん}}", color: C.sun, provinces: ["jiangdong"], label: { x: 354, y: 252 } },
     ],
   },
   {
     year: "222年",
-    era: "三国鼎立",
-    desc: "{{夷陵|いりょう}}の戦いで蜀漢を退けた呉が荊州全域を確保し、魏・蜀・呉三国が並び立つ形勢が完成する。",
+    era: "三国{{鼎立|ていりつ}}",
+    desc: "{{夷陵|いりょう}}の戦いで{{蜀漢|しょくかん}}を退けた{{呉|ご}}が{{荊州|けいしゅう}}全域を確保し、{{魏|ぎ}}・{{蜀|しょく}}・{{呉|ご}}三国が並び立つ形勢が完成する。",
     factions: [
-      { name: "魏", color: C.cao, provinces: ["youzhou", "jizhou", "liangzhou", "guanzhong", "siliyu", "xuzhou", "huainan"], label: { x: 305, y: 172 } },
-      { name: "蜀漢", color: C.liu, provinces: ["yizhou"], label: { x: 236, y: 238 } },
-      { name: "呉", color: C.sun, provinces: ["jingzhou", "jiangdong", "jiaozhou"], label: { x: 311, y: 256 } },
+      { name: "{{魏|ぎ}}", color: C.cao, provinces: ["youzhou", "jizhou", "liangzhou", "guanzhong", "siliyu", "xuzhou", "huainan"], label: { x: 305, y: 172 } },
+      { name: "{{蜀漢|しょくかん}}", color: C.liu, provinces: ["yizhou"], label: { x: 236, y: 238 } },
+      { name: "{{呉|ご}}", color: C.sun, provinces: ["jingzhou", "jiangdong", "jiaozhou"], label: { x: 311, y: 256 } },
     ],
   },
   {
     year: "263年",
-    era: "蜀漢の滅亡",
-    desc: "魏が蜀漢を滅ぼし、天下は魏と呉の二強にまで絞られる。",
+    era: "{{蜀漢|しょくかん}}の{{滅亡|めつぼう}}",
+    desc: "{{魏|ぎ}}が{{蜀漢|しょくかん}}を{{滅|ほろ}}ぼし、天下は{{魏|ぎ}}と{{呉|ご}}の二強にまで{{絞|しぼ}}られる。",
     factions: [
-      { name: "魏", color: C.cao, provinces: ["youzhou", "jizhou", "liangzhou", "guanzhong", "siliyu", "xuzhou", "huainan", "yizhou"], label: { x: 296, y: 180 } },
-      { name: "呉", color: C.sun, provinces: ["jingzhou", "jiangdong", "jiaozhou"], label: { x: 311, y: 256 } },
+      { name: "{{魏|ぎ}}", color: C.cao, provinces: ["youzhou", "jizhou", "liangzhou", "guanzhong", "siliyu", "xuzhou", "huainan", "yizhou"], label: { x: 296, y: 180 } },
+      { name: "{{呉|ご}}", color: C.sun, provinces: ["jingzhou", "jiangdong", "jiaozhou"], label: { x: 311, y: 256 } },
     ],
   },
   {
     year: "280年",
-    era: "天下統一（西晋）",
-    desc: "魏の禅譲を受けた西晋が呉を滅ぼし、三国時代は幕を閉じて中国は再び統一される。",
+    era: "天下統一（{{西晋|せいしん}}）",
+    desc: "{{魏|ぎ}}の{{禅譲|ぜんじょう}}を受けた{{西晋|せいしん}}が{{呉|ご}}を{{滅|ほろ}}ぼし、三国時代は幕を閉じて中国は再び統一される。",
     factions: [
       {
-        name: "西晋",
+        name: "{{西晋|せいしん}}",
         color: C.jin,
         provinces: ["youzhou", "jizhou", "liangzhou", "guanzhong", "siliyu", "xuzhou", "huainan", "yizhou", "jingzhou", "jiangdong", "jiaozhou"],
         label: { x: 300, y: 201 },
@@ -159,7 +159,7 @@ export function SanguoBorderMap() {
   return (
     <div style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: 16, marginBottom: 28 }}>
       <p style={{ fontSize: 11.5, color: COLORS.inkSoft, marginBottom: 10 }}>
-        184年の黄巾の乱から280年の天下統一まで、勢力図の移り変わりを簡略化した州単位のアニメーションでたどります（州境は史実を厳密に示すものではありません）。
+        184年の<ruby>黄巾の乱<rt>こうきんのらん</rt></ruby>から280年の天下統一まで、勢力図の移り変わりを簡略化した州単位のアニメーションでたどります（州境は史実を厳密に示すものではありません）。
       </p>
 
       <svg viewBox="0 0 500 366" style={{ width: "100%", maxHeight: 400, display: "block", margin: "0 auto" }}>
@@ -266,7 +266,7 @@ export function SanguoBorderMap() {
                 setPlaying(false);
                 setIndex(i);
               }}
-              title={`${f.year} ${f.era}`}
+              title={stripRuby(`${f.year} ${f.era}`)}
               style={{
                 fontFamily: "'Noto Serif SC', serif",
                 fontSize: 10.5,
@@ -276,7 +276,7 @@ export function SanguoBorderMap() {
                 color: i === index ? "#fff" : COLORS.inkSoft,
               }}
             >
-              {f.year}
+              <RubyText text={f.year} />
             </button>
           ))}
         </div>
@@ -287,7 +287,7 @@ export function SanguoBorderMap() {
           <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14.5, fontWeight: 700, color: COLORS.ink }}>
             <RubyText text={frame.era} />
           </span>
-          <span style={{ fontSize: 12, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}>{frame.year}</span>
+          <span style={{ fontSize: 12, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}><RubyText text={frame.year} /></span>
         </div>
         <p style={{ fontSize: 12, lineHeight: 1.8, color: COLORS.inkSoft, marginTop: 4 }}>
           <RubyText text={frame.desc} />

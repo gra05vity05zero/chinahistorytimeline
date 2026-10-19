@@ -18,7 +18,7 @@ export function SiteTitle({ headingAs: Heading = "div" }) {
         </Link>
       </Heading>
       <p style={{ fontSize: 13, color: COLORS.inkSoft, marginTop: 6 }}>
-        「中国五千年史」－ 新石器時代から現代まで、王朝・人物・出来事をスクロールして辿る
+        「中国五千年史」－ 新石器時代から現代まで、王朝・人物・出来事をスクロールして<ruby>辿<rt>たど</rt></ruby>る
       </p>
     </>
   );

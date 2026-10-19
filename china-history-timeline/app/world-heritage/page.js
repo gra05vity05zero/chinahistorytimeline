@@ -23,15 +23,15 @@ export const metadata = {
 const SITES = [
   { eraId: "shang", eventTitle: "甲骨文字", heritageName: "殷墟遺跡", location: "河南省安陽市", mapX: 325, mapY: 181 },
   { eraId: "chunqiu", eventTitle: "孔子の誕生", heritageName: "曲阜", location: "山東省曲阜市", mapX: 344, mapY: 185 },
-  { eraId: "qin", eventTitle: "中国統一", heritageName: "秦始皇陵", location: "陝西省西安市", mapX: 274, mapY: 189 },
-  { eraId: "qin", eventTitle: "万里の長城", heritageName: "万里の長城", location: "北京市（八達嶺）ほか", mapX: 327, mapY: 132 },
-  { eraId: "westernhan", eventTitle: "西域へ", heritageName: "張騫", location: "陝西省漢中市城固県", mapX: 273, mapY: 209 },
+  { eraId: "qin", eventTitle: "中国統一", heritageName: "秦始皇陵", location: "{{陝西省|せんせいしょう}}西安市", mapX: 274, mapY: 189 },
+  { eraId: "qin", eventTitle: "万里の長城", heritageName: "万里の長城", location: "北京市（{{八達嶺|はったつれい}}）ほか", mapX: 327, mapY: 132 },
+  { eraId: "westernhan", eventTitle: "西域へ", heritageName: "張騫", location: "{{陝西省|せんせいしょう}}漢中市城固県", mapX: 273, mapY: 209 },
   { eraId: "nanbei", eventTitle: "華北統一", heritageName: "雲岡石窟", location: "山西省大同市", mapX: 309, mapY: 149 },
-  { eraId: "nanbei", eventTitle: "漢化政策", heritageName: "龍門石窟", location: "河南省洛陽市", mapX: 310, mapY: 194 },
-  { eraId: "sui", eventTitle: "大運河の建設", heritageName: "京杭大運河", location: "北京市〜浙江省杭州市", mapX: 371, mapY: 205 },
-  { eraId: "tang", eventTitle: "唐の建国", heritageName: "大明宮", location: "陝西省西安市", mapX: 292, mapY: 205 },
+  { eraId: "nanbei", eventTitle: "漢化政策", heritageName: "龍門石窟", location: "河南省{{洛陽|らくよう}}市", mapX: 310, mapY: 194 },
+  { eraId: "sui", eventTitle: "大運河の建設", heritageName: "京杭大運河", location: "北京市〜{{浙江省|せっこうしょう}}{{杭州|こうしゅう}}市", mapX: 371, mapY: 205 },
+  { eraId: "tang", eventTitle: "唐の建国", heritageName: "大明宮", location: "{{陝西省|せんせいしょう}}西安市", mapX: 292, mapY: 205 },
   { eraId: "yuan", eventTitle: "元の建国", heritageName: "元上都", location: "内モンゴル自治区", mapX: 339, mapY: 123 },
-  { eraId: "ming", eventTitle: "明の建国", heritageName: "明孝陵", location: "江蘇省南京市", mapX: 358, mapY: 218 },
+  { eraId: "ming", eventTitle: "明の建国", heritageName: "明孝陵", location: "{{江蘇|こうそ}}省南京市", mapX: 358, mapY: 218 },
   { eraId: "ming", eventTitle: "北京遷都", heritageName: "紫禁城", location: "北京市", mapX: 340, mapY: 145 },
   { eraId: "qing", eventTitle: "治世（最盛期へ）", heritageName: "避暑山荘", location: "河北省承徳市", mapX: 352, mapY: 136 },
 ];
@@ -74,9 +74,9 @@ const REGION_LABELS = [
   { label: "北京", x: 340, y: 145, dx: 15, dy: 9, anchor: "start" },
   { label: "西安", x: 284, y: 197, dx: 0, dy: 33, anchor: "middle" },
   { label: "内モンゴル自治区", x: 420, y: 90, anchor: "middle" },
-  { label: "新疆・シルクロード", x: 105, y: 165, anchor: "middle" },
+  { label: "{{新疆|しんきょう}}・シルクロード", x: 105, y: 165, anchor: "middle" },
   { label: "チベット", x: 195, y: 265, anchor: "middle" },
-  { label: "台湾", x: 375, y: 296, dx: 10, dy: 4, anchor: "start" },
+  { label: "{{台湾|たいわん}}", x: 375, y: 296, dx: 10, dy: 4, anchor: "start" },
   { label: "海南島", x: 290, y: 337, dx: 0, dy: 17, anchor: "middle" },
 ];
 
@@ -84,7 +84,7 @@ function ChinaMap({ sites }) {
   return (
     <div style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: 16, marginBottom: 28 }}>
       <p style={{ fontSize: 11.5, color: COLORS.inkSoft, marginBottom: 10 }}>
-        実際の海岸線をもとにした中国の位置関係図です。朱色の番号は下の一覧の世界遺産、白丸は主要都市の目安です。
+        実際の海岸線をもとにした中国の位置関係図です。<ruby>朱色<rt>しゅいろ</rt></ruby>の番号は下の一覧の世界遺産、白丸は主要都市の目安です。
       </p>
       <svg viewBox="0 0 500 366" style={{ width: "100%", maxHeight: 400, display: "block", margin: "0 auto" }}>
         <path d={CHINA_OUTLINE} fill="#DCD3B8" stroke={COLORS.mist} strokeWidth="1.2" strokeLinejoin="round" />
@@ -98,7 +98,7 @@ function ChinaMap({ sites }) {
             textAnchor={r.anchor}
             style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 10.5, fill: COLORS.inkSoft, opacity: 0.85 }}
           >
-            {r.label}
+            {stripRuby(r.label)}
           </text>
         ))}
 
@@ -111,7 +111,7 @@ function ChinaMap({ sites }) {
               textAnchor={c.anchor}
               style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 10, fill: COLORS.inkSoft }}
             >
-              {c.label}
+              {stripRuby(c.label)}
             </text>
           </g>
         ))}
@@ -146,7 +146,7 @@ export default function WorldHeritagePage() {
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 28 }}>
           中国には数多くのユネスコ世界遺産がありますが、その多くは特定の王朝の歴史と深く結びついています。
-          ここでは、このサイトの年表に登場する世界遺産を、由来となった時代とあわせて紹介します。
+          ここでは、このサイトの年表に登場する世界遺産を、由来となった時代とあわせて<ruby>紹介<rt>しょうかい</rt></ruby>します。
         </p>
 
         <div className="relative">
@@ -186,17 +186,17 @@ export default function WorldHeritagePage() {
                       <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 15, fontWeight: 700, color: COLORS.ink }}>
                         <RubyText text={site.name} />
                       </span>
-                      <span style={{ fontSize: 11, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}>{site.era.name}</span>
+                      <span style={{ fontSize: 11, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}><RubyText text={site.era.name} /></span>
                     </div>
                     {site.location && (
                       <div style={{ fontSize: 11, color: COLORS.vermilionSoft, marginTop: 2 }}>
-                        <span aria-hidden>📍</span> {site.location}
+                        <span aria-hidden>📍</span> <RubyText text={site.location} />
                       </div>
                     )}
                     <p style={{ fontSize: 12, lineHeight: 1.7, color: COLORS.inkSoft, marginTop: 4 }}>
                       <RubyText text={site.description} />
                     </p>
-                    {site.credit && <div style={{ fontSize: 9.5, color: COLORS.mist, marginTop: 4 }}>{site.credit}</div>}
+                    {site.credit && <div style={{ fontSize: 9.5, color: COLORS.mist, marginTop: 4 }}><RubyText text={site.credit} /></div>}
                   </div>
                 </div>
                 <div className="px-3 pb-3">
@@ -214,10 +214,10 @@ export default function WorldHeritagePage() {
 
         <section style={{ marginTop: 32 }}>
           <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
-            兵馬俑・始皇帝陵についての詳しい謎解きは、別記事でも紹介しています。
+            <ruby>兵馬俑<rt>へいばよう</rt></ruby>・<ruby>始皇帝陵<rt>しこうていりょう</rt></ruby>についての<ruby>詳<rt>くわ</rt></ruby>しい<ruby>謎解<rt>なぞと</rt></ruby>きは、別記事でも<ruby>紹介<rt>しょうかい</rt></ruby>しています。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
-            <NavButton href="/terracotta-army" variant="solid">兵馬俑・始皇帝陵の謎を見る</NavButton>
+            <NavButton href="/terracotta-army" variant="solid"><ruby>兵馬俑<rt>へいばよう</rt></ruby>・<ruby>始皇帝陵<rt>しこうていりょう</rt></ruby>の<ruby>謎<rt>なぞ</rt></ruby>を見る</NavButton>
             <NavButton href="/eras" variant="outline">出来事一覧を見る</NavButton>
           </div>
         </section>

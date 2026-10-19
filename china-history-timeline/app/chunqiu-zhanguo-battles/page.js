@@ -59,28 +59,28 @@ const IMG_SHOKOUTEI = findPersonImage("qin", "始皇帝（嬴政）");
 
 // 春秋時代（前770〜前403年）の流れ
 const CQ_FLOW = [
-  { year: "770", title: "{{平王|へいおう}}の東遷", note: "都が洛邑へ移り、周王室の権威が形骸化していく「春秋時代」が始まる。", href: EV_TOSEN && `/events/${EV_TOSEN.slug}` },
-  { year: "707", title: "{{繻葛|じゅかつ}}の戦い", note: "周の桓王が一諸侯に敗れ、周王室の武威は完全に地に落ちる。", anchor: "cq-battle-1" },
-  { year: "679", title: "{{斉桓公|せいかんこう}}、覇者となる", note: "管仲の補佐を得た斉の桓公が、春秋最初の覇者となる。", href: EV_QIHUANGONG && `/events/${EV_QIHUANGONG.slug}` },
-  { year: "632", title: "{{城濮|じょうぼく}}の戦い", note: "晋文公が「退避三舎」の後、楚を破り新たな覇者となる。", anchor: "cq-battle-2" },
-  { year: "597", title: "{{邲|ひつ}}の戦い", note: "楚荘王が晋を破り、「春秋五覇」の一人に数えられる。", anchor: "cq-battle-3" },
-  { year: "575", title: "{{鄢陵|えんりょう}}の戦い", note: "晋が楚を破り、楚の中原進出をいったん食い止める。", anchor: "cq-battle-4" },
-  { year: "551", title: "{{孔子|こうし}}の誕生", note: "後の東アジア思想史に絶大な影響を与える儒家の祖が生まれる。", href: EV_KOUSHI && `/events/${EV_KOUSHI.slug}` },
-  { year: "494–473", title: "{{呉越|ごえつ}}の攻防・{{臥薪嘗胆|がしんしょうたん}}", note: "会稽の恥から雌伏した越王勾践が、ついに呉を滅ぼす。", anchor: "cq-battle-5" },
-  { year: "453", title: "{{三家分晋|さんかぶんしん}}", note: "大国晋が韓・魏・趙に分裂。戦国時代への転換点となる。", href: EV_SANKABUNSHIN_CQ && `/events/${EV_SANKABUNSHIN_CQ.slug}` },
+  { year: "770", title: "{{平王|へいおう}}の{{東遷|とうせん}}", note: "都が{{洛邑|らくゆう}}へ移り、周王室の{{権威|けんい}}が{{形骸|けいがい}}化していく「春秋時代」が始まる。", href: EV_TOSEN && `/events/${EV_TOSEN.slug}` },
+  { year: "707", title: "{{繻葛|じゅかつ}}の戦い", note: "周の{{桓王|かんおう}}が一{{諸侯|しょこう}}に敗れ、周王室の{{武威|ぶい}}は完全に地に落ちる。", anchor: "cq-battle-1" },
+  { year: "679", title: "{{斉桓公|せいかんこう}}、{{覇者|はしゃ}}となる", note: "管仲の補佐を得た{{斉|せい}}の{{桓公|かんこう}}が、春秋最初の{{覇者|はしゃ}}となる。", href: EV_QIHUANGONG && `/events/${EV_QIHUANGONG.slug}` },
+  { year: "632", title: "{{城濮|じょうぼく}}の戦い", note: "{{晋文公|しんぶんこう}}が「{{退避三舎|たいひさんしゃ}}」の後、{{楚|そ}}を破り新たな{{覇者|はしゃ}}となる。", anchor: "cq-battle-2" },
+  { year: "597", title: "{{邲|ひつ}}の戦い", note: "{{楚荘王|そそうおう}}が{{晋|しん}}を破り、「春秋{{五覇|ごは}}」の一人に数えられる。", anchor: "cq-battle-3" },
+  { year: "575", title: "{{鄢陵|えんりょう}}の戦い", note: "{{晋|しん}}が{{楚|そ}}を破り、{{楚|そ}}の中原進出をいったん食い止める。", anchor: "cq-battle-4" },
+  { year: "551", title: "{{孔子|こうし}}の誕生", note: "後の東アジア思想史に絶大な{{影響|えいきょう}}を{{与|あた}}える{{儒家|じゅか}}の祖が生まれる。", href: EV_KOUSHI && `/events/${EV_KOUSHI.slug}` },
+  { year: "494–473", title: "{{呉越|ごえつ}}の{{攻防|こうぼう}}・{{臥薪嘗胆|がしんしょうたん}}", note: "{{会稽|かいけい}}の{{恥|はじ}}から{{雌伏|しふく}}した{{越王勾践|えつおうこうせん}}が、ついに{{呉|ご}}を{{滅|ほろ}}ぼす。", anchor: "cq-battle-5" },
+  { year: "453", title: "{{三家分晋|さんかぶんしん}}", note: "大国{{晋|しん}}が{{韓|かん}}・{{魏|ぎ}}・{{趙|ちょう}}に{{分裂|ぶんれつ}}。戦国時代への{{転換|てんかん}}点となる。", href: EV_SANKABUNSHIN_CQ && `/events/${EV_SANKABUNSHIN_CQ.slug}` },
 ];
 
 // 戦国時代（前403〜前221年）の流れ
 const ZG_FLOW = [
-  { year: "403", title: "三家分晋の公認", note: "韓・魏・趙が周王室から正式に諸侯と認められ、戦国時代が本格化する。", href: EV_SANKABUNSHIN_ZG && `/events/${EV_SANKABUNSHIN_ZG.slug}` },
-  { year: "356", title: "{{商鞅|しょうおう}}の変法", note: "秦で徹底した法治改革が断行され、後の統一への国力基盤が築かれる。", href: EV_SHOUOU && `/events/${EV_SHOUOU.slug}` },
-  { year: "353・341", title: "{{桂陵|けいりょう}}・{{馬陵|ばりょう}}の戦い", note: "軍師孫臏が宿敵龐涓を二度にわたり打ち破る。", anchor: "zg-battle-1" },
-  { year: "333", title: "{{合従連衡|がっしょうれんこう}}の外交戦", note: "蘇秦・張儀ら縦横家が武力によらぬ駆け引きを繰り広げる。", href: EV_GASSHOU && `/events/${EV_GASSHOU.slug}` },
-  { year: "293", title: "{{伊闕|いけつ}}の戦い", note: "秦の若き将軍白起が、韓魏連合軍24万を壊滅させる。", anchor: "zg-battle-2" },
-  { year: "278", title: "{{鄢郢|えんえい}}の戦い", note: "白起が楚の都を陥落させ、詩人屈原が汨羅に身を投げる。", anchor: "zg-battle-3" },
-  { year: "260", title: "{{長平|ちょうへい}}の戦い", note: "趙の40万の兵が生き埋めにされ、秦の統一が決定的となる。", anchor: "zg-battle-4" },
-  { year: "257", title: "{{邯鄲|かんたん}}の戦い", note: "魏の信陵君が割符を盗み、趙を滅亡の淵から救う。", anchor: "zg-battle-5" },
-  { year: "230–221", title: "秦滅六国・戦国の終結", note: "秦王政が六国を次々と滅ぼし、中国史上初の統一を成し遂げる。", anchor: "zg-battle-6" },
+  { year: "403", title: "{{三家分晋|さんかぶんしん}}の公認", note: "{{韓|かん}}・{{魏|ぎ}}・{{趙|ちょう}}が周王室から正式に{{諸侯|しょこう}}と認められ、戦国時代が本格化する。", href: EV_SANKABUNSHIN_ZG && `/events/${EV_SANKABUNSHIN_ZG.slug}` },
+  { year: "356", title: "{{商鞅|しょうおう}}の変法", note: "{{秦|しん}}で{{徹底|てってい}}した法治改革が断行され、後の統一への国力{{基盤|きばん}}が築かれる。", href: EV_SHOUOU && `/events/${EV_SHOUOU.slug}` },
+  { year: "353・341", title: "{{桂陵|けいりょう}}・{{馬陵|ばりょう}}の戦い", note: "軍師{{孫臏|そんぴん}}が宿敵{{龐涓|ほうけん}}を二度にわたり打ち破る。", anchor: "zg-battle-1" },
+  { year: "333", title: "{{合従連衡|がっしょうれんこう}}の外交戦", note: "{{蘇秦|そしん}}・{{張儀|ちょうぎ}}ら縦横家が武力によらぬ{{駆|か}}け引きを{{繰|く}}り広げる。", href: EV_GASSHOU && `/events/${EV_GASSHOU.slug}` },
+  { year: "293", title: "{{伊闕|いけつ}}の戦い", note: "{{秦|しん}}の若き将軍白起が、{{韓魏|かんぎ}}連合軍24万を{{壊滅|かいめつ}}させる。", anchor: "zg-battle-2" },
+  { year: "278", title: "{{鄢郢|えんえい}}の戦い", note: "白起が{{楚|そ}}の都を{{陥落|かんらく}}させ、詩人{{屈原|くつげん}}が{{汨羅|べきら}}に身を投げる。", anchor: "zg-battle-3" },
+  { year: "260", title: "{{長平|ちょうへい}}の戦い", note: "{{趙|ちょう}}の40万の兵が生き{{埋|う}}めにされ、{{秦|しん}}の統一が決定的となる。", anchor: "zg-battle-4" },
+  { year: "257", title: "{{邯鄲|かんたん}}の戦い", note: "{{魏|ぎ}}の{{信陵君|しんりょうくん}}が{{割符|わっぷ}}を{{盗|ぬす}}み、{{趙|ちょう}}を{{滅亡|めつぼう}}の{{淵|ふち}}から救う。", anchor: "zg-battle-5" },
+  { year: "230–221", title: "{{秦滅|しんめつ}}六国・戦国の終結", note: "{{秦王政|しんおうせい}}が六国を次々と{{滅|ほろ}}ぼし、中国史上初の統一を成し{{遂|と}}げる。", anchor: "zg-battle-6" },
 ];
 
 // 中国本土＋海南島の輪郭（/world-heritage・/sanguo-battles・/chuhan-battlesと同じ、実際の海岸線をもとにした投影データ）
@@ -99,95 +99,95 @@ const CQ_BATTLES = [
     id: "cq-battle-1",
     year: "前707年",
     name: "{{繻葛|じゅかつ}}の戦い",
-    location: "河南省長葛市付近",
+    location: "河南省長{{葛|かつ}}市付近",
     mapX: 321,
     mapY: 198,
     factions: [
       { side: "周王室軍", people: "{{周桓王|しゅうかんおう}}" },
-      { side: "鄭軍", people: "{{鄭荘公|ていそうこう}}・{{祝聃|しゅくたん}}" },
+      { side: "{{鄭|てい}}軍", people: "{{鄭荘公|ていそうこう}}・{{祝聃|しゅくたん}}" },
     ],
-    body: "周王室の権威回復を図る{{桓王|かんおう}}は、自ら軍を率いて有力諸侯{{鄭|てい}}の{{荘公|そうこう}}を討とうとしたが、逆に大敗を喫し、桓王自身も家臣{{祝聃|しゅくたん}}の放った矢を肩に受けて負傷したと伝えられる。天下の宗主であるはずの周王が一諸侯に武力で打ち負かされたこの一戦は周王室の権威が完全に形骸化したことを天下に知らしめ、以後は実力を背景とした「覇者」が秩序を主導する春秋時代の力学を決定づけた。",
+    body: "周王室の{{権威|けんい}}回復を図る{{桓王|かんおう}}は、自ら軍を率いて有力{{諸侯|しょこう}}{{鄭|てい}}の{{荘公|そうこう}}を討とうとしたが、逆に大敗を{{喫|きっ}}し、{{桓王|かんおう}}自身も家臣{{祝聃|しゅくたん}}の放った矢を{{肩|かた}}に受けて負傷したと伝えられる。天下の宗主であるはずの周王が一{{諸侯|しょこう}}に武力で打ち負かされたこの一戦は周王室の{{権威|けんい}}が完全に{{形骸|けいがい}}化したことを天下に知らしめ、以後は実力を背景とした「{{覇者|はしゃ}}」が{{秩序|ちつじょ}}を主導する春秋時代の力学を決定づけた。",
     relatedHref: null,
     relatedLabel: null,
     personHref: null,
     personLabel: null,
-    portrait: { name: "周桓王" },
+    portrait: { name: "{{周桓王|しゅうかんおう}}" },
   },
   {
     no: 2,
     id: "cq-battle-2",
     year: "前632年",
     name: "{{城濮|じょうぼく}}の戦い",
-    location: "山東省鄄城県付近",
+    location: "山東省{{鄄城|けんじょう}}県付近",
     mapX: 335,
     mapY: 178,
     factions: [
-      { side: "晋軍", people: "{{晋文公|しんぶんこう}}（{{重耳|ちょうじ}}）・{{先軫|せんしん}}" },
-      { side: "楚軍", people: "{{子玉|しぎょく}}" },
+      { side: "{{晋|しん}}軍", people: "{{晋文公|しんぶんこう}}（{{重耳|ちょうじ}}）・{{先軫|せんしん}}" },
+      { side: "{{楚軍|そぐん}}", people: "{{子玉|しぎょく}}" },
     ],
-    body: "19年に及ぶ亡命生活の末に即位した{{晋文公|しんぶんこう}}は、南方の大国{{楚|そ}}と中原の覇権を争った。開戦にあたり、かつて楚に世話になった恩義から自軍を三舎（90里）後退させる「{{退避三舎|たいひさんしゃ}}」を実行しつつ、油断した楚将{{子玉|しぎょく}}の軍を巧みな伏兵戦術で打ち破る。この勝利により晋文公は斉桓公に続く新たな覇者としての地位を不動のものとした。",
+    body: "19年に{{及|およ}}ぶ亡命生活の末に{{即位|そくい}}した{{晋文公|しんぶんこう}}は、南方の大国{{楚|そ}}と中原の{{覇権|はけん}}を争った。開戦にあたり、かつて{{楚|そ}}に世話になった恩義から自軍を三舎（90里）後退させる「{{退避三舎|たいひさんしゃ}}」を実行しつつ、油断した{{楚|そ}}将{{子玉|しぎょく}}の軍を{{巧|たく}}みな{{伏兵|ふくへい}}戦術で打ち破る。この勝利により{{晋文公|しんぶんこう}}は{{斉桓公|せいかんこう}}に続く新たな{{覇者|はしゃ}}としての地位を不動のものとした。",
     relatedHref: EV_JOBOKU && `/events/${EV_JOBOKU.slug}`,
-    relatedLabel: "晋文公の覇権・城濮の戦いを年表で読む",
+    relatedLabel: "{{晋文公|しんぶんこう}}の{{覇権|はけん}}・{{城濮の戦い|じょうぼくのたたかい}}を年表で読む",
     personHref: null,
     personLabel: null,
-    portrait: { name: "晋文公" },
+    portrait: { name: "{{晋文公|しんぶんこう}}" },
   },
   {
     no: 3,
     id: "cq-battle-3",
     year: "前597年",
     name: "{{邲|ひつ}}の戦い",
-    location: "河南省滎陽市付近",
+    location: "河南省{{滎陽|けいよう}}市付近",
     mapX: 305,
     mapY: 185,
     factions: [
-      { side: "楚軍", people: "{{楚荘王|そそうおう}}" },
-      { side: "晋軍", people: "{{荀林父|じゅんりんぷ}}" },
+      { side: "{{楚軍|そぐん}}", people: "{{楚荘王|そそうおう}}" },
+      { side: "{{晋|しん}}軍", people: "{{荀林父|じゅんりんぷ}}" },
     ],
-    body: "即位当初は遊興にふけって「三年鳴かず飛ばず」と評された{{楚荘王|そそうおう}}であったが、実は臣下の器量を見極めていたに過ぎず、いざ親政を始めると瞬く間に国力を充実させた。晋との激突となった邲の戦いでは、指揮系統の乱れた晋軍を打ち破り黄河への敗走に追い込む大勝を収め、この勝利により荘王は「春秋五覇」の一人に数えられる新たな覇者としての地位を確立した。",
+    body: "{{即位|そくい}}当初は遊興にふけって「三年鳴かず飛ばず」と評された{{楚荘王|そそうおう}}であったが、実は臣下の器量を見極めていたに過ぎず、いざ親政を始めると{{瞬|またた}}く間に国力を{{充実|じゅうじつ}}させた。{{晋|しん}}との{{激突|げきとつ}}となった{{邲|ひつ}}の戦いでは、指揮系統の乱れた{{晋|しん}}軍を打ち破り黄河への敗走に追い{{込|こ}}む大勝を収め、この勝利により{{荘王|そうおう}}は「春秋{{五覇|ごは}}」の一人に数えられる新たな{{覇者|はしゃ}}としての地位を確立した。",
     relatedHref: null,
     relatedLabel: null,
     personHref: null,
     personLabel: null,
-    portrait: { name: "楚荘王" },
+    portrait: { name: "{{楚荘王|そそうおう}}" },
   },
   {
     no: 4,
     id: "cq-battle-4",
     year: "前575年",
     name: "{{鄢陵|えんりょう}}の戦い",
-    location: "河南省鄢陵県付近",
+    location: "河南省{{鄢陵|えんりょう}}県付近",
     mapX: 338,
     mapY: 208,
     factions: [
-      { side: "晋軍", people: "{{晋厲公|しんれいこう}}・{{欒書|らんしょ}}" },
-      { side: "楚軍", people: "{{楚共王|そきょうおう}}" },
+      { side: "{{晋|しん}}軍", people: "{{晋厲公|しんれいこう}}・{{欒書|らんしょ}}" },
+      { side: "{{楚軍|そぐん}}", people: "{{楚共王|そきょうおう}}" },
     ],
-    body: "邲の戦いで晋を破り覇権を握った楚であったが、その勢いも長くは続かなかった。鄢陵の戦いで晋軍は楚の{{共王|きょうおう}}を矢で負傷させるほどの猛攻を見せて大勝し、楚の北進を食い止めることに成功する。この敗戦を機に楚の中原への影響力は後退し、以後しばらく晋が中原諸侯に対する主導権を握り続けることになった。",
+    body: "{{邲|ひつ}}の戦いで{{晋|しん}}を破り{{覇権|はけん}}を{{握|にぎ}}った{{楚|そ}}であったが、その勢いも長くは続かなかった。{{鄢陵|えんりょう}}の戦いで{{晋|しん}}軍は{{楚|そ}}の{{共王|きょうおう}}を矢で負傷させるほどの{{猛攻|もうこう}}を見せて大勝し、{{楚|そ}}の北進を食い止めることに成功する。この敗戦を機に{{楚|そ}}の中原への{{影響|えいきょう}}力は後退し、以後しばらく{{晋|しん}}が中原{{諸侯|しょこう}}に対する主導権を{{握|にぎ}}り続けることになった。",
     relatedHref: null,
     relatedLabel: null,
     personHref: null,
     personLabel: null,
-    portrait: { name: "楚共王" },
+    portrait: { name: "{{楚共王|そきょうおう}}" },
   },
   {
     no: 5,
     id: "cq-battle-5",
     year: "前494〜前473年",
-    name: "{{呉越|ごえつ}}の攻防（{{臥薪嘗胆|がしんしょうたん}}）",
-    location: "会稽（浙江省紹興市）〜姑蘇（江蘇省蘇州市）",
+    name: "{{呉越|ごえつ}}の{{攻防|こうぼう}}（{{臥薪嘗胆|がしんしょうたん}}）",
+    location: "{{会稽|かいけい}}（{{浙江省|せっこうしょう}}{{紹興|しょうこう}}市）〜{{姑蘇|こそ}}（{{江蘇|こうそ}}省{{蘇州|そしゅう}}市）",
     mapX: 372,
     mapY: 225,
     factions: [
-      { side: "呉軍", people: "{{夫差|ふさ}}" },
-      { side: "越軍", people: "{{勾践|こうせん}}・{{范蠡|はんれい}}" },
+      { side: "{{呉|ご}}軍", people: "{{夫差|ふさ}}" },
+      { side: "{{越軍|えつぐん}}", people: "{{勾践|こうせん}}・{{范蠡|はんれい}}" },
     ],
-    body: "会稽山で呉に大敗し屈辱的な講和を強いられた越王{{勾践|こうせん}}は、苦い肝を嘗めて雪辱を誓う「{{臥薪嘗胆|がしんしょうたん}}」の日々を送りながら、名臣{{范蠡|はんれい}}らの補佐のもと国力の回復に努めた。二十年近くの雌伏を経てついに反撃に転じた越は、驕り高ぶった呉王{{夫差|ふさ}}の軍を各地で撃破し、最終的に呉の都{{姑蘇|こそ}}を陥落させて呉を滅ぼす。勾践はその後、中原にまでその名を知られる最後の「春秋の覇者」となった。",
+    body: "{{会稽|かいけい}}山で{{呉|ご}}に大敗し{{屈辱的|くつじょくてき}}な講和を強いられた{{越王|えつおう}}{{勾践|こうせん}}は、苦い{{肝|きも}}を{{嘗|な}}めて{{雪辱|せつじょく}}を{{誓|ちか}}う「{{臥薪嘗胆|がしんしょうたん}}」の日々を送りながら、名臣{{范蠡|はんれい}}らの補佐のもと国力の回復に努めた。二十年近くの{{雌伏|しふく}}を経てついに{{反撃|はんげき}}に転じた{{越|えつ}}は、{{驕|おご}}り高ぶった{{呉王|ごおう}}{{夫差|ふさ}}の軍を各地で{{撃破|げきは}}し、最終的に{{呉|ご}}の都{{姑蘇|こそ}}を{{陥落|かんらく}}させて{{呉|ご}}を{{滅|ほろ}}ぼす。{{勾践|こうせん}}はその後、中原にまでその名を知られる最後の「春秋の{{覇者|はしゃ}}」となった。",
     relatedHref: EV_GOETSU && `/events/${EV_GOETSU.slug}`,
-    relatedLabel: "呉越の抗争・臥薪嘗胆を年表で読む",
+    relatedLabel: "{{呉越|ごえつ}}の{{抗争|こうそう}}・{{臥薪嘗胆|がしんしょうたん}}を年表で読む",
     personHref: null,
     personLabel: null,
-    portrait: { name: "勾践" },
+    portrait: { name: "{{勾践|こうせん}}" },
   },
 ];
 
@@ -197,33 +197,33 @@ const ZG_BATTLES = [
     id: "zg-battle-1",
     year: "前353・前341年",
     name: "{{桂陵|けいりょう}}・{{馬陵|ばりょう}}の戦い",
-    location: "桂陵・馬陵（いずれも山東省菏沢市付近）",
+    location: "{{桂陵|けいりょう}}・{{馬陵|ばりょう}}（いずれも山東省{{菏沢|かたく}}市付近）",
     mapX: 339,
     mapY: 184,
     factions: [
-      { side: "斉軍", people: "{{孫臏|そんぴん}}・{{田忌|でんき}}" },
-      { side: "魏軍", people: "{{龐涓|ほうけん}}" },
+      { side: "{{斉軍|せいぐん}}", people: "{{孫臏|そんぴん}}・{{田忌|でんき}}" },
+      { side: "{{魏軍|ぎぐん}}", people: "{{龐涓|ほうけん}}" },
     ],
-    body: "かつて同門で学んだ{{孫臏|そんぴん}}と{{龐涓|ほうけん}}は、龐涓の讒言により孫臏が両足を切断される刑を受けたことで宿敵となった。斉に亡命した孫臏は、趙を攻める魏の背後を突いて自国を救う「{{囲魏救趙|いぎきゅうちょう}}」の策で桂陵の戦いに勝利する。さらに十年余り後の馬陵の戦いでは、退却と見せかけて日ごとに野営のかまどの数を減らし敵を油断させる「{{減竈之計|げんそうのけい}}」で龐涓をおびき寄せて大破し、窮地に陥った龐涓は自害した。孫臏はこの二戦により兵法家として不朽の名声を得ている。",
+    body: "かつて同門で学んだ{{孫臏|そんぴん}}と{{龐涓|ほうけん}}は、{{龐涓|ほうけん}}の{{讒言|ざんげん}}により{{孫臏|そんぴん}}が両足を切断される{{刑|けい}}を受けたことで宿敵となった。{{斉|せい}}に亡命した{{孫臏|そんぴん}}は、{{趙|ちょう}}を{{攻|せ}}める{{魏|ぎ}}の背後を{{突|つ}}いて自国を救う「{{囲魏救趙|いぎきゅうちょう}}」の策で{{桂陵|けいりょう}}の戦いに勝利する。さらに十年余り後の{{馬陵|ばりょう}}の戦いでは、{{退却|たいきゃく}}と見せかけて日ごとに野営のかまどの数を減らし敵を油断させる「{{減竈之計|げんそうのけい}}」で{{龐涓|ほうけん}}をおびき寄せて大破し、{{窮地|きゅうち}}に{{陥|おちい}}った{{龐涓|ほうけん}}は自害した。{{孫臏|そんぴん}}はこの二戦により兵法家として{{不朽|ふきゅう}}の名声を得ている。",
     relatedHref: null,
     relatedLabel: null,
     personHref: null,
     personLabel: null,
-    portrait: { name: "孫臏" },
+    portrait: { name: "{{孫臏|そんぴん}}" },
   },
   {
     no: 2,
     id: "zg-battle-2",
     year: "前293年",
     name: "{{伊闕|いけつ}}の戦い",
-    location: "河南省洛陽市南郊（伊闕）",
+    location: "河南省{{洛陽|らくよう}}市{{南郊|なんこう}}（{{伊闕|いけつ}}）",
     mapX: 310,
     mapY: 195,
     factions: [
-      { side: "秦軍", people: "{{白起|はくき}}" },
-      { side: "韓魏連合軍", people: "{{公孫喜|こうそんき}}" },
+      { side: "{{秦軍|しんぐん}}", people: "{{白起|はくき}}" },
+      { side: "{{韓魏|かんぎ}}連合軍", people: "{{公孫喜|こうそんき}}" },
     ],
-    body: "台頭著しい秦に対し、韓・魏は連合軍24万を組んでこれを迎え撃ったが、秦の若き将軍{{白起|はくき}}は寡兵ながら各個撃破の戦術で連合軍を翻弄し、司令官{{公孫喜|こうそんき}}を捕らえて連合軍を事実上全滅させる大勝利を収めた。この一戦で白起は一躍秦軍随一の名将としての名声を確立し、以後の数十年にわたり東方六国を震撼させ続けることになる。",
+    body: "台頭著しい{{秦|しん}}に対し、{{韓|かん}}・{{魏|ぎ}}は連合軍24万を組んでこれを{{迎|むか}}え{{撃|う}}ったが、{{秦|しん}}の若き将軍{{白起|はくき}}は{{寡兵|かへい}}ながら各個{{撃破|げきは}}の戦術で連合軍を{{翻弄|ほんろう}}し、司令官{{公孫喜|こうそんき}}を{{捕|と}}らえて連合軍を事実上{{全滅|ぜんめつ}}させる大勝利を収めた。この一戦で白起は{{一躍|いちやく}}{{秦軍|しんぐん}}{{随一|ずいいち}}の名将としての名声を確立し、以後の数十年にわたり東方六国を{{震撼|しんかん}}させ続けることになる。",
     relatedHref: null,
     relatedLabel: null,
     personHref: null,
@@ -235,14 +235,14 @@ const ZG_BATTLES = [
     id: "zg-battle-3",
     year: "前278年",
     name: "{{鄢郢|えんえい}}の戦い",
-    location: "湖北省荊州市（{{郢|えい}}）",
+    location: "湖北省{{荊州|けいしゅう}}市（{{郢|えい}}）",
     mapX: 308,
     mapY: 234,
     factions: [
-      { side: "秦軍", people: "{{白起|はくき}}" },
-      { side: "楚軍", people: "{{楚頃襄王|そけいじょうおう}}" },
+      { side: "{{秦軍|しんぐん}}", people: "{{白起|はくき}}" },
+      { side: "{{楚軍|そぐん}}", people: "{{楚頃襄王|そけいじょうおう}}" },
     ],
-    body: "伊闕の戦いで名を上げた白起はさらに南下し、楚の都{{郢|えい}}（現在の湖北省荊州）を水攻めも用いて攻略した。都を追われた楚は東方への遷都を余儀なくされ、大国としての勢いに深刻な打撃を受ける。この報に絶望した楚の詩人{{屈原|くつげん}}は汨羅の淵に身を投げて命を絶ったと伝えられ、この故事が後の{{端午節|たんごせつ}}（ちまきを供える風習）の起源になったとされる。",
+    body: "{{伊闕|いけつ}}の戦いで名を上げた白起はさらに南下し、{{楚|そ}}の都{{郢|えい}}（現在の湖北省{{荊州|けいしゅう}}）を{{水攻|みずぜ}}めも用いて{{攻略|こうりゃく}}した。都を追われた{{楚|そ}}は東方への{{遷都|せんと}}を{{余儀|よぎ}}なくされ、大国としての勢いに深刻な{{打撃|だげき}}を受ける。この報に絶望した{{楚|そ}}の詩人{{屈原|くつげん}}は{{汨羅|べきら}}の{{淵|ふち}}に身を投げて命を絶ったと伝えられ、この故事が後の{{端午節|たんごせつ}}（ちまきを供える風習）の起源になったとされる。",
     relatedHref: null,
     relatedLabel: null,
     personHref: null,
@@ -258,10 +258,10 @@ const ZG_BATTLES = [
     mapX: 305,
     mapY: 168,
     factions: [
-      { side: "秦軍", people: "{{白起|はくき}}" },
-      { side: "趙軍", people: "{{趙括|ちょうかつ}}" },
+      { side: "{{秦軍|しんぐん}}", people: "{{白起|はくき}}" },
+      { side: "{{趙軍|ちょうぐん}}", people: "{{趙括|ちょうかつ}}" },
     ],
-    body: "持久戦を貫いていた趙の名将{{廉頗|れんぱ}}が更迭され、実戦経験に乏しい{{趙括|ちょうかつ}}に指揮が交代したところを、秦の{{白起|はくき}}に完全包囲されて趙軍40万は降伏に追い込まれた。白起は降伏兵の反乱を恐れてその大半を生き埋めにしたと伝えられ、戦国時代を通じて最大規模の犠牲を出した戦いとして知られる。この敗北で趙は再起不能なほどの国力を失い、秦による天下統一への流れは決定的なものとなった。",
+    body: "持久戦を{{貫|つらぬ}}いていた{{趙|ちょう}}の名将{{廉頗|れんぱ}}が{{更迭|こうてつ}}され、実戦経験に{{乏|とぼ}}しい{{趙括|ちょうかつ}}に指揮が交代したところを、{{秦|しん}}の{{白起|はくき}}に完全包囲されて{{趙軍|ちょうぐん}}40万は{{降伏|こうふく}}に追い{{込|こ}}まれた。白起は{{降伏|こうふく}}兵の反乱を{{恐|おそ}}れてその大半を生き{{埋|う}}めにしたと伝えられ、戦国時代を通じて最大規模の{{犠牲|ぎせい}}を出した戦いとして知られる。この敗北で{{趙|ちょう}}は再起不能なほどの国力を失い、{{秦|しん}}による天下統一への流れは決定的なものとなった。",
     relatedHref: EV_CHOUHEI && `/events/${EV_CHOUHEI.slug}`,
     relatedLabel: "長平の戦いを年表で読む",
     personHref: null,
@@ -273,59 +273,59 @@ const ZG_BATTLES = [
     id: "zg-battle-5",
     year: "前257年",
     name: "{{邯鄲|かんたん}}の戦い（{{窃符救趙|せっぷきゅうちょう}}）",
-    location: "河北省邯鄲市",
+    location: "河北省{{邯鄲|かんたん}}市",
     mapX: 322,
     mapY: 168,
     factions: [
-      { side: "魏・楚救援軍", people: "{{信陵君|しんりょうくん}}" },
-      { side: "秦軍", people: "邯鄲包囲軍" },
+      { side: "{{魏|ぎ}}・{{楚|そ}}{{救援|きゅうえん}}軍", people: "{{信陵君|しんりょうくん}}" },
+      { side: "{{秦軍|しんぐん}}", people: "{{邯鄲|かんたん}}包囲軍" },
     ],
-    body: "長平の勝利に乗じた秦軍は趙の都{{邯鄲|かんたん}}を包囲し、趙は滅亡の淵に立たされた。魏の公子{{信陵君|しんりょうくん}}は同盟国の危機を見過ごせず、王の寵姫の手を借りて軍権を示す割符を盗み出し、独断で魏の援軍を動かして秦軍を撃退した「{{窃符救趙|せっぷきゅうちょう}}」の故事で知られる。この決断は主命に背く重大な越権行為であったが、結果的に趙を滅亡から救い、信陵君は「{{戦国四公子|せんごくのよんこうし}}」の一人として侠気ある名声を後世に残した。",
+    body: "長平の勝利に乗じた{{秦軍|しんぐん}}は{{趙|ちょう}}の都{{邯鄲|かんたん}}を包囲し、{{趙|ちょう}}は{{滅亡|めつぼう}}の{{淵|ふち}}に立たされた。{{魏|ぎ}}の公子{{信陵君|しんりょうくん}}は同盟国の危機を見過ごせず、王の{{寵姫|ちょうき}}の手を借りて軍権を示す{{割符|わっぷ}}を{{盗|ぬす}}み出し、独断で{{魏|ぎ}}の{{援軍|えんぐん}}を動かして{{秦軍|しんぐん}}を{{撃退|げきたい}}した「{{窃符救趙|せっぷきゅうちょう}}」の故事で知られる。この決断は主命に背く重大な{{越権|えっけん}}{{行為|こうい}}であったが、結果的に{{趙|ちょう}}を{{滅亡|めつぼう}}から救い、{{信陵君|しんりょうくん}}は「{{戦国四公子|せんごくのよんこうし}}」の一人として{{侠気|きょうき}}ある名声を後世に残した。",
     relatedHref: null,
     relatedLabel: null,
     personHref: null,
     personLabel: null,
-    portrait: { name: "信陵君" },
+    portrait: { name: "{{信陵君|しんりょうくん}}" },
   },
   {
     no: 6,
     id: "zg-battle-6",
     year: "前230〜前221年",
-    name: "秦滅六国・戦国の終結",
-    location: "山東省淄博市（斉の都・{{臨淄|りんし}}）ほか",
+    name: "{{秦滅|しんめつ}}六国・戦国の終結",
+    location: "山東省{{淄博|しはく}}市（{{斉|せい}}の都・{{臨淄|りんし}}）ほか",
     mapX: 354,
     mapY: 174,
     factions: [
-      { side: "秦軍", people: "{{秦王政|しんおうせい}}（{{始皇帝|しこうてい}}）・{{王翦|おうせん}}" },
-      { side: "六国", people: "韓・趙・魏・楚・燕・斉" },
+      { side: "{{秦軍|しんぐん}}", people: "{{秦王政|しんおうせい}}（{{始皇帝|しこうてい}}）・{{王翦|おうせん}}" },
+      { side: "六国", people: "{{韓|かん}}・{{趙|ちょう}}・{{魏|ぎ}}・{{楚|そ}}・{{燕|えん}}・{{斉|せい}}" },
     ],
-    body: "長平の戦いから半世紀、秦王{{政|せい}}はわずか10年ほどの間に韓・趙・魏・楚・燕を次々と滅ぼした。この過程では、燕の太子{{丹|たん}}が刺客{{荊軻|けいか}}を放って秦王暗殺を図るも失敗する「{{荊軻刺秦王|けいかしんおうをさす}}」の事件も起きている。最後まで独立を保っていた東方の大国{{斉|せい}}も無血開城で降伏し、紀元前221年、秦王政は中国史上初めて全土を統一して「{{始皇帝|しこうてい}}」を名乗った。550年に及んだ春秋戦国の分裂の時代はここに終わりを告げる。",
+    body: "長平の戦いから半世紀、{{秦|しん}}王{{政|せい}}はわずか10年ほどの間に{{韓|かん}}・{{趙|ちょう}}・{{魏|ぎ}}・{{楚|そ}}・{{燕|えん}}を次々と{{滅|ほろ}}ぼした。この過程では、{{燕|えん}}の太子{{丹|たん}}が{{刺客|しかく}}{{荊軻|けいか}}を放って{{秦王|しんおう}}暗殺を図るも失敗する「{{荊軻刺秦王|けいかしんおうをさす}}」の事件も起きている。最後まで独立を保っていた東方の大国{{斉|せい}}も無血開城で{{降伏|こうふく}}し、紀元前221年、{{秦王政|しんおうせい}}は中国史上初めて全土を統一して「{{始皇帝|しこうてい}}」を名乗った。550年に{{及|およ}}んだ春秋戦国の{{分裂|ぶんれつ}}の時代はここに終わりを告げる。",
     relatedHref: EV_SHUUKETSU && `/events/${EV_SHUUKETSU.slug}`,
     relatedLabel: "戦国の終結を年表で読む",
     personHref: HREF_SHOKOUTEI,
-    personLabel: "始皇帝の生涯を読む",
-    portrait: { name: "始皇帝", ...IMG_SHOKOUTEI },
+    personLabel: "{{始皇帝|しこうてい}}の{{生涯|しょうがい}}を読む",
+    portrait: { name: "{{始皇帝|しこうてい}}", ...IMG_SHOKOUTEI },
   },
 ];
 
 // 両陣営の大まかな勢力圏ラベル（範囲を厳密に示すものではない）
 const CQ_REGION_LABELS = [
-  { label: "晋", x: 300, y: 150 },
-  { label: "斉", x: 368, y: 155 },
-  { label: "楚", x: 300, y: 250 },
-  { label: "呉・越", x: 388, y: 245 },
+  { label: "{{晋|しん}}", x: 300, y: 150 },
+  { label: "{{斉|せい}}", x: 368, y: 155 },
+  { label: "{{楚|そ}}", x: 300, y: 250 },
+  { label: "{{呉|ご}}・{{越|えつ}}", x: 388, y: 245 },
 ];
 const ZG_REGION_LABELS = [
-  { label: "秦", x: 250, y: 195 },
-  { label: "楚", x: 300, y: 255 },
-  { label: "斉", x: 368, y: 150 },
-  { label: "燕", x: 340, y: 115 },
+  { label: "{{秦|しん}}", x: 250, y: 195 },
+  { label: "{{楚|そ}}", x: 300, y: 255 },
+  { label: "{{斉|せい}}", x: 368, y: 150 },
+  { label: "{{燕|えん}}", x: 340, y: 115 },
 ];
 
 function BattleMap({ battles, regionLabels, note }) {
   return (
     <div style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: 16, marginBottom: 28 }}>
-      <p style={{ fontSize: 11.5, color: COLORS.inkSoft, marginBottom: 10 }}>{note}</p>
+      <p style={{ fontSize: 11.5, color: COLORS.inkSoft, marginBottom: 10 }}><RubyText text={note} /></p>
       <svg viewBox="0 0 500 366" style={{ width: "100%", maxHeight: 400, display: "block", margin: "0 auto" }}>
         <path d={CHINA_OUTLINE} fill="#DCD3B8" stroke={COLORS.mist} strokeWidth="1.2" strokeLinejoin="round" />
         <path d={TAIWAN_OUTLINE} fill="#DCD3B8" stroke={COLORS.mist} strokeWidth="1.2" strokeLinejoin="round" />
@@ -338,7 +338,7 @@ function BattleMap({ battles, regionLabels, note }) {
             textAnchor="middle"
             style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 12, fontWeight: 700, fill: COLORS.inkSoft, opacity: 0.55 }}
           >
-            {r.label}
+            {stripRuby(r.label)}
           </text>
         ))}
 
@@ -368,7 +368,7 @@ function FlowList({ items }) {
         const content = (
           <div className="flex items-baseline gap-3 px-4 py-2.5" style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", borderLeft: `3px solid ${COLORS.vermilion}` }}>
             <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 12.5, color: COLORS.inkSoft, whiteSpace: "nowrap" }}>
-              {f.year}
+              <RubyText text={f.year} />
             </span>
             <div className="flex-1 min-w-0">
               <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14.5, fontWeight: 700, color: COLORS.ink }}>
@@ -427,7 +427,7 @@ function BattleCards({ battles }) {
               <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 16.5, fontWeight: 700, color: COLORS.ink }}>
                 <RubyText text={b.name} />
               </span>
-              <span style={{ fontSize: 12, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}>{b.year}</span>
+              <span style={{ fontSize: 12, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}><RubyText text={b.year} /></span>
             </div>
             <div style={{ fontSize: 11, color: COLORS.vermilionSoft, marginTop: 4 }}>
               <span aria-hidden>📍</span> <RubyText text={b.location} />
@@ -436,7 +436,7 @@ function BattleCards({ battles }) {
             <div className="flex flex-wrap gap-x-4 gap-y-1 mt-3" style={{ fontSize: 11.5 }}>
               {b.factions.map((f, i) => (
                 <div key={i}>
-                  <span style={{ color: COLORS.gold, fontWeight: 700 }}>{f.side}：</span>
+                  <span style={{ color: COLORS.gold, fontWeight: 700 }}><RubyText text={f.side} />：</span>
                   <span style={{ color: COLORS.inkSoft }}><RubyText text={f.people} /></span>
                 </div>
               ))}
@@ -447,18 +447,18 @@ function BattleCards({ battles }) {
             </p>
 
             {b.portrait?.credit && (
-              <div style={{ fontSize: 9.5, color: COLORS.mist, marginTop: 4 }}>{b.portrait.credit}</div>
+              <div style={{ fontSize: 9.5, color: COLORS.mist, marginTop: 4 }}><RubyText text={b.portrait.credit} /></div>
             )}
 
             <div className="flex items-center gap-3 flex-wrap mt-3" style={{ fontSize: 11.5 }}>
               {b.relatedHref && (
                 <a href={b.relatedHref} style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
-                  {b.relatedLabel} →
+                  <RubyText text={b.relatedLabel} /> →
                 </a>
               )}
               {b.personHref && (
                 <a href={b.personHref} style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
-                  {b.personLabel} →
+                  <RubyText text={b.personLabel} /> →
                 </a>
               )}
             </div>
@@ -480,9 +480,9 @@ export default function ChunqiuZhanguoBattlesPage() {
           春秋・戦国時代 合戦マップ
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 20 }}>
-          紀元前770年の周の東遷から、紀元前221年の秦による中国統一まで——550年におよぶ春秋・戦国時代は、
-          数十の国が興亡を繰り返した中国史上もっとも長い分裂の時代です。このページでは前半の「春秋時代」と
-          後半の「戦国時代」に分けて、代表的な合戦とそこで活躍した武将たちを地図とともに紹介します。
+          紀元前770年の周の<ruby>東遷<rt>とうせん</rt></ruby>から、紀元前221年の<ruby>秦<rt>しん</rt></ruby>による中国統一まで——550年におよぶ春秋・戦国時代は、
+          数十の国が興亡を<ruby>繰<rt>く</rt></ruby>り返した中国史上もっとも長い<ruby>分裂<rt>ぶんれつ</rt></ruby>の時代です。このページでは前半の「春秋時代」と
+          後半の「戦国時代」に分けて、代表的な合戦とそこで<ruby>活躍<rt>かつやく</rt></ruby>した武将たちを地図とともに<ruby>紹介<rt>しょうかい</rt></ruby>します。
         </p>
 
         <div className="flex items-center gap-2.5 flex-wrap mb-10" style={{ fontSize: 12.5 }}>
@@ -503,7 +503,7 @@ export default function ChunqiuZhanguoBattlesPage() {
             春秋時代の合戦
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginBottom: 16 }}>
-            周王室の権威が形だけのものとなり、斉・晋・楚・呉・越など有力諸侯が「覇者」を称して天下に号令した時代。
+            周王室の<ruby>権威<rt>けんい</rt></ruby>が形だけのものとなり、<ruby>斉<rt>せい</rt></ruby>・<ruby>晋<rt>しん</rt></ruby>・<ruby>楚<rt>そ</rt></ruby>・<ruby>呉<rt>ご</rt></ruby>・<ruby>越<rt>えつ</rt></ruby>など有力<ruby>諸侯<rt>しょこう</rt></ruby>が「<ruby>覇者<rt>はしゃ</rt></ruby>」を<ruby>称<rt>しょう</rt></ruby>して天下に号令した時代。
           </p>
         </section>
 
@@ -521,7 +521,7 @@ export default function ChunqiuZhanguoBattlesPage() {
           <BattleMap
             battles={CQ_BATTLES}
             regionLabels={CQ_REGION_LABELS}
-            note="実際の海岸線をもとにした位置関係図です。朱色の番号は下の各合戦の位置を示しています。"
+            note="実際の海岸線をもとにした位置関係図です。{{朱色|しゅいろ}}の番号は下の各合戦の位置を示しています。"
           />
         </section>
 
@@ -540,7 +540,7 @@ export default function ChunqiuZhanguoBattlesPage() {
             戦国時代の合戦
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginBottom: 16 }}>
-            晋の分裂を経て、秦・楚・斉・燕・韓・魏・趙の「戦国七雄」が生き残りをかけて争った、より苛烈な弱肉強食の時代。
+            <ruby>晋<rt>しん</rt></ruby>の<ruby>分裂<rt>ぶんれつ</rt></ruby>を経て、<ruby>秦<rt>しん</rt></ruby>・<ruby>楚<rt>そ</rt></ruby>・<ruby>斉<rt>せい</rt></ruby>・<ruby>燕<rt>えん</rt></ruby>・<ruby>韓<rt>かん</rt></ruby>・<ruby>魏<rt>ぎ</rt></ruby>・<ruby>趙<rt>ちょう</rt></ruby>の「戦国<ruby>七雄<rt>しちゆう</rt></ruby>」が生き残りをかけて争った、より<ruby>苛烈<rt>かれつ</rt></ruby>な弱肉強食の時代。
           </p>
         </section>
 
@@ -558,16 +558,16 @@ export default function ChunqiuZhanguoBattlesPage() {
           <BattleMap
             battles={ZG_BATTLES}
             regionLabels={ZG_REGION_LABELS}
-            note="実際の海岸線をもとにした位置関係図です。朱色の番号は下の各合戦の位置を示しています。"
+            note="実際の海岸線をもとにした位置関係図です。{{朱色|しゅいろ}}の番号は下の各合戦の位置を示しています。"
           />
         </section>
 
         <section style={{ marginBottom: 12 }}>
           <h3 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 15, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
-            勢力図の変遷アニメーション
+            勢力図の<ruby>変遷<rt>へんせん</rt></ruby>アニメーション
           </h3>
           <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginBottom: 12 }}>
-            戦国七雄の並立から、秦が六国を次々と呑み込んで天下を統一するまで——再生ボタンまたは年代タブで、勢力図が移り変わる様子を確認できます。
+            戦国<ruby>七雄<rt>しちゆう</rt></ruby>の並立から、<ruby>秦<rt>しん</rt></ruby>が六国を次々と<ruby>呑<rt>の</rt></ruby>み<ruby>込<rt>こ</rt></ruby>んで天下を統一するまで——再生ボタンまたは年代タブで、勢力図が移り変わる様子を確認できます。
           </p>
           <ZhanguoBorderMap />
         </section>
@@ -581,11 +581,11 @@ export default function ChunqiuZhanguoBattlesPage() {
 
         <section style={{ marginTop: 32 }}>
           <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
-            戦国の統一以後、秦の滅亡から漢の統一までの「楚漢戦争」、そして400年後の「三国時代」の合戦については、
+            戦国の統一以後、<ruby>秦<rt>しん</rt></ruby>の<ruby>滅亡<rt>めつぼう</rt></ruby>から漢の統一までの「<ruby>楚漢戦争<rt>そかんせんそう</rt></ruby>」、そして400年後の「三国時代」の合戦については、
             あわせて下記の特集ページもご覧ください。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
-            <NavButton href="/chuhan-battles" variant="solid">楚漢戦争 合戦マップを見る</NavButton>
+            <NavButton href="/chuhan-battles" variant="solid"><ruby>楚漢戦争<rt>そかんせんそう</rt></ruby> 合戦マップを見る</NavButton>
             <NavButton href="/sanguo-battles" variant="outline">三国時代 合戦マップを見る</NavButton>
           </div>
         </section>

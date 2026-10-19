@@ -17,16 +17,16 @@ export const metadata = {
 
 // 語呂合わせの区切り（王朝暗記の定番チャンク分け。「うさぎとかめ」の節に乗せて口ずさむと覚えやすい）
 const CHANT = [
-  { text: "{{殷|いん}}", note: "甲骨文字・青銅器" },
-  { text: "{{周|しゅう}}", note: "封建制" },
+  { text: "{{殷|いん}}", note: "{{甲骨文字|こうこつもじ}}・青銅器" },
+  { text: "{{周|しゅう}}", note: "{{封建制|ほうけんせい}}" },
   { text: "{{秦|しん}}", note: "初の統一" },
   { text: "{{漢|かん}}", note: "長期安定" },
-  { text: "{{三国|さんごく}}", note: "魏呉蜀" },
+  { text: "{{三国|さんごく}}", note: "{{魏呉蜀|ぎごしょく}}" },
   { text: "{{晋|しん}}", note: "一時統一" },
-  { text: "{{南北朝|なんぼくちょう}}", note: "分裂" },
+  { text: "{{南北朝|なんぼくちょう}}", note: "{{分裂|ぶんれつ}}" },
   { text: "{{隋|ずい}}", note: "再統一" },
   { text: "{{唐|とう}}", note: "長期安定" },
-  { text: "{{五代|ごだい}}", note: "再分裂" },
+  { text: "{{五代|ごだい}}", note: "再{{分裂|ぶんれつ}}" },
   { text: "{{宋|そう}}", note: "文治主義" },
   { text: "{{元|げん}}", note: "モンゴル" },
   { text: "{{明|みん}}", note: "漢族復権" },
@@ -35,48 +35,48 @@ const CHANT = [
 
 const TIPS = [
   {
-    heading: "殷（商）・周",
-    body: "「殷」は{{甲骨文字|こうこつもじ}}と青銅器、「周」は一族や功臣に土地を分け与える{{封建制|ほうけんせい}}、とセットで覚えると区別しやすい。",
+    heading: "{{殷|いん}}（商）・周",
+    body: "「{{殷|いん}}」は{{甲骨文字|こうこつもじ}}と青銅器、「周」は一族や功臣に土地を分け{{与|あた}}える{{封建制|ほうけんせい}}、とセットで覚えると区別しやすい。",
   },
   {
     heading: "春秋・戦国",
-    body: "どちらも周の権威が弱まった時代の前半・後半にすぎない。「周から独立していく流れの前半が春秋、後半が戦国」と1つの流れで捉えれば別々に暗記する必要はない。",
+    body: "どちらも周の{{権威|けんい}}が弱まった時代の前半・後半にすぎない。「周から独立していく流れの前半が春秋、後半が戦国」と1つの流れで{{捉|とら}}えれば別々に暗記する必要はない。",
   },
   {
-    heading: "秦・漢",
-    body: "秦は中国を初めて統一したが{{始皇帝|しこうてい}}の死後わずか十数年で滅亡。「統一の反動で短命に終わった王朝の後に、長期安定した王朝が続く」というパターンは、隋→唐でも繰り返される。",
+    heading: "{{秦|しん}}・漢",
+    body: "{{秦|しん}}は中国を初めて統一したが{{始皇帝|しこうてい}}の死後わずか十数年で{{滅亡|めつぼう}}。「統一の反動で短命に終わった王朝の後に、長期安定した王朝が続く」というパターンは、{{隋|ずい}}→{{唐|とう}}でも{{繰|く}}り返される。",
   },
   {
     heading: "前漢・新・後漢",
-    body: "「漢」は{{王莽|おうもう}}の建てた「新」を挟んでいったん途切れる。長い漢の歴史の途中に短命な新がサンドイッチされている、とイメージすると前漢と後漢の順番で迷わない。",
+    body: "「漢」は{{王莽|おうもう}}の建てた「新」を{{挟|はさ}}んでいったん{{途切|とぎ}}れる。長い漢の歴史の{{途中|とちゅう}}に短命な新がサンドイッチされている、とイメージすると前漢と後漢の順番で迷わない。",
   },
   {
-    heading: "三国・晋",
-    body: "後漢の滅亡後に{{魏|ぎ}}・{{呉|ご}}・{{蜀|しょく}}が並び立ち（三国志の時代）、最終的に魏から実権を奪った{{司馬氏|しばし}}の晋（西晋）が一時的に中国を統一する。",
+    heading: "三国・{{晋|しん}}",
+    body: "後漢の{{滅亡|めつぼう}}後に{{魏|ぎ}}・{{呉|ご}}・{{蜀|しょく}}が並び立ち（三国志の時代）、最終的に{{魏|ぎ}}から実権を{{奪|うば}}った{{司馬氏|しばし}}の{{晋|しん}}（{{西晋|せいしん}}）が一時的に中国を統一する。",
   },
   {
-    heading: "五胡十六国・東晋、南北朝",
-    body: "西晋が北方民族の侵入で崩壊すると、北は異民族の国々が乱立し（五胡十六国）、晋の一族は南へ逃れて東晋を建てる。この南北分裂がそのまま南北朝時代へと続く。",
+    heading: "{{五胡十六国|ごこじゅうろっこく}}・{{東晋|とうしん}}、南北朝",
+    body: "{{西晋|せいしん}}が北方民族の{{侵入|しんにゅう}}で{{崩壊|ほうかい}}すると、北は異民族の国々が乱立し（{{五胡十六国|ごこじゅうろっこく}}）、{{晋|しん}}の一族は南へ{{逃|のが}}れて{{東晋|とうしん}}を建てる。この南北{{分裂|ぶんれつ}}がそのまま南北朝時代へと続く。",
   },
   {
-    heading: "隋・唐",
-    body: "南北朝の分裂を隋が再統一するが、こちらも秦と同様に短命。その後を継いだ唐が約300年続く長期安定政権となる。",
+    heading: "{{隋|ずい}}・{{唐|とう}}",
+    body: "南北朝の{{分裂|ぶんれつ}}を{{隋|ずい}}が再統一するが、こちらも{{秦|しん}}と同様に短命。その後を{{継|つ}}いだ{{唐|とう}}が約300年続く長期安定政権となる。",
   },
   {
     heading: "五代十国",
-    body: "唐の滅亡後、再び分裂した時代。「統一王朝の後には必ず分裂期が来る」という中国史のリズムを意識すると、唐→五代十国の流れも自然に覚えられる。",
+    body: "{{唐|とう}}の{{滅亡|めつぼう}}後、再び{{分裂|ぶんれつ}}した時代。「統一王朝の後には必ず{{分裂|ぶんれつ}}期が来る」という中国史のリズムを意識すると、{{唐|とう}}→五代十国の流れも自然に覚えられる。",
   },
   {
-    heading: "北宋・南宋",
-    body: "宋は北方民族の{{金|きん}}に華北を奪われ、都を南へ移した。都が北にあった前半が北宋、南へ移った後半が南宋なので、方角の順番どおりに覚えればよい。",
+    heading: "{{北宋|ほくそう}}・{{南宋|なんそう}}",
+    body: "{{宋|そう}}は北方民族の{{金|きん}}に{{華北|かほく}}を{{奪|うば}}われ、都を南へ移した。都が北にあった前半が{{北宋|ほくそう}}、南へ移った後半が{{南宋|なんそう}}なので、方角の順番どおりに覚えればよい。",
   },
   {
     heading: "元・明・清",
-    body: "モンゴル民族が中国全土を支配した元の後、漢民族が明で王朝を取り戻し、その明を満州民族の清が倒す。「漢民族→異民族→漢民族→異民族」と支配民族が交互に入れ替わる点に注目すると記憶が定着しやすい。",
+    body: "モンゴル民族が中国全土を支配した元の後、漢民族が明で王朝を取り{{戻|もど}}し、その明を満州民族の清が{{倒|たお}}す。「漢民族→異民族→漢民族→異民族」と支配民族が{{交互|こうご}}に入れ{{替|か}}わる点に注目すると{{記憶|きおく}}が定着しやすい。",
   },
   {
-    heading: "中華民国・中華人民共和国",
-    body: "1911年の{{辛亥革命|しんがいかくめい}}で清が倒れて中華民国が成立し、国共内戦を経て1949年に中華人民共和国が建国された。ここは王朝ではなく近代の国家なので、語呂合わせより出来事の流れで覚えるのが確実。",
+    heading: "{{中華|ちゅうか}}民国・{{中華|ちゅうか}}人民共和国",
+    body: "1911年の{{辛亥革命|しんがいかくめい}}で清が{{倒|たお}}れて{{中華|ちゅうか}}民国が成立し、国共内戦を経て1949年に{{中華|ちゅうか}}人民共和国が建国された。ここは王朝ではなく近代の国家なので、{{語呂|ごろ}}合わせより出来事の流れで覚えるのが確実。",
   },
 ];
 
@@ -87,19 +87,19 @@ export default function MnemonicsPage() {
         <BackToTopButton />
 
         <h1 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
-          中国王朝の覚え方（語呂合わせ）
+          中国王朝の覚え方（<ruby>語呂<rt>ごろ</rt></ruby>合わせ）
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 12 }}>
-          中学・高校の定期テストや大学入試の世界史では、中国の王朝を正しい順番で答えさせる問題が繰り返し出題されます。
-          殷から中華人民共和国までの流れを語呂合わせで一気に暗記し、続く一覧と暗記のコツで理解を固めましょう。
+          中学・高校の定期テストや大学入試の世界史では、中国の王朝を正しい順番で答えさせる問題が<ruby>繰<rt>く</rt></ruby>り返し出題されます。
+          <ruby>殷<rt>いん</rt></ruby>から<ruby>中華<rt>ちゅうか</rt></ruby>人民共和国までの流れを<ruby>語呂<rt>ごろ</rt></ruby>合わせで一気に暗記し、続く一覧と暗記のコツで理解を固めましょう。
         </p>
 
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 6 }}>
-            語呂合わせで唱える王朝の順番
+            <ruby>語呂<rt>ごろ</rt></ruby>合わせで唱える王朝の順番
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginBottom: 12 }}>
-            童謡「うさぎとかめ」（もしもしかめよ、かめさんよ……）のリズムに乗せて口ずさむと、テスト前に短時間で記憶に定着させやすくなります。
+            <ruby>童謡<rt>どうよう</rt></ruby>「うさぎとかめ」（もしもしかめよ、かめさんよ……）のリズムに乗せて口ずさむと、テスト前に短時間で<ruby>記憶<rt>きおく</rt></ruby>に定着させやすくなります。
           </p>
           <div
             className="flex flex-wrap items-stretch gap-2"
@@ -111,7 +111,7 @@ export default function MnemonicsPage() {
                   <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 20, fontWeight: 700, color: COLORS.vermilion }}>
                     <RubyText text={item.text} />
                   </span>
-                  <span style={{ fontSize: 9.5, color: COLORS.inkSoft, marginTop: 2, whiteSpace: "nowrap" }}>{item.note}</span>
+                  <span style={{ fontSize: 9.5, color: COLORS.inkSoft, marginTop: 2, whiteSpace: "nowrap" }}><RubyText text={item.note} /></span>
                 </div>
                 {i < CHANT.length - 1 && (
                   <span style={{ color: COLORS.mist, fontSize: 13 }} aria-hidden>
@@ -122,8 +122,8 @@ export default function MnemonicsPage() {
             ))}
           </div>
           <p style={{ fontSize: 11.5, lineHeight: 1.8, color: COLORS.inkSoft, marginTop: 10 }}>
-            ※ 先史時代の新石器文化・夏、短命だった新（王莽）、五胡十六国・東晋、十国、中華民国・中華人民共和国は、
-            語呂合わせでは前後の王朝にまとめて含めています。詳しい位置づけは下の一覧と暗記のコツで確認してください。
+            ※ 先史時代の新石器文化・夏、短命だった新（<ruby>王莽<rt>おうもう</rt></ruby>）、<ruby>五胡十六国<rt>ごこじゅうろっこく</rt></ruby>・<ruby>東晋<rt>とうしん</rt></ruby>、十国、<ruby>中華<rt>ちゅうか</rt></ruby>民国・<ruby>中華<rt>ちゅうか</rt></ruby>人民共和国は、
+            <ruby>語呂<rt>ごろ</rt></ruby>合わせでは前後の王朝にまとめて<ruby>含<rt>ふく</rt></ruby>めています。<ruby>詳<rt>くわ</rt></ruby>しい位置づけは下の一覧と暗記のコツで確認してください。
           </p>
         </section>
 
@@ -145,9 +145,9 @@ export default function MnemonicsPage() {
                   {i + 1}
                 </span>
                 <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14, fontWeight: 700, color: COLORS.ink, minWidth: 132 }}>
-                  {era.name}
+                  <RubyText text={era.name} />
                 </span>
-                <span style={{ fontSize: 11, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}>{era.period}</span>
+                <span style={{ fontSize: 11, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}><RubyText text={era.period} /></span>
               </div>
             ))}
           </div>
@@ -161,7 +161,7 @@ export default function MnemonicsPage() {
             {TIPS.map((tip, i) => (
               <div key={i} style={{ borderLeft: `3px solid ${COLORS.vermilion}`, paddingLeft: 12 }}>
                 <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 13.5, fontWeight: 700, color: COLORS.ink, marginBottom: 4 }}>
-                  {tip.heading}
+                  <RubyText text={tip.heading} />
                 </div>
                 <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft }}>
                   <RubyText text={tip.body} />
@@ -173,7 +173,7 @@ export default function MnemonicsPage() {
 
         <section>
           <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
-            それぞれの王朝で実際に何が起きたのかを知ると、語呂合わせの記憶はより忘れにくくなります。
+            それぞれの王朝で実際に何が起きたのかを知ると、<ruby>語呂<rt>ごろ</rt></ruby>合わせの<ruby>記憶<rt>きおく</rt></ruby>はより忘れにくくなります。
             年表や人物一覧もあわせて確認してみてください。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">

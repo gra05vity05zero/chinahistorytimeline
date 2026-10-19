@@ -25,9 +25,9 @@ const CAPITALS = [
     name: "{{二里頭|にりとう}}",
     dynasty: "夏",
     years: "c. 2070 – 1600 BC",
-    location: "河南省偃師",
+    location: "河南省{{偃師|えんし}}",
     description:
-      "{{禹|う}}が開いたと伝わる中国最古の王朝・夏の都に比定される遺跡。宮殿跡や青銅器工房が発掘され、禅譲から世襲へと移った初期国家の姿を今に伝える。",
+      "{{禹|う}}が開いたと伝わる中国最古の王朝・夏の都に比定される{{遺跡|いせき}}。{{宮殿跡|きゅうでんあと}}や青銅器{{工房|こうぼう}}が{{発掘|はっくつ}}され、{{禅譲|ぜんじょう}}から{{世襲|せしゅう}}へと移った初期国家の姿を今に伝える。",
     eraId: "xia",
     eventTitle: "夏の建国",
     heritageName: "二里頭",
@@ -36,11 +36,11 @@ const CAPITALS = [
   },
   {
     name: "{{殷|いん}}（{{安陽|あんよう}}）",
-    dynasty: "殷（商）",
+    dynasty: "{{殷|いん}}（商）",
     years: "c. 1300 – 1046 BC",
     location: "河南省安陽市",
     description:
-      "第19代王{{盤庚|ばんこう}}が遷都し、以後約250年にわたり殷代後期の都として栄えた地。20世紀の発掘調査で{{甲骨文字|こうこつもじ}}をはじめとする高度な文明の実態が明らかになった。",
+      "第19代王{{盤庚|ばんこう}}が{{遷都|せんと}}し、以後約250年にわたり{{殷代|いんだい}}後期の都として栄えた地。20世紀の{{発掘|はっくつ}}調査で{{甲骨文字|こうこつもじ}}をはじめとする高度な文明の実態が明らかになった。",
     eraId: "shang",
     eventTitle: "盤庚の遷都",
     heritageName: "殷墟",
@@ -51,9 +51,9 @@ const CAPITALS = [
     name: "{{鎬京|こうけい}}",
     dynasty: "西周",
     years: "1046 – 771 BC",
-    location: "陝西省西安市",
+    location: "{{陝西省|せんせいしょう}}西安市",
     description:
-      "殷を滅ぼした{{武王|ぶおう}}が「天命」思想を掲げて開いた周王朝最初の都。前771年、寵姫を溺愛した{{幽王|ゆうおう}}の代に{{犬戎|けんじゅう}}の侵入を受けて陥落した。",
+      "{{殷|いん}}を{{滅|ほろ}}ぼした{{武王|ぶおう}}が「天命」思想を{{掲|かか}}げて開いた周王朝最初の都。前771年、{{寵姫|ちょうき}}を{{溺愛|できあい}}した{{幽王|ゆうおう}}の代に{{犬戎|けんじゅう}}の{{侵入|しんにゅう}}を受けて{{陥落|かんらく}}した。",
     eraId: "westernzhou",
     eventTitle: "周の建国",
     mapX: 266,
@@ -63,9 +63,9 @@ const CAPITALS = [
     name: "{{洛邑|らくゆう}}",
     dynasty: "東周・春秋戦国",
     years: "770 – 256 BC",
-    location: "河南省洛陽市",
+    location: "河南省{{洛陽|らくよう}}市",
     description:
-      "鎬京を失った{{平王|へいおう}}が遷都した東周の都。以後周王室の実権は縮小して権威は形式化する一方、有力諸侯が覇を競う春秋・戦国の時代が幕を開けた。",
+      "{{鎬京|こうけい}}を失った{{平王|へいおう}}が{{遷都|せんと}}した東周の都。以後周王室の実権は縮小して{{権威|けんい}}は形式化する一方、有力{{諸侯|しょこう}}が{{覇|は}}を競う春秋・戦国の時代が幕を開けた。",
     eraId: "chunqiu",
     eventTitle: "平王の東遷",
     mapX: 310,
@@ -73,11 +73,11 @@ const CAPITALS = [
   },
   {
     name: "{{咸陽|かんよう}}",
-    dynasty: "秦",
+    dynasty: "{{秦|しん}}",
     years: "221 – 206 BC",
-    location: "陝西省咸陽市",
+    location: "{{陝西省|せんせいしょう}}{{咸陽|かんよう}}市",
     description:
-      "戦国時代から秦の本拠であった都で、中国統一後は史上初の統一帝国の中枢となった。{{始皇帝|しこうてい}}の死後まもなく{{項羽|こうう}}軍によって焼き払われたと伝わる。",
+      "戦国時代から{{秦|しん}}の{{本拠|ほんきょ}}であった都で、中国統一後は史上初の統一{{帝国|ていこく}}の{{中枢|ちゅうすう}}となった。{{始皇帝|しこうてい}}の死後まもなく{{項羽|こうう}}軍によって焼き{{払|はら}}われたと伝わる。",
     eraId: "qin",
     eventTitle: "中国統一",
     mapX: 274,
@@ -87,9 +87,9 @@ const CAPITALS = [
     name: "{{長安|ちょうあん}}（前漢）",
     dynasty: "前漢",
     years: "202 BC – AD 8",
-    location: "陝西省西安市",
+    location: "{{陝西省|せんせいしょう}}西安市",
     description:
-      "{{劉邦|りゅうほう}}が関中の要害の地に定めた漢の都。秦の旧制度を引き継ぎつつ、以後400年におよぶ漢王朝の出発点となり、シルクロード交易の東の起点としても栄えた。",
+      "{{劉邦|りゅうほう}}が関中の要害の地に定めた漢の都。{{秦|しん}}の旧制度を引き{{継|つ}}ぎつつ、以後400年におよぶ漢王朝の出発点となり、シルクロード交易の東の起点としても栄えた。",
     eraId: "westernhan",
     eventTitle: "漢を建国",
     mapX: 282,
@@ -99,9 +99,9 @@ const CAPITALS = [
     name: "{{洛陽|らくよう}}（後漢）",
     dynasty: "後漢",
     years: "AD 25 – 220",
-    location: "河南省洛陽市",
+    location: "河南省{{洛陽|らくよう}}市",
     description:
-      "{{光武帝|こうぶてい}}劉秀が漢を再興した際、前漢の長安ではなくこの地を都と定めた。この後も{{曹魏|そうぎ}}・西晋が相次いで都とし、中原の政治的中心であり続けた。",
+      "{{光武帝|こうぶてい}}{{劉秀|りゅうしゅう}}が漢を再興した際、前漢の長安ではなくこの地を都と定めた。この後も{{曹魏|そうぎ}}・{{西晋|せいしん}}が相次いで都とし、中原の政治的中心であり続けた。",
     eraId: "easternhan",
     eventTitle: "漢を再興",
     mapX: 316,
@@ -109,11 +109,11 @@ const CAPITALS = [
   },
   {
     name: "{{成都|せいと}}",
-    dynasty: "蜀漢（三国）",
+    dynasty: "{{蜀漢|しょくかん}}（三国）",
     years: "221 – 263",
     location: "四川省成都市",
     description:
-      "漢王室の後継を称した{{劉備|りゅうび}}が皇帝に即位して定めた蜀の都。丞相{{諸葛亮|しょかつりょう}}のもとで内政が整えられ、天険の地の利を背景に三国中最も長く独立を保った。",
+      "漢王室の{{後継|こうけい}}を{{称|しょう}}した{{劉備|りゅうび}}が{{皇帝|こうてい}}に{{即位|そくい}}して定めた{{蜀|しょく}}の都。{{丞相|じょうしょう}}{{諸葛亮|しょかつりょう}}のもとで内政が整えられ、天険の地の利を背景に三国中最も長く独立を保った。",
     eraId: "sanguo",
     eventTitle: "蜀漢の建国",
     mapX: 248,
@@ -121,11 +121,11 @@ const CAPITALS = [
   },
   {
     name: "{{建業|けんぎょう}}",
-    dynasty: "呉（三国）",
+    dynasty: "{{呉|ご}}（三国）",
     years: "229 – 280",
-    location: "江蘇省南京市",
+    location: "{{江蘇|こうそ}}省南京市",
     description:
-      "{{孫権|そんけん}}が皇帝に即位して定めた呉の都。長江の防衛線と江南開発を背景に三国中最後まで存続し、以後の南朝諸王朝が同地を都とする先例を開いた。",
+      "{{孫権|そんけん}}が{{皇帝|こうてい}}に{{即位|そくい}}して定めた{{呉|ご}}の都。{{長江|ちょうこう}}の防衛線と{{江南|こうなん}}開発を背景に三国中最後まで存続し、以後の南朝諸王朝が同地を都とする先例を開いた。",
     eraId: "sanguo",
     eventTitle: "呉の建国",
     mapX: 358,
@@ -133,11 +133,11 @@ const CAPITALS = [
   },
   {
     name: "{{建康|けんこう}}",
-    dynasty: "東晋・南朝",
+    dynasty: "{{東晋|とうしん}}・南朝",
     years: "317 – 589",
-    location: "江蘇省南京市",
+    location: "{{江蘇|こうそ}}省南京市",
     description:
-      "華北を追われた{{司馬睿|しばえい}}が建てた東晋、続く宋・斉・梁・陳の南朝四王朝が約270年にわたり都とした地。貴族文化と仏教美術が花開いた江南文化の中心地であった。",
+      "{{華北|かほく}}を追われた{{司馬睿|しばえい}}が建てた{{東晋|とうしん}}、続く{{宋|そう}}・{{斉|せい}}・{{梁|りょう}}・{{陳|ちん}}の南朝四王朝が約270年にわたり都とした地。貴族文化と仏教美術が花開いた{{江南|こうなん}}文化の中心地であった。",
     eraId: "nanbei",
     eventTitle: "劉宋の建国",
     heritageName: "建康城遺跡",
@@ -145,12 +145,12 @@ const CAPITALS = [
     mapY: 224,
   },
   {
-    name: "{{長安|ちょうあん}}（隋・唐）",
-    dynasty: "隋・唐",
+    name: "{{長安|ちょうあん}}（{{隋|ずい}}・{{唐|とう}}）",
+    dynasty: "{{隋|ずい}}・{{唐|とう}}",
     years: "581 – 907",
-    location: "陝西省西安市",
+    location: "{{陝西省|せんせいしょう}}西安市",
     description:
-      "隋の{{文帝|ぶんてい}}が新たに造営し、唐代には人口100万を超える国際都市として最盛期を迎えた都。シルクロードを通じて東西の文物が行き交う、当時世界最大級の都市であった。",
+      "{{隋|ずい}}の{{文帝|ぶんてい}}が新たに造営し、{{唐代|とうだい}}には人口100万を{{超|こ}}える国際都市として最盛期を{{迎|むか}}えた都。シルクロードを通じて東西の文物が行き交う、当時世界最大級の都市であった。",
     eraId: "tang",
     eventTitle: "唐の建国",
     heritageName: "大明宮",
@@ -159,23 +159,23 @@ const CAPITALS = [
   },
   {
     name: "{{開封|かいほう}}",
-    dynasty: "五代・北宋",
+    dynasty: "五代・{{北宋|ほくそう}}",
     years: "907 – 1127",
-    location: "河南省開封市",
+    location: "河南省{{開封|かいほう}}市",
     description:
-      "{{後梁|こうりょう}}以来五代の多くの政権が都とし、{{趙匡胤|ちょうきょういん}}の宋建国後も引き続き都とされた地。運河交通の要衝として栄え、『{{清明上河図|せいめいじょうかず}}』が伝える商業都市文化の最盛期を築いた。",
+      "{{後梁|こうりょう}}以来五代の多くの政権が都とし、{{趙匡胤|ちょうきょういん}}の{{宋|そう}}建国後も引き続き都とされた地。運河交通の{{要衝|ようしょう}}として栄え、『{{清明上河図|せいめいじょうかず}}』が伝える商業都市文化の最盛期を築いた。",
     eraId: "northernsong",
     eventTitle: "宋の建国",
     mapX: 328,
     mapY: 190,
   },
   {
-    name: "{{臨安|りんあん}}（現・杭州）",
-    dynasty: "南宋",
+    name: "{{臨安|りんあん}}（現・{{杭州|こうしゅう}}）",
+    dynasty: "{{南宋|なんそう}}",
     years: "1127 – 1276",
-    location: "浙江省杭州市",
+    location: "{{浙江省|せっこうしょう}}{{杭州|こうしゅう}}市",
     description:
-      "{{靖康の変|せいこうのへん}}で開封を失った{{高宗|こうそう}}が落ち着いた地。正式な遷都は宣言されず仮の都「行在」とされたが、江南の富を背景に北宋を凌ぐ経済的繁栄を築いた。",
+      "{{靖康の変|せいこうのへん}}で{{開封|かいほう}}を失った{{高宗|こうそう}}が落ち着いた地。正式な{{遷都|せんと}}は宣言されず仮の都「行在」とされたが、{{江南|こうなん}}の富を背景に{{北宋|ほくそう}}を{{凌|しの}}ぐ経済的{{繁栄|はんえい}}を築いた。",
     eraId: "southernsong",
     eventTitle: "南宋の建国",
     heritageName: "臨安",
@@ -188,7 +188,7 @@ const CAPITALS = [
     years: "1271 – 1368",
     location: "北京市",
     description:
-      "クビライが中国式の宮城・官制を整えて定めた元の都。マルコ・ポーロの旅行記にも描かれた国際色豊かな大都市で、大運河の改修によって江南の物資が直結された。写真は同じくクビライが定めた夏の都・元上都の遺跡。",
+      "クビライが中国式の宮城・官制を整えて定めた元の都。マルコ・ポーロの旅行記にも{{描|えが}}かれた国際色豊かな大都市で、大運河の改修によって{{江南|こうなん}}の物資が直結された。写真は同じくクビライが定めた夏の都・元上都の{{遺跡|いせき}}。",
     eraId: "yuan",
     eventTitle: "元の建国",
     heritageName: "元上都",
@@ -201,7 +201,7 @@ const CAPITALS = [
     years: "1421 – 1912",
     location: "北京市",
     description:
-      "{{永楽帝|えいらくてい}}が1421年に南京から遷都し、壮麗な{{紫禁城|しきんじょう}}を築いた地。以後清代末期に至るまで約500年にわたり中国の政治的中枢であり続けた。",
+      "{{永楽帝|えいらくてい}}が1421年に南京から{{遷都|せんと}}し、{{壮麗|そうれい}}な{{紫禁城|しきんじょう}}を築いた地。以後清代末期に至るまで約500年にわたり中国の政治的{{中枢|ちゅうすう}}であり続けた。",
     eraId: "ming",
     eventTitle: "北京遷都",
     heritageName: "紫禁城",
@@ -209,24 +209,24 @@ const CAPITALS = [
     mapY: 150,
   },
   {
-    name: "{{南京|なんきん}}（中華民国）",
-    dynasty: "中華民国",
+    name: "{{南京|なんきん}}（{{中華|ちゅうか}}民国）",
+    dynasty: "{{中華|ちゅうか}}民国",
     years: "1912、1927 – 1937・1945 – 1949",
-    location: "江蘇省南京市",
+    location: "{{江蘇|こうそ}}省南京市",
     description:
-      "{{孫文|そんぶん}}が臨時大総統として臨時政府を樹立した地。国民政府時代にも首都と定められたが、日中戦争の勃発で重慶へ、国共内戦の敗北で台北へと拠点を移すことになった。",
+      "{{孫文|そんぶん}}が臨時大総統として臨時政府を樹立した地。国民政府時代にも首都と定められたが、日中戦争の{{勃発|ぼっぱつ}}で{{重慶|じゅうけい}}へ、国共内戦の敗北で台北へと{{拠点|きょてん}}を移すことになった。",
     eraId: "roc",
     eventTitle: "中華民国の成立",
     mapX: 346,
     mapY: 230,
   },
   {
-    name: "{{北京|ぺきん}}（中華人民共和国）",
-    dynasty: "中華人民共和国",
+    name: "{{北京|ぺきん}}（{{中華|ちゅうか}}人民共和国）",
+    dynasty: "{{中華|ちゅうか}}人民共和国",
     years: "1949 –",
     location: "北京市",
     description:
-      "{{毛沢東|もうたくとう}}が{{天安門|てんあんもん}}楼上で建国を宣言した地。清朝以来の紫禁城（故宮）や天安門広場は、現在も国家的な政治儀礼の舞台であり続けている。",
+      "{{毛沢東|もうたくとう}}が{{天安門|てんあんもん}}{{楼上|ろうじょう}}で建国を宣言した地。清朝以来の{{紫禁城|しきんじょう}}（故宮）や天安門広場は、現在も国家的な政治{{儀礼|ぎれい}}の{{舞台|ぶたい}}であり続けている。",
     eraId: "prc",
     eventTitle: "中華人民共和国の建国",
     mapX: 332,
@@ -274,9 +274,9 @@ const REFERENCE_CITIES = [
 // 世界的に知られる地方・地域名（点なし、範囲を示すラベルのみ）
 const REGION_LABELS = [
   { label: "内モンゴル自治区", x: 420, y: 90, anchor: "middle" },
-  { label: "新疆・シルクロード", x: 105, y: 165, anchor: "middle" },
+  { label: "{{新疆|しんきょう}}・シルクロード", x: 105, y: 165, anchor: "middle" },
   { label: "チベット", x: 195, y: 265, anchor: "middle" },
-  { label: "台湾", x: 375, y: 296, dx: 10, dy: 4, anchor: "start" },
+  { label: "{{台湾|たいわん}}", x: 375, y: 296, dx: 10, dy: 4, anchor: "start" },
   { label: "海南島", x: 290, y: 337, dx: 0, dy: 17, anchor: "middle" },
 ];
 
@@ -284,8 +284,8 @@ function ChinaMap({ capitals }) {
   return (
     <div style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: 16, marginBottom: 28 }}>
       <p style={{ fontSize: 11.5, color: COLORS.inkSoft, marginBottom: 10 }}>
-        実際の海岸線をもとにした中国の位置関係図です。朱色の番号は下の一覧の都、白丸は主要都市の目安です。
-        西安・北京・南京・洛陽周辺は複数の王朝が同じ都市を都としたため、番号が近接しています。
+        実際の海岸線をもとにした中国の位置関係図です。<ruby>朱色<rt>しゅいろ</rt></ruby>の番号は下の一覧の都、白丸は主要都市の目安です。
+        西安・北京・南京・<ruby>洛陽<rt>らくよう</rt></ruby>周辺は複数の王朝が同じ都市を都としたため、番号が近接しています。
       </p>
       <svg viewBox="0 0 500 366" style={{ width: "100%", maxHeight: 420, display: "block", margin: "0 auto" }}>
         <path d={CHINA_OUTLINE} fill="#DCD3B8" stroke={COLORS.mist} strokeWidth="1.2" strokeLinejoin="round" />
@@ -299,7 +299,7 @@ function ChinaMap({ capitals }) {
             textAnchor={r.anchor}
             style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 10.5, fill: COLORS.inkSoft, opacity: 0.85 }}
           >
-            {r.label}
+            {stripRuby(r.label)}
           </text>
         ))}
 
@@ -312,7 +312,7 @@ function ChinaMap({ capitals }) {
               textAnchor={c.anchor}
               style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 10, fill: COLORS.inkSoft }}
             >
-              {c.label}
+              {stripRuby(c.label)}
             </text>
           </g>
         ))}
@@ -346,8 +346,8 @@ export default function ChinaCapitalsPage() {
           中国 歴代王朝の都（古都）一覧
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 28 }}>
-          中国では王朝が交代するたびに、あるいは同じ王朝の中でも遷都によって、都の位置がたびたび移り変わってきました。
-          ここでは、夏の二里頭から中華人民共和国の北京まで、歴代王朝の都を移り変わりの順に紹介します。
+          中国では王朝が交代するたびに、あるいは同じ王朝の中でも<ruby>遷都<rt>せんと</rt></ruby>によって、都の位置がたびたび移り変わってきました。
+          ここでは、夏の二里頭から<ruby>中華<rt>ちゅうか</rt></ruby>人民共和国の北京まで、歴代王朝の都を移り変わりの順に<ruby>紹介<rt>しょうかい</rt></ruby>します。
         </p>
 
         <div className="relative">
@@ -387,18 +387,18 @@ export default function ChinaCapitalsPage() {
                       <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 15, fontWeight: 700, color: COLORS.ink }}>
                         <RubyText text={cap.name} />
                       </span>
-                      <span style={{ fontSize: 11, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}>{cap.dynasty}</span>
+                      <span style={{ fontSize: 11, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}><RubyText text={cap.dynasty} /></span>
                     </div>
-                    <div style={{ fontSize: 11, color: COLORS.inkSoft, marginTop: 2 }}>{cap.years}</div>
+                    <div style={{ fontSize: 11, color: COLORS.inkSoft, marginTop: 2 }}><RubyText text={cap.years} /></div>
                     {cap.location && (
                       <div style={{ fontSize: 11, color: COLORS.vermilionSoft, marginTop: 2 }}>
-                        <span aria-hidden>📍</span> {cap.location}
+                        <span aria-hidden>📍</span> <RubyText text={cap.location} />
                       </div>
                     )}
                     <p style={{ fontSize: 12, lineHeight: 1.7, color: COLORS.inkSoft, marginTop: 4 }}>
                       <RubyText text={cap.description} />
                     </p>
-                    {cap.credit && <div style={{ fontSize: 9.5, color: COLORS.mist, marginTop: 4 }}>{cap.credit}</div>}
+                    {cap.credit && <div style={{ fontSize: 9.5, color: COLORS.mist, marginTop: 4 }}><RubyText text={cap.credit} /></div>}
                   </div>
                 </div>
                 <div className="px-3 pb-3">
@@ -416,7 +416,7 @@ export default function ChinaCapitalsPage() {
 
         <section style={{ marginTop: 32 }}>
           <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
-            長安から西へ延びるシルクロードとその沿線のオアシス都市、城壁や関所など「城」に着目したまとめも別ページで紹介しています。
+            長安から西へ延びるシルクロードとその沿線のオアシス都市、<ruby>城壁<rt>じょうへき</rt></ruby>や関所など「城」に着目したまとめも別ページで<ruby>紹介<rt>しょうかい</rt></ruby>しています。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
             <NavButton href="/silk-road" variant="solid">シルクロードを見る</NavButton>

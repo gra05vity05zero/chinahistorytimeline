@@ -23,12 +23,12 @@ export const metadata = {
 const STOPS = [
   {
     name: "{{蘭州|らんしゅう}}（{{金城|きんじょう}}）",
-    subtitle: "黄河が貫く河西回廊の玄関口",
-    location: "甘粛省蘭州市",
+    subtitle: "黄河が{{貫|つらぬ}}く河西{{回廊|かいろう}}の{{玄関|げんかん}}口",
+    location: "{{甘粛|かんしゅく}}省{{蘭州|らんしゅう}}市",
     description:
-      "長安から河西回廊へ向かう際に必ず黄河を渡らねばならない交通の要衝で、前漢代には「{{金城|きんじょう}}」の名で郡が置かれ、以後シルクロードを守る軍事拠点として発展した。現在は甘粛省の省都として栄え、市街を貫く黄河には、1907年にドイツの技術協力で架けられ黄河に現存する最古の橋として知られる{{中山橋|ちゅうざんきょう}}が今も残る。",
+      "長安から河西{{回廊|かいろう}}へ向かう際に必ず黄河を{{渡|わた}}らねばならない交通の{{要衝|ようしょう}}で、前漢代には「{{金城|きんじょう}}」の名で郡が置かれ、以後シルクロードを守る軍事{{拠点|きょてん}}として発展した。現在は{{甘粛|かんしゅく}}省の省都として栄え、市街を{{貫|つらぬ}}く黄河には、1907年にドイツの技術協力で{{架|か}}けられ黄河に現存する最古の橋として知られる{{中山橋|ちゅうざんきょう}}が今も残る。",
     imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Zhongshan_Bridge_in_Lanzhou.jpg",
-    imageCaption: "黄河に架かる中山橋（1907年築、現存最古の黄河橋）",
+    imageCaption: "黄河に{{架|か}}かる中山橋（1907年築、現存最古の黄河橋）",
     credit: "写真: Ken Marshall / Wikimedia Commons, CC BY 2.0",
     gallery: [
       {
@@ -42,22 +42,22 @@ const STOPS = [
   },
   {
     name: "{{武威|ぶい}}（{{涼州|りょうしゅう}}）",
-    subtitle: "河西回廊の東の入り口",
-    location: "甘粛省武威市",
+    subtitle: "河西{{回廊|かいろう}}の東の入り口",
+    location: "{{甘粛|かんしゅく}}省{{武威|ぶい}}市",
     description:
-      "長安から河西回廊へ入る最初の要衝で、漢代には{{匈奴|きょうど}}から奪った要地として軍事・交易の拠点となった。市街には五代十国期に建てられた{{鳩摩羅什|くまらじゅう}}寺塔などの古刹が残り、今も交通の要所として賑わう。郊外の{{雷台漢墓|らいだいかんぼ}}から出土した銅製の「馬踏飛燕」（飛燕を踏む天馬）は、甘粛省のシンボルとしても知られる。",
+      "長安から河西{{回廊|かいろう}}へ入る最初の{{要衝|ようしょう}}で、漢代には{{匈奴|きょうど}}から{{奪|うば}}った要地として軍事・交易の{{拠点|きょてん}}となった。市街には五代十国期に建てられた{{鳩摩羅什|くまらじゅう}}{{寺塔|じとう}}などの{{古刹|こさつ}}が残り、今も交通の要所として{{賑|にぎ}}わう。{{郊外|こうがい}}の{{雷台漢墓|らいだいかんぼ}}から出土した銅製の「{{馬踏|ばとう}}{{飛燕|ひえん}}」（{{飛燕|ひえん}}を{{踏|ふ}}む天馬）は、{{甘粛|かんしゅく}}省のシンボルとしても知られる。",
     imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Wuwei_Wenmiao_2013.12.30_11-40-23.jpg",
-    imageCaption: "武威市街に残る武威文庙（文昌宮牌坊）",
+    imageCaption: "{{武威|ぶい}}市街に残る{{武威|ぶい}}{{文庙|ぶんびょう}}（{{文昌|ぶんしょう}}宮{{牌坊|はいぼう}}）",
     credit: "写真: Zhangzhugang / Wikimedia Commons, CC BY-SA 4.0",
     gallery: [
       {
         imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Eastern_Han_Bronze_Galloping_Horse_(10095118805).jpg",
-        caption: "雷台漢墓出土の「馬踏飛燕」（甘粛省博物館蔵）",
+        caption: "{{雷台漢墓|らいだいかんぼ}}出土の「{{馬踏|ばとう}}{{飛燕|ひえん}}」（{{甘粛|かんしゅく}}省博物館蔵）",
         credit: "写真: Gary Todd / Wikimedia Commons（パブリックドメイン）",
       },
       {
         imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/20240321_Aerial_view_of_Qilian_Mountains_01.jpg",
-        caption: "武威の水源となる祁連山",
+        caption: "{{武威|ぶい}}の水源となる{{祁連|きれん}}山",
         credit: "写真: Windmemories / Wikimedia Commons, CC BY-SA 4.0",
       },
     ],
@@ -66,48 +66,48 @@ const STOPS = [
   },
   {
     name: "{{張掖|ちょうえき}}（{{甘州|かんしゅう}}）",
-    subtitle: "虹色の丹霞地形で知られるオアシス",
-    location: "甘粛省張掖市",
+    subtitle: "{{虹色|にじいろ}}の{{丹霞|たんか}}地形で知られるオアシス",
+    location: "{{甘粛|かんしゅく}}省{{張掖|ちょうえき}}市",
     description:
-      "祁連山の雪解け水が育む緑豊かなオアシス都市で、マルコ・ポーロも訪れ長期滞在したと『東方見聞録』に記したと伝えられる。郊外に広がる張掖丹霞地質公園は、幾重にも色の異なる岩肌が波打つ絶景として近年の人気観光地となっている。",
+      "{{祁連|きれん}}山の雪解け水が育む緑豊かなオアシス都市で、マルコ・ポーロも訪れ長期{{滞在|たいざい}}したと『東方見聞録』に記したと伝えられる。{{郊外|こうがい}}に広がる{{張掖|ちょうえき}}{{丹霞|たんか}}地質公園は、{{幾|いく}}重にも色の異なる{{岩肌|いわはだ}}が波打つ絶景として近年の人気観光地となっている。",
     imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Zhangye_Danxia_2016.jpg",
-    imageCaption: "張掖丹霞地質公園の虹色の岩肌",
+    imageCaption: "{{張掖|ちょうえき}}{{丹霞|たんか}}地質公園の{{虹色|にじいろ}}の{{岩肌|いわはだ}}",
     credit: "写真: Marcus Hsu / Wikimedia Commons, CC BY-SA 4.0",
     mapX: 220,
     mapY: 154,
   },
   {
     name: "{{嘉峪関|かよくかん}}",
-    subtitle: "万里の長城 最西端の関所",
-    location: "甘粛省嘉峪関市",
+    subtitle: "万里の長城 最{{西端|せいたん}}の関所",
+    location: "{{甘粛|かんしゅく}}省{{嘉峪関|かよくかん}}市",
     description:
-      "明代に築かれた万里の長城の西の果てに立つ関所で、その先はもう漢民族の版図の外という意味を込めて「天下第一雄関」と呼ばれた。東端の{{山海関|さんかいかん}}と対をなす存在で、当時の兵士や商隊が抱いた望郷・不安の思いが多くの詩に詠まれている。",
+      "明代に築かれた万里の長城の西の果てに立つ関所で、その先はもう漢民族の版図の外という意味を{{込|こ}}めて「天下第一{{雄|ゆう}}関」と呼ばれた。{{東端|とうたん}}の{{山海関|さんかいかん}}と対をなす存在で、当時の兵士や商隊が{{抱|いだ}}いた望郷・不安の思いが多くの詩に{{詠|よ}}まれている。",
     imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/JiayuguanFort.jpg",
-    imageCaption: "「天下第一雄関」嘉峪関の城楼",
+    imageCaption: "「天下第一{{雄|ゆう}}関」{{嘉峪関|かよくかん}}の{{城楼|じょうろう}}",
     credit: "写真: Doron / Wikimedia Commons（CC BY-SA）",
     mapX: 204,
     mapY: 146,
   },
   {
     name: "{{敦煌|とんこう}}",
-    subtitle: "シルクロード随一のオアシス都市",
-    location: "甘粛省敦煌市",
+    subtitle: "シルクロード{{随一|ずいいち}}のオアシス都市",
+    location: "{{甘粛|かんしゅく}}省{{敦煌|とんこう}}市",
     description:
-      "{{張騫|ちょうけん}}の西域派遣を機に漢が経営を始めた最重要のオアシスで、東西の隊商が必ず経由した交易の要衝。断崖に穿たれた仏教石窟寺院{{莫高窟|ばっこうくつ}}（千仏洞）は、4世紀から14世紀にかけて千年にわたり彫り続けられた仏教美術の宝庫で、現在も中国有数の観光地として知られる。",
+      "{{張騫|ちょうけん}}の西域{{派遣|はけん}}を機に漢が経営を始めた最重要のオアシスで、東西の隊商が必ず経由した交易の{{要衝|ようしょう}}。{{断崖|だんがい}}に{{穿|うが}}たれた仏教{{石窟|せっくつ}}寺院{{莫高窟|ばっこうくつ}}（千仏{{洞|どう}}）は、4世紀から14世紀にかけて千年にわたり{{彫|ほ}}り続けられた仏教美術の宝庫で、現在も中国有数の観光地として知られる。",
     eraId: "westernhan",
     eventTitle: "西域へ",
     imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Jiucenglou_of_Mogao_Caves.jpg",
-    imageCaption: "断崖に建つ莫高窟の象徴「九層楼」（第96窟）",
+    imageCaption: "{{断崖|だんがい}}に建つ{{莫高窟|ばっこうくつ}}の{{象徴|しょうちょう}}「九{{層楼|そうろう}}」（第96{{窟|くつ}}）",
     credit: "写真: 慕尼黑啤酒 / Wikimedia Commons, CC BY-SA 3.0",
     gallery: [
       {
         imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Crescent_Lake_(41853077232).jpg",
-        caption: "鳴沙山・月牙泉",
+        caption: "{{鳴沙山|めいさざん}}・{{月牙|げつが}}泉",
         credit: "写真: David Stanley / Wikimedia Commons, CC BY 2.0",
       },
       {
         imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Yumenguan.jpg",
-        caption: "玉門関跡",
+        caption: "玉門関{{跡|あと}}",
         credit: "写真: 张骐 / Wikimedia Commons, CC BY-SA 3.0",
       },
     ],
@@ -116,23 +116,23 @@ const STOPS = [
   },
   {
     name: "{{楼蘭|ろうらん}}古城",
-    subtitle: "砂漠に消えた幻のオアシス",
-    location: "新疆ウイグル自治区（ロプノール湖畔）",
+    subtitle: "{{砂漠|さばく}}に消えた{{幻|まぼろし}}のオアシス",
+    location: "{{新疆|しんきょう}}ウイグル自治区（ロプノール湖{{畔|はん}}）",
     description:
-      "漢代にはシルクロード南道の中継地として栄えたが、水源であったロプノール湖の移動・干上がりに伴い唐代以降に放棄され、タクラマカン砂漠の中に埋もれた「幻のオアシス都市」となった。20世紀初頭の探検家スヴェン・ヘディンらによる発見以来、今もその興亡の謎が人々を惹きつけている。現地は立入が厳しく制限されており、渦を巻くような特異な地形は「砂漠の大耳」とも呼ばれ、人工衛星写真で世界的に知られるようになった。",
+      "漢代にはシルクロード南道の{{中継|ちゅうけい}}地として栄えたが、水源であったロプノール湖の移動・干上がりに{{伴|ともな}}い{{唐代|とうだい}}以降に{{放棄|ほうき}}され、タクラマカン{{砂漠|さばく}}の中に{{埋|うず}}もれた「{{幻|まぼろし}}のオアシス都市」となった。20世紀初頭の探検家スヴェン・ヘディンらによる発見以来、今もその興亡の{{謎|なぞ}}が人々を{{惹|ひ}}きつけている。現地は立入が厳しく制限されており、{{渦|うず}}を巻くような特異な地形は「{{砂漠|さばく}}の大耳」とも呼ばれ、人工衛星写真で世界的に知られるようになった。",
     imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/楼兰佛塔2005_-_panoramio.jpg",
-    imageCaption: "砂の中にそびえる楼蘭仏塔の遺構",
+    imageCaption: "砂の中にそびえる{{楼蘭|ろうらん}}{{仏塔|ぶっとう}}の遺構",
     credit: "写真: 許天喜 / Wikimedia Commons, CC BY-SA 3.0",
     gallery: [
       {
         imageUrl:
           "https://commons.wikimedia.org/wiki/Special:FilePath/楼兰古城_Loulan_city_China_Xinjiang_Urumqi_Welcome_you_to_tour_the_-_panoramio.jpg",
-        caption: "砂に埋もれた建物の残骸",
+        caption: "砂に{{埋|うず}}もれた建物の{{残骸|ざんがい}}",
         credit: "写真: 罗布泊 / Wikimedia Commons, CC BY 3.0",
       },
       {
         imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Helix_of_Lop_Nur_90.55E,_40.10N.jpg",
-        caption: "「砂漠の大耳」ロプノール湖跡の衛星写真（NASA撮影）",
+        caption: "「{{砂漠|さばく}}の大耳」ロプノール湖{{跡|あと}}の衛星写真（NASA{{撮影|さつえい}}）",
         credit: "写真: NASA / Wikimedia Commons（パブリックドメイン）",
       },
     ],
@@ -141,14 +141,14 @@ const STOPS = [
   },
   {
     name: "{{吐魯番|トルファン}}",
-    subtitle: "灼熱の盆地に広がるブドウの都",
-    location: "新疆ウイグル自治区吐魯番市",
+    subtitle: "{{灼熱|しゃくねつ}}の{{盆地|ぼんち}}に広がるブドウの都",
+    location: "{{新疆|しんきょう}}ウイグル自治区{{吐魯番|トルファン}}市",
     description:
-      "海抜マイナス154mの盆地に位置し夏は灼熱となる一方、地下水路「{{坎児井|カレーズ}}」の灌漑によって豊かなブドウ畑が広がるオアシス。{{玄奘|げんじょう}}がインドへ向かう途上に立ち寄り、高昌国王の厚遇を受けたと伝えられる地でもあり、廃墟となった{{交河故城|こうがこじょう}}・{{高昌故城|こうしょうこじょう}}が今も残る。",
+      "{{海抜|かいばつ}}マイナス154mの{{盆地|ぼんち}}に位置し夏は{{灼熱|しゃくねつ}}となる一方、地下水路「{{坎児井|カレーズ}}」の{{灌漑|かんがい}}によって豊かなブドウ畑が広がるオアシス。{{玄奘|げんじょう}}がインドへ向かう{{途上|とじょう}}に立ち寄り、{{高昌|こうしょう}}国王の{{厚遇|こうぐう}}を受けたと伝えられる地でもあり、{{廃墟|はいきょ}}となった{{交河故城|こうがこじょう}}・{{高昌故城|こうしょうこじょう}}が今も残る。",
     eraId: "tang",
     eventTitle: "インド旅",
     imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Turpan_old_district.jpg",
-    imageCaption: "土壁の家々が続く吐魯番旧市街の路地",
+    imageCaption: "{{土壁|つちかべ}}の家々が続く{{吐魯番|トルファン}}旧市街の路地",
     credit: "写真: Radosław Botev / Wikimedia Commons, CC BY 3.0",
     gallery: [
       {
@@ -158,7 +158,7 @@ const STOPS = [
       },
       {
         imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Turpan-flaming-mountains-d02.jpg",
-        caption: "火焔山（『西遊記』の舞台）",
+        caption: "{{火焔山|かえんざん}}（『西遊記』の{{舞台|ぶたい}}）",
         credit: "写真: Colegota / Wikimedia Commons, CC BY-SA 2.5",
       },
     ],
@@ -168,16 +168,16 @@ const STOPS = [
   {
     name: "{{焉耆|えんき}}（カラシャール）",
     subtitle: "天山南路に栄えた仏教王国",
-    location: "新疆ウイグル自治区焉耆回族自治県",
+    location: "{{新疆|しんきょう}}ウイグル自治区{{焉耆|えんき}}回族自治県",
     description:
-      "天山南路の要衝に栄えた仏教王国{{焉耆|えんき}}（カラシャール）は、西域三十六国の一つに数えられ、{{玄奘|げんじょう}}も『大唐西域記』にその繁栄ぶりを記している。近郊には西域最大の内陸淡水湖{{博斯騰湖|はくしとうこ}}（ボステン湖）が広がり、市街を流れる{{開都河|かいとが}}のほとりには今も緑豊かなオアシスの街並みが残る。",
+      "天山南路の{{要衝|ようしょう}}に栄えた仏教王国{{焉耆|えんき}}（カラシャール）は、西域三十六国の一つに数えられ、{{玄奘|げんじょう}}も『{{大唐西域記|だいとうさいいきき}}』にその{{繁栄|はんえい}}ぶりを記している。{{近郊|きんこう}}には西域最大の内陸{{淡水|たんすい}}湖{{博斯騰湖|はくしとうこ}}（ボステン湖）が広がり、市街を流れる{{開都河|かいとが}}のほとりには今も緑豊かなオアシスの街並みが残る。",
     imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Kaidu_river_yanqi_xinjiang.jpg",
-    imageCaption: "焉耆の市街を流れる開都河",
+    imageCaption: "{{焉耆|えんき}}の市街を流れる開都河",
     credit: "写真: Rolf Müller / Wikimedia Commons, CC BY-SA 3.0",
     gallery: [
       {
         imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Soldiers_from_Karasahr,_8th_century.jpg",
-        caption: "8世紀頃の焉耆の兵士を描いた壁画",
+        caption: "8世紀{{頃|ごろ}}の{{焉耆|えんき}}の兵士を{{描|えが}}いた{{壁画|へきが}}",
         credit: "Albert von Le Coq『Von Land und Leuten in Ostturkistan』(1926年) / Wikimedia Commons（パブリックドメイン）",
       },
     ],
@@ -186,37 +186,37 @@ const STOPS = [
   },
   {
     name: "{{亀茲|きじ}}（クチャ）",
-    subtitle: "西域屈指の仏教王国",
-    location: "新疆ウイグル自治区庫車市",
+    subtitle: "西域{{屈指|くっし}}の仏教王国",
+    location: "{{新疆|しんきょう}}ウイグル自治区庫車市",
     description:
-      "漢訳仏典で名高い訳経僧{{鳩摩羅什|くまらじゅう}}を輩出した西域屈指の仏教国。郊外の{{キジル千仏洞|きじるせんぶつどう}}は莫高窟よりも古い時期から開削が始まったとされる石窟群で、中央アジア色濃い壁画様式は今も研究者の関心を集めている。",
+      "漢訳仏典で名高い訳経{{僧|そう}}{{鳩摩羅什|くまらじゅう}}を{{輩出|はいしゅつ}}した西域{{屈指|くっし}}の仏教国。{{郊外|こうがい}}の{{キジル千仏洞|きじるせんぶつどう}}は{{莫高窟|ばっこうくつ}}よりも古い時期から{{開削|かいさく}}が始まったとされる{{石窟|せっくつ}}群で、中央アジア色{{濃|こ}}い{{壁画|へきが}}様式は今も研究者の関心を集めている。",
     imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Kizil_caves_2006_10_01.jpg",
-    imageCaption: "断崖に開かれたキジル千仏洞",
+    imageCaption: "{{断崖|だんがい}}に開かれた{{キジル千仏洞|きじるせんぶつどう}}",
     credit: "写真: Rolfmueller / Wikimedia Commons（CC BY-SA）",
     mapX: 89,
     mapY: 128,
   },
   {
     name: "{{喀什|カシュガル}}",
-    subtitle: "中央アジアへの玄関口",
-    location: "新疆ウイグル自治区カシュガル市",
+    subtitle: "中央アジアへの{{玄関|げんかん}}口",
+    location: "{{新疆|しんきょう}}ウイグル自治区カシュガル市",
     description:
-      "パミール高原を越えれば中央アジアという、シルクロードが西方世界と接する最後の大オアシス。後漢の{{班超|はんちょう}}はこの一帯を含む西域諸国を服属させて交易路の安定を回復させた。中国最大級のモスク{{艾提尕爾清真寺|イディカーモスク}}が旧市街の中心にそびえ、周辺の日曜大バザールは今も活気ある市場として知られる。",
+      "パミール高原を{{越|こ}}えれば中央アジアという、シルクロードが西方世界と接する最後の大オアシス。後漢の{{班超|はんちょう}}はこの一帯を{{含|ふく}}む西域諸国を服属させて交易路の安定を回復させた。中国最大級のモスク{{艾提尕爾清真寺|イディカーモスク}}が旧市街の中心にそびえ、周辺の日曜大バザールは今も活気ある市場として知られる。",
     eraId: "easternhan",
     eventTitle: "西域経営",
     imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/2015-09-10-111321_-_Blick_zur_Altstadt_vom_Kashgar.jpg",
-    imageCaption: "公園の池越しに望むカシュガル旧市街の街並み",
+    imageCaption: "公園の池{{越|ご}}しに望むカシュガル旧市街の街並み",
     credit: "写真: Zossolino / Wikimedia Commons, CC BY-SA 4.0",
     gallery: [
       {
         imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/20160513_China_6367_Kashgar_sRGB_(29700620670).jpg",
-        caption: "黄色いタイルで彩られたイディカー・モスクの門",
+        caption: "黄色いタイルで{{彩|いろど}}られたイディカー・モスクの門",
         credit: "写真: Dan Lundberg / Wikimedia Commons, CC BY-SA 2.0",
       },
       {
         imageUrl:
           "https://commons.wikimedia.org/wiki/Special:FilePath/7,546m_Muztagh_Ata_3,600m_Lake_Karakul_Kyrgyz_Xinjiang_China_新疆_吉爾吉斯_喀拉庫勒湖_慕士塔格峰_-_panoramio.jpg",
-        caption: "カシュガル郊外、パミール高原の慕士塔格峰",
+        caption: "カシュガル{{郊外|こうがい}}、パミール高原の{{慕士塔格|むずたーぐ}}{{峰|ぽう}}",
         credit: "写真: Hiroki Ogawa / Wikimedia Commons, CC BY 3.0",
       },
     ],
@@ -225,17 +225,17 @@ const STOPS = [
   },
   {
     name: "{{和田|ホータン}}",
-    subtitle: "崑崙の玉が集まる南のオアシス",
-    location: "新疆ウイグル自治区和田市",
+    subtitle: "{{崑崙|こんろん}}の玉が集まる南のオアシス",
+    location: "{{新疆|しんきょう}}ウイグル自治区和田市",
     description:
-      "崑崙山脈の雪解け水が支えるシルクロード南道最大のオアシスで、古来「玉（ぎょく）」の産地として中国の宮廷に珍重されてきた。市内を流れる玉龍喀什河の川底から今も玉を探す人々の姿が見られ、養蚕や絨毯織りの伝統工芸でも知られる。",
+      "{{崑崙|こんろん}}山脈の雪解け水が支えるシルクロード南道最大のオアシスで、古来「玉（ぎょく）」の産地として中国の{{宮廷|きゅうてい}}に{{珍重|ちんちょう}}されてきた。市内を流れる玉{{龍|りゅう}}{{喀什|カシュガル}}河の川底から今も玉を探す人々の姿が見られ、養蚕や{{絨毯|じゅうたん}}織りの伝統工芸でも知られる。",
     imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Khotan-mezquita-d04.jpg",
     imageCaption: "バザールに面したヘイィトカー・モスクと和田の街並み",
     credit: "写真: Colegota / Wikimedia Commons, CC BY-SA 2.5",
     gallery: [
       {
         imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Jade_collecting_under_Yurungkash_River_Bridge_in_Hotan.jpg",
-        caption: "玉龍喀什河で玉を探す人々",
+        caption: "玉{{龍|りゅう}}{{喀什|カシュガル}}河で玉を探す人々",
         credit: "写真: Voidvector / Wikimedia Commons, CC BY-SA 4.0",
         objectPosition: "center 75%",
       },
@@ -258,56 +258,56 @@ const RESOLVED = STOPS.map(resolveStop);
 // 年表に対応イベントがない逸話（考古学的発見など）は独自の解説のみとする。
 const ANECDOTES = [
   {
-    title: "張騫、十年抑留の末の脱出行",
+    title: "{{張騫|ちょうけん}}、十年{{抑留|よくりゅう}}の末の{{脱出|だっしゅつ}}行",
     text:
-      "{{大月氏|だいげっし}}との同盟を求めて西域へ向かった{{張騫|ちょうけん}}は、道半ばで匈奴に捕らえられ、匈奴の女性を娶り子をもうけながらも十年以上にわたり抑留され続けた。それでも脱出の機会をうかがい続け、ついに西へ逃れて使命を果たそうとしたその執念が、後にシルクロードと呼ばれる交易路を開く端緒となった。",
+      "{{大月氏|だいげっし}}との同盟を求めて西域へ向かった{{張騫|ちょうけん}}は、道半ばで{{匈奴|きょうど}}に{{捕|と}}らえられ、{{匈奴|きょうど}}の女性を{{娶|めと}}り子をもうけながらも十年以上にわたり{{抑留|よくりゅう}}され続けた。それでも{{脱出|だっしゅつ}}の機会をうかがい続け、ついに西へ{{逃|のが}}れて使命を果たそうとしたその{{執念|しゅうねん}}が、後にシルクロードと呼ばれる交易路を開く{{端緒|たんしょ}}となった。",
     eraId: "westernhan",
     eventTitle: "西域へ",
   },
   {
-    title: "「虎穴に入らずんば虎子を得ず」——班超の西域経営",
+    title: "「{{虎穴|こけつ}}に入らずんば{{虎子|こじ}}を得ず」——{{班超|はんちょう}}の西域経営",
     text:
-      "後漢の{{班超|はんちょう}}は、西域の小国で従者たちにこう説いたと伝えられる。「虎穴に入らずんば虎子を得ず」。少人数の手勢で敵陣に夜襲をかけるという大胆な決断を促したこの言葉は、故事成語として今も語り継がれている。班超はこうした果断な行動を重ねて西域諸国を次々に服属させ、一時中断していた交易路の安定を回復させた。",
+      "後漢の{{班超|はんちょう}}は、西域の小国で従者たちにこう説いたと伝えられる。「{{虎穴|こけつ}}に入らずんば{{虎子|こじ}}を得ず」。少人数の手勢で{{敵陣|てきじん}}に{{夜襲|やしゅう}}をかけるという{{大胆|だいたん}}な決断を{{促|うなが}}したこの言葉は、故事成語として今も語り{{継|つ}}がれている。{{班超|はんちょう}}はこうした果断な行動を重ねて西域諸国を次々に服属させ、一時中断していた交易路の安定を回復させた。",
     eraId: "easternhan",
     eventTitle: "西域経営",
   },
   {
-    title: "甘英、幻のローマ行",
+    title: "{{甘英|かんえい}}、{{幻|まぼろし}}のローマ行",
     text:
-      "班超の部下{{甘英|かんえい}}は、遠くローマ帝国（{{大秦|たいしん}}）を目指して西へ派遣された最初の中国人使節として知られる。ペルシア湾岸まで到達したとも伝えられるが、渡航の危険を誇張して聞かされたためか、海を渡ることなく引き返したという。もし甘英が海を渡っていたら、東西交流の歴史はまた違った形になっていたかもしれない。",
+      "{{班超|はんちょう}}の部下{{甘英|かんえい}}は、遠くローマ{{帝国|ていこく}}（{{大秦|たいしん}}）を目指して西へ{{派遣|はけん}}された最初の中国人使節として知られる。ペルシア{{湾岸|わんがん}}まで{{到達|とうたつ}}したとも伝えられるが、{{渡航|とこう}}の危険を{{誇張|こちょう}}して聞かされたためか、海を{{渡|わた}}ることなく引き返したという。もし{{甘英|かんえい}}が海を{{渡|わた}}っていたら、東西交流の歴史はまた{{違|ちが}}った形になっていたかもしれない。",
     eraId: "easternhan",
     eventTitle: "西域経営",
   },
   {
-    title: "玄奘、国禁を破っての単身インド行",
+    title: "{{玄奘|げんじょう}}、国禁を破っての単身インド行",
     text:
-      "当時、唐から国外へ出ることは禁じられていたが、{{玄奘|げんじょう}}はより正確な仏典を求めて密かに国境を越え、砂漠と山岳を越える過酷な旅の末にインドへとたどり着いた。帰国後にまとめた旅行記『大唐西域記』は、後世の小説『西遊記』で三蔵法師が孫悟空らを伴い天竺を目指す物語のモデルとなったことでも知られている。",
+      "当時、{{唐|とう}}から国外へ出ることは禁じられていたが、{{玄奘|げんじょう}}はより正確な仏典を求めて密かに国境を{{越|こ}}え、{{砂漠|さばく}}と{{山岳|さんがく}}を{{越|こ}}える{{過酷|かこく}}な旅の末にインドへとたどり着いた。帰国後にまとめた旅行記『{{大唐西域記|だいとうさいいきき}}』は、後世の小説『西遊記』で三蔵法師が{{孫悟空|そんごくう}}らを{{伴|ともな}}い{{天竺|てんじく}}を目指す物語のモデルとなったことでも知られている。",
     eraId: "tang",
     eventTitle: "インド旅",
   },
   {
-    title: "獄中で語られた『東方見聞録』——「百万法螺吹きのマルコ」",
+    title: "{{獄中|ごくちゅう}}で語られた『東方見聞録』——「百万{{法螺吹|ほらふ}}きのマルコ」",
     text:
-      "ヴェネツィアの商人マルコ・ポーロは、陸路シルクロードを経て元の宮廷に至り、クビライに仕えたと伝えられる。帰国後、ジェノヴァとの海戦で捕虜となった獄中において、同房の作家に東方での見聞を口述筆記させたのが『東方見聞録』の成立事情とされる。あまりに壮大な内容ゆえに誇張と疑われ、マルコ自身「百万法螺吹きのマルコ（イル・ミリオーネ）」とあだ名されたという逸話も残る。",
+      "ヴェネツィアの商人マルコ・ポーロは、陸路シルクロードを経て元の{{宮廷|きゅうてい}}に至り、クビライに仕えたと伝えられる。帰国後、ジェノヴァとの海戦で{{捕虜|ほりょ}}となった{{獄中|ごくちゅう}}において、{{同房|どうぼう}}の作家に東方での見聞を口述筆記させたのが『東方見聞録』の成立事情とされる。あまりに{{壮大|そうだい}}な内容ゆえに{{誇張|こちょう}}と疑われ、マルコ自身「百万{{法螺吹|ほらふ}}きのマルコ（イル・ミリオーネ）」とあだ名されたという{{逸話|いつわ}}も残る。",
     eraId: "yuan",
     eventTitle: "東方見聞録",
   },
   {
-    title: "紙、シルクロードを越えて世界へ",
+    title: "紙、シルクロードを{{越|こ}}えて世界へ",
     text:
-      "後漢の宦官{{蔡倫|さいりん}}が改良した製紙法は、宮廷から民間へ広まった後、シルクロードを通じて西方へも伝播していった。8世紀にはイスラム世界に伝わり、さらに12世紀頃にはヨーロッパにまで達したとされ、紙の普及は世界の文明史そのものを大きく変えることになった。",
+      "後漢の{{宦官|かんがん}}{{蔡倫|さいりん}}が改良した製紙法は、{{宮廷|きゅうてい}}から民間へ広まった後、シルクロードを通じて西方へも{{伝播|でんぱ}}していった。8世紀にはイスラム世界に伝わり、さらに12世紀{{頃|ごろ}}にはヨーロッパにまで達したとされ、紙の{{普及|ふきゅう}}は世界の文明史そのものを大きく変えることになった。",
     eraId: "easternhan",
     eventTitle: "製紙法の改良",
   },
   {
-    title: "楼蘭の美女——3800年前のミイラが語る東西交流",
+    title: "{{楼蘭|ろうらん}}の美女——3800年前のミイラが語る東西交流",
     text:
-      "1980年、楼蘭古城近郊のタクラマカン砂漠で、乾燥した気候により奇跡的に保存された約3800年前の女性のミイラが発見され、「楼蘭の美女」と呼ばれ話題となった。彫りの深い顔立ちや衣服の特徴から、当時すでに西方の人々がこの地に暮らしていた可能性が指摘されており、シルクロードが遥か古代から東西の人々が行き交う道であったことを物語っている。",
+      "1980年、{{楼蘭|ろうらん}}古城{{近郊|きんこう}}のタクラマカン{{砂漠|さばく}}で、{{乾燥|かんそう}}した気候により{{奇跡|きせき}}的に保存された約3800年前の女性のミイラが発見され、「{{楼蘭|ろうらん}}の美女」と呼ばれ話題となった。{{彫|ほ}}りの深い顔立ちや衣服の{{特徴|とくちょう}}から、当時すでに西方の人々がこの地に暮らしていた可能性が{{指摘|してき}}されており、シルクロードが{{遥|はる}}か古代から東西の人々が行き交う道であったことを物語っている。",
   },
   {
-    title: "敦煌・蔵経洞の大発見と流出",
+    title: "{{敦煌|とんこう}}・蔵経{{洞|どう}}の大発見と流出",
     text:
-      "1900年、莫高窟を管理していた道士{{王円籙|おうえんろく}}は、壁の奥に隠された小さな洞窟「蔵経洞」を偶然発見した。中には4世紀から11世紀にわたる数万点もの経典・古文書が眠っていたが、その存在を知ったイギリスのスタインやフランスのペリオら西洋の探検家たちが次々と訪れ、貴重な文書の多くを買い取って持ち帰った。散逸した敦煌文書の行方と返還は、今なお文化財保護をめぐる議論の的となっている。",
+      "1900年、{{莫高窟|ばっこうくつ}}を管理していた道士{{王円籙|おうえんろく}}は、{{壁|かべ}}の{{奥|おく}}に{{隠|かく}}された小さな{{洞窟|どうくつ}}「蔵経{{洞|どう}}」を{{偶然|ぐうぜん}}発見した。中には4世紀から11世紀にわたる数万点もの経典・古文書が{{眠|ねむ}}っていたが、その存在を知ったイギリスのスタインやフランスのペリオら西洋の探検家たちが次々と訪れ、貴重な文書の多くを買い取って持ち帰った。{{散逸|さんいつ}}した{{敦煌|とんこう}}文書の行方と{{返還|へんかん}}は、今なお文化財保護をめぐる議論の的となっている。",
   },
 ];
 
@@ -355,7 +355,7 @@ const WESTERN_REGIONS_BOUNDARY =
 const REGION_LABELS = [
   { label: "内モンゴル自治区", x: 420, y: 90, anchor: "middle" },
   { label: "チベット", x: 195, y: 265, anchor: "middle" },
-  { label: "台湾", x: 375, y: 296, dx: 10, dy: 4, anchor: "start" },
+  { label: "{{台湾|たいわん}}", x: 375, y: 296, dx: 10, dy: 4, anchor: "start" },
   { label: "海南島", x: 290, y: 337, dx: 0, dy: 17, anchor: "middle" },
 ];
 
@@ -371,7 +371,7 @@ const WORLD_OUTLINE =
 
 const WORLD_ROUTE_POINTS = [
   { key: "changan", label: "長安（起点）", x: 733.03, y: 122.48, labelDy: 16 },
-  { key: "dunhuang", label: "敦煌", x: 644.5, y: 80.07, labelDy: -10 },
+  { key: "dunhuang", label: "{{敦煌|とんこう}}", x: 644.5, y: 80.07, labelDy: -10 },
   { key: "kashgar", label: "カシュガル", x: 528.73, y: 84.98, labelDy: 16 },
   { key: "samarkand", label: "サマルカンド", x: 472.75, y: 83.64, labelDy: -10 },
   { key: "merv", label: "メルヴ", x: 440.95, y: 98.22, labelDy: 16 },
@@ -385,7 +385,7 @@ const WORLD_SEA_LABELS = [
   { label: "地中海", x: 169.2, y: 117.66 },
   { label: "黒海", x: 268.4, y: 59.18 },
   { label: "カスピ海", x: 373.8, y: 66.49 },
-  { label: "ペルシア湾", x: 373.8, y: 176.15 },
+  { label: "ペルシア{{湾|わん}}", x: 373.8, y: 176.15 },
   { label: "紅海", x: 293.2, y: 227.33 },
 ];
 
@@ -407,7 +407,7 @@ function WorldRouteMap() {
             textAnchor="middle"
             style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 9, fill: COLORS.jade, opacity: 0.75 }}
           >
-            {s.label}
+            {stripRuby(s.label)}
           </text>
         ))}
 
@@ -428,13 +428,13 @@ function WorldRouteMap() {
               textAnchor="middle"
               style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 10, fontWeight: p.key === "changan" ? 700 : 400, fill: COLORS.inkSoft }}
             >
-              {p.label}
+              {stripRuby(p.label)}
             </text>
           </g>
         ))}
       </svg>
       <p style={{ fontSize: 10.5, color: COLORS.mist, marginTop: 8 }}>
-        敦煌からカシュガルまでの中国国内区間は、下の詳細地図で紹介しています。
+        <ruby>敦煌<rt>とんこう</rt></ruby>からカシュガルまでの中国国内区間は、下の<ruby>詳細<rt>しょうさい</rt></ruby>地図で<ruby>紹介<rt>しょうかい</rt></ruby>しています。
       </p>
     </div>
   );
@@ -444,9 +444,9 @@ function SilkRoadMap({ stops }) {
   return (
     <div style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: 16, marginBottom: 28 }}>
       <p style={{ fontSize: 11.5, color: COLORS.inkSoft, marginBottom: 10 }}>
-        実際の海岸線をもとにした中国の位置関係図です。敦煌で天山南路（北道）と崑崙山北路（南道）に分かれ、
-        いずれもパミール高原を越えて中央アジアへと続きます。朱色の番号は下の一覧のオアシス都市、
-        砂色の部分はタクラマカン砂漠、金色の破線は漢代以降「西域」と呼ばれた領域のおおよその目安です。
+        実際の海岸線をもとにした中国の位置関係図です。<ruby>敦煌<rt>とんこう</rt></ruby>で天山南路（北道）と<ruby>崑崙<rt>こんろん</rt></ruby>山北路（南道）に分かれ、
+        いずれもパミール高原を<ruby>越<rt>こ</rt></ruby>えて中央アジアへと続きます。<ruby>朱色<rt>しゅいろ</rt></ruby>の番号は下の一覧のオアシス都市、
+        砂色の部分はタクラマカン<ruby>砂漠<rt>さばく</rt></ruby>、金色の破線は漢代以降「西域」と呼ばれた領域のおおよその目安です。
       </p>
       <svg viewBox="0 0 500 366" style={{ width: "100%", maxHeight: 420, display: "block", margin: "0 auto" }}>
         <path d={CHINA_OUTLINE} fill="#DCD3B8" stroke={COLORS.mist} strokeWidth="1.2" strokeLinejoin="round" />
@@ -488,7 +488,7 @@ function SilkRoadMap({ stops }) {
             textAnchor={r.anchor}
             style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 10.5, fill: COLORS.inkSoft, opacity: 0.85 }}
           >
-            {r.label}
+            {stripRuby(r.label)}
           </text>
         ))}
 
@@ -536,8 +536,8 @@ export default function SilkRoadPage() {
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 20 }}>
           <RubyText
             text={
-              "前漢の{{張騫|ちょうけん}}が切り開き、後漢の{{班超|はんちょう}}が守り、唐の{{玄奘|げんじょう}}が旅したシルクロード。" +
-              "長安を出て河西回廊を抜け、タクラマカン砂漠の縁に点在するオアシス都市を経て中央アジアへと至るこの道は、" +
+              "前漢の{{張騫|ちょうけん}}が切り開き、後漢の{{班超|はんちょう}}が守り、{{唐|とう}}の{{玄奘|げんじょう}}が旅したシルクロード。" +
+              "長安を出て河西{{回廊|かいろう}}を{{抜|ぬ}}け、タクラマカン{{砂漠|さばく}}の{{縁|えん}}に点在するオアシス都市を経て中央アジアへと至るこの道は、" +
               "絹だけでなく紙・仏教・文物が行き交う東西交流の大動脈でした。"
             }
           />
@@ -564,7 +564,7 @@ export default function SilkRoadPage() {
               background: "linear-gradient(to top, rgba(30,20,10,0.72), rgba(30,20,10,0))",
             }}
           >
-            <RubyText text="敦煌・{{鳴沙山|めいさざん}}を行くラクダの隊列。シルクロードを代表する観光地の一つ" />
+            <RubyText text="{{敦煌|とんこう}}・{{鳴沙山|めいさざん}}を行くラクダの隊列。シルクロードを代表する観光地の一つ" />
           </span>
         </div>
         <div style={{ fontSize: 9.5, color: COLORS.mist, marginTop: -18, marginBottom: 24 }}>
@@ -578,30 +578,30 @@ export default function SilkRoadPage() {
           <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft, marginBottom: 10 }}>
             <RubyText
               text={
-                "シルクロード（絹の道）とは、古代から中世にかけて中国と地中海世界を結んだ東西交易路の総称である。中国から西方へ" +
+                "シルクロード（絹の道）とは、古代から中世にかけて中国と地中海世界を結んだ東西交易路の{{総称|そうしょう}}である。中国から西方へ" +
                 "大量に運ばれた{{絹|きぬ}}に由来する呼び名で、19世紀のドイツ人地理学者{{フェルディナント・フォン・リヒトホーフェン|ふぇるでぃなんと・ふぉん・りひとほーふぇん}}が" +
                 "「{{ザイデンシュトラーセン|Seidenstraßen}}」（絹の道）と名付けたのが始まりとされる。ある一本の決まった道があったわけではなく、" +
-                "オアシスや都市を結ぶ複数のルートの総称である点も特徴である。"
+                "オアシスや都市を結ぶ複数のルートの{{総称|そうしょう}}である点も{{特徴|とくちょう}}である。"
               }
             />
           </p>
           <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft, marginBottom: 10 }}>
             <RubyText
               text={
-                "起点として知られる{{長安|ちょうあん}}（現・西安）を出発し、河西回廊を抜けて{{敦煌|とんこう}}に至ると、道はタクラマカン砂漠の" +
-                "北縁を行く天山南路（北道）と、南縁を行く崑崙山北路（南道）に分かれ、いずれも{{パミール高原|パミールこうげん}}を越えて中央アジア、" +
+                "起点として知られる{{長安|ちょうあん}}（現・西安）を出発し、河西{{回廊|かいろう}}を{{抜|ぬ}}けて{{敦煌|とんこう}}に至ると、道はタクラマカン{{砂漠|さばく}}の" +
+                "{{北縁|ほくえん}}を行く天山南路（北道）と、{{南縁|なんえん}}を行く{{崑崙|こんろん}}山北路（南道）に分かれ、いずれも{{パミール高原|パミールこうげん}}を{{越|こ}}えて中央アジア、" +
                 "さらに西アジアや地中海世界へと続いた。開通のきっかけは、前漢の{{武帝|ぶてい}}の命を受けた{{張騫|ちょうけん}}が同盟相手を" +
-                "求めて西域に派遣されたことにあるとされ、後漢の{{班超|はんちょう}}による西域経営を経て交易路として確立し、唐代に最盛期を迎えた。"
+                "求めて西域に{{派遣|はけん}}されたことにあるとされ、後漢の{{班超|はんちょう}}による西域経営を経て交易路として確立し、{{唐代|とうだい}}に最盛期を{{迎|むか}}えた。"
               }
             />
           </p>
           <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft }}>
             <RubyText
               text={
-                "シルクロードを通じて西方へは絹だけでなく紙や火薬の製法が伝わり、東方へは仏教やガラス製品、香辛料、{{汗血馬|かんけつば}}などが" +
-                "もたらされた。単なる交易路にとどまらず、宗教・思想・文化が行き交う東西交流の大動脈として機能し、沿線には敦煌をはじめとする" +
-                "数多くのオアシス都市が繁栄した。2014年には、中国・カザフスタン・キルギスにまたがるシルクロードの関連遺跡群がユネスコの" +
-                "世界遺産に登録されている。ここでは、そうしたシルクロード沿いに栄えたオアシス都市を、地図や逸話とあわせて紹介する。"
+                "シルクロードを通じて西方へは絹だけでなく紙や火薬の製法が伝わり、東方へは仏教やガラス製品、{{香辛|こうしん}}料、{{汗血馬|かんけつば}}などが" +
+                "もたらされた。単なる交易路にとどまらず、宗教・思想・文化が行き交う東西交流の大動脈として機能し、沿線には{{敦煌|とんこう}}をはじめとする" +
+                "数多くのオアシス都市が{{繁栄|はんえい}}した。2014年には、中国・カザフスタン・キルギスにまたがるシルクロードの関連{{遺跡|いせき}}群がユネスコの" +
+                "世界遺産に登録されている。ここでは、そうしたシルクロード沿いに栄えたオアシス都市を、地図や{{逸話|いつわ}}とあわせて{{紹介|しょうかい}}する。"
               }
             />
           </p>
@@ -650,7 +650,7 @@ export default function SilkRoadPage() {
                         background: "linear-gradient(to top, rgba(30,20,10,0.72), rgba(30,20,10,0))",
                       }}
                     >
-                      {stop.imageCaption}
+                      <RubyText text={stop.imageCaption} />
                     </span>
                   )}
                 </div>
@@ -661,16 +661,16 @@ export default function SilkRoadPage() {
                       <RubyText text={stop.name} />
                     </span>
                   </div>
-                  {stop.subtitle && <div style={{ fontSize: 12, color: COLORS.gold, marginTop: 3 }}>{stop.subtitle}</div>}
+                  {stop.subtitle && <div style={{ fontSize: 12, color: COLORS.gold, marginTop: 3 }}><RubyText text={stop.subtitle} /></div>}
                   {stop.location && (
                     <div style={{ fontSize: 11.5, color: COLORS.vermilionSoft, marginTop: 3 }}>
-                      <span aria-hidden>📍</span> {stop.location}
+                      <span aria-hidden>📍</span> <RubyText text={stop.location} />
                     </div>
                   )}
                   <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginTop: 8 }}>
                     <RubyText text={stop.description} />
                   </p>
-                  {stop.credit && <div style={{ fontSize: 9.5, color: COLORS.mist, marginTop: 6 }}>{stop.credit}</div>}
+                  {stop.credit && <div style={{ fontSize: 9.5, color: COLORS.mist, marginTop: 6 }}><RubyText text={stop.credit} /></div>}
 
                   {stop.gallery && stop.gallery.length > 0 && (
                     <div className="grid gap-2 mt-3" style={{ gridTemplateColumns: `repeat(${stop.gallery.length}, 1fr)` }}>
@@ -682,8 +682,8 @@ export default function SilkRoadPage() {
                           >
                             <HeritageThumb imageUrl={g.imageUrl} name={g.caption} type="building" objectPosition={g.objectPosition} />
                           </div>
-                          <div style={{ fontSize: 11, color: COLORS.inkSoft, marginTop: 3 }}>{g.caption}</div>
-                          {g.credit && <div style={{ fontSize: 9, color: COLORS.mist, marginTop: 1 }}>{g.credit}</div>}
+                          <div style={{ fontSize: 11, color: COLORS.inkSoft, marginTop: 3 }}><RubyText text={g.caption} /></div>
+                          {g.credit && <div style={{ fontSize: 9, color: COLORS.mist, marginTop: 1 }}><RubyText text={g.credit} /></div>}
                         </div>
                       ))}
                     </div>
@@ -712,16 +712,16 @@ export default function SilkRoadPage() {
 
         <section style={{ marginTop: 40 }}>
           <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
-            シルクロードにまつわる逸話
+            シルクロードにまつわる<ruby>逸話<rt>いつわ</rt></ruby>
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginBottom: 16 }}>
-            交易路の開拓者たちが残した逸話から、20世紀の考古学的発見まで。シルクロードにまつわる、読んで面白いエピソードを集めました。
+            交易路の<ruby>開拓<rt>かいたく</rt></ruby>者たちが残した<ruby>逸話<rt>いつわ</rt></ruby>から、20世紀の考古学的発見まで。シルクロードにまつわる、読んで面白いエピソードを集めました。
           </p>
           <div className="flex flex-col gap-3">
             {RESOLVED_ANECDOTES.map((a, i) => (
               <div key={i} style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: 14 }}>
                 <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14, fontWeight: 700, color: COLORS.ink, marginBottom: 6 }}>
-                  {a.title}
+                  <RubyText text={a.title} />
                 </div>
                 <p style={{ fontSize: 12, lineHeight: 1.75, color: COLORS.inkSoft }}>
                   <RubyText text={a.text} />
@@ -748,7 +748,7 @@ export default function SilkRoadPage() {
 
         <section style={{ marginTop: 32 }}>
           <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
-            シルクロードの起点となった歴代の都や、道中の関所・城壁も別ページで紹介しています。
+            シルクロードの起点となった歴代の都や、道中の関所・<ruby>城壁<rt>じょうへき</rt></ruby>も別ページで<ruby>紹介<rt>しょうかい</rt></ruby>しています。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
             <NavButton href="/china-capitals" variant="solid">歴代王朝の都一覧を見る</NavButton>

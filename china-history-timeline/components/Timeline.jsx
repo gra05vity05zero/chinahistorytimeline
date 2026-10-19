@@ -6,21 +6,22 @@ import { useRouter } from "next/navigation";
 import { ERAS, COLORS, ADSENSE_SLOT_TIMELINE } from "@/lib/data";
 import { SealMark, EventCard, AdSenseSlot, MiscLinksSection } from "@/components/Shared";
 import { SiteTitle } from "@/components/SiteHeader";
+import { RubyText } from "@/components/Ruby";
 
 // トップページ上部の主要な入口
 const PRIMARY_LINKS = [
   { href: "/people", seal: "人", label: "人物一覧", desc: "時代別の人物事典" },
   { href: "/eras", seal: "事", label: "出来事一覧", desc: "時代別の主な出来事" },
-  { href: "/japan-china-timeline", seal: "日", label: "日中対照年表", desc: "同じ時期の日本と比較" },
-  { href: "/search", seal: "検", label: "サイト内検索", desc: "人物・出来事を探す" },
+  { href: "/japan-china-timeline", seal: "日", label: "日中対照年表", desc: "同じ時期の日本と{{比較|ひかく}}" },
+  { href: "/search", seal: "検", label: "サイト内{{検索|けんさく}}", desc: "人物・出来事を探す" },
 ];
 
 // 合戦マップ（時代順）
 const BATTLE_MAP_LINKS = [
   { href: "/chunqiu-zhanguo-battles", label: "春秋・戦国" },
-  { href: "/chuhan-battles", label: "楚漢戦争" },
+  { href: "/chuhan-battles", label: "{{楚漢戦争|そかんせんそう}}" },
   { href: "/sanguo-battles", label: "三国時代" },
-  { href: "/suitang-battles", label: "隋唐・五代" },
+  { href: "/suitang-battles", label: "{{隋唐|ずいとう}}・五代" },
 ];
 
 export default function Timeline() {
@@ -77,9 +78,9 @@ export default function Timeline() {
             現在表示中の時代（タップで王朝一覧）
           </div>
           <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 18, fontWeight: 700, color: COLORS.ink }}>
-            {ERAS[activeIndex]?.name}
+            <RubyText text={ERAS[activeIndex]?.name} />
             <span style={{ fontSize: 12, color: COLORS.inkSoft, marginLeft: 8, fontFamily: "'Noto Sans SC', sans-serif" }}>
-              {ERAS[activeIndex]?.period}
+              <RubyText text={ERAS[activeIndex]?.period} />
             </span>
           </div>
         </div>
@@ -96,10 +97,10 @@ export default function Timeline() {
               style={{ backgroundColor: era.id === activeEra ? "#F0E8D2" : "transparent", borderBottom: `1px solid #E4DBC4` }}
             >
               <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 13, fontWeight: 700, color: COLORS.vermilion, width: 20 }}>
-                {era.seal}
+                <RubyText text={era.seal} />
               </span>
-              <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14, color: COLORS.ink }}>{era.name}</span>
-              <span style={{ fontSize: 11, color: COLORS.inkSoft, marginLeft: "auto" }}>{era.period}</span>
+              <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14, color: COLORS.ink }}><RubyText text={era.name} /></span>
+              <span style={{ fontSize: 11, color: COLORS.inkSoft, marginLeft: "auto" }}><RubyText text={era.period} /></span>
             </button>
           ))}
         </div>
@@ -119,14 +120,14 @@ export default function Timeline() {
                 className="flex items-center justify-center shrink-0"
                 style={{ width: 32, height: 32, backgroundColor: COLORS.vermilion, color: "#fff", fontFamily: "'Noto Serif SC', serif", fontSize: 16, fontWeight: 700 }}
               >
-                {item.seal}
+                <RubyText text={item.seal} />
               </span>
               <span className="min-w-0">
                 <span className="block" style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14, fontWeight: 700, color: COLORS.ink }}>
-                  {item.label}
+                  <RubyText text={item.label} />
                 </span>
                 <span className="block" style={{ fontSize: 11, lineHeight: 1.5, color: COLORS.inkSoft, marginTop: 2 }}>
-                  {item.desc}
+                  <RubyText text={item.desc} />
                 </span>
               </span>
             </Link>
@@ -151,7 +152,7 @@ export default function Timeline() {
                 border: `1.5px solid ${COLORS.vermilion}`,
               }}
             >
-              {item.label}
+              <RubyText text={item.label} />
             </Link>
           ))}
         </div>
@@ -169,10 +170,10 @@ export default function Timeline() {
               <SealMark char={era.seal} active={era.id === activeEra} />
             </div>
             <div className="mb-3">
-              <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 20, fontWeight: 700, color: COLORS.ink }}>{era.name}</div>
-              <div style={{ fontSize: 12, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}>{era.period}</div>
+              <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 20, fontWeight: 700, color: COLORS.ink }}><RubyText text={era.name} /></div>
+              <div style={{ fontSize: 12, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}><RubyText text={era.period} /></div>
               {era.description && (
-                <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginTop: 8 }}>{era.description}</p>
+                <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginTop: 8 }}><RubyText text={era.description} /></p>
               )}
             </div>
             <div>

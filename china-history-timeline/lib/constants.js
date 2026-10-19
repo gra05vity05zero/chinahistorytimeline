@@ -122,7 +122,7 @@ export function personSlug(name) {
 }
 
 export const HERITAGE_TYPES = {
-  building: { label: "建造物・遺跡" },
+  building: { label: "建造物・{{遺跡|いせき}}" },
   artifact: { label: "国宝・出土品" },
   figure: { label: "関連する人物" },
 };
@@ -132,7 +132,7 @@ export const ERA_ALIASES = {
   sanguo: "三国志",
   zhanguo: "戦国時代",
   chunqiu: "春秋時代",
-  sixteenkingdoms: "五胡十六国時代",
+  sixteenkingdoms: "{{五胡十六国|ごこじゅうろっこく}}時代",
   nanbei: "南北朝時代",
   wudai: "五代十国時代",
 };

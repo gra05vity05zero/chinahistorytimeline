@@ -10,7 +10,8 @@
 //   sfx:     { t, x, y, s?(文字サイズ), r?(回転), c?(色) }
 //   fx:      "focus" 集中線 | "gloom" どんより | "flash" 衝撃 | "night" 夜
 import { useEffect, useRef, useState } from "react";
-import { COLORS } from "@/lib/constants";
+import { COLORS, stripRuby } from "@/lib/constants";
+import { RubyText } from "@/components/Ruby";
 
 const W = 320;
 const H = 210;
@@ -1152,7 +1153,7 @@ export default function FourKoma({ id, panels, title }) {
   }, []);
 
   return (
-    <figure ref={ref} style={{ margin: 0 }} aria-label={`4コマ漫画「${title}」`}>
+    <figure ref={ref} style={{ margin: 0 }} aria-label={`4コマ漫画「${stripRuby(title)}」`}>
       <div className="flex gap-2 overflow-x-auto snap-x snap-mandatory pb-1 sm:grid sm:grid-cols-2 sm:overflow-visible sm:pb-0">
         {panels.map((panel, i) => (
           <div key={i} className="shrink-0 snap-center w-[92%] sm:w-auto">
@@ -1165,7 +1166,7 @@ export default function FourKoma({ id, panels, title }) {
         ))}
       </div>
       <figcaption className="flex justify-between" style={{ fontSize: 10.5, color: COLORS.mist, marginTop: 4 }}>
-        <span>4コマ漫画「{title}」</span>
+        <span>4コマ<ruby>漫画<rt>まんが</rt></ruby>「<RubyText text={title} />」</span>
         <span className="sm:hidden">横にスワイプ →</span>
       </figcaption>
     </figure>

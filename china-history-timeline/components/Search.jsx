@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { COLORS, CATEGORY_STYLE } from "@/lib/constants";
+import { RubyText } from "@/components/Ruby";
 
 // 全角/半角の揺れやひらがな・カタカナの違いを吸収するための簡易正規化
 function normalize(str) {
@@ -42,7 +43,7 @@ export default function SearchClient({ index }) {
       <div className="mt-6">
         {q && results.length === 0 && (
           <div className="px-3 py-6 text-center" style={{ border: `1px dashed ${COLORS.mist}`, backgroundColor: "#FBF8F0" }}>
-            <div style={{ fontSize: 12, color: COLORS.mist }}>「{query}」に一致する出来事は見つかりませんでした</div>
+            <div style={{ fontSize: 12, color: COLORS.mist }}>「<RubyText text={query} />」に<ruby>一致<rt>いっち</rt></ruby>する出来事は見つかりませんでした</div>
           </div>
         )}
 
@@ -61,17 +62,17 @@ export default function SearchClient({ index }) {
                 style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", borderLeft: `3px solid ${cat.color}` }}
               >
                 <div className="flex items-baseline gap-2">
-                  <span style={{ fontFamily: "'Noto Serif SC', serif", color: COLORS.inkSoft, fontSize: 12 }}>{item.year}</span>
+                  <span style={{ fontFamily: "'Noto Serif SC', serif", color: COLORS.inkSoft, fontSize: 12 }}><RubyText text={item.year} /></span>
                   <span style={{ fontFamily: "'Noto Serif SC', serif", color: COLORS.ink, fontSize: 15, fontWeight: 600 }}>
-                    {item.title}
+                    <RubyText text={item.title} />
                   </span>
-                  <span style={{ fontSize: 10, color: COLORS.gold, marginLeft: "auto" }}>{item.eraName}</span>
+                  <span style={{ fontSize: 10, color: COLORS.gold, marginLeft: "auto" }}><RubyText text={item.eraName} /></span>
                 </div>
                 <p
                   className="mt-1"
                   style={{ fontSize: 12, lineHeight: 1.6, color: COLORS.inkSoft, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}
                 >
-                  {item.summary}
+                  <RubyText text={item.summary} />
                 </p>
               </Link>
             );

@@ -20,14 +20,14 @@ export const metadata = {
 // location: 所在地情報 / mapX,mapY: 下の地図(viewBox 0 0 500 366)上での位置。
 // 実際の経緯度を/world-heritageと同じ図法（緯度補正付き正距円筒図法）で投影した座標を基準にしている。
 const SITES = [
-  { eraId: "neolithic", eventTitle: "竜山", heritageName: "城子崖", location: "山東省章丘県", mapX: 348, mapY: 175 },
-  { eraId: "shang", eventTitle: "殷の建国", heritageName: "鄭州商城", location: "河南省鄭州市", mapX: 319, mapY: 193 },
-  { eraId: "chunqiu", eventTitle: "覇者となる", heritageName: "斉国故城", location: "山東省淄博市臨淄区", mapX: 354, mapY: 174 },
-  { eraId: "qin", eventTitle: "万里の長城の修築", heritageName: "万里の長城", location: "北京市（八達嶺）ほか", mapX: 327, mapY: 132 },
-  { eraId: "nanbei", eventTitle: "劉宋の建国", heritageName: "建康城遺跡", location: "江蘇省南京市", mapX: 358, mapY: 218 },
+  { eraId: "neolithic", eventTitle: "竜山", heritageName: "城子崖", location: "山東省{{章丘|しょうきゅう}}県", mapX: 348, mapY: 175 },
+  { eraId: "shang", eventTitle: "殷の建国", heritageName: "鄭州商城", location: "河南省{{鄭州|ていしゅう}}市", mapX: 319, mapY: 193 },
+  { eraId: "chunqiu", eventTitle: "覇者となる", heritageName: "斉国故城", location: "山東省{{淄博|しはく}}市{{臨淄|りんし}}区", mapX: 354, mapY: 174 },
+  { eraId: "qin", eventTitle: "万里の長城の修築", heritageName: "万里の長城", location: "北京市（{{八達嶺|はったつれい}}）ほか", mapX: 327, mapY: 132 },
+  { eraId: "nanbei", eventTitle: "劉宋の建国", heritageName: "建康城遺跡", location: "{{江蘇|こうそ}}省南京市", mapX: 358, mapY: 218 },
   { eraId: "ming", eventTitle: "北京遷都", heritageName: "紫禁城", location: "北京市", mapX: 340, mapY: 145 },
-  { eraId: "ming", eventTitle: "土木の変", heritageName: "土木堡遺跡", location: "河北省懐来県", mapX: 333, mapY: 141 },
-  { eraId: "qing", eventTitle: "清の北京入城", heritageName: "山海関", location: "河北省秦皇島市", mapX: 365, mapY: 144 },
+  { eraId: "ming", eventTitle: "土木の変", heritageName: "土木堡遺跡", location: "河北省{{懐|かい}}来県", mapX: 333, mapY: 141 },
+  { eraId: "qing", eventTitle: "清の北京入城", heritageName: "山海関", location: "河北省{{秦皇島|しんこうとう}}市", mapX: 365, mapY: 144 },
 ];
 
 function resolveSite(spec) {
@@ -67,9 +67,9 @@ const REGION_LABELS = [
   { label: "北京", x: 340, y: 145, dx: 15, dy: 9, anchor: "start" },
   { label: "西安", x: 284, y: 197, dx: 0, dy: 33, anchor: "middle" },
   { label: "内モンゴル自治区", x: 420, y: 90, anchor: "middle" },
-  { label: "新疆・シルクロード", x: 105, y: 165, anchor: "middle" },
+  { label: "{{新疆|しんきょう}}・シルクロード", x: 105, y: 165, anchor: "middle" },
   { label: "チベット", x: 195, y: 265, anchor: "middle" },
-  { label: "台湾", x: 375, y: 296, dx: 10, dy: 4, anchor: "start" },
+  { label: "{{台湾|たいわん}}", x: 375, y: 296, dx: 10, dy: 4, anchor: "start" },
   { label: "海南島", x: 290, y: 337, dx: 0, dy: 17, anchor: "middle" },
 ];
 
@@ -77,7 +77,7 @@ function ChinaMap({ sites }) {
   return (
     <div style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: 16, marginBottom: 28 }}>
       <p style={{ fontSize: 11.5, color: COLORS.inkSoft, marginBottom: 10 }}>
-        実際の海岸線をもとにした中国の位置関係図です。朱色の番号は下の一覧の城、白丸は主要都市の目安です。
+        実際の海岸線をもとにした中国の位置関係図です。<ruby>朱色<rt>しゅいろ</rt></ruby>の番号は下の一覧の城、白丸は主要都市の目安です。
       </p>
       <svg viewBox="0 0 500 366" style={{ width: "100%", maxHeight: 400, display: "block", margin: "0 auto" }}>
         <path d={CHINA_OUTLINE} fill="#DCD3B8" stroke={COLORS.mist} strokeWidth="1.2" strokeLinejoin="round" />
@@ -91,7 +91,7 @@ function ChinaMap({ sites }) {
             textAnchor={r.anchor}
             style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 10.5, fill: COLORS.inkSoft, opacity: 0.85 }}
           >
-            {r.label}
+            {stripRuby(r.label)}
           </text>
         ))}
 
@@ -104,7 +104,7 @@ function ChinaMap({ sites }) {
               textAnchor={c.anchor}
               style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 10, fill: COLORS.inkSoft }}
             >
-              {c.label}
+              {stripRuby(c.label)}
             </text>
           </g>
         ))}
@@ -138,8 +138,8 @@ export default function ChinaCastlesPage() {
           中国の城まとめ
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 28 }}>
-          中国史には、都を守る城壁や国境を分かつ長城、要衝を扼する関所など、数多くの「城」が登場します。
-          ここでは、このサイトの年表に登場する城郭・関所を、由来となった時代とあわせて紹介します。
+          中国史には、都を守る<ruby>城壁<rt>じょうへき</rt></ruby>や国境を分かつ長城、<ruby>要衝<rt>ようしょう</rt></ruby>を<ruby>扼<rt>やく</rt></ruby>する関所など、数多くの「城」が登場します。
+          ここでは、このサイトの年表に登場する<ruby>城郭<rt>じょうかく</rt></ruby>・関所を、由来となった時代とあわせて<ruby>紹介<rt>しょうかい</rt></ruby>します。
         </p>
 
         <div className="relative">
@@ -179,17 +179,17 @@ export default function ChinaCastlesPage() {
                       <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 15, fontWeight: 700, color: COLORS.ink }}>
                         <RubyText text={site.name} />
                       </span>
-                      <span style={{ fontSize: 11, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}>{site.era.name}</span>
+                      <span style={{ fontSize: 11, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}><RubyText text={site.era.name} /></span>
                     </div>
                     {site.location && (
                       <div style={{ fontSize: 11, color: COLORS.vermilionSoft, marginTop: 2 }}>
-                        <span aria-hidden>📍</span> {site.location}
+                        <span aria-hidden>📍</span> <RubyText text={site.location} />
                       </div>
                     )}
                     <p style={{ fontSize: 12, lineHeight: 1.7, color: COLORS.inkSoft, marginTop: 4 }}>
                       <RubyText text={site.description} />
                     </p>
-                    {site.credit && <div style={{ fontSize: 9.5, color: COLORS.mist, marginTop: 4 }}>{site.credit}</div>}
+                    {site.credit && <div style={{ fontSize: 9.5, color: COLORS.mist, marginTop: 4 }}><RubyText text={site.credit} /></div>}
                   </div>
                 </div>
                 <div className="px-3 pb-3">
@@ -207,7 +207,7 @@ export default function ChinaCastlesPage() {
 
         <section style={{ marginTop: 32 }}>
           <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
-            歴代王朝の都の移り変わりや、中国の世界遺産も別ページで紹介しています。
+            歴代王朝の都の移り変わりや、中国の世界遺産も別ページで<ruby>紹介<rt>しょうかい</rt></ruby>しています。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
             <NavButton href="/china-capitals" variant="solid">歴代王朝の都一覧を見る</NavButton>
