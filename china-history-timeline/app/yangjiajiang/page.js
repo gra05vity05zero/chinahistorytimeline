@@ -270,10 +270,10 @@ const BOOKS = [
     title: "『{{楊家将|ようかしょう}}』",
     meta: "{{北方謙三|きたかたけんぞう}} / 2003年（PHP研究所） / 第38回{{吉川英治|よしかわえいじ}}文学賞",
     body: "{{楊業|ようぎょう}}と{{楊家|ようけ}}の男たちを主人公に、{{宋|そう}}と{{遼|りょう}}の戦いを{{描|えが}}く。原典である演義を{{大幅|おおはば}}に再構成した、オリジナル色の強い作品。",
-    // Kindle版（PHP文芸文庫・上下巻）のASIN
+    // Kindle版（PHP文芸文庫・上下巻）のASINと書影
     kindle: [
-      { label: "上巻", asin: "B00BS52O8W" },
-      { label: "下巻", asin: "B00BS52OAA" },
+      { label: "上巻", asin: "B00BS52O8W", cover: "https://m.media-amazon.com/images/I/71wXE3ji8TL._SL300_.jpg" },
+      { label: "下巻", asin: "B00BS52OAA", cover: "https://m.media-amazon.com/images/I/718OzQXhk-L._SL300_.jpg" },
     ],
   },
   {
@@ -281,6 +281,10 @@ const BOOKS = [
     title: "『{{血涙|けつるい}} {{新楊家将|しんようかしょう}}』",
     meta: "{{北方謙三|きたかたけんぞう}} / 2006年（PHP研究所）",
     body: "『{{楊家将|ようかしょう}}』の続編。前作に続いて{{楊家|ようけ}}と{{遼|りょう}}の戦いを{{描|えが}}く、同じくオリジナル色の強い作品。『{{楊家将|ようかしょう}}』を読んでから手に取るのがおすすめ。",
+    kindle: [
+      { label: "上巻", asin: "B00BS52OB4", cover: "https://m.media-amazon.com/images/I/81Y7JsJNzeL._SL300_.jpg" },
+      { label: "下巻", asin: "B00BS52OBE", cover: "https://m.media-amazon.com/images/I/71-ndUbw0FL._SL300_.jpg" },
+    ],
   },
 ];
 
@@ -611,17 +615,28 @@ export default function YangjiajiangPage() {
                   <div style={{ fontSize: 11, color: COLORS.gold, marginTop: 2 }}><RubyText text={book.meta} /></div>
                   <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft, marginTop: 6 }}><RubyText text={book.body} /></p>
                   {book.kindle && (
-                    <div className="flex items-center gap-2 flex-wrap mt-3">
+                    <div className="flex gap-4 flex-wrap mt-3">
                       {book.kindle.map((k) => (
                         <a
                           key={k.asin}
                           href={buildAmazonUrl(k.asin)}
                           target="_blank"
                           rel="nofollow noreferrer sponsored"
-                          className="px-3 py-1.5"
-                          style={{ fontSize: 12, fontWeight: 700, color: COLORS.vermilion, border: `1px solid ${COLORS.vermilion}`, backgroundColor: "#FFFDF7" }}
+                          className="flex flex-col items-center gap-2"
+                          style={{ width: 132 }}
                         >
-                          {k.label}（Kindle版）をAmazonで見る →
+                          <img
+                            src={k.cover}
+                            alt={`${stripRuby(book.title)} ${k.label}（Kindle版）の表紙`}
+                            loading="lazy"
+                            style={{ width: 96, height: 140, objectFit: "contain", border: `1px solid ${COLORS.mist}`, backgroundColor: "#FFFDF7" }}
+                          />
+                          <span
+                            className="px-2 py-1 text-center"
+                            style={{ width: "100%", fontSize: 11.5, fontWeight: 700, color: COLORS.vermilion, border: `1px solid ${COLORS.vermilion}`, backgroundColor: "#FFFDF7" }}
+                          >
+                            {k.label}（Kindle版）→
+                          </span>
                         </a>
                       ))}
                     </div>
