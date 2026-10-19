@@ -103,7 +103,8 @@ export function wikimediaThumb(url, width = 480) {
 
 // ---- Google AdSense 設定 -----------------------------------------------
 export const ADSENSE_CLIENT_ID = "ca-pub-4606423913155675";
-export const ADSENSE_SLOT_TIMELINE = "YOUR_AD_SLOT_ID_TIMELINE";
+// 手動広告ユニットのスロットID。未設定（空）の間は広告枠を描画しない（自動広告のみ）
+export const ADSENSE_SLOT_TIMELINE = "";
 
 // ---- Google Analytics（GA4）設定 ---------------------------------------
 export const GA_MEASUREMENT_ID = "G-GRELCCWWNV";

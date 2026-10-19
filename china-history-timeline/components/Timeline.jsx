@@ -211,10 +211,12 @@ export default function Timeline() {
         <MiscLinksSection />
       </div>
 
-      <div className="max-w-2xl mx-auto px-5 pb-16">
-        <div style={{ fontSize: 10.5, color: COLORS.inkSoft, marginBottom: 8 }}>広告</div>
-        <AdSenseSlot slot={ADSENSE_SLOT_TIMELINE} />
-      </div>
+      {ADSENSE_SLOT_TIMELINE && (
+        <div className="max-w-2xl mx-auto px-5 pb-16">
+          <div style={{ fontSize: 10.5, color: COLORS.inkSoft, marginBottom: 8 }}>広告</div>
+          <AdSenseSlot slot={ADSENSE_SLOT_TIMELINE} />
+        </div>
+      )}
     </div>
   );
 }

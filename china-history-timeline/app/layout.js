@@ -1,5 +1,4 @@
 import "./globals.css";
-import Script from "next/script";
 import Footer from "@/components/Footer";
 import SiteHeader from "@/components/SiteHeader";
 import { ADSENSE_CLIENT_ID, GA_MEASUREMENT_ID, SITE_URL, SITE_NAME, SITE_DESCRIPTION, buildOpenGraph, buildTwitter } from "@/lib/data";
@@ -51,11 +50,13 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
         {ADSENSE_CLIENT_ID && (
-          <Script
+          // Plain <script> (not next/script) so the AdSense crawler finds a
+          // literal tag in the server-rendered <head>; next/script with
+          // beforeInteractive only emits a <link rel="preload"> there.
+          <script
             async
             src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`}
             crossOrigin="anonymous"
-            strategy="beforeInteractive"
           />
         )}
         {GA_MEASUREMENT_ID && (
