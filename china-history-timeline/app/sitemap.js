@@ -32,6 +32,7 @@ export default function sitemap() {
     { url: `${SITE_URL}/suitang-battles`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/yangjiajiang`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/suikoden`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
+    { url: `${SITE_URL}/saiyuki`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/funny-episodes`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
   ];
 

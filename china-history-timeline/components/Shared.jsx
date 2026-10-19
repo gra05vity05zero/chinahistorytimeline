@@ -77,6 +77,7 @@ const MISC_SECTIONS = [
       { href: "/history-books", label: "中国の歴史書" },
       { href: "/yangjiajiang", label: "楊家将とは" },
       { href: "/suikoden", label: "水滸伝とは" },
+      { href: "/saiyuki", label: "西遊記とは" },
       { href: "/novelists", label: "日本人小説家一覧" },
     ],
   },

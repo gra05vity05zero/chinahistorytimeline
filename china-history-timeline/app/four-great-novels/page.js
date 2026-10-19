@@ -55,6 +55,8 @@ const NOVELS = [
     imageCaption: "現存する最古の版とされる1592年刊・南京「世徳堂」版『西遊記』の挿絵",
     credit: "Wikimedia Commons（パブリックドメイン）",
     era: "tang",
+    pageHref: "/saiyuki",
+    pageLabel: "西遊記をくわしく読む",
   },
   {
     name: "『{{紅楼夢|こうろうむ}}』",
