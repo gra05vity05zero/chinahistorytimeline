@@ -28,26 +28,6 @@ export default function Footer() {
           />
         </div>
       </div>
-      <Link href="/search" style={linkStyle}>サイト内検索</Link>
-      <span style={{ color: COLORS.mist }}>|</span>
-      <Link href="/people" style={linkStyle}>人物一覧</Link>
-      <span style={{ color: COLORS.mist }}>|</span>
-      <Link href="/eras" style={linkStyle}>出来事一覧</Link>
-      <span style={{ color: COLORS.mist }}>|</span>
-      <Link href="/mnemonics" style={linkStyle}>王朝の覚え方</Link>
-      <span style={{ color: COLORS.mist }}>|</span>
-      <Link href="/idioms" style={linkStyle}>故事成語</Link>
-      <span style={{ color: COLORS.mist }}>|</span>
-      <Link href="/year-mnemonics" style={linkStyle}>年号ゴロ合わせ集</Link>
-      <span style={{ color: COLORS.mist }}>|</span>
-      <Link href="/japan-china-timeline" style={linkStyle}>日中対照年表</Link>
-      <span style={{ color: COLORS.mist }}>|</span>
-      <Link href="/terracotta-army" style={linkStyle}>兵馬俑の謎</Link>
-      <span style={{ color: COLORS.mist }}>|</span>
-      <Link href="/world-heritage" style={linkStyle}>世界遺産まとめ</Link>
-      <span style={{ color: COLORS.mist }}>|</span>
-      <Link href="/novelists" style={linkStyle}>小説家一覧</Link>
-      <span style={{ color: COLORS.mist }}>|</span>
       <Link href="/about" style={linkStyle}>このサイトについて</Link>
       <span style={{ color: COLORS.mist }}>|</span>
       <Link href="/privacy" style={linkStyle}>プライバシーポリシー</Link>
