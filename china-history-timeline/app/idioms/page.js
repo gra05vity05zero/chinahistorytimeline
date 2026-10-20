@@ -158,7 +158,7 @@ export default function IdiomsPage() {
       <div className="max-w-2xl mx-auto px-6 py-12">
         <BackToTopButton />
 
-        <h1 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
+        <h1 style={{ fontFamily: "var(--font-serif), serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
           中国史から生まれた故事成語・慣用句
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 28 }}>
@@ -167,7 +167,7 @@ export default function IdiomsPage() {
         </p>
 
         <section style={{ marginBottom: 28 }}>
-          <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
             故事成語とは
           </h2>
           <div style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: "14px 16px" }}>
@@ -185,10 +185,10 @@ export default function IdiomsPage() {
           {IDIOMS.map((idiom, i) => (
             <div key={i} style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: "14px 16px" }}>
               <div className="flex items-baseline justify-between gap-3 flex-wrap">
-                <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 18, fontWeight: 700, color: COLORS.vermilion }}>
+                <span style={{ fontFamily: "var(--font-serif), serif", fontSize: 18, fontWeight: 700, color: COLORS.vermilion }}>
                   <RubyText text={idiom.phrase} />
                 </span>
-                <span style={{ fontSize: 11, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}><RubyText text={idiom.era} /></span>
+                <span style={{ fontSize: 11, color: COLORS.gold, fontFamily: "var(--font-serif), serif" }}><RubyText text={idiom.era} /></span>
               </div>
               <p style={{ fontSize: 13, fontWeight: 700, color: COLORS.ink, marginTop: 6 }}><RubyText text={idiom.meaning} /></p>
               <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginTop: 4 }}>

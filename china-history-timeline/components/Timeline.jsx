@@ -81,12 +81,12 @@ export default function Timeline() {
       >
         <SealMark char={ERAS[activeIndex]?.seal || "史"} active />
         <div className="flex-1">
-          <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 12, color: COLORS.vermilion, letterSpacing: "0.1em" }}>
+          <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 12, color: COLORS.vermilion, letterSpacing: "0.1em" }}>
             現在表示中の時代（タップで王朝一覧）
           </div>
-          <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 18, fontWeight: 700, color: COLORS.ink }}>
+          <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 18, fontWeight: 700, color: COLORS.ink }}>
             <RubyText text={ERAS[activeIndex]?.name} />
-            <span style={{ fontSize: 12, color: COLORS.inkSoft, marginLeft: 8, fontFamily: "'Noto Sans SC', sans-serif" }}>
+            <span style={{ fontSize: 12, color: COLORS.inkSoft, marginLeft: 8, fontFamily: "var(--font-sans), sans-serif" }}>
               <RubyText text={ERAS[activeIndex]?.period} />
             </span>
           </div>
@@ -103,10 +103,10 @@ export default function Timeline() {
               className="w-full flex items-center gap-3 px-5 py-2 text-left"
               style={{ backgroundColor: era.id === activeEra ? "#F0E8D2" : "transparent", borderBottom: `1px solid #E4DBC4` }}
             >
-              <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 13, fontWeight: 700, color: COLORS.vermilion, width: 20 }}>
+              <span style={{ fontFamily: "var(--font-serif), serif", fontSize: 13, fontWeight: 700, color: COLORS.vermilion, width: 20 }}>
                 <RubyText text={era.seal} />
               </span>
-              <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14, color: COLORS.ink }}><RubyText text={era.name} /></span>
+              <span style={{ fontFamily: "var(--font-serif), serif", fontSize: 14, color: COLORS.ink }}><RubyText text={era.name} /></span>
               <span style={{ fontSize: 11, color: COLORS.inkSoft, marginLeft: "auto" }}><RubyText text={era.period} /></span>
             </button>
           ))}
@@ -125,12 +125,12 @@ export default function Timeline() {
             >
               <span
                 className="flex items-center justify-center shrink-0"
-                style={{ width: 32, height: 32, backgroundColor: COLORS.vermilion, color: "#fff", fontFamily: "'Noto Serif SC', serif", fontSize: 16, fontWeight: 700 }}
+                style={{ width: 32, height: 32, backgroundColor: COLORS.vermilion, color: "#fff", fontFamily: "var(--font-serif), serif", fontSize: 16, fontWeight: 700 }}
               >
                 <RubyText text={item.seal} />
               </span>
               <span className="min-w-0">
-                <span className="block" style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14, fontWeight: 700, color: COLORS.ink }}>
+                <span className="block" style={{ fontFamily: "var(--font-serif), serif", fontSize: 14, fontWeight: 700, color: COLORS.ink }}>
                   <RubyText text={item.label} />
                 </span>
                 <span className="block" style={{ fontSize: 11, lineHeight: 1.5, color: COLORS.inkSoft, marginTop: 2 }}>
@@ -141,7 +141,7 @@ export default function Timeline() {
           ))}
         </div>
         <div className="max-w-3xl mx-auto mt-4 flex items-center justify-center gap-2 flex-wrap">
-          <span className="w-full sm:w-auto sm:mr-1" style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 12, fontWeight: 700, color: COLORS.inkSoft }}>
+          <span className="w-full sm:w-auto sm:mr-1" style={{ fontFamily: "var(--font-serif), serif", fontSize: 12, fontWeight: 700, color: COLORS.inkSoft }}>
             合戦マップ
           </span>
           {BATTLE_MAP_LINKS.map((item) => (
@@ -152,7 +152,7 @@ export default function Timeline() {
               style={{
                 height: 34,
                 padding: "0 14px",
-                fontFamily: "'Noto Serif SC', serif",
+                fontFamily: "var(--font-serif), serif",
                 fontSize: 12.5,
                 fontWeight: 700,
                 color: COLORS.vermilion,
@@ -170,7 +170,7 @@ export default function Timeline() {
 
       {/* 「中国史」「中国の歴史」で検索した人向けの導入文。年表本体の前に全体の流れを短く示す */}
       <section className="max-w-2xl mx-auto px-5 pb-8">
-        <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 18, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
+        <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 18, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
           中国史（中国の歴史）の流れ
         </h2>
         {INTRO_PARAGRAPHS.map((text, i) => (
@@ -178,7 +178,7 @@ export default function Timeline() {
             <RubyText text={text} />
           </p>
         ))}
-        <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 18, fontWeight: 700, color: COLORS.ink, marginTop: 24 }}>
+        <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 18, fontWeight: 700, color: COLORS.ink, marginTop: 24 }}>
           中国史年表（全{ERAS.length}時代）
         </h2>
       </section>
@@ -192,8 +192,8 @@ export default function Timeline() {
               <SealMark char={era.seal} active={era.id === activeEra} />
             </div>
             <div className="mb-3">
-              <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 20, fontWeight: 700, color: COLORS.ink }}><RubyText text={era.name} /></div>
-              <div style={{ fontSize: 12, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}><RubyText text={era.period} /></div>
+              <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 20, fontWeight: 700, color: COLORS.ink }}><RubyText text={era.name} /></div>
+              <div style={{ fontSize: 12, color: COLORS.gold, fontFamily: "var(--font-serif), serif" }}><RubyText text={era.period} /></div>
               {era.description && (
                 <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginTop: 8 }}><RubyText text={era.description} /></p>
               )}

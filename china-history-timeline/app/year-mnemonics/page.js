@@ -127,7 +127,7 @@ export default function YearMnemonicsPage() {
       <div className="max-w-2xl mx-auto px-6 py-12">
         <BackToTopButton />
 
-        <h1 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
+        <h1 style={{ fontFamily: "var(--font-serif), serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
           中国史 年号ゴロ合わせ集
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 14 }}>
@@ -142,13 +142,13 @@ export default function YearMnemonicsPage() {
           {YEARS.map((item, i) => (
             <div key={i} style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: "14px 16px" }}>
               <div className="flex items-baseline justify-between gap-3 flex-wrap">
-                <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 15, fontWeight: 700, color: COLORS.gold }}>
+                <span style={{ fontFamily: "var(--font-serif), serif", fontSize: 15, fontWeight: 700, color: COLORS.gold }}>
                   <RubyText text={item.year} />
                 </span>
                 <span style={{ fontSize: 12, color: COLORS.inkSoft }}><RubyText text={item.event} /></span>
               </div>
               <div className="flex items-baseline gap-2 mt-2 flex-wrap">
-                <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 19, fontWeight: 700, color: COLORS.vermilion }}>
+                <span style={{ fontFamily: "var(--font-serif), serif", fontSize: 19, fontWeight: 700, color: COLORS.vermilion }}>
                   <RubyText text={item.goro} />
                 </span>
                 <span style={{ fontSize: 11, color: COLORS.mist }}><RubyText text={item.breakdown} /></span>

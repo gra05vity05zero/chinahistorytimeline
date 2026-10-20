@@ -89,7 +89,7 @@ export default function FourInventionsPage() {
       <div className="max-w-2xl mx-auto px-6 py-12">
         <BackToTopButton />
 
-        <h1 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
+        <h1 style={{ fontFamily: "var(--font-serif), serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
           中国の四大発明とは？
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 28 }}>
@@ -120,7 +120,7 @@ export default function FourInventionsPage() {
                     borderRadius: 13,
                     backgroundColor: COLORS.vermilion,
                     color: "#FBF8F0",
-                    fontFamily: "'Noto Serif SC', serif",
+                    fontFamily: "var(--font-serif), serif",
                     fontSize: 12,
                     fontWeight: 700,
                   }}
@@ -136,10 +136,10 @@ export default function FourInventionsPage() {
                   </div>
                 )}
                 <div className="flex items-baseline justify-between gap-3 flex-wrap">
-                  <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 17, fontWeight: 700, color: COLORS.ink }}>
+                  <span style={{ fontFamily: "var(--font-serif), serif", fontSize: 17, fontWeight: 700, color: COLORS.ink }}>
                     <RubyText text={inv.name} />
                   </span>
-                  <span style={{ fontSize: 11, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}><RubyText text={inv.period} /></span>
+                  <span style={{ fontSize: 11, color: COLORS.gold, fontFamily: "var(--font-serif), serif" }}><RubyText text={inv.period} /></span>
                 </div>
                 <p style={{ fontSize: 12.5, fontWeight: 700, color: COLORS.vermilion, marginTop: 6 }}>
                   <RubyText text={inv.key} />

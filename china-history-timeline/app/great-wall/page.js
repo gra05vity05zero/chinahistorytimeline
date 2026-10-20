@@ -141,7 +141,7 @@ function GreatWallMap({ stops }) {
             x={r.x + (r.dx || 0)}
             y={r.y + (r.dy || 0)}
             textAnchor={r.anchor}
-            style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 10.5, fill: COLORS.inkSoft, opacity: 0.85 }}
+            style={{ fontFamily: "var(--font-serif), serif", fontSize: 10.5, fill: COLORS.inkSoft, opacity: 0.85 }}
           >
             {stripRuby(r.label)}
           </text>
@@ -163,7 +163,7 @@ function GreatWallMap({ stops }) {
               y={stop.mapY}
               textAnchor="middle"
               dominantBaseline="central"
-              style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 8.5, fontWeight: 700, fill: "#FBF8F0" }}
+              style={{ fontFamily: "var(--font-serif), serif", fontSize: 8.5, fontWeight: 700, fill: "#FBF8F0" }}
             >
               {i + 1}
             </text>
@@ -180,7 +180,7 @@ export default function GreatWallPage() {
       <div className="max-w-2xl mx-auto px-6 py-12">
         <BackToTopButton />
 
-        <h1 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
+        <h1 style={{ fontFamily: "var(--font-serif), serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
           万里の長城とは？
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 20 }}>
@@ -223,7 +223,7 @@ export default function GreatWallPage() {
         </div>
 
         <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
             万里の長城の歴史
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft, marginBottom: 10 }}>
@@ -263,7 +263,7 @@ export default function GreatWallPage() {
         </section>
 
         <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
             主要な区間・関所
           </h2>
 
@@ -288,7 +288,7 @@ export default function GreatWallPage() {
                         borderRadius: "50%",
                         backgroundColor: COLORS.vermilion,
                         color: "#FBF8F0",
-                        fontFamily: "'Noto Serif SC', serif",
+                        fontFamily: "var(--font-serif), serif",
                         fontSize: 10,
                         fontWeight: 700,
                       }}
@@ -298,7 +298,7 @@ export default function GreatWallPage() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-baseline justify-between gap-2 flex-wrap">
-                      <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 15, fontWeight: 700, color: COLORS.ink }}>
+                      <span style={{ fontFamily: "var(--font-serif), serif", fontSize: 15, fontWeight: 700, color: COLORS.ink }}>
                         <RubyText text={stop.name} />
                       </span>
                     </div>
@@ -332,12 +332,12 @@ export default function GreatWallPage() {
         </section>
 
         <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
             万里の長城にまつわる<ruby>逸話<rt>いつわ</rt></ruby>・豆知識
           </h2>
           <div className="flex flex-col gap-3">
             <div style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: "14px 16px" }}>
-              <p style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14, fontWeight: 700, color: COLORS.ink, marginBottom: 6 }}>
+              <p style={{ fontFamily: "var(--font-serif), serif", fontSize: 14, fontWeight: 700, color: COLORS.ink, marginBottom: 6 }}>
                 夫を長城建設で失った女性の伝説「<ruby>孟姜女<rt>もうきょうじょ</rt></ruby>泣長城」
               </p>
               <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft }}>
@@ -352,7 +352,7 @@ export default function GreatWallPage() {
               </p>
             </div>
             <div style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: "14px 16px" }}>
-              <p style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14, fontWeight: 700, color: COLORS.ink, marginBottom: 6 }}>
+              <p style={{ fontFamily: "var(--font-serif), serif", fontSize: 14, fontWeight: 700, color: COLORS.ink, marginBottom: 6 }}>
                 「宇宙から肉眼で見える<ruby>唯一<rt>ゆいいつ</rt></ruby>の建造物」は本当か？
               </p>
               <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft }}>
@@ -362,7 +362,7 @@ export default function GreatWallPage() {
               </p>
             </div>
             <div style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: "14px 16px" }}>
-              <p style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14, fontWeight: 700, color: COLORS.ink, marginBottom: 6 }}>
+              <p style={{ fontFamily: "var(--font-serif), serif", fontSize: 14, fontWeight: 700, color: COLORS.ink, marginBottom: 6 }}>
                 総延長は2万kmを<ruby>超<rt>こ</rt></ruby>える
               </p>
               <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft }}>

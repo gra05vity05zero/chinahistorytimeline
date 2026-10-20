@@ -184,14 +184,14 @@ const TWENTY_FOUR = [
 
 const RESOLVED = BOOKS.map((b) => ({ ...b, eraLink: eraHref(b.eraId) }));
 
-const headingStyle = { fontFamily: "'Noto Serif SC', serif", fontSize: 19, fontWeight: 700, color: COLORS.ink, marginBottom: 12 };
+const headingStyle = { fontFamily: "var(--font-serif), serif", fontSize: 19, fontWeight: 700, color: COLORS.ink, marginBottom: 12 };
 const tagStyle = {
   display: "inline-block",
   fontSize: 10.5,
   padding: "1px 8px",
   border: `1px solid ${COLORS.gold}`,
   color: COLORS.gold,
-  fontFamily: "'Noto Serif SC', serif",
+  fontFamily: "var(--font-serif), serif",
 };
 
 export default function HistoryBooksPage() {
@@ -200,7 +200,7 @@ export default function HistoryBooksPage() {
       <div className="max-w-2xl mx-auto px-6 py-12">
         <BackToTopButton />
 
-        <h1 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
+        <h1 style={{ fontFamily: "var(--font-serif), serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
           中国の歴史書（史書）を読む
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 28 }}>
@@ -253,7 +253,7 @@ export default function HistoryBooksPage() {
                         borderRadius: 11,
                         backgroundColor: COLORS.vermilion,
                         color: "#FBF8F0",
-                        fontFamily: "'Noto Serif SC', serif",
+                        fontFamily: "var(--font-serif), serif",
                         fontSize: 11,
                         fontWeight: 700,
                         alignSelf: "center",
@@ -261,11 +261,11 @@ export default function HistoryBooksPage() {
                     >
                       {i + 1}
                     </span>
-                    <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 17, fontWeight: 700, color: COLORS.ink }}>
+                    <span style={{ fontFamily: "var(--font-serif), serif", fontSize: 17, fontWeight: 700, color: COLORS.ink }}>
                       <RubyText text={b.name} />
                     </span>
                   </span>
-                  <span style={{ fontSize: 11, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}><RubyText text={b.period} /></span>
+                  <span style={{ fontSize: 11, color: COLORS.gold, fontFamily: "var(--font-serif), serif" }}><RubyText text={b.period} /></span>
                 </div>
                 <div className="flex items-center gap-2 flex-wrap" style={{ marginTop: 8 }}>
                   <span style={tagStyle}><RubyText text={b.style} /></span>
@@ -305,7 +305,7 @@ export default function HistoryBooksPage() {
           <div style={{ overflowX: "auto" }}>
             <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12.5, color: COLORS.inkSoft, backgroundColor: "#FBF8F0" }}>
               <thead>
-                <tr style={{ fontFamily: "'Noto Serif SC', serif", color: COLORS.ink }}>
+                <tr style={{ fontFamily: "var(--font-serif), serif", color: COLORS.ink }}>
                   {["#", "書名", "主な編者", "成立"].map((h) => (
                     <th key={h} style={{ textAlign: "left", padding: "6px 10px", borderBottom: `2px solid ${COLORS.gold}`, whiteSpace: "nowrap" }}>
                       <RubyText text={h} />
@@ -317,7 +317,7 @@ export default function HistoryBooksPage() {
                 {TWENTY_FOUR.map(([name, editor, era], i) => (
                   <tr key={name}>
                     <td style={{ padding: "5px 10px", borderBottom: "1px solid #DCD3B8", color: COLORS.mist }}>{i + 1}</td>
-                    <td style={{ padding: "5px 10px", borderBottom: "1px solid #DCD3B8", fontFamily: "'Noto Serif SC', serif", fontWeight: 700, color: COLORS.ink, whiteSpace: "nowrap" }}>
+                    <td style={{ padding: "5px 10px", borderBottom: "1px solid #DCD3B8", fontFamily: "var(--font-serif), serif", fontWeight: 700, color: COLORS.ink, whiteSpace: "nowrap" }}>
                       <RubyText text={name} />
                     </td>
                     <td style={{ padding: "5px 10px", borderBottom: "1px solid #DCD3B8" }}><RubyText text={editor} /></td>

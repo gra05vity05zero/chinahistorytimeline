@@ -59,10 +59,10 @@ export default function EraEventsPage({ params }) {
 
         <div className="flex items-center gap-3 mt-5 mb-4">
           <SealMark char={era.seal} active />
-          <div style={{ fontSize: 12, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}><RubyText text={era.period} /></div>
+          <div style={{ fontSize: 12, color: COLORS.gold, fontFamily: "var(--font-serif), serif" }}><RubyText text={era.period} /></div>
         </div>
 
-        <h1 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 24, fontWeight: 900, color: COLORS.ink }}>
+        <h1 style={{ fontFamily: "var(--font-serif), serif", fontSize: 24, fontWeight: 900, color: COLORS.ink }}>
           <RubyText text={era.name} />の出来事一覧
           {alias && (
             <span style={{ fontSize: 13, color: COLORS.inkSoft, fontWeight: 400, marginLeft: 8 }}>（<RubyText text={alias} />）</span>

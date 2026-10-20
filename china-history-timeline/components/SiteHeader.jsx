@@ -9,10 +9,10 @@ import { COLORS } from "@/lib/constants";
 export function SiteTitle({ headingAs: Heading = "div" }) {
   return (
     <>
-      <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 12, letterSpacing: "0.3em", color: COLORS.vermilion }}>
+      <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 12, letterSpacing: "0.3em", color: COLORS.vermilion }}>
         CHINESE HISTORY TIMELINE
       </div>
-      <Heading style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 32, fontWeight: 900, color: COLORS.ink, marginTop: 6 }}>
+      <Heading style={{ fontFamily: "var(--font-serif), serif", fontSize: 32, fontWeight: 900, color: COLORS.ink, marginTop: 6 }}>
         <Link href="/" title="トップページへ" style={{ color: "inherit", textDecoration: "none" }}>
           中国史年表
         </Link>

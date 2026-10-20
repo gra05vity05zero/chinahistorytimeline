@@ -169,16 +169,16 @@ function EntryContent({ entry }) {
           <TimelineIcon name={entry.icon} />
         </div>
       )}
-      <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 13.5, fontWeight: 700, color: COLORS.gold }}><RubyText text={entry.yearLabel} /></div>
+      <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 13.5, fontWeight: 700, color: COLORS.gold }}><RubyText text={entry.yearLabel} /></div>
       {isCn && entry.href ? (
         <a
           href={entry.href}
-          style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 13.5, fontWeight: 700, color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}
+          style={{ fontFamily: "var(--font-serif), serif", fontSize: 13.5, fontWeight: 700, color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}
         >
           <RubyText text={entry.event} />
         </a>
       ) : (
-        <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 13.5, fontWeight: 700, color: isCn ? COLORS.vermilion : COLORS.ink }}>
+        <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 13.5, fontWeight: 700, color: isCn ? COLORS.vermilion : COLORS.ink }}>
           <RubyText text={entry.event} />
         </div>
       )}
@@ -193,7 +193,7 @@ export default function JapanChinaTimelinePage() {
       <div className="max-w-2xl mx-auto px-6 py-12">
         <BackToTopButton />
 
-        <h1 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
+        <h1 style={{ fontFamily: "var(--font-serif), serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
           日本史・中国史 対照年表
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 28 }}>

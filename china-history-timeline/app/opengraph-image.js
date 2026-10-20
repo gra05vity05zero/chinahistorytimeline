@@ -12,7 +12,7 @@ export const alt = "中国五千年史 — 文明の黎明から現代までの�
 async function loadFont(text, weight) {
   try {
     const css = await fetch(
-      `https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@${weight}&text=${encodeURIComponent(text)}`,
+      `https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@${weight}&text=${encodeURIComponent(text)}`,
       { headers: { "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.57.2 (KHTML, like Gecko) Version/5.1.7 Safari/534.57.2" } }
     ).then((r) => r.text());
     const match = css.match(/src:\s*url\(([^)]+)\)\s*format\('(?:woff|truetype|opentype)'\)/);

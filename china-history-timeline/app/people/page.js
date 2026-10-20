@@ -23,7 +23,7 @@ export default function PeopleIndexPage() {
     <div style={{ backgroundColor: COLORS.paper, minHeight: "100%" }}>
       <div className="max-w-2xl mx-auto px-6 py-12">
         <BackToTopButton />
-        <h1 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
+        <h1 style={{ fontFamily: "var(--font-serif), serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
           人物一覧
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 24 }}>
@@ -40,7 +40,7 @@ export default function PeopleIndexPage() {
             >
               <SealMark char={era.seal} />
               <div className="flex-1">
-                <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 15, fontWeight: 700, color: COLORS.ink }}>
+                <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 15, fontWeight: 700, color: COLORS.ink }}>
                   <RubyText text={era.name} />
                   {ERA_ALIASES[era.id] && (
                     <span style={{ fontSize: 11, color: COLORS.inkSoft, fontWeight: 400, marginLeft: 6 }}>
@@ -48,7 +48,7 @@ export default function PeopleIndexPage() {
                     </span>
                   )}
                 </div>
-                <div style={{ fontSize: 11, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}><RubyText text={era.period} /></div>
+                <div style={{ fontSize: 11, color: COLORS.gold, fontFamily: "var(--font-serif), serif" }}><RubyText text={era.period} /></div>
               </div>
               <div style={{ fontSize: 11, color: COLORS.inkSoft, whiteSpace: "nowrap" }}>{count}人</div>
             </Link>

@@ -79,7 +79,7 @@ export default function FourGreatNovelsPage() {
       <div className="max-w-2xl mx-auto px-6 py-12">
         <BackToTopButton />
 
-        <h1 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
+        <h1 style={{ fontFamily: "var(--font-serif), serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
           中国の四大名著とは？
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 28 }}>
@@ -110,7 +110,7 @@ export default function FourGreatNovelsPage() {
                     borderRadius: 13,
                     backgroundColor: COLORS.vermilion,
                     color: "#FBF8F0",
-                    fontFamily: "'Noto Serif SC', serif",
+                    fontFamily: "var(--font-serif), serif",
                     fontSize: 12,
                     fontWeight: 700,
                   }}
@@ -126,10 +126,10 @@ export default function FourGreatNovelsPage() {
                   </div>
                 )}
                 <div className="flex items-baseline justify-between gap-3 flex-wrap">
-                  <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 17, fontWeight: 700, color: COLORS.ink }}>
+                  <span style={{ fontFamily: "var(--font-serif), serif", fontSize: 17, fontWeight: 700, color: COLORS.ink }}>
                     <RubyText text={n.name} />
                   </span>
-                  <span style={{ fontSize: 11, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif", textAlign: "right" }}>
+                  <span style={{ fontSize: 11, color: COLORS.gold, fontFamily: "var(--font-serif), serif", textAlign: "right" }}>
                     <RubyText text={n.period} />
                   </span>
                 </div>

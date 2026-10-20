@@ -24,7 +24,7 @@ export const metadata = {
 const SONG_COLOR = "#B5452F";
 const LIAO_COLOR = "#4F6FA0";
 
-const sectionHeading = { fontFamily: "'Noto Serif SC', serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 14 };
+const sectionHeading = { fontFamily: "var(--font-serif), serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 14 };
 const card = { backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8" };
 const linkStyle = { color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist };
 const bodyText = { fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft };
@@ -324,18 +324,18 @@ function YangMap() {
         <path d={CHINA_OUTLINE} fill="#DCD3B8" stroke={COLORS.mist} strokeWidth="0.3" strokeLinejoin="round" />
         <polygon points={YANYUN_POLYGON} fill="url(#yanyun-hatch)" stroke={LIAO_COLOR} strokeWidth="0.3" strokeDasharray="1 0.7" />
 
-        <text x={lx} y={ly} textAnchor="middle" style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 1.9, fontWeight: 700, fill: LIAO_COLOR }}>
+        <text x={lx} y={ly} textAnchor="middle" style={{ fontFamily: "var(--font-serif), serif", fontSize: 1.9, fontWeight: 700, fill: LIAO_COLOR }}>
           燕雲十六州
         </text>
-        <text x={331} y={129} textAnchor="middle" style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 3.6, fontWeight: 900, fill: LIAO_COLOR, opacity: 0.55 }}>
+        <text x={331} y={129} textAnchor="middle" style={{ fontFamily: "var(--font-serif), serif", fontSize: 3.6, fontWeight: 900, fill: LIAO_COLOR, opacity: 0.55 }}>
           遼
         </text>
-        <text x={320} y={178} textAnchor="middle" style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 3.6, fontWeight: 900, fill: SONG_COLOR, opacity: 0.5 }}>
+        <text x={320} y={178} textAnchor="middle" style={{ fontFamily: "var(--font-serif), serif", fontSize: 3.6, fontWeight: 900, fill: SONG_COLOR, opacity: 0.5 }}>
           宋
         </text>
 
         <circle cx={kx} cy={ky} r="0.9" fill={COLORS.gold} stroke={COLORS.paper} strokeWidth="0.3" />
-        <text x={kx + 1.6} y={ky + 0.6} style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 1.7, fill: COLORS.inkSoft }}>
+        <text x={kx + 1.6} y={ky + 0.6} style={{ fontFamily: "var(--font-serif), serif", fontSize: 1.7, fill: COLORS.inkSoft }}>
           開封（宋の都）
         </text>
 
@@ -345,14 +345,14 @@ function YangMap() {
           return (
             <a key={b.no} href={`#${b.id}`}>
               <circle cx={x} cy={y} r="1.35" fill={COLORS.vermilion} stroke={COLORS.paper} strokeWidth="0.3" />
-              <text x={x} y={y} textAnchor="middle" dominantBaseline="central" style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 1.6, fontWeight: 700, fill: "#FBF8F0" }}>
+              <text x={x} y={y} textAnchor="middle" dominantBaseline="central" style={{ fontFamily: "var(--font-serif), serif", fontSize: 1.6, fontWeight: 700, fill: "#FBF8F0" }}>
                 {b.no}
               </text>
               <text
                 x={right ? x + 2 : x - 2}
                 y={y + 0.6}
                 textAnchor={right ? "start" : "end"}
-                style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 1.7, fontWeight: 700, fill: COLORS.ink }}
+                style={{ fontFamily: "var(--font-serif), serif", fontSize: 1.7, fontWeight: 700, fill: COLORS.ink }}
               >
                 {stripRuby(b.label)}
               </text>
@@ -410,10 +410,10 @@ export default function YangjiajiangPage() {
       <div className="max-w-2xl mx-auto px-6 py-12">
         <BackToTopButton />
 
-        <h1 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 6 }}>
+        <h1 style={{ fontFamily: "var(--font-serif), serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 6 }}>
           <ruby>楊家将<rt>ようかしょう</rt></ruby>とは？
         </h1>
-        <p style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14, color: COLORS.gold, marginBottom: 14 }}>
+        <p style={{ fontFamily: "var(--font-serif), serif", fontSize: 14, color: COLORS.gold, marginBottom: 14 }}>
           <ruby>北方謙三<rt>きたかたけんぞう</rt></ruby>『<ruby>楊家将<rt>ようかしょう</rt></ruby>』で読む<ruby>宋<rt>そう</rt></ruby>と<ruby>遼<rt>りょう</rt></ruby>の戦い
         </p>
         <p style={{ ...bodyText, fontSize: 13.5, marginBottom: 28 }}>
@@ -441,9 +441,9 @@ export default function YangjiajiangPage() {
             {FLOW.map((f, i) => {
               const content = (
                 <div className="flex items-baseline gap-3 px-4 py-2.5" style={{ ...card, borderLeft: `3px solid ${COLORS.vermilion}` }}>
-                  <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 12.5, color: COLORS.inkSoft, whiteSpace: "nowrap" }}><RubyText text={f.year} /></span>
+                  <span style={{ fontFamily: "var(--font-serif), serif", fontSize: 12.5, color: COLORS.inkSoft, whiteSpace: "nowrap" }}><RubyText text={f.year} /></span>
                   <div className="flex-1 min-w-0">
-                    <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14.5, fontWeight: 700, color: COLORS.ink }}>
+                    <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 14.5, fontWeight: 700, color: COLORS.ink }}>
                       <RubyText text={f.title} />
                     </div>
                     <div style={{ fontSize: 11.5, color: COLORS.inkSoft, lineHeight: 1.6, marginTop: 2 }}>
@@ -477,14 +477,14 @@ export default function YangjiajiangPage() {
                     <div className="flex items-baseline gap-2 flex-wrap">
                       <span
                         className="flex items-center justify-center shrink-0"
-                        style={{ width: 22, height: 22, borderRadius: "50%", backgroundColor: COLORS.vermilion, color: "#FBF8F0", fontFamily: "'Noto Serif SC', serif", fontSize: 11, fontWeight: 700 }}
+                        style={{ width: 22, height: 22, borderRadius: "50%", backgroundColor: COLORS.vermilion, color: "#FBF8F0", fontFamily: "var(--font-serif), serif", fontSize: 11, fontWeight: 700 }}
                       >
                         {b.no}
                       </span>
-                      <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 16.5, fontWeight: 700, color: COLORS.ink }}>
+                      <span style={{ fontFamily: "var(--font-serif), serif", fontSize: 16.5, fontWeight: 700, color: COLORS.ink }}>
                         <RubyText text={b.name} />
                       </span>
-                      <span style={{ fontSize: 12, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}><RubyText text={b.year} />年</span>
+                      <span style={{ fontSize: 12, color: COLORS.gold, fontFamily: "var(--font-serif), serif" }}><RubyText text={b.year} />年</span>
                     </div>
                     <div style={{ fontSize: 11, color: COLORS.vermilionSoft, marginTop: 4 }}>
                       <span aria-hidden>📍</span> <RubyText text={b.location} />
@@ -528,7 +528,7 @@ export default function YangjiajiangPage() {
             {PEOPLE.map((group) => (
               <div key={group.side}>
                 <div
-                  style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 15, fontWeight: 700, color: group.color, borderBottom: `2px solid ${group.color}`, paddingBottom: 4, marginBottom: 10 }}
+                  style={{ fontFamily: "var(--font-serif), serif", fontSize: 15, fontWeight: 700, color: group.color, borderBottom: `2px solid ${group.color}`, paddingBottom: 4, marginBottom: 10 }}
                 >
                   <RubyText text={group.side} />
                 </div>
@@ -537,7 +537,7 @@ export default function YangjiajiangPage() {
                     <div key={m.name} className="flex gap-3 p-3" style={card}>
                       <Portrait imageUrl={m.imageUrl} name={m.name} size={72} />
                       <div className="flex-1 min-w-0">
-                        <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14.5, fontWeight: 700, color: COLORS.ink }}>
+                        <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 14.5, fontWeight: 700, color: COLORS.ink }}>
                           {m.href ? (
                             <a href={m.href} style={{ color: COLORS.ink, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
                               <RubyText text={m.name} />
@@ -570,8 +570,8 @@ export default function YangjiajiangPage() {
               <thead>
                 <tr>
                   <th style={{ width: 84, padding: "10px 8px", borderBottom: "1px solid #DCD3B8" }} />
-                  <th style={{ padding: "10px 8px", borderBottom: `2px solid ${COLORS.ink}`, textAlign: "left", fontFamily: "'Noto Serif SC', serif", fontSize: 14, color: COLORS.ink }}>史実（『<ruby>宋史<rt>そうし</rt></ruby>』など）</th>
-                  <th style={{ padding: "10px 8px", borderBottom: `2px solid ${COLORS.vermilion}`, textAlign: "left", fontFamily: "'Noto Serif SC', serif", fontSize: 14, color: COLORS.ink }}>演義・京劇</th>
+                  <th style={{ padding: "10px 8px", borderBottom: `2px solid ${COLORS.ink}`, textAlign: "left", fontFamily: "var(--font-serif), serif", fontSize: 14, color: COLORS.ink }}>史実（『<ruby>宋史<rt>そうし</rt></ruby>』など）</th>
+                  <th style={{ padding: "10px 8px", borderBottom: `2px solid ${COLORS.vermilion}`, textAlign: "left", fontFamily: "var(--font-serif), serif", fontSize: 14, color: COLORS.ink }}>演義・京劇</th>
                 </tr>
               </thead>
               <tbody>
@@ -606,12 +606,12 @@ export default function YangjiajiangPage() {
               <div key={book.no} className="flex gap-3 p-4" style={card}>
                 <span
                   className="flex items-center justify-center shrink-0"
-                  style={{ width: 28, height: 28, borderRadius: "50%", border: `1.5px solid ${COLORS.vermilion}`, color: COLORS.vermilion, fontFamily: "'Noto Serif SC', serif", fontSize: 13, fontWeight: 700 }}
+                  style={{ width: 28, height: 28, borderRadius: "50%", border: `1.5px solid ${COLORS.vermilion}`, color: COLORS.vermilion, fontFamily: "var(--font-serif), serif", fontSize: 13, fontWeight: 700 }}
                 >
                   {book.no}
                 </span>
                 <div className="flex-1 min-w-0">
-                  <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 16, fontWeight: 700, color: COLORS.ink }}><RubyText text={book.title} /></div>
+                  <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 16, fontWeight: 700, color: COLORS.ink }}><RubyText text={book.title} /></div>
                   <div style={{ fontSize: 11, color: COLORS.gold, marginTop: 2 }}><RubyText text={book.meta} /></div>
                   <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft, marginTop: 6 }}><RubyText text={book.body} /></p>
                   {book.kindle && (
@@ -655,7 +655,7 @@ export default function YangjiajiangPage() {
           <div className="flex flex-col gap-3">
             {FAQ.map((f) => (
               <div key={f.q} style={{ ...card, padding: "14px 16px" }}>
-                <h3 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14.5, fontWeight: 700, color: COLORS.ink }}>
+                <h3 style={{ fontFamily: "var(--font-serif), serif", fontSize: 14.5, fontWeight: 700, color: COLORS.ink }}>
                   <span style={{ color: COLORS.vermilion, marginRight: 6 }}>Q.</span>
                   <RubyText text={f.q} />
                 </h3>

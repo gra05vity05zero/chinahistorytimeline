@@ -9,7 +9,7 @@ export default function NotFound() {
     >
       <div
         style={{
-          fontFamily: "'Noto Serif SC', serif",
+          fontFamily: "var(--font-serif), serif",
           fontSize: 48,
           fontWeight: 900,
           color: COLORS.vermilion,

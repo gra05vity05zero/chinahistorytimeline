@@ -437,7 +437,7 @@ function KindBadge({ kind }) {
   return (
     <span
       className="shrink-0"
-      style={{ fontSize: 10.5, fontWeight: 700, color: style.color, border: `1px solid ${style.color}`, padding: "1px 7px", fontFamily: "'Noto Serif SC', serif" }}
+      style={{ fontSize: 10.5, fontWeight: 700, color: style.color, border: `1px solid ${style.color}`, padding: "1px 7px", fontFamily: "var(--font-serif), serif" }}
     >
       <RubyText text={style.label || kind} />
     </span>
@@ -450,7 +450,7 @@ export default function FunnyEpisodesPage() {
       <div className="max-w-2xl mx-auto px-6 py-12">
         <BackToTopButton />
 
-        <h1 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
+        <h1 style={{ fontFamily: "var(--font-serif), serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
           中国史の笑えるエピソード・おもしろ<ruby>逸話集<rt>いつわしゅう</rt></ruby>
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 28 }}>
@@ -464,7 +464,7 @@ export default function FunnyEpisodesPage() {
         </p>
 
         <section style={{ marginBottom: 28 }}>
-          <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
             読む前に：史実と<ruby>逸話<rt>いつわ</rt></ruby>の区別
           </h2>
           <div style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: "14px 16px" }}>
@@ -495,7 +495,7 @@ export default function FunnyEpisodesPage() {
 
         {RESOLVED.map((group) => (
           <section key={group.id} id={group.id} style={{ marginBottom: 36, scrollMarginTop: 16 }}>
-            <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 6 }}>
+            <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 6 }}>
               <RubyText text={group.title} />
             </h2>
             <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginBottom: 14 }}>
@@ -505,12 +505,12 @@ export default function FunnyEpisodesPage() {
               {group.episodes.map((ep, i) => (
                 <article key={i} id={ep.id} style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: "14px 16px" }}>
                   <div className="flex items-baseline justify-between gap-3">
-                    <span style={{ fontSize: 11, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}>
+                    <span style={{ fontSize: 11, color: COLORS.gold, fontFamily: "var(--font-serif), serif" }}>
                       <RubyText text={ep.when} />
                     </span>
                     <KindBadge kind={ep.kind} />
                   </div>
-                  <h3 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 16.5, fontWeight: 700, lineHeight: 1.6, color: COLORS.vermilion, marginTop: 6 }}>
+                  <h3 style={{ fontFamily: "var(--font-serif), serif", fontSize: 16.5, fontWeight: 700, lineHeight: 1.6, color: COLORS.vermilion, marginTop: 6 }}>
                     <RubyText text={ep.title} />
                   </h3>
                   <p style={{ fontSize: 12.5, fontWeight: 700, color: COLORS.ink, marginTop: 4 }}>

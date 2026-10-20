@@ -1,7 +1,13 @@
 import "./globals.css";
+import { Noto_Serif_JP, Noto_Sans_JP } from "next/font/google";
 import Footer from "@/components/Footer";
 import SiteHeader from "@/components/SiteHeader";
 import { ADSENSE_CLIENT_ID, GA_MEASUREMENT_ID, SITE_URL, SITE_NAME, SITE_DESCRIPTION, buildOpenGraph, buildTwitter } from "@/lib/data";
+
+// 日本語サイトなので日本の字形（JP）のフォントを使う（SCだと「直」「骨」などが中国式の字形になる）。
+// next/fontでセルフホストし、各コンポーネントのインラインstyleからはCSS変数で参照する。
+const serif = Noto_Serif_JP({ weight: ["500", "700", "900"], subsets: ["latin"], display: "swap", preload: false, variable: "--font-serif" });
+const sans = Noto_Sans_JP({ weight: ["400", "500"], subsets: ["latin"], display: "swap", preload: false, variable: "--font-sans" });
 
 // ホームページの<title>は検索されやすい語を先頭に置き、ブランド名（SITE_NAME）は
 // 他ページと違いあえて付けない（末尾に付けると文字数が伸びSERP上で見切れやすくなるため）。
@@ -38,13 +44,8 @@ const websiteJsonLd = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ja">
+    <html lang="ja" className={`${serif.variable} ${sans.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500&display=swap"
-          rel="stylesheet"
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}

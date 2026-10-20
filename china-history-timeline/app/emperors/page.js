@@ -441,7 +441,7 @@ const PERSON_PAGES = new Set(
 
 const TOTAL = DYNASTIES.reduce((sum, d) => sum + d.emperors.length, 0);
 
-const SERIF = "'Noto Serif SC', serif";
+const SERIF = "var(--font-serif), serif";
 
 function EmperorRow({ emperor, index }) {
   const personHref = emperor.person && PERSON_PAGES.has(emperor.person) ? `/people/${emperor.person}` : null;

@@ -25,7 +25,7 @@ export default function TerracottaArmyPage() {
       <div className="max-w-2xl mx-auto px-6 py-12">
         <BackToTopButton />
 
-        <h1 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
+        <h1 style={{ fontFamily: "var(--font-serif), serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
           <ruby>兵馬俑<rt>へいばよう</rt></ruby>・<ruby>始皇帝陵<rt>しこうていりょう</rt></ruby>の<ruby>謎<rt>なぞ</rt></ruby>
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 28 }}>
@@ -39,7 +39,7 @@ export default function TerracottaArmyPage() {
         )}
 
         <section style={{ marginBottom: 28 }}>
-          <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
             きっかけは農民の<ruby>井戸掘<rt>いどほ</rt></ruby>りだった
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft }}>
@@ -48,7 +48,7 @@ export default function TerracottaArmyPage() {
         </section>
 
         <section style={{ marginBottom: 28 }}>
-          <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
             一体ずつ顔が<ruby>違<rt>ちが</rt></ruby>う、8000体の兵士たち
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft }}>
@@ -57,7 +57,7 @@ export default function TerracottaArmyPage() {
         </section>
 
         <section style={{ marginBottom: 28 }}>
-          <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
             なぜ<ruby>彩色<rt>さいしき</rt></ruby>はすぐに消えてしまうのか
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft }}>
@@ -66,7 +66,7 @@ export default function TerracottaArmyPage() {
         </section>
 
         <section style={{ marginBottom: 28 }}>
-          <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
             なぜ<ruby>陵墓<rt>りょうぼ</rt></ruby>の本体はいまだ<ruby>発掘<rt>はっくつ</rt></ruby>されないのか
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft, marginBottom: 10 }}>
@@ -78,7 +78,7 @@ export default function TerracottaArmyPage() {
         </section>
 
         <section style={{ marginBottom: 28 }}>
-          <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
             不老不死を求め続けた<ruby>始皇帝<rt>しこうてい</rt></ruby>
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft }}>

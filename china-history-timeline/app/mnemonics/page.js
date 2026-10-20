@@ -86,7 +86,7 @@ export default function MnemonicsPage() {
       <div className="max-w-2xl mx-auto px-6 py-12">
         <BackToTopButton />
 
-        <h1 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
+        <h1 style={{ fontFamily: "var(--font-serif), serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
           中国王朝の覚え方（<ruby>語呂合<rt>ごろあ</rt></ruby>わせ）
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 12 }}>
@@ -95,7 +95,7 @@ export default function MnemonicsPage() {
         </p>
 
         <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 6 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 6 }}>
             <ruby>語呂合<rt>ごろあ</rt></ruby>わせで唱える王朝の順番
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginBottom: 12 }}>
@@ -108,7 +108,7 @@ export default function MnemonicsPage() {
             {CHANT.map((item, i) => (
               <div key={i} className="flex items-center gap-2">
                 <div className="flex flex-col items-center" style={{ minWidth: 44 }}>
-                  <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 20, fontWeight: 700, color: COLORS.vermilion }}>
+                  <span style={{ fontFamily: "var(--font-serif), serif", fontSize: 20, fontWeight: 700, color: COLORS.vermilion }}>
                     <RubyText text={item.text} />
                   </span>
                   <span style={{ fontSize: 9.5, color: COLORS.inkSoft, marginTop: 2, whiteSpace: "nowrap" }}><RubyText text={item.note} /></span>
@@ -128,7 +128,7 @@ export default function MnemonicsPage() {
         </section>
 
         <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
             王朝・時代の一覧（{ERAS.length}区分）
           </h2>
           <div className="flex flex-col gap-1.5">
@@ -140,27 +140,27 @@ export default function MnemonicsPage() {
               >
                 <span
                   className="shrink-0 text-center"
-                  style={{ fontSize: 11, color: COLORS.mist, width: 22, fontFamily: "'Noto Serif SC', serif" }}
+                  style={{ fontSize: 11, color: COLORS.mist, width: 22, fontFamily: "var(--font-serif), serif" }}
                 >
                   {i + 1}
                 </span>
-                <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14, fontWeight: 700, color: COLORS.ink, minWidth: 132 }}>
+                <span style={{ fontFamily: "var(--font-serif), serif", fontSize: 14, fontWeight: 700, color: COLORS.ink, minWidth: 132 }}>
                   <RubyText text={era.name} />
                 </span>
-                <span style={{ fontSize: 11, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}><RubyText text={era.period} /></span>
+                <span style={{ fontSize: 11, color: COLORS.gold, fontFamily: "var(--font-serif), serif" }}><RubyText text={era.period} /></span>
               </div>
             ))}
           </div>
         </section>
 
         <section style={{ marginBottom: 36 }}>
-          <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 12 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 12 }}>
             混同しやすい時代の暗記のコツ
           </h2>
           <div className="flex flex-col gap-4">
             {TIPS.map((tip, i) => (
               <div key={i} style={{ borderLeft: `3px solid ${COLORS.vermilion}`, paddingLeft: 12 }}>
-                <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 13.5, fontWeight: 700, color: COLORS.ink, marginBottom: 4 }}>
+                <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 13.5, fontWeight: 700, color: COLORS.ink, marginBottom: 4 }}>
                   <RubyText text={tip.heading} />
                 </div>
                 <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft }}>

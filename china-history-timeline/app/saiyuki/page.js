@@ -24,7 +24,7 @@ export const metadata = {
 const PILGRIM_COLOR = "#B5452F";
 const HEAVEN_COLOR = "#4F6FA0";
 
-const sectionHeading = { fontFamily: "'Noto Serif SC', serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 14 };
+const sectionHeading = { fontFamily: "var(--font-serif), serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 14 };
 const card = { backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8" };
 const linkStyle = { color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist };
 const bodyText = { fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft };
@@ -297,10 +297,10 @@ function RouteMap() {
           return (
             <a key={p.no} href={`#place-${p.no}`}>
               <circle cx={x} cy={y} r="3.8" fill={COLORS.vermilion} stroke={COLORS.paper} strokeWidth="0.6" />
-              <text x={x} y={y} textAnchor="middle" dominantBaseline="central" style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 4.4, fontWeight: 700, fill: "#FBF8F0" }}>
+              <text x={x} y={y} textAnchor="middle" dominantBaseline="central" style={{ fontFamily: "var(--font-serif), serif", fontSize: 4.4, fontWeight: 700, fill: "#FBF8F0" }}>
                 {p.no}
               </text>
-              <text x={l.x} y={l.y} textAnchor={l.anchor} style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 6, fontWeight: 700, fill: COLORS.ink }}>
+              <text x={l.x} y={l.y} textAnchor={l.anchor} style={{ fontFamily: "var(--font-serif), serif", fontSize: 6, fontWeight: 700, fill: COLORS.ink }}>
                 {stripRuby(p.label)}
               </text>
             </a>
@@ -333,7 +333,7 @@ function NumberBadge({ children, size = 22, outline = false }) {
         backgroundColor: outline ? "transparent" : COLORS.vermilion,
         border: outline ? `1.5px solid ${COLORS.vermilion}` : "none",
         color: outline ? COLORS.vermilion : "#FBF8F0",
-        fontFamily: "'Noto Serif SC', serif",
+        fontFamily: "var(--font-serif), serif",
         fontSize: size > 24 ? 13 : 11,
         fontWeight: 700,
       }}
@@ -392,10 +392,10 @@ export default function SaiyukiPage() {
       <div className="max-w-2xl mx-auto px-6 py-12">
         <BackToTopButton />
 
-        <h1 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 6 }}>
+        <h1 style={{ fontFamily: "var(--font-serif), serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 6 }}>
           西遊記とは？
         </h1>
-        <p style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14, color: COLORS.gold, marginBottom: 14 }}>
+        <p style={{ fontFamily: "var(--font-serif), serif", fontSize: 14, color: COLORS.gold, marginBottom: 14 }}>
           <ruby>孫悟空<rt>そんごくう</rt></ruby>たちの<ruby>天竺<rt>てんじく</rt></ruby>への旅と、史実の<ruby>玄奘三蔵<rt>げんじょうさんぞう</rt></ruby>
         </p>
         <p style={{ ...bodyText, fontSize: 13.5, marginBottom: 20 }}>
@@ -419,7 +419,7 @@ export default function SaiyukiPage() {
                 <NumberBadge size={28} outline>{s.no}</NumberBadge>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-baseline gap-2 flex-wrap">
-                    <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 16, fontWeight: 700, color: COLORS.ink }}><RubyText text={s.title} /></span>
+                    <span style={{ fontFamily: "var(--font-serif), serif", fontSize: 16, fontWeight: 700, color: COLORS.ink }}><RubyText text={s.title} /></span>
                     <span style={{ fontSize: 11, color: COLORS.gold }}><RubyText text={s.range} /></span>
                   </div>
                   <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft, marginTop: 6 }}>
@@ -437,7 +437,7 @@ export default function SaiyukiPage() {
             {PEOPLE.map((group) => (
               <div key={group.side}>
                 <div
-                  style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 15, fontWeight: 700, color: group.color, borderBottom: `2px solid ${group.color}`, paddingBottom: 4, marginBottom: 10 }}
+                  style={{ fontFamily: "var(--font-serif), serif", fontSize: 15, fontWeight: 700, color: group.color, borderBottom: `2px solid ${group.color}`, paddingBottom: 4, marginBottom: 10 }}
                 >
                   <RubyText text={group.side} />
                 </div>
@@ -446,7 +446,7 @@ export default function SaiyukiPage() {
                     <div key={m.name} className="flex gap-3 p-3" style={card}>
                       <Portrait imageUrl={m.imageUrl} name={m.name} size={72} />
                       <div className="flex-1 min-w-0">
-                        <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14.5, fontWeight: 700, color: COLORS.ink }}>
+                        <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 14.5, fontWeight: 700, color: COLORS.ink }}>
                           <RubyText text={m.name} />
                         </div>
                         <div style={{ fontSize: 11, color: COLORS.gold, marginTop: 2 }}>
@@ -474,7 +474,7 @@ export default function SaiyukiPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {EPISODES.map((e) => (
               <div key={e.title} className="p-4" style={{ ...card, borderTop: `3px solid ${COLORS.vermilion}` }}>
-                <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14.5, fontWeight: 700, color: COLORS.ink }}>
+                <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 14.5, fontWeight: 700, color: COLORS.ink }}>
                   <RubyText text={e.title} />
                 </div>
                 <div style={{ fontSize: 11, color: COLORS.gold, marginTop: 2 }}><RubyText text={e.range} /></div>
@@ -492,9 +492,9 @@ export default function SaiyukiPage() {
             {FLOW.map((f, i) => {
               const content = (
                 <div className="flex items-baseline gap-3 px-4 py-2.5" style={{ ...card, borderLeft: `3px solid ${COLORS.vermilion}` }}>
-                  <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 12.5, color: COLORS.inkSoft, whiteSpace: "nowrap" }}><RubyText text={f.year} /></span>
+                  <span style={{ fontFamily: "var(--font-serif), serif", fontSize: 12.5, color: COLORS.inkSoft, whiteSpace: "nowrap" }}><RubyText text={f.year} /></span>
                   <div className="flex-1 min-w-0">
-                    <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14.5, fontWeight: 700, color: COLORS.ink }}>
+                    <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 14.5, fontWeight: 700, color: COLORS.ink }}>
                       <RubyText text={f.title} />
                     </div>
                     <div style={{ fontSize: 11.5, color: COLORS.inkSoft, lineHeight: 1.6, marginTop: 2 }}>
@@ -529,7 +529,7 @@ export default function SaiyukiPage() {
               <div key={p.no} id={`place-${p.no}`} className="flex items-baseline gap-3 px-4 py-2.5" style={{ ...card, scrollMarginTop: 16 }}>
                 <NumberBadge>{p.no}</NumberBadge>
                 <div className="flex-1 min-w-0">
-                  <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14, fontWeight: 700, color: COLORS.ink }}>
+                  <span style={{ fontFamily: "var(--font-serif), serif", fontSize: 14, fontWeight: 700, color: COLORS.ink }}>
                     <RubyText text={p.name} />
                   </span>
                   <span style={{ fontSize: 12, color: COLORS.inkSoft, marginLeft: 8 }}>
@@ -559,8 +559,8 @@ export default function SaiyukiPage() {
               <thead>
                 <tr>
                   <th style={{ width: 70, padding: "10px 8px", borderBottom: "1px solid #DCD3B8" }} />
-                  <th style={{ padding: "10px 8px", borderBottom: `2px solid ${COLORS.ink}`, textAlign: "left", fontFamily: "'Noto Serif SC', serif", fontSize: 14, color: COLORS.ink }}>史実（『<ruby>大唐西域記<rt>だいとうさいいきき</rt></ruby>』など）</th>
-                  <th style={{ padding: "10px 8px", borderBottom: `2px solid ${COLORS.vermilion}`, textAlign: "left", fontFamily: "'Noto Serif SC', serif", fontSize: 14, color: COLORS.ink }}>小説『西遊記』</th>
+                  <th style={{ padding: "10px 8px", borderBottom: `2px solid ${COLORS.ink}`, textAlign: "left", fontFamily: "var(--font-serif), serif", fontSize: 14, color: COLORS.ink }}>史実（『<ruby>大唐西域記<rt>だいとうさいいきき</rt></ruby>』など）</th>
+                  <th style={{ padding: "10px 8px", borderBottom: `2px solid ${COLORS.vermilion}`, textAlign: "left", fontFamily: "var(--font-serif), serif", fontSize: 14, color: COLORS.ink }}>小説『西遊記』</th>
                 </tr>
               </thead>
               <tbody>
@@ -614,7 +614,7 @@ export default function SaiyukiPage() {
           <div className="flex flex-col gap-2">
             {VERSIONS.map((v) => (
               <div key={v.name} className="px-4 py-3" style={{ ...card, borderLeft: `3px solid ${COLORS.gold}` }}>
-                <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14.5, fontWeight: 700, color: COLORS.ink }}>
+                <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 14.5, fontWeight: 700, color: COLORS.ink }}>
                   <RubyText text={v.name} />
                 </div>
                 <p style={{ fontSize: 12, lineHeight: 1.75, color: COLORS.inkSoft, marginTop: 2 }}>
@@ -631,7 +631,7 @@ export default function SaiyukiPage() {
             {JAPAN.map((j) => (
               <div key={j.title} className="p-4" style={card}>
                 <div className="flex items-baseline gap-2 flex-wrap">
-                  <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 15, fontWeight: 700, color: COLORS.ink }}>
+                  <span style={{ fontFamily: "var(--font-serif), serif", fontSize: 15, fontWeight: 700, color: COLORS.ink }}>
                     <RubyText text={j.title} />
                   </span>
                   <span style={{ fontSize: 11, color: COLORS.gold }}><RubyText text={j.era} /></span>
@@ -649,7 +649,7 @@ export default function SaiyukiPage() {
           <div className="flex flex-col gap-3">
             {FAQ.map((f) => (
               <div key={f.q} style={{ ...card, padding: "14px 16px" }}>
-                <h3 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14.5, fontWeight: 700, color: COLORS.ink }}>
+                <h3 style={{ fontFamily: "var(--font-serif), serif", fontSize: 14.5, fontWeight: 700, color: COLORS.ink }}>
                   <span style={{ color: COLORS.vermilion, marginRight: 6 }}>Q.</span>
                   <RubyText text={f.q} />
                 </h3>

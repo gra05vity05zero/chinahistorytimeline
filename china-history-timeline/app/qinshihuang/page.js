@@ -138,10 +138,10 @@ export default function QinShiHuangPage() {
       <div className="max-w-2xl mx-auto px-6 py-12">
         <BackToTopButton />
 
-        <h1 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 6 }}>
+        <h1 style={{ fontFamily: "var(--font-serif), serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 6 }}>
           <ruby>始皇帝<rt>しこうてい</rt></ruby>とは？
         </h1>
-        <div style={{ fontSize: 12, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif", marginBottom: 14 }}>
+        <div style={{ fontSize: 12, color: COLORS.gold, fontFamily: "var(--font-serif), serif", marginBottom: 14 }}>
           前259年 – 前210年　<ruby>秦王<rt>しんおう</rt></ruby>：前247年-前221年　<ruby>皇帝<rt>こうてい</rt></ruby>：前221年-前210年
         </div>
 
@@ -162,7 +162,7 @@ export default function QinShiHuangPage() {
           aria-label="目次"
           style={{ backgroundColor: "#FBF8F0", border: `1px solid #DCD3B8`, padding: "14px 18px", marginBottom: 32 }}
         >
-          <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 11, letterSpacing: "0.15em", color: COLORS.gold, marginBottom: 8 }}>
+          <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 11, letterSpacing: "0.15em", color: COLORS.gold, marginBottom: 8 }}>
             目次
           </div>
           <ol className="grid gap-x-4 gap-y-1.5" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))", fontSize: 12.5 }}>
@@ -190,7 +190,7 @@ export default function QinShiHuangPage() {
         </nav>
 
         <section style={{ marginBottom: 32 }} id="shogai">
-          <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 14 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 14 }}>
             <ruby>始皇帝<rt>しこうてい</rt></ruby>の<ruby>生涯<rt>しょうがい</rt></ruby>
           </h2>
           <div className="flex flex-col gap-3">
@@ -215,7 +215,7 @@ export default function QinShiHuangPage() {
               <div key={i} className="flex gap-3">
                 <div
                   className="shrink-0"
-                  style={{ width: 108, fontFamily: "'Noto Serif SC', serif", fontSize: 12, color: COLORS.vermilion, paddingTop: 1 }}
+                  style={{ width: 108, fontFamily: "var(--font-serif), serif", fontSize: 12, color: COLORS.vermilion, paddingTop: 1 }}
                 >
                   <RubyText text={year} />
                 </div>
@@ -228,7 +228,7 @@ export default function QinShiHuangPage() {
         </section>
 
         <section style={{ marginBottom: 28 }} id="touitsu">
-          <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
             中国統一
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft }}>
@@ -255,7 +255,7 @@ export default function QinShiHuangPage() {
         </section>
 
         <section style={{ marginBottom: 28 }} id="seiji">
-          <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
             <ruby>秦<rt>しん</rt></ruby>の政治
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft, marginBottom: 10 }}>
@@ -281,7 +281,7 @@ export default function QinShiHuangPage() {
         </section>
 
         <section style={{ marginBottom: 28 }} id="houka">
-          <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
             法家思想
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft, marginBottom: 10 }}>
@@ -316,7 +316,7 @@ export default function QinShiHuangPage() {
         </section>
 
         <section style={{ marginBottom: 28 }} id="chojo">
-          <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
             万里の長城
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft }}>
@@ -348,7 +348,7 @@ export default function QinShiHuangPage() {
         </section>
 
         <section style={{ marginBottom: 28 }} id="ryo">
-          <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
             <ruby>始皇帝陵<rt>しこうていりょう</rt></ruby>
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft, marginBottom: 14 }}>
@@ -372,7 +372,7 @@ export default function QinShiHuangPage() {
         </section>
 
         <section style={{ marginBottom: 28 }} id="heibayou">
-          <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
             <ruby>兵馬俑<rt>へいばよう</rt></ruby>
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft }}>
@@ -389,7 +389,7 @@ export default function QinShiHuangPage() {
         </section>
 
         <section style={{ marginBottom: 28 }} id="shi">
-          <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
             <ruby>始皇帝<rt>しこうてい</rt></ruby>の死
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft, marginBottom: 10 }}>
@@ -416,7 +416,7 @@ export default function QinShiHuangPage() {
         </section>
 
         <section style={{ marginBottom: 28 }} id="metsubou">
-          <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
             <ruby>秦<rt>しん</rt></ruby>の<ruby>滅亡<rt>めつぼう</rt></ruby>
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft, marginBottom: 10 }}>
@@ -451,7 +451,7 @@ export default function QinShiHuangPage() {
         </section>
 
         <section style={{ marginBottom: 28 }} id="jinbutsu">
-          <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
             <ruby>始皇帝<rt>しこうてい</rt></ruby>に関係する人物
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginBottom: 14 }}>
@@ -461,7 +461,7 @@ export default function QinShiHuangPage() {
             {RELATED_PEOPLE.map((p, i) => (
               <div key={i} style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: 14 }}>
                 <div className="flex items-baseline gap-2 flex-wrap" style={{ marginBottom: 4 }}>
-                  <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14, fontWeight: 700, color: COLORS.ink }}>
+                  <span style={{ fontFamily: "var(--font-serif), serif", fontSize: 14, fontWeight: 700, color: COLORS.ink }}>
                     <RubyText text={p.name} />
                   </span>
                   <span style={{ fontSize: 11, color: COLORS.gold }}><RubyText text={p.role} /></span>
@@ -486,7 +486,7 @@ export default function QinShiHuangPage() {
         </section>
 
         <section style={{ marginBottom: 28 }} id="dekigoto">
-          <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
             <ruby>始皇帝<rt>しこうてい</rt></ruby>に関係する出来事
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginBottom: 14 }}>
@@ -500,12 +500,12 @@ export default function QinShiHuangPage() {
         </section>
 
         <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
             よくある質問
           </h2>
           <div className="flex flex-col gap-3">
             <div style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: 14 }}>
-              <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 13.5, fontWeight: 700, color: COLORS.ink, marginBottom: 6 }}>
+              <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 13.5, fontWeight: 700, color: COLORS.ink, marginBottom: 6 }}>
                 Q. <ruby>始皇帝<rt>しこうてい</rt></ruby>は何をした人？
               </div>
               <p style={{ fontSize: 12, lineHeight: 1.75, color: COLORS.inkSoft }}>
@@ -514,7 +514,7 @@ export default function QinShiHuangPage() {
               </p>
             </div>
             <div style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: 14 }}>
-              <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 13.5, fontWeight: 700, color: COLORS.ink, marginBottom: 6 }}>
+              <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 13.5, fontWeight: 700, color: COLORS.ink, marginBottom: 6 }}>
                 Q. <ruby>始皇帝<rt>しこうてい</rt></ruby>はなぜ暴君と言われるのか？
               </div>
               <p style={{ fontSize: 12, lineHeight: 1.75, color: COLORS.inkSoft }}>
@@ -523,7 +523,7 @@ export default function QinShiHuangPage() {
               </p>
             </div>
             <div style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: 14 }}>
-              <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 13.5, fontWeight: 700, color: COLORS.ink, marginBottom: 6 }}>
+              <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 13.5, fontWeight: 700, color: COLORS.ink, marginBottom: 6 }}>
                 Q. <ruby>始皇帝<rt>しこうてい</rt></ruby>の死因は？
               </div>
               <p style={{ fontSize: 12, lineHeight: 1.75, color: COLORS.inkSoft }}>

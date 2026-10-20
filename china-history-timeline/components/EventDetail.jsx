@@ -50,7 +50,7 @@ export default function EventDetail({ event, era, prev, next }) {
   return (
     <div style={{ backgroundColor: COLORS.paper, minHeight: "100%" }}>
       <div className="sticky top-0 z-20 px-5 py-3" style={{ backgroundColor: COLORS.paperDeep, borderBottom: `1px solid ${COLORS.mist}` }}>
-        <button onClick={onBack} className="flex items-center gap-2" style={{ color: COLORS.vermilion, fontFamily: "'Noto Serif SC', serif", fontSize: 13 }}>
+        <button onClick={onBack} className="flex items-center gap-2" style={{ color: COLORS.vermilion, fontFamily: "var(--font-serif), serif", fontSize: 13 }}>
           <span aria-hidden>←</span> 年表に<ruby>戻<rt>もど</rt></ruby>る
         </button>
       </div>
@@ -59,20 +59,20 @@ export default function EventDetail({ event, era, prev, next }) {
         <div className="flex items-center gap-3 mb-5">
           <SealMark char={era.seal} active />
           <div>
-            <div style={{ fontSize: 12, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}>
+            <div style={{ fontSize: 12, color: COLORS.gold, fontFamily: "var(--font-serif), serif" }}>
               <RubyText text={era.name} /> ／ <RubyText text={era.period} />
             </div>
           </div>
         </div>
 
         <div className="flex items-center gap-2 mb-2">
-          <span style={{ fontFamily: "'Noto Serif SC', serif", color: COLORS.inkSoft, fontSize: 14 }}><RubyText text={event.year} /></span>
+          <span style={{ fontFamily: "var(--font-serif), serif", color: COLORS.inkSoft, fontSize: 14 }}><RubyText text={event.year} /></span>
           <span className="uppercase tracking-wider px-2 py-0.5" style={{ fontSize: 10, color: "#fff", backgroundColor: cat.color, letterSpacing: "0.08em" }}>
             <RubyText text={cat.label} />
           </span>
         </div>
 
-        <h1 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginBottom: 16 }}>
+        <h1 style={{ fontFamily: "var(--font-serif), serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginBottom: 16 }}>
           <RubyText text={event.title} />
         </h1>
 
@@ -124,7 +124,7 @@ export default function EventDetail({ event, era, prev, next }) {
 
         {event.heritage && event.heritage.length > 0 && (
           <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
-            <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 13, color: COLORS.vermilion, letterSpacing: "0.15em", marginBottom: 4 }}>
+            <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 13, color: COLORS.vermilion, letterSpacing: "0.15em", marginBottom: 4 }}>
               関連する建造物・国宝・人物
             </div>
             <div style={{ fontSize: 10.5, color: COLORS.inkSoft, marginBottom: 12 }}>
@@ -158,7 +158,7 @@ export default function EventDetail({ event, era, prev, next }) {
 
         {event.media && event.media.length > 0 && (
           <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
-            <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 13, color: COLORS.vermilion, letterSpacing: "0.15em", marginBottom: 4 }}>
+            <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 13, color: COLORS.vermilion, letterSpacing: "0.15em", marginBottom: 4 }}>
               関連作品
             </div>
             <div style={{ fontSize: 10.5, color: COLORS.inkSoft, marginBottom: 12 }}>
@@ -220,7 +220,7 @@ export default function EventDetail({ event, era, prev, next }) {
             <span aria-hidden style={{ fontSize: 20 }}>←</span>
             <div style={{ textAlign: "right" }}>
               <div style={{ fontSize: 10.5, letterSpacing: "0.15em", opacity: 0.85 }}>前のイベントへ</div>
-              <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 16, fontWeight: 700, marginTop: 2 }}>
+              <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 16, fontWeight: 700, marginTop: 2 }}>
                 <RubyText text={prev.event.year} />　<RubyText text={prev.event.title} />
               </div>
             </div>
@@ -235,7 +235,7 @@ export default function EventDetail({ event, era, prev, next }) {
           >
             <div>
               <div style={{ fontSize: 10.5, letterSpacing: "0.15em", opacity: 0.85 }}>次のイベントへ</div>
-              <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 16, fontWeight: 700, marginTop: 2 }}>
+              <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 16, fontWeight: 700, marginTop: 2 }}>
                 <RubyText text={next.event.year} />　<RubyText text={next.event.title} />
               </div>
             </div>

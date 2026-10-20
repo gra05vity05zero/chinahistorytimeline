@@ -12,7 +12,7 @@ export function NavButton({ href, children, variant = "solid" }) {
       href={href}
       className="inline-flex items-center justify-center"
       style={{
-        fontFamily: "'Noto Serif SC', serif",
+        fontFamily: "var(--font-serif), serif",
         fontSize: 13,
         fontWeight: 700,
         letterSpacing: "0.05em",
@@ -33,7 +33,7 @@ export function BackToTopButton() {
     <Link
       href="/"
       className="inline-flex items-center gap-1.5"
-      style={{ color: COLORS.vermilion, fontFamily: "'Noto Serif SC', serif", fontSize: 13 }}
+      style={{ color: COLORS.vermilion, fontFamily: "var(--font-serif), serif", fontSize: 13 }}
     >
       <span aria-hidden>←</span> 年表トップへ<ruby>戻<rt>もど</rt></ruby>る
     </Link>
@@ -90,7 +90,7 @@ export function MiscLinksSection({ variant = "compact" }) {
   const heading = (
     <div
       className="text-center"
-      style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.15em", color: COLORS.gold, marginBottom: 12 }}
+      style={{ fontFamily: "var(--font-serif), serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.15em", color: COLORS.gold, marginBottom: 12 }}
     >
       雑学・豆知識
     </div>
@@ -105,7 +105,7 @@ export function MiscLinksSection({ variant = "compact" }) {
             <div key={section.title} className="px-3 pt-2.5 pb-1.5" style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8" }}>
               <div
                 style={{
-                  fontFamily: "'Noto Serif SC', serif",
+                  fontFamily: "var(--font-serif), serif",
                   fontSize: 12.5,
                   fontWeight: 700,
                   color: COLORS.ink,
@@ -139,7 +139,7 @@ export function MiscLinksSection({ variant = "compact" }) {
       <div className="flex flex-col gap-2.5">
         {MISC_SECTIONS.map((section) => (
           <div key={section.title} className="flex items-baseline gap-3">
-            <div className="shrink-0" style={{ width: 84, fontFamily: "'Noto Serif SC', serif", fontSize: 11.5, fontWeight: 700, color: COLORS.inkSoft }}>
+            <div className="shrink-0" style={{ width: 84, fontFamily: "var(--font-serif), serif", fontSize: 11.5, fontWeight: 700, color: COLORS.inkSoft }}>
               <RubyText text={section.title} />
             </div>
             <div className="flex flex-wrap gap-x-3 gap-y-1.5" style={{ fontSize: 12.5 }}>
@@ -170,7 +170,7 @@ export function SealMark({ char, active }) {
         boxShadow: active ? `0 0 0 3px ${COLORS.paper}, 0 0 0 4px ${COLORS.vermilion}55` : "none",
       }}
     >
-      <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 18, fontWeight: 700, transform: "rotate(-2deg)" }}>
+      <span style={{ fontFamily: "var(--font-serif), serif", fontSize: 18, fontWeight: 700, transform: "rotate(-2deg)" }}>
         <RubyText text={char} />
       </span>
     </div>
@@ -195,10 +195,10 @@ export function EventCard({ event, onOpen }) {
       >
         <div className="flex items-baseline justify-between gap-3">
           <div className="flex items-baseline gap-2">
-            <span style={{ fontFamily: "'Noto Serif SC', serif", color: COLORS.inkSoft, fontSize: 13 }}>
+            <span style={{ fontFamily: "var(--font-serif), serif", color: COLORS.inkSoft, fontSize: 13 }}>
               <RubyText text={event.year} />
             </span>
-            <span style={{ fontFamily: "'Noto Serif SC', serif", color: COLORS.ink, fontSize: 16, fontWeight: 600 }}>
+            <span style={{ fontFamily: "var(--font-serif), serif", color: COLORS.ink, fontSize: 16, fontWeight: 600 }}>
               <RubyText text={event.title} />
             </span>
           </div>
@@ -251,7 +251,7 @@ export function HeritageThumb({ imageUrl, name, type, objectPosition }) {
     );
   }
   return (
-    <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 26, fontWeight: 700, color: COLORS.mist }}>
+    <span style={{ fontFamily: "var(--font-serif), serif", fontSize: 26, fontWeight: 700, color: COLORS.mist }}>
       {stripRuby(name).slice(0, 1)}
     </span>
   );
@@ -272,7 +272,7 @@ export function HeritageGrid({ items, eraId }) {
               <HeritageThumb imageUrl={it.imageUrl} name={it.name} type={it.type} />
             </div>
             <div className="px-2.5 py-2">
-              <div style={{ fontSize: 12.5, fontWeight: 600, color: COLORS.ink, fontFamily: "'Noto Serif SC', serif" }}>
+              <div style={{ fontSize: 12.5, fontWeight: 600, color: COLORS.ink, fontFamily: "var(--font-serif), serif" }}>
                 {href ? (
                   <Link href={href} style={{ color: COLORS.ink, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
                     <RubyText text={it.name} />
@@ -304,7 +304,7 @@ export function PersonCard({ person, eraId }) {
         <HeritageThumb imageUrl={person.imageUrl} name={person.name} type="figure" />
       </div>
       <div className="px-2.5 py-2.5">
-        <div style={{ fontSize: 13.5, fontWeight: 700, color: COLORS.ink, fontFamily: "'Noto Serif SC', serif" }}>
+        <div style={{ fontSize: 13.5, fontWeight: 700, color: COLORS.ink, fontFamily: "var(--font-serif), serif" }}>
           {href ? (
             <Link href={href} style={{ color: COLORS.ink, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
               <RubyText text={person.name} />
@@ -359,8 +359,8 @@ export function EventListItem({ event, eraName }) {
       >
         <div className="flex items-baseline justify-between gap-3">
           <div className="flex items-baseline gap-2">
-            <span style={{ fontFamily: "'Noto Serif SC', serif", color: COLORS.inkSoft, fontSize: 13 }}><RubyText text={event.year} /></span>
-            <span style={{ fontFamily: "'Noto Serif SC', serif", color: COLORS.ink, fontSize: 16, fontWeight: 600 }}>
+            <span style={{ fontFamily: "var(--font-serif), serif", color: COLORS.inkSoft, fontSize: 13 }}><RubyText text={event.year} /></span>
+            <span style={{ fontFamily: "var(--font-serif), serif", color: COLORS.ink, fontSize: 16, fontWeight: 600 }}>
               <RubyText text={event.title} />
             </span>
           </div>

@@ -192,7 +192,7 @@ export function SanguoBorderMap() {
             y={f.label.y}
             textAnchor="middle"
             style={{
-              fontFamily: "'Noto Serif SC', serif",
+              fontFamily: "var(--font-serif), serif",
               fontSize: 11.5,
               fontWeight: 700,
               fill: "#FBF8F0",
@@ -230,7 +230,7 @@ export function SanguoBorderMap() {
           style={{
             height: 30,
             padding: "0 14px",
-            fontFamily: "'Noto Serif SC', serif",
+            fontFamily: "var(--font-serif), serif",
             fontSize: 12,
             fontWeight: 700,
             border: `1px solid ${COLORS.vermilion}`,
@@ -268,7 +268,7 @@ export function SanguoBorderMap() {
               }}
               title={stripRuby(`${f.year} ${f.era}`)}
               style={{
-                fontFamily: "'Noto Serif SC', serif",
+                fontFamily: "var(--font-serif), serif",
                 fontSize: 10.5,
                 padding: "3px 7px",
                 border: `1px solid ${i === index ? COLORS.vermilion : COLORS.mist}`,
@@ -284,10 +284,10 @@ export function SanguoBorderMap() {
 
       <div style={{ marginTop: 12, paddingTop: 10, borderTop: `1px solid ${COLORS.mist}` }}>
         <div className="flex items-baseline gap-2 flex-wrap">
-          <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14.5, fontWeight: 700, color: COLORS.ink }}>
+          <span style={{ fontFamily: "var(--font-serif), serif", fontSize: 14.5, fontWeight: 700, color: COLORS.ink }}>
             <RubyText text={frame.era} />
           </span>
-          <span style={{ fontSize: 12, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}><RubyText text={frame.year} /></span>
+          <span style={{ fontSize: 12, color: COLORS.gold, fontFamily: "var(--font-serif), serif" }}><RubyText text={frame.year} /></span>
         </div>
         <p style={{ fontSize: 12, lineHeight: 1.8, color: COLORS.inkSoft, marginTop: 4 }}>
           <RubyText text={frame.desc} />

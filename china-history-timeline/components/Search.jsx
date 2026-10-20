@@ -62,8 +62,8 @@ export default function SearchClient({ index }) {
                 style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", borderLeft: `3px solid ${cat.color}` }}
               >
                 <div className="flex items-baseline gap-2">
-                  <span style={{ fontFamily: "'Noto Serif SC', serif", color: COLORS.inkSoft, fontSize: 12 }}><RubyText text={item.year} /></span>
-                  <span style={{ fontFamily: "'Noto Serif SC', serif", color: COLORS.ink, fontSize: 15, fontWeight: 600 }}>
+                  <span style={{ fontFamily: "var(--font-serif), serif", color: COLORS.inkSoft, fontSize: 12 }}><RubyText text={item.year} /></span>
+                  <span style={{ fontFamily: "var(--font-serif), serif", color: COLORS.ink, fontSize: 15, fontWeight: 600 }}>
                     <RubyText text={item.title} />
                   </span>
                   <span style={{ fontSize: 10, color: COLORS.gold, marginLeft: "auto" }}><RubyText text={item.eraName} /></span>

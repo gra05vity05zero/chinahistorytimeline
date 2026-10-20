@@ -250,7 +250,7 @@ function BattleMap() {
             x={r.x}
             y={r.y}
             textAnchor="middle"
-            style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 12, fontWeight: 700, fill: COLORS.inkSoft, opacity: 0.55 }}
+            style={{ fontFamily: "var(--font-serif), serif", fontSize: 12, fontWeight: 700, fill: COLORS.inkSoft, opacity: 0.55 }}
           >
             {stripRuby(r.label)}
           </text>
@@ -264,7 +264,7 @@ function BattleMap() {
               y={b.mapY}
               textAnchor="middle"
               dominantBaseline="central"
-              style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 9, fontWeight: 700, fill: "#FBF8F0" }}
+              style={{ fontFamily: "var(--font-serif), serif", fontSize: 9, fontWeight: 700, fill: "#FBF8F0" }}
             >
               {b.no}
             </text>
@@ -281,7 +281,7 @@ export default function ChuHanBattlesPage() {
       <div className="max-w-2xl mx-auto px-6 py-12">
         <BackToTopButton />
 
-        <h1 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
+        <h1 style={{ fontFamily: "var(--font-serif), serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
           <ruby>楚漢戦争<rt>そかんせんそう</rt></ruby> 合戦マップ
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 28 }}>
@@ -291,18 +291,18 @@ export default function ChuHanBattlesPage() {
         </p>
 
         <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 12 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 12 }}>
             時代の流れ
           </h2>
           <div className="flex flex-col gap-2">
             {FLOW.map((f, i) => {
               const content = (
                 <div className="flex items-baseline gap-3 px-4 py-2.5" style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", borderLeft: `3px solid ${COLORS.vermilion}` }}>
-                  <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 12.5, color: COLORS.inkSoft, whiteSpace: "nowrap" }}>
+                  <span style={{ fontFamily: "var(--font-serif), serif", fontSize: 12.5, color: COLORS.inkSoft, whiteSpace: "nowrap" }}>
                     <RubyText text={f.year} />
                   </span>
                   <div className="flex-1 min-w-0">
-                    <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14.5, fontWeight: 700, color: COLORS.ink }}>
+                    <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 14.5, fontWeight: 700, color: COLORS.ink }}>
                       <RubyText text={f.title} />
                     </div>
                     <div style={{ fontSize: 11.5, color: COLORS.inkSoft, lineHeight: 1.6, marginTop: 2 }}>
@@ -334,14 +334,14 @@ export default function ChuHanBattlesPage() {
         </section>
 
         <section style={{ marginBottom: 12 }}>
-          <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 12 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 12 }}>
             合戦地図
           </h2>
           <BattleMap />
         </section>
 
         <section>
-          <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 16 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 16 }}>
             主要な戦い
           </h2>
           <div className="flex flex-col gap-5">
@@ -366,17 +366,17 @@ export default function ChuHanBattlesPage() {
                           borderRadius: "50%",
                           backgroundColor: COLORS.vermilion,
                           color: "#FBF8F0",
-                          fontFamily: "'Noto Serif SC', serif",
+                          fontFamily: "var(--font-serif), serif",
                           fontSize: 11,
                           fontWeight: 700,
                         }}
                       >
                         {b.no}
                       </span>
-                      <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 16.5, fontWeight: 700, color: COLORS.ink }}>
+                      <span style={{ fontFamily: "var(--font-serif), serif", fontSize: 16.5, fontWeight: 700, color: COLORS.ink }}>
                         <RubyText text={b.name} />
                       </span>
-                      <span style={{ fontSize: 12, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}><RubyText text={b.year} /></span>
+                      <span style={{ fontSize: 12, color: COLORS.gold, fontFamily: "var(--font-serif), serif" }}><RubyText text={b.year} /></span>
                     </div>
                     <div style={{ fontSize: 11, color: COLORS.vermilionSoft, marginTop: 4 }}>
                       <span aria-hidden>📍</span> <RubyText text={b.location} />

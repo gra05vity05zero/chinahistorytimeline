@@ -156,7 +156,7 @@ const RESOLVED_TIMELINE = TIMELINE.map((t) => ({
   eventSlug: t.eventTitle ? findEventSlug(t.eraId || "sanguo", t.eventTitle) : null,
 }));
 
-const sectionHeading = { fontFamily: "'Noto Serif SC', serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 14 };
+const sectionHeading = { fontFamily: "var(--font-serif), serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 14 };
 const card = { backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8" };
 const linkStyle = { color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist };
 
@@ -169,7 +169,7 @@ function KingdomBadge({ kingdom, size = 28 }) {
         height: size,
         backgroundColor: kingdom.color,
         color: "#FBF8F0",
-        fontFamily: "'Noto Serif SC', serif",
+        fontFamily: "var(--font-serif), serif",
         fontSize: size * 0.55,
         fontWeight: 900,
       }}
@@ -235,7 +235,7 @@ export default function SanguoComparisonPage() {
       <div className="max-w-2xl mx-auto px-6 py-12">
         <BackToTopButton />
 
-        <h1 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
+        <h1 style={{ fontFamily: "var(--font-serif), serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
           <ruby>魏<rt>ぎ</rt></ruby>・<ruby>呉<rt>ご</rt></ruby>・<ruby>蜀<rt>しょく</rt></ruby>の<ruby>違<rt>ちが</rt></ruby>いとは？
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
@@ -254,7 +254,7 @@ export default function SanguoComparisonPage() {
             <a key={k.id} href={`#${k.id}`} className="flex-1 flex items-center gap-2 px-3 py-2.5" style={{ ...card, borderTop: `3px solid ${k.color}` }}>
               <KingdomBadge kingdom={k} size={30} />
               <span className="min-w-0">
-                <span style={{ display: "block", fontFamily: "'Noto Serif SC', serif", fontSize: 14, fontWeight: 700, color: COLORS.ink }}><RubyText text={k.name} /></span>
+                <span style={{ display: "block", fontFamily: "var(--font-serif), serif", fontSize: 14, fontWeight: 700, color: COLORS.ink }}><RubyText text={k.name} /></span>
                 <span style={{ display: "block", fontSize: 10.5, color: COLORS.inkSoft, lineHeight: 1.4 }}><RubyText text={k.founder} />の国</span>
               </span>
             </a>
@@ -272,7 +272,7 @@ export default function SanguoComparisonPage() {
                     <th key={k.id} style={{ padding: "10px 8px", borderBottom: `2px solid ${k.color}`, textAlign: "left" }}>
                       <span className="inline-flex items-center gap-1.5">
                         <KingdomBadge kingdom={k} size={22} />
-                        <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14, fontWeight: 700, color: COLORS.ink }}><RubyText text={k.name} /></span>
+                        <span style={{ fontFamily: "var(--font-serif), serif", fontSize: 14, fontWeight: 700, color: COLORS.ink }}><RubyText text={k.name} /></span>
                       </span>
                       <span style={{ display: "block", fontSize: 10, fontWeight: 400, color: COLORS.inkSoft, marginTop: 3 }}><RubyText text={k.aka} /></span>
                     </th>
@@ -319,7 +319,7 @@ export default function SanguoComparisonPage() {
                         <RubyText text={p.households} />（<RubyText text={p.note} />）
                       </div>
                     </div>
-                    <div style={{ width: 72, textAlign: "right", fontFamily: "'Noto Serif SC', serif", fontSize: 15, fontWeight: 700, color: COLORS.ink }}>
+                    <div style={{ width: 72, textAlign: "right", fontFamily: "var(--font-serif), serif", fontSize: 15, fontWeight: 700, color: COLORS.ink }}>
                       <RubyText text={p.value} />
                       <span style={{ fontSize: 11, fontWeight: 400 }}>万人</span>
                     </div>
@@ -354,7 +354,7 @@ export default function SanguoComparisonPage() {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2">
                         <KingdomBadge kingdom={k} size={30} />
-                        <h3 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 18, fontWeight: 900, color: COLORS.ink }}>
+                        <h3 style={{ fontFamily: "var(--font-serif), serif", fontSize: 18, fontWeight: 900, color: COLORS.ink }}>
                           <RubyText text={k.name} />
                           <span style={{ fontSize: 12, fontWeight: 400, color: COLORS.inkSoft, marginLeft: 6 }}><RubyText text={k.aka} /></span>
                         </h3>
@@ -407,7 +407,7 @@ export default function SanguoComparisonPage() {
             {RESOLVED_TIMELINE.map((t) => {
               const content = (
                 <div className="flex items-baseline gap-3 px-4 py-2.5" style={{ ...card, borderLeft: `3px solid ${COLORS.vermilion}` }}>
-                  <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 12.5, color: COLORS.inkSoft, whiteSpace: "nowrap" }}><RubyText text={t.year} /></span>
+                  <span style={{ fontFamily: "var(--font-serif), serif", fontSize: 12.5, color: COLORS.inkSoft, whiteSpace: "nowrap" }}><RubyText text={t.year} /></span>
                   <span className="flex-1 min-w-0" style={{ fontSize: 12.5, lineHeight: 1.7, color: COLORS.ink }}>
                     <RubyText text={t.text} />
                   </span>
@@ -442,7 +442,7 @@ export default function SanguoComparisonPage() {
           <div className="flex flex-col gap-3">
             {FAQ.map((f) => (
               <div key={f.q} style={{ ...card, padding: "14px 16px" }}>
-                <h3 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14.5, fontWeight: 700, color: COLORS.ink }}>
+                <h3 style={{ fontFamily: "var(--font-serif), serif", fontSize: 14.5, fontWeight: 700, color: COLORS.ink }}>
                   <span style={{ color: COLORS.vermilion, marginRight: 6 }}>Q.</span>
                   <RubyText text={f.q} />
                 </h3>

@@ -297,7 +297,7 @@ function ChinaMap({ capitals }) {
             x={r.x + (r.dx || 0)}
             y={r.y + (r.dy || 0)}
             textAnchor={r.anchor}
-            style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 10.5, fill: COLORS.inkSoft, opacity: 0.85 }}
+            style={{ fontFamily: "var(--font-serif), serif", fontSize: 10.5, fill: COLORS.inkSoft, opacity: 0.85 }}
           >
             {stripRuby(r.label)}
           </text>
@@ -310,7 +310,7 @@ function ChinaMap({ capitals }) {
               x={c.x + c.dx}
               y={c.y + c.dy}
               textAnchor={c.anchor}
-              style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 10, fill: COLORS.inkSoft }}
+              style={{ fontFamily: "var(--font-serif), serif", fontSize: 10, fill: COLORS.inkSoft }}
             >
               {stripRuby(c.label)}
             </text>
@@ -325,7 +325,7 @@ function ChinaMap({ capitals }) {
               y={cap.mapY}
               textAnchor="middle"
               dominantBaseline="central"
-              style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 8, fontWeight: 700, fill: "#FBF8F0" }}
+              style={{ fontFamily: "var(--font-serif), serif", fontSize: 8, fontWeight: 700, fill: "#FBF8F0" }}
             >
               {i + 1}
             </text>
@@ -342,7 +342,7 @@ export default function ChinaCapitalsPage() {
       <div className="max-w-2xl mx-auto px-6 py-12">
         <BackToTopButton />
 
-        <h1 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
+        <h1 style={{ fontFamily: "var(--font-serif), serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
           中国 歴代王朝の都（古都）一覧
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 28 }}>
@@ -374,7 +374,7 @@ export default function ChinaCapitalsPage() {
                         borderRadius: "50%",
                         backgroundColor: COLORS.vermilion,
                         color: "#FBF8F0",
-                        fontFamily: "'Noto Serif SC', serif",
+                        fontFamily: "var(--font-serif), serif",
                         fontSize: 10,
                         fontWeight: 700,
                       }}
@@ -384,10 +384,10 @@ export default function ChinaCapitalsPage() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-baseline justify-between gap-2 flex-wrap">
-                      <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 15, fontWeight: 700, color: COLORS.ink }}>
+                      <span style={{ fontFamily: "var(--font-serif), serif", fontSize: 15, fontWeight: 700, color: COLORS.ink }}>
                         <RubyText text={cap.name} />
                       </span>
-                      <span style={{ fontSize: 11, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}><RubyText text={cap.dynasty} /></span>
+                      <span style={{ fontSize: 11, color: COLORS.gold, fontFamily: "var(--font-serif), serif" }}><RubyText text={cap.dynasty} /></span>
                     </div>
                     <div style={{ fontSize: 11, color: COLORS.inkSoft, marginTop: 2 }}><RubyText text={cap.years} /></div>
                     {cap.location && (

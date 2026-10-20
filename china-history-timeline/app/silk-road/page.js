@@ -405,7 +405,7 @@ function WorldRouteMap() {
             x={s.x}
             y={s.y}
             textAnchor="middle"
-            style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 9, fill: COLORS.jade, opacity: 0.75 }}
+            style={{ fontFamily: "var(--font-serif), serif", fontSize: 9, fill: COLORS.jade, opacity: 0.75 }}
           >
             {stripRuby(s.label)}
           </text>
@@ -426,7 +426,7 @@ function WorldRouteMap() {
               x={p.x}
               y={p.y + p.labelDy}
               textAnchor="middle"
-              style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 10, fontWeight: p.key === "changan" ? 700 : 400, fill: COLORS.inkSoft }}
+              style={{ fontFamily: "var(--font-serif), serif", fontSize: 10, fontWeight: p.key === "changan" ? 700 : 400, fill: COLORS.inkSoft }}
             >
               {stripRuby(p.label)}
             </text>
@@ -465,7 +465,7 @@ function SilkRoadMap({ stops }) {
           x="93"
           y="100"
           textAnchor="middle"
-          style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 11, fontWeight: 700, fill: COLORS.gold, letterSpacing: "0.15em" }}
+          style={{ fontFamily: "var(--font-serif), serif", fontSize: 11, fontWeight: 700, fill: COLORS.gold, letterSpacing: "0.15em" }}
         >
           西域
         </text>
@@ -475,7 +475,7 @@ function SilkRoadMap({ stops }) {
           x="95"
           y="154"
           textAnchor="middle"
-          style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 9, fill: "#7A5C22", opacity: 0.9 }}
+          style={{ fontFamily: "var(--font-serif), serif", fontSize: 9, fill: "#7A5C22", opacity: 0.9 }}
         >
           タクラマカン砂漠
         </text>
@@ -486,7 +486,7 @@ function SilkRoadMap({ stops }) {
             x={r.x + (r.dx || 0)}
             y={r.y + (r.dy || 0)}
             textAnchor={r.anchor}
-            style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 10.5, fill: COLORS.inkSoft, opacity: 0.85 }}
+            style={{ fontFamily: "var(--font-serif), serif", fontSize: 10.5, fill: COLORS.inkSoft, opacity: 0.85 }}
           >
             {stripRuby(r.label)}
           </text>
@@ -500,7 +500,7 @@ function SilkRoadMap({ stops }) {
         <text
           x={XIAN.x + 8}
           y={XIAN.y - 6}
-          style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 10.5, fill: COLORS.inkSoft }}
+          style={{ fontFamily: "var(--font-serif), serif", fontSize: 10.5, fill: COLORS.inkSoft }}
         >
           長安（起点）
         </text>
@@ -513,7 +513,7 @@ function SilkRoadMap({ stops }) {
               y={stop.mapY}
               textAnchor="middle"
               dominantBaseline="central"
-              style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 8.5, fontWeight: 700, fill: "#FBF8F0" }}
+              style={{ fontFamily: "var(--font-serif), serif", fontSize: 8.5, fontWeight: 700, fill: "#FBF8F0" }}
             >
               {i + 1}
             </text>
@@ -530,7 +530,7 @@ export default function SilkRoadPage() {
       <div className="max-w-2xl mx-auto px-6 py-12">
         <BackToTopButton />
 
-        <h1 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
+        <h1 style={{ fontFamily: "var(--font-serif), serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
           シルクロードとは？
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 20 }}>
@@ -572,7 +572,7 @@ export default function SilkRoadPage() {
         </div>
 
         <section style={{ marginBottom: 32 }}>
-          <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
             シルクロードの歴史とルート
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft, marginBottom: 10 }}>
@@ -629,7 +629,7 @@ export default function SilkRoadPage() {
                       borderRadius: "50%",
                       backgroundColor: COLORS.vermilion,
                       color: "#FBF8F0",
-                      fontFamily: "'Noto Serif SC', serif",
+                      fontFamily: "var(--font-serif), serif",
                       fontSize: 13,
                       fontWeight: 700,
                       boxShadow: "0 1px 3px rgba(0,0,0,0.35)",
@@ -657,7 +657,7 @@ export default function SilkRoadPage() {
 
                 <div className="p-4">
                   <div className="flex items-baseline justify-between gap-2 flex-wrap">
-                    <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 17, fontWeight: 700, color: COLORS.ink }}>
+                    <span style={{ fontFamily: "var(--font-serif), serif", fontSize: 17, fontWeight: 700, color: COLORS.ink }}>
                       <RubyText text={stop.name} />
                     </span>
                   </div>
@@ -711,7 +711,7 @@ export default function SilkRoadPage() {
         </div>
 
         <section style={{ marginTop: 40 }}>
-          <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
             シルクロードにまつわる<ruby>逸話<rt>いつわ</rt></ruby>
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginBottom: 16 }}>
@@ -720,7 +720,7 @@ export default function SilkRoadPage() {
           <div className="flex flex-col gap-3">
             {RESOLVED_ANECDOTES.map((a, i) => (
               <div key={i} style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: 14 }}>
-                <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14, fontWeight: 700, color: COLORS.ink, marginBottom: 6 }}>
+                <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 14, fontWeight: 700, color: COLORS.ink, marginBottom: 6 }}>
                   <RubyText text={a.title} />
                 </div>
                 <p style={{ fontSize: 12, lineHeight: 1.75, color: COLORS.inkSoft }}>

@@ -349,7 +349,7 @@ function BattleMap({ battles, regionLabels, note }) {
             x={r.x}
             y={r.y}
             textAnchor="middle"
-            style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 12, fontWeight: 700, fill: COLORS.inkSoft, opacity: 0.55 }}
+            style={{ fontFamily: "var(--font-serif), serif", fontSize: 12, fontWeight: 700, fill: COLORS.inkSoft, opacity: 0.55 }}
           >
             {stripRuby(r.label)}
           </text>
@@ -363,7 +363,7 @@ function BattleMap({ battles, regionLabels, note }) {
               y={b.mapY}
               textAnchor="middle"
               dominantBaseline="central"
-              style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 9, fontWeight: 700, fill: "#FBF8F0" }}
+              style={{ fontFamily: "var(--font-serif), serif", fontSize: 9, fontWeight: 700, fill: "#FBF8F0" }}
             >
               {b.no}
             </text>
@@ -380,11 +380,11 @@ function FlowList({ items }) {
       {items.map((f, i) => {
         const content = (
           <div className="flex items-baseline gap-3 px-4 py-2.5" style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", borderLeft: `3px solid ${COLORS.vermilion}` }}>
-            <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 12.5, color: COLORS.inkSoft, whiteSpace: "nowrap" }}>
+            <span style={{ fontFamily: "var(--font-serif), serif", fontSize: 12.5, color: COLORS.inkSoft, whiteSpace: "nowrap" }}>
               <RubyText text={f.year} />
             </span>
             <div className="flex-1 min-w-0">
-              <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 14.5, fontWeight: 700, color: COLORS.ink }}>
+              <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 14.5, fontWeight: 700, color: COLORS.ink }}>
                 <RubyText text={f.title} />
               </div>
               <div style={{ fontSize: 11.5, color: COLORS.inkSoft, lineHeight: 1.6, marginTop: 2 }}>
@@ -430,17 +430,17 @@ function BattleCards({ battles }) {
                   borderRadius: "50%",
                   backgroundColor: COLORS.vermilion,
                   color: "#FBF8F0",
-                  fontFamily: "'Noto Serif SC', serif",
+                  fontFamily: "var(--font-serif), serif",
                   fontSize: 11,
                   fontWeight: 700,
                 }}
               >
                 {b.no}
               </span>
-              <span style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 16.5, fontWeight: 700, color: COLORS.ink }}>
+              <span style={{ fontFamily: "var(--font-serif), serif", fontSize: 16.5, fontWeight: 700, color: COLORS.ink }}>
                 <RubyText text={b.name} />
               </span>
-              <span style={{ fontSize: 12, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}><RubyText text={b.year} /></span>
+              <span style={{ fontSize: 12, color: COLORS.gold, fontFamily: "var(--font-serif), serif" }}><RubyText text={b.year} /></span>
             </div>
             <div style={{ fontSize: 11, color: COLORS.vermilionSoft, marginTop: 4 }}>
               <span aria-hidden>📍</span> <RubyText text={b.location} />
@@ -489,7 +489,7 @@ export default function SuitangBattlesPage() {
       <div className="max-w-2xl mx-auto px-6 py-12">
         <BackToTopButton />
 
-        <h1 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
+        <h1 style={{ fontFamily: "var(--font-serif), serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
           <ruby>隋唐<rt>ずいとう</rt></ruby>・五代 合戦マップ
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 20 }}>
@@ -513,10 +513,10 @@ export default function SuitangBattlesPage() {
         </div>
 
         <section id="early" style={{ marginBottom: 20, scrollMarginTop: 16 }}>
-          <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 12, color: COLORS.vermilion, letterSpacing: "0.15em", marginBottom: 4 }}>
+          <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 12, color: COLORS.vermilion, letterSpacing: "0.15em", marginBottom: 4 }}>
             581 – 755
           </div>
-          <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 21, fontWeight: 900, color: COLORS.ink, marginBottom: 4 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 21, fontWeight: 900, color: COLORS.ink, marginBottom: 4 }}>
             <ruby>隋<rt>ずい</rt></ruby>・<ruby>唐<rt>とう</rt></ruby>前期の合戦
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginBottom: 16 }}>
@@ -525,14 +525,14 @@ export default function SuitangBattlesPage() {
         </section>
 
         <section style={{ marginBottom: 28 }}>
-          <h3 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 15, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
+          <h3 style={{ fontFamily: "var(--font-serif), serif", fontSize: 15, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
             時代の流れ
           </h3>
           <FlowList items={EARLY_FLOW} />
         </section>
 
         <section style={{ marginBottom: 12 }}>
-          <h3 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 15, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
+          <h3 style={{ fontFamily: "var(--font-serif), serif", fontSize: 15, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
             合戦地図
           </h3>
           <BattleMap
@@ -543,17 +543,17 @@ export default function SuitangBattlesPage() {
         </section>
 
         <section style={{ marginBottom: 40 }}>
-          <h3 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 15, fontWeight: 700, color: COLORS.ink, marginBottom: 16 }}>
+          <h3 style={{ fontFamily: "var(--font-serif), serif", fontSize: 15, fontWeight: 700, color: COLORS.ink, marginBottom: 16 }}>
             主要な戦い
           </h3>
           <BattleCards battles={EARLY_BATTLES} />
         </section>
 
         <section id="late" style={{ marginBottom: 20, paddingTop: 8, borderTop: `1px solid ${COLORS.mist}`, scrollMarginTop: 16 }}>
-          <div style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 12, color: COLORS.vermilion, letterSpacing: "0.15em", marginBottom: 4, marginTop: 24 }}>
+          <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 12, color: COLORS.vermilion, letterSpacing: "0.15em", marginBottom: 4, marginTop: 24 }}>
             755 – 979
           </div>
-          <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 21, fontWeight: 900, color: COLORS.ink, marginBottom: 4 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 21, fontWeight: 900, color: COLORS.ink, marginBottom: 4 }}>
             <ruby>唐<rt>とう</rt></ruby>後期・五代十国の合戦
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginBottom: 16 }}>
@@ -562,14 +562,14 @@ export default function SuitangBattlesPage() {
         </section>
 
         <section style={{ marginBottom: 28 }}>
-          <h3 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 15, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
+          <h3 style={{ fontFamily: "var(--font-serif), serif", fontSize: 15, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
             時代の流れ
           </h3>
           <FlowList items={LATE_FLOW} />
         </section>
 
         <section style={{ marginBottom: 12 }}>
-          <h3 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 15, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
+          <h3 style={{ fontFamily: "var(--font-serif), serif", fontSize: 15, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
             合戦地図
           </h3>
           <BattleMap
@@ -580,7 +580,7 @@ export default function SuitangBattlesPage() {
         </section>
 
         <section id="border-map" style={{ marginBottom: 12, scrollMarginTop: 16 }}>
-          <h3 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 15, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
+          <h3 style={{ fontFamily: "var(--font-serif), serif", fontSize: 15, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
             勢力図の<ruby>変遷<rt>へんせん</rt></ruby>アニメーション
           </h3>
           <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginBottom: 12 }}>
@@ -590,7 +590,7 @@ export default function SuitangBattlesPage() {
         </section>
 
         <section>
-          <h3 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 15, fontWeight: 700, color: COLORS.ink, marginBottom: 16 }}>
+          <h3 style={{ fontFamily: "var(--font-serif), serif", fontSize: 15, fontWeight: 700, color: COLORS.ink, marginBottom: 16 }}>
             主要な戦い
           </h3>
           <BattleCards battles={LATE_BATTLES} />

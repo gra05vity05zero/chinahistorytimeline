@@ -11,7 +11,7 @@ export default function PersonDetail({ person, era }) {
   return (
     <div style={{ backgroundColor: COLORS.paper, minHeight: "100%" }}>
       <div className="sticky top-0 z-20 px-5 py-3" style={{ backgroundColor: COLORS.paperDeep, borderBottom: `1px solid ${COLORS.mist}` }}>
-        <Link href={`/people/${era.id}`} className="flex items-center gap-2" style={{ color: COLORS.vermilion, fontFamily: "'Noto Serif SC', serif", fontSize: 13 }}>
+        <Link href={`/people/${era.id}`} className="flex items-center gap-2" style={{ color: COLORS.vermilion, fontFamily: "var(--font-serif), serif", fontSize: 13 }}>
           <span aria-hidden>←</span> <RubyText text={era.name} />の人物一覧に<ruby>戻<rt>もど</rt></ruby>る
         </Link>
       </div>
@@ -19,12 +19,12 @@ export default function PersonDetail({ person, era }) {
       <div className="max-w-2xl mx-auto px-6 py-8">
         <div className="flex items-center gap-3 mb-5">
           <SealMark char={era.seal} active />
-          <div style={{ fontSize: 12, color: COLORS.gold, fontFamily: "'Noto Serif SC', serif" }}>
+          <div style={{ fontSize: 12, color: COLORS.gold, fontFamily: "var(--font-serif), serif" }}>
             <RubyText text={era.name} /> ／ <RubyText text={era.period} />
           </div>
         </div>
 
-        <h1 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginBottom: 14 }}>
+        <h1 style={{ fontFamily: "var(--font-serif), serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginBottom: 14 }}>
           <RubyText text={person.name} />
         </h1>
 
@@ -43,7 +43,7 @@ export default function PersonDetail({ person, era }) {
 
         {bioParagraphs.length > 0 && (
           <div className="mt-10">
-            <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 16, fontWeight: 900, color: COLORS.vermilion, letterSpacing: "0.1em", marginBottom: 12 }}>
+            <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 16, fontWeight: 900, color: COLORS.vermilion, letterSpacing: "0.1em", marginBottom: 12 }}>
               <ruby>生涯<rt>しょうがい</rt></ruby>・業績
             </h2>
             {bioParagraphs.map((para, idx) => (
@@ -56,7 +56,7 @@ export default function PersonDetail({ person, era }) {
 
         {person.events && person.events.length > 0 && (
           <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
-            <h2 style={{ fontFamily: "'Noto Serif SC', serif", fontSize: 13, color: COLORS.vermilion, letterSpacing: "0.15em", marginBottom: 10 }}>
+            <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 13, color: COLORS.vermilion, letterSpacing: "0.15em", marginBottom: 10 }}>
               関連する出来事
             </h2>
             <div className="flex flex-col gap-2">
@@ -67,8 +67,8 @@ export default function PersonDetail({ person, era }) {
                   className="block px-4 py-3"
                   style={{ backgroundColor: "#FBF8F0", border: `1px solid #DCD3B8`, borderLeft: `3px solid ${COLORS.vermilion}` }}
                 >
-                  <span style={{ fontFamily: "'Noto Serif SC', serif", color: COLORS.inkSoft, fontSize: 13 }}><RubyText text={ev.year} /></span>{"　"}
-                  <span style={{ fontFamily: "'Noto Serif SC', serif", color: COLORS.ink, fontSize: 15, fontWeight: 600 }}>
+                  <span style={{ fontFamily: "var(--font-serif), serif", color: COLORS.inkSoft, fontSize: 13 }}><RubyText text={ev.year} /></span>{"　"}
+                  <span style={{ fontFamily: "var(--font-serif), serif", color: COLORS.ink, fontSize: 15, fontWeight: 600 }}>
                     <RubyText text={ev.title} />
                   </span>
                 </Link>
