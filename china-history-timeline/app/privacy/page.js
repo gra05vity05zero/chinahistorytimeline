@@ -112,10 +112,6 @@ export default function PrivacyPage() {
             修正された最新のプライバシーポリシーは常に本ページにて開示されます。
           </p>
         </div>
-
-        <p style={{ fontSize: 11.5, color: COLORS.mist, marginTop: 32 }}>
-          制定日: {/* TODO: 公開日を記入 */} ／ 最終改定日: {/* TODO: 改定日を記入 */}
-        </p>
       </div>
     </div>
   );
