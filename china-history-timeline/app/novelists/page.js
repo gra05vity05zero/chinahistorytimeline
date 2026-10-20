@@ -1,5 +1,5 @@
 import { ERAS, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 
 const title = "中国史を題材にした日本人小説家一覧";
@@ -157,6 +157,8 @@ export default function NovelistsPage() {
             <NavButton href="/people" variant="outline">人物一覧を見る</NavButton>
           </div>
         </section>
+
+        <A8AdBlock ad="audible" className="mt-10" />
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <MiscLinksSection />

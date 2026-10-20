@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { COLORS, CATEGORY_STYLE, HERITAGE_TYPES, resolveMediaUrl, stripRuby } from "@/lib/constants";
-import { SealMark, HeritageGrid, A8Banner, MiscLinksSection } from "@/components/Shared";
+import { SealMark, HeritageGrid, A8AdBlock, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 
 const MEDIA_TYPES = [
@@ -143,16 +143,7 @@ export default function EventDetail({ event, era, prev, next }) {
               );
             })}
 
-            <div className="mt-8">
-              <div style={{ fontSize: 10.5, color: COLORS.inkSoft, marginBottom: 8, textAlign: "center" }}>広告</div>
-              <A8Banner
-                href="https://px.a8.net/svt/ejp?a8mat=4BA6D9+ADW8OI+5WP8+5ZMCH"
-                imgSrc="https://www21.a8.net/svt/bgt?aid=260815293628&wid=001&eno=01&mid=s00000027566001006000&mc=1"
-                gifSrc="https://www13.a8.net/0.gif?a8mat=4BA6D9+ADW8OI+5WP8+5ZMCH"
-                width="300"
-                height="250"
-              />
-            </div>
+            <A8AdBlock ad="travelWest" />
           </div>
         )}
 
@@ -198,16 +189,7 @@ export default function EventDetail({ event, era, prev, next }) {
               })}
             </div>
 
-            <div className="mt-8">
-              <div style={{ fontSize: 10.5, color: COLORS.inkSoft, marginBottom: 8, textAlign: "center" }}>広告</div>
-              <A8Banner
-                href="https://px.a8.net/svt/ejp?a8mat=4BA6D9+BE7OKY+4R2M+TSQTT"
-                imgSrc="https://www24.a8.net/svt/bgt?aid=260815293689&wid=001&eno=01&mid=s00000022171005005000&mc=1"
-                gifSrc="https://www16.a8.net/0.gif?a8mat=4BA6D9+BE7OKY+4R2M+TSQTT"
-                width="300"
-                height="250"
-              />
-            </div>
+            <A8AdBlock ad="audible" />
           </div>
         )}
 

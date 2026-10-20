@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock, HeritageThumb } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 
 const title = "西遊記とは？あらすじ・登場人物と、モデルになった玄奘三蔵の旅をわかりやすく解説";
@@ -672,6 +672,8 @@ export default function SaiyukiPage() {
             <NavButton href="/suikoden" variant="outline"><ruby>水滸伝<rt>すいこでん</rt></ruby>とは</NavButton>
           </div>
         </section>
+
+        <A8AdBlock ad="audible" className="mt-10" />
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <MiscLinksSection />

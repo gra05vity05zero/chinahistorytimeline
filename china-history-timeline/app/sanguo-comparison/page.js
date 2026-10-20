@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection } from "@/components/Shared";
+import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { SanguoBorderMap } from "@/components/SanguoBorderMap";
 
@@ -462,6 +462,8 @@ export default function SanguoComparisonPage() {
             <NavButton href="/four-great-novels" variant="outline">三国志演義など四大名著</NavButton>
           </div>
         </section>
+
+        <A8AdBlock ad="audible" className="mt-10" />
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <MiscLinksSection />

@@ -1,5 +1,5 @@
 import { ERAS, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection } from "@/components/Shared";
+import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 
 const title = "中国の歴史書（史書）とは？史記・漢書・三国志・資治通鑑などを紹介";
@@ -338,6 +338,8 @@ export default function HistoryBooksPage() {
             <NavButton href="/idioms" variant="outline">故事成語を見る</NavButton>
           </div>
         </section>
+
+        <A8AdBlock ad="audible" className="mt-10" />
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <MiscLinksSection />

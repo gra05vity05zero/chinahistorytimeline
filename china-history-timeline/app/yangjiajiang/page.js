@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter, buildAmazonUrl } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock, HeritageThumb } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 
 const title = "楊家将とは？北方謙三『楊家将』で読む宋と遼の戦い";
@@ -677,6 +677,8 @@ export default function YangjiajiangPage() {
             <NavButton href="/suikoden" variant="outline"><ruby>水滸伝<rt>すいこでん</rt></ruby>とは</NavButton>
           </div>
         </section>
+
+        <A8AdBlock ad="audible" className="mt-10" />
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <MiscLinksSection />

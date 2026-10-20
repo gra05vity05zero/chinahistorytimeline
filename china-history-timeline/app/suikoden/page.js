@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock, HeritageThumb } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 
 const title = "水滸伝とは？梁山泊・108人の好漢・史実の宋江をわかりやすく解説";
@@ -668,6 +668,8 @@ export default function SuikodenPage() {
             <NavButton href="/novelists" variant="outline">中国史を題材にした日本人小説家一覧</NavButton>
           </div>
         </section>
+
+        <A8AdBlock ad="audible" className="mt-10" />
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <MiscLinksSection />

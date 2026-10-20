@@ -93,6 +93,51 @@ export function resolveMediaUrl(med) {
   return null;
 }
 
+// A8.netの参加中プログラムのバナー（掲載サイト「中国五千年史」で発行したリンク）。
+// ページの内容に合わせて A8AdBlock の ad にキーを指定して使う
+export const A8_ADS = {
+  // 書籍・古典の内容に添える：AmazonのオーディオブックAudible
+  audible: {
+    href: "https://px.a8.net/svt/ejp?a8mat=4BEL1P+45FTMA+5TB0+5ZMCH",
+    imgSrc: "https://www24.a8.net/svt/bgt?aid=261020941251&wid=001&eno=01&mid=s00000027126001006000&mc=1",
+    gifSrc: "https://www12.a8.net/0.gif?a8mat=4BEL1P+45FTMA+5TB0+5ZMCH",
+    width: "300",
+    height: "250",
+  },
+  // 史跡・都市・世界遺産の内容に添える：アゴダ（航空券）
+  agoda: {
+    href: "https://px.a8.net/svt/ejp?a8mat=4BEK9L+59BV5E+4X1W+NU729",
+    imgSrc: "https://www24.a8.net/svt/bgt?aid=261019929318&wid=001&eno=01&mid=s00000022946004004000&mc=1",
+    gifSrc: "https://www19.a8.net/0.gif?a8mat=4BEK9L+59BV5E+4X1W+NU729",
+    width: "300",
+    height: "250",
+  },
+  // 出来事に関連する建造物・国宝の下に添える：トラベルウエスト（海外ツアー）
+  travelWest: {
+    href: "https://px.a8.net/svt/ejp?a8mat=4BA6D9+BE7OKY+4R2M+TSQTT",
+    imgSrc: "https://www24.a8.net/svt/bgt?aid=260815293689&wid=001&eno=01&mid=s00000022171005005000&mc=1",
+    gifSrc: "https://www16.a8.net/0.gif?a8mat=4BA6D9+BE7OKY+4R2M+TSQTT",
+    width: "300",
+    height: "250",
+  },
+  // 全ページ共通（フッター）：Travelist（海外格安航空券）
+  travelist: {
+    href: "https://px.a8.net/svt/ejp?a8mat=4BA6D9+BJKLSQ+4XZI+HVNAP",
+    imgSrc: "https://www29.a8.net/svt/bgt?aid=260815293698&wid=002&eno=01&mid=s00000023067003003000&mc=1",
+    gifSrc: "https://www17.a8.net/0.gif?a8mat=4BA6D9+BJKLSQ+4XZI+HVNAP",
+    width: "300",
+    height: "250",
+  },
+  // 全ページ共通（フッター）：ソラハピ
+  solahapi: {
+    href: "https://px.a8.net/svt/ejp?a8mat=4BA6D9+BFZZEA+39GM+4GVBNL",
+    imgSrc: "https://www26.a8.net/svt/bgt?aid=260815293692&wid=001&eno=01&mid=s00000015223027020000&mc=1",
+    gifSrc: "https://www18.a8.net/0.gif?a8mat=4BA6D9+BFZZEA+39GM+4GVBNL",
+    width: "468",
+    height: "60",
+  },
+};
+
 // Wikimedia CommonsのSpecial:FilePathは無指定だと原寸画像（数MB）を返してしまうため、
 // widthパラメータを付けてサムネイル版（軽量なリサイズ画像）を取得する
 export function wikimediaThumb(url, width = 480) {

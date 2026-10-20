@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { COLORS, CATEGORY_STYLE, ADSENSE_CLIENT_ID, stripRuby, wikimediaThumb, personSlug } from "@/lib/constants";
+import { COLORS, CATEGORY_STYLE, ADSENSE_CLIENT_ID, A8_ADS, stripRuby, wikimediaThumb, personSlug } from "@/lib/constants";
 import { RubyText } from "@/components/Ruby";
 
 export function NavButton({ href, children, variant = "solid" }) {
@@ -400,6 +400,18 @@ export function A8Banner({ href, imgSrc, gifSrc, width, height }) {
       </a>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img border="0" width="1" height="1" src={gifSrc} alt="" style={{ display: "none" }} />
+    </div>
+  );
+}
+
+// 「広告」ラベル付きのA8.netバナー枠。ad には A8_ADS のキーを指定する
+export function A8AdBlock({ ad, className = "mt-8" }) {
+  const banner = A8_ADS[ad];
+  if (!banner) return null;
+  return (
+    <div className={className}>
+      <div style={{ fontSize: 10.5, color: COLORS.inkSoft, marginBottom: 8, textAlign: "center" }}>広告</div>
+      <A8Banner {...banner} />
     </div>
   );
 }
