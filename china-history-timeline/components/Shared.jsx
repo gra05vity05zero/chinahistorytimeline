@@ -56,6 +56,7 @@ const MISC_SECTIONS = [
     links: [
       { href: "/qinshihuang", label: "{{始皇帝|しこうてい}}とは" },
       { href: "/terracotta-army", label: "{{兵馬俑|へいばよう}}・{{始皇帝陵|しこうていりょう}}の{{謎|なぞ}}" },
+      { href: "/emperors", label: "歴代{{皇帝|こうてい}}一覧" },
       { href: "/china-capitals", label: "歴代王朝の都一覧" },
       { href: "/sanguo-comparison", label: "{{魏|ぎ}}・{{呉|ご}}・{{蜀|しょく}}の{{違|ちが}}い" },
     ],
