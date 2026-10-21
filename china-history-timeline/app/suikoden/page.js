@@ -195,14 +195,13 @@ const JAPAN = [
   },
 ];
 
-// 北方謙三の「大水滸伝」シリーズ（集英社）
+// 北方謙三の「大水滸伝」シリーズ（集英社）。kindle は集英社文庫Kindle版の第1巻と合本版のASINと書影
 const BOOKS = [
   {
     no: 1,
     title: "『{{水滸伝|すいこでん}}』",
     meta: "{{北方謙三|きたかたけんぞう}} / 全19巻（集英社）",
     body: "原典の骨格を借りながら、登場人物の設定や物語の展開を{{大胆|だいたん}}に組み{{替|か}}えた長編。{{梁山泊|りょうざんぱく}}を、{{腐敗|ふはい}}した{{宋|そう}}に{{挑|いど}}む組織として{{描|か}}き直している。",
-    // Kindle版（集英社文庫）の第1巻と合本版のASINと書影
     kindle: [
       { label: "第1巻", asin: "B009LTO35O", cover: "https://m.media-amazon.com/images/I/81t4BRBalIL._SL300_.jpg" },
       { label: "合本版", asin: "B07BS47H4B", cover: "https://m.media-amazon.com/images/I/91AUc-t2ODL._SL300_.jpg" },
@@ -213,12 +212,20 @@ const BOOKS = [
     title: "『{{楊令伝|ようれいでん}}』",
     meta: "{{北方謙三|きたかたけんぞう}} / 全15巻（集英社）",
     body: "『{{水滸伝|すいこでん}}』の続編で、北方版オリジナルの人物・{{楊令|ようれい}}が主人公。{{梁山泊|りょうざんぱく}}の志を{{継|つ}}ぐ者たちの戦いを、{{北宋|ほくそう}}の{{滅亡|めつぼう}}と重ねて{{描|えが}}く。",
+    kindle: [
+      { label: "第1巻", asin: "B009LTO3L8", cover: "https://m.media-amazon.com/images/I/81O8Eb-egOL._SL300_.jpg" },
+      { label: "合本版", asin: "B07BS5TL9H", cover: "https://m.media-amazon.com/images/I/A1MbRcyn-OL._SL300_.jpg" },
+    ],
   },
   {
     no: 3,
     title: "『{{岳飛伝|がくひでん}}』",
     meta: "{{北方謙三|きたかたけんぞう}} / 全17巻（集英社）",
     body: "シリーズの完結編。{{南宋|なんそう}}の名将{{岳飛|がくひ}}を{{軸|じく}}に、{{梁山泊|りょうざんぱく}}の流れをくむ者たちの行く末が{{描|えが}}かれる。",
+    kindle: [
+      { label: "第1巻", asin: "B01N0UU0UX", cover: "https://m.media-amazon.com/images/I/91VEFx3UH5L._SL300_.jpg" },
+      { label: "合本版", asin: "B07BS7MXL1", cover: "https://m.media-amazon.com/images/I/A14quFDS0JL._SL300_.jpg" },
+    ],
   },
 ];
 
