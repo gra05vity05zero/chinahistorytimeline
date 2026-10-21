@@ -1,4 +1,4 @@
-import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
+import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter, buildAmazonUrl } from "@/lib/data";
 import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock, HeritageThumb } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 
@@ -202,6 +202,11 @@ const BOOKS = [
     title: "『{{水滸伝|すいこでん}}』",
     meta: "{{北方謙三|きたかたけんぞう}} / 全19巻（集英社）",
     body: "原典の骨格を借りながら、登場人物の設定や物語の展開を{{大胆|だいたん}}に組み{{替|か}}えた長編。{{梁山泊|りょうざんぱく}}を、{{腐敗|ふはい}}した{{宋|そう}}に{{挑|いど}}む組織として{{描|か}}き直している。",
+    // Kindle版（集英社文庫）の第1巻と合本版のASINと書影
+    kindle: [
+      { label: "第1巻", asin: "B009LTO35O", cover: "https://m.media-amazon.com/images/I/81t4BRBalIL._SL300_.jpg" },
+      { label: "合本版", asin: "B07BS47H4B", cover: "https://m.media-amazon.com/images/I/91AUc-t2ODL._SL300_.jpg" },
+    ],
   },
   {
     no: 2,
@@ -632,12 +637,42 @@ export default function SuikodenPage() {
                   <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft, marginTop: 6 }}>
                     <RubyText text={book.body} />
                   </p>
+                  {book.kindle && (
+                    <div className="flex gap-4 flex-wrap mt-3">
+                      {book.kindle.map((k) => (
+                        <a
+                          key={k.asin}
+                          href={buildAmazonUrl(k.asin)}
+                          target="_blank"
+                          rel="nofollow noreferrer sponsored"
+                          className="flex flex-col items-center gap-2"
+                          style={{ width: 132 }}
+                        >
+                          <img
+                            src={k.cover}
+                            alt={`${stripRuby(book.title)} ${k.label}（Kindle版）の表紙`}
+                            loading="lazy"
+                            style={{ width: 96, height: 140, objectFit: "contain", border: `1px solid ${COLORS.mist}`, backgroundColor: "#FFFDF7" }}
+                          />
+                          <span
+                            className="px-2 py-1 text-center"
+                            style={{ width: "100%", fontSize: 11.5, fontWeight: 700, color: COLORS.vermilion, border: `1px solid ${COLORS.vermilion}`, backgroundColor: "#FFFDF7" }}
+                          >
+                            {k.label}（Kindle版）→
+                          </span>
+                        </a>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
           </div>
           <p style={{ fontSize: 12, color: COLORS.inkSoft, marginTop: 12 }}>
             <ruby>楊志<rt>ようし</rt></ruby>の祖先にあたる<ruby>楊業<rt>ようぎょう</rt></ruby>たちの物語は、<a href="/yangjiajiang" style={linkStyle}><ruby>楊家将<rt>ようかしょう</rt></ruby>とは</a>のページで<ruby>紹介<rt>しょうかい</rt></ruby>しています。
+          </p>
+          <p style={{ fontSize: 10.5, color: COLORS.mist, marginTop: 8 }}>
+            ※ 一部のリンクはAmazonアソシエイトによるアフィリエイト広告を<ruby>含<rt>ふく</rt></ruby>みます
           </p>
         </section>
 
