@@ -58,6 +58,7 @@ const MISC_SECTIONS = [
       { href: "/terracotta-army", label: "{{兵馬俑|へいばよう}}・{{始皇帝陵|しこうていりょう}}の{{謎|なぞ}}" },
       { href: "/emperors", label: "歴代{{皇帝|こうてい}}一覧" },
       { href: "/china-capitals", label: "歴代王朝の都一覧" },
+      { href: "/dynasty-territory-map", label: "王朝の領土の変遷マップ" },
       { href: "/sanguo-comparison", label: "{{魏|ぎ}}・{{呉|ご}}・{{蜀|しょく}}の{{違|ちが}}い" },
     ],
   },

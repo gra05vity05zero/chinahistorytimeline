@@ -19,6 +19,7 @@ export default function sitemap() {
     { url: `${SITE_URL}/china-castles`, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/emperors`, changeFrequency: "yearly", priority: 0.6 },
     { url: `${SITE_URL}/china-capitals`, changeFrequency: "yearly", priority: 0.5 },
+    { url: `${SITE_URL}/dynasty-territory-map`, changeFrequency: "yearly", priority: 0.6 },
     { url: `${SITE_URL}/silk-road`, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/great-wall`, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/four-inventions`, changeFrequency: "yearly", priority: 0.5 },

@@ -421,6 +421,7 @@ export default function ChinaCapitalsPage() {
           <div className="flex items-center gap-2.5 flex-wrap">
             <NavButton href="/silk-road" variant="solid">シルクロードを見る</NavButton>
             <NavButton href="/china-castles" variant="outline">中国の城まとめを見る</NavButton>
+            <NavButton href="/dynasty-territory-map" variant="outline">王朝の領土の変遷マップ</NavButton>
           </div>
         </section>
 
