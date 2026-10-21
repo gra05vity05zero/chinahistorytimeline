@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ERAS, ERA_ALIASES, COLORS, stripRuby, SITE_URL, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { SealMark, EventListItem, BackToTopButton, MiscLinksSection } from "@/components/Shared";
+import { SealMark, EventListItem, BackToTopButton, MiscLinksSection, JapanTimelineCallout } from "@/components/Shared";
+import { japanChinaTimelineHref, japaneseErasDuring } from "@/lib/japanChinaTimeline";
 import { RubyText } from "@/components/Ruby";
 
 export function generateStaticParams() {
@@ -83,6 +84,7 @@ export default function EraEventsPage({ params }) {
           <Link href={`/people/${era.id}`} style={{ color: COLORS.vermilion, fontSize: 13, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
             <RubyText text={era.name} />の人物一覧を見る →
           </Link>
+          <JapanTimelineCallout eraName={era.name} href={japanChinaTimelineHref(era.id)} japaneseEras={japaneseErasDuring(era.id)} />
         </div>
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>

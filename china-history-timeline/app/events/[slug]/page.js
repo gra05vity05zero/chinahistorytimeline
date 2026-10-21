@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { ERAS, findEventBySlug, getNextEvent, getPrevEvent, stripRuby, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
 import EventDetail from "@/components/EventDetail";
+import { japanChinaTimelineHref, japaneseErasDuring } from "@/lib/japanChinaTimeline";
 
 // ビルド時に全イベントの静的ページを生成（SSG）
 export function generateStaticParams() {
@@ -74,7 +75,13 @@ export default function EventPage({ params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: stripRuby(JSON.stringify(breadcrumbJsonLd)) }}
       />
-      <EventDetail event={event} era={era} prev={prev} next={next} />
+      <EventDetail
+        event={event}
+        era={era}
+        prev={prev}
+        next={next}
+        japanTimeline={{ href: japanChinaTimelineHref(era.id), japaneseEras: japaneseErasDuring(era.id) }}
+      />
     </>
   );
 }

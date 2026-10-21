@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { COLORS, CATEGORY_STYLE, HERITAGE_TYPES, resolveMediaUrl, stripRuby } from "@/lib/constants";
-import { SealMark, HeritageGrid, A8AdBlock, MiscLinksSection } from "@/components/Shared";
+import { SealMark, HeritageGrid, A8AdBlock, MiscLinksSection, JapanTimelineCallout } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 
 const MEDIA_TYPES = [
@@ -30,7 +30,7 @@ function isSuitangEvent(era) {
   return era.id === "sui" || era.id === "tang" || era.id === "wudai";
 }
 
-export default function EventDetail({ event, era, prev, next }) {
+export default function EventDetail({ event, era, prev, next, japanTimeline }) {
   const router = useRouter();
   const cat = CATEGORY_STYLE[event.category] || CATEGORY_STYLE["文化"];
 
@@ -121,6 +121,10 @@ export default function EventDetail({ event, era, prev, next }) {
             </>
           )}
         </div>
+
+        {japanTimeline && (
+          <JapanTimelineCallout eraName={era.name} href={japanTimeline.href} japaneseEras={japanTimeline.japaneseEras} />
+        )}
 
         {event.heritage && event.heritage.length > 0 && (
           <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>

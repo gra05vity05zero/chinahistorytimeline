@@ -405,6 +405,31 @@ export function A8Banner({ href, imgSrc, gifSrc, width, height }) {
   );
 }
 
+// 時代ページ・出来事ページから日中対照年表の該当箇所へ誘導するカード。
+// href・japaneseEras は lib/japanChinaTimeline.js からサーバー側で求めて渡す
+export function JapanTimelineCallout({ eraName, href, japaneseEras, className = "mt-6" }) {
+  return (
+    <Link
+      href={href}
+      className={`${className} flex items-center justify-between gap-3 px-4 py-3 hover:opacity-90`}
+      style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8" }}
+    >
+      <div>
+        <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 14, fontWeight: 700, color: COLORS.ink }}>
+          <RubyText text={eraName} />の頃、日本は何時代？
+        </div>
+        {japaneseEras.length > 0 && (
+          <div style={{ fontSize: 12, color: COLORS.inkSoft, marginTop: 3 }}>
+            同じ頃の日本：<RubyText text={japaneseEras.join("・")} />
+          </div>
+        )}
+        <div style={{ fontSize: 12, color: COLORS.vermilion, marginTop: 3 }}>日本史・中国史 対照年表で見る</div>
+      </div>
+      <span aria-hidden style={{ color: COLORS.vermilion, fontSize: 18 }}>→</span>
+    </Link>
+  );
+}
+
 // 「広告」ラベル付きのA8.netバナー枠。ad には A8_ADS のキーを指定する
 export function A8AdBlock({ ad, className = "mt-8" }) {
   const banner = A8_ADS[ad];
