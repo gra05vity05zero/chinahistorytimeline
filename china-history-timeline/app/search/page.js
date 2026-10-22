@@ -10,6 +10,8 @@ export const metadata = {
   title,
   description,
   alternates: { canonical: "/search" },
+  // 検索UIのみで固有の本文がないため、インデックスさせずリンクは辿らせる
+  robots: { index: false, follow: true },
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/search" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };
