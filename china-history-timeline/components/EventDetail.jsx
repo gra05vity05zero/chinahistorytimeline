@@ -56,14 +56,17 @@ export default function EventDetail({ event, era, prev, next, japanTimeline }) {
       </div>
 
       <div className="max-w-2xl mx-auto px-6 py-8">
-        <div className="flex items-center gap-3 mb-5">
+        <Link href={`/eras/${era.id}`} className="inline-flex items-center gap-3 mb-5 hover:opacity-80">
           <SealMark char={era.seal} active />
           <div>
             <div style={{ fontSize: 12, color: COLORS.gold, fontFamily: "var(--font-serif), serif" }}>
               <RubyText text={era.name} /> ／ <RubyText text={era.period} />
             </div>
+            <div style={{ fontSize: 11.5, color: COLORS.vermilion, marginTop: 1 }}>
+              この時代について →
+            </div>
           </div>
-        </div>
+        </Link>
 
         <div className="flex items-center gap-2 mb-2">
           <span style={{ fontFamily: "var(--font-serif), serif", color: COLORS.inkSoft, fontSize: 14 }}><RubyText text={event.year} /></span>
@@ -121,6 +124,23 @@ export default function EventDetail({ event, era, prev, next, japanTimeline }) {
             </>
           )}
         </div>
+
+        <Link
+          href={`/eras/${era.id}`}
+          className="mt-6 flex items-center justify-between gap-3 px-4 py-3 hover:opacity-90"
+          style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", borderLeft: `3px solid ${COLORS.vermilion}` }}
+        >
+          <div className="flex items-center gap-3 min-w-0">
+            <SealMark char={era.seal} />
+            <div className="min-w-0">
+              <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 14, fontWeight: 700, color: COLORS.ink }}>
+                <RubyText text={era.name} />とはどんな時代？
+              </div>
+              <div style={{ fontSize: 12, color: COLORS.inkSoft, marginTop: 2 }}>時代の流れ・年表・主な人物をまとめて見る</div>
+            </div>
+          </div>
+          <span aria-hidden style={{ color: COLORS.vermilion, fontSize: 18 }}>→</span>
+        </Link>
 
         {japanTimeline && (
           <JapanTimelineCallout eraName={era.name} href={japanTimeline.href} japaneseEras={japanTimeline.japaneseEras} />
