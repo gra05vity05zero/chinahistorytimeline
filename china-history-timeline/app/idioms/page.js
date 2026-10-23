@@ -1,6 +1,7 @@
 import { ERAS, getEraFigures, personSlug, stripRuby, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
 import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
+import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 
 const title = "中国史から生まれた故事成語・慣用句";
 const fullTitle = `中国史から生まれた故事成語・慣用句 | ${SITE_NAME}`;
@@ -208,12 +209,14 @@ export default function IdiomsPage() {
             それぞれの故事成語が生まれた時代の全体像は、年表や人物一覧からたどれます。あわせて確認してみてください。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
-            <NavButton href="/eras" variant="solid">出来事一覧を見る</NavButton>
+            <NavButton href="/eras" variant="solid">時代一覧を見る</NavButton>
             <NavButton href="/people" variant="outline">人物一覧を見る</NavButton>
             <NavButton href="/mnemonics" variant="outline">王朝の覚え方を見る</NavButton>
             <NavButton href="/funny-episodes" variant="outline">笑えるエピソード集を見る</NavButton>
           </div>
         </section>
+
+        <RelatedEraGuides path="/idioms" />
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <MiscLinksSection />

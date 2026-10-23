@@ -3,6 +3,7 @@ import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Share
 import { RubyText } from "@/components/Ruby";
 import FourKoma from "@/components/FourKoma";
 import { MANGA } from "./manga";
+import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 
 const title = "中国史の笑えるエピソード・おもしろ逸話集";
 const fullTitle = `中国史の笑えるエピソード・おもしろ逸話集 | ${SITE_NAME}`;
@@ -559,9 +560,11 @@ export default function FunnyEpisodesPage() {
           <div className="flex items-center gap-2.5 flex-wrap">
             <NavButton href="/idioms" variant="solid">故事成語を見る</NavButton>
             <NavButton href="/people" variant="outline">人物一覧を見る</NavButton>
-            <NavButton href="/eras" variant="outline">出来事一覧を見る</NavButton>
+            <NavButton href="/eras" variant="outline">時代一覧を見る</NavButton>
           </div>
         </section>
+
+        <RelatedEraGuides path="/funny-episodes" />
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <MiscLinksSection />

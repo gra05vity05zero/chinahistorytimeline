@@ -1,6 +1,7 @@
 import { ERAS, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
 import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
+import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 
 const title = "中国の四大名著とは？三国志演義・水滸伝・西遊記・紅楼夢を解説";
 const fullTitle = `中国の四大名著とは？三国志演義・水滸伝・西遊記・紅楼夢を解説 | ${SITE_NAME}`;
@@ -167,6 +168,8 @@ export default function FourGreatNovelsPage() {
         </section>
 
         <A8AdBlock ad="audible" className="mt-10" />
+
+        <RelatedEraGuides path="/four-great-novels" />
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <MiscLinksSection />

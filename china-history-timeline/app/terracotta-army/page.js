@@ -1,6 +1,7 @@
 import { ERAS, stripRuby, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
 import { BackToTopButton, NavButton, HeritageGrid, MiscLinksSection, A8AdBlock } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
+import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 
 const title = "兵馬俑・始皇帝陵の謎";
 const fullTitle = `兵馬俑・始皇帝陵の謎 | ${SITE_NAME}`;
@@ -91,12 +92,14 @@ export default function TerracottaArmyPage() {
             <ruby>兵馬俑<rt>へいばよう</rt></ruby>と<ruby>始皇帝陵<rt>しこうていりょう</rt></ruby>は1987年にユネスコの世界遺産に登録されている。<ruby>始皇帝<rt>しこうてい</rt></ruby>その人の<ruby>生涯<rt>しょうがい</rt></ruby>や、<ruby>秦<rt>しん</rt></ruby>が中国を統一した<ruby>経緯<rt>けいい</rt></ruby>については、年表・人物ページもあわせてご覧ください。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
-            <NavButton href="/eras/qin" variant="solid"><ruby>秦<rt>しん</rt></ruby>の出来事一覧を見る</NavButton>
+            <NavButton href="/eras/qin" variant="solid"><ruby>秦<rt>しん</rt></ruby>の時代解説を見る</NavButton>
             <NavButton href="/world-heritage" variant="outline">中国の世界遺産まとめを見る</NavButton>
           </div>
         </section>
 
         <A8AdBlock ad="agoda" className="mt-10" />
+
+        <RelatedEraGuides path="/terracotta-army" />
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <MiscLinksSection />

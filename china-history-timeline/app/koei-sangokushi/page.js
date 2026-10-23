@@ -1,6 +1,7 @@
 import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter, buildAmazonUrl } from "@/lib/data";
 import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock, HeritageThumb } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
+import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 
 const title = "コーエー『三國志』シリーズ一覧｜最新作・歴史・シブサワ・コウとおすすめの選び方";
 const fullTitle = `${title} | ${SITE_NAME}`;
@@ -585,7 +586,7 @@ export default function KoeiSangokushiPage() {
             ゲームの<ruby>舞台<rt>ぶたい</rt></ruby>になった三国時代の出来事や人物は、年表・人物ページもあわせてご覧ください。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
-            <NavButton href="/eras/sanguo" variant="solid">三国の出来事一覧を見る</NavButton>
+            <NavButton href="/eras/sanguo" variant="solid">三国時代の解説を見る</NavButton>
             <NavButton href="/people/sanguo" variant="outline">三国の人物一覧を見る</NavButton>
             <NavButton href="/sanguo-battles" variant="outline">三国時代 合戦マップ</NavButton>
             <NavButton href="/sanguo-comparison" variant="outline"><ruby>魏<rt>ぎ</rt></ruby>・<ruby>呉<rt>ご</rt></ruby>・<ruby>蜀<rt>しょく</rt></ruby>の<ruby>違<rt>ちが</rt></ruby>い</NavButton>
@@ -593,6 +594,8 @@ export default function KoeiSangokushiPage() {
         </section>
 
         <A8AdBlock ad="audible" className="mt-10" />
+
+        <RelatedEraGuides path="/koei-sangokushi" />
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <MiscLinksSection />

@@ -1,6 +1,7 @@
 import { ERAS, stripRuby, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
 import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
+import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 
 const title = "中国の城まとめ";
 const fullTitle = `中国の城まとめ | ${SITE_NAME}`;
@@ -216,6 +217,8 @@ export default function ChinaCastlesPage() {
         </section>
 
         <A8AdBlock ad="agoda" className="mt-10" />
+
+        <RelatedEraGuides path="/china-castles" />
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <MiscLinksSection />

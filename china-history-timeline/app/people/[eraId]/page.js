@@ -89,7 +89,7 @@ export default function EraPeoplePage({ params }) {
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <Link href={`/eras/${era.id}`} style={{ color: COLORS.vermilion, fontSize: 13, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
-            <RubyText text={era.name} />の出来事一覧を見る →
+            <RubyText text={era.name} />とはどんな時代？（時代解説・年表）→
           </Link>
         </div>
 

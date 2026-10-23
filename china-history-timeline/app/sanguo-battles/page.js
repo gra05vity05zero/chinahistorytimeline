@@ -2,6 +2,7 @@ import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_NAME, buildOpe
 import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { SanguoBorderMap } from "@/components/SanguoBorderMap";
+import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 
 const title = "三国時代 合戦マップ";
 const fullTitle = `三国時代 合戦マップ | ${SITE_NAME}`;
@@ -462,7 +463,7 @@ export default function SanguoBattlesPage() {
             三国時代の前史にあたる<ruby>楚漢戦争<rt>そかんせんそう</rt></ruby>・春秋戦国の合戦については、下記の特集ページもどうぞ。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
-            <NavButton href="/eras/sanguo" variant="solid">三国の出来事一覧を見る</NavButton>
+            <NavButton href="/eras/sanguo" variant="solid">三国時代の解説を見る</NavButton>
             <NavButton href="/sanguo-comparison" variant="outline"><ruby>魏<rt>ぎ</rt></ruby>・<ruby>呉<rt>ご</rt></ruby>・<ruby>蜀<rt>しょく</rt></ruby>の<ruby>違<rt>ちが</rt></ruby>いを見る</NavButton>
             <NavButton href="/people/sanguo" variant="outline">三国の人物一覧を見る</NavButton>
             <NavButton href="/koei-sangokushi" variant="outline">ゲーム『<ruby>三國志<rt>さんごくし</rt></ruby>』シリーズ</NavButton>
@@ -471,6 +472,8 @@ export default function SanguoBattlesPage() {
             <NavButton href="/suitang-battles" variant="outline"><ruby>隋唐<rt>ずいとう</rt></ruby>・五代 合戦マップを見る</NavButton>
           </div>
         </section>
+
+        <RelatedEraGuides path="/sanguo-battles" />
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <MiscLinksSection />

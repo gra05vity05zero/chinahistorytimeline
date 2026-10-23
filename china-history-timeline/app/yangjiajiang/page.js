@@ -1,6 +1,7 @@
 import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter, buildAmazonUrl } from "@/lib/data";
 import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock, HeritageThumb } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
+import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 
 const title = "楊家将とは？北方謙三『楊家将』で読む宋と遼の戦い";
 const fullTitle = `${title} | ${SITE_NAME}`;
@@ -670,7 +671,7 @@ export default function YangjiajiangPage() {
             <ruby>北宋<rt>ほくそう</rt></ruby>の出来事や人物の<ruby>詳<rt>くわ</rt></ruby>しい解説は、年表・人物ページもあわせてご覧ください。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
-            <NavButton href="/eras/northernsong" variant="solid"><ruby>北宋<rt>ほくそう</rt></ruby>の出来事一覧を見る</NavButton>
+            <NavButton href="/eras/northernsong" variant="solid"><ruby>北宋<rt>ほくそう</rt></ruby>の時代解説を見る</NavButton>
             <NavButton href="/people/northernsong" variant="outline"><ruby>北宋<rt>ほくそう</rt></ruby>の人物一覧を見る</NavButton>
             <NavButton href="/novelists" variant="outline">中国史を題材にした日本人小説家一覧</NavButton>
             <NavButton href="/four-great-novels" variant="outline">中国の四大名著とは</NavButton>
@@ -679,6 +680,8 @@ export default function YangjiajiangPage() {
         </section>
 
         <A8AdBlock ad="audible" className="mt-10" />
+
+        <RelatedEraGuides path="/yangjiajiang" />
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <MiscLinksSection />

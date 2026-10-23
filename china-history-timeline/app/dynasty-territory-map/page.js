@@ -3,6 +3,7 @@ import { TERRITORY_FRAMES } from "@/lib/dynastyTerritories";
 import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { DynastyTerritoryMap } from "@/components/DynastyTerritoryMap";
+import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 
 const title = "中国 歴代王朝の領土（版図）の変遷を地図で見る";
 const fullTitle = `中国 歴代王朝の領土（版図）の変遷を地図で見る | ${SITE_NAME}`;
@@ -108,7 +109,7 @@ export default function DynastyTerritoryMapPage() {
                     .filter(Boolean)
                     .map((era) => (
                       <a key={era.id} href={`/eras/${era.id}`} style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
-                        <RubyText text={era.name} />の年表を読む →
+                        <RubyText text={era.name} />の時代解説を読む →
                       </a>
                     ))}
                 </div>
@@ -129,6 +130,8 @@ export default function DynastyTerritoryMapPage() {
             <NavButton href="/suitang-battles" variant="outline"><ruby>隋唐<rt>ずいとう</rt></ruby>の合戦マップ</NavButton>
           </div>
         </section>
+
+        <RelatedEraGuides path="/dynasty-territory-map" />
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <MiscLinksSection />

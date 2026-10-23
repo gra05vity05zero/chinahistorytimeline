@@ -1,6 +1,7 @@
 import { ERAS, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
 import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
+import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 
 const title = "中国の歴史書（史書）とは？史記・漢書・三国志・資治通鑑などを紹介";
 const fullTitle = `${title} | ${SITE_NAME}`;
@@ -340,6 +341,8 @@ export default function HistoryBooksPage() {
         </section>
 
         <A8AdBlock ad="audible" className="mt-10" />
+
+        <RelatedEraGuides path="/history-books" />
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <MiscLinksSection />

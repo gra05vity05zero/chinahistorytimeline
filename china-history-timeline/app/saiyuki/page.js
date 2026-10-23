@@ -1,6 +1,7 @@
 import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
 import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock, HeritageThumb } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
+import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 
 const title = "西遊記とは？あらすじ・登場人物と、モデルになった玄奘三蔵の旅をわかりやすく解説";
 const fullTitle = `${title} | ${SITE_NAME}`;
@@ -664,7 +665,7 @@ export default function SaiyukiPage() {
             <ruby>玄奘<rt>げんじょう</rt></ruby>が生きた<ruby>唐<rt>とう</rt></ruby>の時代の出来事や人物は、年表・人物ページもあわせてご覧ください。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
-            <NavButton href="/eras/tang" variant="solid"><ruby>唐<rt>とう</rt></ruby>の出来事一覧を見る</NavButton>
+            <NavButton href="/eras/tang" variant="solid"><ruby>唐<rt>とう</rt></ruby>の時代解説を見る</NavButton>
             <NavButton href="/people/tang" variant="outline"><ruby>唐<rt>とう</rt></ruby>の人物一覧を見る</NavButton>
             {TAIZONG.href && <NavButton href={TAIZONG.href} variant="outline"><ruby>唐<rt>とう</rt></ruby>の太宗（<ruby>李世民<rt>りせいみん</rt></ruby>）</NavButton>}
             <NavButton href="/silk-road" variant="outline">シルクロードとは</NavButton>
@@ -674,6 +675,8 @@ export default function SaiyukiPage() {
         </section>
 
         <A8AdBlock ad="audible" className="mt-10" />
+
+        <RelatedEraGuides path="/saiyuki" />
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <MiscLinksSection />

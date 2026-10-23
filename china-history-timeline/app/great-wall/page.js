@@ -1,6 +1,7 @@
 import { ERAS, stripRuby, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
 import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
+import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 
 const title = "万里の長城とは？歴史と八達嶺・嘉峪関など見どころを解説";
 const fullTitle = `万里の長城とは？歴史と八達嶺・嘉峪関など見どころを解説 | ${SITE_NAME}`;
@@ -385,6 +386,8 @@ export default function GreatWallPage() {
         </section>
 
         <A8AdBlock ad="agoda" className="mt-10" />
+
+        <RelatedEraGuides path="/great-wall" />
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <MiscLinksSection />

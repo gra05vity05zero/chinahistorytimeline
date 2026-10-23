@@ -1,6 +1,7 @@
 import { ERAS, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
 import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
+import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 
 const title = "中国史を題材にした日本人小説家一覧";
 const fullTitle = `中国史を題材にした日本人小説家一覧 | ${SITE_NAME}`;
@@ -153,12 +154,14 @@ export default function NovelistsPage() {
             小説の<ruby>舞台<rt>ぶたい</rt></ruby>になった時代の<ruby>詳<rt>くわ</rt></ruby>しい出来事や人物は、年表・人物一覧からたどれます。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
-            <NavButton href="/eras" variant="solid">出来事一覧を見る</NavButton>
+            <NavButton href="/eras" variant="solid">時代一覧を見る</NavButton>
             <NavButton href="/people" variant="outline">人物一覧を見る</NavButton>
           </div>
         </section>
 
         <A8AdBlock ad="audible" className="mt-10" />
+
+        <RelatedEraGuides path="/novelists" />
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <MiscLinksSection />

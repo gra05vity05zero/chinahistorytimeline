@@ -1,6 +1,7 @@
 import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
 import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
+import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 
 const title = "楚漢戦争 合戦マップ";
 const fullTitle = `楚漢戦争 合戦マップ | ${SITE_NAME}`;
@@ -424,11 +425,13 @@ export default function ChuHanBattlesPage() {
             あわせて下記の特集ページもご覧ください。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
-            <NavButton href="/eras/qin" variant="solid"><ruby>秦<rt>しん</rt></ruby>の出来事一覧を見る</NavButton>
+            <NavButton href="/eras/qin" variant="solid"><ruby>秦<rt>しん</rt></ruby>の時代解説を見る</NavButton>
             <NavButton href="/chunqiu-zhanguo-battles" variant="outline">春秋・戦国 合戦マップを見る</NavButton>
             <NavButton href="/sanguo-battles" variant="outline">三国時代 合戦マップを見る</NavButton>
           </div>
         </section>
+
+        <RelatedEraGuides path="/chuhan-battles" />
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <MiscLinksSection />

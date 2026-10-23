@@ -11,7 +11,7 @@ import { RubyText } from "@/components/Ruby";
 // トップページ上部の主要な入口
 const PRIMARY_LINKS = [
   { href: "/people", seal: "人", label: "人物一覧", desc: "時代別の人物事典" },
-  { href: "/eras", seal: "事", label: "出来事一覧", desc: "時代別の主な出来事" },
+  { href: "/eras", seal: "代", label: "時代一覧", desc: "各時代の解説と年表" },
   { href: "/japan-china-timeline", seal: "日", label: "日中対照年表", desc: "同じ時期の日本と{{比較|ひかく}}" },
   { href: "/search", seal: "検", label: "サイト内{{検索|けんさく}}", desc: "人物・出来事を探す" },
 ];
@@ -197,6 +197,13 @@ export default function Timeline() {
               {era.description && (
                 <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginTop: 8 }}><RubyText text={era.description} /></p>
               )}
+              <Link
+                href={`/eras/${era.id}`}
+                className="inline-block mt-2"
+                style={{ fontSize: 12.5, color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}
+              >
+                <RubyText text={era.name} />とはどんな時代？ →
+              </Link>
             </div>
             <div>
               {era.events.map((ev, i) => (

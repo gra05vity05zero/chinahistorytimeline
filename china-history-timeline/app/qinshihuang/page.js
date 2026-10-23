@@ -1,6 +1,7 @@
 import { ERAS, stripRuby, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
 import { BackToTopButton, NavButton, HeritageGrid, EventListItem, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
+import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 
 const title = "始皇帝とは？生涯・中国統一・兵馬俑まで徹底解説";
 const fullTitle = `始皇帝とは？生涯・中国統一・兵馬俑まで徹底解説 | ${SITE_NAME}`;
@@ -539,10 +540,12 @@ export default function QinShiHuangPage() {
             <ruby>秦<rt>しん</rt></ruby>の出来事は年表ページで、<ruby>始皇帝陵<rt>しこうていりょう</rt></ruby>・<ruby>兵馬俑<rt>へいばよう</rt></ruby>にまつわる<ruby>謎<rt>なぞ</rt></ruby>はより<ruby>詳<rt>くわ</rt></ruby>しい別記事でも<ruby>紹介<rt>しょうかい</rt></ruby>しています。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
-            <NavButton href="/eras/qin" variant="solid"><ruby>秦<rt>しん</rt></ruby>の出来事一覧を見る</NavButton>
+            <NavButton href="/eras/qin" variant="solid"><ruby>秦<rt>しん</rt></ruby>の時代解説を見る</NavButton>
             <NavButton href="/terracotta-army" variant="outline"><ruby>兵馬俑<rt>へいばよう</rt></ruby>・<ruby>始皇帝陵<rt>しこうていりょう</rt></ruby>の<ruby>謎<rt>なぞ</rt></ruby>を見る</NavButton>
           </div>
         </section>
+
+        <RelatedEraGuides path="/qinshihuang" />
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <MiscLinksSection />

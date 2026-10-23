@@ -2,6 +2,7 @@ import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_URL, SITE_NAME
 import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { SanguoBorderMap } from "@/components/SanguoBorderMap";
+import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 
 const title = "魏・呉・蜀の違いとは？三国の国力・君主・人物を比較";
 const fullTitle = `${title} | ${SITE_NAME}`;
@@ -465,6 +466,8 @@ export default function SanguoComparisonPage() {
         </section>
 
         <A8AdBlock ad="audible" className="mt-10" />
+
+        <RelatedEraGuides path="/sanguo-comparison" />
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <MiscLinksSection />

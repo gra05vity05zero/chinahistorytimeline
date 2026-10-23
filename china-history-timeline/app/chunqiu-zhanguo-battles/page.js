@@ -2,6 +2,7 @@ import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_NAME, buildOpe
 import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { ZhanguoBorderMap } from "@/components/ZhanguoBorderMap";
+import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 
 const title = "春秋・戦国時代 合戦マップ";
 const fullTitle = `春秋・戦国時代 合戦マップ | ${SITE_NAME}`;
@@ -589,6 +590,8 @@ export default function ChunqiuZhanguoBattlesPage() {
             <NavButton href="/sanguo-battles" variant="outline">三国時代 合戦マップを見る</NavButton>
           </div>
         </section>
+
+        <RelatedEraGuides path="/chunqiu-zhanguo-battles" />
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <MiscLinksSection />

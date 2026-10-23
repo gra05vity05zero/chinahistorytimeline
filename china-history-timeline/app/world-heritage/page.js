@@ -1,6 +1,7 @@
 import { ERAS, stripRuby, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
 import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
+import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 
 const title = "中国の世界遺産まとめ";
 const fullTitle = `中国の世界遺産まとめ | ${SITE_NAME}`;
@@ -218,11 +219,13 @@ export default function WorldHeritagePage() {
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
             <NavButton href="/terracotta-army" variant="solid"><ruby>兵馬俑<rt>へいばよう</rt></ruby>・<ruby>始皇帝陵<rt>しこうていりょう</rt></ruby>の<ruby>謎<rt>なぞ</rt></ruby>を見る</NavButton>
-            <NavButton href="/eras" variant="outline">出来事一覧を見る</NavButton>
+            <NavButton href="/eras" variant="outline">時代一覧を見る</NavButton>
           </div>
         </section>
 
         <A8AdBlock ad="agoda" className="mt-10" />
+
+        <RelatedEraGuides path="/world-heritage" />
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <MiscLinksSection />

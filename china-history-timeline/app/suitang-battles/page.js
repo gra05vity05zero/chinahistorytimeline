@@ -2,6 +2,7 @@ import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_NAME, buildOpe
 import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { SuitangBorderMap } from "@/components/SuitangBorderMap";
+import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 
 const title = "隋唐・五代 合戦マップ";
 const fullTitle = `隋唐・五代 合戦マップ | ${SITE_NAME}`;
@@ -607,6 +608,8 @@ export default function SuitangBattlesPage() {
             <NavButton href="/yangjiajiang" variant="outline"><ruby>楊家将<rt>ようかしょう</rt></ruby>の特集を見る</NavButton>
           </div>
         </section>
+
+        <RelatedEraGuides path="/suitang-battles" />
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <MiscLinksSection />

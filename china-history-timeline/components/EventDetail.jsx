@@ -86,7 +86,7 @@ export default function EventDetail({ event, era, prev, next, japanTimeline }) {
           </Link>
           <span style={{ color: COLORS.mist }}>|</span>
           <Link href={`/eras/${era.id}`} style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
-            <RubyText text={era.name} />の出来事一覧
+            <RubyText text={era.name} />の時代解説・年表
           </Link>
           {era.id === "sanguo" && (
             <>

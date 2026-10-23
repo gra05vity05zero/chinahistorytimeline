@@ -1,6 +1,7 @@
 import { ERAS, getEraFigures, personSlug, stripRuby, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
 import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
+import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 
 const title = "中国 歴代皇帝一覧｜始皇帝から清の宣統帝（溥儀）まで";
 const fullTitle = `${title} | ${SITE_NAME}`;
@@ -515,7 +516,7 @@ function DynastyBody({ dynasty }) {
         都：<RubyText text={dynasty.capital} />
         <span style={{ color: COLORS.mist }}>　|　</span>
         <a href={`/eras/${dynasty.eraId}`} style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
-          この時代の年表へ
+          この時代の解説・年表へ
         </a>
       </div>
       <ol style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8" }}>
@@ -643,6 +644,8 @@ export default function EmperorsPage() {
             <NavButton href="/mnemonics" variant="outline">王朝の覚え方</NavButton>
           </div>
         </section>
+
+        <RelatedEraGuides path="/emperors" />
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <MiscLinksSection />

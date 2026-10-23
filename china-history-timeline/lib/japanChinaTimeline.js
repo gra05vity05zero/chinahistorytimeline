@@ -27,7 +27,7 @@ function eventLink(eraId, titleIncludes) {
 function eraLink(eraId) {
   const era = ERAS.find((e) => e.id === eraId);
   if (!era) return null;
-  return { href: `/eras/${era.id}`, label: `${era.name}の出来事`, eraName: era.name };
+  return { href: `/eras/${era.id}`, label: `${era.name}の時代解説`, eraName: era.name };
 }
 
 // eraId: 中国側はERASのid（旧石器時代のみ独自）、日本側は時代ごとの独自id。時代ジャンプのアンカーに使う。

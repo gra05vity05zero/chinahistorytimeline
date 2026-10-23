@@ -1,6 +1,7 @@
 import { ERAS, stripRuby, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
 import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
+import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 
 const title = "中国の四大発明とは？紙・印刷術・火薬・羅針盤を解説";
 const fullTitle = `中国の四大発明とは？紙・印刷術・火薬・羅針盤を解説 | ${SITE_NAME}`;
@@ -176,6 +177,8 @@ export default function FourInventionsPage() {
             <NavButton href="/great-wall" variant="outline">万里の長城とは</NavButton>
           </div>
         </section>
+
+        <RelatedEraGuides path="/four-inventions" />
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <MiscLinksSection />

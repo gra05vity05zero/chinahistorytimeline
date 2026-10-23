@@ -4,6 +4,7 @@ import { ROWS, CN_JUMPS, JP_JUMPS, hasAnchor } from "@/lib/japanChinaTimeline";
 import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { TimelineIcon } from "@/components/TimelineIcons";
+import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 
 const title = "日本史・中国史 対照年表";
 const fullTitle = `日本史・中国史 対照年表 | ${SITE_NAME}`;
@@ -173,13 +174,15 @@ export default function JapanChinaTimelinePage() {
 
         <section style={{ marginTop: 32 }}>
           <div className="flex items-center gap-2.5 flex-wrap">
-            <NavButton href="/eras" variant="solid">出来事一覧を見る</NavButton>
+            <NavButton href="/eras" variant="solid">時代一覧を見る</NavButton>
             <NavButton href="/mnemonics" variant="outline">王朝の覚え方を見る</NavButton>
             <NavButton href="#era-jump" variant="outline">↑ 時代を選び直す</NavButton>
           </div>
         </section>
 
         <A8AdBlock ad="audible" className="mt-10" />
+
+        <RelatedEraGuides path="/japan-china-timeline" />
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <MiscLinksSection />

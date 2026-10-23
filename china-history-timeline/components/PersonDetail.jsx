@@ -83,7 +83,7 @@ export default function PersonDetail({ person, era }) {
           </Link>
           <span style={{ color: COLORS.mist }}>|</span>
           <Link href={`/eras/${era.id}`} style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
-            <RubyText text={era.name} />の出来事一覧
+            <RubyText text={era.name} />の時代解説・年表
           </Link>
         </div>
 

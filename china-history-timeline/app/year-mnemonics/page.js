@@ -166,7 +166,7 @@ export default function YearMnemonicsPage() {
         <section style={{ marginTop: 32 }}>
           <div className="flex items-center gap-2.5 flex-wrap">
             <NavButton href="/mnemonics" variant="solid">王朝の覚え方を見る</NavButton>
-            <NavButton href="/eras" variant="outline">出来事一覧を見る</NavButton>
+            <NavButton href="/eras" variant="outline">時代一覧を見る</NavButton>
           </div>
         </section>
 

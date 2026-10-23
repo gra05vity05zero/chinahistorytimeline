@@ -1,6 +1,7 @@
 import { ERAS, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
 import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
+import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 
 const title = "中国王朝の覚え方（語呂合わせ）";
 const fullTitle = `中国王朝の覚え方（語呂合わせ）| ${SITE_NAME}`;
@@ -177,10 +178,12 @@ export default function MnemonicsPage() {
             年表や人物一覧もあわせて確認してみてください。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
-            <NavButton href="/eras" variant="solid">出来事一覧を見る</NavButton>
+            <NavButton href="/eras" variant="solid">時代一覧を見る</NavButton>
             <NavButton href="/people" variant="outline">人物一覧を見る</NavButton>
           </div>
         </section>
+
+        <RelatedEraGuides path="/mnemonics" />
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <MiscLinksSection />
