@@ -80,6 +80,7 @@ const MISC_SECTIONS = [
       { href: "/yangjiajiang", label: "{{楊家将|ようかしょう}}とは" },
       { href: "/suikoden", label: "{{水滸伝|すいこでん}}とは" },
       { href: "/saiyuki", label: "西遊記とは" },
+      { href: "/koei-sangokushi", label: "ゲーム『{{三國志|さんごくし}}』シリーズ" },
       { href: "/novelists", label: "日本人小説家一覧" },
     ],
   },

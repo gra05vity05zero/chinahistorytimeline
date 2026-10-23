@@ -460,6 +460,7 @@ export default function SanguoComparisonPage() {
             <NavButton href="/sanguo-battles" variant="solid">三国時代 合戦マップ</NavButton>
             <NavButton href="/people/sanguo" variant="outline">三国時代の人物一覧</NavButton>
             <NavButton href="/four-great-novels" variant="outline">三国志演義など四大名著</NavButton>
+            <NavButton href="/koei-sangokushi" variant="outline">ゲーム『<ruby>三國志<rt>さんごくし</rt></ruby>』シリーズ</NavButton>
           </div>
         </section>
 
