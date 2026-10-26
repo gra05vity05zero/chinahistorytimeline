@@ -152,8 +152,6 @@ export default function EventDetail({ event, era, prev, next, japanTimeline }) {
                 </div>
               );
             })}
-
-            <A8AdBlock ad="travelWest" />
           </div>
         )}
 
@@ -198,10 +196,14 @@ export default function EventDetail({ event, era, prev, next, japanTimeline }) {
                 );
               })}
             </div>
-
-            <A8AdBlock ad="audible" />
           </div>
         )}
+
+        {/* 広告は本文の後ろにこの1ブロックだけ置く（史跡があれば海外ツアー、関連作品があればAudible） */}
+        <A8AdBlock
+          ad={[event.heritage?.length > 0 && "travelWest", event.media?.length > 0 && "audible", "travelist"].filter(Boolean)}
+          className="mt-10"
+        />
 
         {prev && (
           <Link

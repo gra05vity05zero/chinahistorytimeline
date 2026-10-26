@@ -388,7 +388,7 @@ export function EventListItem({ event, eraName }) {
   );
 }
 
-export function A8Banner({ href, imgSrc, gifSrc, width, height }) {
+export function A8Banner({ href, imgSrc, gifSrc, width, height, alt }) {
   return (
     <div style={{ textAlign: "center" }}>
       <a href={href} rel="nofollow noreferrer sponsored" target="_blank">
@@ -435,16 +435,25 @@ export function JapanTimelineCallout({ eraName, href, japaneseEras, className = 
   );
 }
 
-// 「広告」ラベル付きのA8.netバナー枠。ad には A8_ADS のキーを指定する
+// 「広告」ラベル付きのA8.netバナー枠。ad には A8_ADS のキー（複数並べる場合はキーの配列）を指定する
 export function A8AdBlock({ ad, className = "mt-8" }) {
-  const banner = A8_ADS[ad];
-  if (!banner) return null;
+  const banners = [].concat(ad).map((key) => A8_ADS[key]).filter(Boolean);
+  if (banners.length === 0) return null;
   return (
     <div className={className}>
       <div style={{ fontSize: 10.5, color: COLORS.inkSoft, marginBottom: 8, textAlign: "center" }}>広告</div>
-      <A8Banner {...banner} />
+      <div className="flex flex-col items-center gap-3">
+        {banners.map((banner) => (
+          <A8Banner key={banner.href} {...banner} />
+        ))}
+      </div>
     </div>
   );
+}
+
+// 出来事ページ・人物ページはフッターの共通バナーを出さず、本文の後ろの1ブロックにまとめる
+export function isSingleAdBlockPage(pathname) {
+  return pathname.startsWith("/events/") || /^\/people\/[^/]+\/[^/]+/.test(pathname);
 }
 
 export function AdSenseSlot({ slot }) {

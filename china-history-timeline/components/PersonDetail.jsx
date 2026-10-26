@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { COLORS } from "@/lib/constants";
-import { SealMark, HeritageThumb, MiscLinksSection } from "@/components/Shared";
+import { SealMark, HeritageThumb, MiscLinksSection, A8AdBlock } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 
 export default function PersonDetail({ person, era }) {
@@ -86,6 +86,9 @@ export default function PersonDetail({ person, era }) {
             <RubyText text={era.name} />の時代解説・年表
           </Link>
         </div>
+
+        {/* 広告は本文の後ろにこの1ブロックだけ置く */}
+        <A8AdBlock ad={["audible", "travelist"]} className="mt-10" />
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <MiscLinksSection />
