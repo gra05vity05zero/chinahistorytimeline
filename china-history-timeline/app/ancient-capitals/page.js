@@ -51,7 +51,7 @@ function commons(file, author, license, caption) {
 
 // 古都ごとのデータ。
 // population: 2020年の第7次全国人口調査による市域全体の常住人口（概数）
-// mapX,mapY: 地図（lib/chinaOutlineと同じ図法）上の位置。鄭州・開封・洛陽は近接するため数px調整
+// mapX,mapY: 地図（lib/chinaOutlineと同じ図法）上の位置。鄭州・開封・洛陽・安陽は近接するため番号が重ならないよう数px調整
 // heritage: 冒頭の写真に使うheritageの名称 / spots[].heritage: 観光地の写真に使うheritageの名称
 // modern: 現在の街並みの写真
 const CITIES = [
@@ -83,9 +83,6 @@ const CITIES = [
     ],
     mapX: 284,
     mapY: 198,
-    labelDx: 0,
-    labelDy: 10,
-    anchor: "middle",
   },
   {
     id: "luoyang",
@@ -113,11 +110,8 @@ const CITIES = [
       { name: "{{周王城|しゅうおうじょう}}{{天子駕六|てんしがろく}}博物館", note: "東周の王が乗った6頭立ての馬車の{{遺構|いこう}}を、{{発掘|はっくつ}}された状態のまま展示する。", heritage: "洛陽周王城" },
       { name: "{{二里頭|にりとう}}夏都{{遺址|いし}}博物館", note: "夏王朝の都とされる{{二里頭|にりとう}}{{遺跡|いせき}}（{{偃師区|えんしく}}）の出土品を展示する博物館。", heritage: "二里頭" },
     ],
-    mapX: 309,
-    mapY: 196,
-    labelDx: -5,
-    labelDy: 2,
-    anchor: "end",
+    mapX: 306,
+    mapY: 197,
   },
   {
     id: "nanjing",
@@ -147,9 +141,6 @@ const CITIES = [
     ],
     mapX: 358,
     mapY: 218,
-    labelDx: -5,
-    labelDy: 2,
-    anchor: "end",
   },
   {
     id: "beijing",
@@ -179,9 +170,6 @@ const CITIES = [
     ],
     mapX: 340,
     mapY: 147,
-    labelDx: 5,
-    labelDy: 2,
-    anchor: "start",
   },
   {
     id: "kaifeng",
@@ -208,11 +196,8 @@ const CITIES = [
       { name: "{{大相国寺|だいしょうこくじ}}", note: "{{北宋|ほくそう}}の皇室とゆかりの深かった名刹。『{{水滸伝|すいこでん}}』では{{魯智深|ろちしん}}が菜園番をした寺として登場する。", href: "/suikoden" },
       { name: "{{開封府|かいほうふ}}・{{包公祠|ほうこうし}}", note: "公正な裁きで知られる名{{判官|はんがん}}・{{包拯|ほうじょう}}（{{包青天|ほうせいてん}}）ゆかりの役所と{{祠|ほこら}}。開封府は復元された建物。" },
     ],
-    mapX: 330,
-    mapY: 194,
-    labelDx: 5,
-    labelDy: 2,
-    anchor: "start",
+    mapX: 334,
+    mapY: 196,
   },
   {
     id: "hangzhou",
@@ -242,9 +227,6 @@ const CITIES = [
     ],
     mapX: 368,
     mapY: 235,
-    labelDx: 0,
-    labelDy: 10,
-    anchor: "middle",
   },
   {
     id: "anyang",
@@ -270,11 +252,8 @@ const CITIES = [
       { name: "{{羑里城|ゆうりじょう}}・{{岳飛|がくひ}}{{廟|びょう}}", note: "周の文王が{{殷|いん}}の{{紂王|ちゅうおう}}に{{幽閉|ゆうへい}}されたと伝わる地と、{{岳飛|がくひ}}の故郷に建つ{{廟|びょう}}。ともに市南部の{{湯陰県|とういんけん}}にある。" },
       { name: "{{紅旗渠|こうきょ}}", note: "1960年代に{{林州|りんしゅう}}の人々が{{断崖|だんがい}}を切り開いて手作業で築いた全長約1500kmの用水路。" },
     ],
-    mapX: 325,
-    mapY: 181,
-    labelDx: 5,
-    labelDy: 2,
-    anchor: "start",
+    mapX: 329,
+    mapY: 175,
   },
   {
     id: "zhengzhou",
@@ -302,10 +281,7 @@ const CITIES = [
       { name: "黄河風景名勝区", note: "黄河のほとりの景勝地。伝説上の帝王・{{炎帝|えんてい}}と{{黄帝|こうてい}}の巨大な像が山に彫られている。" },
     ],
     mapX: 320,
-    mapY: 190,
-    labelDx: -4,
-    labelDy: -3,
-    anchor: "end",
+    mapY: 188,
   },
   {
     id: "datong",
@@ -332,9 +308,6 @@ const CITIES = [
     ],
     mapX: 317,
     mapY: 145,
-    labelDx: -5,
-    labelDy: 2,
-    anchor: "end",
   },
   {
     id: "chengdu",
@@ -363,9 +336,6 @@ const CITIES = [
     ],
     mapX: 248,
     mapY: 231,
-    labelDx: 0,
-    labelDy: 10,
-    anchor: "middle",
   },
 ].map((c) => {
   const photo = c.heritage ? findHeritage(c.heritage) : null;
@@ -410,34 +380,87 @@ const FAQ = [
   },
 ];
 
-// 古都の位置図。東部〜中部を拡大して表示する
+// 世界的に知られる主要都市（点＋ラベル）。/china-capitalsと同じ
+const REFERENCE_CITIES = [
+  { label: "上海", x: 378, y: 226, dx: 10, dy: -6, anchor: "start" },
+  { label: "広州", x: 317, y: 300, dx: -10, dy: -6, anchor: "end" },
+  { label: "香港", x: 324, y: 308, dx: 10, dy: 13, anchor: "start" },
+  { label: "ラサ", x: 151, y: 240, dx: 0, dy: 17, anchor: "middle" },
+  { label: "ウルムチ", x: 124, y: 109, dx: 0, dy: 16, anchor: "middle" },
+  { label: "フフホト", x: 305, y: 137, dx: 0, dy: -9, anchor: "middle" },
+];
+
+// 世界的に知られる地方・地域名（点なし、範囲を示すラベルのみ）。/china-capitalsと同じ
+const REGION_LABELS = [
+  { label: "内モンゴル自治区", x: 420, y: 90, anchor: "middle" },
+  { label: "新疆・シルクロード", x: 105, y: 165, anchor: "middle" },
+  { label: "チベット", x: 195, y: 265, anchor: "middle" },
+  { label: "台湾", x: 375, y: 296, dx: 10, dy: 4, anchor: "start" },
+  { label: "海南島", x: 290, y: 337, dx: 0, dy: 17, anchor: "middle" },
+];
+
+// 古都の位置図。/china-capitals・/world-heritageと同じ中国全土の図に、紹介順の番号を置く
 function CapitalsMap() {
   return (
-    <div className="p-3 mb-8" style={card}>
-      <svg viewBox="225 118 172 134" style={{ width: "100%", maxHeight: 440, display: "block", margin: "0 auto" }} role="img" aria-label="古都の位置図">
-        <path d={CHINA_OUTLINE} fill="#DCD3B8" stroke={COLORS.mist} strokeWidth="0.6" strokeLinejoin="round" />
-        <path d={TAIWAN_OUTLINE} fill="#DCD3B8" stroke={COLORS.mist} strokeWidth="0.6" strokeLinejoin="round" />
-        <g>
-          <circle cx={378} cy={226} r="1.8" fill={COLORS.paper} stroke={COLORS.ink} strokeWidth="0.6" />
-          <text x={382} y={228} style={{ fontFamily: "var(--font-serif), serif", fontSize: 5, fill: COLORS.inkSoft }}>上海</text>
-        </g>
-        {CITIES.map((c) => (
+    <div style={{ ...card, backgroundColor: "#FBF8F0", padding: 16, marginBottom: 28 }}>
+      <p style={{ fontSize: 11.5, color: COLORS.inkSoft, marginBottom: 10 }}>
+        実際の海岸線をもとにした中国の位置関係図です。<ruby>朱色<rt>しゅいろ</rt></ruby>の番号は下で紹介する古都（現在の都市）、白丸は主要都市の目安です。
+        番号を押すと各都市の紹介へ移動します。
+      </p>
+      <svg viewBox="0 0 500 366" style={{ width: "100%", maxHeight: 420, display: "block", margin: "0 auto" }} role="img" aria-label="古都の位置図">
+        <path d={CHINA_OUTLINE} fill="#DCD3B8" stroke={COLORS.mist} strokeWidth="1.2" strokeLinejoin="round" />
+        <path d={TAIWAN_OUTLINE} fill="#DCD3B8" stroke={COLORS.mist} strokeWidth="1.2" strokeLinejoin="round" />
+
+        {REGION_LABELS.map((r) => (
+          <text
+            key={r.label}
+            x={r.x + (r.dx || 0)}
+            y={r.y + (r.dy || 0)}
+            textAnchor={r.anchor}
+            style={{ fontFamily: "var(--font-serif), serif", fontSize: 10.5, fill: COLORS.inkSoft, opacity: 0.85 }}
+          >
+            {r.label}
+          </text>
+        ))}
+
+        {REFERENCE_CITIES.map((c) => (
+          <g key={c.label}>
+            <circle cx={c.x} cy={c.y} r="3.5" fill={COLORS.paper} stroke={COLORS.ink} strokeWidth="1.2" />
+            <text x={c.x + c.dx} y={c.y + c.dy} textAnchor={c.anchor} style={{ fontFamily: "var(--font-serif), serif", fontSize: 10, fill: COLORS.inkSoft }}>
+              {c.label}
+            </text>
+          </g>
+        ))}
+
+        {CITIES.map((c, i) => (
           <a key={c.id} href={`#${c.id}`}>
-            <circle cx={c.mapX} cy={c.mapY} r="2.6" fill={COLORS.vermilion} stroke={COLORS.paper} strokeWidth="0.7" />
+            <title>{stripRuby(c.city)}</title>
+            <circle cx={c.mapX} cy={c.mapY} r="7" fill={COLORS.vermilion} stroke={COLORS.paper} strokeWidth="1.3" />
             <text
-              x={c.mapX + c.labelDx}
-              y={c.mapY + c.labelDy}
-              textAnchor={c.anchor}
-              style={{ fontFamily: "var(--font-serif), serif", fontSize: 6, fontWeight: 700, fill: COLORS.ink }}
+              x={c.mapX}
+              y={c.mapY}
+              textAnchor="middle"
+              dominantBaseline="central"
+              style={{ fontFamily: "var(--font-serif), serif", fontSize: 8, fontWeight: 700, fill: "#FBF8F0" }}
             >
-              {stripRuby(c.city)}
+              {i + 1}
             </text>
           </a>
         ))}
       </svg>
-      <p style={{ fontSize: 11, color: COLORS.inkSoft, marginTop: 6 }}>
-        <ruby>朱色<rt>しゅいろ</rt></ruby>の点が紹介する古都（現在の都市名）。点を押すと各都市の紹介へ移動します。
-      </p>
+      <div className="flex flex-wrap gap-x-3 gap-y-1 mt-3" style={{ fontSize: 11.5, color: COLORS.ink }}>
+        {CITIES.map((c, i) => (
+          <a key={c.id} href={`#${c.id}`} className="flex items-center gap-1">
+            <span
+              className="flex items-center justify-center"
+              style={{ width: 16, height: 16, borderRadius: "50%", backgroundColor: COLORS.vermilion, color: "#FBF8F0", fontSize: 9, fontWeight: 700, fontFamily: "var(--font-serif), serif" }}
+            >
+              {i + 1}
+            </span>
+            <RubyText text={c.city} />
+          </a>
+        ))}
+      </div>
     </div>
   );
 }
