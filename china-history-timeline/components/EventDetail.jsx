@@ -1,6 +1,5 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { COLORS, CATEGORY_STYLE, HERITAGE_TYPES, resolveMediaUrl, stripRuby } from "@/lib/constants";
 import { SealMark, HeritageGrid, A8AdBlock, MiscLinksSection, JapanTimelineCallout } from "@/components/Shared";
@@ -31,28 +30,15 @@ function isSuitangEvent(era) {
 }
 
 export default function EventDetail({ event, era, prev, next, japanTimeline }) {
-  const router = useRouter();
   const cat = CATEGORY_STYLE[event.category] || CATEGORY_STYLE["文化"];
-
-  const onBack = () => {
-    // Timeline側がsessionStorageの returnToEra を見てスクロール復元する
-    router.push("/");
-  };
-
-  const onNext = () => {
-    if (next) router.push(`/events/${next.event.slug}`);
-  };
-
-  const onPrev = () => {
-    if (prev) router.push(`/events/${prev.event.slug}`);
-  };
 
   return (
     <div style={{ backgroundColor: COLORS.paper, minHeight: "100%" }}>
       <div className="sticky top-0 z-20 px-5 py-3" style={{ backgroundColor: COLORS.paperDeep, borderBottom: `1px solid ${COLORS.mist}` }}>
-        <button onClick={onBack} className="flex items-center gap-2" style={{ color: COLORS.vermilion, fontFamily: "var(--font-serif), serif", fontSize: 13 }}>
+        {/* Timeline側がsessionStorageの returnToEra を見てスクロール復元する */}
+        <Link href="/" className="flex items-center gap-2" style={{ color: COLORS.vermilion, fontFamily: "var(--font-serif), serif", fontSize: 13 }}>
           <span aria-hidden>←</span> 年表に戻る
-        </button>
+        </Link>
       </div>
 
       <div className="max-w-2xl mx-auto px-6 py-8">
@@ -218,8 +204,8 @@ export default function EventDetail({ event, era, prev, next, japanTimeline }) {
         )}
 
         {prev && (
-          <button
-            onClick={onPrev}
+          <Link
+            href={`/events/${prev.event.slug}`}
             className="w-full mt-10 flex items-center justify-between gap-3 px-5 py-4 text-left"
             style={{ backgroundColor: COLORS.vermilionSoft, color: "#fff" }}
           >
@@ -230,12 +216,12 @@ export default function EventDetail({ event, era, prev, next, japanTimeline }) {
                 <RubyText text={prev.event.year} />　<RubyText text={prev.event.title} />
               </div>
             </div>
-          </button>
+          </Link>
         )}
 
         {next ? (
-          <button
-            onClick={onNext}
+          <Link
+            href={`/events/${next.event.slug}`}
             className={`w-full flex items-center justify-between gap-3 px-5 py-4 text-left ${prev ? "mt-3" : "mt-10"}`}
             style={{ backgroundColor: COLORS.vermilion, color: "#fff" }}
           >
@@ -246,7 +232,7 @@ export default function EventDetail({ event, era, prev, next, japanTimeline }) {
               </div>
             </div>
             <span aria-hidden style={{ fontSize: 20 }}>→</span>
-          </button>
+          </Link>
         ) : (
           <div className="mt-10 px-5 py-4 text-center" style={{ backgroundColor: "#F5EFDC", color: COLORS.inkSoft, fontSize: 13 }}>
             これが年表の最後のイベントです

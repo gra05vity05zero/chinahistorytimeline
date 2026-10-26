@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { ERAS, COLORS, ADSENSE_SLOT_TIMELINE } from "@/lib/data";
 import { SealMark, EventCard, AdSenseSlot, MiscLinksSection } from "@/components/Shared";
 import { SiteTitle } from "@/components/SiteHeader";
@@ -33,7 +32,6 @@ const INTRO_PARAGRAPHS = [
 ];
 
 export default function Timeline() {
-  const router = useRouter();
   const [activeEra, setActiveEra] = useState(ERAS[0].id);
   const [navOpen, setNavOpen] = useState(false);
   const sectionRefs = useRef({});
@@ -62,9 +60,9 @@ export default function Timeline() {
 
   const activeIndex = ERAS.findIndex((e) => e.id === activeEra);
 
-  const openEvent = (slug, eraId) => {
+  // 出来事ページへの遷移はLink側で行い、ここでは戻ってきたときに復元する王朝だけを記録する
+  const rememberEra = (eraId) => {
     sessionStorage.setItem("returnToEra", eraId);
-    router.push(`/events/${slug}`);
   };
 
   const scrollToEra = (eraId) => {
@@ -211,7 +209,7 @@ export default function Timeline() {
             </div>
             <div>
               {era.events.map((ev, i) => (
-                <EventCard key={i} event={ev} onOpen={(slug) => openEvent(slug, era.id)} />
+                <EventCard key={i} event={ev} onClick={() => rememberEra(era.id)} />
               ))}
             </div>
           </div>

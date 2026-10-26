@@ -181,11 +181,13 @@ export function SealMark({ char, active }) {
   );
 }
 
-export function EventCard({ event, onOpen }) {
+// onClick はページ遷移ではなく、戻ってきたときのスクロール復元用の記録に使う
+export function EventCard({ event, onClick }) {
   const cat = CATEGORY_STYLE[event.category] || CATEGORY_STYLE["文化"];
   return (
-    <button
-      onClick={() => onOpen(event.slug)}
+    <Link
+      href={`/events/${event.slug}`}
+      onClick={onClick}
       className="w-full text-left mb-3 last:mb-0 group"
       style={{ display: "block" }}
     >
@@ -226,7 +228,7 @@ export function EventCard({ event, onOpen }) {
           <span className="shrink-0" style={{ color: COLORS.vermilion, fontSize: 13 }}>→</span>
         </div>
       </div>
-    </button>
+    </Link>
   );
 }
 
