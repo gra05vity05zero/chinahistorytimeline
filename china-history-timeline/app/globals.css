@@ -7,6 +7,19 @@ html, body {
   margin: 0;
 }
 
+/* デスクトップ幅では文字が小さく感じるため、rem 基準を拡大してサイト全体を大きく表示する */
+@media (min-width: 1024px) {
+  html {
+    font-size: 112.5%;
+  }
+}
+
+@media (min-width: 1536px) {
+  html {
+    font-size: 125%;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
