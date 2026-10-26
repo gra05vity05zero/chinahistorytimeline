@@ -1,4 +1,4 @@
-import { stripRuby, COLORS, SITE_URL, SITE_NAME, AMAZON_ASSOCIATE_TAG, buildOpenGraph, buildTwitter, buildAmazonUrl } from "@/lib/data";
+import { stripRuby, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter, buildAmazonUrl } from "@/lib/data";
 import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
@@ -27,16 +27,10 @@ const card = { backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8" };
 const linkStyle = { color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist };
 const bodyText = { fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft };
 
-// Amazonの商品画像。image（商品画像ID）があればそれを、なければ書籍のISBN（=ASIN）から書影を引く
+// Amazonの商品画像。image（商品画像ID）があればそれを、なければASINから商品画像を引く
 function productImage(p) {
   if (p.image) return `https://m.media-amazon.com/images/I/${p.image}._SL300_.jpg`;
   return `https://images-na.ssl-images-amazon.com/images/P/${p.asin}.09.MZZZZZZZ.jpg`;
-}
-
-// 商品を一つに決めにくいもの（シリーズごとのBlu-rayなど）はAmazonの検索結果へリンクする
-function productUrl(p) {
-  if (p.asin) return buildAmazonUrl(p.asin);
-  return `https://www.amazon.co.jp/s?k=${encodeURIComponent(p.search)}&tag=${AMAZON_ASSOCIATE_TAG}`;
 }
 
 // 史実との距離。real=史書に記録のある実在人物、model=名前や事績にモデルがある、fiction=作者の創作
@@ -199,7 +193,7 @@ const MANGA_PRODUCTS = [
 
 const MEDIA_PRODUCTS = [
   { label: "映画 Blu-ray BOX", asin: "B0H1W7DK8R", image: "71I3APjogPL" },
-  { label: "アニメ Blu-ray", search: "キングダム アニメ Blu-ray BOX" },
+  { label: "アニメ第6シリーズ BOX", asin: "B0G8Z97RSS" },
 ];
 
 const BOOK_PRODUCTS = [{ label: "集英社新書", asin: "4087210758" }];
@@ -233,27 +227,18 @@ function ProductLinks({ title, products }) {
       {products.map((p) => (
         <a
           key={p.label}
-          href={productUrl(p)}
+          href={buildAmazonUrl(p.asin)}
           target="_blank"
           rel="nofollow noreferrer sponsored"
           className="flex flex-col items-center gap-2"
           style={{ width: 118 }}
         >
-          {p.asin ? (
-            <img
-              src={productImage(p)}
-              alt={`${stripRuby(title)} ${p.label}の画像`}
-              loading="lazy"
-              style={{ width: 96, height: 120, objectFit: "contain", border: `1px solid ${COLORS.mist}`, backgroundColor: "#FFFDF7" }}
-            />
-          ) : (
-            <div
-              className="flex items-center justify-center text-center"
-              style={{ width: 96, height: 120, border: `1px solid ${COLORS.mist}`, backgroundColor: "#FFFDF7", fontSize: 11, color: COLORS.inkSoft, fontFamily: "var(--font-serif), serif", padding: 6 }}
-            >
-              Amazonで探す
-            </div>
-          )}
+          <img
+            src={productImage(p)}
+            alt={`${stripRuby(title)} ${p.label}の画像`}
+            loading="lazy"
+            style={{ width: 96, height: 120, objectFit: "contain", border: `1px solid ${COLORS.mist}`, backgroundColor: "#FFFDF7" }}
+          />
           <span
             className="px-2 py-1 text-center"
             style={{ width: "100%", fontSize: 11.5, fontWeight: 700, color: COLORS.vermilion, border: `1px solid ${COLORS.vermilion}`, backgroundColor: "#FFFDF7" }}

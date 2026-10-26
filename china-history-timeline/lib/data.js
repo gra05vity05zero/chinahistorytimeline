@@ -7,7 +7,7 @@ import { stripRuby } from "./constants";
 
 // 戦国時代末期〜秦の統一を描く漫画『キングダム』関連作品（アフィリエイトリンク付き）
 export const KINGDOM_MEDIA = [
-  { type: "anime", title: "アニメ『キングダム』", url: "https://amzn.to/4g2QxFq", description: "原作{{漫画|まんが}}をアニメ化。信と政（後の{{始皇帝|しこうてい}}）が乱世を{{駆|か}}け上がる姿を{{描|えが}}く。" },
+  { type: "anime", title: "アニメ『キングダム』", url: "https://link.amazon/B0gffvAlw", description: "原作{{漫画|まんが}}をアニメ化。信と政（後の{{始皇帝|しこうてい}}）が乱世を{{駆|か}}け上がる姿を{{描|えが}}く。" },
   { type: "book", title: "{{漫画|まんが}}『キングダム』（原{{泰久|やすひさ}}）", url: "https://amzn.to/4ia0LFk", description: "{{下僕|げぼく}}の身から大将軍を目指す信と、{{秦王|しんおう}}・政の天下統一への道を{{描|えが}}く大河群像劇。" },
   { type: "movie", title: "映画『キングダム』", url: "https://amzn.to/4638SfH", description: "{{漫画|まんが}}『キングダム』を実写化した映画シリーズ。" },
 ];
