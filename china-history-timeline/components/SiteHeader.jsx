@@ -24,10 +24,26 @@ export function SiteTitle({ headingAs: Heading = "div" }) {
   );
 }
 
+// 出来事・人物ページ用の小さいヘッダー。H1（出来事名・人物名）がすぐ見えるよう、サイト名とトップへのリンクだけにする
+function CompactSiteHeader() {
+  return (
+    <header className="px-5 py-2.5 flex items-center" style={{ backgroundColor: COLORS.paper, borderBottom: `1px solid ${COLORS.mist}` }}>
+      <Link
+        href="/"
+        title="トップページへ"
+        style={{ fontFamily: "var(--font-serif), serif", fontSize: 15, fontWeight: 900, color: COLORS.ink, textDecoration: "none" }}
+      >
+        中国史年表
+      </Link>
+    </header>
+  );
+}
+
 // トップページ以外の全ページ上部に表示（トップページはTimeline内に同じブロックがある）
 export default function SiteHeader() {
   const pathname = usePathname();
   if (pathname === "/") return null;
+  if (pathname.startsWith("/events/") || pathname.startsWith("/people/")) return <CompactSiteHeader />;
   return (
     <header className="px-6 pt-8 pb-6 text-center" style={{ backgroundColor: COLORS.paper, borderBottom: `1px solid ${COLORS.mist}` }}>
       <SiteTitle />
