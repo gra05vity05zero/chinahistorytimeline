@@ -1,4 +1,4 @@
-import { ERAS, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
+import { ERAS, COLORS, SITE_NAME, AMAZON_ASSOCIATE_TAG, buildOpenGraph, buildTwitter, buildAmazonUrl } from "@/lib/data";
 import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
@@ -20,13 +20,23 @@ function eraHref(id) {
   return ERAS.some((e) => e.id === id) ? `/eras/${id}` : null;
 }
 
+// 作品のAmazonリンク。asin（書籍はISBN-10）があれば商品ページへ、
+// 文庫が品切れなどで一冊に決めにくいものは search のキーワードで検索結果へリンクする
+function bookUrl(b) {
+  if (b.asin) return buildAmazonUrl(b.asin);
+  return `https://www.amazon.co.jp/s?k=${encodeURIComponent(b.search)}&i=stripbooks&tag=${AMAZON_ASSOCIATE_TAG}`;
+}
+
+const bookCover = (asin) => `https://images-na.ssl-images-amazon.com/images/P/${asin}.09.MZZZZZZZ.jpg`;
+
 const NOVELISTS = [
   {
     name: "{{吉川英治|よしかわえいじ}}",
     works: "『三国志』",
-    body: "『{{三国志演義|さんごくしぎえん}}』を日本語で読みやすく再構成した国民的名作。以後の日本における三国志ブーム（ゲームや{{漫画|まんが}}も{{含|ふく}}む）の原点とされる。",
+    body: "『{{三国志演義|さんごくしえんぎ}}』を日本語で読みやすく再構成した国民的名作。以後の日本における三国志ブーム（ゲームや{{漫画|まんが}}も{{含|ふく}}む）の原点とされる。",
     era: "三国時代",
     href: eraHref("sanguo"),
+    books: [{ label: "『三国志』1巻", asin: "4101154511" }],
   },
   {
     name: "{{陳舜臣|ちんしゅんしん}}",
@@ -34,6 +44,11 @@ const NOVELISTS = [
     body: "{{台湾系|たいわんけい}}の家系に生まれ、神戸で育った作家。中国史全域を{{舞台|ぶたい}}に{{膨大|ぼうだい}}な作品を残し、綿密な考証に基づく歴史小説の書き手として高く評価されている。{{直木賞|なおきしょう}}受賞。",
     era: "{{秦|しん}}〜清",
     href: eraHref("qin"),
+    books: [
+      { label: "『秦の始皇帝』", asin: "4167150174" },
+      { label: "『小説十八史略』", search: "陳舜臣 小説十八史略" },
+      { label: "『太平天国』", search: "陳舜臣 太平天国" },
+    ],
   },
   {
     name: "{{井上靖|いのうえやすし}}",
@@ -41,6 +56,11 @@ const NOVELISTS = [
     body: "シルクロードや西域を{{舞台|ぶたい}}にした作品で知られる{{文豪|ぶんごう}}。『{{敦煌|とんこう}}』は{{北宋|ほくそう}}時代の西域を{{舞台|ぶたい}}にした代表作の一つ。",
     era: "{{北宋|ほくそう}}・前漢ほか",
     href: eraHref("northernsong"),
+    books: [
+      { label: "『敦煌』", search: "井上靖 敦煌 新潮文庫" },
+      { label: "『楼蘭』", search: "井上靖 楼蘭 新潮文庫" },
+      { label: "『孔子』", search: "井上靖 孔子 新潮文庫" },
+    ],
   },
   {
     name: "{{宮城谷昌光|みやぎたにまさみつ}}",
@@ -48,6 +68,12 @@ const NOVELISTS = [
     body: "春秋戦国時代を中心に、古代中国史の人物を{{丹念|たんねん}}に{{描|えが}}く歴史小説の第一人者。この時代を専門的に{{扱|あつか}}う作家として国内でも独自の位置を{{占|し}}める。",
     era: "春秋・戦国時代",
     href: eraHref("zhanguo"),
+    books: [
+      { label: "『重耳』上", asin: "406263323X" },
+      { label: "『太公望』上", asin: "4167259109" },
+      { label: "『楽毅』1", asin: "4101444277" },
+      { label: "『孟嘗君』1", asin: "406543999X" },
+    ],
   },
   {
     name: "{{司馬遼太郎|しばりょうたろう}}",
@@ -55,6 +81,7 @@ const NOVELISTS = [
     body: "日本史小説の{{巨匠|きょしょう}}として知られるが、{{秦末|しんまつ}}の動乱から{{楚漢戦争|そかんせんそう}}を{{描|えが}}いた『{{項羽|こうう}}と{{劉邦|りゅうほう}}』は中国史題材の代表作として広く読まれている。",
     era: "{{秦末|しんまつ}}〜{{楚漢戦争|そかんせんそう}}",
     href: eraHref("qin"),
+    books: [{ label: "『項羽と劉邦』上", asin: "4101152314" }],
   },
   {
     name: "{{北方謙三|きたかたけんぞう}}",
@@ -64,6 +91,11 @@ const NOVELISTS = [
     href: eraHref("sanguo"),
     pageHref: "/suikoden",
     pageLabel: "{{水滸伝|すいこでん}}の解説を読む",
+    books: [
+      { label: "『三国志』1の巻", asin: "4894568683" },
+      { label: "『楊家将』上", asin: "B00BS52O8W" },
+      { label: "『水滸伝』1", asin: "B009LTO35O" },
+    ],
   },
   {
     name: "{{塚本青史|つかもとせいし}}",
@@ -71,6 +103,10 @@ const NOVELISTS = [
     body: "前漢の建国者{{劉邦|りゅうほう}}や三国志の{{諸葛亮|しょかつりょう}}など、中国史の{{英雄|えいゆう}}たちを主題にした作品を多く手がける。",
     era: "前漢・三国時代",
     href: eraHref("westernhan"),
+    books: [
+      { label: "『劉邦』", search: "塚本青史 劉邦" },
+      { label: "『諸葛孔明』", search: "塚本青史 諸葛孔明" },
+    ],
   },
   {
     name: "{{酒見賢一|さかみけんいち}}",
@@ -78,6 +114,10 @@ const NOVELISTS = [
     body: "{{架空|かくう}}の中国王朝を{{舞台|ぶたい}}にしたデビュー作『後宮小説』で日本ファンタジーノベル大賞を受賞。戦国時代の思想家{{墨子|ぼくし}}の守城戦を{{描|えが}}いた『{{墨攻|ぼっこう}}』は映画化・{{漫画化|まんがか}}もされた。",
     era: "戦国時代",
     href: eraHref("zhanguo"),
+    books: [
+      { label: "『後宮小説』", asin: "4101281114" },
+      { label: "『墨攻』", asin: "4101281122" },
+    ],
   },
   {
     name: "{{田中芳樹|たなかよしき}}",
@@ -85,6 +125,7 @@ const NOVELISTS = [
     body: "『銀河{{英雄|えいゆう}}伝説』で知られるが、南北朝時代を{{舞台|ぶたい}}にした『{{奔流|ほんりゅう}}』など中国史を題材にした作品も手がけている。",
     era: "南北朝時代",
     href: eraHref("nanbei"),
+    books: [{ label: "『奔流』", asin: "4396332416" }],
   },
   {
     name: "{{安能務|あんのうつとむ}}",
@@ -92,6 +133,7 @@ const NOVELISTS = [
     body: "中国の{{四大奇書|しだいきしょ}}などの古典を、現代の読者にも読みやすい形で{{翻訳|ほんやく}}・再構成したことで知られる。後のアニメ・{{漫画化|まんがか}}された作品の原典として広く読まれた。",
     era: "{{殷末|いんまつ}}〜三国時代",
     href: eraHref("sanguo"),
+    books: [{ label: "『封神演義』上", asin: "4061843206" }],
   },
   {
     name: "{{柴田錬三郎|しばたれんざぶろう}}",
@@ -101,6 +143,7 @@ const NOVELISTS = [
     href: eraHref("northernsong"),
     pageHref: "/suikoden",
     pageLabel: "{{水滸伝|すいこでん}}の解説を読む",
+    books: [{ label: "『柴錬水滸伝』1", asin: "4087474666" }],
   },
 ];
 
@@ -133,6 +176,39 @@ export default function NovelistsPage() {
               <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginTop: 4 }}>
                 <RubyText text={n.body} />
               </p>
+              {n.books && (
+                <div className="flex gap-2.5 flex-wrap" style={{ marginTop: 10 }}>
+                  {n.books.map((b) => (
+                    <a
+                      key={b.label}
+                      href={bookUrl(b)}
+                      target="_blank"
+                      rel="nofollow noreferrer sponsored"
+                      className="flex flex-col items-center gap-1.5"
+                      style={{ width: 84 }}
+                    >
+                      {b.asin ? (
+                        <img
+                          src={bookCover(b.asin)}
+                          alt={`${b.label}の表紙`}
+                          loading="lazy"
+                          style={{ width: 64, height: 92, objectFit: "contain", border: `1px solid ${COLORS.mist}`, backgroundColor: "#FFFDF7" }}
+                        />
+                      ) : (
+                        <span
+                          className="flex items-center justify-center text-center"
+                          style={{ width: 64, height: 92, border: `1px dashed ${COLORS.mist}`, backgroundColor: "#FFFDF7", fontSize: 10, lineHeight: 1.5, color: COLORS.inkSoft }}
+                        >
+                          Amazonで<br />探す
+                        </span>
+                      )}
+                      <span className="text-center" style={{ fontSize: 10.5, lineHeight: 1.4, fontWeight: 700, color: COLORS.vermilion }}>
+                        {b.label}
+                      </span>
+                    </a>
+                  ))}
+                </div>
+              )}
               <div className="flex items-center gap-4 flex-wrap" style={{ marginTop: 8 }}>
                 {n.href && (
                   <a href={n.href} style={{ fontSize: 12, color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
@@ -148,6 +224,9 @@ export default function NovelistsPage() {
             </div>
           ))}
         </div>
+        <p style={{ fontSize: 10.5, color: COLORS.mist, marginTop: 10 }}>
+          ※ 作品のリンクはAmazonアソシエイトによるアフィリエイト広告です。価格・在庫はリンク先でご確認ください
+        </p>
 
         <section style={{ marginTop: 32 }}>
           <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
