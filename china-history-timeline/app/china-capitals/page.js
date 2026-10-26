@@ -420,7 +420,8 @@ export default function ChinaCapitalsPage() {
             長安から西へ延びるシルクロードとその沿線のオアシス都市、<ruby>城壁<rt>じょうへき</rt></ruby>や関所など「城」に着目したまとめも別ページで<ruby>紹介<rt>しょうかい</rt></ruby>しています。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
-            <NavButton href="/silk-road" variant="solid">シルクロードを見る</NavButton>
+            <NavButton href="/ancient-capitals" variant="solid">古都の今と観光地を見る</NavButton>
+            <NavButton href="/silk-road" variant="outline">シルクロードを見る</NavButton>
             <NavButton href="/china-castles" variant="outline">中国の城まとめを見る</NavButton>
             <NavButton href="/dynasty-territory-map" variant="outline">王朝の領土の変遷マップ</NavButton>
           </div>
