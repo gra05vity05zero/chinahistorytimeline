@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { ERAS, COLORS, ADSENSE_SLOT_TIMELINE } from "@/lib/data";
 import { SealMark, EventCard, AdSenseSlot, MiscLinksSection } from "@/components/Shared";
 import { SiteTitle } from "@/components/SiteHeader";
+import HeroImage from "@/components/HeroImage";
 import { RubyText } from "@/components/Ruby";
 
 // トップページ上部の主要な入口
@@ -115,6 +116,9 @@ export default function Timeline() {
 
       <div className="px-6 pt-10 pb-6 text-center">
         <SiteTitle headingAs="h1" />
+        <div className="max-w-3xl mx-auto mt-6" style={{ border: `1.5px solid ${COLORS.gold}` }}>
+          <HeroImage />
+        </div>
         <div className="max-w-3xl mx-auto mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 text-left">
           {PRIMARY_LINKS.map((item) => (
             <Link
