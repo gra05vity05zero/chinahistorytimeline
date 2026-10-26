@@ -157,8 +157,8 @@ export default function NovelistsPage() {
           中国史を題材にした日本人小説家一覧
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 28 }}>
-          日本では<ruby>江戸時代<rt>えどじだい</rt></ruby>の『三国志演義』<ruby>翻訳<rt>ほんやく</rt></ruby>以来、中国の歴史は多くの小説家たちを<ruby>魅了<rt>みりょう</rt></ruby>してきました。
-          代表作とあわせて<ruby>紹介<rt>しょうかい</rt></ruby>しますので、興味のある時代の一冊から手に取ってみてください。
+          日本では<ruby>江戸時代<rt>えどじだい</rt></ruby>の『三国志演義』翻訳以来、中国の歴史は多くの小説家たちを<ruby>魅了<rt>みりょう</rt></ruby>してきました。
+          代表作とあわせて紹介しますので、興味のある時代の一冊から手に取ってみてください。
         </p>
 
         <div className="flex flex-col gap-3">
@@ -212,7 +212,7 @@ export default function NovelistsPage() {
               <div className="flex items-center gap-4 flex-wrap" style={{ marginTop: 8 }}>
                 {n.href && (
                   <a href={n.href} style={{ fontSize: 12, color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
-                    <ruby>舞台<rt>ぶたい</rt></ruby>となった時代を年表で読む →
+                    舞台となった時代を年表で読む →
                   </a>
                 )}
                 {n.pageHref && (
@@ -230,7 +230,7 @@ export default function NovelistsPage() {
 
         <section style={{ marginTop: 32 }}>
           <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
-            小説の<ruby>舞台<rt>ぶたい</rt></ruby>になった時代の<ruby>詳<rt>くわ</rt></ruby>しい出来事や人物は、年表・人物一覧からたどれます。
+            小説の舞台になった時代の詳しい出来事や人物は、年表・人物一覧からたどれます。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
             <NavButton href="/eras" variant="solid">時代一覧を見る</NavButton>

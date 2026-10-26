@@ -466,11 +466,11 @@ export default function FunnyEpisodesPage() {
 
         <section style={{ marginBottom: 28 }}>
           <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
-            読む前に：史実と<ruby>逸話<rt>いつわ</rt></ruby>の区別
+            読む前に：史実と逸話の区別
           </h2>
           <div style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: "14px 16px" }}>
             <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft }}>
-              おもしろい話ほど、語り<ruby>継<rt>つ</rt></ruby>がれるうちに<ruby>尾<rt>お</rt></ruby>ひれがつきやすいものです。このページでは各エピソードに出典を示し、次の三つの区分を付けています。
+              おもしろい話ほど、語り継がれるうちに<ruby>尾<rt>お</rt></ruby>ひれがつきやすいものです。このページでは各エピソードに出典を示し、次の三つの区分を付けています。
               「史書」に区分した話も、書かれている内容がすべて事実とは限らない点にはご注意ください。
             </p>
             <ul className="flex flex-col gap-2" style={{ marginTop: 12 }}>
@@ -555,7 +555,7 @@ export default function FunnyEpisodesPage() {
 
         <section style={{ marginTop: 32 }}>
           <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
-            「<ruby>宋襄の仁<rt>そうじょうのじん</rt></ruby>」「<ruby>鶏肋<rt>けいろく</rt></ruby>」「<ruby>推敲<rt>すいこう</rt></ruby>」のように、ここで<ruby>紹介<rt>しょうかい</rt></ruby>した話の多くは故事成語として今も使われています。故事成語の一覧や、登場人物・時代の全体像もあわせてどうぞ。
+            「<ruby>宋襄の仁<rt>そうじょうのじん</rt></ruby>」「<ruby>鶏肋<rt>けいろく</rt></ruby>」「<ruby>推敲<rt>すいこう</rt></ruby>」のように、ここで紹介した話の多くは故事成語として今も使われています。故事成語の一覧や、登場人物・時代の全体像もあわせてどうぞ。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
             <NavButton href="/idioms" variant="solid">故事成語を見る</NavButton>

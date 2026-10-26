@@ -143,7 +143,7 @@ export default function QinShiHuangPage() {
           <ruby>始皇帝<rt>しこうてい</rt></ruby>とは？
         </h1>
         <div style={{ fontSize: 12, color: COLORS.gold, fontFamily: "var(--font-serif), serif", marginBottom: 14 }}>
-          前259年 – 前210年　<ruby>秦王<rt>しんおう</rt></ruby>：前247年-前221年　<ruby>皇帝<rt>こうてい</rt></ruby>：前221年-前210年
+          前259年 – 前210年　<ruby>秦王<rt>しんおう</rt></ruby>：前247年-前221年　皇帝：前221年-前210年
         </div>
 
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 28 }} id="towa">
@@ -192,7 +192,7 @@ export default function QinShiHuangPage() {
 
         <section style={{ marginBottom: 32 }} id="shogai">
           <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 14 }}>
-            <ruby>始皇帝<rt>しこうてい</rt></ruby>の<ruby>生涯<rt>しょうがい</rt></ruby>
+            <ruby>始皇帝<rt>しこうてい</rt></ruby>の生涯
           </h2>
           <div className="flex flex-col gap-3">
             {[
@@ -368,7 +368,7 @@ export default function QinShiHuangPage() {
             href="/terracotta-army"
             style={{ display: "inline-block", fontSize: 12, color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist, marginTop: 12 }}
           >
-            <ruby>始皇帝陵<rt>しこうていりょう</rt></ruby>・<ruby>兵馬俑<rt>へいばよう</rt></ruby>にまつわる<ruby>謎<rt>なぞ</rt></ruby>の<ruby>詳<rt>くわ</rt></ruby>しい解説を見る →
+            <ruby>始皇帝陵<rt>しこうていりょう</rt></ruby>・<ruby>兵馬俑<rt>へいばよう</rt></ruby>にまつわる謎の詳しい解説を見る →
           </a>
         </section>
 
@@ -418,7 +418,7 @@ export default function QinShiHuangPage() {
 
         <section style={{ marginBottom: 28 }} id="metsubou">
           <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
-            <ruby>秦<rt>しん</rt></ruby>の<ruby>滅亡<rt>めつぼう</rt></ruby>
+            <ruby>秦<rt>しん</rt></ruby>の滅亡
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft, marginBottom: 10 }}>
             <RubyText
@@ -456,7 +456,7 @@ export default function QinShiHuangPage() {
             <ruby>始皇帝<rt>しこうてい</rt></ruby>に関係する人物
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginBottom: 14 }}>
-            <ruby>始皇帝<rt>しこうてい</rt></ruby>の統一事業を支え、あるいはその死後に<ruby>帝国<rt>ていこく</rt></ruby>を<ruby>揺<rt>ゆ</rt></ruby>るがすことになった主な人物です。
+            <ruby>始皇帝<rt>しこうてい</rt></ruby>の統一事業を支え、あるいはその死後に帝国を揺るがすことになった主な人物です。
           </p>
           <div className="flex flex-col gap-3">
             {RELATED_PEOPLE.map((p, i) => (
@@ -491,7 +491,7 @@ export default function QinShiHuangPage() {
             <ruby>始皇帝<rt>しこうてい</rt></ruby>に関係する出来事
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginBottom: 14 }}>
-            <ruby>始皇帝<rt>しこうてい</rt></ruby>の<ruby>生涯<rt>しょうがい</rt></ruby>に関わる出来事を、年表の<ruby>詳細<rt>しょうさい</rt></ruby>ページとあわせて<ruby>紹介<rt>しょうかい</rt></ruby>します。
+            <ruby>始皇帝<rt>しこうてい</rt></ruby>の生涯に関わる出来事を、年表の詳細ページとあわせて紹介します。
           </p>
           <div>
             {RELATED_EVENTS.map((ev, i) => (
@@ -510,7 +510,7 @@ export default function QinShiHuangPage() {
                 Q. <ruby>始皇帝<rt>しこうてい</rt></ruby>は何をした人？
               </div>
               <p style={{ fontSize: 12, lineHeight: 1.75, color: COLORS.inkSoft }}>
-                紀元前221年に六国を<ruby>滅<rt>ほろ</rt></ruby>ぼして中国史上初めて天下を統一し、「<ruby>皇帝<rt>こうてい</rt></ruby>」の<ruby>称号<rt>しょうごう</rt></ruby>を創始した<ruby>秦<rt>しん</rt></ruby>の王です。<ruby>度量衡<rt>どりょうこう</rt></ruby>・文字・<ruby>貨幣<rt>かへい</rt></ruby>の統一、
+                紀元前221年に六国を滅ぼして中国史上初めて天下を統一し、「皇帝」の称号を創始した<ruby>秦<rt>しん</rt></ruby>の王です。<ruby>度量衡<rt>どりょうこう</rt></ruby>・文字・貨幣の統一、
                 郡県制の導入、万里の長城の修築などを行い、以後の中国の統治体制の原型を作りました。
               </p>
             </div>
@@ -519,8 +519,8 @@ export default function QinShiHuangPage() {
                 Q. <ruby>始皇帝<rt>しこうてい</rt></ruby>はなぜ暴君と言われるのか？
               </div>
               <p style={{ fontSize: 12, lineHeight: 1.75, color: COLORS.inkSoft }}>
-                <ruby>焚書坑儒<rt>ふんしょこうじゅ</rt></ruby>による思想統制や、長城・<ruby>阿房宮<rt>あぼうきゅう</rt></ruby>・<ruby>陵墓<rt>りょうぼ</rt></ruby>建設のための<ruby>過酷<rt>かこく</rt></ruby>な労役に民衆を動員したことが主な理由です。統一そのものの
-                功績は大きいものの、統治手法の<ruby>苛烈<rt>かれつ</rt></ruby>さから評価が大きく分かれています。
+                <ruby>焚書坑儒<rt>ふんしょこうじゅ</rt></ruby>による思想統制や、長城・<ruby>阿房宮<rt>あぼうきゅう</rt></ruby>・<ruby>陵墓<rt>りょうぼ</rt></ruby>建設のための過酷な労役に民衆を動員したことが主な理由です。統一そのものの
+                功績は大きいものの、統治手法の苛烈さから評価が大きく分かれています。
               </p>
             </div>
             <div style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: 14 }}>
@@ -528,7 +528,7 @@ export default function QinShiHuangPage() {
                 Q. <ruby>始皇帝<rt>しこうてい</rt></ruby>の死因は？
               </div>
               <p style={{ fontSize: 12, lineHeight: 1.75, color: COLORS.inkSoft }}>
-                『史記』は<ruby>病没<rt>びょうぼつ</rt></ruby>とのみ記しており、死因を明記していません。不老不死を求めて水銀を<ruby>含<rt>ふく</rt></ruby>む<ruby>仙薬<rt>せんやく</rt></ruby>を飲み続けた中毒死説が有力視
+                『史記』は病没とのみ記しており、死因を明記していません。不老不死を求めて水銀を含む<ruby>仙薬<rt>せんやく</rt></ruby>を飲み続けた中毒死説が有力視
                 されていますが、過労や持病による病死説もあり確定していません。
               </p>
             </div>
@@ -537,11 +537,11 @@ export default function QinShiHuangPage() {
 
         <section>
           <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
-            <ruby>秦<rt>しん</rt></ruby>の出来事は年表ページで、<ruby>始皇帝陵<rt>しこうていりょう</rt></ruby>・<ruby>兵馬俑<rt>へいばよう</rt></ruby>にまつわる<ruby>謎<rt>なぞ</rt></ruby>はより<ruby>詳<rt>くわ</rt></ruby>しい別記事でも<ruby>紹介<rt>しょうかい</rt></ruby>しています。
+            <ruby>秦<rt>しん</rt></ruby>の出来事は年表ページで、<ruby>始皇帝陵<rt>しこうていりょう</rt></ruby>・<ruby>兵馬俑<rt>へいばよう</rt></ruby>にまつわる謎はより詳しい別記事でも紹介しています。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
             <NavButton href="/eras/qin" variant="solid"><ruby>秦<rt>しん</rt></ruby>の時代解説を見る</NavButton>
-            <NavButton href="/terracotta-army" variant="outline"><ruby>兵馬俑<rt>へいばよう</rt></ruby>・<ruby>始皇帝陵<rt>しこうていりょう</rt></ruby>の<ruby>謎<rt>なぞ</rt></ruby>を見る</NavButton>
+            <NavButton href="/terracotta-army" variant="outline"><ruby>兵馬俑<rt>へいばよう</rt></ruby>・<ruby>始皇帝陵<rt>しこうていりょう</rt></ruby>の謎を見る</NavButton>
             <NavButton href="/kingdom" variant="outline">漫画『キングダム』と史実</NavButton>
           </div>
         </section>

@@ -482,8 +482,8 @@ export default function ChunqiuZhanguoBattlesPage() {
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 20 }}>
           紀元前770年の周の<ruby>東遷<rt>とうせん</rt></ruby>から、紀元前221年の<ruby>秦<rt>しん</rt></ruby>による中国統一まで——550年におよぶ春秋・戦国時代は、
-          数十の国が興亡を<ruby>繰<rt>く</rt></ruby>り返した中国史上もっとも長い<ruby>分裂<rt>ぶんれつ</rt></ruby>の時代です。このページでは前半の「春秋時代」と
-          後半の「戦国時代」に分けて、代表的な合戦とそこで<ruby>活躍<rt>かつやく</rt></ruby>した武将たちを地図とともに<ruby>紹介<rt>しょうかい</rt></ruby>します。
+          数十の国が興亡を繰り返した中国史上もっとも長い分裂の時代です。このページでは前半の「春秋時代」と
+          後半の「戦国時代」に分けて、代表的な合戦とそこで活躍した武将たちを地図とともに紹介します。
         </p>
 
         <div className="flex items-center gap-2.5 flex-wrap mb-10" style={{ fontSize: 12.5 }}>
@@ -504,7 +504,7 @@ export default function ChunqiuZhanguoBattlesPage() {
             春秋時代の合戦
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginBottom: 16 }}>
-            周王室の<ruby>権威<rt>けんい</rt></ruby>が形だけのものとなり、<ruby>斉<rt>せい</rt></ruby>・<ruby>晋<rt>しん</rt></ruby>・<ruby>楚<rt>そ</rt></ruby>・<ruby>呉<rt>ご</rt></ruby>・<ruby>越<rt>えつ</rt></ruby>など有力<ruby>諸侯<rt>しょこう</rt></ruby>が「<ruby>覇者<rt>はしゃ</rt></ruby>」を<ruby>称<rt>しょう</rt></ruby>して天下に号令した時代。
+            周王室の権威が形だけのものとなり、<ruby>斉<rt>せい</rt></ruby>・<ruby>晋<rt>しん</rt></ruby>・<ruby>楚<rt>そ</rt></ruby>・<ruby>呉<rt>ご</rt></ruby>・<ruby>越<rt>えつ</rt></ruby>など有力<ruby>諸侯<rt>しょこう</rt></ruby>が「<ruby>覇者<rt>はしゃ</rt></ruby>」を称して天下に号令した時代。
           </p>
         </section>
 
@@ -541,7 +541,7 @@ export default function ChunqiuZhanguoBattlesPage() {
             戦国時代の合戦
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginBottom: 16 }}>
-            <ruby>晋<rt>しん</rt></ruby>の<ruby>分裂<rt>ぶんれつ</rt></ruby>を経て、<ruby>秦<rt>しん</rt></ruby>・<ruby>楚<rt>そ</rt></ruby>・<ruby>斉<rt>せい</rt></ruby>・<ruby>燕<rt>えん</rt></ruby>・<ruby>韓<rt>かん</rt></ruby>・<ruby>魏<rt>ぎ</rt></ruby>・<ruby>趙<rt>ちょう</rt></ruby>の「<ruby>戦国七雄<rt>せんごくしちゆう</rt></ruby>」が生き残りをかけて争った、より<ruby>苛烈<rt>かれつ</rt></ruby>な弱肉強食の時代。
+            <ruby>晋<rt>しん</rt></ruby>の分裂を経て、<ruby>秦<rt>しん</rt></ruby>・<ruby>楚<rt>そ</rt></ruby>・<ruby>斉<rt>せい</rt></ruby>・<ruby>燕<rt>えん</rt></ruby>・<ruby>韓<rt>かん</rt></ruby>・<ruby>魏<rt>ぎ</rt></ruby>・<ruby>趙<rt>ちょう</rt></ruby>の「<ruby>戦国七雄<rt>せんごくしちゆう</rt></ruby>」が生き残りをかけて争った、より苛烈な弱肉強食の時代。
           </p>
         </section>
 
@@ -565,10 +565,10 @@ export default function ChunqiuZhanguoBattlesPage() {
 
         <section style={{ marginBottom: 12 }}>
           <h3 style={{ fontFamily: "var(--font-serif), serif", fontSize: 15, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
-            勢力図の<ruby>変遷<rt>へんせん</rt></ruby>アニメーション
+            勢力図の変遷アニメーション
           </h3>
           <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginBottom: 12 }}>
-            <ruby>戦国七雄<rt>せんごくしちゆう</rt></ruby>の並立から、<ruby>秦<rt>しん</rt></ruby>が六国を次々と<ruby>呑<rt>の</rt></ruby>み<ruby>込<rt>こ</rt></ruby>んで天下を統一するまで——再生ボタンまたは年代タブで、勢力図が移り変わる様子を確認できます。
+            <ruby>戦国七雄<rt>せんごくしちゆう</rt></ruby>の並立から、<ruby>秦<rt>しん</rt></ruby>が六国を次々と<ruby>呑<rt>の</rt></ruby>み込んで天下を統一するまで——再生ボタンまたは年代タブで、勢力図が移り変わる様子を確認できます。
           </p>
           <ZhanguoBorderMap />
         </section>
@@ -582,7 +582,7 @@ export default function ChunqiuZhanguoBattlesPage() {
 
         <section style={{ marginTop: 32 }}>
           <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
-            戦国の統一以後、<ruby>秦<rt>しん</rt></ruby>の<ruby>滅亡<rt>めつぼう</rt></ruby>から漢の統一までの「<ruby>楚漢戦争<rt>そかんせんそう</rt></ruby>」、そして400年後の「三国時代」の合戦については、
+            戦国の統一以後、<ruby>秦<rt>しん</rt></ruby>の滅亡から漢の統一までの「<ruby>楚漢戦争<rt>そかんせんそう</rt></ruby>」、そして400年後の「三国時代」の合戦については、
             あわせて下記の特集ページもご覧ください。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">

@@ -284,7 +284,7 @@ function RouteMap() {
   return (
     <div style={{ ...card, padding: 16, marginBottom: 16 }}>
       <p style={{ fontSize: 11.5, color: COLORS.inkSoft, marginBottom: 10 }}>
-        実際の海岸線をもとにした位置関係図です。<ruby>朱色<rt>しゅいろ</rt></ruby>の実線は往路、緑の破線は帰路のおおよその経路、番号は下の各地点です。
+        実際の海岸線をもとにした位置関係図です。朱色の実線は往路、緑の破線は帰路のおおよその経路、番号は下の各地点です。
       </p>
       <svg viewBox="420 36 330 164" style={{ width: "100%", maxHeight: 460, display: "block", margin: "0 auto" }} role="img" aria-label="玄奘の旅の経路図">
         <path d={WORLD_OUTLINE} fill="#DCD3B8" stroke={COLORS.mist} strokeWidth="0.6" strokeLinejoin="round" />
@@ -401,7 +401,7 @@ export default function SaiyukiPage() {
         </p>
         <p style={{ ...bodyText, fontSize: 13.5, marginBottom: 20 }}>
           <RubyText text="『{{西遊記|さいゆうき}}』は、{{唐|とう}}の{{僧|そう}}・{{三蔵法師|さんぞうほうし}}が、{{孫悟空|そんごくう}}・{{猪八戒|ちょはっかい}}・{{沙悟浄|さごじょう}}の三人の弟子を供に、{{妖怪|ようかい}}たちの{{襲撃|しゅうげき}}をくぐり{{抜|ぬ}}けながら{{天竺|てんじく}}（インド）へ経典を取りに行く長編小説です。明代の16世紀に全100回の形にまとまり、『三国志演義』『{{水滸伝|すいこでん}}』『{{紅楼夢|こうろうむ}}』と並ぶ中国の四大名著の一つに数えられます。" />
-          物語のもとになったのは、<ruby>唐<rt>とう</rt></ruby>の時代に実際にインドへ旅した<ruby>僧<rt>そう</rt></ruby>・<ruby>玄奘<rt>げんじょう</rt></ruby>の大旅行でした。このページでは、あらすじや登場人物に加えて、<ruby>玄奘<rt>げんじょう</rt></ruby>の旅の道のりや史実と物語の<ruby>違<rt>ちが</rt></ruby>いまで、西遊記の世界をひととおりたどります。
+          物語のもとになったのは、<ruby>唐<rt>とう</rt></ruby>の時代に実際にインドへ旅した僧・<ruby>玄奘<rt>げんじょう</rt></ruby>の大旅行でした。このページでは、あらすじや登場人物に加えて、<ruby>玄奘<rt>げんじょう</rt></ruby>の旅の道のりや史実と物語の違いまで、西遊記の世界をひととおりたどります。
         </p>
 
         <Figure
@@ -465,7 +465,7 @@ export default function SaiyukiPage() {
           </div>
           {XUANZANG.credit && (
             <p style={{ fontSize: 9.5, color: COLORS.mist, marginTop: 10 }}>
-              三蔵法師の<ruby>肖像<rt>しょうぞう</rt></ruby>: <ruby>玄奘三蔵像<rt>げんじょうさんぞうぞう</rt></ruby> <RubyText text={XUANZANG.credit} />
+              三蔵法師の肖像: <ruby>玄奘三蔵像<rt>げんじょうさんぞうぞう</rt></ruby> <RubyText text={XUANZANG.credit} />
             </p>
           )}
         </section>
@@ -488,7 +488,7 @@ export default function SaiyukiPage() {
         </section>
 
         <section style={{ marginBottom: 32 }} id="flow">
-          <h2 style={sectionHeading}>年表：<ruby>玄奘<rt>げんじょう</rt></ruby>の<ruby>生涯<rt>しょうがい</rt></ruby>と西遊記の成立</h2>
+          <h2 style={sectionHeading}>年表：<ruby>玄奘<rt>げんじょう</rt></ruby>の生涯と西遊記の成立</h2>
           <div className="flex flex-col gap-2">
             {FLOW.map((f, i) => {
               const content = (
@@ -541,12 +541,12 @@ export default function SaiyukiPage() {
             ))}
           </div>
           <p style={{ fontSize: 12, color: COLORS.inkSoft, marginTop: 12 }}>
-            <ruby>高昌<rt>こうしょう</rt></ruby>や<ruby>亀茲<rt>きじ</rt></ruby>など、<ruby>玄奘<rt>げんじょう</rt></ruby>が通ったオアシス都市については<a href="/silk-road" style={linkStyle}>シルクロードとは</a>のページでも<ruby>紹介<rt>しょうかい</rt></ruby>しています。
+            <ruby>高昌<rt>こうしょう</rt></ruby>や<ruby>亀茲<rt>きじ</rt></ruby>など、<ruby>玄奘<rt>げんじょう</rt></ruby>が通ったオアシス都市については<a href="/silk-road" style={linkStyle}>シルクロードとは</a>のページでも紹介しています。
           </p>
         </section>
 
         <section style={{ marginBottom: 36 }} id="history-vs-legend">
-          <h2 style={sectionHeading}>史実の<ruby>玄奘<rt>げんじょう</rt></ruby>と物語の<ruby>違<rt>ちが</rt></ruby>い</h2>
+          <h2 style={sectionHeading}>史実の<ruby>玄奘<rt>げんじょう</rt></ruby>と物語の違い</h2>
           <div className="flex flex-col gap-3" style={{ ...bodyText, marginBottom: 14 }}>
             <p>
               <RubyText text="帰国した{{玄奘|げんじょう}}を、{{唐|とう}}の{{太宗|たいそう}}は国禁を破った罪に問うどころか厚くもてなしました。太宗は西方の情報を求めて旅の記録をまとめるよう命じ、{{玄奘|げんじょう}}が語った内容を弟子の{{弁機|べんき}}が筆録して、646年に『{{大唐西域記|だいとうさいいきき}}』が完成します。各国の地理・気候・{{風俗|ふうぞく}}・仏教の様子を記したこの書は、7世紀の中央アジアやインドを知るための第一級の史料となっています。" />

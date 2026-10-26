@@ -12,7 +12,7 @@ export default function PersonDetail({ person, era }) {
     <div style={{ backgroundColor: COLORS.paper, minHeight: "100%" }}>
       <div className="sticky top-0 z-20 px-5 py-3" style={{ backgroundColor: COLORS.paperDeep, borderBottom: `1px solid ${COLORS.mist}` }}>
         <Link href={`/people/${era.id}`} className="flex items-center gap-2" style={{ color: COLORS.vermilion, fontFamily: "var(--font-serif), serif", fontSize: 13 }}>
-          <span aria-hidden>←</span> <RubyText text={era.name} />の人物一覧に<ruby>戻<rt>もど</rt></ruby>る
+          <span aria-hidden>←</span> <RubyText text={era.name} />の人物一覧に戻る
         </Link>
       </div>
 
@@ -44,7 +44,7 @@ export default function PersonDetail({ person, era }) {
         {bioParagraphs.length > 0 && (
           <div className="mt-10">
             <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 16, fontWeight: 900, color: COLORS.vermilion, letterSpacing: "0.1em", marginBottom: 12 }}>
-              <ruby>生涯<rt>しょうがい</rt></ruby>・業績
+              生涯・業績
             </h2>
             {bioParagraphs.map((para, idx) => (
               <p key={idx} style={{ fontSize: 14, lineHeight: 1.9, color: COLORS.inkSoft, marginTop: idx > 0 ? 14 : 0 }}>

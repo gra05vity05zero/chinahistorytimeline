@@ -239,7 +239,7 @@ function BattleMap() {
   return (
     <div style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: 16, marginBottom: 28 }}>
       <p style={{ fontSize: 11.5, color: COLORS.inkSoft, marginBottom: 10 }}>
-        実際の海岸線をもとにした位置関係図です。<ruby>朱色<rt>しゅいろ</rt></ruby>の番号は下の各合戦の位置を示しています。
+        実際の海岸線をもとにした位置関係図です。朱色の番号は下の各合戦の位置を示しています。
       </p>
       <svg viewBox="0 0 500 366" style={{ width: "100%", maxHeight: 400, display: "block", margin: "0 auto" }}>
         <path d={CHINA_OUTLINE} fill="#DCD3B8" stroke={COLORS.mist} strokeWidth="1.2" strokeLinejoin="round" />
@@ -286,9 +286,9 @@ export default function ChuHanBattlesPage() {
           <ruby>楚漢戦争<rt>そかんせんそう</rt></ruby> 合戦マップ
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 28 }}>
-          紀元前209年の<ruby>陳勝<rt>ちんしょう</rt></ruby>・<ruby>呉広<rt>ごこう</rt></ruby>の乱に始まり、紀元前202年の<ruby>垓下<rt>がいか</rt></ruby>の戦いで幕を閉じるまで——<ruby>秦<rt>しん</rt></ruby>の<ruby>滅亡<rt>めつぼう</rt></ruby>から漢の統一までのわずか数年間は、
-          <ruby>項羽<rt>こうう</rt></ruby>と<ruby>劉邦<rt>りゅうほう</rt></ruby>という対照的な二人の<ruby>英雄<rt>えいゆう</rt></ruby>が天下を<ruby>賭<rt>か</rt></ruby>けて戦った、中国史でも<ruby>屈指<rt>くっし</rt></ruby>の劇的な時代です。
-          このページでは、<ruby>鉅鹿<rt>きょろく</rt></ruby>・<ruby>鴻門<rt>こうもん</rt></ruby>・<ruby>彭城<rt>ほうじょう</rt></ruby>・<ruby>垓下<rt>がいか</rt></ruby>など8つの主要な合戦と、そこで<ruby>活躍<rt>かつやく</rt></ruby>した武将たちにスポットを当てて<ruby>詳<rt>くわ</rt></ruby>しく<ruby>紹介<rt>しょうかい</rt></ruby>します。
+          紀元前209年の<ruby>陳勝<rt>ちんしょう</rt></ruby>・<ruby>呉広<rt>ごこう</rt></ruby>の乱に始まり、紀元前202年の<ruby>垓下<rt>がいか</rt></ruby>の戦いで幕を閉じるまで——<ruby>秦<rt>しん</rt></ruby>の滅亡から漢の統一までのわずか数年間は、
+          <ruby>項羽<rt>こうう</rt></ruby>と<ruby>劉邦<rt>りゅうほう</rt></ruby>という対照的な二人の英雄が天下を賭けて戦った、中国史でも屈指の劇的な時代です。
+          このページでは、<ruby>鉅鹿<rt>きょろく</rt></ruby>・<ruby>鴻門<rt>こうもん</rt></ruby>・<ruby>彭城<rt>ほうじょう</rt></ruby>・<ruby>垓下<rt>がいか</rt></ruby>など8つの主要な合戦と、そこで活躍した武将たちにスポットを当てて詳しく紹介します。
         </p>
 
         <section style={{ marginBottom: 32 }}>

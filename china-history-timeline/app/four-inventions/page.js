@@ -170,7 +170,7 @@ export default function FourInventionsPage() {
 
         <section style={{ marginTop: 32 }}>
           <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
-            四大発明とあわせて、中国文学を代表する「四大名著」や、万里の長城の歴史も別ページで<ruby>紹介<rt>しょうかい</rt></ruby>しています。
+            四大発明とあわせて、中国文学を代表する「四大名著」や、万里の長城の歴史も別ページで紹介しています。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
             <NavButton href="/four-great-novels" variant="solid">中国の四大名著を見る</NavButton>

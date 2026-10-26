@@ -88,19 +88,19 @@ export default function MnemonicsPage() {
         <BackToTopButton />
 
         <h1 style={{ fontFamily: "var(--font-serif), serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
-          中国王朝の覚え方（<ruby>語呂合<rt>ごろあ</rt></ruby>わせ）
+          中国王朝の覚え方（語呂合わせ）
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 12 }}>
-          中学・高校の定期テストや大学入試の世界史では、中国の王朝を正しい順番で答えさせる問題が<ruby>繰<rt>く</rt></ruby>り返し出題されます。
-          <ruby>殷<rt>いん</rt></ruby>から<ruby>中華人民共和国<rt>ちゅうかじんみんきょうわこく</rt></ruby>までの流れを<ruby>語呂合<rt>ごろあ</rt></ruby>わせで一気に暗記し、続く一覧と暗記のコツで理解を固めましょう。
+          中学・高校の定期テストや大学入試の世界史では、中国の王朝を正しい順番で答えさせる問題が繰り返し出題されます。
+          <ruby>殷<rt>いん</rt></ruby>から<ruby>中華人民共和国<rt>ちゅうかじんみんきょうわこく</rt></ruby>までの流れを語呂合わせで一気に暗記し、続く一覧と暗記のコツで理解を固めましょう。
         </p>
 
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 6 }}>
-            <ruby>語呂合<rt>ごろあ</rt></ruby>わせで唱える王朝の順番
+            語呂合わせで唱える王朝の順番
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginBottom: 12 }}>
-            <ruby>童謡<rt>どうよう</rt></ruby>「うさぎとかめ」（もしもしかめよ、かめさんよ……）のリズムに乗せて口ずさむと、テスト前に短時間で<ruby>記憶<rt>きおく</rt></ruby>に定着させやすくなります。
+            <ruby>童謡<rt>どうよう</rt></ruby>「うさぎとかめ」（もしもしかめよ、かめさんよ……）のリズムに乗せて口ずさむと、テスト前に短時間で記憶に定着させやすくなります。
           </p>
           <div
             className="flex flex-wrap items-stretch gap-2"
@@ -124,7 +124,7 @@ export default function MnemonicsPage() {
           </div>
           <p style={{ fontSize: 11.5, lineHeight: 1.8, color: COLORS.inkSoft, marginTop: 10 }}>
             ※ 先史時代の新石器文化・夏、短命だった新（<ruby>王莽<rt>おうもう</rt></ruby>）、<ruby>五胡十六国<rt>ごこじゅうろっこく</rt></ruby>・<ruby>東晋<rt>とうしん</rt></ruby>、十国、<ruby>中華民国<rt>ちゅうかみんこく</rt></ruby>・<ruby>中華人民共和国<rt>ちゅうかじんみんきょうわこく</rt></ruby>は、
-            <ruby>語呂合<rt>ごろあ</rt></ruby>わせでは前後の王朝にまとめて<ruby>含<rt>ふく</rt></ruby>めています。<ruby>詳<rt>くわ</rt></ruby>しい位置づけは下の一覧と暗記のコツで確認してください。
+            語呂合わせでは前後の王朝にまとめて含めています。詳しい位置づけは下の一覧と暗記のコツで確認してください。
           </p>
         </section>
 
@@ -174,7 +174,7 @@ export default function MnemonicsPage() {
 
         <section>
           <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
-            それぞれの王朝で実際に何が起きたのかを知ると、<ruby>語呂合<rt>ごろあ</rt></ruby>わせの<ruby>記憶<rt>きおく</rt></ruby>はより忘れにくくなります。
+            それぞれの王朝で実際に何が起きたのかを知ると、語呂合わせの記憶はより忘れにくくなります。
             年表や人物一覧もあわせて確認してみてください。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">

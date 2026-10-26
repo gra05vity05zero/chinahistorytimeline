@@ -129,8 +129,8 @@ function GreatWallMap({ stops }) {
   return (
     <div style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: 16, marginBottom: 28 }}>
       <p style={{ fontSize: 11.5, color: COLORS.inkSoft, marginBottom: 10 }}>
-        実際の海岸線をもとにした中国の位置関係図です。<ruby>朱色<rt>しゅいろ</rt></ruby>の番号は下の一覧の区間・関所で、東の山海関から西の<ruby>嘉峪関<rt>かよくかん</rt></ruby>まで、
-        実際にはおよそ2,000km以上<ruby>離<rt>はな</rt></ruby>れた広い<ruby>範囲<rt>はんい</rt></ruby>に長城が延びています。
+        実際の海岸線をもとにした中国の位置関係図です。朱色の番号は下の一覧の区間・関所で、東の山海関から西の<ruby>嘉峪関<rt>かよくかん</rt></ruby>まで、
+        実際にはおよそ2,000km以上離れた広い範囲に長城が延びています。
       </p>
       <svg viewBox="0 0 500 366" style={{ width: "100%", maxHeight: 400, display: "block", margin: "0 auto" }}>
         <path d={CHINA_OUTLINE} fill="#DCD3B8" stroke={COLORS.mist} strokeWidth="1.2" strokeLinejoin="round" />
@@ -334,7 +334,7 @@ export default function GreatWallPage() {
 
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
-            万里の長城にまつわる<ruby>逸話<rt>いつわ</rt></ruby>・豆知識
+            万里の長城にまつわる逸話・豆知識
           </h2>
           <div className="flex flex-col gap-3">
             <div style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: "14px 16px" }}>
@@ -354,21 +354,21 @@ export default function GreatWallPage() {
             </div>
             <div style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: "14px 16px" }}>
               <p style={{ fontFamily: "var(--font-serif), serif", fontSize: 14, fontWeight: 700, color: COLORS.ink, marginBottom: 6 }}>
-                「宇宙から肉眼で見える<ruby>唯一<rt>ゆいいつ</rt></ruby>の建造物」は本当か？
+                「宇宙から肉眼で見える唯一の建造物」は本当か？
               </p>
               <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft }}>
-                万里の長城は「宇宙から肉眼で見える<ruby>唯一<rt>ゆいいつ</rt></ruby>の人工建造物」としてしばしば語られるが、実際に宇宙へ行った多くの宇宙飛行士は、
+                万里の長城は「宇宙から肉眼で見える唯一の人工建造物」としてしばしば語られるが、実際に宇宙へ行った多くの宇宙飛行士は、
                 <ruby>低軌道<rt>ていきどう</rt></ruby>からでも肉眼で長城を確認するのは難しいと証言しており、この話は広く流布した誤解（都市伝説）とされる。
-                <ruby>幅<rt>はば</rt></ruby>数mから十数m程度の構造物は、月はおろか地球<ruby>低軌道<rt>ていきどう</rt></ruby>からでも肉眼で識別するのは容易ではない。
+                幅数mから十数m程度の構造物は、月はおろか地球<ruby>低軌道<rt>ていきどう</rt></ruby>からでも肉眼で識別するのは容易ではない。
               </p>
             </div>
             <div style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: "14px 16px" }}>
               <p style={{ fontFamily: "var(--font-serif), serif", fontSize: 14, fontWeight: 700, color: COLORS.ink, marginBottom: 6 }}>
-                総延長は2万kmを<ruby>超<rt>こ</rt></ruby>える
+                総延長は2万kmを超える
               </p>
               <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft }}>
-                中国国家文物局が2012年に発表した調査結果によれば、歴代の各王朝が築いた<ruby>城壁<rt>じょうへき</rt></ruby>・関所・<ruby>壕<rt>ごう</rt></ruby>なども<ruby>含<rt>ふく</rt></ruby>めた万里の長城の
-                総延長は21,196.18kmにおよぶとされる。単一の連続した<ruby>壁<rt>かべ</rt></ruby>ではなく、各時代に築かれた<ruby>城壁網<rt>じょうへきもう</rt></ruby>の総体であることを<ruby>踏<rt>ふ</rt></ruby>まえた数字であり、
+                中国国家文物局が2012年に発表した調査結果によれば、歴代の各王朝が築いた城壁・関所・<ruby>壕<rt>ごう</rt></ruby>なども含めた万里の長城の
+                総延長は21,196.18kmにおよぶとされる。単一の連続した壁ではなく、各時代に築かれた<ruby>城壁網<rt>じょうへきもう</rt></ruby>の総体であることを踏まえた数字であり、
                 地球一周（約4万km）の半分以上に相当する規模である。
               </p>
             </div>
@@ -377,7 +377,7 @@ export default function GreatWallPage() {
 
         <section style={{ marginTop: 32 }}>
           <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
-            長城が西へ続く先のシルクロードや、中国の他の<ruby>城郭<rt>じょうかく</rt></ruby>・世界遺産も別ページで<ruby>紹介<rt>しょうかい</rt></ruby>しています。
+            長城が西へ続く先のシルクロードや、中国の他の<ruby>城郭<rt>じょうかく</rt></ruby>・世界遺産も別ページで紹介しています。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
             <NavButton href="/silk-road" variant="solid">シルクロードとは</NavButton>

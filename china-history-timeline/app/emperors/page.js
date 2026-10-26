@@ -535,27 +535,27 @@ export default function EmperorsPage() {
         <BackToTopButton />
 
         <h1 style={{ fontFamily: SERIF, fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
-          中国 歴代<ruby>皇帝<rt>こうてい</rt></ruby>一覧
+          中国 歴代皇帝一覧
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 12 }}>
-          「<ruby>皇帝<rt>こうてい</rt></ruby>」という<ruby>称号<rt>しょうごう</rt></ruby>は、紀元前221年に<ruby>秦<rt>しん</rt></ruby>の<ruby>始皇帝<rt>しこうてい</rt></ruby>が初めて名乗り、1912年に清の<ruby>宣統帝<rt>せんとうてい</rt></ruby>（<ruby>溥儀<rt>ふぎ</rt></ruby>）が退位するまで、約2100年にわたって受け<ruby>継<rt>つ</rt></ruby>がれました。
+          「皇帝」という称号は、紀元前221年に<ruby>秦<rt>しん</rt></ruby>の<ruby>始皇帝<rt>しこうてい</rt></ruby>が初めて名乗り、1912年に清の<ruby>宣統帝<rt>せんとうてい</rt></ruby>（<ruby>溥儀<rt>ふぎ</rt></ruby>）が退位するまで、約2100年にわたって受け継がれました。
           分裂期の<ruby>諸国<rt>しょこく</rt></ruby>まで数えると、その数は400人前後にのぼるといわれます。
         </p>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 28 }}>
-          このページでは、統一王朝と三国・南朝・五代の<ruby>皇帝<rt>こうてい</rt></ruby>{TOTAL}人を、在位の順にひとこと解説付きで<ruby>紹介<rt>しょうかい</rt></ruby>します。
-          <span style={{ color: COLORS.vermilion }}>★</span>は特に有名な<ruby>皇帝<rt>こうてい</rt></ruby>です。
+          このページでは、統一王朝と三国・南朝・五代の皇帝{TOTAL}人を、在位の順にひとこと解説付きで紹介します。
+          <span style={{ color: COLORS.vermilion }}>★</span>は特に有名な皇帝です。
         </p>
 
         <section className="p-4 mb-8" style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8" }}>
           <h2 style={{ fontFamily: SERIF, fontSize: 15, fontWeight: 700, color: COLORS.ink, marginBottom: 8 }}>
-            <ruby>皇帝<rt>こうてい</rt></ruby>の呼び名のルール
+            皇帝の呼び名のルール
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft, marginBottom: 8 }}>
-            中国の<ruby>皇帝<rt>こうてい</rt></ruby>は本名で呼ばれることはほとんどなく、時代によって一般的な呼び名の付け方が変わります。
+            中国の皇帝は本名で呼ばれることはほとんどなく、時代によって一般的な呼び名の付け方が変わります。
           </p>
           <ul style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft }}>
             <li>
-              <b style={{ color: COLORS.ink }}>漢〜<ruby>隋<rt>ずい</rt></ruby>：<ruby>諡号<rt>しごう</rt></ruby></b>　死後に<ruby>贈<rt>おく</rt></ruby>られる名。例：武帝、<ruby>光武帝<rt>こうぶてい</rt></ruby>、<ruby>煬帝<rt>ようだい</rt></ruby>
+              <b style={{ color: COLORS.ink }}>漢〜<ruby>隋<rt>ずい</rt></ruby>：<ruby>諡号<rt>しごう</rt></ruby></b>　死後に贈られる名。例：武帝、<ruby>光武帝<rt>こうぶてい</rt></ruby>、<ruby>煬帝<rt>ようだい</rt></ruby>
             </li>
             <li>
               <b style={{ color: COLORS.ink }}><ruby>唐<rt>とう</rt></ruby>〜元：<ruby>廟号<rt>びょうごう</rt></ruby></b>　<ruby>祖先<rt>そせん</rt></ruby>を<ruby>祀<rt>まつ</rt></ruby>る<ruby>廟<rt>びょう</rt></ruby>での名。例：<ruby>太宗<rt>たいそう</rt></ruby>、<ruby>玄宗<rt>げんそう</rt></ruby>、<ruby>徽宗<rt>きそう</rt></ruby>
@@ -612,7 +612,7 @@ export default function EmperorsPage() {
 
         <section className="mt-12">
           <h2 style={{ fontFamily: SERIF, fontSize: 18, fontWeight: 900, color: COLORS.ink, marginBottom: 12 }}>
-            <ruby>皇帝<rt>こうてい</rt></ruby>にまつわる記録
+            皇帝にまつわる記録
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {RECORDS.map((r) => (
@@ -630,13 +630,13 @@ export default function EmperorsPage() {
             ))}
           </div>
           <p style={{ fontSize: 12, lineHeight: 1.8, color: COLORS.inkSoft, marginTop: 14 }}>
-            なお清の<ruby>滅亡後<rt>めつぼうご</rt></ruby>にも、1915年に<ruby>袁世凱<rt>えんせいがい</rt></ruby>が帝政を宣言して「<ruby>洪憲帝<rt>こうけんてい</rt></ruby>」を名乗りましたが、国内外の反発を受けてわずか83日で取り消しています。
+            なお清の滅亡後にも、1915年に<ruby>袁世凱<rt>えんせいがい</rt></ruby>が帝政を宣言して「<ruby>洪憲帝<rt>こうけんてい</rt></ruby>」を名乗りましたが、国内外の反発を受けてわずか83日で取り消しています。
           </p>
         </section>
 
         <section style={{ marginTop: 32 }}>
           <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
-            最初の<ruby>皇帝<rt>こうてい</rt></ruby>・<ruby>始皇帝<rt>しこうてい</rt></ruby>の<ruby>生涯<rt>しょうがい</rt></ruby>や、歴代王朝が都を置いた場所についても別ページでまとめています。
+            最初の皇帝・<ruby>始皇帝<rt>しこうてい</rt></ruby>の生涯や、歴代王朝が都を置いた場所についても別ページでまとめています。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
             <NavButton href="/qinshihuang" variant="solid"><ruby>始皇帝<rt>しこうてい</rt></ruby>とは</NavButton>

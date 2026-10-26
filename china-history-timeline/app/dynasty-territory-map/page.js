@@ -48,7 +48,7 @@ export default function DynastyTerritoryMapPage() {
         <BackToTopButton />
 
         <h1 style={{ fontFamily: "var(--font-serif), serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
-          中国 歴代王朝の領土（<ruby>版図<rt>はんと</rt></ruby>）の<ruby>変遷<rt>へんせん</rt></ruby>を地図で見る
+          中国 歴代王朝の領土（<ruby>版図<rt>はんと</rt></ruby>）の変遷を地図で見る
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 28 }}>
           「中国」の範囲は、時代によって大きく変わってきました。黄河中流域の小さな王朝から始まり、<ruby>秦<rt>しん</rt></ruby>・漢で中国本土の原型ができ、
@@ -58,12 +58,12 @@ export default function DynastyTerritoryMapPage() {
 
         <section style={{ marginBottom: 12 }}>
           <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 18, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
-            領域<ruby>変遷<rt>へんせん</rt></ruby>マップ
+            領域変遷マップ
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginBottom: 12 }}>
             再生ボタンで時代が順に切り替わります。下の王朝名のボタンで、見たい時代へ直接移動することもできます。
             朱色が各時代の中国の王朝、点線は現在の中国の範囲です。
-            版図は勢力範囲の目安として大まかに<ruby>描<rt>えが</rt></ruby>いたもので、国境を<ruby>厳密<rt>げんみつ</rt></ruby>に示すものではありません（名目的な支配や時期による増減には<ruby>諸説<rt>しょせつ</rt></ruby>があります）。
+            版図は勢力範囲の目安として大まかに描いたもので、国境を<ruby>厳密<rt>げんみつ</rt></ruby>に示すものではありません（名目的な支配や時期による増減には<ruby>諸説<rt>しょせつ</rt></ruby>があります）。
           </p>
           <DynastyTerritoryMap />
         </section>
@@ -121,7 +121,7 @@ export default function DynastyTerritoryMapPage() {
         <section style={{ marginTop: 32 }}>
           <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
             戦国七雄・三国・<ruby>隋唐<rt>ずいとう</rt></ruby>の各時代については、勢力図がより細かく移り変わる様子を合戦マップのページで見ることができます。
-            歴代王朝が都を置いた場所は「歴代王朝の都一覧」で<ruby>紹介<rt>しょうかい</rt></ruby>しています。
+            歴代王朝が都を置いた場所は「歴代王朝の都一覧」で紹介しています。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
             <NavButton href="/china-capitals" variant="solid">歴代王朝の都一覧を見る</NavButton>

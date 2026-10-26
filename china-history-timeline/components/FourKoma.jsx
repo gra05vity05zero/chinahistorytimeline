@@ -1166,7 +1166,7 @@ export default function FourKoma({ id, panels, title }) {
         ))}
       </div>
       <figcaption className="flex justify-between" style={{ fontSize: 10.5, color: COLORS.mist, marginTop: 4 }}>
-        <span>4コマ<ruby>漫画<rt>まんが</rt></ruby>「<RubyText text={title} />」</span>
+        <span>4コマ漫画「<RubyText text={title} />」</span>
         <span className="sm:hidden">横にスワイプ →</span>
       </figcaption>
     </figure>

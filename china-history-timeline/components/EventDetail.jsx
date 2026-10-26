@@ -51,7 +51,7 @@ export default function EventDetail({ event, era, prev, next, japanTimeline }) {
     <div style={{ backgroundColor: COLORS.paper, minHeight: "100%" }}>
       <div className="sticky top-0 z-20 px-5 py-3" style={{ backgroundColor: COLORS.paperDeep, borderBottom: `1px solid ${COLORS.mist}` }}>
         <button onClick={onBack} className="flex items-center gap-2" style={{ color: COLORS.vermilion, fontFamily: "var(--font-serif), serif", fontSize: 13 }}>
-          <span aria-hidden>←</span> 年表に<ruby>戻<rt>もど</rt></ruby>る
+          <span aria-hidden>←</span> 年表に戻る
         </button>
       </div>
 
@@ -177,7 +177,7 @@ export default function EventDetail({ event, era, prev, next, japanTimeline }) {
               関連作品
             </div>
             <div style={{ fontSize: 10.5, color: COLORS.inkSoft, marginBottom: 12 }}>
-              ※ 一部のリンクはAmazonアソシエイトによるアフィリエイト広告を<ruby>含<rt>ふく</rt></ruby>みます
+              ※ 一部のリンクはAmazonアソシエイトによるアフィリエイト広告を含みます
             </div>
             <div className="grid gap-3" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))" }}>
               {event.media.map((med, idx) => {

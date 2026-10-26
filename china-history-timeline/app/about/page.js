@@ -23,10 +23,10 @@ export default function AboutPage() {
         </h1>
         <p style={{ fontSize: 14, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
           「中国五千年史」は、新石器文化から<ruby>中華人民共和国<rt>ちゅうかじんみんきょうわこく</rt></ruby>まで、中国の歴史を王朝ごとに区切って縦スクロールの年表でたどれるサイトです。
-          各出来事の<ruby>詳細<rt>しょうさい</rt></ruby>ページでは、背景や<ruby>影響<rt>えいきょう</rt></ruby>に加えて、関連する映画・ゲーム・<ruby>書籍<rt>しょせき</rt></ruby>、建造物や人物の情報もあわせて<ruby>掲載<rt>けいさい</rt></ruby>しています。
+          各出来事の詳細ページでは、背景や影響に加えて、関連する映画・ゲーム・書籍、建造物や人物の情報もあわせて<ruby>掲載<rt>けいさい</rt></ruby>しています。
         </p>
         <p style={{ fontSize: 14, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
-          歴史は教科書で学ぶだけでなく、映画やゲーム、実際に残る建造物を通して<ruby>触<rt>ふ</rt></ruby>れることでより身近に感じられると考え、
+          歴史は教科書で学ぶだけでなく、映画やゲーム、実際に残る建造物を通して触れることでより身近に感じられると考え、
           このサイトを作成しました。
         </p>
 

@@ -35,7 +35,7 @@ export function BackToTopButton() {
       className="inline-flex items-center gap-1.5"
       style={{ color: COLORS.vermilion, fontFamily: "var(--font-serif), serif", fontSize: 13 }}
     >
-      <span aria-hidden>←</span> 年表トップへ<ruby>戻<rt>もど</rt></ruby>る
+      <span aria-hidden>←</span> 年表トップへ戻る
     </Link>
   );
 }

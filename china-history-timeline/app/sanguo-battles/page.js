@@ -255,7 +255,7 @@ function BattleMap() {
   return (
     <div style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: 16, marginBottom: 28 }}>
       <p style={{ fontSize: 11.5, color: COLORS.inkSoft, marginBottom: 10 }}>
-        実際の海岸線をもとにした位置関係図です。<ruby>朱色<rt>しゅいろ</rt></ruby>の番号は下の各合戦、金色の丸は<ruby>魏<rt>ぎ</rt></ruby>の都・<ruby>洛陽<rt>らくよう</rt></ruby>の目安です。
+        実際の海岸線をもとにした位置関係図です。朱色の番号は下の各合戦、金色の丸は<ruby>魏<rt>ぎ</rt></ruby>の都・<ruby>洛陽<rt>らくよう</rt></ruby>の目安です。
       </p>
       <svg viewBox="0 0 500 366" style={{ width: "100%", maxHeight: 400, display: "block", margin: "0 auto" }}>
         <path d={CHINA_OUTLINE} fill="#DCD3B8" stroke={COLORS.mist} strokeWidth="1.2" strokeLinejoin="round" />
@@ -314,9 +314,9 @@ export default function SanguoBattlesPage() {
           三国時代 合戦マップ
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 28 }}>
-          184年の<ruby>黄巾の乱<rt>こうきんのらん</rt></ruby>に始まり、280年の天下統一で幕を閉じるまで——三国時代は中国史上もっとも語り<ruby>継<rt>つ</rt></ruby>がれる乱世です。
-          このページでは、後漢の<ruby>滅亡<rt>めつぼう</rt></ruby>から<ruby>西晋<rt>せいしん</rt></ruby>による再統一までの流れを、<ruby>官渡<rt>かんと</rt></ruby>・<ruby>赤壁<rt>せきへき</rt></ruby>・<ruby>夷陵<rt>いりょう</rt></ruby>・<ruby>五丈原<rt>ごじょうげん</rt></ruby>など8つの主要な合戦と、
-          そこで<ruby>活躍<rt>かつやく</rt></ruby>した武将たちにスポットを当てて<ruby>詳<rt>くわ</rt></ruby>しく<ruby>紹介<rt>しょうかい</rt></ruby>します。
+          184年の<ruby>黄巾の乱<rt>こうきんのらん</rt></ruby>に始まり、280年の天下統一で幕を閉じるまで——三国時代は中国史上もっとも語り継がれる乱世です。
+          このページでは、後漢の滅亡から<ruby>西晋<rt>せいしん</rt></ruby>による再統一までの流れを、<ruby>官渡<rt>かんと</rt></ruby>・<ruby>赤壁<rt>せきへき</rt></ruby>・<ruby>夷陵<rt>いりょう</rt></ruby>・<ruby>五丈原<rt>ごじょうげん</rt></ruby>など8つの主要な合戦と、
+          そこで活躍した武将たちにスポットを当てて詳しく紹介します。
         </p>
 
         <section style={{ marginBottom: 32 }}>
@@ -371,7 +371,7 @@ export default function SanguoBattlesPage() {
 
         <section style={{ marginBottom: 12 }}>
           <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 12 }}>
-            勢力図の<ruby>変遷<rt>へんせん</rt></ruby>アニメーション
+            勢力図の変遷アニメーション
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginBottom: 12 }}>
             <ruby>群雄割拠<rt>ぐんゆうかっきょ</rt></ruby>から<ruby>魏<rt>ぎ</rt></ruby>・<ruby>蜀<rt>しょく</rt></ruby>・<ruby>呉<rt>ご</rt></ruby>の<ruby>三国鼎立<rt>さんごくていりつ</rt></ruby>へ、そして<ruby>西晋<rt>せいしん</rt></ruby>による天下統一へ——再生ボタンまたは年代タブで、勢力図が移り変わる様子を確認できます。
@@ -459,12 +459,12 @@ export default function SanguoBattlesPage() {
 
         <section style={{ marginTop: 32 }}>
           <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
-            三国時代の各出来事の<ruby>詳細<rt>しょうさい</rt></ruby>や関連する人物・建造物については、年表・人物ページもあわせてご覧ください。
+            三国時代の各出来事の詳細や関連する人物・建造物については、年表・人物ページもあわせてご覧ください。
             三国時代の前史にあたる<ruby>楚漢戦争<rt>そかんせんそう</rt></ruby>・春秋戦国の合戦については、下記の特集ページもどうぞ。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
             <NavButton href="/eras/sanguo" variant="solid">三国時代の解説を見る</NavButton>
-            <NavButton href="/sanguo-comparison" variant="outline"><ruby>魏<rt>ぎ</rt></ruby>・<ruby>呉<rt>ご</rt></ruby>・<ruby>蜀<rt>しょく</rt></ruby>の<ruby>違<rt>ちが</rt></ruby>いを見る</NavButton>
+            <NavButton href="/sanguo-comparison" variant="outline"><ruby>魏<rt>ぎ</rt></ruby>・<ruby>呉<rt>ご</rt></ruby>・<ruby>蜀<rt>しょく</rt></ruby>の違いを見る</NavButton>
             <NavButton href="/people/sanguo" variant="outline">三国の人物一覧を見る</NavButton>
             <NavButton href="/koei-sangokushi" variant="outline">ゲーム『<ruby>三國志<rt>さんごくし</rt></ruby>』シリーズ</NavButton>
             <NavButton href="/chuhan-battles" variant="outline"><ruby>楚漢戦争<rt>そかんせんそう</rt></ruby> 合戦マップを見る</NavButton>

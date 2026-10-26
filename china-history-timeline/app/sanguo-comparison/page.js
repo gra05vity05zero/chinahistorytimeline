@@ -237,7 +237,7 @@ export default function SanguoComparisonPage() {
         <BackToTopButton />
 
         <h1 style={{ fontFamily: "var(--font-serif), serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
-          <ruby>魏<rt>ぎ</rt></ruby>・<ruby>呉<rt>ご</rt></ruby>・<ruby>蜀<rt>しょく</rt></ruby>の<ruby>違<rt>ちが</rt></ruby>いとは？
+          <ruby>魏<rt>ぎ</rt></ruby>・<ruby>呉<rt>ご</rt></ruby>・<ruby>蜀<rt>しょく</rt></ruby>の違いとは？
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
           <RubyText
@@ -263,7 +263,7 @@ export default function SanguoComparisonPage() {
         </div>
 
         <section style={{ marginBottom: 36 }} id="hikaku">
-          <h2 style={sectionHeading}><ruby>魏<rt>ぎ</rt></ruby>・<ruby>呉<rt>ご</rt></ruby>・<ruby>蜀<rt>しょく</rt></ruby>の<ruby>比較<rt>ひかく</rt></ruby>一覧表</h2>
+          <h2 style={sectionHeading}><ruby>魏<rt>ぎ</rt></ruby>・<ruby>呉<rt>ご</rt></ruby>・<ruby>蜀<rt>しょく</rt></ruby>の比較一覧表</h2>
           <div style={{ ...card, overflowX: "auto" }}>
             <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12, minWidth: 460 }}>
               <thead>
@@ -300,14 +300,14 @@ export default function SanguoComparisonPage() {
             </table>
           </div>
           <p style={{ fontSize: 11, color: COLORS.mist, marginTop: 6 }}>
-            ※存続期間は建国（<ruby>呉<rt>ご</rt></ruby>は自立した222年）から<ruby>滅亡<rt>めつぼう</rt></ruby>までの<ruby>概数<rt>がいすう</rt></ruby>。人口は<ruby>戸籍<rt>こせき</rt></ruby>に登録された数で、下の「国力の<ruby>比較<rt>ひかく</rt></ruby>」を参照。
+            ※存続期間は建国（<ruby>呉<rt>ご</rt></ruby>は自立した222年）から滅亡までの<ruby>概数<rt>がいすう</rt></ruby>。人口は<ruby>戸籍<rt>こせき</rt></ruby>に登録された数で、下の「国力の比較」を参照。
           </p>
         </section>
 
         <section style={{ marginBottom: 36 }} id="kokuryoku">
-          <h2 style={sectionHeading}>国力の<ruby>比較<rt>ひかく</rt></ruby>：人口は<ruby>魏<rt>ぎ</rt></ruby>が<ruby>蜀<rt>しょく</rt></ruby>の約5倍</h2>
+          <h2 style={sectionHeading}>国力の比較：人口は<ruby>魏<rt>ぎ</rt></ruby>が<ruby>蜀<rt>しょく</rt></ruby>の約5倍</h2>
           <div style={{ ...card, padding: "16px 16px 12px" }}>
-            <div style={{ fontSize: 11, color: COLORS.gold, marginBottom: 10, letterSpacing: "0.05em" }}><ruby>戸籍上<rt>こせきじょう</rt></ruby>の人口（<ruby>滅亡<rt>めつぼう</rt></ruby>時点）</div>
+            <div style={{ fontSize: 11, color: COLORS.gold, marginBottom: 10, letterSpacing: "0.05em" }}><ruby>戸籍上<rt>こせきじょう</rt></ruby>の人口（滅亡時点）</div>
             <div className="flex flex-col gap-3">
               {POPULATION.map((p) => {
                 const k = KINGDOMS.find((x) => x.id === p.id);
@@ -330,14 +330,14 @@ export default function SanguoComparisonPage() {
             </div>
           </div>
           <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginTop: 12 }}>
-            <ruby>魏<rt>ぎ</rt></ruby>の人口は<ruby>呉<rt>ご</rt></ruby>と<ruby>蜀<rt>しょく</rt></ruby>を合わせた数より多く、国力の差は歴然としていた。<ruby>蜀<rt>しょく</rt></ruby>の<ruby>諸葛亮<rt>しょかつりょう</rt></ruby>が<ruby>繰<rt>く</rt></ruby>り返した<ruby>北伐<rt>ほくばつ</rt></ruby>は、この差が広がる前に先手を打とうとする戦いでもあった。
+            <ruby>魏<rt>ぎ</rt></ruby>の人口は<ruby>呉<rt>ご</rt></ruby>と<ruby>蜀<rt>しょく</rt></ruby>を合わせた数より多く、国力の差は歴然としていた。<ruby>蜀<rt>しょく</rt></ruby>の<ruby>諸葛亮<rt>しょかつりょう</rt></ruby>が繰り返した<ruby>北伐<rt>ほくばつ</rt></ruby>は、この差が広がる前に先手を打とうとする戦いでもあった。
             なお、後漢の最盛期（2世紀半ば）には<ruby>戸籍上<rt>こせきじょう</rt></ruby>の人口が約5600万人あったとされ、三国の合計はその7分の1ほどにすぎない。
-            戦乱による<ruby>犠牲<rt>ぎせい</rt></ruby>に加え、国家が<ruby>戸籍<rt>こせき</rt></ruby>で<ruby>把握<rt>はあく</rt></ruby>できない流民や<ruby>豪族<rt>ごうぞく</rt></ruby>の支配下の人々が増えたためと考えられており、実際の人口はこれよりかなり多かったとみられる。
+            戦乱による犠牲に加え、国家が<ruby>戸籍<rt>こせき</rt></ruby>で<ruby>把握<rt>はあく</rt></ruby>できない流民や豪族の支配下の人々が増えたためと考えられており、実際の人口はこれよりかなり多かったとみられる。
           </p>
         </section>
 
         <section style={{ marginBottom: 36 }} id="kakkoku">
-          <h2 style={sectionHeading}>それぞれの国の<ruby>特徴<rt>とくちょう</rt></ruby></h2>
+          <h2 style={sectionHeading}>それぞれの国の特徴</h2>
           <div className="flex flex-col gap-5">
             {KINGDOMS.map((k) => {
               const founder = findFigure(k.founder);
@@ -363,7 +363,7 @@ export default function SanguoComparisonPage() {
                       <p style={{ fontSize: 13, fontWeight: 700, color: k.color, marginTop: 8 }}><RubyText text={k.catch} /></p>
                       {founder.imageUrl && (
                         <p style={{ fontSize: 10.5, color: COLORS.mist, marginTop: 6 }}>
-                          <ruby>肖像<rt>しょうぞう</rt></ruby>：<RubyText text={k.founder} />
+                          肖像：<RubyText text={k.founder} />
                           {founder.credit && <span> ／ <RubyText text={founder.credit} /></span>}
                         </p>
                       )}
@@ -455,7 +455,7 @@ export default function SanguoComparisonPage() {
 
         <section style={{ marginTop: 32 }}>
           <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
-            三国が<ruby>激突<rt>げきとつ</rt></ruby>した<ruby>官渡<rt>かんと</rt></ruby>・<ruby>赤壁<rt>せきへき</rt></ruby>・<ruby>夷陵<rt>いりょう</rt></ruby>・<ruby>五丈原<rt>ごじょうげん</rt></ruby>などの合戦は「三国時代 合戦マップ」で、登場人物の<ruby>詳<rt>くわ</rt></ruby>しい<ruby>生涯<rt>しょうがい</rt></ruby>は人物一覧で<ruby>紹介<rt>しょうかい</rt></ruby>しています。
+            三国が激突した<ruby>官渡<rt>かんと</rt></ruby>・<ruby>赤壁<rt>せきへき</rt></ruby>・<ruby>夷陵<rt>いりょう</rt></ruby>・<ruby>五丈原<rt>ごじょうげん</rt></ruby>などの合戦は「三国時代 合戦マップ」で、登場人物の詳しい生涯は人物一覧で紹介しています。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
             <NavButton href="/sanguo-battles" variant="solid">三国時代 合戦マップ</NavButton>

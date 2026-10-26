@@ -259,7 +259,7 @@ function SuikodenMap() {
   return (
     <div style={{ ...card, padding: 16, marginBottom: 16 }}>
       <p style={{ fontSize: 11.5, color: COLORS.inkSoft, marginBottom: 10 }}>
-        実際の海岸線をもとにした位置関係図です。<ruby>朱色<rt>しゅいろ</rt></ruby>の番号は下の各地点、水色の<ruby>範囲<rt>はんい</rt></ruby>は<ruby>梁山泊<rt>りょうざんぱく</rt></ruby>のおおよその位置、金色の丸は<ruby>宋<rt>そう</rt></ruby>の都・<ruby>開封<rt>かいほう</rt></ruby>です。
+        実際の海岸線をもとにした位置関係図です。朱色の番号は下の各地点、水色の範囲は<ruby>梁山泊<rt>りょうざんぱく</rt></ruby>のおおよその位置、金色の丸は<ruby>宋<rt>そう</rt></ruby>の都・<ruby>開封<rt>かいほう</rt></ruby>です。
       </p>
       <svg viewBox="316 158 64 96" style={{ width: "100%", maxHeight: 520, display: "block", margin: "0 auto" }} role="img" aria-label="水滸伝ゆかりの地の地図">
         <path d={CHINA_OUTLINE} fill="#DCD3B8" stroke={COLORS.mist} strokeWidth="0.3" strokeLinejoin="round" />
@@ -370,7 +370,7 @@ export default function SuikodenPage() {
         </p>
         <p style={{ ...bodyText, fontSize: 13.5, marginBottom: 28 }}>
           <RubyText text="『{{水滸伝|すいこでん}}』は、{{北宋末|ほくそうまつ}}の{{徽宗|きそう}}の時代を{{舞台|ぶたい}}に、{{腐敗|ふはい}}した役人や{{奸臣|かんしん}}に追われた108人の好漢たちが{{梁山泊|りょうざんぱく}}に集い、「{{替天行道|たいてんこうどう}}（天に{{替|か}}わりて道を行う）」を{{掲|かか}}げて戦う長編小説です。『三国志演義』『西遊記』『{{紅楼夢|こうろうむ}}』と並ぶ中国の四大名著の一つに数えられます。" />
-          物語のもとになったのは、<ruby>北宋末<rt>ほくそうまつ</rt></ruby>に実際に起きた<ruby>宋江<rt>そうこう</rt></ruby>の反乱でした。このページでは、あらすじや人物の<ruby>紹介<rt>しょうかい</rt></ruby>に加えて、<ruby>梁山泊<rt>りょうざんぱく</rt></ruby>の実像や史実と物語の<ruby>違<rt>ちが</rt></ruby>いまで、<ruby>水滸伝<rt>すいこでん</rt></ruby>の世界をひととおりたどります。
+          物語のもとになったのは、<ruby>北宋末<rt>ほくそうまつ</rt></ruby>に実際に起きた<ruby>宋江<rt>そうこう</rt></ruby>の反乱でした。このページでは、あらすじや人物の紹介に加えて、<ruby>梁山泊<rt>りょうざんぱく</rt></ruby>の実像や史実と物語の違いまで、<ruby>水滸伝<rt>すいこでん</rt></ruby>の世界をひととおりたどります。
         </p>
 
         <section style={{ marginBottom: 36 }} id="story">
@@ -504,7 +504,7 @@ export default function SuikodenPage() {
             ))}
           </div>
           <p style={{ fontSize: 9.5, color: COLORS.mist, marginTop: 10 }}>
-            好漢の<ruby>肖像<rt>しょうぞう</rt></ruby>: <RubyText text={JSS_CREDIT} />。<ruby>徽宗<rt>きそう</rt></ruby>: <RubyText text={HUIZONG.credit} />
+            好漢の肖像: <RubyText text={JSS_CREDIT} />。<ruby>徽宗<rt>きそう</rt></ruby>: <RubyText text={HUIZONG.credit} />
           </p>
         </section>
 
@@ -515,7 +515,7 @@ export default function SuikodenPage() {
               <ruby>水滸伝<rt>すいこでん</rt></ruby>の108人は、天に<ruby>輝<rt>かがや</rt></ruby>く108の星の生まれ変わりとされています。上位の36人は「<ruby>天罡星<rt>てんこうせい</rt></ruby>（てんこうせい）」、残る72人は「<ruby>地煞星<rt>ちさつせい</rt></ruby>（ちさつせい）」と呼ばれ、それぞれに「<ruby>天魁星<rt>てんかいせい</rt></ruby>」「<ruby>地魁星<rt>ちかいせい</rt></ruby>」といった固有の星の名が割り当てられています。
             </p>
             <p>
-              第71回、<ruby>梁山泊<rt>りょうざんぱく</rt></ruby>で天を<ruby>祀<rt>まつ</rt></ruby>る<ruby>儀式<rt>ぎしき</rt></ruby>を行うと、天から<ruby>石碑<rt>せきひ</rt></ruby>が降ってきます。そこには108人の名と星、そして席次が刻まれており、これによって<ruby>梁山泊<rt>りょうざんぱく</rt></ruby>の序列が天命として定まりました。好漢たちには「<ruby>及時雨<rt>きゅうじう</rt></ruby>」「<ruby>豹子頭<rt>ひょうしとう</rt></ruby>」のようなあだ名（<ruby>綽号<rt>しゃくごう</rt></ruby>）もそれぞれにつけられており、人物の<ruby>特徴<rt>とくちょう</rt></ruby>を一言で表しています。
+              第71回、<ruby>梁山泊<rt>りょうざんぱく</rt></ruby>で天を<ruby>祀<rt>まつ</rt></ruby>る<ruby>儀式<rt>ぎしき</rt></ruby>を行うと、天から<ruby>石碑<rt>せきひ</rt></ruby>が降ってきます。そこには108人の名と星、そして席次が刻まれており、これによって<ruby>梁山泊<rt>りょうざんぱく</rt></ruby>の序列が天命として定まりました。好漢たちには「<ruby>及時雨<rt>きゅうじう</rt></ruby>」「<ruby>豹子頭<rt>ひょうしとう</rt></ruby>」のようなあだ名（<ruby>綽号<rt>しゃくごう</rt></ruby>）もそれぞれにつけられており、人物の特徴を一言で表しています。
             </p>
           </div>
           <div style={{ ...card, overflowX: "auto" }}>
@@ -549,7 +549,7 @@ export default function SuikodenPage() {
         </section>
 
         <section style={{ marginBottom: 36 }} id="history-vs-legend">
-          <h2 style={sectionHeading}>史実の<ruby>宋江<rt>そうこう</rt></ruby>と物語の<ruby>違<rt>ちが</rt></ruby>い</h2>
+          <h2 style={sectionHeading}>史実の<ruby>宋江<rt>そうこう</rt></ruby>と物語の違い</h2>
           <div className="flex flex-col gap-3" style={{ ...bodyText, marginBottom: 14 }}>
             <p>
               <RubyText text="正史『{{宋史|そうし}}』によれば、宣和年間（1119〜1125年）に{{宋江|そうこう}}は36人の仲間とともに反乱を起こし、山東から{{淮南|わいなん}}にかけての各地を{{荒|あ}}らし回りました。官軍も手を焼くほどの勢いでしたが、1121年、{{海州|かいしゅう}}に現れたところを知州の{{張叔夜|ちょうしゅくや}}に待ち{{伏|ぶ}}せされ、船を焼かれて{{降伏|こうふく}}したと記されています。" />
@@ -633,7 +633,7 @@ export default function SuikodenPage() {
             <ruby>北方謙三<rt>きたかたけんぞう</rt></ruby>の「<ruby>大水滸伝<rt>だいすいこでん</rt></ruby>」シリーズを読む順番
           </h3>
           <p style={{ ...bodyText, marginBottom: 12 }}>
-            <ruby>北方謙三<rt>きたかたけんぞう</rt></ruby>は、<ruby>水滸伝<rt>すいこでん</rt></ruby>を独自の<ruby>解釈<rt>かいしゃく</rt></ruby>で書き直した『<ruby>水滸伝<rt>すいこでん</rt></ruby>』に続けて、『<ruby>楊令伝<rt>ようれいでん</rt></ruby>』『<ruby>岳飛伝<rt>がくひでん</rt></ruby>』を発表しました。3作は一つながりの物語で、刊行順に読むのがおすすめです。
+            <ruby>北方謙三<rt>きたかたけんぞう</rt></ruby>は、<ruby>水滸伝<rt>すいこでん</rt></ruby>を独自の解釈で書き直した『<ruby>水滸伝<rt>すいこでん</rt></ruby>』に続けて、『<ruby>楊令伝<rt>ようれいでん</rt></ruby>』『<ruby>岳飛伝<rt>がくひでん</rt></ruby>』を発表しました。3作は一つながりの物語で、刊行順に読むのがおすすめです。
           </p>
           <div className="flex flex-col gap-3">
             {BOOKS.map((book) => (
@@ -677,10 +677,10 @@ export default function SuikodenPage() {
             ))}
           </div>
           <p style={{ fontSize: 12, color: COLORS.inkSoft, marginTop: 12 }}>
-            <ruby>楊志<rt>ようし</rt></ruby>の祖先にあたる<ruby>楊業<rt>ようぎょう</rt></ruby>たちの物語は、<a href="/yangjiajiang" style={linkStyle}><ruby>楊家将<rt>ようかしょう</rt></ruby>とは</a>のページで<ruby>紹介<rt>しょうかい</rt></ruby>しています。
+            <ruby>楊志<rt>ようし</rt></ruby>の祖先にあたる<ruby>楊業<rt>ようぎょう</rt></ruby>たちの物語は、<a href="/yangjiajiang" style={linkStyle}><ruby>楊家将<rt>ようかしょう</rt></ruby>とは</a>のページで紹介しています。
           </p>
           <p style={{ fontSize: 10.5, color: COLORS.mist, marginTop: 8 }}>
-            ※ 一部のリンクはAmazonアソシエイトによるアフィリエイト広告を<ruby>含<rt>ふく</rt></ruby>みます
+            ※ 一部のリンクはAmazonアソシエイトによるアフィリエイト広告を含みます
           </p>
         </section>
 
@@ -701,7 +701,7 @@ export default function SuikodenPage() {
 
         <section style={{ marginTop: 32 }}>
           <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
-            <ruby>北宋末<rt>ほくそうまつ</rt></ruby>の出来事や人物の<ruby>詳<rt>くわ</rt></ruby>しい解説は、年表・人物ページもあわせてご覧ください。
+            <ruby>北宋末<rt>ほくそうまつ</rt></ruby>の出来事や人物の詳しい解説は、年表・人物ページもあわせてご覧ください。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
             <NavButton href="/eras/northernsong" variant="solid"><ruby>北宋<rt>ほくそう</rt></ruby>の時代解説を見る</NavButton>

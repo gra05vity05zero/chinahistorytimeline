@@ -268,7 +268,7 @@ function Portrait({ imageUrl, name, size = 88 }) {
 function AffiliateNote() {
   return (
     <p style={{ fontSize: 10.5, color: COLORS.mist, marginTop: 10 }}>
-      ※ 一部のリンクはAmazonアソシエイトによるアフィリエイト広告を<ruby>含<rt>ふく</rt></ruby>みます。価格・在庫はリンク先でご確認ください
+      ※ 一部のリンクはAmazonアソシエイトによるアフィリエイト広告を含みます。価格・在庫はリンク先でご確認ください
     </p>
   );
 }
@@ -314,7 +314,7 @@ export default function KoeiSangokushiPage() {
           コーエー『<ruby>三國志<rt>さんごくし</rt></ruby>』シリーズとは？
         </h1>
         <p style={{ fontFamily: "var(--font-serif), serif", fontSize: 14, color: COLORS.gold, marginBottom: 14 }}>
-          40年続く<ruby>歴史<rt>れきし</rt></ruby>シミュレーションの歩みと最新作
+          40年続く歴史シミュレーションの歩みと最新作
         </p>
         <p style={{ ...bodyText, fontSize: 13.5, marginBottom: 28 }}>
           <RubyText text="『{{三國志|さんごくし}}』は、1985年に光栄（現・コーエーテクモゲームス）が発売した{{歴史|れきし}}シミュレーションゲームのシリーズです。プレイヤーは後漢末から三国時代の{{群雄|ぐんゆう}}や武将となり、内政・外交・戦争を通じて天下統一を目指します。" />
@@ -376,7 +376,7 @@ export default function KoeiSangokushiPage() {
         </section>
 
         <section style={{ marginBottom: 36 }} id="history">
-          <h2 style={sectionHeading}>シリーズの<ruby>歴史<rt>れきし</rt></ruby></h2>
+          <h2 style={sectionHeading}>シリーズの歴史</h2>
           <div className="flex flex-col gap-3">
             {HISTORY.map((h) => (
               <div key={h.period} className="p-4" style={card}>
@@ -479,7 +479,7 @@ export default function KoeiSangokushiPage() {
         <section style={{ marginBottom: 36 }} id="figures">
           <h2 style={sectionHeading}>ゲームでおなじみの武将と史実</h2>
           <p style={{ ...bodyText, marginBottom: 14 }}>
-            ゲームの能力値やイベントの<ruby>裏<rt>うら</rt></ruby>には、実在の人物の<ruby>生涯<rt>しょうがい</rt></ruby>があります。名前のリンクから、史実の人物<ruby>紹介<rt>しょうかい</rt></ruby>を読むことができます。
+            ゲームの能力値やイベントの<ruby>裏<rt>うら</rt></ruby>には、実在の人物の生涯があります。名前のリンクから、史実の人物紹介を読むことができます。
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {FIGURES.map((m) => (
@@ -516,7 +516,7 @@ export default function KoeiSangokushiPage() {
             </p>
           )}
           <p style={{ fontSize: 12, color: COLORS.inkSoft, marginTop: 12 }}>
-            三国それぞれの国力や人材の<ruby>違<rt>ちが</rt></ruby>いは<a href="/sanguo-comparison" style={linkStyle}><ruby>魏<rt>ぎ</rt></ruby>・<ruby>呉<rt>ご</rt></ruby>・<ruby>蜀<rt>しょく</rt></ruby>の<ruby>違<rt>ちが</rt></ruby>い</a>、ゲームのシナリオにもなる名勝負は<a href="/sanguo-battles" style={linkStyle}>三国時代 合戦マップ</a>で<ruby>紹介<rt>しょうかい</rt></ruby>しています。
+            三国それぞれの国力や人材の違いは<a href="/sanguo-comparison" style={linkStyle}><ruby>魏<rt>ぎ</rt></ruby>・<ruby>呉<rt>ご</rt></ruby>・<ruby>蜀<rt>しょく</rt></ruby>の違い</a>、ゲームのシナリオにもなる名勝負は<a href="/sanguo-battles" style={linkStyle}>三国時代 合戦マップ</a>で紹介しています。
           </p>
         </section>
 
@@ -542,7 +542,7 @@ export default function KoeiSangokushiPage() {
         <section style={{ marginBottom: 36 }} id="books">
           <h2 style={sectionHeading}>ゲームの次に読みたい三国志の本</h2>
           <p style={{ ...bodyText, marginBottom: 14 }}>
-            ゲームで武将の名前を覚えたら、物語や<ruby>歴史書<rt>れきししょ</rt></ruby>で人物の<ruby>素顔<rt>すがお</rt></ruby>に<ruby>触<rt>ふ</rt></ruby>れてみると、次のプレイがいっそう楽しくなります。
+            ゲームで武将の名前を覚えたら、物語や<ruby>歴史書<rt>れきししょ</rt></ruby>で人物の<ruby>素顔<rt>すがお</rt></ruby>に触れてみると、次のプレイがいっそう楽しくなります。
           </p>
           <div className="flex flex-col gap-3">
             {BOOKS.map((b) => (
@@ -561,7 +561,7 @@ export default function KoeiSangokushiPage() {
             ))}
           </div>
           <p style={{ fontSize: 12, color: COLORS.inkSoft, marginTop: 12 }}>
-            『<ruby>三国志演義<rt>さんごくしえんぎ</rt></ruby>』と正史の関係は<a href="/four-great-novels" style={linkStyle}>中国の四大名著とは</a>や<a href="/history-books" style={linkStyle}>中国の<ruby>歴史書<rt>れきししょ</rt></ruby></a>、三国志を書いた作家は<a href="/novelists" style={linkStyle}>中国史を題材にした日本人小説家一覧</a>で<ruby>詳<rt>くわ</rt></ruby>しく<ruby>紹介<rt>しょうかい</rt></ruby>しています。
+            『<ruby>三国志演義<rt>さんごくしえんぎ</rt></ruby>』と正史の関係は<a href="/four-great-novels" style={linkStyle}>中国の四大名著とは</a>や<a href="/history-books" style={linkStyle}>中国の<ruby>歴史書<rt>れきししょ</rt></ruby></a>、三国志を書いた作家は<a href="/novelists" style={linkStyle}>中国史を題材にした日本人小説家一覧</a>で詳しく紹介しています。
           </p>
           <AffiliateNote />
         </section>
@@ -583,13 +583,13 @@ export default function KoeiSangokushiPage() {
 
         <section style={{ marginTop: 32 }}>
           <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
-            ゲームの<ruby>舞台<rt>ぶたい</rt></ruby>になった三国時代の出来事や人物は、年表・人物ページもあわせてご覧ください。
+            ゲームの舞台になった三国時代の出来事や人物は、年表・人物ページもあわせてご覧ください。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
             <NavButton href="/eras/sanguo" variant="solid">三国時代の解説を見る</NavButton>
             <NavButton href="/people/sanguo" variant="outline">三国の人物一覧を見る</NavButton>
             <NavButton href="/sanguo-battles" variant="outline">三国時代 合戦マップ</NavButton>
-            <NavButton href="/sanguo-comparison" variant="outline"><ruby>魏<rt>ぎ</rt></ruby>・<ruby>呉<rt>ご</rt></ruby>・<ruby>蜀<rt>しょく</rt></ruby>の<ruby>違<rt>ちが</rt></ruby>い</NavButton>
+            <NavButton href="/sanguo-comparison" variant="outline"><ruby>魏<rt>ぎ</rt></ruby>・<ruby>呉<rt>ご</rt></ruby>・<ruby>蜀<rt>しょく</rt></ruby>の違い</NavButton>
           </div>
         </section>
 

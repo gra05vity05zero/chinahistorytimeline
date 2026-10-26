@@ -131,11 +131,11 @@ export default function YearMnemonicsPage() {
           中国史 年号ゴロ合わせ集
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 14 }}>
-          中学・高校のテストや大学入試の世界史では、王朝の順番だけでなく、建国・<ruby>滅亡<rt>めつぼう</rt></ruby>の年号そのものを問われることもあります。
-          数字の音を言葉に置き<ruby>換<rt>か</rt></ruby>えるゴロ合わせで、重要な年号を覚えてしまいましょう。
+          中学・高校のテストや大学入試の世界史では、王朝の順番だけでなく、建国・滅亡の年号そのものを問われることもあります。
+          数字の音を言葉に置き換えるゴロ合わせで、重要な年号を覚えてしまいましょう。
         </p>
         <p style={{ fontSize: 12, lineHeight: 1.8, color: COLORS.inkSoft, marginBottom: 28 }}>
-          ※ ここで<ruby>紹介<rt>しょうかい</rt></ruby>するゴロ合わせは、覚えやすさを優先した一例です。自分なりの言葉に置き<ruby>換<rt>か</rt></ruby>えてもかまいません。
+          ※ ここで紹介するゴロ合わせは、覚えやすさを優先した一例です。自分なりの言葉に置き換えてもかまいません。
         </p>
 
         <div className="flex flex-col gap-3">

@@ -78,7 +78,7 @@ function ChinaMap({ sites }) {
   return (
     <div style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: 16, marginBottom: 28 }}>
       <p style={{ fontSize: 11.5, color: COLORS.inkSoft, marginBottom: 10 }}>
-        実際の海岸線をもとにした中国の位置関係図です。<ruby>朱色<rt>しゅいろ</rt></ruby>の番号は下の一覧の城、白丸は主要都市の目安です。
+        実際の海岸線をもとにした中国の位置関係図です。朱色の番号は下の一覧の城、白丸は主要都市の目安です。
       </p>
       <svg viewBox="0 0 500 366" style={{ width: "100%", maxHeight: 400, display: "block", margin: "0 auto" }}>
         <path d={CHINA_OUTLINE} fill="#DCD3B8" stroke={COLORS.mist} strokeWidth="1.2" strokeLinejoin="round" />
@@ -139,8 +139,8 @@ export default function ChinaCastlesPage() {
           中国の城まとめ
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 28 }}>
-          中国史には、都を守る<ruby>城壁<rt>じょうへき</rt></ruby>や国境を分かつ長城、<ruby>要衝<rt>ようしょう</rt></ruby>を<ruby>扼<rt>やく</rt></ruby>する関所など、数多くの「城」が登場します。
-          ここでは、このサイトの年表に登場する<ruby>城郭<rt>じょうかく</rt></ruby>・関所を、由来となった時代とあわせて<ruby>紹介<rt>しょうかい</rt></ruby>します。
+          中国史には、都を守る城壁や国境を分かつ長城、<ruby>要衝<rt>ようしょう</rt></ruby>を<ruby>扼<rt>やく</rt></ruby>する関所など、数多くの「城」が登場します。
+          ここでは、このサイトの年表に登場する<ruby>城郭<rt>じょうかく</rt></ruby>・関所を、由来となった時代とあわせて紹介します。
         </p>
 
         <div className="relative">
@@ -208,7 +208,7 @@ export default function ChinaCastlesPage() {
 
         <section style={{ marginTop: 32 }}>
           <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
-            歴代王朝の都の移り変わりや、中国の世界遺産も別ページで<ruby>紹介<rt>しょうかい</rt></ruby>しています。
+            歴代王朝の都の移り変わりや、中国の世界遺産も別ページで紹介しています。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
             <NavButton href="/china-capitals" variant="solid">歴代王朝の都一覧を見る</NavButton>

@@ -27,7 +27,7 @@ export default function TerracottaArmyPage() {
         <BackToTopButton />
 
         <h1 style={{ fontFamily: "var(--font-serif), serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, marginBottom: 14 }}>
-          <ruby>兵馬俑<rt>へいばよう</rt></ruby>・<ruby>始皇帝陵<rt>しこうていりょう</rt></ruby>の<ruby>謎<rt>なぞ</rt></ruby>
+          <ruby>兵馬俑<rt>へいばよう</rt></ruby>・<ruby>始皇帝陵<rt>しこうていりょう</rt></ruby>の謎
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 28 }}>
           <RubyText text="中国を初めて統一した{{始皇帝|しこうてい}}が{{眠|ねむ}}るとされる{{巨大|きょだい}}な{{陵墓|りょうぼ}}と、その{{副葬|ふくそう}}として作られた{{兵馬俑|へいばよう}}には、今なお解明されていない{{謎|なぞ}}が数多く残されています。発見の{{経緯|けいい}}から本体の{{陵墓|りょうぼ}}が{{未発掘|みはっくつ}}のままである理由まで、まとめて{{紹介|しょうかい}}します。" />
@@ -50,7 +50,7 @@ export default function TerracottaArmyPage() {
 
         <section style={{ marginBottom: 28 }}>
           <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
-            一体ずつ顔が<ruby>違<rt>ちが</rt></ruby>う、8000体の兵士たち
+            一体ずつ顔が違う、8000体の兵士たち
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft }}>
             <RubyText text="{{発掘|はっくつ}}された3つの{{坑|こう}}からは、等身大の兵士や軍馬、戦車をかたどった{{陶製|とうせい}}の像が推定8000体以上見つかっている。{{驚|おどろ}}くべきことに、その顔つきはほぼすべてが異なっており、同じ顔は一つとしてないとされる。頭部や手足などのパーツを型を使って量産しつつ、最後は職人が一体ずつ手作業で仕上げたためと考えられている。当初はカラフルに{{彩色|さいしき}}されていたことも分かっており、{{発掘|はっくつ}}直後の{{兵馬俑|へいばよう}}には赤や緑、{{紫|むらさき}}などの{{鮮|あざ}}やかな色が残っていた。" />
@@ -59,7 +59,7 @@ export default function TerracottaArmyPage() {
 
         <section style={{ marginBottom: 28 }}>
           <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
-            なぜ<ruby>彩色<rt>さいしき</rt></ruby>はすぐに消えてしまうのか
+            なぜ彩色はすぐに消えてしまうのか
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft }}>
             <RubyText text="{{兵馬俑|へいばよう}}の{{彩色|さいしき}}は、地中の{{湿|しめ}}った{{環境|かんきょう}}で2000年以上安定して保たれてきたが、{{発掘|はっくつ}}によって空気にさらされると、わずか数分から数時間で{{乾燥|かんそう}}・収縮して{{剥落|はくらく}}してしまうことが分かっている。このため現在{{発掘済|はっくつず}}みの{{兵馬俑|へいばよう}}の多くは、素焼きに近いくすんだ色合いで展示されている。保存技術の確立が課題となっており、これは{{始皇帝陵|しこうていりょう}}本体の{{発掘|はっくつ}}が{{慎重|しんちょう}}に見送られている理由の一つでもある。" />
@@ -68,7 +68,7 @@ export default function TerracottaArmyPage() {
 
         <section style={{ marginBottom: 28 }}>
           <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
-            なぜ<ruby>陵墓<rt>りょうぼ</rt></ruby>の本体はいまだ<ruby>発掘<rt>はっくつ</rt></ruby>されないのか
+            なぜ<ruby>陵墓<rt>りょうぼ</rt></ruby>の本体はいまだ発掘されないのか
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft, marginBottom: 10 }}>
             <RubyText text="{{兵馬俑|へいばよう}}はあくまで{{始皇帝陵|しこうていりょう}}の周辺に配置された{{副葬|ふくそう}}（{{陪葬|ばいそう}}）にすぎず、{{始皇帝|しこうてい}}自身の遺体が納められているとされる{{巨大|きょだい}}な{{墳丘|ふんきゅう}}・地下{{宮殿|きゅうでん}}の本体は、現在もほとんど手つかずのまま残されている。歴史書『{{史記|しき}}』には、地下{{宮殿|きゅうでん}}の中に{{水銀|すいぎん}}で川や海を再現し、天井には天体（星空）が{{描|えが}}かれ、{{侵入者|しんにゅうしゃ}}を{{射抜|いぬ}}く{{仕掛|しか}}けの{{弩|ど}}（自動発射式の弓）まで備えられていた、という記述が残る。" />
@@ -89,7 +89,7 @@ export default function TerracottaArmyPage() {
 
         <section>
           <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
-            <ruby>兵馬俑<rt>へいばよう</rt></ruby>と<ruby>始皇帝陵<rt>しこうていりょう</rt></ruby>は1987年にユネスコの世界遺産に登録されている。<ruby>始皇帝<rt>しこうてい</rt></ruby>その人の<ruby>生涯<rt>しょうがい</rt></ruby>や、<ruby>秦<rt>しん</rt></ruby>が中国を統一した<ruby>経緯<rt>けいい</rt></ruby>については、年表・人物ページもあわせてご覧ください。
+            <ruby>兵馬俑<rt>へいばよう</rt></ruby>と<ruby>始皇帝陵<rt>しこうていりょう</rt></ruby>は1987年にユネスコの世界遺産に登録されている。<ruby>始皇帝<rt>しこうてい</rt></ruby>その人の生涯や、<ruby>秦<rt>しん</rt></ruby>が中国を統一した経緯については、年表・人物ページもあわせてご覧ください。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
             <NavButton href="/eras/qin" variant="solid"><ruby>秦<rt>しん</rt></ruby>の時代解説を見る</NavButton>

@@ -494,9 +494,9 @@ export default function SuitangBattlesPage() {
           <ruby>隋唐<rt>ずいとう</rt></ruby>・五代 合戦マップ
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 20 }}>
-          589年、<ruby>隋<rt>ずい</rt></ruby>が約270年ぶりに南北を統一してから、979年に<ruby>宋<rt>そう</rt></ruby>が五代十国の<ruby>分裂<rt>ぶんれつ</rt></ruby>を終わらせるまで——この約400年は、
-          世界<ruby>帝国<rt>ていこく</rt></ruby>・<ruby>唐<rt>とう</rt></ruby>の<ruby>繁栄<rt>はんえい</rt></ruby>と、安史の乱・黄巣の乱を経た<ruby>崩壊<rt>ほうかい</rt></ruby>、そして目まぐるしく王朝が入れ<ruby>替<rt>か</rt></ruby>わる五代十国の動乱が続いた時代です。
-          このページでは前半の「<ruby>隋<rt>ずい</rt></ruby>・<ruby>唐<rt>とう</rt></ruby>前期」と後半の「<ruby>唐<rt>とう</rt></ruby>後期・五代十国」に分けて、代表的な合戦とそこで<ruby>活躍<rt>かつやく</rt></ruby>した人物たちを地図とともに<ruby>紹介<rt>しょうかい</rt></ruby>します。
+          589年、<ruby>隋<rt>ずい</rt></ruby>が約270年ぶりに南北を統一してから、979年に<ruby>宋<rt>そう</rt></ruby>が五代十国の分裂を終わらせるまで——この約400年は、
+          世界帝国・<ruby>唐<rt>とう</rt></ruby>の繁栄と、安史の乱・黄巣の乱を経た崩壊、そして目まぐるしく王朝が入れ替わる五代十国の動乱が続いた時代です。
+          このページでは前半の「<ruby>隋<rt>ずい</rt></ruby>・<ruby>唐<rt>とう</rt></ruby>前期」と後半の「<ruby>唐<rt>とう</rt></ruby>後期・五代十国」に分けて、代表的な合戦とそこで活躍した人物たちを地図とともに紹介します。
         </p>
 
         <div className="flex items-center gap-2.5 flex-wrap mb-10" style={{ fontSize: 12.5 }}>
@@ -509,7 +509,7 @@ export default function SuitangBattlesPage() {
           </a>
           <span style={{ color: COLORS.mist }}>|</span>
           <a href="#border-map" style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
-            → 勢力図の<ruby>変遷<rt>へんせん</rt></ruby>へ
+            → 勢力図の変遷へ
           </a>
         </div>
 
@@ -521,7 +521,7 @@ export default function SuitangBattlesPage() {
             <ruby>隋<rt>ずい</rt></ruby>・<ruby>唐<rt>とう</rt></ruby>前期の合戦
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginBottom: 16 }}>
-            <ruby>隋<rt>ずい</rt></ruby>が南北を統一するも二代で<ruby>倒<rt>たお</rt></ruby>れ、代わった<ruby>唐<rt>とう</rt></ruby>が太宗のもとで草原から西域までを従える世界<ruby>帝国<rt>ていこく</rt></ruby>へと成長した時代。
+            <ruby>隋<rt>ずい</rt></ruby>が南北を統一するも二代で倒れ、代わった<ruby>唐<rt>とう</rt></ruby>が太宗のもとで草原から西域までを従える世界帝国へと成長した時代。
           </p>
         </section>
 
@@ -558,7 +558,7 @@ export default function SuitangBattlesPage() {
             <ruby>唐<rt>とう</rt></ruby>後期・五代十国の合戦
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginBottom: 16 }}>
-            安史の乱で<ruby>揺<rt>ゆ</rt></ruby>らいだ<ruby>唐<rt>とう</rt></ruby>が<ruby>藩鎮<rt>はんちん</rt></ruby>の自立と黄巣の乱によって<ruby>崩<rt>くず</rt></ruby>れ、<ruby>華北<rt>かほく</rt></ruby>では5つの王朝が、南方では十余りの国が興亡を<ruby>繰<rt>く</rt></ruby>り返した時代。
+            安史の乱で揺らいだ<ruby>唐<rt>とう</rt></ruby>が<ruby>藩鎮<rt>はんちん</rt></ruby>の自立と黄巣の乱によって崩れ、<ruby>華北<rt>かほく</rt></ruby>では5つの王朝が、南方では十余りの国が興亡を繰り返した時代。
           </p>
         </section>
 
@@ -582,10 +582,10 @@ export default function SuitangBattlesPage() {
 
         <section id="border-map" style={{ marginBottom: 12, scrollMarginTop: 16 }}>
           <h3 style={{ fontFamily: "var(--font-serif), serif", fontSize: 15, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
-            勢力図の<ruby>変遷<rt>へんせん</rt></ruby>アニメーション
+            勢力図の変遷アニメーション
           </h3>
           <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginBottom: 12 }}>
-            <ruby>隋<rt>ずい</rt></ruby>の統一、<ruby>唐<rt>とう</rt></ruby>の最盛期、安史の乱と<ruby>藩鎮<rt>はんちん</rt></ruby>の<ruby>割拠<rt>かっきょ</rt></ruby>、そして五代十国の<ruby>分裂<rt>ぶんれつ</rt></ruby>から<ruby>宋<rt>そう</rt></ruby>の統一まで——再生ボタンまたは年代タブで、勢力図が移り変わる様子を確認できます。
+            <ruby>隋<rt>ずい</rt></ruby>の統一、<ruby>唐<rt>とう</rt></ruby>の最盛期、安史の乱と<ruby>藩鎮<rt>はんちん</rt></ruby>の割拠、そして五代十国の分裂から<ruby>宋<rt>そう</rt></ruby>の統一まで——再生ボタンまたは年代タブで、勢力図が移り変わる様子を確認できます。
           </p>
           <SuitangBorderMap />
         </section>
@@ -600,7 +600,7 @@ export default function SuitangBattlesPage() {
         <section style={{ marginTop: 32 }}>
           <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
             <ruby>隋<rt>ずい</rt></ruby>による統一の前、約400年前の「三国時代」や、さらにさかのぼる「春秋・戦国時代」の合戦については、
-            あわせて下記の特集ページもご覧ください。<ruby>宋<rt>そう</rt></ruby>と<ruby>遼<rt>りょう</rt></ruby>の<ruby>攻防<rt>こうぼう</rt></ruby>を<ruby>描<rt>えが</rt></ruby>いた『<ruby>楊家将<rt>ようかしょう</rt></ruby>』の特集もあります。
+            あわせて下記の特集ページもご覧ください。<ruby>宋<rt>そう</rt></ruby>と<ruby>遼<rt>りょう</rt></ruby>の攻防を描いた『<ruby>楊家将<rt>ようかしょう</rt></ruby>』の特集もあります。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
             <NavButton href="/sanguo-battles" variant="solid">三国時代 合戦マップを見る</NavButton>

@@ -254,7 +254,7 @@ function ProductLinks({ title, products }) {
 function AffiliateNote() {
   return (
     <p style={{ fontSize: 10.5, color: COLORS.mist, marginTop: 10 }}>
-      ※ 一部のリンクはAmazonアソシエイトによるアフィリエイト広告を<ruby>含<rt>ふく</rt></ruby>みます。価格・在庫はリンク先でご確認ください
+      ※ 一部のリンクはAmazonアソシエイトによるアフィリエイト広告を含みます。価格・在庫はリンク先でご確認ください
     </p>
   );
 }
@@ -344,7 +344,7 @@ export default function KingdomPage() {
         </section>
 
         <section style={{ marginBottom: 36 }} id="characters">
-          <h2 style={sectionHeading}>登場人物は実在した？<ruby>史実<rt>しじつ</rt></ruby>との<ruby>比較<rt>ひかく</rt></ruby></h2>
+          <h2 style={sectionHeading}>登場人物は実在した？<ruby>史実<rt>しじつ</rt></ruby>との比較</h2>
           <p style={{ ...bodyText, marginBottom: 10 }}>
             <RubyText text="史実の出典は主に『{{史記|しき}}』です。人物ごとに、史書との{{距離|きょり}}を三つに分けて示しました。" />
           </p>
@@ -396,7 +396,7 @@ export default function KingdomPage() {
             })}
           </div>
           <p style={{ fontSize: 12, color: COLORS.inkSoft, marginTop: 12 }}>
-            政の<ruby>生涯<rt>しょうがい</rt></ruby>は<a href="/qinshihuang" style={linkStyle}><ruby>始皇帝<rt>しこうてい</rt></ruby>とは</a>、戦国時代の人物は<a href="/people/zhanguo" style={linkStyle}>戦国時代の人物一覧</a>で<ruby>詳<rt>くわ</rt></ruby>しく<ruby>紹介<rt>しょうかい</rt></ruby>しています。
+            政の生涯は<a href="/qinshihuang" style={linkStyle}><ruby>始皇帝<rt>しこうてい</rt></ruby>とは</a>、戦国時代の人物は<a href="/people/zhanguo" style={linkStyle}>戦国時代の人物一覧</a>で詳しく紹介しています。
           </p>
         </section>
 
@@ -436,7 +436,7 @@ export default function KingdomPage() {
             </table>
           </div>
           <p style={{ fontSize: 12, color: COLORS.inkSoft, marginTop: 12 }}>
-            <ruby>長平<rt>ちょうへい</rt></ruby>の戦いなど作中で語られる過去の戦いも含め、戦国時代の合戦は<a href="/chunqiu-zhanguo-battles" style={linkStyle}>春秋・戦国時代 合戦マップ</a>で地図とともに<ruby>紹介<rt>しょうかい</rt></ruby>しています。
+            <ruby>長平<rt>ちょうへい</rt></ruby>の戦いなど作中で語られる過去の戦いも含め、戦国時代の合戦は<a href="/chunqiu-zhanguo-battles" style={linkStyle}>春秋・戦国時代 合戦マップ</a>で地図とともに紹介しています。
           </p>
         </section>
 
@@ -530,7 +530,7 @@ export default function KingdomPage() {
           <h2 style={sectionHeading}>史実をもっと知りたい人へ</h2>
           <div className="p-4" style={card}>
             <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 15, fontWeight: 700, color: COLORS.ink }}>
-              『<ruby>始皇帝<rt>しこうてい</rt></ruby> 中華統一の思想 『キングダム』で<ruby>解<rt>と</rt></ruby>く中国大陸の<ruby>謎<rt>なぞ</rt></ruby>』
+              『<ruby>始皇帝<rt>しこうてい</rt></ruby> 中華統一の思想 『キングダム』で<ruby>解<rt>と</rt></ruby>く中国大陸の謎』
             </div>
             <div style={{ fontSize: 11, color: COLORS.gold, marginTop: 2 }}>
               <ruby>渡邉義浩<rt>わたなべよしひろ</rt></ruby> / 集英社新書（2019年）
@@ -541,7 +541,7 @@ export default function KingdomPage() {
             <ProductLinks title="始皇帝 中華統一の思想" products={BOOK_PRODUCTS} />
           </div>
           <p style={{ fontSize: 12, color: COLORS.inkSoft, marginTop: 12 }}>
-            『<ruby>史記<rt>しき</rt></ruby>』そのものについては<a href="/history-books" style={linkStyle}>中国の<ruby>歴史書<rt>れきししょ</rt></ruby></a>、戦国時代を描いた小説は<a href="/novelists" style={linkStyle}>中国史を題材にした日本人小説家一覧</a>で<ruby>紹介<rt>しょうかい</rt></ruby>しています。
+            『<ruby>史記<rt>しき</rt></ruby>』そのものについては<a href="/history-books" style={linkStyle}>中国の<ruby>歴史書<rt>れきししょ</rt></ruby></a>、戦国時代を描いた小説は<a href="/novelists" style={linkStyle}>中国史を題材にした日本人小説家一覧</a>で紹介しています。
           </p>
           <AffiliateNote />
         </section>
@@ -563,13 +563,13 @@ export default function KingdomPage() {
 
         <section style={{ marginTop: 32 }}>
           <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
-            『キングダム』の<ruby>舞台<rt>ぶたい</rt></ruby>になった時代の出来事や人物は、年表・人物ページもあわせてご覧ください。
+            『キングダム』の舞台になった時代の出来事や人物は、年表・人物ページもあわせてご覧ください。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
             <NavButton href="/eras/zhanguo" variant="solid">戦国時代の解説を見る</NavButton>
             <NavButton href="/qinshihuang" variant="outline"><ruby>始皇帝<rt>しこうてい</rt></ruby>とは</NavButton>
             <NavButton href="/chunqiu-zhanguo-battles" variant="outline">春秋・戦国 合戦マップ</NavButton>
-            <NavButton href="/terracotta-army" variant="outline"><ruby>兵馬俑<rt>へいばよう</rt></ruby>の<ruby>謎<rt>なぞ</rt></ruby></NavButton>
+            <NavButton href="/terracotta-army" variant="outline"><ruby>兵馬俑<rt>へいばよう</rt></ruby>の謎</NavButton>
           </div>
         </section>
 

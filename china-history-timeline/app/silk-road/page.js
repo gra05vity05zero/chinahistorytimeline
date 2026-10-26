@@ -435,7 +435,7 @@ function WorldRouteMap() {
         ))}
       </svg>
       <p style={{ fontSize: 10.5, color: COLORS.mist, marginTop: 8 }}>
-        <ruby>敦煌<rt>とんこう</rt></ruby>からカシュガルまでの中国国内区間は、下の<ruby>詳細<rt>しょうさい</rt></ruby>地図で<ruby>紹介<rt>しょうかい</rt></ruby>しています。
+        <ruby>敦煌<rt>とんこう</rt></ruby>からカシュガルまでの中国国内区間は、下の詳細地図で紹介しています。
       </p>
     </div>
   );
@@ -446,8 +446,8 @@ function SilkRoadMap({ stops }) {
     <div style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: 16, marginBottom: 28 }}>
       <p style={{ fontSize: 11.5, color: COLORS.inkSoft, marginBottom: 10 }}>
         実際の海岸線をもとにした中国の位置関係図です。<ruby>敦煌<rt>とんこう</rt></ruby>で天山南路（北道）と<ruby>崑崙山<rt>こんろんさん</rt></ruby>北路（南道）に分かれ、
-        いずれもパミール高原を<ruby>越<rt>こ</rt></ruby>えて中央アジアへと続きます。<ruby>朱色<rt>しゅいろ</rt></ruby>の番号は下の一覧のオアシス都市、
-        砂色の部分はタクラマカン<ruby>砂漠<rt>さばく</rt></ruby>、金色の破線は漢代以降「西域」と呼ばれた領域のおおよその目安です。
+        いずれもパミール高原を越えて中央アジアへと続きます。朱色の番号は下の一覧のオアシス都市、
+        砂色の部分はタクラマカン砂漠、金色の破線は漢代以降「西域」と呼ばれた領域のおおよその目安です。
       </p>
       <svg viewBox="0 0 500 366" style={{ width: "100%", maxHeight: 420, display: "block", margin: "0 auto" }}>
         <path d={CHINA_OUTLINE} fill="#DCD3B8" stroke={COLORS.mist} strokeWidth="1.2" strokeLinejoin="round" />
@@ -713,10 +713,10 @@ export default function SilkRoadPage() {
 
         <section style={{ marginTop: 40 }}>
           <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
-            シルクロードにまつわる<ruby>逸話<rt>いつわ</rt></ruby>
+            シルクロードにまつわる逸話
           </h2>
           <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginBottom: 16 }}>
-            交易路の<ruby>開拓者<rt>かいたくしゃ</rt></ruby>たちが残した<ruby>逸話<rt>いつわ</rt></ruby>から、20世紀の考古学的発見まで。シルクロードにまつわる、読んで面白いエピソードを集めました。
+            交易路の<ruby>開拓者<rt>かいたくしゃ</rt></ruby>たちが残した逸話から、20世紀の考古学的発見まで。シルクロードにまつわる、読んで面白いエピソードを集めました。
           </p>
           <div className="flex flex-col gap-3">
             {RESOLVED_ANECDOTES.map((a, i) => (
@@ -749,7 +749,7 @@ export default function SilkRoadPage() {
 
         <section style={{ marginTop: 32 }}>
           <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
-            シルクロードの起点となった歴代の都や、道中の関所・<ruby>城壁<rt>じょうへき</rt></ruby>も別ページで<ruby>紹介<rt>しょうかい</rt></ruby>しています。
+            シルクロードの起点となった歴代の都や、道中の関所・城壁も別ページで紹介しています。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
             <NavButton href="/china-capitals" variant="solid">歴代王朝の都一覧を見る</NavButton>

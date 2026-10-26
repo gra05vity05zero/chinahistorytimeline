@@ -33,7 +33,7 @@ export default function NotFound() {
           textDecoration: "none",
         }}
       >
-        年表に<ruby>戻<rt>もど</rt></ruby>る
+        年表に戻る
       </Link>
     </div>
   );

@@ -314,7 +314,7 @@ function YangMap() {
   return (
     <div style={{ ...card, padding: 16, marginBottom: 28 }}>
       <p style={{ fontSize: 11.5, color: COLORS.inkSoft, marginBottom: 10 }}>
-        実際の海岸線をもとにした<ruby>華北<rt>かほく</rt></ruby>の位置関係図です。<ruby>朱色<rt>しゅいろ</rt></ruby>の番号は下の各戦い、<ruby>斜線<rt>しゃせん</rt></ruby>の<ruby>範囲<rt>はんい</rt></ruby>は<ruby>燕雲十六州<rt>えんうんじゅうろくしゅう</rt></ruby>のおおよその<ruby>範囲<rt>はんい</rt></ruby>、金色の丸は<ruby>宋<rt>そう</rt></ruby>の都・<ruby>開封<rt>かいほう</rt></ruby>です。
+        実際の海岸線をもとにした<ruby>華北<rt>かほく</rt></ruby>の位置関係図です。朱色の番号は下の各戦い、<ruby>斜線<rt>しゃせん</rt></ruby>の範囲は<ruby>燕雲十六州<rt>えんうんじゅうろくしゅう</rt></ruby>のおおよその範囲、金色の丸は<ruby>宋<rt>そう</rt></ruby>の都・<ruby>開封<rt>かいほう</rt></ruby>です。
       </p>
       <svg viewBox="298 122 64 76" style={{ width: "100%", maxHeight: 460, display: "block", margin: "0 auto" }} role="img" aria-label="宋と遼の戦いの地図">
         <defs>
@@ -419,9 +419,9 @@ export default function YangjiajiangPage() {
         </p>
         <p style={{ ...bodyText, fontSize: 13.5, marginBottom: 28 }}>
           「<ruby>楊家将<rt>ようかしょう</rt></ruby>（ようかしょう）」とは、<ruby>北宋<rt>ほくそう</rt></ruby>の時代に北方の強国・<ruby>遼<rt>りょう</rt></ruby>と戦い続けた武門、<ruby>楊<rt>よう</rt></ruby>一族の物語です。
-          「<ruby>楊<rt>よう</rt></ruby>無敵」と<ruby>恐<rt>おそ</rt></ruby>れられた{" "}<RubyText text="{{楊業|ようぎょう}}" />{" "}と、その子{" "}<RubyText text="{{楊延昭|ようえんしょう}}" />{" "}らの史実の<ruby>活躍<rt>かつやく</rt></ruby>は、
-          民間の語り物や<ruby>芝居<rt>しばい</rt></ruby>を通じて広まり、明代には小説（演義）としてまとめられ、現代日本では<ruby>北方謙三<rt>きたかたけんぞう</rt></ruby>の小説『<ruby>楊家将<rt>ようかしょう</rt></ruby>』によって新たな読者を得ました。
-          このページでは、史実・演義・北方版の3つの視点から、<ruby>楊家将<rt>ようかしょう</rt></ruby>の<ruby>舞台<rt>ぶたい</rt></ruby>となった<ruby>宋<rt>そう</rt></ruby>と<ruby>遼<rt>りょう</rt></ruby>の戦いをたどります。
+          「<ruby>楊<rt>よう</rt></ruby>無敵」と恐れられた{" "}<RubyText text="{{楊業|ようぎょう}}" />{" "}と、その子{" "}<RubyText text="{{楊延昭|ようえんしょう}}" />{" "}らの史実の活躍は、
+          民間の語り物や芝居を通じて広まり、明代には小説（演義）としてまとめられ、現代日本では<ruby>北方謙三<rt>きたかたけんぞう</rt></ruby>の小説『<ruby>楊家将<rt>ようかしょう</rt></ruby>』によって新たな読者を得ました。
+          このページでは、史実・演義・北方版の3つの視点から、<ruby>楊家将<rt>ようかしょう</rt></ruby>の舞台となった<ruby>宋<rt>そう</rt></ruby>と<ruby>遼<rt>りょう</rt></ruby>の戦いをたどります。
         </p>
 
         <section style={{ marginBottom: 36 }} id="background">
@@ -506,7 +506,7 @@ export default function YangjiajiangPage() {
 
                     {b.portrait?.credit && (
                       <div style={{ fontSize: 9.5, color: COLORS.mist, marginTop: 4 }}>
-                        <ruby>肖像<rt>しょうぞう</rt></ruby>: <RubyText text={b.portrait.name} />（<RubyText text={b.portrait.credit} />）
+                        肖像: <RubyText text={b.portrait.name} />（<RubyText text={b.portrait.credit} />）
                       </div>
                     )}
 
@@ -561,10 +561,10 @@ export default function YangjiajiangPage() {
         </section>
 
         <section style={{ marginBottom: 36 }} id="history-vs-legend">
-          <h2 style={sectionHeading}>史実と演義の<ruby>違<rt>ちが</rt></ruby>い</h2>
+          <h2 style={sectionHeading}>史実と演義の違い</h2>
           <p style={{ ...bodyText, marginBottom: 12 }}>
             <ruby>楊家<rt>ようけ</rt></ruby>の物語は、元代の雑劇などを経て、明代に『<ruby>北宋志伝<rt>ほくそうしでん</rt></ruby>』『<ruby>楊家府<rt>ようかふ</rt></ruby>演義』といった小説（演義）にまとめられ、清代以降は京劇の人気演目にもなりました。
-            演義では史実が大きく<ruby>脚色<rt>きゃくしょく</rt></ruby>されており、よく知られた場面の多くは創作です。
+            演義では史実が大きく脚色されており、よく知られた場面の多くは創作です。
           </p>
           <div style={{ ...card, overflowX: "auto" }}>
             <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12, minWidth: 460 }}>
@@ -600,7 +600,7 @@ export default function YangjiajiangPage() {
         <section style={{ marginBottom: 36 }} id="kitakata">
           <h2 style={sectionHeading}><ruby>北方謙三<rt>きたかたけんぞう</rt></ruby>の『<ruby>楊家将<rt>ようかしょう</rt></ruby>』を読む順番</h2>
           <p style={{ ...bodyText, marginBottom: 12 }}>
-            <ruby>北方謙三<rt>きたかたけんぞう</rt></ruby>の<ruby>楊家将<rt>ようかしょう</rt></ruby>は2作。いずれも原典を<ruby>大幅<rt>おおはば</rt></ruby>に再構成したオリジナル色の強い作品で、演義とは異なる<ruby>楊家<rt>ようけ</rt></ruby>の物語として楽しめます。
+            <ruby>北方謙三<rt>きたかたけんぞう</rt></ruby>の<ruby>楊家将<rt>ようかしょう</rt></ruby>は2作。いずれも原典を大幅に再構成したオリジナル色の強い作品で、演義とは異なる<ruby>楊家<rt>ようけ</rt></ruby>の物語として楽しめます。
           </p>
           <div className="flex flex-col gap-3">
             {BOOKS.map((book) => (
@@ -647,7 +647,7 @@ export default function YangjiajiangPage() {
             ))}
           </div>
           <p style={{ fontSize: 10.5, color: COLORS.mist, marginTop: 8 }}>
-            ※ 一部のリンクはAmazonアソシエイトによるアフィリエイト広告を<ruby>含<rt>ふく</rt></ruby>みます
+            ※ 一部のリンクはAmazonアソシエイトによるアフィリエイト広告を含みます
           </p>
         </section>
 
@@ -668,7 +668,7 @@ export default function YangjiajiangPage() {
 
         <section style={{ marginTop: 32 }}>
           <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
-            <ruby>北宋<rt>ほくそう</rt></ruby>の出来事や人物の<ruby>詳<rt>くわ</rt></ruby>しい解説は、年表・人物ページもあわせてご覧ください。
+            <ruby>北宋<rt>ほくそう</rt></ruby>の出来事や人物の詳しい解説は、年表・人物ページもあわせてご覧ください。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
             <NavButton href="/eras/northernsong" variant="solid"><ruby>北宋<rt>ほくそう</rt></ruby>の時代解説を見る</NavButton>

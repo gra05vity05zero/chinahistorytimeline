@@ -404,7 +404,7 @@ function CapitalsMap() {
   return (
     <div style={{ ...card, backgroundColor: "#FBF8F0", padding: 16, marginBottom: 28 }}>
       <p style={{ fontSize: 11.5, color: COLORS.inkSoft, marginBottom: 10 }}>
-        実際の海岸線をもとにした中国の位置関係図です。<ruby>朱色<rt>しゅいろ</rt></ruby>の番号は下で紹介する古都（現在の都市）、白丸は主要都市の目安です。
+        実際の海岸線をもとにした中国の位置関係図です。朱色の番号は下で紹介する古都（現在の都市）、白丸は主要都市の目安です。
         番号を押すと各都市の紹介へ移動します。
       </p>
       <svg viewBox="0 0 500 366" style={{ width: "100%", maxHeight: 420, display: "block", margin: "0 auto" }} role="img" aria-label="古都の位置図">

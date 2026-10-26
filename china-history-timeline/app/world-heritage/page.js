@@ -85,7 +85,7 @@ function ChinaMap({ sites }) {
   return (
     <div style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: 16, marginBottom: 28 }}>
       <p style={{ fontSize: 11.5, color: COLORS.inkSoft, marginBottom: 10 }}>
-        実際の海岸線をもとにした中国の位置関係図です。<ruby>朱色<rt>しゅいろ</rt></ruby>の番号は下の一覧の世界遺産、白丸は主要都市の目安です。
+        実際の海岸線をもとにした中国の位置関係図です。朱色の番号は下の一覧の世界遺産、白丸は主要都市の目安です。
       </p>
       <svg viewBox="0 0 500 366" style={{ width: "100%", maxHeight: 400, display: "block", margin: "0 auto" }}>
         <path d={CHINA_OUTLINE} fill="#DCD3B8" stroke={COLORS.mist} strokeWidth="1.2" strokeLinejoin="round" />
@@ -147,7 +147,7 @@ export default function WorldHeritagePage() {
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 28 }}>
           中国には数多くのユネスコ世界遺産がありますが、その多くは特定の王朝の歴史と深く結びついています。
-          ここでは、このサイトの年表に登場する世界遺産を、由来となった時代とあわせて<ruby>紹介<rt>しょうかい</rt></ruby>します。
+          ここでは、このサイトの年表に登場する世界遺産を、由来となった時代とあわせて紹介します。
         </p>
 
         <div className="relative">
@@ -215,10 +215,10 @@ export default function WorldHeritagePage() {
 
         <section style={{ marginTop: 32 }}>
           <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
-            <ruby>兵馬俑<rt>へいばよう</rt></ruby>・<ruby>始皇帝陵<rt>しこうていりょう</rt></ruby>についての<ruby>詳<rt>くわ</rt></ruby>しい<ruby>謎解<rt>なぞと</rt></ruby>きは、別記事でも<ruby>紹介<rt>しょうかい</rt></ruby>しています。
+            <ruby>兵馬俑<rt>へいばよう</rt></ruby>・<ruby>始皇帝陵<rt>しこうていりょう</rt></ruby>についての詳しい<ruby>謎解<rt>なぞと</rt></ruby>きは、別記事でも紹介しています。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
-            <NavButton href="/terracotta-army" variant="solid"><ruby>兵馬俑<rt>へいばよう</rt></ruby>・<ruby>始皇帝陵<rt>しこうていりょう</rt></ruby>の<ruby>謎<rt>なぞ</rt></ruby>を見る</NavButton>
+            <NavButton href="/terracotta-army" variant="solid"><ruby>兵馬俑<rt>へいばよう</rt></ruby>・<ruby>始皇帝陵<rt>しこうていりょう</rt></ruby>の謎を見る</NavButton>
             <NavButton href="/eras" variant="outline">時代一覧を見る</NavButton>
           </div>
         </section>

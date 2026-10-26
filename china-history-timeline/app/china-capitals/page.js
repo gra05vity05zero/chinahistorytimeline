@@ -285,7 +285,7 @@ function ChinaMap({ capitals }) {
   return (
     <div style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: 16, marginBottom: 28 }}>
       <p style={{ fontSize: 11.5, color: COLORS.inkSoft, marginBottom: 10 }}>
-        実際の海岸線をもとにした中国の位置関係図です。<ruby>朱色<rt>しゅいろ</rt></ruby>の番号は下の一覧の都、白丸は主要都市の目安です。
+        実際の海岸線をもとにした中国の位置関係図です。朱色の番号は下の一覧の都、白丸は主要都市の目安です。
         西安・北京・南京・<ruby>洛陽<rt>らくよう</rt></ruby>周辺は複数の王朝が同じ都市を都としたため、番号が近接しています。
       </p>
       <svg viewBox="0 0 500 366" style={{ width: "100%", maxHeight: 420, display: "block", margin: "0 auto" }}>
@@ -347,8 +347,8 @@ export default function ChinaCapitalsPage() {
           中国 歴代王朝の都（古都）一覧
         </h1>
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 28 }}>
-          中国では王朝が交代するたびに、あるいは同じ王朝の中でも<ruby>遷都<rt>せんと</rt></ruby>によって、都の位置がたびたび移り変わってきました。
-          ここでは、夏の二里頭から<ruby>中華人民共和国<rt>ちゅうかじんみんきょうわこく</rt></ruby>の北京まで、歴代王朝の都を移り変わりの順に<ruby>紹介<rt>しょうかい</rt></ruby>します。
+          中国では王朝が交代するたびに、あるいは同じ王朝の中でも遷都によって、都の位置がたびたび移り変わってきました。
+          ここでは、夏の二里頭から<ruby>中華人民共和国<rt>ちゅうかじんみんきょうわこく</rt></ruby>の北京まで、歴代王朝の都を移り変わりの順に紹介します。
         </p>
 
         <div className="relative">
@@ -417,7 +417,7 @@ export default function ChinaCapitalsPage() {
 
         <section style={{ marginTop: 32 }}>
           <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
-            長安から西へ延びるシルクロードとその沿線のオアシス都市、<ruby>城壁<rt>じょうへき</rt></ruby>や関所など「城」に着目したまとめも別ページで<ruby>紹介<rt>しょうかい</rt></ruby>しています。
+            長安から西へ延びるシルクロードとその沿線のオアシス都市、城壁や関所など「城」に着目したまとめも別ページで紹介しています。
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
             <NavButton href="/ancient-capitals" variant="solid">古都の今と観光地を見る</NavButton>

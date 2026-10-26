@@ -148,7 +148,7 @@ export default function FourGreatNovelsPage() {
                   )}
                   {n.eraLink && (
                     <a href={n.eraLink} style={{ fontSize: 12, color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
-                      <ruby>舞台<rt>ぶたい</rt></ruby>となった時代を年表で読む →
+                      舞台となった時代を年表で読む →
                     </a>
                   )}
                 </div>
