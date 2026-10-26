@@ -397,7 +397,7 @@ export function A8Banner({ href, imgSrc, gifSrc, width, height }) {
           border="0"
           width={width}
           height={height}
-          alt=""
+          alt={alt}
           src={imgSrc}
           loading="lazy"
           decoding="async"
