@@ -82,6 +82,7 @@ const MISC_SECTIONS = [
       { href: "/suikoden", label: "{{水滸伝|すいこでん}}とは" },
       { href: "/saiyuki", label: "西遊記とは" },
       { href: "/koei-sangokushi", label: "ゲーム『{{三國志|さんごくし}}』シリーズ" },
+      { href: "/kingdom", label: "漫画『キングダム』と史実" },
       { href: "/novelists", label: "日本人小説家一覧" },
     ],
   },

@@ -36,6 +36,7 @@ export default function sitemap() {
     { url: `${SITE_URL}/suikoden`, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/saiyuki`, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/koei-sangokushi`, changeFrequency: "yearly", priority: 0.5 },
+    { url: `${SITE_URL}/kingdom`, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/funny-episodes`, changeFrequency: "yearly", priority: 0.5 },
   ];
 

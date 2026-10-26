@@ -588,6 +588,7 @@ export default function ChunqiuZhanguoBattlesPage() {
           <div className="flex items-center gap-2.5 flex-wrap">
             <NavButton href="/chuhan-battles" variant="solid"><ruby>楚漢戦争<rt>そかんせんそう</rt></ruby> 合戦マップを見る</NavButton>
             <NavButton href="/sanguo-battles" variant="outline">三国時代 合戦マップを見る</NavButton>
+            <NavButton href="/kingdom" variant="outline">漫画『キングダム』と史実</NavButton>
           </div>
         </section>
 

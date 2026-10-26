@@ -93,6 +93,7 @@ export default {
   related: [
     { href: "/chunqiu-zhanguo-battles", label: "春秋・戦国時代 合戦マップ", note: "長平の戦いなど主要な合戦を地図で" },
     { href: "/qinshihuang", label: "{{始皇帝|しこうてい}}とは", note: "{{秦|しん}}王{{政|せい}}の生涯と天下統一" },
+    { href: "/kingdom", label: "漫画『キングダム』と史実", note: "{{李信|りしん}}・{{李牧|りぼく}}・{{王翦|おうせん}}は実在した？" },
     { href: "/great-wall", label: "万里の長城とは", note: "戦国時代の長城から" },
     { href: "/idioms", label: "中国史から生まれた故事成語", note: "「完璧」「{{漁夫|ぎょふ}}の利」など" },
     { href: "/history-books", label: "中国の歴史書とは", note: "『戦国策』『史記』" },

@@ -86,6 +86,7 @@ export default {
     { href: "/qinshihuang", label: "{{始皇帝|しこうてい}}とは", note: "生涯・統一・死因の{{謎|なぞ}}まで" },
     { href: "/terracotta-army", label: "{{兵馬俑|へいばよう}}・{{始皇帝陵|しこうていりょう}}の{{謎|なぞ}}", note: "8000体の兵士像と未発掘の陵墓" },
     { href: "/great-wall", label: "万里の長城とは", note: "{{秦|しん}}の長城から明の長城まで" },
+    { href: "/kingdom", label: "漫画『キングダム』と史実", note: "統一までの戦いを史実と比較" },
     { href: "/chuhan-battles", label: "楚漢戦争 合戦マップ", note: "{{秦|しん}}の{{滅亡|めつぼう}}と{{項羽|こうう}}・{{劉邦|りゅうほう}}" },
     { href: "/emperors#qin", label: "{{秦|しん}}の歴代{{皇帝|こうてい}}", note: "{{始皇帝|しこうてい}}・{{二世皇帝|にせいこうてい}}" },
   ],

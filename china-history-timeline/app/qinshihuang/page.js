@@ -542,6 +542,7 @@ export default function QinShiHuangPage() {
           <div className="flex items-center gap-2.5 flex-wrap">
             <NavButton href="/eras/qin" variant="solid"><ruby>秦<rt>しん</rt></ruby>の時代解説を見る</NavButton>
             <NavButton href="/terracotta-army" variant="outline"><ruby>兵馬俑<rt>へいばよう</rt></ruby>・<ruby>始皇帝陵<rt>しこうていりょう</rt></ruby>の<ruby>謎<rt>なぞ</rt></ruby>を見る</NavButton>
+            <NavButton href="/kingdom" variant="outline">漫画『キングダム』と史実</NavButton>
           </div>
         </section>
 
