@@ -77,6 +77,7 @@ const MISC_SECTIONS = [
     links: [
       { href: "/four-inventions", label: "四大発明" },
       { href: "/four-great-novels", label: "四大名著" },
+      { href: "/four-beauties", label: "中国四大美女" },
       { href: "/history-books", label: "中国の歴史書" },
       { href: "/yangjiajiang", label: "{{楊家将|ようかしょう}}とは" },
       { href: "/suikoden", label: "{{水滸伝|すいこでん}}とは" },

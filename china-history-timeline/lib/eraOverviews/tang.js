@@ -146,5 +146,6 @@ export default {
     { href: "/dynasty-territory-map", label: "歴代王朝の領土（版図）の{{変遷|へんせん}}", note: "最大版図と{{都護府|とごふ}}の広がり" },
     { href: "/china-capitals", label: "歴代王朝の都一覧", note: "{{長安|ちょうあん}}・{{洛陽|らくよう}}の位置と歴史" },
     { href: "/saiyuki", label: "西遊記とは", note: "{{玄奘|げんじょう}}のインド旅をもとにした物語" },
+    { href: "/four-beauties", label: "中国四大美女とは", note: "{{玄宗|げんそう}}に愛された{{楊貴妃|ようきひ}}" },
   ],
 };

@@ -119,5 +119,6 @@ export default {
     { href: "/emperors#westernhan", label: "前漢の歴代{{皇帝|こうてい}}", note: "高祖から{{孺子嬰|じゅしえい}}まで" },
     { href: "/history-books", label: "中国の歴史書とは", note: "司馬遷の『史記』" },
     { href: "/china-capitals", label: "歴代王朝の都一覧", note: "漢の{{長安|ちょうあん}}" },
+    { href: "/four-beauties", label: "中国四大美女とは", note: "{{匈奴|きょうど}}に{{嫁|とつ}}いだ{{王昭君|おうしょうくん}}" },
   ],
 };

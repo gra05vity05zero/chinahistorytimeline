@@ -96,5 +96,6 @@ export default {
     { href: "/idioms", label: "中国史から生まれた故事成語", note: "「{{臥薪嘗胆|がしんしょうたん}}」「{{呉越同舟|ごえつどうしゅう}}」など" },
     { href: "/history-books", label: "中国の歴史書とは", note: "『春秋』『{{春秋左氏伝|しゅんじゅうさしでん}}』" },
     { href: "/china-castles", label: "中国の城まとめ", note: "諸侯の都城" },
+    { href: "/four-beauties", label: "中国四大美女とは", note: "{{呉王|ごおう}}{{夫差|ふさ}}に送られた{{西施|せいし}}" },
   ],
 };
