@@ -3,7 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ERAS, COLORS, ADSENSE_SLOT_TIMELINE } from "@/lib/data";
-import { SealMark, EventCard, AdSenseSlot, MiscLinksSection } from "@/components/Shared";
+import { SealMark, AdSenseSlot, MiscLinksSection } from "@/components/Shared";
+import { TimelineEvent, TimelineMilestone, yearNumber, formatYear } from "@/components/EraOverview";
 import { SiteTitle } from "@/components/SiteHeader";
 import HeroImage from "@/components/HeroImage";
 import { RubyText } from "@/components/Ruby";
@@ -31,7 +32,30 @@ const INTRO_PARAGRAPHS = [
   "このサイトでは、中国の歴史を王朝ごとに区切った年表で、主な出来事・人物・文化を年代順に解説しています。気になる出来事をタップすると、背景や{{影響|えいきょう}}、関連する人物・{{史跡|しせき}}をくわしく読めます。",
 ];
 
-export default function Timeline() {
+// 年表の縦線は王朝の印（40px角）の中心を通す
+const LINE_X = 20;
+const RAIL = 56;
+
+// 出来事と補足項目（milestones）を年順に並べる。時代ページの年表と同じ並べ方
+function eraItems(era, milestones) {
+  return [
+    ...era.events.map((ev, order) => ({ kind: "event", sortYear: yearNumber(ev.year), order, event: ev })),
+    ...milestones.map((m, i) => ({ kind: "milestone", year: formatYear(m.year), sortYear: yearNumber(m.year), order: 1000 + i, text: m.text })),
+  ].sort((a, b) => a.sortYear - b.sortYear || a.order - b.order);
+}
+
+// 前の項目からの年数に応じて間をあける（対数で伸ばし、数千年の差でも上限で止める）
+function gapHeight(years) {
+  return years < 2 ? 0 : Math.min(84, Math.round(Math.log2(years) * 8));
+}
+
+function YearGap({ years }) {
+  const height = gapHeight(years);
+  if (!height) return null;
+  return <li aria-hidden style={{ height }} />;
+}
+
+export default function Timeline({ milestonesByEra = {} }) {
   const [activeEra, setActiveEra] = useState(ERAS[0].id);
   const [navOpen, setNavOpen] = useState(false);
   const sectionRefs = useRef({});
@@ -186,34 +210,48 @@ export default function Timeline() {
       </section>
 
       <div className="relative max-w-2xl mx-auto px-5 pb-24">
-        <div className="absolute top-0 bottom-0" style={{ left: 20, width: 2, backgroundColor: COLORS.mist }} />
+        <div className="relative">
+          <span aria-hidden className="absolute" style={{ left: LINE_X - 1, top: 8, bottom: 8, width: 2, backgroundColor: COLORS.mist }} />
 
-        {ERAS.map((era) => (
-          <div key={era.id} ref={(el) => (sectionRefs.current[era.id] = el)} data-era-id={era.id} className="relative pl-14 pt-2 pb-8">
-            <div className="absolute left-0 top-2">
-              <SealMark char={era.seal} active={era.id === activeEra} />
-            </div>
-            <div className="mb-3">
-              <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 20, fontWeight: 700, color: COLORS.ink }}><RubyText text={era.name} /></div>
-              <div style={{ fontSize: 12, color: COLORS.gold, fontFamily: "var(--font-serif), serif" }}><RubyText text={era.period} /></div>
-              {era.description && (
-                <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginTop: 8 }}><RubyText text={era.description} /></p>
-              )}
-              <Link
-                href={`/eras/${era.id}`}
-                className="inline-block mt-2"
-                style={{ fontSize: 12.5, color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}
-              >
-                <RubyText text={era.name} />とはどんな時代？ →
-              </Link>
-            </div>
-            <div>
-              {era.events.map((ev, i) => (
-                <EventCard key={i} event={ev} onClick={() => rememberEra(era.id)} />
-              ))}
-            </div>
-          </div>
-        ))}
+          {ERAS.map((era) => {
+            const items = eraItems(era, milestonesByEra[era.id] || []);
+            return (
+              <div key={era.id} ref={(el) => (sectionRefs.current[era.id] = el)} data-era-id={era.id} className="relative pt-2 pb-10">
+                <div className="relative mb-4" style={{ paddingLeft: RAIL }}>
+                  <div className="absolute left-0 top-0">
+                    <SealMark char={era.seal} active={era.id === activeEra} />
+                  </div>
+                  <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 20, fontWeight: 700, color: COLORS.ink }}><RubyText text={era.name} /></div>
+                  <div style={{ fontSize: 12, color: COLORS.gold, fontFamily: "var(--font-serif), serif" }}><RubyText text={era.period} /></div>
+                  {era.description && (
+                    <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginTop: 8 }}><RubyText text={era.description} /></p>
+                  )}
+                  <Link
+                    href={`/eras/${era.id}`}
+                    className="inline-block mt-2"
+                    style={{ fontSize: 12.5, color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}
+                  >
+                    <RubyText text={era.name} />とはどんな時代？ →
+                  </Link>
+                </div>
+                <ol className="flex flex-col gap-3">
+                  {items.map((it, i) => {
+                    const key = it.kind === "event" ? it.event.slug : `m-${it.order}`;
+                    const gap = i > 0 ? it.sortYear - items[i - 1].sortYear : 0;
+                    return [
+                      gap >= 2 && <YearGap key={`gap-${key}`} years={gap} />,
+                      it.kind === "event" ? (
+                        <TimelineEvent key={key} item={it} onClick={() => rememberEra(era.id)} lineX={LINE_X} rail={RAIL} />
+                      ) : (
+                        <TimelineMilestone key={key} item={it} lineX={LINE_X} rail={RAIL} />
+                      ),
+                    ];
+                  })}
+                </ol>
+              </div>
+            );
+          })}
+        </div>
       </div>
 
       <div className="max-w-2xl mx-auto px-5 pb-10">

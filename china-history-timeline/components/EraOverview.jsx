@@ -37,7 +37,7 @@ export function yearNumber(year) {
 }
 
 // 数値の年を「前221」「618」の形で表示する
-function formatYear(n) {
+export function formatYear(n) {
   return n < 0 ? `前${-n}` : `${n}`;
 }
 
@@ -77,17 +77,18 @@ function buildTimeline(era, overview) {
 const LINE_X = 11; // 縦線の中心位置（px）
 const RAIL = 34; // 縦線から本文までの左余白（px）
 
-function TimelineEvent({ item }) {
+// lineX・rail はトップページの年表（王朝の印に縦線を合わせる）で差し替える。onClick はスクロール復元用の記録に使う
+export function TimelineEvent({ item, onClick, lineX = LINE_X, rail = RAIL }) {
   const ev = item.event;
   const cat = CATEGORY_STYLE[ev.category] || CATEGORY_STYLE["文化"];
   return (
-    <li className="relative" style={{ paddingLeft: RAIL }}>
+    <li className="relative" style={{ paddingLeft: rail }}>
       <span
         aria-hidden
         className="absolute"
-        style={{ left: LINE_X - 6, top: 14, width: 12, height: 12, borderRadius: "50%", backgroundColor: cat.color, boxShadow: `0 0 0 3px ${COLORS.paper}` }}
+        style={{ left: lineX - 6, top: 14, width: 12, height: 12, borderRadius: "50%", backgroundColor: cat.color, boxShadow: `0 0 0 3px ${COLORS.paper}` }}
       />
-      <Link href={`/events/${ev.slug}`} className="block group">
+      <Link href={`/events/${ev.slug}`} onClick={onClick} className="block group">
         <div className="px-4 py-3 transition-all duration-200 group-hover:shadow-sm" style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8" }}>
           <div className="flex items-baseline justify-between gap-3">
             <span style={{ ...serif, fontSize: 13, fontWeight: 700, color: cat.color }}>
@@ -121,13 +122,13 @@ function TimelineEvent({ item }) {
   );
 }
 
-function TimelineMilestone({ item }) {
+export function TimelineMilestone({ item, lineX = LINE_X, rail = RAIL }) {
   return (
-    <li className="relative flex gap-3" style={{ paddingLeft: RAIL }}>
+    <li className="relative flex gap-3" style={{ paddingLeft: rail }}>
       <span
         aria-hidden
         className="absolute"
-        style={{ left: LINE_X - 4, top: 7, width: 8, height: 8, borderRadius: "50%", backgroundColor: COLORS.paper, border: `2px solid ${COLORS.mist}` }}
+        style={{ left: lineX - 4, top: 7, width: 8, height: 8, borderRadius: "50%", backgroundColor: COLORS.paper, border: `2px solid ${COLORS.mist}` }}
       />
       <span className="shrink-0" style={{ ...serif, minWidth: 40, fontSize: 12.5, color: COLORS.gold, fontWeight: 700 }}>
         {item.year}
