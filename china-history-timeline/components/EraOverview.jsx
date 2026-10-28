@@ -26,7 +26,7 @@ export function SectionHeading({ id, kicker, children }) {
 
 // "630s"・"c. 7000 BC"・"AD 23"・"4世紀 BC" のような年表記から、並べ替え・時代区分の判定用に数値の年を取り出す。
 // 紀元前は負の数にする（年表データ・milestones・時代区分の start/end も紀元前は負の数で書く）
-function yearNumber(year) {
+export function yearNumber(year) {
   if (typeof year === "number") return year;
   const str = String(year);
   const m = str.match(/\d+/);
@@ -43,7 +43,7 @@ function formatYear(n) {
 
 // 出来事データの年表記（"c. 2070 BC"・"356 BC"・"AD 23"・"4世紀 BC"）を、
 // milestones と同じ「前2070頃」「前356」「23」「前4世紀」の形にそろえて表示する
-function displayEventYear(year) {
+export function displayEventYear(year) {
   const str = String(year).trim();
   const approx = /^c\.\s*/.test(str);
   const bc = /\s*BC$/.test(str);

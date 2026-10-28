@@ -4,6 +4,7 @@ import Link from "next/link";
 import { COLORS, CATEGORY_STYLE, HERITAGE_TYPES, resolveMediaUrl, stripRuby } from "@/lib/constants";
 import { SealMark, HeritageGrid, A8AdBlock, MiscLinksSection, JapanTimelineCallout } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
+import { DramaBacklinks } from "@/components/DramaBlocks";
 
 const MEDIA_TYPES = [
   { key: "movie", label: "映画・ドラマ" },
@@ -29,7 +30,7 @@ function isSuitangEvent(era) {
   return era.id === "sui" || era.id === "tang" || era.id === "wudai";
 }
 
-export default function EventDetail({ event, era, prev, next, japanTimeline }) {
+export default function EventDetail({ event, era, prev, next, japanTimeline, dramas }) {
   const cat = CATEGORY_STYLE[event.category] || CATEGORY_STYLE["文化"];
 
   return (
@@ -198,6 +199,8 @@ export default function EventDetail({ event, era, prev, next, japanTimeline }) {
             </div>
           </div>
         )}
+
+        <DramaBacklinks heading="この出来事が描かれたドラマ" dramas={dramas} />
 
         {/* 広告は本文の後ろにこの1ブロックだけ置く（史跡があれば海外ツアー、関連作品があればAudible） */}
         <A8AdBlock

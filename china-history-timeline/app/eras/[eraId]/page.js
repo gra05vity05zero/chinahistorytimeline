@@ -6,6 +6,8 @@ import { EraOverview } from "@/components/EraOverview";
 import { SealMark, EventListItem, BackToTopButton, MiscLinksSection, JapanTimelineCallout } from "@/components/Shared";
 import { japanChinaTimelineHref, japaneseErasDuring } from "@/lib/japanChinaTimeline";
 import { RubyText } from "@/components/Ruby";
+import { getDramaIndex, toDramaCard } from "@/lib/dramas";
+import { DramaBacklinks } from "@/components/DramaBlocks";
 
 export function generateStaticParams() {
   return ERAS.map((era) => ({ eraId: era.id }));
@@ -50,6 +52,9 @@ export default function EraEventsPage({ params }) {
   if (!era) notFound();
   const alias = ERA_ALIASES[era.id];
   const overview = getEraOverview(era.id);
+  const dramaBlock = (
+    <DramaBacklinks heading="この時代を描いたドラマ" dramas={(getDramaIndex().byEra.get(era.id) || []).map(toDramaCard)} />
+  );
   const japanCallout = (
     <JapanTimelineCallout eraName={era.name} href={japanChinaTimelineHref(era.id)} japaneseEras={japaneseErasDuring(era.id)} />
   );
@@ -104,6 +109,8 @@ export default function EraEventsPage({ params }) {
             nextEra={ERAS[idx + 1]}
             japanCallout={japanCallout}
           />
+
+          {dramaBlock}
 
           <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
             <MiscLinksSection />
@@ -165,6 +172,8 @@ export default function EraEventsPage({ params }) {
           </Link>
           {japanCallout}
         </div>
+
+        {dramaBlock}
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <MiscLinksSection />

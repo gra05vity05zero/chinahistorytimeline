@@ -1,4 +1,5 @@
 import { ERAS, SITE_URL, getEraFigures, personSlug } from "@/lib/data";
+import { DRAMAS } from "@/lib/dramas";
 
 export default function sitemap() {
   // lastModifiedは付けない。ビルド日時（new Date()）を入れると毎デプロイで全ページが
@@ -39,7 +40,16 @@ export default function sitemap() {
     { url: `${SITE_URL}/koei-sangokushi`, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/kingdom`, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/funny-episodes`, changeFrequency: "yearly", priority: 0.5 },
+    { url: `${SITE_URL}/dramas`, changeFrequency: "monthly", priority: 0.6 },
   ];
+
+  // ドラマの解説ページは本文の更新日（updatedAt）を持っているので、ここだけlastModifiedを付ける
+  const dramaRoutes = DRAMAS.map((d) => ({
+    url: `${SITE_URL}/dramas/${d.slug}`,
+    lastModified: d.updatedAt,
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
 
   const eventRoutes = ERAS.flatMap((era) =>
     era.events.map((event) => ({
@@ -73,5 +83,5 @@ export default function sitemap() {
       }))
   );
 
-  return [...staticRoutes, ...eventRoutes, ...peopleRoutes, ...eraRoutes, ...personRoutes];
+  return [...staticRoutes, ...eventRoutes, ...peopleRoutes, ...eraRoutes, ...personRoutes, ...dramaRoutes];
 }

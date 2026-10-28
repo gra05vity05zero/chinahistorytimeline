@@ -24,7 +24,7 @@ export function SiteTitle({ headingAs: Heading = "div" }) {
   );
 }
 
-// 出来事・人物ページ用の小さいヘッダー。H1（出来事名・人物名）がすぐ見えるよう、サイト名とトップへのリンクだけにする
+// 出来事・人物・ドラマ解説ページ用の小さいヘッダー。H1（出来事名・人物名・作品名）がすぐ見えるよう、サイト名とトップへのリンクだけにする
 function CompactSiteHeader() {
   return (
     <header className="px-5 py-2.5 flex items-center" style={{ backgroundColor: COLORS.paper, borderBottom: `1px solid ${COLORS.mist}` }}>
@@ -43,7 +43,7 @@ function CompactSiteHeader() {
 export default function SiteHeader() {
   const pathname = usePathname();
   if (pathname === "/") return null;
-  if (pathname.startsWith("/events/") || pathname.startsWith("/people/")) return <CompactSiteHeader />;
+  if (pathname.startsWith("/events/") || pathname.startsWith("/people/") || pathname.startsWith("/dramas/")) return <CompactSiteHeader />;
   return (
     <header className="px-6 pt-8 pb-6 text-center" style={{ backgroundColor: COLORS.paper, borderBottom: `1px solid ${COLORS.mist}` }}>
       <SiteTitle />
