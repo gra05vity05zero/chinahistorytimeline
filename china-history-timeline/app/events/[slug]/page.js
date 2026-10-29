@@ -9,16 +9,38 @@ export function generateStaticParams() {
   return ERAS.flatMap((era) => era.events.map((ev) => ({ slug: ev.slug })));
 }
 
+// 検索結果のスニペットに収まるよう、本文の冒頭を文の区切りで切り出す（目安100字）
+function leadSentences(text, maxLength = 100) {
+  const sentences = text.match(/[^。]+。?/g) || [];
+  let lead = "";
+  for (const s of sentences) {
+    if ((lead + s).length > maxLength) break;
+    lead += s;
+  }
+  return lead || `${text.slice(0, maxLength - 1)}…`;
+}
+
 export function generateMetadata({ params }) {
   const found = findEventBySlug(params.slug);
   if (!found) return {};
   const { event, era } = found;
   const title = stripRuby(event.title);
-  const description = stripRuby(event.summary);
-  const pageTitle = `${title}（${event.year}）`;
+  const eraName = stripRuby(era.name);
+  // 「c. 1300 BC」→「前1300年頃」、「AD 8」→「8年」、「630s」→「630年代」。「12世紀」などはそのまま
+  const yearLabel = event.year
+    .replace(/^c\. (.+)$/, "$1頃")
+    .replace(/^(\S+) BC/, "前$1")
+    .replace(/^AD /, "")
+    .replace(/^(\d+)-(\d+)$/, "$1〜$2")
+    .replace(/^(\d+)s$/, "$1年代")
+    .replace(/\d(?=頃|$)/, "$&年");
+  // 「〇〇が起きた時の王朝は？」「〇〇 日本は何時代」といった検索に、タイトルと説明文の時点で答える
+  const pageTitle = `${title}（${yearLabel}）｜${eraName}の出来事をわかりやすく解説`;
+  const japaneseEras = japaneseErasDuring(era.id).map(stripRuby);
+  const description =
+    `${yearLabel}、${eraName}の時代の出来事。${leadSentences(stripRuby(event.summary))}` +
+    (japaneseEras.length > 0 ? `同じ頃の日本は${japaneseEras.join("・")}。` : "");
   const path = `/events/${event.slug}`;
-  // 「1043 BC」→「前1043年」、「618」→「618年」。「12世紀」などはそのまま
-  const yearLabel = event.year.replace(/^(\d+) BC$/, "前$1").replace(/\d$/, "$&年");
   const image = { title, kicker: `${stripRuby(era.name)} ・ ${yearLabel}`, seal: era.seal };
   return {
     title: pageTitle,

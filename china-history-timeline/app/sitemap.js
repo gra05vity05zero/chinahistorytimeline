@@ -7,7 +7,6 @@ export default function sitemap() {
   const staticRoutes = [
     { url: `${SITE_URL}/`, changeFrequency: "monthly", priority: 1 },
     { url: `${SITE_URL}/about`, changeFrequency: "yearly", priority: 0.3 },
-    { url: `${SITE_URL}/privacy`, changeFrequency: "yearly", priority: 0.1 },
     { url: `${SITE_URL}/people`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${SITE_URL}/eras`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${SITE_URL}/mnemonics`, changeFrequency: "yearly", priority: 0.5 },
