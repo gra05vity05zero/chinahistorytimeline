@@ -21,9 +21,12 @@ export function generateMetadata({ params }) {
   const path = `/eras/${era.id}`;
   // 解説コンテンツ登録済みの王朝は「〇〇とはどんな時代？」の解説ページとして扱う
   const overview = getEraOverview(era.id);
+  // 「唐 日本何時代」のような検索に説明文の時点で答えるため、同じ頃の日本の時代を末尾に添える
+  const japaneseEras = japaneseErasDuring(era.id).map(stripRuby);
+  const japanNote = japaneseEras.length > 0 ? `同じ頃の日本は${japaneseEras.join("・")}。` : "";
   if (overview) {
     const title = stripRuby(overview.title);
-    const description = overview.metaDescription;
+    const description = overview.metaDescription + japanNote;
     const image = { title: `${eraName}とはどんな時代？`, subtitle: alias || "", kicker: era.period, seal: era.seal };
     return {
       title,
@@ -36,7 +39,7 @@ export function generateMetadata({ params }) {
   const title = `${eraName}の出来事一覧${alias ? `（${alias}）` : ""}`;
   const description = `${eraName}（${era.period}）に起きた出来事を年表順にまとめて紹介します。${
     alias ? `${alias}` : eraName
-  }の歴史について知りたい方はこちら。`;
+  }の歴史について知りたい方はこちら。${japanNote}`;
   const image = { title: `${eraName}の出来事一覧`, subtitle: alias || "", kicker: era.period, seal: era.seal };
   return {
     title,

@@ -1,15 +1,16 @@
 import Link from "next/link";
 import { ERAS, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { ROWS, CN_JUMPS, JP_JUMPS, hasAnchor } from "@/lib/japanChinaTimeline";
+import { ROWS, CN_JUMPS, JP_JUMPS, ERA_CORRESPONDENCE, hasAnchor } from "@/lib/japanChinaTimeline";
 import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { TimelineIcon } from "@/components/TimelineIcons";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 
-const title = "日本史・中国史 対照年表";
-const fullTitle = `日本史・中国史 対照年表 | ${SITE_NAME}`;
+// 「中国王朝 年表 日本」「唐 日本何時代」のような検索が多いため、王朝と日本の時代の対応表があることをタイトルにも出す
+const title = "日本史・中国史 対照年表｜中国の王朝と日本の時代 対応表";
+const fullTitle = `${title} | ${SITE_NAME}`;
 const description =
-  "北京原人・黄河文明・長江文明・縄文時代から現代まで、中国の王朝の出来事と日本史の出来事を、実際の年代順に1本の年表として並べました。遣隋使・遣唐使、元寇、日明貿易、日清戦争など、日中の関わりが深い出来事もひと目で分かります。";
+  "唐の頃の日本は飛鳥〜平安時代、明の頃は室町〜江戸時代。中国の王朝ごとに同じ頃の日本が何時代かが分かる早見表と、中国と日本の出来事を年代順に1本に並べた対照年表で、遣隋使・元寇・日清戦争など日中の関わりもひと目で分かります。";
 
 export const metadata = {
   title,
@@ -133,6 +134,44 @@ function EraJumpNav() {
   );
 }
 
+// 中国の王朝と同じ頃の日本の時代の早見表。王朝名は時代解説へ、日本の時代は下の対照年表の該当箇所へ進める
+function EraCorrespondenceTable() {
+  const cell = { padding: "6px 6px", verticalAlign: "top" };
+  return (
+    <section className="mb-6">
+      <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 18, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
+        中国の王朝と日本の時代 対応表
+      </h2>
+      <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12.5, color: COLORS.inkSoft }}>
+        <thead>
+          <tr style={{ borderBottom: `1px solid ${COLORS.mist}`, textAlign: "left" }}>
+            <th style={cell}>中国の王朝</th>
+            <th style={cell}>年代</th>
+            <th style={cell}>同じ頃の日本</th>
+          </tr>
+        </thead>
+        <tbody>
+          {ERA_CORRESPONDENCE.map((row) => (
+            <tr key={row.eraId} style={{ borderBottom: "1px solid #E6DEC6" }}>
+              <td style={{ ...cell, fontWeight: 700 }}>
+                <Link href={`/eras/${row.eraId}`} style={LINK_STYLE}>
+                  <RubyText text={row.name} />
+                </Link>
+              </td>
+              <td style={{ ...cell, whiteSpace: "nowrap" }}>{row.period}</td>
+              <td style={cell}>
+                <a href={row.timelineHref} style={{ color: COLORS.ink }}>
+                  <RubyText text={row.japaneseEras.join("・")} />
+                </a>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+  );
+}
+
 export default function JapanChinaTimelinePage() {
   return (
     <div style={{ backgroundColor: COLORS.paper, minHeight: "100%" }}>
@@ -146,6 +185,8 @@ export default function JapanChinaTimelinePage() {
           日本と中国では時代区分の年代がそれぞれ異なるため、無理に時代同士を横並びにせず、中国の出来事と日本の出来事を実際の年代順に1本の年表として並べました。
           <ruby>遣隋使<rt>けんずいし</rt></ruby>や<ruby>元寇<rt>げんこう</rt></ruby>のように、両国の出来事が近い時期に重なっていることも見えてきます。中国側の出来事や王朝名、日本側の「中国側：」から、それぞれの詳しい解説へ進めます。
         </p>
+
+        <EraCorrespondenceTable />
 
         <EraJumpNav />
 

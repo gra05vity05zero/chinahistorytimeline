@@ -84,6 +84,7 @@ const CHINA_EVENTS = [
   { eraId: "roc", sortYear: 1937, yearLabel: "1937年", event: "日中戦争が{{勃発|ぼっぱつ}}", era: "{{中華民国|ちゅうかみんこく}}", href: findEventHref("roc", "日中戦争の勃発") },
   { eraId: "prc", sortYear: 1949, yearLabel: "1949年", event: "{{中華人民共和国|ちゅうかじんみんきょうわこく}}が建国", era: "{{中華人民共和国|ちゅうかじんみんきょうわこく}}", href: findEventHref("prc", "中華人民共和国の建国") },
   { eraId: "prc", sortYear: 1978, yearLabel: "1978年", event: "改革開放政策が始まる", era: "{{中華人民共和国|ちゅうかじんみんきょうわこく}}", href: findEventHref("prc", "改革開放") },
+  { eraId: "prc", sortYear: 2008, yearLabel: "2008年", event: "北京オリンピックが{{開催|かいさい}}される", era: "{{中華人民共和国|ちゅうかじんみんきょうわこく}}", href: findEventHref("prc", "北京オリンピック") },
 ];
 
 const JAPAN_EVENTS = [
@@ -130,6 +131,8 @@ const JAPAN_EVENTS = [
   { eraId: "showa", sortYear: 1941, yearLabel: "1941年", event: "太平洋戦争がはじまる", era: "昭和時代" },
   { eraId: "showa", sortYear: 1945, yearLabel: "1945年", event: "日本が敗戦", era: "昭和時代", china: eventLink("roc", "日本の敗戦") },
   { eraId: "showa", sortYear: 1972, yearLabel: "1972年", event: "日中国交正常化", era: "昭和時代", china: eventLink("prc", "米中接近") },
+  { eraId: "heisei", sortYear: 1989, yearLabel: "1989年", event: "{{昭和天皇|しょうわてんのう}}が{{崩御|ほうぎょ}}し平成時代がはじまる", era: "平成時代" },
+  { eraId: "reiwa", sortYear: 2019, yearLabel: "2019年", event: "{{天皇|てんのう}}の{{退位|たいい}}にともない令和時代がはじまる", era: "令和時代" },
 ];
 
 const TIMELINE = [
@@ -183,6 +186,29 @@ export function japaneseErasDuring(eraId) {
   return names;
 }
 
+// 「c. 2070 BC – 1600 BC」「1949 – 現在」のような英語表記の期間を「前2070年頃〜前1600年」の形にする
+export function formatPeriodJa(period) {
+  return period
+    .split(/\s*–\s*/)
+    .map((part) => {
+      if (part === "現在") return part;
+      const approx = /^c\.\s*/.test(part);
+      const bc = /\s*BC$/.test(part);
+      const year = part.replace(/^c\.\s*/, "").replace(/\s*(BC|AD)$/, "");
+      return `${bc ? "前" : ""}${year}年${approx ? "頃" : ""}`;
+    })
+    .join("〜");
+}
+
+// 中国の王朝ごとに、同じ頃の日本の時代を並べた早見表の行（対照年表ページの冒頭に表示）
+export const ERA_CORRESPONDENCE = ERAS.map((era) => ({
+  eraId: era.id,
+  name: era.name,
+  period: formatPeriodJa(era.period),
+  japaneseEras: japaneseErasDuring(era.id),
+  timelineHref: `#${hasAnchor(`cn-${era.id}`) ? `cn-${era.id}` : "era-jump"}`,
+}));
+
 // 時代ジャンプのチップ
 export const CN_JUMPS = [
   { label: "先史", eraId: "paleolithic" },
@@ -220,4 +246,6 @@ export const JP_JUMPS = [
   { label: "明治", eraId: "meiji" },
   { label: "大正", eraId: "taisho" },
   { label: "昭和", eraId: "showa" },
+  { label: "平成", eraId: "heisei" },
+  { label: "令和", eraId: "reiwa" },
 ];
