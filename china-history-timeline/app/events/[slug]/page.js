@@ -35,7 +35,8 @@ export function generateMetadata({ params }) {
     .replace(/^(\d+)s$/, "$1年代")
     .replace(/\d(?=頃|$)/, "$&年");
   // 「〇〇が起きた時の王朝は？」「〇〇 日本は何時代」といった検索に、タイトルと説明文の時点で答える
-  const pageTitle = `${title}（${yearLabel}）｜${eraName}の出来事をわかりやすく解説`;
+  // 「〇〇とは」で検索される出来事は、データ側のseoTitleで検索語に合わせたタイトルを使う
+  const pageTitle = event.seoTitle ?? `${title}（${yearLabel}）｜${eraName}の出来事をわかりやすく解説`;
   const japaneseEras = japaneseErasDuring(era.id).map(stripRuby);
   const description =
     `${yearLabel}、${eraName}の時代の出来事。${leadSentences(stripRuby(event.summary))}` +

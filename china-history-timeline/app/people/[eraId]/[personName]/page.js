@@ -25,7 +25,8 @@ export function generateMetadata({ params }) {
   if (!found) return {};
   const { era, person } = found;
   const name = stripRuby(person.name);
-  const title = `${name}とは？生涯と業績`;
+  // 検索される呼び名が見出しの表記と違う人物（例: 唐太宗→李世民）は、データ側のseoTitleを優先する
+  const title = person.seoTitle ?? `${name}とは？生涯と業績`;
   const description = stripRuby(person.description);
   const path = `/people/${era.id}/${personSlug(person.name)}`;
   const image = { title: `${name}とは？`, subtitle: "生涯と業績", kicker: `${stripRuby(era.name)}の人物`, seal: era.seal };

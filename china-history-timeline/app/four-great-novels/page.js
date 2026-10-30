@@ -3,10 +3,12 @@ import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock 
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 
-const title = "中国の四大名著とは？三国志演義・水滸伝・西遊記・紅楼夢を解説";
-const fullTitle = `中国の四大名著とは？三国志演義・水滸伝・西遊記・紅楼夢を解説 | ${SITE_NAME}`;
+// 「水滸伝 西遊記 王朝」「〜が成立したのは何という王朝の時代」といった検索が多いため、
+// タイトルと説明文の冒頭で「どの王朝の時代に成立したか」に答える
+const title = "中国の四大名著とは？三国志演義・水滸伝・西遊記・紅楼夢が書かれた王朝";
+const fullTitle = `${title} | ${SITE_NAME}`;
 const description =
-  "『三国志演義』『水滸伝』『西遊記』『紅楼夢』の中国四大名著を、作者や成立年代、あらすじとあわせて解説。それぞれの舞台となった時代を年表・人物ページとリンクで紹介します。";
+  "中国の四大名著のうち『三国志演義』『水滸伝』『西遊記』は明の時代に今の形にまとまり、『紅楼夢』は清の時代に書かれた。作者・成立年代・物語の舞台となった時代とあらすじを、年表とあわせて解説します。";
 
 export const metadata = {
   title,
@@ -72,6 +74,14 @@ const NOVELS = [
   },
 ];
 
+// 「どの王朝の時代に書かれたか」の早見表（作品／成立した王朝／物語の舞台）
+const DYNASTY_TABLE = [
+  ["『{{三国志演義|さんごくしぎえん}}』", "{{明|みん}}（元末〜明初に成立）", "後漢末〜三国時代"],
+  ["『{{水滸伝|すいこでん}}』", "{{明|みん}}（元末〜明初に成立）", "{{北宋末|ほくそうまつ}}"],
+  ["『{{西遊記|さいゆうき}}』", "{{明|みん}}（16世紀）", "{{唐|とう}}"],
+  ["『{{紅楼夢|こうろうむ}}』", "{{清|しん}}（18世紀）", "{{清|しん}}"],
+];
+
 const RESOLVED = NOVELS.map((n) => ({ ...n, eraLink: eraHref(n.era) }));
 
 export default function FourGreatNovelsPage() {
@@ -94,6 +104,41 @@ export default function FourGreatNovelsPage() {
             }
           />
         </p>
+
+        <section style={{ marginBottom: 28 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 18, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
+            四大名著はどの王朝の時代に書かれた？
+          </h2>
+          <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 12 }}>
+            <RubyText
+              text={
+                "『{{三国志演義|さんごくしぎえん}}』『{{水滸伝|すいこでん}}』『{{西遊記|さいゆうき}}』の三作は、いずれも{{明|みん}}の時代に今に伝わる形の本として刊行された" +
+                "（三国志演義と{{水滸伝|すいこでん}}は元末〜明初に原型が成立）。『{{紅楼夢|こうろうむ}}』だけは{{清|しん}}の時代、18世紀の作品である。" +
+                "物語の{{舞台|ぶたい}}となった時代は、成立した時代とは別なので注意したい。"
+              }
+            />
+          </p>
+          <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12.5, color: COLORS.inkSoft }}>
+            <thead>
+              <tr style={{ borderBottom: `1px solid ${COLORS.mist}`, textAlign: "left" }}>
+                <th style={{ padding: "6px 4px" }}>作品</th>
+                <th style={{ padding: "6px 4px" }}>成立した王朝</th>
+                <th style={{ padding: "6px 4px" }}>物語の舞台</th>
+              </tr>
+            </thead>
+            <tbody>
+              {DYNASTY_TABLE.map((row) => (
+                <tr key={row[0]} style={{ borderBottom: "1px solid #E6DEC6" }}>
+                  {row.map((cell, j) => (
+                    <td key={j} style={{ padding: "6px 4px" }}>
+                      <RubyText text={cell} />
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
 
         <div className="flex flex-col gap-5">
           {RESOLVED.map((n, i) => (
