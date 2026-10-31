@@ -1,12 +1,12 @@
 import { ERAS, stripRuby, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock } from "@/components/Shared";
+import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock, KeyFacts } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 
-const title = "シルクロードとは？歴史・ルートとオアシス都市を解説";
-const fullTitle = `シルクロードとは？歴史・ルートとオアシス都市を解説 | ${SITE_NAME}`;
+const title = "シルクロードとは？ルートとオアシス都市、日本との関わりをわかりやすく解説";
+const fullTitle = `${title} | ${SITE_NAME}`;
 const description =
-  "シルクロードとは何か、その名前の由来や歴史、ルート、行き交った交易品を解説。あわせて敦煌・トルファン・カシュガルなど沿線に栄えたオアシス都市を地図とともに紹介します。張騫・班超・玄奘・マルコ・ポーロら年表に登場する人物の逸話や、楼蘭の美女・敦煌文書の発見といった面白いエピソードも掲載。";
+  "シルクロードとは何か、いつ誰が開き、どこからどこまで続いたのかを、ルート・交易品・オアシス都市の地図とともに解説。正倉院が「シルクロードの終着点」と呼ばれる理由など、日本との関わりも紹介します。";
 
 export const metadata = {
   title,
@@ -15,6 +15,15 @@ export const metadata = {
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/silk-road" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };
+
+// 「シルクロード いつ」「どこからどこまで」「日本」といった検索にまず答える要点
+const KEY_FACTS = [
+  { q: "いつ", a: "紀元前2世紀、前漢の{{張騫|ちょうけん}}の西域{{派遣|はけん}}をきっかけに開かれ、{{唐代|とうだい}}（7〜9世紀）に最盛期を{{迎|むか}}えた。" },
+  { q: "どこからどこまで", a: "{{長安|ちょうあん}}（現・西安）から{{河西回廊|かせいかいろう}}・{{敦煌|とんこう}}・タクラマカン{{砂漠|さばく}}のオアシス都市を経て、中央アジア・西アジア、地中海世界まで。一本の道ではなく複数のルートの{{総称|そうしょう}}。" },
+  { q: "何が運ばれた", a: "中国からは{{絹|きぬ}}・紙・陶磁器、西方からはガラス器・金銀器・ぶどうなど。仏教やイスラーム、製紙法といった宗教・技術も伝わった。" },
+  { q: "名前の由来", a: "19世紀ドイツの地理学者リヒトホーフェンが「ザイデンシュトラーセン（絹の道）」と名付けたのが始まり。" },
+  { q: "日本との関係", a: "{{遣唐使|けんとうし}}が{{唐|とう}}の{{長安|ちょうあん}}から持ち帰った品々を収める奈良の{{正倉院|しょうそういん}}は、「シルクロードの終着点」とも呼ばれる。" },
+];
 
 // 各都市の代表的な建造物・自然景観の写真（Wikimedia Commons）を掲載する。
 // galleryには、莫高窟や火焔山など、その都市周辺で特に有名な遺跡・寺院・自然景観の写真を追加で並べる。
@@ -572,6 +581,8 @@ export default function SilkRoadPage() {
           {"写真: N509FZ / Wikimedia Commons, CC BY-SA 4.0"}
         </div>
 
+        <KeyFacts heading="シルクロードの要点" items={KEY_FACTS} />
+
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
             シルクロードの歴史とルート
@@ -710,6 +721,34 @@ export default function SilkRoadPage() {
             ))}
           </div>
         </div>
+
+        <section style={{ marginTop: 40 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
+            シルクロードと日本：正倉院は終着点？
+          </h2>
+          <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft, marginBottom: 10 }}>
+            <RubyText
+              text={
+                "シルクロードの東の起点は{{長安|ちょうあん}}とされるが、その先は海を{{越|こ}}えて日本にもつながっていた。飛鳥・奈良時代に{{派遣|はけん}}された{{遣隋使|けんずいし}}・{{遣唐使|けんとうし}}は、" +
+                "国際都市{{長安|ちょうあん}}で西域やペルシアから運ばれてきた品々に{{触|ふ}}れ、その一部を日本へ持ち帰った。756年、{{聖武天皇|しょうむてんのう}}の死後に{{光明皇后|こうみょうこうごう}}が" +
+                "遺愛の品を東大寺に納めたことに始まる{{正倉院|しょうそういん}}の宝物には、ササン朝ペルシアの製とされるガラスの{{碗|わん}}「{{白瑠璃碗|はくるりのわん}}」や、" +
+                "現存する世界で唯一の五弦の{{琵琶|びわ}}「{{螺鈿紫檀五絃琵琶|らでんしたんのごげんびわ}}」など、シルクロードを{{経|へ}}てきた文物やその影響を受けた品が{{含|ふく}}まれている。"
+              }
+            />
+          </p>
+          <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft, marginBottom: 10 }}>
+            <RubyText
+              text={
+                "こうしたことから{{正倉院|しょうそういん}}は「シルクロードの終着点」と呼ばれることがある。シルクロードを通って中国に入った仏教も、" +
+                "6世紀に朝鮮半島の百済を{{経|へ}}て日本に伝えられた。{{玄奘|げんじょう}}がインドから持ち帰った経典の教えは、その弟子に学んだ{{道昭|どうしょう}}によって日本に伝わり、" +
+                "奈良の{{興福寺|こうふくじ}}・{{薬師寺|やくしじ}}で受け{{継|つ}}がれる{{法相宗|ほっそうしゅう}}となった。"
+              }
+            />
+          </p>
+          <div className="flex items-center gap-2.5 flex-wrap">
+            <NavButton href="/japan-china-timeline" variant="outline">日本史・中国史 対照年表を見る</NavButton>
+          </div>
+        </section>
 
         <section style={{ marginTop: 40 }}>
           <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>

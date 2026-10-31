@@ -80,7 +80,13 @@ export default function PersonPage({ params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: stripRuby(JSON.stringify(breadcrumbJsonLd)) }}
       />
-      <PersonDetail person={person} era={era} />
+      <PersonDetail
+        person={person}
+        era={era}
+        relatedPeople={getEraFigures(era)
+          .filter((p) => p.bio && p.name !== person.name)
+          .map((p) => ({ href: `/people/${era.id}/${personSlug(p.name)}`, label: p.name }))}
+      />
     </>
   );
 }

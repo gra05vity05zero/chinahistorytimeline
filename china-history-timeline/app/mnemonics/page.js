@@ -1,10 +1,13 @@
+import Link from "next/link";
 import { ERAS, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
+import { formatPeriodJa } from "@/lib/japanChinaTimeline";
 import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 
-const title = "中国王朝の覚え方（語呂合わせ）";
-const fullTitle = `中国王朝の覚え方（語呂合わせ）| ${SITE_NAME}`;
+// 「五代十国 覚え方」「中学 歴史 中国 覚え方」での表示が多いため、その2つもタイトルに含める
+const title = "中国王朝の覚え方｜順番の語呂合わせ（中学生向け・五代十国も）";
+const fullTitle = `${title} | ${SITE_NAME}`;
 const description =
   "中学・高校の定期テストや大学入試の世界史対策に。殷・周・秦・漢から中華人民共和国まで、中国史の王朝を順番どおりに覚えられる語呂合わせと、時代ごとの暗記のコツをまとめました。";
 
@@ -33,6 +36,30 @@ const CHANT = [
   { text: "{{明|みん}}", note: "漢族復権" },
   { text: "{{清|しん}}", note: "満州族" },
 ];
+
+// 中学の歴史で出てくる王朝だけに絞った短い版
+const JUNIOR_CHANT = "{{殷|いん}}・{{周|しゅう}}・{{秦|しん}}・{{漢|かん}}・{{隋|ずい}}・{{唐|とう}}・{{宋|そう}}・{{元|げん}}・{{明|みん}}・{{清|しん}}";
+const JUNIOR_NOTE =
+  "中学の歴史で出てくる中国の王朝は、ほぼ次の10個です。上の語呂合わせから三国・{{晋|しん}}・南北朝・五代を{{抜|ぬ}}いた形なので、まずはここから覚えましょう。";
+const JUNIOR_JAPAN =
+  "日本との関わりとセットにすると忘れにくくなります。{{漢|かん}}は金印（{{弥生|やよい}}時代）、{{隋|ずい}}は{{遣隋使|けんずいし}}（飛鳥時代）、{{唐|とう}}は{{遣唐使|けんとうし}}（奈良・平安時代）、" +
+  "{{元|げん}}は{{元寇|げんこう}}（{{鎌倉|かまくら}}時代）、{{明|みん}}は日明貿易（室町時代）、{{清|しん}}は日清戦争（明治時代）。";
+
+// 五代（華北で交代した5つの王朝）と十国（主に南方の地方政権）
+const WUDAI = [
+  { name: "{{後梁|こうりょう}}", period: "907〜923年" },
+  { name: "{{後唐|こうとう}}", period: "923〜936年" },
+  { name: "{{後晋|こうしん}}", period: "936〜947年" },
+  { name: "{{後漢|ごかん}}", period: "947〜950年" },
+  { name: "{{後周|こうしゅう}}", period: "951〜960年" },
+];
+const WUDAI_NOTE =
+  "五代は、{{唐|とう}}が{{滅|ほろ}}んだ907年から{{宋|そう}}が建つ960年までの約50年間に、{{華北|かほく}}で次々と交代した5つの王朝です。どれも頭に「後」が付くので、" +
+  "「後」を外して「{{梁|りょう}}・{{唐|とう}}・{{晋|しん}}・{{漢|かん}}・{{周|しゅう}}（りょう・とう・しん・かん・しゅう）」と唱えるのが定番の覚え方です。" +
+  "{{唐|とう}}・{{晋|しん}}・{{漢|かん}}・{{周|しゅう}}はどれも昔の王朝と同じ名前なので、過去の王朝名を借りたと考えると覚えやすくなります。";
+const SHIKOKU_NOTE =
+  "十国は同じ頃、主に南方に分立した地方政権で、{{呉|ご}}・{{南唐|なんとう}}・{{呉越|ごえつ}}・{{閩|びん}}・{{楚|そ}}・{{南漢|なんかん}}・{{前蜀|ぜんしょく}}・{{後蜀|こうしょく}}・{{荊南|けいなん}}・{{北漢|ほくかん}}の10国です。" +
+  "こちらを全部順番に問われることはまれなので、「五代は{{華北|かほく}}の王朝の交代、十国は南の地方政権の並立」という区別を押さえておけば十分です。";
 
 const TIPS = [
   {
@@ -129,6 +156,54 @@ export default function MnemonicsPage() {
         </section>
 
         <section style={{ marginBottom: 32 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 8 }}>
+            中学生向け：まずはこの10王朝を順番に
+          </h2>
+          <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginBottom: 10 }}>
+            <RubyText text={JUNIOR_NOTE} />
+          </p>
+          <div
+            className="text-center"
+            style={{ fontFamily: "var(--font-serif), serif", fontSize: 18, fontWeight: 700, color: COLORS.vermilion, backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: "12px 10px" }}
+          >
+            <RubyText text={JUNIOR_CHANT} />
+          </div>
+          <p style={{ fontSize: 12, lineHeight: 1.8, color: COLORS.inkSoft, marginTop: 10 }}>
+            <RubyText text={JUNIOR_JAPAN} />
+          </p>
+        </section>
+
+        <section style={{ marginBottom: 32 }}>
+          <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 8 }}>
+            五代十国の覚え方
+          </h2>
+          <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginBottom: 10 }}>
+            <RubyText text={WUDAI_NOTE} />
+          </p>
+          <div className="flex flex-wrap items-center gap-2" style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: "12px 14px" }}>
+            {WUDAI.map((w, i) => (
+              <div key={w.name} className="flex items-center gap-2">
+                <div className="flex flex-col items-center" style={{ minWidth: 56 }}>
+                  <span style={{ fontFamily: "var(--font-serif), serif", fontSize: 17, fontWeight: 700, color: COLORS.vermilion }}>
+                    <RubyText text={w.name} />
+                  </span>
+                  <span style={{ fontSize: 9.5, color: COLORS.inkSoft, marginTop: 2, whiteSpace: "nowrap" }}>{w.period}</span>
+                </div>
+                {i < WUDAI.length - 1 && <span style={{ color: COLORS.mist, fontSize: 13 }} aria-hidden>→</span>}
+              </div>
+            ))}
+          </div>
+          <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginTop: 10 }}>
+            <RubyText text={SHIKOKU_NOTE} />
+          </p>
+          <div style={{ marginTop: 8 }}>
+            <Link href="/eras/wudai" style={{ fontSize: 12, color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
+              五代十国の時代解説を読む →
+            </Link>
+          </div>
+        </section>
+
+        <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
             王朝・時代の一覧（{ERAS.length}区分）
           </h2>
@@ -145,10 +220,13 @@ export default function MnemonicsPage() {
                 >
                   {i + 1}
                 </span>
-                <span style={{ fontFamily: "var(--font-serif), serif", fontSize: 14, fontWeight: 700, color: COLORS.ink, minWidth: 132 }}>
+                <Link
+                  href={`/eras/${era.id}`}
+                  style={{ fontFamily: "var(--font-serif), serif", fontSize: 14, fontWeight: 700, color: COLORS.ink, minWidth: 132, textDecoration: "underline", textDecorationColor: COLORS.mist }}
+                >
                   <RubyText text={era.name} />
-                </span>
-                <span style={{ fontSize: 11, color: COLORS.gold, fontFamily: "var(--font-serif), serif" }}><RubyText text={era.period} /></span>
+                </Link>
+                <span style={{ fontSize: 11, color: COLORS.gold, fontFamily: "var(--font-serif), serif" }}>{formatPeriodJa(era.period)}</span>
               </div>
             ))}
           </div>

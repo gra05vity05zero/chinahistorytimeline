@@ -5,7 +5,7 @@ import { COLORS } from "@/lib/constants";
 import { SealMark, HeritageThumb, MiscLinksSection, A8AdBlock } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 
-export default function PersonDetail({ person, era }) {
+export default function PersonDetail({ person, era, relatedPeople = [] }) {
   const bioParagraphs = (person.bio || "").split("\n\n").filter(Boolean);
 
   return (
@@ -74,6 +74,26 @@ export default function PersonDetail({ person, era }) {
                 </Link>
               ))}
             </div>
+          </div>
+        )}
+
+        {relatedPeople.length > 0 && (
+          <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
+            <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 13, color: COLORS.vermilion, letterSpacing: "0.15em", marginBottom: 10 }}>
+              同じ時代の人物
+            </h2>
+            <ul className="flex flex-col">
+              {relatedPeople.map((item) => (
+                <li key={item.href} style={{ borderBottom: "1px solid #E6DEC6" }}>
+                  <Link href={item.href} className="flex items-baseline gap-3 py-2 hover:underline" style={{ fontSize: 13.5 }}>
+                    
+                    <span style={{ fontFamily: "var(--font-serif), serif", color: COLORS.ink, fontWeight: 600 }}>
+                      <RubyText text={item.label} />
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         )}
 

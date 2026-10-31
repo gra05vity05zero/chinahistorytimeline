@@ -31,6 +31,9 @@ function isSuitangEvent(era) {
 }
 
 export default function EventDetail({ event, era, prev, next, japanTimeline, dramas }) {
+  const siblingEvents = era.events
+    .filter((ev) => ev.slug !== event.slug)
+    .map((ev) => ({ href: `/events/${ev.slug}`, year: ev.year, label: ev.title }));
   const cat = CATEGORY_STYLE[event.category] || CATEGORY_STYLE["文化"];
 
   return (
@@ -207,6 +210,27 @@ export default function EventDetail({ event, era, prev, next, japanTimeline, dra
           ad={[event.heritage?.length > 0 && "travelWest", event.media?.length > 0 && "audible", "travelist"].filter(Boolean)}
           className="mt-10"
         />
+
+        {/* 前後の2件だけでなく、同じ時代の出来事すべてへリンクする（クロールの入口を増やす） */}
+        {siblingEvents.length > 0 && (
+          <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
+            <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 13, color: COLORS.vermilion, letterSpacing: "0.15em", marginBottom: 10 }}>
+              <RubyText text={era.name} />のほかの出来事
+            </h2>
+            <ul className="flex flex-col">
+              {siblingEvents.map((item) => (
+                <li key={item.href} style={{ borderBottom: "1px solid #E6DEC6" }}>
+                  <Link href={item.href} className="flex items-baseline gap-3 py-2 hover:underline" style={{ fontSize: 13.5 }}>
+                    <span className="shrink-0" style={{ fontFamily: "var(--font-serif), serif", color: COLORS.gold, fontSize: 12, minWidth: 56 }}><RubyText text={item.year} /></span>
+                    <span style={{ fontFamily: "var(--font-serif), serif", color: COLORS.ink, fontWeight: 600 }}>
+                      <RubyText text={item.label} />
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         {prev && (
           <Link

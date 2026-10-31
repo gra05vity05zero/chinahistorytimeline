@@ -63,6 +63,15 @@ const MISC_SECTIONS = [
     ],
   },
   {
+    title: "合戦",
+    links: [
+      { href: "/chunqiu-zhanguo-battles", label: "春秋・戦国時代の合戦マップ" },
+      { href: "/chuhan-battles", label: "楚漢戦争の合戦マップ" },
+      { href: "/sanguo-battles", label: "三国時代の合戦マップ" },
+      { href: "/suitang-battles", label: "隋唐・五代の合戦マップ" },
+    ],
+  },
+  {
     title: "名所・遺産",
     links: [
       { href: "/world-heritage", label: "中国の世界遺産" },
@@ -91,7 +100,7 @@ const MISC_SECTIONS = [
 ];
 
 // 「雑学・豆知識」記事への横断リンク集。
-// variant="full" はトップページ上部用の4カテゴリ一覧、既定の "compact" は各ページ末尾用の小さい版
+// variant="full" はトップページ上部用の5カテゴリ一覧、既定の "compact" は各ページ末尾用の小さい版
 export function MiscLinksSection({ variant = "compact" }) {
   const heading = (
     <div
@@ -106,7 +115,7 @@ export function MiscLinksSection({ variant = "compact" }) {
     return (
       <div className="max-w-3xl mx-auto text-left">
         {heading}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           {MISC_SECTIONS.map((section) => (
             <div key={section.title} className="px-3 pt-2.5 pb-1.5" style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8" }}>
               <div
@@ -434,6 +443,29 @@ export function JapanTimelineCallout({ eraName, href, japaneseEras, className = 
       </div>
       <span aria-hidden style={{ color: COLORS.vermilion, fontSize: 18 }}>→</span>
     </Link>
+  );
+}
+
+// 「いつ・誰が・どこ」のような検索でまず知りたい答えを、記事冒頭に一問一答でまとめる枠
+export function KeyFacts({ heading, items, className = "mb-8" }) {
+  return (
+    <section className={className} style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: "14px 16px" }}>
+      <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 15, fontWeight: 700, color: COLORS.ink, marginBottom: 8 }}>
+        <RubyText text={heading} />
+      </h2>
+      <dl className="flex flex-col gap-2">
+        {items.map((item) => (
+          <div key={item.q} className="flex gap-3" style={{ fontSize: 12.5, lineHeight: 1.75 }}>
+            <dt className="shrink-0" style={{ fontWeight: 700, color: COLORS.vermilion, minWidth: 72 }}>
+              <RubyText text={item.q} />
+            </dt>
+            <dd style={{ color: COLORS.inkSoft }}>
+              <RubyText text={item.a} />
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </section>
   );
 }
 

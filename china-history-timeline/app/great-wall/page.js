@@ -1,12 +1,22 @@
 import { ERAS, stripRuby, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock } from "@/components/Shared";
+import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock, KeyFacts } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 
-const title = "万里の長城とは？歴史と八達嶺・嘉峪関など見どころを解説";
-const fullTitle = `万里の長城とは？歴史と八達嶺・嘉峪関など見どころを解説 | ${SITE_NAME}`;
+// 「万里の長城 いつ作られた」「作った人」「豆知識」といった検索が多いため、タイトルでそれに答える
+const title = "万里の長城とは？いつ・誰が作ったか、歴史と豆知識をわかりやすく解説";
+const fullTitle = `${title} | ${SITE_NAME}`;
 const description =
-  "万里の長城はいつ・誰が・なぜ築いたのか。戦国時代の個別築城から秦の始皇帝による連結、明代の大改修までの歴史と、八達嶺・慕田峪・山海関・嘉峪関など主要区間の見どころを地図とともに解説します。";
+  "万里の長城はいつ・誰が・なぜ作ったのか。戦国時代の築城から秦の始皇帝による連結、明代の大改修までの歴史に加え、長さや「宇宙から見える」説などの豆知識、八達嶺・嘉峪関など主要区間の見どころを地図とともに解説します。";
+
+const KEY_FACTS = [
+  { q: "いつ作られた", a: "春秋戦国時代に各国が別々に{{防壁|ぼうへき}}を築き始め、紀元前221年に中国を統一した{{秦|しん}}がそれらを連結した。いま観光地で見られる石とレンガの長城の多くは、明代（14〜17世紀）に造り直されたもの。" },
+  { q: "誰が作った", a: "連結を命じたのは{{秦|しん}}の{{始皇帝|しこうてい}}（工事を指揮したのは将軍{{蒙恬|もうてん}}）。のちに明が大改修した。実際に工事を担ったのは、各地から{{徴発|ちょうはつ}}された兵士や農民である。" },
+  { q: "何のため", a: "北方の遊牧民（{{匈奴|きょうど}}や、のちのモンゴルなど）の{{侵入|しんにゅう}}を防ぐため。" },
+  { q: "長さ", a: "総延長は21,196.18km（2012年に中国の国家文物局が発表）。地球一周の半分以上にあたる。" },
+  { q: "宇宙から見える？", a: "よく言われるが、肉眼では見えないとされる。くわしくは下の豆知識で紹介している。" },
+  { q: "日本は何時代", a: "{{始皇帝|しこうてい}}が連結した頃の日本は{{弥生|やよい}}時代、明代の大改修の頃は室町〜江戸時代にあたる。" },
+];
 
 export const metadata = {
   title,
@@ -222,6 +232,8 @@ export default function GreatWallPage() {
         <div style={{ fontSize: 9.5, color: COLORS.mist, marginTop: -18, marginBottom: 24 }}>
           {"写真: Severin.stalder / Wikimedia Commons, CC BY-SA 3.0"}
         </div>
+
+        <KeyFacts heading="万里の長城の要点" items={KEY_FACTS} />
 
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 10 }}>
