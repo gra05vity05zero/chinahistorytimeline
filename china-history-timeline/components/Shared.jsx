@@ -40,7 +40,7 @@ export function BackToTopButton() {
   );
 }
 
-// 「雑学・豆知識」記事をカテゴリ別にまとめたリンク定義（トップページと各ページ末尾で共有）
+// 「テーマ別に読む」記事をカテゴリ別にまとめたリンク定義（トップページと各ページ末尾で共有）
 const MISC_SECTIONS = [
   {
     title: "覚える・学ぶ",
@@ -97,28 +97,25 @@ const MISC_SECTIONS = [
     ],
   },
   {
-    title: "その他",
+    title: "作品で楽しむ中国史",
     links: [
       { href: "/dramas", label: "中国歴史ドラマの史実" },
       { href: "/kingdom", label: "漫画『キングダム』と史実" },
       { href: "/koei-sangokushi", label: "ゲーム『{{三國志|さんごくし}}』シリーズ" },
       { href: "/novelists", label: "日本人小説家一覧" },
-      { href: "/eras", label: "王朝・時代一覧" },
-      { href: "/people", label: "人物一覧" },
-      { href: "/japan-china-timeline", label: "日本史・中国史 対照年表" },
     ],
   },
 ];
 
-// 「雑学・豆知識」記事への横断リンク集。
+// 「テーマ別に読む」記事への横断リンク集。
 // variant="full" はトップページ上部用のカテゴリ一覧、既定の "compact" は各ページ末尾用の小さい版
 export function MiscLinksSection({ variant = "compact" }) {
   const heading = (
     <div
       className="text-center"
-      style={{ fontFamily: "var(--font-serif), serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.15em", color: COLORS.gold, marginBottom: 12 }}
+      style={{ fontFamily: "var(--font-serif), serif", fontSize: 17, fontWeight: 900, letterSpacing: "0.08em", color: COLORS.ink, marginBottom: 14 }}
     >
-      雑学・豆知識
+      テーマ別に読む
     </div>
   );
 
@@ -132,7 +129,7 @@ export function MiscLinksSection({ variant = "compact" }) {
               <div
                 style={{
                   fontFamily: "var(--font-serif), serif",
-                  fontSize: 12.5,
+                  fontSize: 14,
                   fontWeight: 700,
                   color: COLORS.ink,
                   paddingBottom: 6,
@@ -145,7 +142,7 @@ export function MiscLinksSection({ variant = "compact" }) {
               <ul>
                 {section.links.map((item) => (
                   <li key={item.href}>
-                    <Link href={item.href} className="flex items-center gap-1.5 hover:underline" style={{ minHeight: 34, fontSize: 12.5, color: COLORS.vermilion }}>
+                    <Link href={item.href} className="flex items-center gap-1.5 hover:underline" style={{ minHeight: 34, fontSize: 13.5, color: COLORS.vermilion }}>
                       <span aria-hidden style={{ color: COLORS.mist }}>›</span>
                       <RubyText text={item.label} />
                     </Link>
@@ -165,10 +162,10 @@ export function MiscLinksSection({ variant = "compact" }) {
       <div className="flex flex-col gap-2.5">
         {MISC_SECTIONS.map((section) => (
           <div key={section.title} className="flex items-baseline gap-3">
-            <div className="shrink-0" style={{ width: 84, fontFamily: "var(--font-serif), serif", fontSize: 11.5, fontWeight: 700, color: COLORS.inkSoft }}>
+            <div className="shrink-0" style={{ width: 92, fontFamily: "var(--font-serif), serif", fontSize: 13, fontWeight: 700, color: COLORS.ink }}>
               <RubyText text={section.title} />
             </div>
-            <div className="flex flex-wrap gap-x-3 gap-y-1.5" style={{ fontSize: 12.5 }}>
+            <div className="flex flex-wrap gap-x-3 gap-y-1.5" style={{ fontSize: 13.5 }}>
               {section.links.map((item) => (
                 <Link key={item.href} href={item.href} className="hover:underline" style={{ color: COLORS.vermilion }}>
                   <RubyText text={item.label} />
