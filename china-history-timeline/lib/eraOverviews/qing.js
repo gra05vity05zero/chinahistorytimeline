@@ -120,5 +120,6 @@ export default {
     { href: "/world-heritage", label: "中国の世界遺産まとめ", note: "{{故宮|こきゅう}}・{{頤和園|いわえん}}・{{避暑山荘|ひしょさんそう}}" },
     { href: "/china-castles", label: "中国の城まとめ", note: "清代の城郭" },
     { href: "/japan-china-timeline", label: "日本史・中国史 対照年表", note: "日清戦争と明治時代" },
+    { href: "/harem-ranks#qing", label: "後宮の位（妃の階級）一覧", note: "{{皇后|こうごう}}から{{答応|とうおう}}までの8段階" },
   ],
 };

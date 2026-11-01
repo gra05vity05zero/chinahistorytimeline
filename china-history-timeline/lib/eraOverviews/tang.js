@@ -147,5 +147,6 @@ export default {
     { href: "/china-capitals", label: "歴代王朝の都一覧", note: "{{長安|ちょうあん}}・{{洛陽|らくよう}}の位置と歴史" },
     { href: "/saiyuki", label: "西遊記とは", note: "{{玄奘|げんじょう}}のインド旅をもとにした物語" },
     { href: "/four-beauties", label: "中国四大美女とは", note: "{{玄宗|げんそう}}に愛された{{楊貴妃|ようきひ}}" },
+    { href: "/harem-ranks#tang", label: "後宮の位（妃の階級）一覧", note: "{{四夫人|しふじん}}・{{九嬪|きゅうひん}}と{{武則天|ぶそくてん}}の出世" },
   ],
 };

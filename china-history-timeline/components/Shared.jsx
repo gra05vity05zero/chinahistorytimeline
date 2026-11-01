@@ -87,6 +87,7 @@ const MISC_SECTIONS = [
       { href: "/four-inventions", label: "四大発明" },
       { href: "/four-great-novels", label: "四大名著" },
       { href: "/four-beauties", label: "中国四大美女" },
+      { href: "/harem-ranks", label: "後宮の位（妃の階級）" },
       { href: "/dramas", label: "中国歴史ドラマの史実" },
       { href: "/history-books", label: "中国の歴史書" },
       { href: "/yangjiajiang", label: "{{楊家将|ようかしょう}}とは" },

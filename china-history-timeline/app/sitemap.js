@@ -26,6 +26,7 @@ export default function sitemap() {
     { url: `${SITE_URL}/four-inventions`, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/four-great-novels`, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/four-beauties`, changeFrequency: "yearly", priority: 0.5 },
+    { url: `${SITE_URL}/harem-ranks`, changeFrequency: "yearly", priority: 0.6 },
     { url: `${SITE_URL}/history-books`, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/novelists`, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/sanguo-battles`, changeFrequency: "yearly", priority: 0.5 },
