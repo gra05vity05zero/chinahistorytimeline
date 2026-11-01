@@ -108,5 +108,6 @@ export default {
     { href: "/emperors#easternhan", label: "後漢の歴代{{皇帝|こうてい}}", note: "光武帝から{{献帝|けんてい}}まで" },
     { href: "/history-books", label: "中国の歴史書とは", note: "『漢書』『後漢書』" },
     { href: "/four-beauties", label: "中国四大美女とは", note: "{{董卓|とうたく}}と{{呂布|りょふ}}を仲たがいさせた{{貂蝉|ちょうせん}}" },
+    { href: "/eunuchs", label: "{{宦官|かんがん}}とは", note: "{{十常侍|じゅうじょうじ}}と紙を改良した{{蔡倫|さいりん}}" },
   ],
 };

@@ -115,5 +115,6 @@ export default {
     { href: "/emperors#northernsong", label: "{{北宋|ほくそう}}の歴代{{皇帝|こうてい}}", note: "太祖から{{欽宗|きんそう}}まで" },
     { href: "/history-books", label: "中国の歴史書とは", note: "{{司馬光|しばこう}}の『{{資治通鑑|しじつがん}}』" },
     { href: "/china-capitals", label: "歴代王朝の都一覧", note: "{{開封|かいほう}}" },
+    { href: "/keju", label: "科挙とは", note: "{{殿試|でんし}}の開始と{{士大夫|したいふ}}の時代" },
   ],
 };

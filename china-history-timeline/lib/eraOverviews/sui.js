@@ -97,5 +97,6 @@ export default {
     { href: "/emperors#sui", label: "{{隋|ずい}}の歴代{{皇帝|こうてい}}", note: "文帝・{{煬帝|ようだい}}・{{恭帝|きょうてい}}" },
     { href: "/world-heritage", label: "中国の世界遺産まとめ", note: "中国大運河" },
     { href: "/japan-china-timeline", label: "日本史・中国史 対照年表", note: "{{遣隋使|けんずいし}}と飛鳥時代" },
+    { href: "/keju", label: "科挙とは", note: "{{煬帝|ようだい}}の{{進士科|しんしか}}から始まった官僚試験" },
   ],
 };

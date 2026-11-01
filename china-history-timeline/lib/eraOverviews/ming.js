@@ -119,5 +119,7 @@ export default {
     { href: "/world-heritage", label: "中国の世界遺産まとめ", note: "{{故宮|こきゅう}}・明の十三陵" },
     { href: "/china-castles", label: "中国の城まとめ", note: "南京城・西安城壁" },
     { href: "/japan-china-timeline", label: "日本史・中国史 対照年表", note: "{{勘合|かんごう}}貿易と室町時代" },
+    { href: "/keju", label: "科挙とは", note: "{{郷試|きょうし}}・{{会試|かいし}}・{{殿試|でんし}}と{{八股文|はっこぶん}}" },
+    { href: "/eunuchs", label: "{{宦官|かんがん}}とは", note: "{{鄭和|ていわ}}・{{王振|おうしん}}・{{魏忠賢|ぎちゅうけん}}" },
   ],
 };
