@@ -60,6 +60,9 @@ const MISC_SECTIONS = [
       { href: "/china-capitals", label: "歴代王朝の都一覧" },
       { href: "/dynasty-territory-map", label: "王朝の領土の変遷マップ" },
       { href: "/sanguo-comparison", label: "{{魏|ぎ}}・{{呉|ご}}・{{蜀|しょく}}の{{違|ちが}}い" },
+      { href: "/harem-ranks", label: "後宮の位（妃の階級）" },
+      { href: "/keju", label: "科挙とは" },
+      { href: "/eunuchs", label: "{{宦官|かんがん}}とは" },
     ],
   },
   {
@@ -87,23 +90,28 @@ const MISC_SECTIONS = [
       { href: "/four-inventions", label: "四大発明" },
       { href: "/four-great-novels", label: "四大名著" },
       { href: "/four-beauties", label: "中国四大美女" },
-      { href: "/harem-ranks", label: "後宮の位（妃の階級）" },
-      { href: "/keju", label: "科挙とは" },
-      { href: "/eunuchs", label: "{{宦官|かんがん}}とは" },
-      { href: "/dramas", label: "中国歴史ドラマの史実" },
       { href: "/history-books", label: "中国の歴史書" },
       { href: "/yangjiajiang", label: "{{楊家将|ようかしょう}}とは" },
       { href: "/suikoden", label: "{{水滸伝|すいこでん}}とは" },
       { href: "/saiyuki", label: "西遊記とは" },
-      { href: "/koei-sangokushi", label: "ゲーム『{{三國志|さんごくし}}』シリーズ" },
+    ],
+  },
+  {
+    title: "その他",
+    links: [
+      { href: "/dramas", label: "中国歴史ドラマの史実" },
       { href: "/kingdom", label: "漫画『キングダム』と史実" },
+      { href: "/koei-sangokushi", label: "ゲーム『{{三國志|さんごくし}}』シリーズ" },
       { href: "/novelists", label: "日本人小説家一覧" },
+      { href: "/eras", label: "王朝・時代一覧" },
+      { href: "/people", label: "人物一覧" },
+      { href: "/japan-china-timeline", label: "日本史・中国史 対照年表" },
     ],
   },
 ];
 
 // 「雑学・豆知識」記事への横断リンク集。
-// variant="full" はトップページ上部用の5カテゴリ一覧、既定の "compact" は各ページ末尾用の小さい版
+// variant="full" はトップページ上部用のカテゴリ一覧、既定の "compact" は各ページ末尾用の小さい版
 export function MiscLinksSection({ variant = "compact" }) {
   const heading = (
     <div
