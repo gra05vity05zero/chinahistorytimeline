@@ -300,6 +300,7 @@ export default function HaremRanksPage() {
             <NavButton href="/dramas" variant="solid">中国歴史ドラマの史実を見る</NavButton>
             <NavButton href="/emperors" variant="outline">歴代皇帝一覧</NavButton>
             <NavButton href="/four-beauties" variant="outline">中国四大美女とは</NavButton>
+            <NavButton href="/women-rulers" variant="outline">女帝と権力を握った女性</NavButton>
           </div>
         </section>
 

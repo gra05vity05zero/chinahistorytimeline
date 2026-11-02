@@ -122,5 +122,6 @@ export default {
     { href: "/japan-china-timeline", label: "日本史・中国史 対照年表", note: "日清戦争と明治時代" },
     { href: "/harem-ranks#qing", label: "後宮の位（妃の階級）一覧", note: "{{皇后|こうごう}}から{{答応|とうおう}}までの8段階" },
     { href: "/keju", label: "科挙とは", note: "1905年の{{廃止|はいし}}と{{洪秀全|こうしゅうぜん}}の落第" },
+    { href: "/women-rulers", label: "中国の女帝と権力を握った女性", note: "{{孝荘文|こうそうぶん}}皇后と{{西太后|せいたいこう}}" },
   ],
 };

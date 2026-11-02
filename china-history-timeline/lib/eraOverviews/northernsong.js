@@ -116,5 +116,6 @@ export default {
     { href: "/history-books", label: "中国の歴史書とは", note: "{{司馬光|しばこう}}の『{{資治通鑑|しじつがん}}』" },
     { href: "/china-capitals", label: "歴代王朝の都一覧", note: "{{開封|かいほう}}" },
     { href: "/keju", label: "科挙とは", note: "{{殿試|でんし}}の開始と{{士大夫|したいふ}}の時代" },
+    { href: "/women-rulers", label: "中国の女帝と権力を握った女性", note: "{{劉娥|りゅうが}}と{{遼|りょう}}の{{蕭|しょう}}太后" },
   ],
 };

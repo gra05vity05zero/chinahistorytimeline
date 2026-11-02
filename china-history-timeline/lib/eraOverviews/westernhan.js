@@ -121,5 +121,6 @@ export default {
     { href: "/china-capitals", label: "歴代王朝の都一覧", note: "漢の{{長安|ちょうあん}}" },
     { href: "/four-beauties", label: "中国四大美女とは", note: "{{匈奴|きょうど}}に{{嫁|とつ}}いだ{{王昭君|おうしょうくん}}" },
     { href: "/harem-ranks#han", label: "後宮の位（妃の階級）一覧", note: "{{昭儀|しょうぎ}}・{{婕妤|しょうよ}}など漢の十四等" },
+    { href: "/women-rulers", label: "中国の女帝と権力を握った女性", note: "{{呂后|りょこう}}の専権と「人{{彘|てい}}」" },
   ],
 };

@@ -89,5 +89,6 @@ export default {
     { href: "/sanguo-battles", label: "三国時代 合戦マップ", note: "{{晋|しん}}による三国統一まで" },
     { href: "/history-books", label: "中国の歴史書とは", note: "{{陳寿|ちんじゅ}}の『三国志』は{{西晋|せいしん}}で書かれた" },
     { href: "/idioms", label: "中国史から生まれた故事成語", note: "魏晋の時代から生まれた言葉" },
+    { href: "/women-rulers", label: "中国の女帝と権力を握った女性", note: "八王の乱に火をつけた{{賈南風|かなんぷう}}" },
   ],
 };

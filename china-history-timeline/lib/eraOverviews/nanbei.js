@@ -108,5 +108,6 @@ export default {
     { href: "/china-capitals", label: "歴代王朝の都一覧", note: "{{建康|けんこう}}と北魏の{{洛陽|らくよう}}" },
     { href: "/china-castles", label: "中国の城まとめ", note: "南北朝の都城" },
     { href: "/suitang-battles", label: "隋唐・五代 合戦マップ", note: "{{隋|ずい}}の南北統一から" },
+    { href: "/women-rulers", label: "中国の女帝と権力を握った女性", note: "{{均田制|きんでんせい}}を作った{{馮|ふう}}太后" },
   ],
 };
