@@ -258,6 +258,7 @@ export default function MnemonicsPage() {
           <div className="flex items-center gap-2.5 flex-wrap">
             <NavButton href="/eras" variant="solid">時代一覧を見る</NavButton>
             <NavButton href="/people" variant="outline">人物一覧を見る</NavButton>
+            <NavButton href="/quiz" variant="outline">クイズで確認する</NavButton>
           </div>
         </section>
 

@@ -122,5 +122,6 @@ export default {
     { href: "/four-beauties", label: "中国四大美女とは", note: "{{匈奴|きょうど}}に{{嫁|とつ}}いだ{{王昭君|おうしょうくん}}" },
     { href: "/harem-ranks#han", label: "後宮の位（妃の階級）一覧", note: "{{昭儀|しょうぎ}}・{{婕妤|しょうよ}}など漢の十四等" },
     { href: "/women-rulers", label: "中国の女帝と権力を握った女性", note: "{{呂后|りょこう}}の専権と「人{{彘|てい}}」" },
+    { href: "/glossary#politics", label: "中国史の用語集", note: "{{郡国制|ぐんこくせい}}と{{儒学|じゅがく}}の{{官学化|かんがくか}}" },
   ],
 };
