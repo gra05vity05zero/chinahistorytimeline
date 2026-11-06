@@ -190,24 +190,23 @@ export default function Timeline({ milestonesByEra = {}, latestNews = [] }) {
             </Link>
           ))}
         </div>
+        {latestNews.length > 0 && (
+          <section className="max-w-2xl mx-auto mt-8 text-left">
+            <div className="flex items-baseline justify-between gap-3" style={{ marginBottom: 10 }}>
+              <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 18, fontWeight: 700, color: COLORS.ink }}>
+                中国史の最新ニュース
+              </h2>
+              <Link href="/news" style={{ fontSize: 12.5, color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
+                ニュース一覧 →
+              </Link>
+            </div>
+            <NewsList items={latestNews} compact />
+          </section>
+        )}
         <div className="mt-8">
           <MiscLinksSection variant="full" />
         </div>
       </div>
-
-      {latestNews.length > 0 && (
-        <section className="max-w-2xl mx-auto px-5 pb-8">
-          <div className="flex items-baseline justify-between gap-3" style={{ marginBottom: 10 }}>
-            <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 18, fontWeight: 700, color: COLORS.ink }}>
-              中国史の最新ニュース
-            </h2>
-            <Link href="/news" style={{ fontSize: 12.5, color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
-              ニュース一覧 →
-            </Link>
-          </div>
-          <NewsList items={latestNews} compact />
-        </section>
-      )}
 
       {/* 「中国史」「中国の歴史」で検索した人向けの導入文。年表本体の前に全体の流れを短く示す */}
       <section className="max-w-2xl mx-auto px-5 pb-8">
