@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ERAS, COLORS, SITE_URL, SITE_NAME, stripRuby, buildOpenGraph, buildTwitter, buildAmazonUrl, findEventBySlug } from "@/lib/data";
+import { ERAS, COLORS, SITE_URL, SITE_NAME, stripRuby, buildOpenGraph, buildTwitter, buildAmazonUrl, findEventBySlug, displayPeriod } from "@/lib/data";
 import {
   DRAMAS,
   getDramaBySlug,
@@ -239,7 +239,7 @@ export default function DramaPage({ params }) {
                     <RubyText text={era.name} />とはどんな時代？
                   </div>
                   <div style={{ fontSize: 11, color: COLORS.gold, ...serif }}>
-                    <RubyText text={era.period} />
+                    <RubyText text={displayPeriod(era.period)} />
                   </div>
                 </div>
               </Link>

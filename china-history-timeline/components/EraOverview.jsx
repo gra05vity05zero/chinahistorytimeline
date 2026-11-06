@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { COLORS, CATEGORY_STYLE } from "@/lib/constants";
+import { COLORS, CATEGORY_STYLE, displayEventYear } from "@/lib/constants";
+
+export { displayEventYear };
 import { RubyText } from "@/components/Ruby";
 import { HeritageGrid } from "@/components/Shared";
 
@@ -39,20 +41,6 @@ export function yearNumber(year) {
 // 数値の年を「前221」「618」の形で表示する
 export function formatYear(n) {
   return n < 0 ? `前${-n}` : `${n}`;
-}
-
-// 出来事データの年表記（"c. 2070 BC"・"356 BC"・"AD 23"・"4世紀 BC"）を、
-// milestones と同じ「前2070頃」「前356」「23」「前4世紀」の形にそろえて表示する
-export function displayEventYear(year) {
-  const str = String(year).trim();
-  const approx = /^c\.\s*/.test(str);
-  const bc = /\s*BC$/.test(str);
-  const core = str
-    .replace(/^c\.\s*/, "")
-    .replace(/\s*BC$/, "")
-    .replace(/^AD\s*/, "")
-    .replace(/^(\d+)s$/, "$1年代");
-  return `${bc ? "前" : ""}${core}${approx ? "頃" : ""}`;
 }
 
 // 出来事（lib/data.js）と補足の年表項目（milestones）を年順に並べ、開始年で各時代区分へ振り分ける。

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ERAS, ERA_ALIASES, COLORS, stripRuby, SITE_URL, buildOpenGraph, buildTwitter, getEraFigures } from "@/lib/data";
+import { ERAS, ERA_ALIASES, COLORS, stripRuby, SITE_URL, buildOpenGraph, buildTwitter, getEraFigures, displayPeriod } from "@/lib/data";
 import { getEraOverview } from "@/lib/eraOverviews";
 import { EraOverview } from "@/components/EraOverview";
 import { SealMark, EventListItem, BackToTopButton, MiscLinksSection, JapanTimelineCallout } from "@/components/Shared";
@@ -27,7 +27,7 @@ export function generateMetadata({ params }) {
   if (overview) {
     const title = stripRuby(overview.title);
     const description = overview.metaDescription + japanNote;
-    const image = { title: `${eraName}とはどんな時代？`, subtitle: alias || "", kicker: era.period, seal: era.seal };
+    const image = { title: `${eraName}とはどんな時代？`, subtitle: alias || "", kicker: displayPeriod(era.period), seal: era.seal };
     return {
       title,
       description,
@@ -37,10 +37,10 @@ export function generateMetadata({ params }) {
     };
   }
   const title = `${eraName}の出来事一覧${alias ? `（${alias}）` : ""}`;
-  const description = `${eraName}（${era.period}）に起きた出来事を年表順にまとめて紹介します。${
+  const description = `${eraName}（${displayPeriod(era.period)}）に起きた出来事を年表順にまとめて紹介します。${
     alias ? `${alias}` : eraName
   }の歴史について知りたい方はこちら。${japanNote}`;
-  const image = { title: `${eraName}の出来事一覧`, subtitle: alias || "", kicker: era.period, seal: era.seal };
+  const image = { title: `${eraName}の出来事一覧`, subtitle: alias || "", kicker: displayPeriod(era.period), seal: era.seal };
   return {
     title,
     description,
@@ -97,7 +97,7 @@ export default function EraEventsPage({ params }) {
 
           <div className="flex items-center gap-3 mt-5 mb-4">
             <SealMark char={era.seal} active />
-            <div style={{ fontSize: 12, color: COLORS.gold, fontFamily: "var(--font-serif), serif" }}><RubyText text={era.period} /></div>
+            <div style={{ fontSize: 12, color: COLORS.gold, fontFamily: "var(--font-serif), serif" }}><RubyText text={displayPeriod(era.period)} /></div>
           </div>
 
           <h1 style={{ fontFamily: "var(--font-serif), serif", fontSize: 24, fontWeight: 900, color: COLORS.ink, lineHeight: 1.6 }}>
@@ -149,7 +149,7 @@ export default function EraEventsPage({ params }) {
 
         <div className="flex items-center gap-3 mt-5 mb-4">
           <SealMark char={era.seal} active />
-          <div style={{ fontSize: 12, color: COLORS.gold, fontFamily: "var(--font-serif), serif" }}><RubyText text={era.period} /></div>
+          <div style={{ fontSize: 12, color: COLORS.gold, fontFamily: "var(--font-serif), serif" }}><RubyText text={displayPeriod(era.period)} /></div>
         </div>
 
         <h1 style={{ fontFamily: "var(--font-serif), serif", fontSize: 24, fontWeight: 900, color: COLORS.ink }}>

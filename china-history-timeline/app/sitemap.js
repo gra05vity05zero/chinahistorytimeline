@@ -1,11 +1,13 @@
 import { ERAS, SITE_URL, getEraFigures, personSlug } from "@/lib/data";
 import { DRAMAS } from "@/lib/dramas";
+import { getEventDetail } from "@/lib/eventDetails";
 
 export default function sitemap() {
   // lastModifiedは付けない。ビルド日時（new Date()）を入れると毎デプロイで全ページが
   // 「更新された」扱いになり、Googleがこの値自体を信用しなくなるため。
   const staticRoutes = [
     { url: `${SITE_URL}/`, changeFrequency: "monthly", priority: 1 },
+    { url: `${SITE_URL}/news`, changeFrequency: "daily", priority: 0.6 },
     { url: `${SITE_URL}/about`, changeFrequency: "yearly", priority: 0.3 },
     { url: `${SITE_URL}/people`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${SITE_URL}/eras`, changeFrequency: "monthly", priority: 0.6 },
@@ -57,11 +59,16 @@ export default function sitemap() {
   }));
 
   const eventRoutes = ERAS.flatMap((era) =>
-    era.events.map((event) => ({
-      url: `${SITE_URL}/events/${event.slug}`,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    }))
+    era.events.map((event) => {
+      // 詳しい解説のある出来事は、その更新日をlastModifiedに付ける
+      const detail = getEventDetail(event.slug);
+      return {
+        url: `${SITE_URL}/events/${event.slug}`,
+        ...(detail && { lastModified: detail.updatedAt }),
+        changeFrequency: "monthly",
+        priority: detail ? 0.8 : 0.7,
+      };
+    })
   );
 
   // 人物情報が未登録の時代ページは実質空ページのためサイトマップから除外する

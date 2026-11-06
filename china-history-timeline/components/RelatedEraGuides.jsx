@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ERAS, COLORS } from "@/lib/data";
+import { ERAS, COLORS, displayPeriod } from "@/lib/data";
 import { getEraIdsLinkingTo } from "@/lib/eraOverviews";
 import { SealMark } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
@@ -31,7 +31,7 @@ export function RelatedEraGuides({ path, eraIds = [], className = "mt-10 pt-6" }
                 <RubyText text={era.name} />とはどんな時代？
               </div>
               <div style={{ fontSize: 11, color: COLORS.gold, fontFamily: "var(--font-serif), serif" }}>
-                <RubyText text={era.period} />
+                <RubyText text={displayPeriod(era.period)} />
               </div>
             </div>
           </Link>

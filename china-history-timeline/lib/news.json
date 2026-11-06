@@ -1,0 +1,32 @@
+[
+  {
+    "id": "2026-04-30-top10-2025",
+    "date": "2026-04-30",
+    "title": "2025年の「中国考古十大発見」が発表 長白山の旧石器遺跡群や鄭州の商代都城など",
+    "summary": "中国で最も権威ある考古学の表彰の一つ「全国十大考古新発見」の2025年分が発表されました。約22万〜1万5千年前の長白山（吉林省）の旧石器遺跡群、初期の{{商|しょう}}の都としては最大規模の鄭州の都城遺跡、山西省の{{忠村|ちゅうそん}}遺跡などが選ばれています。",
+    "source": "China Daily",
+    "url": "https://www.chinaservicesinfo.com/s/202604/30/WS69f2b6b0498e36855033c42d/list-honoring-chinas-top-10-archaeological-discoveries-of-2025-released.html",
+    "eras": ["neolithic", "shang"],
+    "related": [{ "href": "/eras/shang", "label": "{{殷|いん}}（商）とはどんな時代？" }]
+  },
+  {
+    "id": "2026-04-30-zhongcun",
+    "date": "2026-04-30",
+    "title": "山西省の忠村遺跡で夏・商時代の高位貴族の墓18基 太行山脈の西側の社会像を見直す発見",
+    "summary": "山西省{{昔陽|せきよう}}県の{{忠村|ちゅうそん}}遺跡で、夏から{{商|しょう}}の時代の墓18基が見つかり、うち6基は18〜46平方メートルの大型墓でした。トルコ石の装飾品や漆塗りの木器、{{辰砂|しんしゃ}}などが出土し、この時代のこの地域では最も格の高い貴族の墓とされます。二里頭文化の周辺で社会の階層化がどこまで進んでいたかを考える手がかりになると評価されています。",
+    "source": "China Daily（goshanxi.com.cn）",
+    "url": "https://www.chinaservicesinfo.com/s/202604/30/WS69fee216498e23165e06f46b/shanxi-zhongcun-site-makes-chinas-top-10-archaeological-discoveries-list.html",
+    "eras": ["xia", "shang"],
+    "related": [{ "href": "/eras/xia", "label": "夏とはどんな時代？" }]
+  },
+  {
+    "id": "2026-02-23-roots-of-civilisation",
+    "date": "2026-02-23",
+    "title": "二里頭・良渚など、考古学で見えてきた中国文明のはじまり 5年間で13万点超の文化財",
+    "summary": "新華社の配信記事で、夏王朝の都と考える研究者が多い二里頭遺跡（河南省）に中国最古の碁盤目状の都市計画があることや、5,300年以上前の良渚遺跡が東アジア最古級の都市文明であることが紹介されました。2021〜2025年には全国で7,700件を超える発掘が行われ、13万点以上の文化財が見つかったとしています。",
+    "source": "The Star（新華社配信）",
+    "url": "https://www.thestar.com.my/aseanplus/aseanplus-news/2026/02/23/how-archaeology-reveals-roots-of-chinese-civilisation",
+    "eras": ["neolithic", "xia"],
+    "related": [{ "href": "/eras/neolithic", "label": "新石器時代とはどんな時代？" }, { "href": "/world-heritage", "label": "中国の世界遺産" }]
+  }
+]

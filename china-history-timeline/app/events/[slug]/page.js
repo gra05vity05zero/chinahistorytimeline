@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
-import { ERAS, findEventBySlug, getNextEvent, getPrevEvent, stripRuby, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
+import { ERAS, findEventBySlug, getNextEvent, getPrevEvent, stripRuby, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter, displayEventYear } from "@/lib/data";
 import EventDetail from "@/components/EventDetail";
+import EventArticle from "@/components/EventArticle";
+import { getEventDetail } from "@/lib/eventDetails";
 import { getDramaIndex, toDramaCard } from "@/lib/dramas";
 import { japanChinaTimelineHref, japaneseErasDuring } from "@/lib/japanChinaTimeline";
 
@@ -60,13 +62,15 @@ export default function EventPage({ params }) {
   const description = stripRuby(event.summary);
   const next = getNextEvent(event.slug);
   const prev = getPrevEvent(event.slug);
+  const detail = getEventDetail(event.slug);
 
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: `${title}（${event.year}）`,
+    headline: `${title}（${displayEventYear(event.year)}）`,
     description,
     about: era.name,
+    ...(detail && { datePublished: detail.publishedAt, dateModified: detail.updatedAt }),
     articleSection: era.name,
     isPartOf: {
       "@type": "WebSite",
@@ -89,8 +93,24 @@ export default function EventPage({ params }) {
     ],
   };
 
+  // 詳しい解説のある出来事だけ、よくある質問を構造化データにも載せる
+  const faqJsonLd = detail?.faq?.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: detail.faq.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      }
+    : null;
+
   return (
     <>
+      {faqJsonLd && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stripRuby(JSON.stringify(faqJsonLd)) }} />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: stripRuby(JSON.stringify(articleJsonLd)) }}
@@ -106,6 +126,7 @@ export default function EventPage({ params }) {
         next={next}
         japanTimeline={{ href: japanChinaTimelineHref(era.id), japaneseEras: japaneseErasDuring(era.id) }}
         dramas={(getDramaIndex().byEvent.get(event.slug) || []).map(toDramaCard)}
+        article={detail ? <EventArticle detail={detail} /> : null}
       />
     </>
   );

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ERAS, ERA_ALIASES, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
+import { ERAS, ERA_ALIASES, COLORS, SITE_NAME, buildOpenGraph, buildTwitter, displayPeriod } from "@/lib/data";
 import { SealMark, BackToTopButton, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 
@@ -46,7 +46,7 @@ export default function ErasIndexPage() {
                     </span>
                   )}
                 </div>
-                <div style={{ fontSize: 11, color: COLORS.gold, fontFamily: "var(--font-serif), serif" }}><RubyText text={era.period} /></div>
+                <div style={{ fontSize: 11, color: COLORS.gold, fontFamily: "var(--font-serif), serif" }}><RubyText text={displayPeriod(era.period)} /></div>
               </div>
               <div style={{ fontSize: 11, color: COLORS.inkSoft, whiteSpace: "nowrap" }}>{era.events.length}件</div>
             </Link>

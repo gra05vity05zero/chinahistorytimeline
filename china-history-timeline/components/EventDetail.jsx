@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { COLORS, CATEGORY_STYLE, HERITAGE_TYPES, resolveMediaUrl, stripRuby } from "@/lib/constants";
+import { COLORS, CATEGORY_STYLE, HERITAGE_TYPES, resolveMediaUrl, stripRuby, displayEventYear, displayPeriod } from "@/lib/constants";
 import { SealMark, HeritageGrid, A8AdBlock, MiscLinksSection, JapanTimelineCallout } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { DramaBacklinks } from "@/components/DramaBlocks";
@@ -30,10 +30,11 @@ function isSuitangEvent(era) {
   return era.id === "sui" || era.id === "tang" || era.id === "wudai";
 }
 
-export default function EventDetail({ event, era, prev, next, japanTimeline, dramas }) {
+// article: 詳しい解説（EventArticle）。サーバー側で描画したものを受け取る。無い出来事は null
+export default function EventDetail({ event, era, prev, next, japanTimeline, dramas, article }) {
   const siblingEvents = era.events
     .filter((ev) => ev.slug !== event.slug)
-    .map((ev) => ({ href: `/events/${ev.slug}`, year: ev.year, label: ev.title }));
+    .map((ev) => ({ href: `/events/${ev.slug}`, year: displayEventYear(ev.year), label: ev.title }));
   const cat = CATEGORY_STYLE[event.category] || CATEGORY_STYLE["文化"];
 
   return (
@@ -50,7 +51,7 @@ export default function EventDetail({ event, era, prev, next, japanTimeline, dra
           <SealMark char={era.seal} active />
           <div>
             <div style={{ fontSize: 12, color: COLORS.gold, fontFamily: "var(--font-serif), serif" }}>
-              <RubyText text={era.name} /> ／ <RubyText text={era.period} />
+              <RubyText text={era.name} /> ／ <RubyText text={displayPeriod(era.period)} />
             </div>
             <div style={{ fontSize: 11.5, color: COLORS.vermilion, marginTop: 1 }}>
               この時代について →
@@ -59,7 +60,7 @@ export default function EventDetail({ event, era, prev, next, japanTimeline, dra
         </Link>
 
         <div className="flex items-center gap-2 mb-2">
-          <span style={{ fontFamily: "var(--font-serif), serif", color: COLORS.inkSoft, fontSize: 14 }}><RubyText text={event.year} /></span>
+          <span style={{ fontFamily: "var(--font-serif), serif", color: COLORS.inkSoft, fontSize: 14 }}><RubyText text={displayEventYear(event.year)} /></span>
           <span className="uppercase tracking-wider px-2 py-0.5" style={{ fontSize: 10, color: "#fff", backgroundColor: cat.color, letterSpacing: "0.08em" }}>
             <RubyText text={cat.label} />
           </span>
@@ -72,6 +73,8 @@ export default function EventDetail({ event, era, prev, next, japanTimeline, dra
         <p style={{ fontSize: 15, lineHeight: 1.9, color: COLORS.inkSoft }}>
           <RubyText text={event.summary} />
         </p>
+
+        {article}
 
         <div className="flex items-center gap-3 mt-5" style={{ fontSize: 12 }}>
           <Link href={`/people/${era.id}`} style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
@@ -242,7 +245,7 @@ export default function EventDetail({ event, era, prev, next, japanTimeline, dra
             <div style={{ textAlign: "right" }}>
               <div style={{ fontSize: 10.5, letterSpacing: "0.15em", opacity: 0.85 }}>前のイベントへ</div>
               <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 16, fontWeight: 700, marginTop: 2 }}>
-                <RubyText text={prev.event.year} />　<RubyText text={prev.event.title} />
+                <RubyText text={displayEventYear(prev.event.year)} />　<RubyText text={prev.event.title} />
               </div>
             </div>
           </Link>
@@ -257,7 +260,7 @@ export default function EventDetail({ event, era, prev, next, japanTimeline, dra
             <div>
               <div style={{ fontSize: 10.5, letterSpacing: "0.15em", opacity: 0.85 }}>次のイベントへ</div>
               <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 16, fontWeight: 700, marginTop: 2 }}>
-                <RubyText text={next.event.year} />　<RubyText text={next.event.title} />
+                <RubyText text={displayEventYear(next.event.year)} />　<RubyText text={next.event.title} />
               </div>
             </div>
             <span aria-hidden style={{ fontSize: 20 }}>→</span>

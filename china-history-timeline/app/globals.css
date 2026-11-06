@@ -42,3 +42,8 @@ rt {
 .territory-fade {
   animation: territory-fade-in 700ms ease;
 }
+
+/* 印章風の飾り文字。リンク文字列に混ざって「人人物一覧」のように読まれないよう、本文テキストではなくCSSで描く */
+.seal-char::before {
+  content: attr(data-char);
+}

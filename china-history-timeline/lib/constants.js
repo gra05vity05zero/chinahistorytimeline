@@ -165,6 +165,30 @@ export function stripRuby(text) {
   return text.replace(/\{\{(.+?)\|(.+?)\}\}/g, "$1");
 }
 
+// 出来事データの年表記（"c. 2070 BC"・"356 BC"・"AD 23"・"4世紀 BC"・"630s"・"755-763"）を、
+// 年表の milestones と同じ「前2070頃」「前356」「23」「前4世紀」「630年代」「755〜763」の形にそろえて表示する
+export function displayEventYear(year) {
+  const str = String(year).trim();
+  const approx = /^c\.\s*/.test(str);
+  const bc = /\s*BC$/.test(str);
+  const core = str
+    .replace(/^c\.\s*/, "")
+    .replace(/\s*(BC|AD)$/, "")
+    .replace(/^AD\s*/, "")
+    .replace(/^(\d+)-(\d+)$/, "$1〜$2")
+    .replace(/^(\d+)s$/, "$1年代");
+  return `${bc ? "前" : ""}${core}${approx ? "頃" : ""}`;
+}
+
+// 時代の期間表記（"c. 8000 BC – 2070 BC"・"206 BC – 8 AD"・"1949 – 現在"）を「前8000頃 – 前2070」の形で表示する
+export function displayPeriod(period) {
+  if (!period) return period;
+  return String(period)
+    .split(/\s+–\s+/)
+    .map((part) => (part === "現在" ? part : displayEventYear(part)))
+    .join(" – ");
+}
+
 // 人物名から個別ページのURLスラッグを作る。
 // 「武帝（劉徹）」のような別名付き表記は括弧より前の主要な呼び名だけを使う。
 export function personSlug(name) {

@@ -20,7 +20,8 @@ export function StarRating({ score, size = 13 }) {
   return (
     <span role="img" aria-label={`史実度 5段階中${score}`} style={{ color: COLORS.vermilion, fontSize: size, letterSpacing: "0.05em", whiteSpace: "nowrap" }}>
       {"★".repeat(score)}
-      <span style={{ color: COLORS.mist }}>{"★".repeat(5 - score)}</span>
+      {/* 空き星は☆にする。同じ★を色だけ変えると、テキストとして読まれたとき常に★5に見える */}
+      <span style={{ color: COLORS.mist }}>{"☆".repeat(5 - score)}</span>
     </span>
   );
 }

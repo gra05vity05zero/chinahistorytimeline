@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { COLORS, CATEGORY_STYLE, ADSENSE_CLIENT_ID, A8_ADS, stripRuby, wikimediaThumb, personSlug } from "@/lib/constants";
+import { COLORS, CATEGORY_STYLE, ADSENSE_CLIENT_ID, A8_ADS, stripRuby, wikimediaThumb, personSlug, displayEventYear } from "@/lib/constants";
 import { RubyText } from "@/components/Ruby";
 
 export function NavButton({ href, children, variant = "solid" }) {
@@ -198,9 +198,12 @@ export function SealMark({ char, active }) {
         boxShadow: active ? `0 0 0 3px ${COLORS.paper}, 0 0 0 4px ${COLORS.vermilion}55` : "none",
       }}
     >
-      <span style={{ fontFamily: "var(--font-serif), serif", fontSize: 18, fontWeight: 700, transform: "rotate(-2deg)" }}>
-        <RubyText text={char} />
-      </span>
+      <span
+        aria-hidden="true"
+        className="seal-char"
+        data-char={stripRuby(char)}
+        style={{ fontFamily: "var(--font-serif), serif", fontSize: 18, fontWeight: 700, transform: "rotate(-2deg)" }}
+      />
     </div>
   );
 }
@@ -226,7 +229,7 @@ export function EventCard({ event, onClick }) {
         <div className="flex items-baseline justify-between gap-3">
           <div className="flex items-baseline gap-2">
             <span style={{ fontFamily: "var(--font-serif), serif", color: COLORS.inkSoft, fontSize: 13 }}>
-              <RubyText text={event.year} />
+              <RubyText text={displayEventYear(event.year)} />
             </span>
             <span style={{ fontFamily: "var(--font-serif), serif", color: COLORS.ink, fontSize: 16, fontWeight: 600 }}>
               <RubyText text={event.title} />
@@ -357,7 +360,7 @@ export function PersonCard({ person, eraId }) {
                   href={`/events/${ev.slug}`}
                   style={{ fontSize: 11.5, color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}
                 >
-                  <RubyText text={ev.year} />　<RubyText text={ev.title} />
+                  <RubyText text={displayEventYear(ev.year)} />　<RubyText text={ev.title} />
                 </Link>
               ))}
             </div>
@@ -389,7 +392,7 @@ export function EventListItem({ event, eraName }) {
       >
         <div className="flex items-baseline justify-between gap-3">
           <div className="flex items-baseline gap-2">
-            <span style={{ fontFamily: "var(--font-serif), serif", color: COLORS.inkSoft, fontSize: 13 }}><RubyText text={event.year} /></span>
+            <span style={{ fontFamily: "var(--font-serif), serif", color: COLORS.inkSoft, fontSize: 13 }}><RubyText text={displayEventYear(event.year)} /></span>
             <span style={{ fontFamily: "var(--font-serif), serif", color: COLORS.ink, fontSize: 16, fontWeight: 600 }}>
               <RubyText text={event.title} />
             </span>

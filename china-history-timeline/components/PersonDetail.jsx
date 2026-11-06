@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { COLORS } from "@/lib/constants";
+import { COLORS, displayEventYear, displayPeriod } from "@/lib/constants";
 import { SealMark, HeritageThumb, MiscLinksSection, A8AdBlock } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 
@@ -20,7 +20,7 @@ export default function PersonDetail({ person, era, relatedPeople = [] }) {
         <div className="flex items-center gap-3 mb-5">
           <SealMark char={era.seal} active />
           <div style={{ fontSize: 12, color: COLORS.gold, fontFamily: "var(--font-serif), serif" }}>
-            <RubyText text={era.name} /> ／ <RubyText text={era.period} />
+            <RubyText text={era.name} /> ／ <RubyText text={displayPeriod(era.period)} />
           </div>
         </div>
 
@@ -67,7 +67,7 @@ export default function PersonDetail({ person, era, relatedPeople = [] }) {
                   className="block px-4 py-3"
                   style={{ backgroundColor: "#FBF8F0", border: `1px solid #DCD3B8`, borderLeft: `3px solid ${COLORS.vermilion}` }}
                 >
-                  <span style={{ fontFamily: "var(--font-serif), serif", color: COLORS.inkSoft, fontSize: 13 }}><RubyText text={ev.year} /></span>{"　"}
+                  <span style={{ fontFamily: "var(--font-serif), serif", color: COLORS.inkSoft, fontSize: 13 }}><RubyText text={displayEventYear(ev.year)} /></span>{"　"}
                   <span style={{ fontFamily: "var(--font-serif), serif", color: COLORS.ink, fontSize: 15, fontWeight: 600 }}>
                     <RubyText text={ev.title} />
                   </span>

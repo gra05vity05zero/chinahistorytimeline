@@ -2,12 +2,13 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { ERAS, COLORS, ADSENSE_SLOT_TIMELINE } from "@/lib/data";
+import { ERAS, COLORS, ADSENSE_SLOT_TIMELINE, displayPeriod } from "@/lib/data";
 import { SealMark, AdSenseSlot, MiscLinksSection } from "@/components/Shared";
 import { TimelineEvent, TimelineMilestone, yearNumber, formatYear } from "@/components/EraOverview";
 import { SiteTitle } from "@/components/SiteHeader";
 import HeroImage from "@/components/HeroImage";
 import { RubyText } from "@/components/Ruby";
+import { NewsList } from "@/components/NewsList";
 
 // トップページ上部の主要な入口
 const PRIMARY_LINKS = [
@@ -55,7 +56,7 @@ function YearGap({ years }) {
   return <li aria-hidden style={{ height }} />;
 }
 
-export default function Timeline({ milestonesByEra = {} }) {
+export default function Timeline({ milestonesByEra = {}, latestNews = [] }) {
   const [activeEra, setActiveEra] = useState(ERAS[0].id);
   const [navOpen, setNavOpen] = useState(false);
   const sectionRefs = useRef({});
@@ -110,7 +111,7 @@ export default function Timeline({ milestonesByEra = {} }) {
           <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 18, fontWeight: 700, color: COLORS.ink }}>
             <RubyText text={ERAS[activeIndex]?.name} />
             <span style={{ fontSize: 12, color: COLORS.inkSoft, marginLeft: 8, fontFamily: "var(--font-sans), sans-serif" }}>
-              <RubyText text={ERAS[activeIndex]?.period} />
+              <RubyText text={displayPeriod(ERAS[activeIndex]?.period)} />
             </span>
           </div>
         </div>
@@ -130,7 +131,7 @@ export default function Timeline({ milestonesByEra = {} }) {
                 <RubyText text={era.seal} />
               </span>
               <span style={{ fontFamily: "var(--font-serif), serif", fontSize: 14, color: COLORS.ink }}><RubyText text={era.name} /></span>
-              <span style={{ fontSize: 11, color: COLORS.inkSoft, marginLeft: "auto" }}><RubyText text={era.period} /></span>
+              <span style={{ fontSize: 11, color: COLORS.inkSoft, marginLeft: "auto" }}><RubyText text={displayPeriod(era.period)} /></span>
             </button>
           ))}
         </div>
@@ -150,11 +151,11 @@ export default function Timeline({ milestonesByEra = {} }) {
               style={{ backgroundColor: "#FBF8F0", border: `1.5px solid ${COLORS.vermilion}` }}
             >
               <span
-                className="flex items-center justify-center shrink-0"
+                aria-hidden="true"
+                className="seal-char flex items-center justify-center shrink-0"
+                data-char={item.seal}
                 style={{ width: 32, height: 32, backgroundColor: COLORS.vermilion, color: "#fff", fontFamily: "var(--font-serif), serif", fontSize: 16, fontWeight: 700 }}
-              >
-                <RubyText text={item.seal} />
-              </span>
+              />
               <span className="min-w-0">
                 <span className="block" style={{ fontFamily: "var(--font-serif), serif", fontSize: 14, fontWeight: 700, color: COLORS.ink }}>
                   <RubyText text={item.label} />
@@ -194,6 +195,20 @@ export default function Timeline({ milestonesByEra = {} }) {
         </div>
       </div>
 
+      {latestNews.length > 0 && (
+        <section className="max-w-2xl mx-auto px-5 pb-8">
+          <div className="flex items-baseline justify-between gap-3" style={{ marginBottom: 10 }}>
+            <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 18, fontWeight: 700, color: COLORS.ink }}>
+              中国史の最新ニュース
+            </h2>
+            <Link href="/news" style={{ fontSize: 12.5, color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
+              ニュース一覧 →
+            </Link>
+          </div>
+          <NewsList items={latestNews} compact />
+        </section>
+      )}
+
       {/* 「中国史」「中国の歴史」で検索した人向けの導入文。年表本体の前に全体の流れを短く示す */}
       <section className="max-w-2xl mx-auto px-5 pb-8">
         <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 18, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
@@ -222,7 +237,7 @@ export default function Timeline({ milestonesByEra = {} }) {
                     <SealMark char={era.seal} active={era.id === activeEra} />
                   </div>
                   <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 20, fontWeight: 700, color: COLORS.ink }}><RubyText text={era.name} /></div>
-                  <div style={{ fontSize: 12, color: COLORS.gold, fontFamily: "var(--font-serif), serif" }}><RubyText text={era.period} /></div>
+                  <div style={{ fontSize: 12, color: COLORS.gold, fontFamily: "var(--font-serif), serif" }}><RubyText text={displayPeriod(era.period)} /></div>
                   {era.description && (
                     <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginTop: 8 }}><RubyText text={era.description} /></p>
                   )}

@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { COLORS } from "@/lib/constants";
+import { COLORS, displayPeriod, stripRuby } from "@/lib/constants";
 import { RubyText } from "@/components/Ruby";
-import { DramaCard, StarRating } from "@/components/DramaBlocks";
+import { DramaCard } from "@/components/DramaBlocks";
 
 // /dramas の一覧と絞り込み（時代・史実度）。データは件数が少ないのでクライアント側で絞り込む。
 // eras: 作品のある時代のみ（時代順） / dramas: toDramaCard() の配列（描かれる年代の古い順）。
@@ -18,12 +18,13 @@ const SCORE_FILTERS = [
   { min: 2, label: "★2以上" },
 ];
 
-function Chip({ active, onClick, children }) {
+function Chip({ active, onClick, label, children }) {
   return (
     <button
       type="button"
       onClick={onClick}
       aria-pressed={active}
+      aria-label={label}
       style={{
         ...serif,
         fontSize: 12.5,
@@ -57,7 +58,7 @@ export default function DramaHub({ eras, dramas }) {
             すべて
           </Chip>
           {eras.map((era) => (
-            <Chip key={era.id} active={eraId === era.id} onClick={() => setEraId(era.id)}>
+            <Chip key={era.id} active={eraId === era.id} onClick={() => setEraId(era.id)} label={stripRuby(era.name)}>
               <RubyText text={era.name} />
             </Chip>
           ))}
@@ -85,7 +86,7 @@ export default function DramaHub({ eras, dramas }) {
                 を描いたドラマ
               </span>
               <span style={{ fontSize: 11.5, fontWeight: 400, color: COLORS.gold }}>
-                <RubyText text={g.period} />
+                <RubyText text={displayPeriod(g.period)} />
               </span>
             </h2>
             <div className="grid gap-2">
@@ -98,7 +99,7 @@ export default function DramaHub({ eras, dramas }) {
       )}
 
       <p className="mt-6" style={{ fontSize: 11.5, lineHeight: 1.8, color: COLORS.inkSoft }}>
-        史実度 <StarRating score={5} size={11.5} /> は「主要人物が実在するか」「主要な事件が史実に沿っているか」「時系列が正しいか」「人物像が史料と合っているか」の4点から、当サイトが独自に付けた目安です。
+        史実度（★1〜5）は「主要人物が実在するか」「主要な事件が史実に沿っているか」「時系列が正しいか」「人物像が史料と合っているか」の4点から、当サイトが独自に付けた目安です。
       </p>
     </>
   );
