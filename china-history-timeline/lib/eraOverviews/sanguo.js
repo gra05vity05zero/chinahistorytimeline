@@ -106,6 +106,7 @@ export default {
     { href: "/sanguo-battles", label: "三国時代 合戦マップ", note: "{{赤壁|せきへき}}・{{夷陵|いりょう}}・{{五丈原|ごじょうげん}}を地図で" },
     { href: "/sanguo-comparison", label: "魏・{{蜀|しょく}}・{{呉|ご}}を比較", note: "国力・人材・領土の違い" },
     { href: "/koei-sangokushi", label: "コーエー『三國志』シリーズ", note: "歴史シミュレーションゲームの名作" },
+    { href: "/musou", label: "ゲーム『真・{{三國無双|さんごくむそう}}』シリーズ", note: "武将・武器・名場面は史実どおり？" },
     { href: "/four-great-novels", label: "中国の四大名著とは", note: "『三国志演義』の成り立ち" },
     { href: "/emperors#wei", label: "三国の歴代{{皇帝|こうてい}}", note: "魏・{{蜀|しょく}}・{{呉|ご}}の{{皇帝|こうてい}}" },
   ],

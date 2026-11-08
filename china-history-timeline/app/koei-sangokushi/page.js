@@ -160,6 +160,7 @@ const SPINOFFS = [
   {
     title: "真・{{三國無双|さんごくむそう}}シリーズ",
     meta: "2000年〜 / アクション",
+    href: "/musou",
     body: "武将を{{操作|そうさ}}して戦場の敵をなぎ{{倒|たお}}す「{{一騎当千|いっきとうせん}}」のアクションゲーム。2025年の『真・{{三國無双|さんごくむそう}} ORIGINS』は、名もなき主人公の目から{{黄巾の乱|こうきんのらん}}以後の乱世を{{描|えが}}く。",
     products: [
       { label: "ORIGINS PS5版", asin: "B0DHTD3MR7", image: "81eM+pzXvnL" },
@@ -532,6 +533,13 @@ export default function KoeiSangokushiPage() {
                 <p style={{ fontSize: 12.5, lineHeight: 1.85, color: COLORS.inkSoft, marginTop: 6 }}>
                   <RubyText text={s.body} />
                 </p>
+                {s.href && (
+                  <p style={{ fontSize: 12.5, marginTop: 6 }}>
+                    <a href={s.href} style={linkStyle}>
+                      <RubyText text="『真・{{三國無双|さんごくむそう}}』シリーズの作品一覧と武将の史実 →" />
+                    </a>
+                  </p>
+                )}
                 {s.products && <ProductLinks title={s.title} products={s.products} />}
               </div>
             ))}

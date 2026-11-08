@@ -108,6 +108,7 @@ const MISC_SECTIONS = [
       { href: "/kingdom", label: "漫画『キングダム』と史実" },
       { href: "/kusuriya", label: "『{{薬屋|くすりや}}のひとりごと』のモデル" },
       { href: "/koei-sangokushi", label: "ゲーム『{{三國志|さんごくし}}』シリーズ" },
+      { href: "/musou", label: "ゲーム『真・{{三國無双|さんごくむそう}}』シリーズ" },
       { href: "/novelists", label: "日本人小説家一覧" },
     ],
   },
