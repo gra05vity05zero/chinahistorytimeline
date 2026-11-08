@@ -63,6 +63,10 @@ const LATEST = [
     date: "2026年10月1日発売",
     platforms: "PS5 / Xbox Series X|S / Nintendo Switch 2 / Windows（Steam）",
     body: "シリーズ25周年記念プロジェクトとして2025年9月に発表された、シリーズ初のリマスター作品。2001年の『真・{{三國無双|さんごくむそう}}2』と追加ディスク『{{猛将伝|もうしょうでん}}』をまとめ、グラフィックを{{一新|いっしん}}した。当初は2026年3月発売の予定だったが、品質向上のために延期されていた。",
+    products: [
+      { label: "PS5版", asin: "B0H3RKD7TX", image: "81Y+LcwUIJL" },
+      { label: "Switch2版", asin: "B0H3RGXNBB", image: "71Z2bDhSxtL" },
+    ],
   },
 ];
 
