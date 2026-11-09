@@ -441,6 +441,12 @@ export default function QinShiHuangPage() {
               }
             />
           </p>
+          <a
+            href="/qin-fall"
+            style={{ display: "inline-block", fontSize: 12, color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist, marginTop: 10, marginRight: 16 }}
+          >
+            <ruby>秦<rt>しん</rt></ruby>はなぜわずか15年で<ruby>滅亡<rt>めつぼう</rt></ruby>したのか →
+          </a>
           {eventFall && (
             <a
               href={`/events/${eventFall.slug}`}

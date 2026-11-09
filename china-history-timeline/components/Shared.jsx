@@ -61,6 +61,7 @@ const MISC_SECTIONS = [
     title: "人物・王朝",
     links: [
       { href: "/qinshihuang", label: "{{始皇帝|しこうてい}}とは" },
+      { href: "/qin-fall", label: "{{秦|しん}}はなぜ{{滅亡|めつぼう}}した？" },
       { href: "/terracotta-army", label: "{{兵馬俑|へいばよう}}・{{始皇帝陵|しこうていりょう}}の{{謎|なぞ}}" },
       { href: "/emperors", label: "歴代{{皇帝|こうてい}}一覧" },
       { href: "/china-capitals", label: "歴代王朝の都一覧" },

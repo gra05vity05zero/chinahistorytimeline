@@ -84,6 +84,7 @@ export default {
 
   related: [
     { href: "/qinshihuang", label: "{{始皇帝|しこうてい}}とは", note: "生涯・統一・死因の{{謎|なぞ}}まで" },
+    { href: "/qin-fall", label: "{{秦|しん}}はなぜ{{滅亡|めつぼう}}したのか", note: "わずか15年で{{滅|ほろ}}びた7つの理由" },
     { href: "/terracotta-army", label: "{{兵馬俑|へいばよう}}・{{始皇帝陵|しこうていりょう}}の{{謎|なぞ}}", note: "8000体の兵士像と未発掘の陵墓" },
     { href: "/great-wall", label: "万里の長城とは", note: "{{秦|しん}}の長城から明の長城まで" },
     { href: "/kingdom", label: "漫画『キングダム』と史実", note: "統一までの戦いを史実と比較" },
