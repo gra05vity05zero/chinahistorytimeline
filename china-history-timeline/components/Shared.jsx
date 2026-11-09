@@ -112,6 +112,7 @@ const MISC_SECTIONS = [
       { href: "/kusuriya", label: "『{{薬屋|くすりや}}のひとりごと』のモデル" },
       { href: "/koei-sangokushi", label: "ゲーム『{{三國志|さんごくし}}』シリーズ" },
       { href: "/musou", label: "ゲーム『真・{{三國無双|さんごくむそう}}』シリーズ" },
+      { href: "/wuxia-games", label: "中国発の武侠・神話ゲーム" },
       { href: "/novelists", label: "日本人小説家一覧" },
     ],
   },

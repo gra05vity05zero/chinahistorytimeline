@@ -113,6 +113,7 @@ export default {
   ],
 
   related: [
+    { href: "/wuxia-games", label: "中国発の武侠・神話ゲーム", note: "『明末：ウツロノハネ』と明末の四川" },
     { href: "/great-wall", label: "万里の長城とは", note: "明代に築かれたレンガの長城" },
     { href: "/emperors#ming", label: "明の歴代{{皇帝|こうてい}}", note: "{{洪武帝|こうぶてい}}から{{崇禎帝|すうていてい}}まで" },
     { href: "/four-great-novels", label: "中国の四大名著とは", note: "明代に広まった『三国志演義』『水滸伝』『西遊記』" },

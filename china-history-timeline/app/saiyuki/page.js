@@ -671,6 +671,7 @@ export default function SaiyukiPage() {
             <NavButton href="/silk-road" variant="outline">シルクロードとは</NavButton>
             <NavButton href="/four-great-novels" variant="outline">中国の四大名著とは</NavButton>
             <NavButton href="/suikoden" variant="outline"><ruby>水滸伝<rt>すいこでん</rt></ruby>とは</NavButton>
+            <NavButton href="/wuxia-games" variant="outline">ゲーム『黒神話：<ruby>悟空<rt>ごくう</rt></ruby>』の元ネタ</NavButton>
           </div>
         </section>
 

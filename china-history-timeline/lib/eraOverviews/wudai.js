@@ -83,6 +83,7 @@ export default {
   ],
 
   related: [
+    { href: "/wuxia-games", label: "中国発の武侠・神話ゲーム", note: "『{{風燕伝|ふうえんでん}}（{{燕雲十六声|えんうんじゅうろくせい}}）』の舞台" },
     { href: "/suitang-battles", label: "隋唐・五代 合戦マップ", note: "五代の興亡を地図で" },
     { href: "/emperors#wudai", label: "五代の歴代{{皇帝|こうてい}}", note: "{{後梁|こうりょう}}から{{後周|こうしゅう}}まで" },
     { href: "/yangjiajiang", label: "{{楊家将|ようかしょう}}とは", note: "{{燕雲十六州|えんうんじゅうろくしゅう}}をめぐる{{宋|そう}}と{{遼|りょう}}の戦い" },
