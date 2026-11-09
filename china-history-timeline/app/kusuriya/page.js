@@ -1,4 +1,4 @@
-import { ERAS, personSlug, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
+import { ERAS, personSlug, COLORS, SITE_NAME, buildOpenGraph, buildTwitter, buildAmazonUrl } from "@/lib/data";
 import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
@@ -70,6 +70,18 @@ const FAQ = [
   },
 ];
 
+// 原作小説・漫画（Amazonアソシエイト）。image はAmazonの商品画像ID
+const amazonImage = (id) => `https://m.media-amazon.com/images/I/${id}._SL300_.jpg`;
+const BOOKS = [
+  { label: "原作小説 1巻", note: "ヒーロー文庫", asin: "4072981982", image: "91x1Yhj7GiL" },
+  { label: "漫画 1巻", note: "ビッグガンガンコミックス", asin: "4757554893", image: "813lU+7JzQL" },
+  { label: "漫画 1巻", note: "サンデーGXコミックス", asin: "4091575153", image: "71ZGM6B0UhL" },
+  { label: "アニメ 第1期", note: "Blu-ray 第1巻", asin: "B0CL6QGW8Y", image: "61R4ZTlhwEL" },
+  { label: "アニメ 第2期", note: "Blu-ray 第1巻", asin: "B0DSBVMJ7Y", image: "71TIqmqQVqL" },
+];
+// アニメの配信（Prime Video）。動画はASINで /dp/ リンクにできる
+const PRIME_VIDEO_ASIN = "B0CH5FZ9MV";
+
 const thStyle = { padding: "8px 10px", textAlign: "left", fontWeight: 700, color: COLORS.ink, borderBottom: "1px solid #DCD3B8", whiteSpace: "nowrap" };
 const tdStyle = { padding: "8px 10px", verticalAlign: "top", borderBottom: "1px solid #E8E0C8", color: COLORS.inkSoft };
 const h2Style = { fontFamily: "var(--font-serif), serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginTop: 36, marginBottom: 10, scrollMarginTop: 16 };
@@ -139,6 +151,7 @@ export default function KusuriyaPage() {
           <a href="#maids" style={linkStyle}>宮女</a>
           <a href="#hanamachi" style={linkStyle}>花街</a>
           <a href="#medicine" style={linkStyle}>宮廷医と本草学</a>
+          <a href="#books" style={linkStyle}>原作・漫画・アニメ</a>
           <a href="#faq" style={linkStyle}>よくある疑問</a>
         </nav>
 
@@ -303,6 +316,45 @@ export default function KusuriyaPage() {
           <a href="/silk-road" style={linkStyle}>
             <RubyText text="シルクロードとは →" />
           </a>
+        </p>
+
+        <h2 id="books" style={h2Style}>原作小説・漫画・アニメで楽しむ</h2>
+        <Para text="原作は{{日向夏|ひゅうがなつ}}の小説（ヒーロー文庫）。漫画は、ねこクラゲ作画のスクウェア・エニックス版と、{{倉田三ノ路|くらたみのじ}}作画の小学館版『～{{猫猫|マオマオ}}の後宮{{謎解|なぞと}}き手帳～』の2種類が同時に連載されている。アニメは2023年に第1期、2025年に第2期が放送され、第3期も制作されている。" />
+        <div className="flex gap-3 flex-wrap mt-1">
+          {BOOKS.map((b) => (
+            <a
+              key={b.asin}
+              href={buildAmazonUrl(b.asin)}
+              target="_blank"
+              rel="nofollow noreferrer sponsored"
+              className="flex flex-col items-center gap-1.5"
+              style={{ width: 118 }}
+            >
+              <img
+                src={amazonImage(b.image)}
+                alt={`『薬屋のひとりごと』${b.label}（${b.note}）の画像`}
+                loading="lazy"
+                style={{ width: 96, height: 136, objectFit: "contain", border: `1px solid ${COLORS.mist}`, backgroundColor: "#FFFDF7" }}
+              />
+              <span style={{ fontSize: 10, color: COLORS.gold, textAlign: "center", lineHeight: 1.4 }}>{b.note}</span>
+              <span
+                className="px-2 py-1 text-center"
+                style={{ width: "100%", fontSize: 11.5, fontWeight: 700, color: COLORS.vermilion, border: `1px solid ${COLORS.vermilion}`, backgroundColor: "#FFFDF7" }}
+              >
+                {b.label} →
+              </span>
+            </a>
+          ))}
+        </div>
+        <p style={{ fontSize: 12.5, color: COLORS.inkSoft, marginTop: 12 }}>
+          アニメは
+          <a href={buildAmazonUrl(PRIME_VIDEO_ASIN)} target="_blank" rel="nofollow noreferrer sponsored" style={linkStyle}>
+            Prime Video
+          </a>
+          でも配信されています（見放題・レンタルなど視聴方法はリンク先でご確認ください）。
+        </p>
+        <p style={{ fontSize: 10.5, color: COLORS.mist, marginTop: 10 }}>
+          ※ 一部のリンクはAmazonアソシエイトによるアフィリエイト広告を含みます。価格・在庫はリンク先でご確認ください
         </p>
 
         <h2 id="faq" style={h2Style}>『薬屋のひとりごと』と史実についてよくある疑問</h2>
