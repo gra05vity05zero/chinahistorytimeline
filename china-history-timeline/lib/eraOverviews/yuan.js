@@ -102,6 +102,7 @@ export default {
   ],
 
   related: [
+    { href: "/song-yuan-battles", label: "{{宋|そう}}・金・元 合戦マップ", note: "{{襄陽|じょうよう}}・{{崖山|がいざん}}・{{元寇|げんこう}}を地図で" },
     { href: "/silk-road", label: "シルクロードとは", note: "モンゴル帝国と東西交流" },
     { href: "/emperors#yuan", label: "元の歴代{{皇帝|こうてい}}", note: "クビライから順帝まで" },
     { href: "/world-heritage", label: "中国の世界遺産まとめ", note: "元の{{上都|じょうと}}遺跡など" },

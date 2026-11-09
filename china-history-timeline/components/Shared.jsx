@@ -80,6 +80,7 @@ const MISC_SECTIONS = [
       { href: "/chuhan-battles", label: "楚漢戦争の合戦マップ" },
       { href: "/sanguo-battles", label: "三国時代の合戦マップ" },
       { href: "/suitang-battles", label: "隋唐・五代の合戦マップ" },
+      { href: "/song-yuan-battles", label: "宋・金・元の合戦マップ" },
     ],
   },
   {

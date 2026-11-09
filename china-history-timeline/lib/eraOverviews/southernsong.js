@@ -97,6 +97,7 @@ export default {
   ],
 
   related: [
+    { href: "/song-yuan-battles", label: "{{宋|そう}}・金・元 合戦マップ", note: "{{岳飛|がくひ}}の{{北伐|ほくばつ}}から{{崖山|がいざん}}の戦いまで" },
     { href: "/emperors#southernsong", label: "{{南宋|なんそう}}の歴代{{皇帝|こうてい}}", note: "{{高宗|こうそう}}から{{趙昺|ちょうへい}}まで" },
     { href: "/novelists", label: "中国史を題材にした日本人小説家", note: "{{岳飛|がくひ}}を描いた北方謙三『{{岳飛伝|がくひでん}}』など" },
     { href: "/china-capitals", label: "歴代王朝の都一覧", note: "{{臨安|りんあん}}（{{杭州|こうしゅう}}）" },

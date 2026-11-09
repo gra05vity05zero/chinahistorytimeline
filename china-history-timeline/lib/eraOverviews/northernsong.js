@@ -109,6 +109,7 @@ export default {
   ],
 
   related: [
+    { href: "/song-yuan-battles", label: "{{宋|そう}}・金・元 合戦マップ", note: "{{澶淵|せんえん}}の盟・{{靖康|せいこう}}の変を地図で" },
     { href: "/yangjiajiang", label: "{{楊家将|ようかしょう}}とは", note: "{{宋|そう}}と{{遼|りょう}}の戦いを描いた物語" },
     { href: "/suikoden", label: "水滸伝とは", note: "{{北宋|ほくそう}}末期の{{梁山泊|りょうざんぱく}}の物語" },
     { href: "/four-inventions", label: "中国の四大発明とは", note: "印刷術・{{羅針盤|らしんばん}}・火薬" },

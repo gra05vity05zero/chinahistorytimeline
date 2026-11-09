@@ -30,6 +30,12 @@ function isSuitangEvent(era) {
   return era.id === "sui" || era.id === "tang" || era.id === "wudai";
 }
 
+// 元は南宋の滅亡・元寇（13世紀）までを宋・金・元の合戦マップで扱い、元末の紅巾の乱以降は対象外
+function isSongYuanEvent(era, event) {
+  if (era.id === "northernsong" || era.id === "southernsong") return true;
+  return era.id === "yuan" && parseInt(event.year, 10) < 1300;
+}
+
 // article: 詳しい解説（EventArticle）。サーバー側で描画したものを受け取る。無い出来事は null
 export default function EventDetail({ event, era, prev, next, japanTimeline, dramas, article }) {
   const siblingEvents = era.events
@@ -113,6 +119,14 @@ export default function EventDetail({ event, era, prev, next, japanTimeline, dra
               <span style={{ color: COLORS.mist }}>|</span>
               <Link href="/suitang-battles" style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
                 <ruby>隋唐<rt>ずいとう</rt></ruby>・五代 合戦マップ
+              </Link>
+            </>
+          )}
+          {isSongYuanEvent(era, event) && (
+            <>
+              <span style={{ color: COLORS.mist }}>|</span>
+              <Link href="/song-yuan-battles" style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
+                <ruby>宋<rt>そう</rt></ruby>・金・元 合戦マップ
               </Link>
             </>
           )}

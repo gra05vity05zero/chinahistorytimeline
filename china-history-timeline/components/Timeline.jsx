@@ -24,6 +24,7 @@ const BATTLE_MAP_LINKS = [
   { href: "/chuhan-battles", label: "{{楚漢戦争|そかんせんそう}}" },
   { href: "/sanguo-battles", label: "三国時代" },
   { href: "/suitang-battles", label: "{{隋唐|ずいとう}}・五代" },
+  { href: "/song-yuan-battles", label: "{{宋|そう}}・金・元" },
 ];
 
 // 年表の各時代見出しの下に「〜とはどんな時代？」と並べて出す特集記事へのリンク

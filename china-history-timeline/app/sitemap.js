@@ -44,6 +44,7 @@ export default function sitemap() {
     { url: `${SITE_URL}/chuhan-battles`, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/chunqiu-zhanguo-battles`, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/suitang-battles`, changeFrequency: "yearly", priority: 0.5 },
+    { url: `${SITE_URL}/song-yuan-battles`, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/yangjiajiang`, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/suikoden`, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/saiyuki`, changeFrequency: "yearly", priority: 0.5 },

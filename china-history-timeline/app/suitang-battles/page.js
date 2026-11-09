@@ -605,6 +605,7 @@ export default function SuitangBattlesPage() {
           <div className="flex items-center gap-2.5 flex-wrap">
             <NavButton href="/sanguo-battles" variant="solid">三国時代 合戦マップを見る</NavButton>
             <NavButton href="/chunqiu-zhanguo-battles" variant="outline">春秋・戦国 合戦マップを見る</NavButton>
+            <NavButton href="/song-yuan-battles" variant="outline"><ruby>宋<rt>そう</rt></ruby>・金・元 合戦マップを見る</NavButton>
             <NavButton href="/yangjiajiang" variant="outline"><ruby>楊家将<rt>ようかしょう</rt></ruby>の特集を見る</NavButton>
           </div>
         </section>
