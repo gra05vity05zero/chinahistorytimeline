@@ -1,4 +1,4 @@
-import { stripRuby, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
+import { stripRuby, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter, buildAmazonUrl } from "@/lib/data";
 import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
@@ -35,6 +35,8 @@ const tdStyle = { padding: "7px 10px", borderTop: "1px solid #E8E0CA", color: CO
 const GAMES = [
   {
     id: "wukong",
+    steam: { appId: 2358720, image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2358720/header.jpg" },
+    products: [{ label: "PS5版", asin: "B0DLNSS5XZ", image: "81Rviu7-wKL" }],
     name: "黒神話：{{悟空|ごくう}}",
     en: "Black Myth: Wukong",
     developer: "Game Science（{{遊戯科学|ゆうぎかがく}}）",
@@ -66,6 +68,7 @@ const GAMES = [
   },
   {
     id: "yanyun",
+    steam: { appId: 3564740, image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3564740/74dc272a73049fcaaf661c1b1c4a93deb972495a/header_japanese.jpg" },
     name: "{{風燕伝|ふうえんでん}}：Where Winds Meet",
     en: "中国題『{{燕雲十六声|えんうんじゅうろくせい}}』",
     developer: "Everstone Studio（NetEase Games）",
@@ -100,6 +103,7 @@ const GAMES = [
   },
   {
     id: "phantomblade",
+    steam: { appId: 4115450, image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4115450/7f882f889630270d3d3fb93825ac6f55b55e7a6c/header.jpg" },
     name: "Phantom Blade Zero",
     en: "中国題『{{影之刃零|えいしじんぜろ}}』",
     developer: "S-GAME（北京）",
@@ -127,6 +131,8 @@ const GAMES = [
   },
   {
     id: "wuchang",
+    steam: { appId: 2277560, image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2277560/8eea2f8255781444b985209fce1626a288eeb6a3/header_japanese.jpg" },
+    products: [{ label: "PS5版", asin: "B0F6MPRC48", image: "81t0-WukFGL" }],
     name: "明末：ウツロノハネ",
     en: "Wuchang: Fallen Feathers",
     developer: "Leenzee（中国・成都）",
@@ -183,6 +189,67 @@ const GAMES = [
     ],
   },
 ];
+
+// Amazonのパッケージ画像（ASINごとの商品画像ID）
+const amazonImage = (id) => `https://m.media-amazon.com/images/I/${id}._SL300_.jpg`;
+
+// ゲームのイメージ画像（Steamストアページのヘッダー画像を出典つきで引用）
+function GameVisual({ game }) {
+  if (!game.steam) return null;
+  const storeUrl = `https://store.steampowered.com/app/${game.steam.appId}/`;
+  return (
+    <figure style={{ margin: "0 0 12px" }}>
+      <a href={storeUrl} target="_blank" rel="noreferrer">
+        <img
+          src={game.steam.image}
+          alt={`『${stripRuby(game.name)}』のイメージ画像`}
+          loading="lazy"
+          width={460}
+          height={215}
+          style={{ width: "100%", height: "auto", aspectRatio: "460 / 215", objectFit: "cover", display: "block", border: `1px solid ${COLORS.mist}`, backgroundColor: "#EFE7D0" }}
+        />
+      </a>
+      <figcaption style={{ fontSize: 10, color: COLORS.mist, marginTop: 4 }}>
+        画像：
+        <a href={storeUrl} target="_blank" rel="noreferrer" style={{ color: COLORS.mist }}>
+          Steamストアページ
+        </a>
+        より引用（© {stripRuby(game.developer).replace(/（.*$/, "")}）
+      </figcaption>
+    </figure>
+  );
+}
+
+function ProductLinks({ game }) {
+  if (!game.products) return null;
+  return (
+    <div className="flex gap-3 flex-wrap items-end mb-4">
+      {game.products.map((p) => (
+        <a
+          key={p.asin}
+          href={buildAmazonUrl(p.asin)}
+          target="_blank"
+          rel="nofollow noreferrer sponsored"
+          className="flex flex-col items-center gap-2"
+          style={{ width: 150 }}
+        >
+          <img
+            src={amazonImage(p.image)}
+            alt={`${stripRuby(game.name)} ${p.label}のパッケージ画像`}
+            loading="lazy"
+            style={{ width: 96, height: 120, objectFit: "contain", border: `1px solid ${COLORS.mist}`, backgroundColor: "#FFFDF7" }}
+          />
+          <span
+            className="px-2 py-1 text-center"
+            style={{ width: "100%", fontSize: 11.5, fontWeight: 700, color: COLORS.vermilion, border: `1px solid ${COLORS.vermilion}`, backgroundColor: "#FFFDF7" }}
+          >
+            {p.label}をAmazonで →
+          </span>
+        </a>
+      ))}
+    </div>
+  );
+}
 
 // 年表マップ。年 → y座標（600年〜1700年）
 const Y0 = 34;
@@ -407,6 +474,7 @@ export default function WuxiaGamesPage() {
             <div style={{ fontSize: 11.5, color: COLORS.gold, marginBottom: 12 }}>
               <RubyText text={g.en} />
             </div>
+            <GameVisual game={g} />
             <dl className="p-3 mb-3 grid gap-x-3 gap-y-1" style={{ ...card, borderLeft: `3px solid ${COLORS.vermilion}`, gridTemplateColumns: "auto 1fr", fontSize: 12 }}>
               {[
                 ["開発", g.developer],
@@ -425,6 +493,7 @@ export default function WuxiaGamesPage() {
             <p style={{ ...bodyText, marginBottom: 14 }}>
               <RubyText text={g.summary} />
             </p>
+            <ProductLinks game={g} />
             <div className="flex flex-col gap-2.5">
               {g.points.map((p) => (
                 <div key={p.title} className="p-3" style={card}>
@@ -468,7 +537,10 @@ export default function WuxiaGamesPage() {
             ))}
           </div>
           <p style={{ fontSize: 10.5, color: COLORS.mist, marginTop: 12 }}>
-            ※ 発売日・販売本数は2026年11月時点の公式発表・報道にもとづきます
+            ※ 発売日・販売本数は2026年11月時点の公式発表・報道にもとづきます。ゲーム画像の著作権は各開発・販売元に帰属します
+          </p>
+          <p style={{ fontSize: 10.5, color: COLORS.mist, marginTop: 4 }}>
+            ※ 一部のリンクはAmazonアソシエイトによるアフィリエイト広告を含みます。価格・在庫はリンク先でご確認ください
           </p>
         </section>
 
