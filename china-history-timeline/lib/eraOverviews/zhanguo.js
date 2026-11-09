@@ -91,6 +91,7 @@ export default {
   ],
 
   related: [
+    { href: "/hundred-schools", label: "諸子百家とは", note: "{{孟子|もうし}}・{{荀子|じゅんし}}・{{韓非|かんぴ}}の思想を系譜マップで" },
     { href: "/chunqiu-zhanguo-battles", label: "春秋・戦国時代 合戦マップ", note: "長平の戦いなど主要な合戦を地図で" },
     { href: "/qinshihuang", label: "{{始皇帝|しこうてい}}とは", note: "{{秦|しん}}王{{政|せい}}の生涯と天下統一" },
     { href: "/kingdom", label: "漫画『キングダム』と史実", note: "{{李信|りしん}}・{{李牧|りぼく}}・{{王翦|おうせん}}は実在した？" },

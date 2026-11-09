@@ -95,6 +95,7 @@ const MISC_SECTIONS = [
   {
     title: "文化・文学",
     links: [
+      { href: "/hundred-schools", label: "{{諸子百家|しょしひゃっか}}とは" },
       { href: "/four-inventions", label: "四大発明" },
       { href: "/four-great-novels", label: "四大名著" },
       { href: "/four-beauties", label: "中国四大美女" },

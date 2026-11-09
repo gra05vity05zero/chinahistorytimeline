@@ -92,6 +92,7 @@ export default {
   ],
 
   related: [
+    { href: "/hundred-schools", label: "諸子百家とは", note: "{{孔子|こうし}}・{{老子|ろうし}}・{{孫子|そんし}}の思想を系譜マップで" },
     { href: "/chunqiu-zhanguo-battles", label: "春秋・戦国時代 合戦マップ", note: "{{城濮|じょうぼく}}の戦いや{{呉越|ごえつ}}の争いを地図で" },
     { href: "/idioms", label: "中国史から生まれた故事成語", note: "「{{臥薪嘗胆|がしんしょうたん}}」「{{呉越同舟|ごえつどうしゅう}}」など" },
     { href: "/history-books", label: "中国の歴史書とは", note: "『春秋』『{{春秋左氏伝|しゅんじゅうさしでん}}』" },
