@@ -70,14 +70,14 @@ const FAQ = [
   },
 ];
 
-// 原作小説・漫画（Amazonアソシエイト）。image はAmazonの商品画像ID
+// 原作小説・漫画・アニメ（Amazonアソシエイト）。image はAmazonの商品画像ID、wide は横長のBlu-rayジャケット
 const amazonImage = (id) => `https://m.media-amazon.com/images/I/${id}._SL300_.jpg`;
 const BOOKS = [
   { label: "原作小説 1巻", note: "ヒーロー文庫", asin: "4072981982", image: "91x1Yhj7GiL" },
   { label: "漫画 1巻", note: "ビッグガンガンコミックス", asin: "4757554893", image: "813lU+7JzQL" },
   { label: "漫画 1巻", note: "サンデーGXコミックス", asin: "4091575153", image: "71ZGM6B0UhL" },
-  { label: "アニメ 第1期", note: "Blu-ray 第1巻", asin: "B0CL6QGW8Y", image: "61R4ZTlhwEL" },
-  { label: "アニメ 第2期", note: "Blu-ray 第1巻", asin: "B0DSBVMJ7Y", image: "71TIqmqQVqL" },
+  { label: "アニメ 第1期", note: "Blu-ray 第1巻", asin: "B0CL6QGW8Y", image: "61R4ZTlhwEL", wide: true },
+  { label: "アニメ 第2期", note: "Blu-ray 第1巻", asin: "B0DSBVMJ7Y", image: "71TIqmqQVqL", wide: true },
 ];
 // アニメの配信（Prime Video）。動画はASINで /dp/ リンクにできる
 const PRIME_VIDEO_ASIN = "B0CH5FZ9MV";
@@ -328,13 +328,13 @@ export default function KusuriyaPage() {
               target="_blank"
               rel="nofollow noreferrer sponsored"
               className="flex flex-col items-center gap-1.5"
-              style={{ width: 118 }}
+              style={{ width: b.wide ? 190 : 118 }}
             >
               <img
                 src={amazonImage(b.image)}
                 alt={`『薬屋のひとりごと』${b.label}（${b.note}）の画像`}
                 loading="lazy"
-                style={{ width: 96, height: 136, objectFit: "contain", border: `1px solid ${COLORS.mist}`, backgroundColor: "#FFFDF7" }}
+                style={{ width: b.wide ? 190 : 96, height: 136, objectFit: "contain", border: `1px solid ${COLORS.mist}`, backgroundColor: "#FFFDF7" }}
               />
               <span style={{ fontSize: 10, color: COLORS.gold, textAlign: "center", lineHeight: 1.4 }}>{b.note}</span>
               <span
