@@ -52,6 +52,7 @@ const MISC_SECTIONS = [
       { href: "/quiz", label: "中国史クイズ" },
       { href: "/glossary", label: "中国史の用語集" },
       { href: "/japan-china-timeline", label: "日本史・中国史 対照年表" },
+      { href: "/printable-timeline", label: "印刷できる一枚年表" },
       { href: "/eras", label: "王朝・時代一覧" },
       { href: "/history-books", label: "中国の歴史書" },
     ],

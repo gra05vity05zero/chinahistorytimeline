@@ -259,6 +259,7 @@ export default function MnemonicsPage() {
             <NavButton href="/eras" variant="solid">時代一覧を見る</NavButton>
             <NavButton href="/people" variant="outline">人物一覧を見る</NavButton>
             <NavButton href="/quiz" variant="outline">クイズで確認する</NavButton>
+            <NavButton href="/printable-timeline" variant="outline">印刷できる一枚年表</NavButton>
           </div>
         </section>
 

@@ -15,6 +15,7 @@ export default function sitemap() {
     { url: `${SITE_URL}/idioms`, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/year-mnemonics`, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/japan-china-timeline`, changeFrequency: "yearly", priority: 0.5 },
+    { url: `${SITE_URL}/printable-timeline`, changeFrequency: "yearly", priority: 0.6 },
     { url: `${SITE_URL}/qinshihuang`, changeFrequency: "yearly", priority: 0.6 },
     { url: `${SITE_URL}/terracotta-army`, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/world-heritage`, changeFrequency: "yearly", priority: 0.5 },
