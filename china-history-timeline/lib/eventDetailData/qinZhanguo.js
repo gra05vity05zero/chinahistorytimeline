@@ -387,6 +387,7 @@ export default {
           {
             type: "related",
             items: [
+              { href: "/qin-fall", label: "{{秦|しん}}はなぜ{{滅亡|めつぼう}}したのか", note: "わずか15年で{{滅|ほろ}}びた5つの理由" },
               { href: "/chuhan-battles", label: "{{楚漢|そかん}}戦争 合戦マップ", note: "{{鴻門|こうもん}}から{{垓下|がいか}}までを地図で" },
               { href: "/events/qin--4", label: "{{陳勝|ちんしょう}}・{{呉広|ごこう}}の乱", note: "{{秦|しん}}の崩壊が始まった反乱" },
               { href: "/events/westernhan--0", label: "{{劉邦|りゅうほう}}、{{漢|かん}}を建国", note: "{{楚漢|そかん}}戦争に勝った{{劉邦|りゅうほう}}のその後" },

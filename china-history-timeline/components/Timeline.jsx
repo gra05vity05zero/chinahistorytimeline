@@ -26,6 +26,11 @@ const BATTLE_MAP_LINKS = [
   { href: "/suitang-battles", label: "{{隋唐|ずいとう}}・五代" },
 ];
 
+// 年表の各時代見出しの下に「〜とはどんな時代？」と並べて出す特集記事へのリンク
+const ERA_FEATURE_LINKS = {
+  qin: [{ href: "/qin-fall", label: "{{秦|しん}}はなぜ15年で{{滅亡|めつぼう}}したのか？" }],
+};
+
 // トップページの導入文（ルビ記法 {{漢字|ふりがな}} 対応）
 const INTRO_PARAGRAPHS = [
   "中国史は、{{黄河|こうが}}・{{長江|ちょうこう}}流域で生まれた新石器文化から始まります。{{殷|いん}}・周の時代を経て、{{諸侯|しょこう}}が争った春秋・戦国時代のあと、紀元前221年に{{秦|しん}}の{{始皇帝|しこうてい}}が初めて中国を統一しました。",
@@ -242,11 +247,21 @@ export default function Timeline({ milestonesByEra = {}, latestNews = [] }) {
                   )}
                   <Link
                     href={`/eras/${era.id}`}
-                    className="inline-block mt-2"
+                    className="inline-block mt-2 mr-4"
                     style={{ fontSize: 12.5, color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}
                   >
                     <RubyText text={era.name} />とはどんな時代？ →
                   </Link>
+                  {(ERA_FEATURE_LINKS[era.id] || []).map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="inline-block mt-2"
+                      style={{ fontSize: 12.5, color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}
+                    >
+                      <RubyText text={item.label} /> →
+                    </Link>
+                  ))}
                 </div>
                 <ol className="flex flex-col gap-3">
                   {items.map((it, i) => {
