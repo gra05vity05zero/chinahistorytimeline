@@ -1,5 +1,7 @@
+import { useId } from "react";
 import Link from "next/link";
-import { COLORS } from "@/lib/constants";
+import { COLORS, stripRuby, wikimediaThumb } from "@/lib/constants";
+import { CHINA_OUTLINE } from "@/lib/chinaOutline";
 import { RubyText } from "@/components/Ruby";
 
 // 出来事ページの詳しい解説（lib/eventDetails.js に登録された出来事のみ）。
@@ -182,7 +184,122 @@ function Related({ items }) {
   );
 }
 
-const BLOCKS = { p: Paragraph, list: BulletList, table: Table, flow: Flow, compare: Compare, note: Note, related: Related };
+// 数字で見るカード（規模・期間などをひと目で）
+function Figures({ items }) {
+  return (
+    <div className="grid gap-2" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(130px, 1fr))" }}>
+      {items.map((item, i) => (
+        <div key={i} className="px-3 py-3 text-center" style={panel}>
+          <div style={{ ...serif, fontSize: 22, fontWeight: 900, color: COLORS.vermilion, lineHeight: 1.3 }}>
+            <RubyText text={item.value} />
+          </div>
+          <div style={{ fontSize: 12, lineHeight: 1.6, color: COLORS.inkSoft, marginTop: 4 }}>
+            <RubyText text={item.label} />
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// Wikimedia Commonsの画像（file はCommonsのファイル名）。credit は作者・ライセンスの表記
+function Figure({ file, alt, caption, credit, maxHeight = 360 }) {
+  const href = `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(file.replace(/ /g, "_"))}`;
+  const src = wikimediaThumb(`https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(file.replace(/ /g, "_"))}`, 800);
+  return (
+    <figure style={{ ...panel, padding: 8 }}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={src} alt={stripRuby(alt || caption)} loading="lazy" decoding="async" style={{ width: "100%", maxHeight, objectFit: "contain", display: "block", backgroundColor: "#fff" }} />
+      <figcaption style={{ fontSize: 12.5, lineHeight: 1.7, color: COLORS.inkSoft, marginTop: 6 }}>
+        <RubyText text={caption} />
+        <a href={href} target="_blank" rel="noopener noreferrer" className="block" style={{ fontSize: 10.5, color: COLORS.mist, marginTop: 2 }}>
+          {credit}
+        </a>
+      </figcaption>
+    </figure>
+  );
+}
+
+// 中国の輪郭（lib/chinaOutline.jsと同じ図法）に地点・経路・範囲を描く地図。座標は経度・緯度で書く
+const projX = (lon) => 7.458 * lon - 528.2;
+const projY = (lat) => 511.6 - 9.138 * lat;
+const toPoints = (coords) => coords.map(([lon, lat]) => `${projX(lon).toFixed(1)},${projY(lat).toFixed(1)}`).join(" ");
+
+function MapBlock({ caption, viewBox = [0, 0, 500, 366], points = [], routes = [], areas = [], legend }) {
+  const [, , w] = viewBox;
+  const k = w / 500; // 拡大しても文字や線の太さが変わらないようにする係数
+  const id = useId().replace(/:/g, "");
+  return (
+    <figure style={{ ...panel, padding: 8 }}>
+      <svg viewBox={viewBox.join(" ")} role="img" aria-label={stripRuby(caption || "地図")} style={{ width: "100%", maxHeight: 520, display: "block", backgroundColor: "#F4F1E8" }}>
+        <defs>
+          {routes.map((r, i) => (
+            <marker key={i} id={`${id}-arrow-${i}`} viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto">
+              <path d="M0,0 L10,5 L0,10 z" fill={r.color || COLORS.vermilion} />
+            </marker>
+          ))}
+        </defs>
+        <path d={CHINA_OUTLINE} fill="#FFFDF7" stroke={COLORS.mist} strokeWidth={1 * k} />
+        {areas.map((a, i) => (
+          <g key={i}>
+            <polygon points={toPoints(a.coords)} fill={a.color || COLORS.vermilion} fillOpacity={0.22} stroke={a.color || COLORS.vermilion} strokeWidth={1.2 * k} strokeDasharray={`${4 * k} ${3 * k}`} />
+            {a.label && (
+              <text x={projX(a.labelAt[0])} y={projY(a.labelAt[1])} textAnchor="middle" fontSize={11 * k} fontWeight="700" fill={a.color || COLORS.vermilion} style={serif}>
+                {stripRuby(a.label)}
+              </text>
+            )}
+          </g>
+        ))}
+        {routes.map((r, i) => (
+          <polyline
+            key={i}
+            points={toPoints(r.coords)}
+            fill="none"
+            stroke={r.color || COLORS.vermilion}
+            strokeWidth={2.2 * k}
+            strokeLinejoin="round"
+            strokeDasharray={r.dashed ? `${5 * k} ${4 * k}` : undefined}
+            markerEnd={r.arrow === false ? undefined : `url(#${id}-arrow-${i})`}
+          />
+        ))}
+        {points.map((p, i) => {
+          const x = projX(p.lon);
+          const y = projY(p.lat);
+          const anchor = p.anchor || "start";
+          const dx = p.dx ?? (anchor === "end" ? -7 : anchor === "middle" ? 0 : 7);
+          const dy = p.dy ?? (anchor === "middle" ? -8 : 4);
+          return (
+            <g key={i}>
+              <circle cx={x} cy={y} r={(p.main ? 5 : 3.5) * k} fill={p.main ? COLORS.vermilion : COLORS.ink} stroke="#fff" strokeWidth={1.2 * k} />
+              <text x={x + dx * k} y={y + dy * k} textAnchor={anchor} fontSize={(p.main ? 12.5 : 11) * k} fontWeight={p.main ? 700 : 500} fill={COLORS.ink} stroke="#FFFDF7" strokeWidth={3 * k} paintOrder="stroke" style={serif}>
+                {stripRuby(p.name)}
+              </text>
+            </g>
+          );
+        })}
+      </svg>
+      {(caption || legend) && (
+        <figcaption style={{ fontSize: 12.5, lineHeight: 1.7, color: COLORS.inkSoft, marginTop: 6 }}>
+          {legend && (
+            <span className="flex flex-wrap gap-x-4 gap-y-1 mb-1">
+              {legend.map((l, i) => (
+                <span key={i} className="inline-flex items-center gap-1.5">
+                  <svg width="22" height="8" aria-hidden>
+                    <line x1="1" y1="4" x2="21" y2="4" stroke={l.color || COLORS.vermilion} strokeWidth="2.5" strokeDasharray={l.dashed ? "4 3" : undefined} />
+                  </svg>
+                  <RubyText text={l.label} />
+                </span>
+              ))}
+            </span>
+          )}
+          {caption && <RubyText text={caption} />}
+        </figcaption>
+      )}
+    </figure>
+  );
+}
+
+const BLOCKS = { p: Paragraph, list: BulletList, table: Table, flow: Flow, compare: Compare, note: Note, related: Related, figures: Figures, image: Figure, map: MapBlock };
 
 function Block({ block }) {
   const Component = BLOCKS[block.type];

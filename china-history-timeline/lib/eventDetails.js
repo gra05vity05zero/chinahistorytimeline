@@ -2,6 +2,10 @@ import { findEventBySlug } from "./data";
 import QIN_ZHANGUO from "./eventDetailData/qinZhanguo";
 import SANGUO_TANG from "./eventDetailData/sanguoTang";
 import QING from "./eventDetailData/qing";
+import ANCIENT from "./eventDetailData/ancient";
+import HAN_NANBEI from "./eventDetailData/hanNanbei";
+import SUI_YUAN from "./eventDetailData/suiYuan";
+import MING_MODERN from "./eventDetailData/mingModern";
 
 // 出来事ページの「詳しい解説」。lib/data.js の summary（年表と共通の要約）の下に表示する。
 // 主要な出来事から順に追加していく。項目の意味：
@@ -14,6 +18,11 @@ import QING from "./eventDetailData/qing";
 //     { type: "compare", columns: [{ title, sub?, color?, items }] }  比較カード
 //     { type: "note", title?, text }                    補足・豆知識
 //     { type: "related", items: [{ href, label, note? }] }  関連ページへのリンク
+//     { type: "figures", items: [{ value, label }] }     数字で見るカード
+//     { type: "image", file, caption, credit, alt? }     Wikimedia Commonsの画像（file はファイル名、credit は作者・ライセンス）
+//     { type: "map", caption?, viewBox?, points?, routes?, areas?, legend? }  中国の輪郭地図
+//         points: [{ name, lon, lat, main?, anchor?, dx?, dy? }] / routes: [{ coords: [[lon, lat], ...], color?, dashed?, arrow? }]
+//         areas: [{ coords, color?, label?, labelAt: [lon, lat] }] / viewBox: [x, y, w, h]（全体は [0, 0, 500, 366]）
 //   faq          よくある質問（FAQPageの構造化データにも使う）
 //   sources      主な出典（表示用の短い文）
 //   publishedAt / updatedAt  "YYYY-MM-DD"
@@ -21,6 +30,10 @@ const EVENT_DETAILS = {
   ...QIN_ZHANGUO,
   ...SANGUO_TANG,
   ...QING,
+  ...ANCIENT,
+  ...HAN_NANBEI,
+  ...SUI_YUAN,
+  ...MING_MODERN,
 };
 
 // ---- 整合性チェック（ビルド時に壊れた参照を見つける） ----
