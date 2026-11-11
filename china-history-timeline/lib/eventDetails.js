@@ -9,6 +9,9 @@ import MING_MODERN from "./eventDetailData/mingModern";
 import ZHOU_HAN from "./eventDetailData/zhouHan";
 import SANGUO_YUAN from "./eventDetailData/sanguoYuan";
 import MING_PRC from "./eventDetailData/mingPrc";
+import LEGEND_QIN from "./eventDetailData/legendQin";
+import HAN_TANG from "./eventDetailData/hanTang";
+import SONG_PRC from "./eventDetailData/songPrc";
 
 // 出来事ページの「詳しい解説」。lib/data.js の summary（年表と共通の要約）の下に表示する。
 // 主要な出来事から順に追加していく。項目の意味：
@@ -40,6 +43,9 @@ const EVENT_DETAILS = {
   ...ZHOU_HAN,
   ...SANGUO_YUAN,
   ...MING_PRC,
+  ...LEGEND_QIN,
+  ...HAN_TANG,
+  ...SONG_PRC,
 };
 
 // ---- 整合性チェック（ビルド時に壊れた参照を見つける） ----
