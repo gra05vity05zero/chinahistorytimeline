@@ -12,6 +12,14 @@ import MING_PRC from "./eventDetailData/mingPrc";
 import LEGEND_QIN from "./eventDetailData/legendQin";
 import HAN_TANG from "./eventDetailData/hanTang";
 import SONG_PRC from "./eventDetailData/songPrc";
+import ZHOU_JIN from "./eventDetailData/zhouJin";
+import SUI_PRC from "./eventDetailData/suiPrc";
+import SHANG_HAN from "./eventDetailData/shangHan";
+import JIN_QING from "./eventDetailData/jinQing";
+import ANCIENT_XIN from "./eventDetailData/ancientXin";
+import JIN_PRC from "./eventDetailData/jinPrc";
+import XIA_NANBEI from "./eventDetailData/xiaNanbei";
+import WUDAI_PRC from "./eventDetailData/wudaiPrc";
 
 // 出来事ページの「詳しい解説」。lib/data.js の summary（年表と共通の要約）の下に表示する。
 // 主要な出来事から順に追加していく。項目の意味：
@@ -46,6 +54,14 @@ const EVENT_DETAILS = {
   ...LEGEND_QIN,
   ...HAN_TANG,
   ...SONG_PRC,
+  ...ZHOU_JIN,
+  ...SUI_PRC,
+  ...SHANG_HAN,
+  ...JIN_QING,
+  ...ANCIENT_XIN,
+  ...JIN_PRC,
+  ...XIA_NANBEI,
+  ...WUDAI_PRC,
 };
 
 // ---- 整合性チェック（ビルド時に壊れた参照を見つける） ----

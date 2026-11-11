@@ -26,7 +26,7 @@ export default {
               { name: "河西回廊", lon: 100.4, lat: 38.9, anchor: "middle", dy: -9 },
               { name: "敦煌", lon: 94.7, lat: 40.1, anchor: "middle", dy: -9 },
               { name: "カシュガル", lon: 76.0, lat: 39.5, anchor: "middle", dy: -9 },
-              { name: "大宛（フェルガナ）", lon: 71.8, lat: 40.5, anchor: "middle", dy: -9 },
+              { name: "大宛（フェルガナ）", lon: 71.8, lat: 40.5, anchor: "end", dx: -2, dy: -6 },
               { name: "大月氏（アム川流域）", lon: 67.5, lat: 37.2, main: true, anchor: "middle", dy: 15 },
               { name: "ホータン", lon: 79.9, lat: 37.1, anchor: "middle", dy: 14 },
             ],
