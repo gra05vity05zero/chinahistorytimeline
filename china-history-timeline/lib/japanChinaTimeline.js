@@ -36,7 +36,7 @@ function eraLink(eraId) {
 const CHINA_EVENTS = [
   { eraId: "paleolithic", sortYear: -700000, yearLabel: "約70万年前", event: "北京原人が{{周口店|しゅうこうてん}}で暮らす（火の使用）", era: "旧石器時代" },
   { eraId: "paleolithic", sortYear: -18000, yearLabel: "前18000年{{頃|ごろ}}", event: "{{仙人洞|せんにんどう}}{{遺跡|いせき}}で世界最古級の土器がつくられる", era: "旧石器時代" },
-  { eraId: "neolithic", sortYear: -7000, yearLabel: "前7000年{{頃|ごろ}}", event: "{{長江|ちょうこう}}文明：{{河姆渡|かぼと}}文化で{{稲作|いなさく}}が営まれる", era: "新石器文化（{{長江|ちょうこう}}文明）", href: findEventHref("neolithic", "河姆渡") },
+  { eraId: "neolithic", sortYear: -5000, yearLabel: "前5000年{{頃|ごろ}}", event: "{{長江|ちょうこう}}文明：{{河姆渡|かぼと}}文化で{{稲作|いなさく}}が営まれる", era: "新石器文化（{{長江|ちょうこう}}文明）", href: findEventHref("neolithic", "河姆渡") },
   { eraId: "neolithic", sortYear: -5000, icon: "caitao", yearLabel: "前5000年{{頃|ごろ}}", event: "黄河文明：{{仰韶|ぎょうしょう}}文化が栄える（{{彩陶|さいとう}}）", era: "新石器文化（黄河文明）", href: findEventHref("neolithic", "仰韶") },
   { eraId: "neolithic", sortYear: -4000, yearLabel: "前4000年{{頃|ごろ}}", event: "{{大汶口|だいぶんこう}}文化が広がる", era: "新石器文化（黄河文明）", href: findEventHref("neolithic", "大汶口") },
   { eraId: "neolithic", sortYear: -3000, yearLabel: "前3000年{{頃|ごろ}}", event: "{{竜山|りゅうざん}}文化が栄える（{{黒陶|こくとう}}・{{城壁|じょうへき}}集落）", era: "新石器文化（黄河文明）", href: findEventHref("neolithic", "竜山") },
