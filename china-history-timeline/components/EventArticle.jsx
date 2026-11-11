@@ -372,7 +372,7 @@ export default function EventArticle({ detail }) {
 
       <p className="mt-6" style={{ fontSize: 11.5, color: COLORS.inkSoft }}>
         更新日：<time dateTime={detail.updatedAt}>{detail.updatedAt.replace(/^(\d+)-0?(\d+)-0?(\d+)$/, "$1年$2月$3日")}</time>
-        {detail.sources && <>　主な出典：{detail.sources}</>}
+        {detail.sources && <>　主な出典：<RubyText text={detail.sources} /></>}
       </p>
     </div>
   );
