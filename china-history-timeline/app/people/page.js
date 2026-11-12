@@ -2,6 +2,14 @@ import Link from "next/link";
 import { ERAS, ERA_ALIASES, COLORS, SITE_NAME, getEraFigures, buildOpenGraph, buildTwitter } from "@/lib/data";
 import { SealMark, BackToTopButton, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
+import { personSlug } from "@/lib/constants";
+
+// 解説文の最初の一文だけを取り出して簡素な説明にする
+function shortDescription(text) {
+  if (!text) return "";
+  const idx = text.indexOf("。");
+  return idx >= 0 ? text.slice(0, idx + 1) : text;
+}
 
 const title = "人物一覧";
 const fullTitle = `人物一覧 | ${SITE_NAME}`;
@@ -17,7 +25,7 @@ export const metadata = {
 };
 
 export default function PeopleIndexPage() {
-  const rows = ERAS.map((era) => ({ era, count: getEraFigures(era).length }));
+  const rows = ERAS.map((era) => ({ era, people: getEraFigures(era) }));
 
   return (
     <div style={{ backgroundColor: COLORS.paper, minHeight: "100%" }}>
@@ -30,10 +38,10 @@ export default function PeopleIndexPage() {
           王朝・時代ごとに、登場する人物とゆかりの出来事をまとめています。気になる時代を選んでご覧ください。
         </p>
 
-        <div className="flex flex-col gap-2">
-          {rows.map(({ era, count }) => (
+        <div className="flex flex-col gap-4">
+          {rows.map(({ era, people }) => (
+            <section key={era.id}>
             <Link
-              key={era.id}
               href={`/people/${era.id}`}
               className="flex items-center gap-3 px-4 py-3"
               style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8" }}
@@ -50,8 +58,28 @@ export default function PeopleIndexPage() {
                 </div>
                 <div style={{ fontSize: 11, color: COLORS.gold, fontFamily: "var(--font-serif), serif" }}><RubyText text={era.period} /></div>
               </div>
-              <div style={{ fontSize: 11, color: COLORS.inkSoft, whiteSpace: "nowrap" }}>{count}人</div>
+              <div style={{ fontSize: 11, color: COLORS.inkSoft, whiteSpace: "nowrap" }}>{people.length}人</div>
             </Link>
+            {people.length > 0 && (
+              <ul style={{ borderLeft: "1px solid #DCD3B8", borderRight: "1px solid #DCD3B8", borderBottom: "1px solid #DCD3B8", backgroundColor: "#fff" }}>
+                {people.map((person) => {
+                  const href = person.bio ? `/people/${era.id}/${encodeURIComponent(personSlug(person.name))}` : `/people/${era.id}`;
+                  return (
+                    <li key={person.name} style={{ borderTop: "1px solid #EFE7D0" }}>
+                      <Link href={href} className="flex flex-col sm:flex-row sm:items-baseline gap-0.5 sm:gap-3 px-4 py-2">
+                        <span className="shrink-0 sm:w-36" style={{ fontFamily: "var(--font-serif), serif", fontSize: 13.5, fontWeight: 700, color: COLORS.ink }}>
+                          <RubyText text={person.name} />
+                        </span>
+                        <span style={{ fontSize: 12, lineHeight: 1.8, color: COLORS.inkSoft }}>
+                          <RubyText text={shortDescription(person.description)} />
+                        </span>
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
+            </section>
           ))}
         </div>
 
