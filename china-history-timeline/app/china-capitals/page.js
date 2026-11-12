@@ -252,6 +252,157 @@ function resolveCapital(spec) {
 
 const RESOLVED = CAPITALS.map(resolveCapital).filter(Boolean);
 
+// 時代別の首都一覧表。eraIdで年表の時代（名称・期間）を引き、
+// 1つの時代に複数の都がある場合は capitals に並べる（note は遷都や並立の補足）。
+const ERA_CAPITALS = [
+  { eraId: "xia", capitals: [{ old: "{{斟鄩|しんじん}}（{{二里頭|にりとう}}{{遺跡|いせき}}に比定）", now: "河南省{{洛陽市|らくようし}}{{偃師区|えんしく}}" }] },
+  {
+    eraId: "shang",
+    capitals: [
+      { old: "{{亳|はく}}（{{鄭州|ていしゅう}}{{商城|しょうじょう}}説）", now: "河南省{{鄭州市|ていしゅうし}}", note: "前期" },
+      { old: "{{殷|いん}}（{{殷墟|いんきょ}}）", now: "河南省{{安陽市|あんようし}}", note: "{{盤庚|ばんこう}}の{{遷都|せんと}}以降" },
+    ],
+  },
+  { eraId: "westernzhou", capitals: [{ old: "{{鎬京|こうけい}}", now: "{{陝西省|せんせいしょう}}西安市" }] },
+  { eraId: "chunqiu", capitals: [{ old: "{{洛邑|らくゆう}}（{{成周|せいしゅう}}）", now: "河南省{{洛陽市|らくようし}}", note: "周王室の都" }] },
+  {
+    eraId: "zhanguo",
+    capitals: [{ old: "{{洛邑|らくゆう}}", now: "河南省{{洛陽市|らくようし}}", note: "周王室の都。七雄はそれぞれ{{咸陽|かんよう}}・{{大梁|たいりょう}}・{{邯鄲|かんたん}}などに都を置いた" }],
+  },
+  { eraId: "qin", capitals: [{ old: "{{咸陽|かんよう}}", now: "{{陝西省|せんせいしょう}}{{咸陽市|かんようし}}" }] },
+  { eraId: "westernhan", capitals: [{ old: "{{長安|ちょうあん}}", now: "{{陝西省|せんせいしょう}}西安市" }] },
+  { eraId: "xin", capitals: [{ old: "{{常安|じょうあん}}（{{長安|ちょうあん}}を改称）", now: "{{陝西省|せんせいしょう}}西安市" }] },
+  {
+    eraId: "easternhan",
+    capitals: [
+      { old: "{{洛陽|らくよう}}", now: "河南省{{洛陽市|らくようし}}" },
+      { old: "{{許|きょ}}（{{許昌|きょしょう}}）", now: "河南省{{許昌市|きょしょうし}}", note: "末期、{{曹操|そうそう}}が{{献帝|けんてい}}を迎えた" },
+    ],
+  },
+  {
+    eraId: "sanguo",
+    capitals: [
+      { old: "{{洛陽|らくよう}}", now: "河南省{{洛陽市|らくようし}}", note: "{{魏|ぎ}}" },
+      { old: "{{成都|せいと}}", now: "四川省{{成都市|せいとし}}", note: "{{蜀漢|しょくかん}}" },
+      { old: "{{建業|けんぎょう}}", now: "{{江蘇省|こうそしょう}}南京市", note: "{{呉|ご}}" },
+    ],
+  },
+  { eraId: "westernjin", capitals: [{ old: "{{洛陽|らくよう}}", now: "河南省{{洛陽市|らくようし}}" }] },
+  {
+    eraId: "sixteenkingdoms",
+    capitals: [
+      { old: "{{建康|けんこう}}", now: "{{江蘇省|こうそしょう}}南京市", note: "{{東晋|とうしん}}" },
+      { old: "{{長安|ちょうあん}}", now: "{{陝西省|せんせいしょう}}西安市", note: "{{前秦|ぜんしん}}など。華北の諸国は{{鄴|ぎょう}}・{{平城|へいじょう}}などにも都を置いた" },
+    ],
+  },
+  {
+    eraId: "nanbei",
+    capitals: [
+      { old: "{{建康|けんこう}}", now: "{{江蘇省|こうそしょう}}南京市", note: "南朝（{{宋|そう}}・{{斉|せい}}・{{梁|りょう}}・{{陳|ちん}}）" },
+      { old: "{{平城|へいじょう}}", now: "山西省{{大同市|だいどうし}}", note: "{{北魏|ほくぎ}}前期" },
+      { old: "{{洛陽|らくよう}}", now: "河南省{{洛陽市|らくようし}}", note: "{{北魏|ほくぎ}}・{{孝文帝|こうぶんてい}}の{{遷都|せんと}}（494年）以降" },
+    ],
+  },
+  { eraId: "sui", capitals: [{ old: "{{大興城|だいこうじょう}}（{{長安|ちょうあん}}）", now: "{{陝西省|せんせいしょう}}西安市", note: "東都として{{洛陽|らくよう}}も造営" }] },
+  { eraId: "tang", capitals: [{ old: "{{長安|ちょうあん}}", now: "{{陝西省|せんせいしょう}}西安市", note: "{{洛陽|らくよう}}を東都とし、{{武則天|ぶそくてん}}の{{周|しゅう}}では{{神都|しんと}}とした" }] },
+  {
+    eraId: "wudai",
+    capitals: [
+      { old: "{{開封|かいほう}}（{{汴州|べんしゅう}}）", now: "河南省{{開封市|かいほうし}}", note: "{{後梁|こうりょう}}・{{後晋|こうしん}}・{{後漢|こうかん}}・{{後周|こうしゅう}}" },
+      { old: "{{洛陽|らくよう}}", now: "河南省{{洛陽市|らくようし}}", note: "{{後唐|こうとう}}" },
+    ],
+  },
+  { eraId: "northernsong", capitals: [{ old: "{{開封|かいほう}}（{{汴京|べんけい}}・{{東京|とうけい}}）", now: "河南省{{開封市|かいほうし}}" }] },
+  { eraId: "southernsong", capitals: [{ old: "{{臨安|りんあん}}", now: "{{浙江省|せっこうしょう}}{{杭州市|こうしゅうし}}" }] },
+  { eraId: "yuan", capitals: [{ old: "{{大都|だいと}}", now: "北京市", note: "夏の都として{{上都|じょうと}}（内モンゴル）も置いた" }] },
+  {
+    eraId: "ming",
+    capitals: [
+      { old: "{{応天府|おうてんふ}}（{{南京|なんきん}}）", now: "{{江蘇省|こうそしょう}}南京市", note: "建国から{{永楽帝|えいらくてい}}の{{遷都|せんと}}まで" },
+      { old: "{{順天府|じゅんてんふ}}（{{北京|ぺきん}}）", now: "北京市", note: "1421年以降" },
+    ],
+  },
+  {
+    eraId: "qing",
+    capitals: [
+      { old: "{{盛京|せいけい}}", now: "{{遼寧省|りょうねいしょう}}{{瀋陽市|しんようし}}", note: "{{入関|にゅうかん}}前" },
+      { old: "{{北京|ぺきん}}", now: "北京市", note: "1644年以降" },
+    ],
+  },
+  {
+    eraId: "roc",
+    capitals: [
+      { old: "{{南京|なんきん}}", now: "{{江蘇省|こうそしょう}}南京市", note: "1912年、1927〜1937年・1946〜1949年" },
+      { old: "{{北京|ぺきん}}", now: "北京市", note: "{{北京|ぺきん}}政府期（1912〜1928年）" },
+      { old: "{{重慶|じゅうけい}}", now: "{{重慶市|じゅうけいし}}", note: "日中戦争中の臨時首都（1937〜1946年）" },
+    ],
+  },
+  { eraId: "prc", capitals: [{ old: "{{北京|ぺきん}}", now: "北京市" }] },
+].map((row) => ({ ...row, era: ERAS.find((e) => e.id === row.eraId) })).filter((row) => row.era);
+
+const cellStyle = { padding: "7px 10px", borderTop: "1px solid #E8E0CA", verticalAlign: "top" };
+
+function EraCapitalsTable() {
+  return (
+    <section style={{ marginBottom: 32 }}>
+      <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 19, fontWeight: 900, color: COLORS.ink, marginBottom: 14 }}>
+        時代別 首都一覧表
+      </h2>
+      <div style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", overflowX: "auto" }}>
+        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12.5, minWidth: 340 }}>
+          <thead>
+            <tr>
+              {["時代", "都（当時の名）", "現在の都市"].map((h) => (
+                <th
+                  key={h}
+                  style={{ padding: "8px 10px", borderBottom: `2px solid ${COLORS.vermilion}`, textAlign: "left", fontFamily: "var(--font-serif), serif", fontSize: 12, color: COLORS.gold, whiteSpace: "nowrap" }}
+                >
+                  {h}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {ERA_CAPITALS.flatMap(({ era, capitals }) =>
+              capitals.map((cap, i) => (
+                <tr key={`${era.id}-${i}`}>
+                  {i === 0 && (
+                    <td rowSpan={capitals.length} style={{ ...cellStyle, minWidth: 92 }}>
+                      <a
+                        href={`/eras/${era.id}`}
+                        style={{ fontFamily: "var(--font-serif), serif", fontWeight: 700, color: COLORS.ink, textDecoration: "underline", textDecorationColor: COLORS.mist }}
+                      >
+                        <RubyText text={era.name} />
+                      </a>
+                      <div style={{ fontSize: 10.5, color: COLORS.gold, fontFamily: "var(--font-serif), serif", marginTop: 2 }}>
+                        <RubyText text={era.period} />
+                      </div>
+                    </td>
+                  )}
+                  <td style={{ ...cellStyle, fontFamily: "var(--font-serif), serif", fontWeight: 700, color: COLORS.ink }}>
+                    <RubyText text={cap.old} />
+                    {cap.note && (
+                      <div style={{ fontSize: 10.5, fontWeight: 400, color: COLORS.inkSoft, lineHeight: 1.6, marginTop: 2 }}>
+                        <RubyText text={cap.note} />
+                      </div>
+                    )}
+                  </td>
+                  <td style={{ ...cellStyle, color: COLORS.inkSoft }}>
+                    <RubyText text={cap.now} />
+                  </td>
+                </tr>
+              ))
+            )}
+          </tbody>
+        </table>
+      </div>
+      <p style={{ fontSize: 11, color: COLORS.inkSoft, marginTop: 8 }}>
+        都の位置には諸説あるものも含みます。分裂期は主な王朝の都を挙げています。
+      </p>
+    </section>
+  );
+}
+
 // 中国本土＋海南島の輪郭。/world-heritageと同じ海岸線データ（Natural Earthベースの簡略化済み国境ポリゴン、
 // 経緯度→緯度補正付き正距円筒図法で投影）を再利用している。
 const CHINA_OUTLINE =
@@ -350,6 +501,8 @@ export default function ChinaCapitalsPage() {
           中国では王朝が交代するたびに、あるいは同じ王朝の中でも遷都によって、都の位置がたびたび移り変わってきました。
           ここでは、夏の二里頭から<ruby>中華人民共和国<rt>ちゅうかじんみんきょうわこく</rt></ruby>の北京まで、歴代王朝の都を移り変わりの順に紹介します。
         </p>
+
+        <EraCapitalsTable />
 
         <div className="relative">
           <div className="sticky top-3 z-10">
