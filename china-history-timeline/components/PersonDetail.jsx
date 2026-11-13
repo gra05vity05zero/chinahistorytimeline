@@ -5,8 +5,9 @@ import { COLORS, displayEventYear, displayPeriod } from "@/lib/constants";
 import { SealMark, HeritageThumb, MiscLinksSection, A8AdBlock } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 
-export default function PersonDetail({ person, era, relatedPeople = [] }) {
+export default function PersonDetail({ person, era, lifeRows = [], relatedPeople = [] }) {
   const bioParagraphs = (person.bio || "").split("\n\n").filter(Boolean);
+  const showAge = lifeRows.some((r) => r.age !== null);
 
   return (
     <div style={{ backgroundColor: COLORS.paper, minHeight: "100%" }}>
@@ -51,6 +52,50 @@ export default function PersonDetail({ person, era, relatedPeople = [] }) {
                 <RubyText text={para} />
               </p>
             ))}
+          </div>
+        )}
+
+        {lifeRows.length > 0 && (
+          <div className="mt-10">
+            <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 16, fontWeight: 900, color: COLORS.vermilion, letterSpacing: "0.1em", marginBottom: 12 }}>
+              生涯年表
+            </h2>
+            <table className="w-full" style={{ borderCollapse: "collapse", fontSize: 13.5, lineHeight: 1.75 }}>
+              <thead>
+                <tr style={{ backgroundColor: COLORS.paperDeep, color: COLORS.ink, fontFamily: "var(--font-serif), serif" }}>
+                  <th scope="col" className="text-left px-3 py-2" style={{ width: "6.5em", fontWeight: 700, borderBottom: `2px solid ${COLORS.vermilion}` }}>年</th>
+                  {showAge && (
+                    <th scope="col" className="text-left px-2 py-2" style={{ width: "3.6em", fontWeight: 700, borderBottom: `2px solid ${COLORS.vermilion}` }}>年齢</th>
+                  )}
+                  <th scope="col" className="text-left px-3 py-2" style={{ fontWeight: 700, borderBottom: `2px solid ${COLORS.vermilion}` }}>出来事</th>
+                </tr>
+              </thead>
+              <tbody>
+                {lifeRows.map((row, i) => {
+                  const edge = row.kind !== null;
+                  return (
+                    <tr key={i} style={{ borderBottom: "1px solid #E6DEC6", backgroundColor: edge ? "#FBF8F0" : "transparent" }}>
+                      <th scope="row" className="text-left align-top px-3 py-2" style={{ fontFamily: "var(--font-serif), serif", fontWeight: 700, color: edge ? COLORS.vermilion : COLORS.ink, whiteSpace: "nowrap" }}>
+                        {row.year}
+                      </th>
+                      {showAge && (
+                        <td className="align-top px-2 py-2" style={{ color: COLORS.inkSoft, whiteSpace: "nowrap" }}>
+                          {row.age === null ? "" : `${row.age}歳`}
+                        </td>
+                      )}
+                      <td className="align-top px-3 py-2" style={{ color: COLORS.inkSoft }}>
+                        {row.kind === "birth" && <span style={{ fontSize: 11, color: COLORS.vermilion, fontWeight: 700, marginRight: 6 }}>誕生</span>}
+                        {row.kind === "death" && row.text !== "死去" && <span style={{ fontSize: 11, color: COLORS.vermilion, fontWeight: 700, marginRight: 6 }}>死去</span>}
+                        <RubyText text={row.text} />
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+            {showAge && (
+              <p style={{ fontSize: 11, color: COLORS.inkSoft, marginTop: 8 }}>※年齢は生年との差から出した目安です（当時の数え年とは1歳ほどずれることがあります）。生没年には諸説ある人物もいます。</p>
+            )}
           </div>
         )}
 

@@ -3,7 +3,8 @@
 // クライアントコンポーネントは代わりに "@/lib/constants" から直接importすること
 // （このファイルから直接importすると、下の巨大なERAS配列ごとJSバンドルへ含まれてしまう）。
 export * from "./constants";
-import { stripRuby } from "./constants";
+import { stripRuby, personSlug } from "./constants";
+import { PERSON_DETAILS } from "./personDetails";
 
 // 戦国時代末期〜秦の統一を描く漫画『キングダム』関連作品（アフィリエイトリンク付き）
 export const KINGDOM_MEDIA = [
@@ -824,6 +825,27 @@ export const ERAS = [
   },
 ];
 
+// ---- 人物の個別ページ用データ（lib/personDetails）を人物データへ合流させる ----
+// data.js に bio が無い人物は personDetails の bio を使う。各ページの「bio があればリンク」判定もこれで揃う
+{
+  const used = new Set();
+  ERAS.forEach((era) =>
+    era.events.forEach((ev) =>
+      (ev.heritage || []).forEach((h) => {
+        if (h.type !== "figure") return;
+        const key = `${era.id}/${personSlug(h.name)}`;
+        const d = PERSON_DETAILS[key];
+        if (!d) return;
+        used.add(key);
+        if (!h.bio && d.bio) h.bio = d.bio;
+      })
+    )
+  );
+  Object.keys(PERSON_DETAILS).forEach((key) => {
+    if (!used.has(key)) throw new Error(`存在しない人物の詳細データです: ${key}`);
+  });
+}
+
 // slugは詳細ページのURL（/events/[slug]）になるため、全イベントに明示的に固定値を持たせる。
 // かつては時代内の連番で自動採番していたが、途中に出来事を追加すると後続のURLがずれるため廃止した。
 // 既存slugは公開済みURLなので変更しないこと。新しい出来事には内容を表す一意のslugを付ける。
@@ -872,7 +894,8 @@ export function getEraFigures(era) {
       if (h.type !== "figure") return;
       const key = stripRuby(h.name);
       if (!map.has(key)) {
-        map.set(key, { ...h, events: [] });
+        const life = PERSON_DETAILS[`${era.id}/${personSlug(h.name)}`]?.life;
+        map.set(key, { ...h, ...(life ? { life } : {}), events: [] });
       }
       map.get(key).events.push({ slug: ev.slug, year: ev.year, title: ev.title });
     });

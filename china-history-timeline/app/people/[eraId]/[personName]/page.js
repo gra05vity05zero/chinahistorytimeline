@@ -1,6 +1,19 @@
 import { notFound } from "next/navigation";
 import { ERAS, SITE_URL, getEraFigures, personSlug, stripRuby, buildOpenGraph, buildTwitter } from "@/lib/data";
 import PersonDetail from "@/components/PersonDetail";
+import { formatLifeYear, lifeAge } from "@/lib/personDetails";
+
+// 生涯年表の行を表示用に整える（先頭行=誕生、最後の行=死去）
+function buildLifeRows(life) {
+  if (!life) return [];
+  const born = life[0][0];
+  return life.map(([year, text, approx], i) => ({
+    year: formatLifeYear(year, approx === "頃"),
+    age: i === 0 ? (born === null ? null : 0) : lifeAge(born, year),
+    text,
+    kind: i === 0 ? (born === null ? null : "birth") : i === life.length - 1 ? "death" : null,
+  }));
+}
 
 function findPerson(eraId, personName) {
   const era = ERAS.find((e) => e.id === eraId);
@@ -83,6 +96,7 @@ export default function PersonPage({ params }) {
       <PersonDetail
         person={person}
         era={era}
+        lifeRows={buildLifeRows(person.life)}
         relatedPeople={getEraFigures(era)
           .filter((p) => p.bio && p.name !== person.name)
           .map((p) => ({ href: `/people/${era.id}/${personSlug(p.name)}`, label: p.name }))}
