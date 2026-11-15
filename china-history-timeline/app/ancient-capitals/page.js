@@ -708,6 +708,7 @@ export default function AncientCapitalsPage() {
             <NavButton href="/china-capitals" variant="solid">歴代王朝の都一覧を見る</NavButton>
             <NavButton href="/world-heritage" variant="outline">中国の世界遺産</NavButton>
             <NavButton href="/silk-road" variant="outline">シルクロード</NavButton>
+            <NavButton href="/ancient-towns" variant="outline">中国の古城めぐり</NavButton>
           </div>
         </section>
 

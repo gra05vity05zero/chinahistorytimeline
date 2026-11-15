@@ -212,6 +212,7 @@ export default function ChinaCastlesPage() {
           </p>
           <div className="flex items-center gap-2.5 flex-wrap">
             <NavButton href="/china-capitals" variant="solid">歴代王朝の都一覧を見る</NavButton>
+            <NavButton href="/ancient-towns" variant="outline">中国の古城めぐり</NavButton>
             <NavButton href="/world-heritage" variant="outline">中国の世界遺産まとめを見る</NavButton>
           </div>
         </section>

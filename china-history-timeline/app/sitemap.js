@@ -21,6 +21,7 @@ export default function sitemap() {
     { url: `${SITE_URL}/terracotta-army`, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/world-heritage`, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/china-castles`, changeFrequency: "yearly", priority: 0.5 },
+    { url: `${SITE_URL}/ancient-towns`, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/emperors`, changeFrequency: "yearly", priority: 0.6 },
     { url: `${SITE_URL}/china-capitals`, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/ancient-capitals`, changeFrequency: "yearly", priority: 0.5 },

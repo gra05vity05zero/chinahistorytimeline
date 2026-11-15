@@ -104,6 +104,7 @@ export default {
 
   related: [
     { href: "/sanguo-battles", label: "三国時代 合戦マップ", note: "{{赤壁|せきへき}}・{{夷陵|いりょう}}・{{五丈原|ごじょうげん}}を地図で" },
+    { href: "/ancient-towns", label: "中国の古城めぐり", note: "{{張飛|ちょうひ}}の{{閬中|ろうちゅう}}・{{関羽|かんう}}の{{荊州|けいしゅう}}・{{襄陽|じょうよう}}" },
     { href: "/sanguo-comparison", label: "魏・{{蜀|しょく}}・{{呉|ご}}を比較", note: "国力・人材・領土の違い" },
     { href: "/koei-sangokushi", label: "コーエー『三國志』シリーズ", note: "歴史シミュレーションゲームの名作" },
     { href: "/musou", label: "ゲーム『真・{{三國無双|さんごくむそう}}』シリーズ", note: "武将・武器・名場面は史実どおり？" },

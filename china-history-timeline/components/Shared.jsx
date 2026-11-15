@@ -90,6 +90,7 @@ const MISC_SECTIONS = [
       { href: "/great-wall", label: "万里の長城" },
       { href: "/silk-road", label: "シルクロード" },
       { href: "/china-castles", label: "中国の城" },
+      { href: "/ancient-towns", label: "中国の古城めぐり" },
       { href: "/ancient-capitals", label: "古都の今と観光地" },
     ],
   },
