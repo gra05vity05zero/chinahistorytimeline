@@ -2,6 +2,7 @@ import { ERAS, stripRuby, personSlug, COLORS, SITE_NAME, buildOpenGraph, buildTw
 import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "中国の女帝と三大悪女とは？呂后・武則天・西太后ら権力を握った女性を解説";
 const fullTitle = `${title} | ${SITE_NAME}`;
@@ -11,7 +12,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/women-rulers" },
+  alternates: bilingualAlternates("/women-rulers", "ja"),
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/women-rulers" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };

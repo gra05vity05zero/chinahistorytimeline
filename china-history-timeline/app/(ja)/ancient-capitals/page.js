@@ -3,6 +3,7 @@ import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock 
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { CHINA_OUTLINE, TAIWAN_OUTLINE } from "@/lib/chinaOutline";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "古都からたどる現在の中国の都市｜長安・洛陽は今どんな街？歴史と観光地";
 const fullTitle = `${title} | ${SITE_NAME}`;
@@ -12,7 +13,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/ancient-capitals" },
+  alternates: bilingualAlternates("/ancient-capitals", "ja"),
   openGraph: buildOpenGraph({
     title: fullTitle,
     description,

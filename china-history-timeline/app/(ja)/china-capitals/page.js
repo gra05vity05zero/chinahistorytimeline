@@ -2,6 +2,7 @@ import { ERAS, stripRuby, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from
 import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "中国 歴代王朝の都（古都）一覧";
 const fullTitle = `中国 歴代王朝の都（古都）一覧 | ${SITE_NAME}`;
@@ -11,7 +12,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/china-capitals" },
+  alternates: bilingualAlternates("/china-capitals", "ja"),
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/china-capitals" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };

@@ -2,6 +2,7 @@ import { ERAS, stripRuby, personSlug, COLORS, SITE_NAME, buildOpenGraph, buildTw
 import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "宦官とは？中国史で権力を握った有名な宦官となぜ力を持ったかを解説";
 const fullTitle = `${title} | ${SITE_NAME}`;
@@ -11,7 +12,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/eunuchs" },
+  alternates: bilingualAlternates("/eunuchs", "ja"),
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/eunuchs" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };

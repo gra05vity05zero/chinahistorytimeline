@@ -2,6 +2,7 @@ import { ERAS, stripRuby, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from
 import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "中国の城まとめ";
 const fullTitle = `中国の城まとめ | ${SITE_NAME}`;
@@ -11,7 +12,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/china-castles" },
+  alternates: bilingualAlternates("/china-castles", "ja"),
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/china-castles" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };

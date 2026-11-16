@@ -3,6 +3,7 @@ import { DRAMAS } from "@/lib/dramas";
 import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "後宮の位（妃の階級）一覧｜皇后・皇貴妃・貴妃の違いを清・唐・漢で解説";
 const fullTitle = `${title} | ${SITE_NAME}`;
@@ -12,7 +13,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/harem-ranks" },
+  alternates: bilingualAlternates("/harem-ranks", "ja"),
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/harem-ranks" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };

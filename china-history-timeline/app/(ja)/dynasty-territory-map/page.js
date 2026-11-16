@@ -4,6 +4,7 @@ import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Share
 import { RubyText } from "@/components/Ruby";
 import { DynastyTerritoryMap } from "@/components/DynastyTerritoryMap";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "中国 歴代王朝の領土（版図）の変遷を地図で見る";
 const fullTitle = `中国 歴代王朝の領土（版図）の変遷を地図で見る | ${SITE_NAME}`;
@@ -13,7 +14,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/dynasty-territory-map" },
+  alternates: bilingualAlternates("/dynasty-territory-map", "ja"),
   openGraph: buildOpenGraph({
     title: fullTitle,
     description,

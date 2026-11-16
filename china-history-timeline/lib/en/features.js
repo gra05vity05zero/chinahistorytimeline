@@ -25,6 +25,6 @@ export const FEATURES_EN = [
 ];
 
 // Only slugs whose English page has been written are paired / listed.
-const READY = new Set(["great-wall", "silk-road", "terracotta-army", "qinshihuang", "qin-fall", "four-inventions", "emperors", "hundred-schools", "keju", "world-heritage", "four-great-novels", "four-beauties"]);
+const READY = new Set(["great-wall", "silk-road", "terracotta-army", "qinshihuang", "qin-fall", "four-inventions", "emperors", "hundred-schools", "keju", "world-heritage", "four-great-novels", "four-beauties", "eunuchs", "women-rulers", "harem-ranks", "china-capitals", "ancient-capitals", "dynasty-territory-map", "china-castles"]);
 export const FEATURES_READY = FEATURES_EN.filter((f) => READY.has(f.slug));
 export const FEATURE_SLUGS = FEATURES_READY.map((f) => f.slug);

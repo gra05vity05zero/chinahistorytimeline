@@ -33,7 +33,42 @@ const FRAMES = TERRITORY_FRAMES.map((frame) => ({
 
 const STEP_MS = 3800;
 
-export function DynastyTerritoryMap() {
+// t: optional translations ({ ui, frames }) — see lib/en/territoriesEn.js. Without it the Japanese data is shown.
+const UI_JA = {
+  mapLabel: "%sの勢力範囲の地図",
+  today: "現在の中国の範囲",
+  capital: "都",
+  rivers: "黄河・長江",
+  prev: "前の時代へ",
+  next: "次の時代へ",
+  play: "再生",
+  pause: "一時停止",
+  replay: "はじめから再生",
+};
+
+function localize(t) {
+  if (!t) return FRAMES;
+  return FRAMES.map((f) => {
+    const tf = t.frames[f.id];
+    if (!tf) return f;
+    return {
+      ...f,
+      short: tf.short,
+      year: tf.year,
+      title: tf.title,
+      desc: tf.desc,
+      factions: f.factions.map((x, i) => ({
+        ...x,
+        name: tf.factions[i] ?? x.name,
+        capital: x.capital && tf.capitals?.[i] ? { ...x.capital, name: tf.capitals[i] } : x.capital,
+      })),
+    };
+  });
+}
+
+export function DynastyTerritoryMap({ t } = {}) {
+  const FRAMES_L = localize(t);
+  const ui = t?.ui || UI_JA;
   const [index, setIndex] = useState(0);
   const [playing, setPlaying] = useState(false);
 
@@ -47,7 +82,7 @@ export function DynastyTerritoryMap() {
     return () => clearTimeout(timer);
   }, [playing, index]);
 
-  const frame = FRAMES[index];
+  const frame = FRAMES_L[index];
 
   function handlePlayClick() {
     if (!playing && index >= FRAMES.length - 1) setIndex(0);
@@ -67,7 +102,7 @@ export function DynastyTerritoryMap() {
 
   return (
     <div style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: 16, marginBottom: 28 }}>
-      <svg viewBox="0 0 500 366" style={{ width: "100%", display: "block", margin: "0 auto" }} role="img" aria-label={`${stripRuby(frame.title)}の勢力範囲の地図`}>
+      <svg viewBox="0 0 500 366" style={{ width: "100%", display: "block", margin: "0 auto" }} role="img" aria-label={ui.mapLabel.replace("%s", stripRuby(frame.title))}>
         <defs>
           <clipPath id="territory-land-clip">
             <path d={CHINA_OUTLINE} />
@@ -110,7 +145,7 @@ export function DynastyTerritoryMap() {
           {frame.factions.map((f, i) =>
             f.labelXY.map(([x, y], j) => (
               <text key={`${i}-${j}`} x={x} y={y} textAnchor="middle" dominantBaseline="central" style={labelStyle(f.minor || j > 0)}>
-                {stripRuby(f.name).replace(/（.*$/, "")}
+                {stripRuby(f.name).replace(/\s*[（(].*$/, "")}
               </text>
             ))
           )}
@@ -127,7 +162,7 @@ export function DynastyTerritoryMap() {
                     dominantBaseline="central"
                     style={{ fontFamily: "var(--font-serif), serif", fontSize: 8, fontWeight: 700, fill: COLORS.ink, paintOrder: "stroke", stroke: "#FBF8F0", strokeWidth: 2, strokeLinejoin: "round" }}
                   >
-                    {stripRuby(f.capital.name).replace(/（.*$/, "")}
+                    {stripRuby(f.capital.name).replace(/\s*[（(].*$/, "")}
                   </text>
                 </g>
               );
@@ -140,19 +175,19 @@ export function DynastyTerritoryMap() {
           <svg width="22" height="6" aria-hidden>
             <line x1="0" y1="3" x2="22" y2="3" stroke={COLORS.inkSoft} strokeWidth="1.2" strokeDasharray="3 2.5" />
           </svg>
-          現在の中国の範囲
+          {ui.today}
         </span>
         <span className="flex items-center gap-1.5">
           <svg width="10" height="10" aria-hidden>
             <rect x="2" y="2" width="6" height="6" fill="#FBF8F0" stroke={COLORS.ink} strokeWidth="1.2" transform="rotate(45 5 5)" />
           </svg>
-          都
+          {ui.capital}
         </span>
         <span className="flex items-center gap-1.5">
           <svg width="22" height="6" aria-hidden>
             <line x1="0" y1="3" x2="22" y2="3" stroke="#7FA3B8" strokeWidth="1.5" />
           </svg>
-          黄河・<ruby>長江<rt>ちょうこう</rt></ruby>
+          {t ? ui.rivers : <>黄河・<ruby>長江<rt>ちょうこう</rt></ruby></>}
         </span>
       </div>
 
@@ -161,7 +196,7 @@ export function DynastyTerritoryMap() {
           type="button"
           onClick={() => setIndex((i) => Math.max(0, i - 1))}
           disabled={index === 0}
-          aria-label="前の時代へ"
+          aria-label={ui.prev}
           style={{ width: 30, height: 30, border: `1px solid ${COLORS.mist}`, backgroundColor: "#FBF8F0", color: COLORS.ink, opacity: index === 0 ? 0.35 : 1 }}
         >
           ←
@@ -180,13 +215,13 @@ export function DynastyTerritoryMap() {
             color: playing ? COLORS.vermilion : "#fff",
           }}
         >
-          {playing ? "一時停止" : index >= FRAMES.length - 1 ? "はじめから再生" : "再生"}
+          {playing ? ui.pause : index >= FRAMES.length - 1 ? ui.replay : ui.play}
         </button>
         <button
           type="button"
           onClick={() => setIndex((i) => Math.min(FRAMES.length - 1, i + 1))}
           disabled={index === FRAMES.length - 1}
-          aria-label="次の時代へ"
+          aria-label={ui.next}
           style={{
             width: 30,
             height: 30,
@@ -200,7 +235,7 @@ export function DynastyTerritoryMap() {
         </button>
 
         <div className="flex items-center gap-1.5 flex-wrap ml-1">
-          {FRAMES.map((f, i) => (
+          {FRAMES_L.map((f, i) => (
             <button
               key={f.id}
               type="button"
