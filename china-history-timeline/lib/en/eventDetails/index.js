@@ -25,6 +25,7 @@ import sui from "./sui";
 import tang from "./tang";
 import wudai from "./wudai";
 import northernsong from "./northernsong";
+import southernsong from "./southernsong";
 
 const EN_STRINGS = {
   ...neolithic,
@@ -45,6 +46,7 @@ const EN_STRINGS = {
   ...tang,
   ...wudai,
   ...northernsong,
+  ...southernsong,
 };
 
 const CJK = /[　-ヿ㐀-鿿＀-￯]/;
