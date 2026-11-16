@@ -30,6 +30,7 @@ import yuan from "./yuan";
 import ming from "./ming";
 import qing from "./qing";
 import roc from "./roc";
+import prc from "./prc";
 
 const EN_STRINGS = {
   ...neolithic,
@@ -55,6 +56,7 @@ const EN_STRINGS = {
   ...ming,
   ...qing,
   ...roc,
+  ...prc,
 };
 
 const CJK = /[　-ヿ㐀-鿿＀-￯]/;

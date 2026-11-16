@@ -128,7 +128,7 @@ function Flow({ steps }) {
 }
 
 // 2〜3列の比較カード（スマホでは縦に並ぶ）
-function Compare({ columns }) {
+function Compare({ columns, lang = "ja" }) {
   return (
     <div className="grid gap-3 sm:grid-cols-2">
       {columns.map((col, i) => (
@@ -145,7 +145,7 @@ function Compare({ columns }) {
             {col.items.map((item, j) => (
               <li key={j} className="flex gap-2" style={{ fontSize: 13.5, lineHeight: 1.8, color: COLORS.inkSoft }}>
                 <span aria-hidden style={{ color: col.color || COLORS.vermilion, flexShrink: 0 }}>
-                  ・
+                  {lang === "en" ? "•" : "・"}
                 </span>
                 <span>
                   <RubyText text={item} />
