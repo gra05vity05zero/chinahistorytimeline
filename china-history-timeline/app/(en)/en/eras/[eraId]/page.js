@@ -4,6 +4,8 @@ import { COLORS, CATEGORY_STYLE } from "@/lib/constants";
 import { SealMark, HeritageGrid } from "@/components/Shared";
 import { ERAS_EN, SITE_URL, SITE_NAME_EN, CATEGORY_LABEL_EN, findEraEn, getEraFiguresEn, displayYearEn, displayPeriodEn, bilingualAlternates } from "@/lib/en";
 import { buildOpenGraphEn, buildTwitterEn, leadSentencesEn } from "@/lib/en/seo";
+import { getEraOverviewEn } from "@/lib/en/overviews";
+import { EnEraOverview } from "@/components/en/EnEraOverview";
 
 const serif = { fontFamily: "var(--font-serif), serif" };
 
@@ -15,8 +17,11 @@ export function generateMetadata({ params }) {
   const era = findEraEn(params.eraId);
   if (!era) return {};
   const period = displayPeriodEn(era.period);
-  const title = `${era.name} (${period}): Key Events and People`;
-  const description = `${leadSentencesEn(era.description, 120)} Explore ${era.events.length} key events of the ${era.name} era in order.`;
+  const overview = getEraOverviewEn(era.id);
+  const title = overview ? overview.title : `${era.name} (${period}): Key Events and People`;
+  const description = overview
+    ? overview.metaDescription
+    : `${leadSentencesEn(era.description, 120)} Explore ${era.events.length} key events of the ${era.name} era in order.`;
   return {
     title,
     description,
@@ -26,7 +31,7 @@ export function generateMetadata({ params }) {
       description,
       path: `/en/eras/${era.id}`,
       type: "article",
-      image: { title: era.name, subtitle: "Key events and people", kicker: period, seal: era.seal },
+      image: { title: overview ? `What was the ${era.name} era like?` : era.name, subtitle: "Key events and people", kicker: period, seal: era.seal },
     }),
     twitter: buildTwitterEn({ title: `${title} | ${SITE_NAME_EN}`, description }),
   };
@@ -55,6 +60,7 @@ export default function EnglishEraPage({ params }) {
   const nextEra = ERAS_EN[idx + 1];
   const figures = getEraFiguresEn(era);
   const period = displayPeriodEn(era.period);
+  const overview = getEraOverviewEn(era.id);
 
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
@@ -69,6 +75,18 @@ export default function EnglishEraPage({ params }) {
   return (
     <div style={{ backgroundColor: COLORS.paper, minHeight: "100%" }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      {overview && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: overview.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+            }),
+          }}
+        />
+      )}
       <div className="max-w-2xl mx-auto px-6 py-10">
         <div className="flex items-center justify-between flex-wrap gap-2">
           <Link href="/en" style={{ color: COLORS.vermilion, ...serif, fontSize: 13 }}>← Back to the timeline</Link>
@@ -80,6 +98,13 @@ export default function EnglishEraPage({ params }) {
           <div style={{ fontSize: 13, color: COLORS.gold, ...serif }}>{period}</div>
         </div>
 
+        {overview ? (
+          <>
+            <h1 style={{ ...serif, fontSize: 26, fontWeight: 900, color: COLORS.ink, lineHeight: 1.35 }}>{overview.title}</h1>
+            <EnEraOverview era={era} overview={overview} figures={figures} prevEra={prevEra} nextEra={nextEra} />
+          </>
+        ) : (
+          <>
         <h1 style={{ ...serif, fontSize: 28, fontWeight: 900, color: COLORS.ink, lineHeight: 1.3 }}>{era.name}</h1>
         <p style={{ fontSize: 15, lineHeight: 1.85, color: COLORS.inkSoft, marginTop: 12 }}>{era.description}</p>
 
@@ -118,6 +143,8 @@ export default function EnglishEraPage({ params }) {
             )}
           </div>
         </nav>
+          </>
+        )}
       </div>
     </div>
   );
