@@ -23,6 +23,7 @@ import sixteenkingdoms from "./sixteenkingdoms";
 import nanbei from "./nanbei";
 import sui from "./sui";
 import tang from "./tang";
+import wudai from "./wudai";
 
 const EN_STRINGS = {
   ...neolithic,
@@ -41,6 +42,7 @@ const EN_STRINGS = {
   ...nanbei,
   ...sui,
   ...tang,
+  ...wudai,
 };
 
 const CJK = /[　-ヿ㐀-鿿＀-￯]/;
