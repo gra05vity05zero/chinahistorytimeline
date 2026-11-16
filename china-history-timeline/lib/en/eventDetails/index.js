@@ -27,6 +27,7 @@ import wudai from "./wudai";
 import northernsong from "./northernsong";
 import southernsong from "./southernsong";
 import yuan from "./yuan";
+import ming from "./ming";
 
 const EN_STRINGS = {
   ...neolithic,
@@ -49,6 +50,7 @@ const EN_STRINGS = {
   ...northernsong,
   ...southernsong,
   ...yuan,
+  ...ming,
 };
 
 const CJK = /[　-ヿ㐀-鿿＀-￯]/;
