@@ -2,6 +2,7 @@ import { ERAS, stripRuby, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from
 import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock, KeyFacts } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 // 「万里の長城 いつ作られた」「作った人」「豆知識」といった検索が多いため、タイトルでそれに答える
 const title = "万里の長城とは？いつ・誰が作ったか、歴史と豆知識をわかりやすく解説";
@@ -21,7 +22,7 @@ const KEY_FACTS = [
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/great-wall" },
+  alternates: bilingualAlternates("/great-wall", "ja"),
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/great-wall" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };

@@ -2,6 +2,7 @@ import { ERAS, stripRuby, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from
 import { BackToTopButton, NavButton, HeritageGrid, MiscLinksSection, A8AdBlock } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "兵馬俑・始皇帝陵の謎";
 const fullTitle = `兵馬俑・始皇帝陵の謎 | ${SITE_NAME}`;
@@ -11,7 +12,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/terracotta-army" },
+  alternates: bilingualAlternates("/terracotta-army", "ja"),
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/terracotta-army" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };

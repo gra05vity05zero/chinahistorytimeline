@@ -2,6 +2,7 @@ import { ERAS, SITE_URL, getEraFigures, personSlug } from "@/lib/data";
 import { DRAMAS } from "@/lib/dramas";
 import { getEventDetail } from "@/lib/eventDetails";
 import { getPeopleByEraEn } from "@/lib/en";
+import { FEATURE_SLUGS } from "@/lib/en/features";
 
 export default function sitemap() {
   // lastModifiedは付けない。ビルド日時（new Date()）を入れると毎デプロイで全ページが
@@ -111,6 +112,8 @@ export default function sitemap() {
     ...ERAS.map((era) => ({ url: `${SITE_URL}/en/eras/${era.id}`, changeFrequency: "monthly", priority: 0.5 })),
     ...ERAS.flatMap((era) => era.events.map((event) => ({ url: `${SITE_URL}/en/events/${event.slug}`, changeFrequency: "monthly", priority: 0.6 }))),
     { url: `${SITE_URL}/en/people`, changeFrequency: "monthly", priority: 0.5 },
+    { url: `${SITE_URL}/en/topics`, changeFrequency: "monthly", priority: 0.5 },
+    ...FEATURE_SLUGS.map((s) => ({ url: `${SITE_URL}/en/${s}`, changeFrequency: "yearly", priority: 0.6 })),
     ...getPeopleByEraEn().flatMap(({ people }) => people.map((p) => ({ url: `${SITE_URL}${p.href}`, changeFrequency: "yearly", priority: 0.5 }))),
   ];
 

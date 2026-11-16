@@ -2,6 +2,7 @@ import { ERAS, stripRuby, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from
 import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock, KeyFacts } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "シルクロードとは？ルートとオアシス都市、日本との関わりをわかりやすく解説";
 const fullTitle = `${title} | ${SITE_NAME}`;
@@ -11,7 +12,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/silk-road" },
+  alternates: bilingualAlternates("/silk-road", "ja"),
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/silk-road" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };

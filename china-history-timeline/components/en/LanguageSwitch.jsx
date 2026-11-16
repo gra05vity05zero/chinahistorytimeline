@@ -4,10 +4,18 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { COLORS } from "@/lib/constants";
+import { FEATURE_SLUGS } from "@/lib/en/features";
 
 // Same pairing rule as englishPathFor / japanesePathFor in lib/en/index.js
 // (kept here so this client component does not pull in the era data).
-const PAIRED = [/^\/$/, /^\/eras$/, /^\/people$/, /^\/eras\/[^/]+$/, /^\/events\/[^/]+$/];
+const PAIRED = [
+  /^\/$/,
+  /^\/eras$/,
+  /^\/people$/,
+  /^\/eras\/[^/]+$/,
+  /^\/events\/[^/]+$/,
+  ...FEATURE_SLUGS.map((s) => new RegExp(`^/${s}$`)),
+];
 
 function counterpart(pathname, lang) {
   if (lang === "ja") {

@@ -2,6 +2,7 @@ import { ERAS, stripRuby, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwit
 import { BackToTopButton, NavButton, EventListItem, MiscLinksSection, KeyFacts } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 const PATH = "/qin-fall";
 const title = "秦はなぜ滅亡したのか？わずか15年で滅びた5つの理由";
@@ -12,7 +13,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: PATH },
+  alternates: bilingualAlternates("/qin-fall", "ja"),
   openGraph: buildOpenGraph({ title: fullTitle, description, path: PATH, type: "article" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };

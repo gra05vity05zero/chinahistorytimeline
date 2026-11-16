@@ -2,6 +2,7 @@ import { ERAS, stripRuby, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from
 import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "中国の四大発明とは？紙・印刷術・火薬・羅針盤を解説";
 const fullTitle = `中国の四大発明とは？紙・印刷術・火薬・羅針盤を解説 | ${SITE_NAME}`;
@@ -11,7 +12,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/four-inventions" },
+  alternates: bilingualAlternates("/four-inventions", "ja"),
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/four-inventions" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };

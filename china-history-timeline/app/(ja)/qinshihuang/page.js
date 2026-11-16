@@ -2,6 +2,7 @@ import { ERAS, stripRuby, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwit
 import { BackToTopButton, NavButton, HeritageGrid, EventListItem, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "始皇帝とは？生涯・中国統一・兵馬俑まで徹底解説";
 const fullTitle = `始皇帝とは？生涯・中国統一・兵馬俑まで徹底解説 | ${SITE_NAME}`;
@@ -11,7 +12,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/qinshihuang" },
+  alternates: bilingualAlternates("/qinshihuang", "ja"),
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/qinshihuang", type: "article" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };

@@ -5,6 +5,7 @@
 import { ERAS, stripRuby, personSlug, SITE_URL } from "@/lib/data";
 import { PERSON_DETAILS } from "@/lib/personDetails";
 import { PEOPLE_EN, enPersonSlug } from "./people";
+import { FEATURE_SLUGS } from "./features";
 import ancient from "./eras/ancient";
 import zhou from "./eras/zhou";
 import qinhan from "./eras/qinhan";
@@ -215,7 +216,14 @@ export function displayPeriodEn(period) {
 }
 
 // Japanese path ⇄ English path for pages that exist in both languages.
-const PAIRED = [/^\/$/, /^\/eras$/, /^\/people$/, /^\/eras\/[^/]+$/, /^\/events\/[^/]+$/];
+const PAIRED = [
+  /^\/$/,
+  /^\/eras$/,
+  /^\/people$/,
+  /^\/eras\/[^/]+$/,
+  /^\/events\/[^/]+$/,
+  ...FEATURE_SLUGS.map((s) => new RegExp(`^/${s}$`)),
+];
 
 export function englishPathFor(jaPath) {
   return PAIRED.some((re) => re.test(jaPath)) ? (jaPath === "/" ? "/en" : `/en${jaPath}`) : null;
