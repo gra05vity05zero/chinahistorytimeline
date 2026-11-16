@@ -10,11 +10,17 @@ import { englishPathFor } from "@/lib/en";
 import neolithic from "./neolithic";
 import xia from "./xia";
 import shang from "./shang";
+import westernzhou from "./westernzhou";
+import chunqiu from "./chunqiu";
+import zhanguo from "./zhanguo";
 
 const EN_STRINGS = {
   ...neolithic,
   ...xia,
   ...shang,
+  ...westernzhou,
+  ...chunqiu,
+  ...zhanguo,
 };
 
 const CJK = /[　-ヿ㐀-鿿＀-￯]/;
