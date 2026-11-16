@@ -2,6 +2,7 @@ import { stripRuby, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter, b
 import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 const PATH = "/wuxia-games";
 const title = "中国発の武侠・神話ゲームと元ネタの歴史｜黒神話：悟空・風燕伝・Phantom Blade Zeroの時代背景";
@@ -12,7 +13,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: PATH },
+  alternates: bilingualAlternates("/wuxia-games", "ja"),
   openGraph: buildOpenGraph({
     title: fullTitle,
     description,

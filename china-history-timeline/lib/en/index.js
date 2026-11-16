@@ -5,7 +5,7 @@
 import { ERAS, stripRuby, personSlug, SITE_URL } from "@/lib/data";
 import { PERSON_DETAILS } from "@/lib/personDetails";
 import { PEOPLE_EN, enPersonSlug } from "./people";
-import { FEATURE_SLUGS } from "./features";
+import { FEATURE_SLUGS, EXTRA_PAIRED } from "./features";
 import ancient from "./eras/ancient";
 import zhou from "./eras/zhou";
 import qinhan from "./eras/qinhan";
@@ -223,6 +223,7 @@ const PAIRED = [
   /^\/eras\/[^/]+$/,
   /^\/events\/[^/]+$/,
   ...FEATURE_SLUGS.map((s) => new RegExp(`^/${s}$`)),
+  ...EXTRA_PAIRED,
 ];
 
 export function englishPathFor(jaPath) {

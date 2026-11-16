@@ -31,11 +31,11 @@ export const FEATURES_EN = [
   { slug: "suikoden", title: "Water Margin: The 108 Heroes", seal: "梁", blurb: "The outlaws of Mount Liang, the real history behind them and the novel’s legacy." },
   { slug: "saiyuki", title: "Journey to the West", seal: "猿", blurb: "Sun Wukong, Tripitaka and the real monk Xuanzang’s journey to India." },
   { slug: "yangjiajiang", title: "The Generals of the Yang Family", seal: "楊", blurb: "The loyal Yang family of the Northern Song in history, drama and legend." },
-  { slug: "wuxia-games", title: "Wuxia and Chinese History in Games", seal: "侠", blurb: "Video games set in China’s past, and the history behind them." },
+  { slug: "wuxia-games", title: "Wuxia and Chinese History in Games", seal: "侠", blurb: "Black Myth: Wukong, Where Winds Meet, Phantom Blade Zero and the real history and legends behind them." },
   { slug: "kingdom", title: "Kingdom: The History Behind the Manga", seal: "王", blurb: "The real Warring States history behind Hara Yasuhisa’s manga about the unification of China." },
-  { slug: "koei-sangokushi", title: "Romance of the Three Kingdoms Games", seal: "志", blurb: "Koei Tecmo’s strategy series and the history behind it." },
-  { slug: "musou", title: "Dynasty Warriors: The History Behind the Games", seal: "無", blurb: "The real battles and officers behind the Dynasty Warriors series." },
-  { slug: "kusuriya", title: "The Apothecary Diaries and Chinese History", seal: "薬", blurb: "The real inner palace, medicine and customs behind the story." },
+  { slug: "koei-sangokushi", title: "Romance of the Three Kingdoms Games", seal: "志", blurb: "Koei Tecmo’s strategy series from 1985 to today, and the real officers behind the stats." },
+  { slug: "musou", title: "Dynasty Warriors: The History Behind the Games", seal: "無", blurb: "Every game in the series, and whether its officers, women warriors and weapons were real." },
+  { slug: "kusuriya", title: "The Apothecary Diaries and Chinese History", seal: "薬", blurb: "The Tang inner palace, food tasters, eunuchs and pharmacology behind Maomao’s world." },
   { slug: "funny-episodes", title: "Strange and Funny Episodes from Chinese History", seal: "笑", blurb: "The odd, absurd and very human side of China’s emperors and officials." },
   { slug: "dramas", title: "Chinese Historical Dramas", seal: "劇", blurb: "Popular Chinese period dramas and the eras they are set in." },
   { slug: "glossary", title: "Glossary of Chinese History", seal: "辞", blurb: "Key terms of Chinese history explained in plain English." },
@@ -50,6 +50,9 @@ export const FEATURES_EN = [
 ];
 
 // Only slugs whose English page has been written are paired / listed.
-const READY = new Set(["great-wall", "silk-road", "terracotta-army", "qinshihuang", "qin-fall", "four-inventions", "emperors", "hundred-schools", "keju", "world-heritage", "four-great-novels", "four-beauties", "eunuchs", "women-rulers", "harem-ranks", "china-capitals", "ancient-capitals", "dynasty-territory-map", "china-castles", "ancient-towns", "chuhan-battles", "sanguo-battles", "sanguo-comparison", "chunqiu-zhanguo-battles", "suitang-battles", "song-yuan-battles", "history-books", "novelists", "suikoden", "yangjiajiang", "saiyuki", "kingdom"]);
+const READY = new Set(["great-wall", "silk-road", "terracotta-army", "qinshihuang", "qin-fall", "four-inventions", "emperors", "hundred-schools", "keju", "world-heritage", "four-great-novels", "four-beauties", "eunuchs", "women-rulers", "harem-ranks", "china-capitals", "ancient-capitals", "dynasty-territory-map", "china-castles", "ancient-towns", "chuhan-battles", "sanguo-battles", "sanguo-comparison", "chunqiu-zhanguo-battles", "suitang-battles", "song-yuan-battles", "history-books", "novelists", "suikoden", "yangjiajiang", "saiyuki", "kingdom", "wuxia-games", "koei-sangokushi", "musou", "kusuriya", "funny-episodes", "dramas"]);
 export const FEATURES_READY = FEATURES_EN.filter((f) => READY.has(f.slug));
 export const FEATURE_SLUGS = FEATURES_READY.map((f) => f.slug);
+
+// Sub-pages paired along with a ready feature (every drama has an English page)
+export const EXTRA_PAIRED = READY.has("dramas") ? [/^\/dramas\/[^/]+$/] : [];

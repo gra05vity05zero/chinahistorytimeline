@@ -4,6 +4,7 @@ import { RubyText } from "@/components/Ruby";
 import FourKoma from "@/components/FourKoma";
 import { MANGA } from "./manga";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "中国史の笑えるエピソード・おもしろ逸話集";
 const fullTitle = `中国史の笑えるエピソード・おもしろ逸話集 | ${SITE_NAME}`;
@@ -13,7 +14,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/funny-episodes" },
+  alternates: bilingualAlternates("/funny-episodes", "ja"),
   openGraph: buildOpenGraph({
     title: fullTitle,
     description,

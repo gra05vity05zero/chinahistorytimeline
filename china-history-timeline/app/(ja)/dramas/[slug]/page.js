@@ -14,6 +14,7 @@ import { MiscLinksSection, SealMark } from "@/components/Shared";
 import { SectionHeading, yearNumber, displayEventYear } from "@/components/EraOverview";
 import { StarRating, CharacterTypeBadge, DramaCard } from "@/components/DramaBlocks";
 import { RubyText } from "@/components/Ruby";
+import { bilingualAlternates } from "@/lib/en";
 
 const serif = { fontFamily: "var(--font-serif), serif" };
 const panel = { backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8" };
@@ -41,7 +42,7 @@ export function generateMetadata({ params }) {
   return {
     title,
     description,
-    alternates: { canonical: path },
+    alternates: bilingualAlternates(path, "ja"),
     openGraph: buildOpenGraph({ title: fullTitle, description, path, type: "article", image }),
     twitter: buildTwitter({ title: fullTitle, description }),
   };

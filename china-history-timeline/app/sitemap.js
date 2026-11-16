@@ -114,6 +114,7 @@ export default function sitemap() {
     { url: `${SITE_URL}/en/people`, changeFrequency: "monthly", priority: 0.5 },
     { url: `${SITE_URL}/en/topics`, changeFrequency: "monthly", priority: 0.5 },
     ...FEATURE_SLUGS.map((s) => ({ url: `${SITE_URL}/en/${s}`, changeFrequency: "yearly", priority: 0.6 })),
+    ...(FEATURE_SLUGS.includes("dramas") ? DRAMAS.map((d) => ({ url: `${SITE_URL}/en/dramas/${d.slug}`, changeFrequency: "yearly", priority: 0.5 })) : []),
     ...getPeopleByEraEn().flatMap(({ people }) => people.map((p) => ({ url: `${SITE_URL}${p.href}`, changeFrequency: "yearly", priority: 0.5 }))),
   ];
 

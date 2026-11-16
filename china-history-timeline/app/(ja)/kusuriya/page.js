@@ -2,6 +2,7 @@ import { ERAS, personSlug, COLORS, SITE_NAME, buildOpenGraph, buildTwitter, buil
 import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "『薬屋のひとりごと』のモデルの時代は？｜後宮・宦官・毒見・花街を中国史で解説";
 const fullTitle = `${title} | ${SITE_NAME}`;
@@ -11,7 +12,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/kusuriya" },
+  alternates: bilingualAlternates("/kusuriya", "ja"),
   openGraph: buildOpenGraph({
     title: fullTitle,
     description,

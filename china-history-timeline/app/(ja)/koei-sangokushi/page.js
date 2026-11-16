@@ -2,6 +2,7 @@ import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_URL, SITE_NAME
 import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock, HeritageThumb } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "コーエー『三國志』シリーズ一覧｜最新作・歴史・シブサワ・コウとおすすめの選び方";
 const fullTitle = `${title} | ${SITE_NAME}`;
@@ -11,7 +12,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/koei-sangokushi" },
+  alternates: bilingualAlternates("/koei-sangokushi", "ja"),
   openGraph: buildOpenGraph({
     title: fullTitle,
     description,

@@ -3,6 +3,7 @@ import { ERAS, COLORS, SITE_URL, SITE_NAME, stripRuby, buildOpenGraph, buildTwit
 import { getSortedDramas, toDramaCard } from "@/lib/dramas";
 import { BackToTopButton, MiscLinksSection } from "@/components/Shared";
 import DramaHub from "@/components/DramaHub";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "中国歴史ドラマを時代順に解説｜史実との違い・実在モデル";
 const fullTitle = `${title} | ${SITE_NAME}`;
@@ -12,7 +13,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/dramas" },
+  alternates: bilingualAlternates("/dramas", "ja"),
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/dramas", image: { title: "中国歴史ドラマを時代順に解説", subtitle: "史実との違い・実在モデル" } }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };

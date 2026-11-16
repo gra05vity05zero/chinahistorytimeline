@@ -2,6 +2,7 @@ import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_URL, SITE_NAME
 import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "『真・三國無双』シリーズ一覧と史実｜最新作ORIGINS・武将や武器は本当？を解説";
 const fullTitle = `${title} | ${SITE_NAME}`;
@@ -11,7 +12,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/musou" },
+  alternates: bilingualAlternates("/musou", "ja"),
   openGraph: buildOpenGraph({
     title: fullTitle,
     description,
