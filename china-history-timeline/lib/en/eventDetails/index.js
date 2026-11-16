@@ -13,6 +13,9 @@ import shang from "./shang";
 import westernzhou from "./westernzhou";
 import chunqiu from "./chunqiu";
 import zhanguo from "./zhanguo";
+import qin from "./qin";
+import westernhan from "./westernhan";
+import xin from "./xin";
 
 const EN_STRINGS = {
   ...neolithic,
@@ -21,6 +24,9 @@ const EN_STRINGS = {
   ...westernzhou,
   ...chunqiu,
   ...zhanguo,
+  ...qin,
+  ...westernhan,
+  ...xin,
 };
 
 const CJK = /[　-ヿ㐀-鿿＀-￯]/;
