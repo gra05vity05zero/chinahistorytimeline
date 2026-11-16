@@ -3,6 +3,7 @@ import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock 
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { CHINA_OUTLINE, TAIWAN_OUTLINE } from "@/lib/chinaOutline";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "中国の古城めぐり｜平遥・麗江など城壁に囲まれた古い町並みと歴史";
 const fullTitle = `${title} | ${SITE_NAME}`;
@@ -12,7 +13,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/ancient-towns" },
+  alternates: bilingualAlternates("/ancient-towns", "ja"),
   openGraph: buildOpenGraph({
     title: fullTitle,
     description,
