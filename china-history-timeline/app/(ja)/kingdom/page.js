@@ -2,6 +2,7 @@ import { stripRuby, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter, b
 import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "漫画『キングダム』の史実｜登場人物は実在した？史実との違い・アニメ・映画まとめ";
 const fullTitle = `${title} | ${SITE_NAME}`;
@@ -11,7 +12,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/kingdom" },
+  alternates: bilingualAlternates("/kingdom", "ja"),
   openGraph: buildOpenGraph({
     title: fullTitle,
     description,

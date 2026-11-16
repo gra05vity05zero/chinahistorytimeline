@@ -2,6 +2,7 @@ import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_URL, SITE_NAME
 import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock, HeritageThumb } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "水滸伝とは？梁山泊・108人の好漢・史実の宋江をわかりやすく解説";
 const fullTitle = `${title} | ${SITE_NAME}`;
@@ -11,7 +12,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/suikoden" },
+  alternates: bilingualAlternates("/suikoden", "ja"),
   openGraph: buildOpenGraph({
     title: fullTitle,
     description,

@@ -2,6 +2,7 @@ import { ERAS, COLORS, SITE_NAME, AMAZON_ASSOCIATE_TAG, buildOpenGraph, buildTwi
 import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "中国史を題材にした日本人小説家一覧";
 const fullTitle = `中国史を題材にした日本人小説家一覧 | ${SITE_NAME}`;
@@ -11,7 +12,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/novelists" },
+  alternates: bilingualAlternates("/novelists", "ja"),
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/novelists" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };

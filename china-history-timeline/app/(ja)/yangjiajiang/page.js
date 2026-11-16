@@ -2,6 +2,7 @@ import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_URL, SITE_NAME
 import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock, HeritageThumb } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "楊家将とは？北方謙三『楊家将』で読む宋と遼の戦い";
 const fullTitle = `${title} | ${SITE_NAME}`;
@@ -11,7 +12,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/yangjiajiang" },
+  alternates: bilingualAlternates("/yangjiajiang", "ja"),
   openGraph: buildOpenGraph({
     title: fullTitle,
     description,

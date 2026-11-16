@@ -117,7 +117,8 @@ export function Facts({ heading, items }) {
 }
 
 // A numbered or plain item with an optional thumbnail (sites, people, works...)
-export function ItemCard({ index, title, subtitle, meta, children, imageUrl, imageType = "building", credit, links = [] }) {
+export function ItemCard({ index, title, subtitle, meta, children, imageUrl, imageType = "building", credit, links: allLinks = [] }) {
+  const links = allLinks.filter((l) => l?.href && isLive(l.href));
   return (
     <div style={cardStyle}>
       <div className="flex gap-3 p-3">

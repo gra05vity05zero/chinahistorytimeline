@@ -2,6 +2,7 @@ import { ERAS, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/dat
 import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "中国の歴史書（史書）とは？史記・漢書・三国志・資治通鑑などを紹介";
 const fullTitle = `${title} | ${SITE_NAME}`;
@@ -11,7 +12,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/history-books" },
+  alternates: bilingualAlternates("/history-books", "ja"),
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/history-books" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };
