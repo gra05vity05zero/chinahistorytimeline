@@ -2,6 +2,7 @@ import { ERAS, stripRuby, personSlug, COLORS, SITE_NAME, buildOpenGraph, buildTw
 import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "中国四大美女とは？西施・王昭君・貂蝉・楊貴妃を解説";
 const fullTitle = `中国四大美女とは？西施・王昭君・貂蝉・楊貴妃を解説 | ${SITE_NAME}`;
@@ -11,7 +12,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/four-beauties" },
+  alternates: bilingualAlternates("/four-beauties", "ja"),
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/four-beauties" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };

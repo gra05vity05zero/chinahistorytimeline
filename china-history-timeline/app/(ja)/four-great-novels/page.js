@@ -2,6 +2,7 @@ import { ERAS, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/dat
 import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 // 「水滸伝 西遊記 王朝」「〜が成立したのは何という王朝の時代」といった検索が多いため、
 // タイトルと説明文の冒頭で「どの王朝の時代に成立したか」に答える
@@ -13,7 +14,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/four-great-novels" },
+  alternates: bilingualAlternates("/four-great-novels", "ja"),
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/four-great-novels" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };

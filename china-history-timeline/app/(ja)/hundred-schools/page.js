@@ -2,6 +2,7 @@ import { ERAS, stripRuby, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwit
 import { BackToTopButton, NavButton, EventListItem, MiscLinksSection, KeyFacts } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 const PATH = "/hundred-schools";
 const title = "諸子百家とは？儒家・道家・法家・墨家・兵家の思想と系譜をマップで解説";
@@ -12,7 +13,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: PATH },
+  alternates: bilingualAlternates("/hundred-schools", "ja"),
   openGraph: buildOpenGraph({ title: fullTitle, description, path: PATH, type: "article" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };

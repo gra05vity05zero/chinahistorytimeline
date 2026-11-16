@@ -2,6 +2,7 @@ import { ERAS, stripRuby, personSlug, COLORS, SITE_NAME, buildOpenGraph, buildTw
 import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "科挙とは？しくみ・倍率・カンニングまで中国の官僚試験をわかりやすく解説";
 const fullTitle = `${title} | ${SITE_NAME}`;
@@ -11,7 +12,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/keju" },
+  alternates: bilingualAlternates("/keju", "ja"),
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/keju" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };

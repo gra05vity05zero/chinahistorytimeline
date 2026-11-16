@@ -2,6 +2,7 @@ import { ERAS, getEraFigures, personSlug, stripRuby, COLORS, SITE_NAME, buildOpe
 import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "中国 歴代皇帝一覧｜始皇帝から清の宣統帝（溥儀）まで";
 const fullTitle = `${title} | ${SITE_NAME}`;
@@ -11,7 +12,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/emperors" },
+  alternates: bilingualAlternates("/emperors", "ja"),
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/emperors" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };
