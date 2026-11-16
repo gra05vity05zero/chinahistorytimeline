@@ -6,6 +6,7 @@ import { ERAS, COLORS, ADSENSE_SLOT_TIMELINE, displayPeriod } from "@/lib/data";
 import { SealMark, AdSenseSlot, MiscLinksSection } from "@/components/Shared";
 import { TimelineEvent, TimelineMilestone, yearNumber, formatYear } from "@/components/EraOverview";
 import { SiteTitle } from "@/components/SiteHeader";
+import LanguageSwitch from "@/components/en/LanguageSwitch";
 import HeroImage from "@/components/HeroImage";
 import { RubyText } from "@/components/Ruby";
 import { NewsList } from "@/components/NewsList";
@@ -143,7 +144,10 @@ export default function Timeline({ milestonesByEra = {}, latestNews = [] }) {
         </div>
       )}
 
-      <div className="px-6 pt-10 pb-6 text-center">
+      <div className="relative px-6 pt-10 pb-6 text-center">
+        <div className="absolute" style={{ top: 12, right: 16 }}>
+          <LanguageSwitch lang="ja" style={{ fontSize: 13 }} />
+        </div>
         <SiteTitle headingAs="h1" />
         <div className="max-w-3xl mx-auto mt-6" style={{ border: `1.5px solid ${COLORS.gold}` }}>
           <HeroImage />

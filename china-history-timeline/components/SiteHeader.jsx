@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { COLORS } from "@/lib/constants";
+import LanguageSwitch from "@/components/en/LanguageSwitch";
 
 // トップページ上部と同じタイトルブロック。クリックでトップページへ移動する。
 // headingAs: トップページでは h1、他ページは各ページ側に h1 があるので div にする。
@@ -27,7 +28,7 @@ export function SiteTitle({ headingAs: Heading = "div" }) {
 // 出来事・人物・ドラマ解説ページ用の小さいヘッダー。H1（出来事名・人物名・作品名）がすぐ見えるよう、サイト名とトップへのリンクだけにする
 function CompactSiteHeader() {
   return (
-    <header className="px-5 py-2.5 flex items-center" style={{ backgroundColor: COLORS.paper, borderBottom: `1px solid ${COLORS.mist}` }}>
+    <header className="px-5 py-2.5 flex items-center justify-between" style={{ backgroundColor: COLORS.paper, borderBottom: `1px solid ${COLORS.mist}` }}>
       <Link
         href="/"
         title="トップページへ"
@@ -35,6 +36,7 @@ function CompactSiteHeader() {
       >
         中国史年表
       </Link>
+      <LanguageSwitch lang="ja" style={{ fontSize: 13 }} />
     </header>
   );
 }
@@ -45,7 +47,10 @@ export default function SiteHeader() {
   if (pathname === "/") return null;
   if (pathname.startsWith("/events/") || pathname.startsWith("/people/") || pathname.startsWith("/dramas/")) return <CompactSiteHeader />;
   return (
-    <header className="px-6 pt-8 pb-6 text-center" style={{ backgroundColor: COLORS.paper, borderBottom: `1px solid ${COLORS.mist}` }}>
+    <header className="relative px-6 pt-8 pb-6 text-center" style={{ backgroundColor: COLORS.paper, borderBottom: `1px solid ${COLORS.mist}` }}>
+      <div className="absolute" style={{ top: 10, right: 16 }}>
+        <LanguageSwitch lang="ja" style={{ fontSize: 13 }} />
+      </div>
       <SiteTitle />
     </header>
   );
