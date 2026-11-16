@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { bilingualAlternates } from "@/lib/en";
 import { ERAS, findEventBySlug, getNextEvent, getPrevEvent, stripRuby, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter, displayEventYear } from "@/lib/data";
 import EventDetail from "@/components/EventDetail";
 import EventArticle from "@/components/EventArticle";
@@ -48,7 +49,7 @@ export function generateMetadata({ params }) {
   return {
     title: pageTitle,
     description,
-    alternates: { canonical: path },
+    alternates: bilingualAlternates(path, "ja"),
     openGraph: buildOpenGraph({ title: pageTitle, description, path, type: "article", image }),
     twitter: buildTwitter({ title: pageTitle, description }),
   };

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { bilingualAlternates } from "@/lib/en";
 import { ERAS, ERA_ALIASES, COLORS, SITE_NAME, buildOpenGraph, buildTwitter, displayPeriod } from "@/lib/data";
 import { SealMark, BackToTopButton, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
@@ -11,7 +12,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/eras" },
+  alternates: bilingualAlternates("/eras", "ja"),
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/eras" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };

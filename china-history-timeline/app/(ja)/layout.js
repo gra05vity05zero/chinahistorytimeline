@@ -1,4 +1,5 @@
-import "./globals.css";
+import "../globals.css";
+import { bilingualAlternates } from "@/lib/en";
 import { Noto_Serif_JP, Noto_Sans_JP } from "next/font/google";
 import Footer from "@/components/Footer";
 import SiteHeader from "@/components/SiteHeader";
@@ -22,7 +23,7 @@ export const metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
-  alternates: { canonical: "/" },
+  alternates: bilingualAlternates("/", "ja"),
   robots: {
     index: true,
     follow: true,

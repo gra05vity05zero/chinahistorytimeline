@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { COLORS } from "@/lib/data";
 import FooterAds from "@/components/FooterAds";
+import LanguageSwitch from "@/components/en/LanguageSwitch";
 
 export default function Footer() {
   const linkStyle = { color: COLORS.inkSoft, textDecoration: "none" };
@@ -13,6 +14,8 @@ export default function Footer() {
       <Link href="/about" style={linkStyle}>このサイトについて</Link>
       <span style={{ color: COLORS.mist }}>|</span>
       <Link href="/privacy" style={linkStyle}>プライバシーポリシー</Link>
+      <span style={{ color: COLORS.mist }}>|</span>
+      <LanguageSwitch lang="ja" />
       <span style={{ width: "100%", textAlign: "center", color: COLORS.mist, marginTop: 8, fontSize: 11 }}>
         © {new Date().getFullYear()} 中国五千年史
       </span>

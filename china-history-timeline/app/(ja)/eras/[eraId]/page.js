@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { bilingualAlternates } from "@/lib/en";
 import { notFound } from "next/navigation";
 import { ERAS, ERA_ALIASES, COLORS, stripRuby, SITE_URL, buildOpenGraph, buildTwitter, getEraFigures, displayPeriod } from "@/lib/data";
 import { getEraOverview } from "@/lib/eraOverviews";
@@ -31,7 +32,7 @@ export function generateMetadata({ params }) {
     return {
       title,
       description,
-      alternates: { canonical: path },
+      alternates: bilingualAlternates(path, "ja"),
       openGraph: buildOpenGraph({ title, description, path, type: "article", image }),
       twitter: buildTwitter({ title, description }),
     };
@@ -44,7 +45,7 @@ export function generateMetadata({ params }) {
   return {
     title,
     description,
-    alternates: { canonical: path },
+    alternates: bilingualAlternates(path, "ja"),
     openGraph: buildOpenGraph({ title, description, path, image }),
     twitter: buildTwitter({ title, description }),
   };

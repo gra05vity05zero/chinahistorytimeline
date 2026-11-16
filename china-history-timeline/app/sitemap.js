@@ -103,5 +103,13 @@ export default function sitemap() {
       }))
   );
 
-  return [...staticRoutes, ...eventRoutes, ...peopleRoutes, ...eraRoutes, ...personRoutes, ...dramaRoutes];
+  // 英語版（/en）。日本語版と対になるページのみ
+  const englishRoutes = [
+    { url: `${SITE_URL}/en`, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE_URL}/en/eras`, changeFrequency: "monthly", priority: 0.5 },
+    ...ERAS.map((era) => ({ url: `${SITE_URL}/en/eras/${era.id}`, changeFrequency: "monthly", priority: 0.5 })),
+    ...ERAS.flatMap((era) => era.events.map((event) => ({ url: `${SITE_URL}/en/events/${event.slug}`, changeFrequency: "monthly", priority: 0.6 }))),
+  ];
+
+  return [...staticRoutes, ...eventRoutes, ...peopleRoutes, ...eraRoutes, ...personRoutes, ...dramaRoutes, ...englishRoutes];
 }

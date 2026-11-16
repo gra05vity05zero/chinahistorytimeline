@@ -1,11 +1,12 @@
 import Timeline from "@/components/Timeline";
+import { bilingualAlternates } from "@/lib/en";
 import { ERAS } from "@/lib/data";
 import { getEraOverview } from "@/lib/eraOverviews";
 import { getLatestNews } from "@/lib/news";
 
 // title・description・openGraph・twitterはルートlayoutの既定値をそのまま使う
 export const metadata = {
-  alternates: { canonical: "/" },
+  alternates: bilingualAlternates("/", "ja"),
 };
 
 export default function HomePage() {

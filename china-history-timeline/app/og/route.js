@@ -42,9 +42,11 @@ export async function GET(request) {
   const subtitle = get("s");
   const kicker = get("k");
   const seal = [...(get("m") || "史")][0];
+  // l=en: English edition (/en) pages show the English site name
+  const siteName = params.get("l") === "en" ? "Chinese History Timeline" : SITE_NAME;
 
   const [boldFont, regularFont] = await Promise.all([
-    loadFont(`${title}${seal}${SITE_NAME}`, 900),
+    loadFont(`${title}${seal}${siteName}`, 900),
     loadFont(`${subtitle}${kicker}chinahistorytimeline.com`, 500),
   ]);
   const fonts = [];
@@ -119,7 +121,7 @@ export async function GET(request) {
         <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end" }}>
           <div style={{ display: "flex", width: 80, height: 2, backgroundColor: COLORS.vermilion, marginRight: 20 }} />
           <div style={{ display: "flex", fontSize: 34, fontWeight: 900, color: COLORS.ink, fontFamily: bold, letterSpacing: 4 }}>
-            {SITE_NAME}
+            {siteName}
           </div>
           <div style={{ display: "flex", fontSize: 22, color: COLORS.inkSoft, fontFamily: regular, marginLeft: 20 }}>
             chinahistorytimeline.com
