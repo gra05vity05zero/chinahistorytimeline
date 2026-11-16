@@ -22,6 +22,7 @@ import westernjin from "./westernjin";
 import sixteenkingdoms from "./sixteenkingdoms";
 import nanbei from "./nanbei";
 import sui from "./sui";
+import tang from "./tang";
 
 const EN_STRINGS = {
   ...neolithic,
@@ -39,6 +40,7 @@ const EN_STRINGS = {
   ...sixteenkingdoms,
   ...nanbei,
   ...sui,
+  ...tang,
 };
 
 const CJK = /[　-ヿ㐀-鿿＀-￯]/;
