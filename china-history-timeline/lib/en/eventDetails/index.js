@@ -29,6 +29,7 @@ import southernsong from "./southernsong";
 import yuan from "./yuan";
 import ming from "./ming";
 import qing from "./qing";
+import roc from "./roc";
 
 const EN_STRINGS = {
   ...neolithic,
@@ -53,6 +54,7 @@ const EN_STRINGS = {
   ...yuan,
   ...ming,
   ...qing,
+  ...roc,
 };
 
 const CJK = /[　-ヿ㐀-鿿＀-￯]/;
