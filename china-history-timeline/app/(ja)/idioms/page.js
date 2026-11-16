@@ -2,6 +2,7 @@ import { ERAS, getEraFigures, personSlug, stripRuby, COLORS, SITE_NAME, buildOpe
 import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "中国史から生まれた故事成語・慣用句";
 const fullTitle = `中国史から生まれた故事成語・慣用句 | ${SITE_NAME}`;
@@ -11,7 +12,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/idioms" },
+  alternates: bilingualAlternates("/idioms", "ja"),
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/idioms" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };

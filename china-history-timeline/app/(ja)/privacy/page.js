@@ -1,4 +1,5 @@
 import { COLORS, buildOpenGraph, buildTwitter } from "@/lib/data";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "プライバシーポリシー";
 const fullTitle = "プライバシーポリシー | 中国五千年史";
@@ -7,7 +8,7 @@ const description = "「中国五千年史」における広告配信・アフ�
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/privacy" },
+  alternates: bilingualAlternates("/privacy", "ja"),
   robots: { index: false, follow: true },
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/privacy" }),
   twitter: buildTwitter({ title: fullTitle, description }),

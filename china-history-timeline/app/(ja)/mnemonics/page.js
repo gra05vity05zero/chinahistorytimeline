@@ -4,6 +4,7 @@ import { formatPeriodJa } from "@/lib/japanChinaTimeline";
 import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 // 「五代十国 覚え方」「中学 歴史 中国 覚え方」での表示が多いため、その2つもタイトルに含める
 const title = "中国王朝の覚え方｜順番の語呂合わせ（中学生向け・五代十国も）";
@@ -14,7 +15,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/mnemonics" },
+  alternates: bilingualAlternates("/mnemonics", "ja"),
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/mnemonics" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };

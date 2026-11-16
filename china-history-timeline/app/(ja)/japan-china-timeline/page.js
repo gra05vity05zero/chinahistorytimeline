@@ -5,6 +5,7 @@ import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock } from "@/compo
 import { RubyText } from "@/components/Ruby";
 import { TimelineIcon } from "@/components/TimelineIcons";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 // 「中国王朝 年表 日本」「唐 日本何時代」のような検索が多いため、王朝と日本の時代の対応表があることをタイトルにも出す
 const title = "日本史・中国史 対照年表｜中国の王朝と日本の時代 対応表";
@@ -15,7 +16,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/japan-china-timeline" },
+  alternates: bilingualAlternates("/japan-china-timeline", "ja"),
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/japan-china-timeline" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };

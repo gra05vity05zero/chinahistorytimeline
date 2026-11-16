@@ -1,6 +1,7 @@
 import { COLORS, SITE_NAME, buildOpenGraph, buildTwitter, buildSearchIndex } from "@/lib/data";
 import SearchClient from "@/components/Search";
 import { MiscLinksSection } from "@/components/Shared";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "サイト内検索";
 const fullTitle = `サイト内検索 | ${SITE_NAME}`;
@@ -9,7 +10,7 @@ const description = "人物名・出来事・王朝名から中国史の年表�
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/search" },
+  alternates: bilingualAlternates("/search", "ja"),
   // 検索UIのみで固有の本文がないため、インデックスさせずリンクは辿らせる
   robots: { index: false, follow: true },
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/search" }),

@@ -3,6 +3,7 @@ import { japaneseErasDuring, formatPeriodJa } from "@/lib/japanChinaTimeline";
 import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { PrintButton } from "@/components/PrintButton";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "印刷できる中国史年表（A4一枚・無料）｜王朝の流れ・都・出来事・同じ頃の日本";
 const fullTitle = `${title} | ${SITE_NAME}`;
@@ -12,7 +13,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/printable-timeline" },
+  alternates: bilingualAlternates("/printable-timeline", "ja"),
   openGraph: buildOpenGraph({
     title: fullTitle,
     description,

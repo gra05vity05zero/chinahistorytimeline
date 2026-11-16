@@ -2,6 +2,7 @@ import { ERAS, stripRuby, personSlug, COLORS, SITE_NAME, buildOpenGraph, buildTw
 import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "中国史の用語集｜世界史の頻出用語（郡県制・均田制・両税法・一条鞭法など）と違いを解説";
 const fullTitle = `${title} | ${SITE_NAME}`;
@@ -11,7 +12,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/glossary" },
+  alternates: bilingualAlternates("/glossary", "ja"),
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/glossary" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };

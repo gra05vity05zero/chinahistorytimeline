@@ -1,6 +1,7 @@
 import { ERAS, stripRuby, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
 import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "中国史 年号ゴロ合わせ集";
 const fullTitle = `中国史 年号ゴロ合わせ集 | ${SITE_NAME}`;
@@ -10,7 +11,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/year-mnemonics" },
+  alternates: bilingualAlternates("/year-mnemonics", "ja"),
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/year-mnemonics" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };

@@ -273,12 +273,21 @@ const ICONS = {
   },
 };
 
-export function TimelineIcon({ name, size = 40 }) {
+// English labels for /en/japan-china-timeline
+const LABELS_EN = {
+  caitao: "Painted pottery", yu: "Flood-control spade", ding: "Bronze ding", zhujian: "Bamboo slips", wall: "Great Wall", camel: "Camel",
+  qin: "Imperial crown", chibi: "Burning ship", tang: "Gate of Chang’an", ger: "Ger", opium: "Sailing ship", jomon: "Flame-style pottery",
+  kinin: "Gold seal", kyo: "Bronze mirror", kofun: "Keyhole tomb", teppo: "Matchlock gun", kenzuishi: "Envoy ship", kabuto: "Helmet",
+  genko: "Tetsuhau bomb", kurofune: "Black Ships",
+};
+
+export function TimelineIcon({ name, size = 40, lang = "ja" }) {
   const icon = ICONS[name];
   if (!icon) return null;
+  const label = lang === "en" ? LABELS_EN[name] || name : stripRuby(icon.label);
   return (
-    <svg width={size} height={size} viewBox="0 0 40 40" role="img" aria-label={stripRuby(icon.label)} style={{ display: "inline-block", verticalAlign: "top" }}>
-      <title>{stripRuby(icon.label)}</title>
+    <svg width={size} height={size} viewBox="0 0 40 40" role="img" aria-label={label} style={{ display: "inline-block", verticalAlign: "top" }}>
+      <title>{label}</title>
       <circle cx="20" cy="20" r="19" fill="#F6F0E1" stroke={COLORS.mist} strokeWidth="1" />
       {icon.body}
     </svg>

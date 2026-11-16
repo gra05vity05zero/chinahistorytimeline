@@ -18,7 +18,13 @@ export default function EnFooter() {
       {sep}
       <Link href="/en/topics" style={linkStyle}>Topics</Link>
       {sep}
-      <Link href="/privacy" hrefLang="ja" style={linkStyle}>Privacy Policy (Japanese)</Link>
+      <Link href="/en/search" style={linkStyle}>Search</Link>
+      {sep}
+      <Link href="/en/news" style={linkStyle}>News</Link>
+      {sep}
+      <Link href="/en/about" style={linkStyle}>About</Link>
+      {sep}
+      <Link href="/en/privacy" style={linkStyle}>Privacy Policy</Link>
       {sep}
       <LanguageSwitch lang="en" />
       <span style={{ width: "100%", textAlign: "center", color: COLORS.mist, marginTop: 8, fontSize: 11 }}>

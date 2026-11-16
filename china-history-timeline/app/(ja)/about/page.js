@@ -1,5 +1,6 @@
 import { COLORS, buildOpenGraph, buildTwitter } from "@/lib/data";
 import { MiscLinksSection } from "@/components/Shared";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "このサイトについて";
 const fullTitle = "このサイトについて | 中国五千年史";
@@ -9,7 +10,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/about" },
+  alternates: bilingualAlternates("/about", "ja"),
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/about" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };

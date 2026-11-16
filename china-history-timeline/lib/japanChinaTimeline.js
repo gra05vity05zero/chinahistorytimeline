@@ -33,7 +33,7 @@ function eraLink(eraId) {
 // eraId: 中国側はERASのid（旧石器時代のみ独自）、日本側は時代ごとの独自id。時代ジャンプのアンカーに使う。
 // sortYear: 紀元前はマイナスの数値。中国イベント（cn）と日本イベント（jp）を
 // 実際の年代順に1本のリストへマージして表示する。
-const CHINA_EVENTS = [
+export const CHINA_EVENTS = [
   { eraId: "paleolithic", sortYear: -700000, yearLabel: "約70万年前", event: "北京原人が{{周口店|しゅうこうてん}}で暮らす（火の使用）", era: "旧石器時代" },
   { eraId: "paleolithic", sortYear: -18000, yearLabel: "前18000年{{頃|ごろ}}", event: "{{仙人洞|せんにんどう}}{{遺跡|いせき}}で世界最古級の土器がつくられる", era: "旧石器時代" },
   { eraId: "neolithic", sortYear: -5000, yearLabel: "前5000年{{頃|ごろ}}", event: "{{長江|ちょうこう}}文明：{{河姆渡|かぼと}}文化で{{稲作|いなさく}}が営まれる", era: "新石器文化（{{長江|ちょうこう}}文明）", href: findEventHref("neolithic", "河姆渡") },
@@ -87,7 +87,7 @@ const CHINA_EVENTS = [
   { eraId: "prc", sortYear: 2008, yearLabel: "2008年", event: "北京オリンピックが{{開催|かいさい}}される", era: "{{中華人民共和国|ちゅうかじんみんきょうわこく}}", href: findEventHref("prc", "北京オリンピック") },
 ];
 
-const JAPAN_EVENTS = [
+export const JAPAN_EVENTS = [
   { eraId: "jomon", sortYear: -14000, icon: "jomon", yearLabel: "前14000年{{頃|ごろ}}", event: "縄文時代がはじまる", era: "縄文時代" },
   { eraId: "yayoi", sortYear: -300, yearLabel: "前300年{{頃|ごろ}}", event: "{{稲作|いなさく}}が広がり{{弥生|やよい}}時代がはじまる", era: "{{弥生|やよい}}時代" },
   { eraId: "yayoi", sortYear: 57, icon: "kinin", yearLabel: "57年", event: "後漢に{{朝貢|ちょうこう}}し「{{漢委奴国王|かんのわのなのこくおう}}」の金印を授かる", era: "{{弥生|やよい}}時代", china: eraLink("easternhan") },

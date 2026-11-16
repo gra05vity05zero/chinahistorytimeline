@@ -8,11 +8,65 @@ import { RubyText } from "@/components/Ruby";
 // サーバーで描画した初期表示とランダムな出題がずれることはない
 const QUESTION_COUNT = 10;
 
-const MODES = [
-  { id: "next", label: "王朝の順番クイズ", note: "この王朝の次はどれ？" },
-  { id: "year", label: "年号クイズ", note: "この出来事は何年？" },
-  { id: "era", label: "出来事と王朝クイズ", note: "この出来事が起きた王朝は？" },
-];
+// UI text per language (lang="en" is used by /en/quiz; data passed in is already English there)
+const TEXT = {
+  ja: {
+    modes: [
+      { id: "next", label: "王朝の順番クイズ", note: "この王朝の次はどれ？" },
+      { id: "year", label: "年号クイズ", note: "この出来事は何年？" },
+      { id: "era", label: "出来事と王朝クイズ", note: "この出来事が起きた王朝は？" },
+    ],
+    nextSub: (era) => `${era.period}　の次の王朝・時代は？`,
+    nextExplain: (era, ans) => `${era.name}（${era.period}）→ ${ans.name}（${ans.period}）`,
+    yearSub: (ev) => `${ev.eraName}の出来事。何年？`,
+    yearExplain: (ev) => `${ev.title}は${ev.yearLabel}（${ev.eraName}）`,
+    eraSub: (ev) => `${ev.yearLabel}の出来事。どの王朝・時代？`,
+    eraExplain: (ev, ans) => `${ev.title}（${ev.yearLabel}）は${ans.name}の出来事`,
+    eraHref: (id) => `/eras/${id}`,
+    eventHref: (slug) => `/events/${slug}`,
+    start: (n) => `全${n}問 スタート →`,
+    comment: (score, n) => (score === n ? "満点！完璧です。" : score >= 7 ? "よくできました。あと少しで満点です。" : score >= 4 ? "まずまず。間違えた問題を年表で確認しましょう。" : "年表や覚え方のページで復習してから、もう一度挑戦してみましょう。"),
+    result: "結果",
+    scoreLine: (score, n) => `${score} / ${n} 問正解`,
+    check: "確認する →",
+    again: "もう一度（問題が変わります）",
+    other: "ほかのクイズを選ぶ",
+    progress: (i, n, score) => `第${i}問 / ${n}　正解 ${score}`,
+    correct: "正解！",
+    wrong: "残念…",
+    more: "詳しく（別タブ）→",
+    seeResult: "結果を見る",
+    nextQ: "次の問題へ →",
+  },
+  en: {
+    modes: [
+      { id: "next", label: "Dynasty order quiz", note: "Which dynasty came next?" },
+      { id: "year", label: "Dates quiz", note: "In what year did this happen?" },
+      { id: "era", label: "Events and dynasties quiz", note: "In which dynasty did this happen?" },
+    ],
+    nextSub: (era) => `${era.period} — which dynasty or period came next?`,
+    nextExplain: (era, ans) => `${era.name} (${era.period}) → ${ans.name} (${ans.period})`,
+    yearSub: (ev) => `An event of ${ev.eraName}. In what year?`,
+    yearExplain: (ev) => `${ev.title}: ${ev.yearLabel} (${ev.eraName})`,
+    eraSub: (ev) => `An event of ${ev.yearLabel}. Which dynasty or period?`,
+    eraExplain: (ev, ans) => `${ev.title} (${ev.yearLabel}) happened in ${ans.name}`,
+    eraHref: (id) => `/en/eras/${id}`,
+    eventHref: (slug) => `/en/events/${slug}`,
+    start: (n) => `Start · ${n} questions →`,
+    comment: (score, n) => (score === n ? "A perfect score!" : score >= 7 ? "Well done — nearly perfect." : score >= 4 ? "Not bad. Check the ones you missed on the timeline." : "Review the timeline and the memory tips, then try again."),
+    result: "Result",
+    scoreLine: (score, n) => `${score} / ${n} correct`,
+    check: "Check →",
+    again: "Try again (new questions)",
+    other: "Choose another quiz",
+    progress: (i, n, score) => `Question ${i} / ${n} · Score ${score}`,
+    correct: "Correct!",
+    wrong: "Not quite…",
+    more: "More (new tab) →",
+    seeResult: "See results",
+    nextQ: "Next question →",
+  },
+};
 
 function shuffle(list) {
   const a = [...list];
@@ -28,7 +82,7 @@ function sample(list, n) {
 }
 
 // 王朝の順番：ある王朝の「次の王朝」を4択で選ぶ
-function buildNextQuestions(eras) {
+function buildNextQuestions(eras, T) {
   const indexes = sample(
     eras.slice(0, -1).map((_, i) => i),
     QUESTION_COUNT
@@ -42,17 +96,17 @@ function buildNextQuestions(eras) {
     );
     return {
       promptText: eras[i].name,
-      promptSub: `${eras[i].period}　の次の王朝・時代は？`,
+      promptSub: T.nextSub(eras[i]),
       choices: shuffle([answer, ...others]).map((e) => ({ key: e.id, text: e.name })),
       answerKey: answer.id,
-      explain: `${eras[i].name}（${eras[i].period}）→ ${answer.name}（${answer.period}）`,
-      href: `/eras/${answer.id}`,
+      explain: T.nextExplain(eras[i], answer),
+      href: T.eraHref(answer.id),
     };
   });
 }
 
 // 年号：出来事の年を4択で選ぶ。ほかの選択肢は年の近い別の出来事から取り、勘で当てにくくする
-function buildYearQuestions(events) {
+function buildYearQuestions(events, T) {
   return sample(events, QUESTION_COUNT).map((ev) => {
     const values = [...new Set(events.map((e) => e.value))].filter((v) => v !== ev.value);
     const near = values.sort((a, b) => Math.abs(a - ev.value) - Math.abs(b - ev.value)).slice(0, 6);
@@ -60,17 +114,17 @@ function buildYearQuestions(events) {
     const label = (v) => events.find((e) => e.value === v).yearLabel;
     return {
       promptText: ev.title,
-      promptSub: `${ev.eraName}の出来事。何年？`,
+      promptSub: T.yearSub(ev),
       choices: shuffle([ev.value, ...others]).map((v) => ({ key: String(v), text: label(v) })),
       answerKey: String(ev.value),
-      explain: `${ev.title}は${ev.yearLabel}（${ev.eraName}）`,
-      href: `/events/${ev.slug}`,
+      explain: T.yearExplain(ev),
+      href: T.eventHref(ev.slug),
     };
   });
 }
 
 // 出来事と王朝：出来事が起きた王朝を4択で選ぶ。ほかの選択肢は前後の王朝から取る
-function buildEraQuestions(events, eras) {
+function buildEraQuestions(events, eras, T) {
   return sample(events, QUESTION_COUNT).map((ev) => {
     const idx = eras.findIndex((e) => e.id === ev.eraId);
     const nearby = eras.filter((e, i) => e.id !== ev.eraId && Math.abs(i - idx) <= 4);
@@ -78,11 +132,11 @@ function buildEraQuestions(events, eras) {
     const answer = eras[idx];
     return {
       promptText: ev.title,
-      promptSub: `${ev.yearLabel}の出来事。どの王朝・時代？`,
+      promptSub: T.eraSub(ev),
       choices: shuffle([answer, ...others]).map((e) => ({ key: e.id, text: e.name })),
       answerKey: answer.id,
-      explain: `${ev.title}（${ev.yearLabel}）は${answer.name}の出来事`,
-      href: `/events/${ev.slug}`,
+      explain: T.eraExplain(ev, answer),
+      href: T.eventHref(ev.slug),
     };
   });
 }
@@ -90,7 +144,9 @@ function buildEraQuestions(events, eras) {
 const cardStyle = { backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8" };
 const linkStyle = { color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist, fontSize: 12 };
 
-export function HistoryQuiz({ eras, events }) {
+export function HistoryQuiz({ eras, events, lang = "ja" }) {
+  const T = TEXT[lang];
+  const MODES = T.modes;
   const [mode, setMode] = useState(null);
   const [questions, setQuestions] = useState([]);
   const [current, setCurrent] = useState(0);
@@ -99,7 +155,7 @@ export function HistoryQuiz({ eras, events }) {
   const [history, setHistory] = useState([]);
 
   const start = (id) => {
-    const qs = id === "next" ? buildNextQuestions(eras) : id === "year" ? buildYearQuestions(events) : buildEraQuestions(events, eras);
+    const qs = id === "next" ? buildNextQuestions(eras, T) : id === "year" ? buildYearQuestions(events, T) : buildEraQuestions(events, eras, T);
     setMode(id);
     setQuestions(qs);
     setCurrent(0);
@@ -129,7 +185,7 @@ export function HistoryQuiz({ eras, events }) {
           <button key={m.id} type="button" onClick={() => start(m.id)} className="text-left hover:opacity-90" style={{ ...cardStyle, padding: "14px 14px", cursor: "pointer" }}>
             <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 15, fontWeight: 700, color: COLORS.ink }}>{m.label}</div>
             <div style={{ fontSize: 12, color: COLORS.inkSoft, marginTop: 4 }}>{m.note}</div>
-            <div style={{ fontSize: 12, fontWeight: 700, color: COLORS.vermilion, marginTop: 8 }}>全{QUESTION_COUNT}問 スタート →</div>
+            <div style={{ fontSize: 12, fontWeight: 700, color: COLORS.vermilion, marginTop: 8 }}>{T.start(QUESTION_COUNT)}</div>
           </button>
         ))}
       </div>
@@ -139,12 +195,12 @@ export function HistoryQuiz({ eras, events }) {
   const modeInfo = MODES.find((m) => m.id === mode);
 
   if (current >= questions.length) {
-    const comment = score === QUESTION_COUNT ? "満点！完璧です。" : score >= 7 ? "よくできました。あと少しで満点です。" : score >= 4 ? "まずまず。間違えた問題を年表で確認しましょう。" : "年表や覚え方のページで復習してから、もう一度挑戦してみましょう。";
+    const comment = T.comment(score, QUESTION_COUNT);
     return (
       <div style={{ ...cardStyle, padding: "16px" }}>
-        <div style={{ fontSize: 12, color: COLORS.gold, fontWeight: 700 }}>{modeInfo.label}　結果</div>
+        <div style={{ fontSize: 12, color: COLORS.gold, fontWeight: 700 }}>{modeInfo.label}　{T.result}</div>
         <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 28, fontWeight: 900, color: COLORS.ink, marginTop: 4 }}>
-          {score} / {QUESTION_COUNT} 問正解
+          {T.scoreLine(score, QUESTION_COUNT)}
         </div>
         <p style={{ fontSize: 13, color: COLORS.inkSoft, marginTop: 4 }}>{comment}</p>
         <ol style={{ marginTop: 12, fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft }}>
@@ -154,7 +210,7 @@ export function HistoryQuiz({ eras, events }) {
               <span>
                 <RubyText text={h.explain} />{" "}
                 <a href={h.href} style={linkStyle}>
-                  確認する →
+                  {T.check}
                 </a>
               </span>
             </li>
@@ -162,10 +218,10 @@ export function HistoryQuiz({ eras, events }) {
         </ol>
         <div className="flex gap-2.5 flex-wrap" style={{ marginTop: 14 }}>
           <button type="button" onClick={() => start(mode)} style={{ padding: "8px 14px", backgroundColor: COLORS.vermilion, color: "#FBF8F0", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>
-            もう一度（問題が変わります）
+            {T.again}
           </button>
           <button type="button" onClick={() => setMode(null)} style={{ padding: "8px 14px", border: `1px solid ${COLORS.vermilion}`, color: COLORS.vermilion, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>
-            ほかのクイズを選ぶ
+            {T.other}
           </button>
         </div>
       </div>
@@ -178,7 +234,7 @@ export function HistoryQuiz({ eras, events }) {
       <div className="flex justify-between" style={{ fontSize: 12, color: COLORS.gold, fontWeight: 700 }}>
         <span>{modeInfo.label}</span>
         <span>
-          第{current + 1}問 / {QUESTION_COUNT}　正解 {score}
+          {T.progress(current + 1, QUESTION_COUNT, score)}
         </span>
       </div>
       <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 20, fontWeight: 900, color: COLORS.ink, marginTop: 10, lineHeight: 1.6 }}>
@@ -216,14 +272,14 @@ export function HistoryQuiz({ eras, events }) {
       </div>
       {picked !== null && (
         <div style={{ marginTop: 14, padding: "10px 12px", backgroundColor: "#F3ECD9", fontSize: 13, lineHeight: 1.8, color: COLORS.inkSoft }}>
-          <span style={{ fontWeight: 700, color: picked === q.answerKey ? "#3B7A57" : COLORS.vermilion }}>{picked === q.answerKey ? "正解！" : "残念…"}</span>{" "}
+          <span style={{ fontWeight: 700, color: picked === q.answerKey ? "#3B7A57" : COLORS.vermilion }}>{picked === q.answerKey ? T.correct : T.wrong}</span>{" "}
           <RubyText text={q.explain} />{" "}
           <a href={q.href} target="_blank" rel="noopener" style={linkStyle}>
-            詳しく（別タブ）→
+            {T.more}
           </a>
           <div style={{ marginTop: 10 }}>
             <button type="button" onClick={next} style={{ padding: "8px 16px", backgroundColor: COLORS.vermilion, color: "#FBF8F0", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>
-              {current + 1 === QUESTION_COUNT ? "結果を見る" : "次の問題へ →"}
+              {current + 1 === QUESTION_COUNT ? T.seeResult : T.nextQ}
             </button>
           </div>
         </div>

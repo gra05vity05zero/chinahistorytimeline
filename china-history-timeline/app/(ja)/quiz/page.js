@@ -2,6 +2,7 @@ import { ERAS, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/dat
 import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { HistoryQuiz } from "@/components/HistoryQuiz";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "中国史クイズ｜王朝の順番・年号・出来事を4択で確認（世界史の暗記チェック）";
 const fullTitle = `${title} | ${SITE_NAME}`;
@@ -11,7 +12,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/quiz" },
+  alternates: bilingualAlternates("/quiz", "ja"),
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/quiz" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };

@@ -50,9 +50,10 @@ export const FEATURES_EN = [
 ];
 
 // Only slugs whose English page has been written are paired / listed.
-const READY = new Set(["great-wall", "silk-road", "terracotta-army", "qinshihuang", "qin-fall", "four-inventions", "emperors", "hundred-schools", "keju", "world-heritage", "four-great-novels", "four-beauties", "eunuchs", "women-rulers", "harem-ranks", "china-capitals", "ancient-capitals", "dynasty-territory-map", "china-castles", "ancient-towns", "chuhan-battles", "sanguo-battles", "sanguo-comparison", "chunqiu-zhanguo-battles", "suitang-battles", "song-yuan-battles", "history-books", "novelists", "suikoden", "yangjiajiang", "saiyuki", "kingdom", "wuxia-games", "koei-sangokushi", "musou", "kusuriya", "funny-episodes", "dramas"]);
+const READY = new Set(["great-wall", "silk-road", "terracotta-army", "qinshihuang", "qin-fall", "four-inventions", "emperors", "hundred-schools", "keju", "world-heritage", "four-great-novels", "four-beauties", "eunuchs", "women-rulers", "harem-ranks", "china-capitals", "ancient-capitals", "dynasty-territory-map", "china-castles", "ancient-towns", "chuhan-battles", "sanguo-battles", "sanguo-comparison", "chunqiu-zhanguo-battles", "suitang-battles", "song-yuan-battles", "history-books", "novelists", "suikoden", "yangjiajiang", "saiyuki", "kingdom", "wuxia-games", "koei-sangokushi", "musou", "kusuriya", "funny-episodes", "dramas", "glossary", "idioms", "mnemonics", "year-mnemonics", "quiz", "japan-china-timeline", "printable-timeline"]);
 export const FEATURES_READY = FEATURES_EN.filter((f) => READY.has(f.slug));
 export const FEATURE_SLUGS = FEATURES_READY.map((f) => f.slug);
 
 // Sub-pages paired along with a ready feature (every drama has an English page)
-export const EXTRA_PAIRED = READY.has("dramas") ? [/^\/dramas\/[^/]+$/] : [];
+export const SITE_PAGES = ["about", "privacy", "search", "news"];
+export const EXTRA_PAIRED = [...(READY.has("dramas") ? [/^\/dramas\/[^/]+$/] : []), ...SITE_PAGES.map((p) => new RegExp(`^/${p}$`))];

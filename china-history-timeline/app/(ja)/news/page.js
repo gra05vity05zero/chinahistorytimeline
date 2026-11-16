@@ -3,6 +3,7 @@ import { getNews } from "@/lib/news";
 import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
 import { NewsList } from "@/components/NewsList";
 import { RubyText } from "@/components/Ruby";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "中国史・考古学のニュース｜遺跡の発掘や新発見、文化財の最新情報";
 const fullTitle = `${title} | ${SITE_NAME}`;
@@ -12,7 +13,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/news" },
+  alternates: bilingualAlternates("/news", "ja"),
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/news" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };
