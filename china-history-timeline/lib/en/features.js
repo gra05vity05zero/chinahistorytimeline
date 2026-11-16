@@ -21,10 +21,35 @@ export const FEATURES_EN = [
   { slug: "ancient-capitals", title: "The Great Ancient Capitals of China", seal: "京", blurb: "Xi’an, Luoyang, Nanjing, Beijing, Kaifeng, Hangzhou and more, on a map." },
   { slug: "ancient-towns", title: "Ancient Towns of China", seal: "鎮", blurb: "Water towns and old towns that preserve the look of historic China." },
   { slug: "china-castles", title: "Walled Cities and Fortresses of China", seal: "塁", blurb: "City walls, passes and forts that guarded China’s cities and frontiers." },
+  { slug: "chunqiu-zhanguo-battles", title: "Spring and Autumn and Warring States Battle Map", seal: "覇", blurb: "From Chengpu to Changping: the wars of the hegemons and the seven warring states." },
+  { slug: "sanguo-battles", title: "Three Kingdoms Battle Map", seal: "戦", blurb: "Guandu, Red Cliffs, Yiling and Wuzhang Plains, with an animated map of the three kingdoms." },
+  { slug: "sanguo-comparison", title: "Wei, Wu and Shu Compared", seal: "鼎", blurb: "The three kingdoms side by side: founders, population, strengths, weaknesses and key people." },
+  { slug: "suitang-battles", title: "Sui and Tang Battle Map", seal: "唐", blurb: "From the founding of the Sui to the An Lushan Rebellion and the fall of the Tang." },
+  { slug: "song-yuan-battles", title: "Song and Yuan Battle Map", seal: "宋", blurb: "The Song against the Liao, Jin and Mongols, from Chanyuan to Yamen." },
+  { slug: "history-books", title: "The Great Histories of China", seal: "史", blurb: "Records of the Grand Historian and the Twenty-Four Histories: who wrote them and how." },
+  { slug: "novelists", title: "Japanese Novelists of Chinese History", seal: "筆", blurb: "Yoshikawa Eiji, Shiba Ryotaro, Miyagitani Masamitsu and the authors who made China’s past popular in Japan." },
+  { slug: "suikoden", title: "Water Margin: The 108 Heroes", seal: "梁", blurb: "The outlaws of Mount Liang, the real history behind them and the novel’s legacy." },
+  { slug: "saiyuki", title: "Journey to the West", seal: "猿", blurb: "Sun Wukong, Tripitaka and the real monk Xuanzang’s journey to India." },
+  { slug: "yangjiajiang", title: "The Generals of the Yang Family", seal: "楊", blurb: "The loyal Yang family of the Northern Song in history, drama and legend." },
+  { slug: "wuxia-games", title: "Wuxia and Chinese History in Games", seal: "侠", blurb: "Video games set in China’s past, and the history behind them." },
+  { slug: "kingdom", title: "Kingdom: The History Behind the Manga", seal: "王", blurb: "The real Warring States history behind Hara Yasuhisa’s manga about the unification of China." },
+  { slug: "koei-sangokushi", title: "Romance of the Three Kingdoms Games", seal: "志", blurb: "Koei Tecmo’s strategy series and the history behind it." },
+  { slug: "musou", title: "Dynasty Warriors: The History Behind the Games", seal: "無", blurb: "The real battles and officers behind the Dynasty Warriors series." },
+  { slug: "kusuriya", title: "The Apothecary Diaries and Chinese History", seal: "薬", blurb: "The real inner palace, medicine and customs behind the story." },
+  { slug: "funny-episodes", title: "Strange and Funny Episodes from Chinese History", seal: "笑", blurb: "The odd, absurd and very human side of China’s emperors and officials." },
+  { slug: "dramas", title: "Chinese Historical Dramas", seal: "劇", blurb: "Popular Chinese period dramas and the eras they are set in." },
+  { slug: "glossary", title: "Glossary of Chinese History", seal: "辞", blurb: "Key terms of Chinese history explained in plain English." },
+  { slug: "idioms", title: "Chinese Idioms from History", seal: "語", blurb: "Chengyu born from historical events, and the stories behind them." },
+  { slug: "mnemonics", title: "How to Remember the Chinese Dynasties", seal: "憶", blurb: "Tips and a song for memorizing the order of the dynasties." },
+  { slug: "year-mnemonics", title: "Key Dates in Chinese History", seal: "年", blurb: "The most important dates, with simple tricks for remembering them." },
+  { slug: "quiz", title: "Chinese History Quiz", seal: "問", blurb: "Test your knowledge of Chinese history, era by era." },
+  { slug: "japan-china-timeline", title: "Japan and China: A Comparative Timeline", seal: "日", blurb: "What was happening in Japan while each Chinese dynasty rose and fell." },
+  { slug: "printable-timeline", title: "Printable Timeline of Chinese Dynasties", seal: "印", blurb: "A one-page chart of the dynasties to print or save." },
+  { slug: "chuhan-battles", title: "The Chu–Han Contention: Battle Map", seal: "楚", blurb: "Xiang Yu against Liu Bang, from Julu and Hong Gate to the songs of Chu at Gaixia." },
   { slug: "dynasty-territory-map", title: "Map of Chinese Dynasties’ Territory", seal: "図", blurb: "How the territory of each dynasty grew and shrank, era by era." },
 ];
 
 // Only slugs whose English page has been written are paired / listed.
-const READY = new Set(["great-wall", "silk-road", "terracotta-army", "qinshihuang", "qin-fall", "four-inventions", "emperors", "hundred-schools", "keju", "world-heritage", "four-great-novels", "four-beauties", "eunuchs", "women-rulers", "harem-ranks", "china-capitals", "ancient-capitals", "dynasty-territory-map", "china-castles", "ancient-towns"]);
+const READY = new Set(["great-wall", "silk-road", "terracotta-army", "qinshihuang", "qin-fall", "four-inventions", "emperors", "hundred-schools", "keju", "world-heritage", "four-great-novels", "four-beauties", "eunuchs", "women-rulers", "harem-ranks", "china-capitals", "ancient-capitals", "dynasty-territory-map", "china-castles", "ancient-towns", "chuhan-battles", "sanguo-battles", "sanguo-comparison", "chunqiu-zhanguo-battles", "suitang-battles", "song-yuan-battles"]);
 export const FEATURES_READY = FEATURES_EN.filter((f) => READY.has(f.slug));
 export const FEATURE_SLUGS = FEATURES_READY.map((f) => f.slug);

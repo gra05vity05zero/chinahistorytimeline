@@ -3,6 +3,7 @@ import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb } from "@/c
 import { RubyText } from "@/components/Ruby";
 import { SuitangBorderMap } from "@/components/SuitangBorderMap";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "隋唐・五代 合戦マップ";
 const fullTitle = `隋唐・五代 合戦マップ | ${SITE_NAME}`;
@@ -12,7 +13,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/suitang-battles" },
+  alternates: bilingualAlternates("/suitang-battles", "ja"),
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/suitang-battles" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };

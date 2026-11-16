@@ -2,6 +2,7 @@ import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_NAME, buildOpe
 import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "楚漢戦争 合戦マップ";
 const fullTitle = `楚漢戦争 合戦マップ | ${SITE_NAME}`;
@@ -11,7 +12,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/chuhan-battles" },
+  alternates: bilingualAlternates("/chuhan-battles", "ja"),
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/chuhan-battles" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };

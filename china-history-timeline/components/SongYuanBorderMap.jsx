@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { COLORS, stripRuby } from "@/lib/constants";
 import { RubyText } from "@/components/Ruby";
+import { localizeFrames } from "@/lib/borderMapI18n";
 import { CHINA_OUTLINE, REGIONS, CHINA_PROPER } from "@/components/SuitangBorderMap";
 
 // 宋・金・元の勢力図。区画は/suitang-battlesの勢力図（SuitangBorderMap）と共通で、
@@ -29,7 +30,7 @@ const except = (...ids) => CHINA_PROPER.filter((r) => !ids.includes(r));
 const JIN_NORTH = ["liaoxi", "youzhou", "hedong", "hebei", "shandong", "guanzhong", "luoyang", "henan"];
 const SOUTHERN_SONG = ["shu", "shannan", "huainan", "jingnan", "jiangdong", "jiangxi", "hunan", "fujian", "lingnan"];
 
-const FRAMES = [
+const FRAMES_JA = [
   {
     year: "1004年",
     era: "{{澶淵|せんえん}}の盟",
@@ -132,7 +133,8 @@ const FRAMES = [
 
 const STEP_MS = 3800;
 
-export function SongYuanBorderMap() {
+export function SongYuanBorderMap({ t } = {}) {
+  const FRAMES = localizeFrames(FRAMES_JA, t);
   const [index, setIndex] = useState(0);
   const [playing, setPlaying] = useState(false);
 
@@ -164,7 +166,7 @@ export function SongYuanBorderMap() {
   return (
     <div style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: 16, marginBottom: 28 }}>
       <p style={{ fontSize: 11.5, color: COLORS.inkSoft, marginBottom: 10 }}>
-        1004年の<ruby>澶淵<rt>せんえん</rt></ruby>の盟から1279年の元の統一まで、勢力図の移り変わりを簡略化した区画単位のアニメーションでたどります（国境は史実を厳密に示すものではありません）。
+        {t ? t.intro : <>1004年の<ruby>澶淵<rt>せんえん</rt></ruby>の盟から1279年の元の統一まで、勢力図の移り変わりを簡略化した区画単位のアニメーションでたどります（国境は史実を厳密に示すものではありません）。</>}
       </p>
 
       {/* 長安から江南・嶺南までを収めるよう、合戦マップの東半分を拡大表示する（SuitangBorderMapと同じ範囲） */}
@@ -216,7 +218,7 @@ export function SongYuanBorderMap() {
               strokeLinejoin: "round",
             }}
           >
-            {stripRuby(f.name).replace(/（.*$/, "")}
+            {stripRuby(f.name).replace(/\s*[（(].*$/, "")}
           </text>
         ))}
       </svg>
@@ -226,7 +228,7 @@ export function SongYuanBorderMap() {
           type="button"
           onClick={() => setIndex((i) => Math.max(0, i - 1))}
           disabled={index === 0}
-          aria-label="前の時代へ"
+          aria-label={t ? t.prev : "前の時代へ"}
           style={{
             width: 30,
             height: 30,
@@ -252,13 +254,13 @@ export function SongYuanBorderMap() {
             color: playing ? COLORS.vermilion : "#fff",
           }}
         >
-          {playing ? "一時停止" : index >= FRAMES.length - 1 ? "はじめから再生" : "再生"}
+          {playing ? (t ? t.pause : "一時停止") : index >= FRAMES.length - 1 ? (t ? t.replay : "はじめから再生") : (t ? t.play : "再生")}
         </button>
         <button
           type="button"
           onClick={() => setIndex((i) => Math.min(FRAMES.length - 1, i + 1))}
           disabled={index === FRAMES.length - 1}
-          aria-label="次の時代へ"
+          aria-label={t ? t.next : "次の時代へ"}
           style={{
             width: 30,
             height: 30,

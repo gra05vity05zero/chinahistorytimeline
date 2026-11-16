@@ -3,6 +3,7 @@ import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb } from "@/c
 import { RubyText } from "@/components/Ruby";
 import { ZhanguoBorderMap } from "@/components/ZhanguoBorderMap";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "春秋・戦国時代 合戦マップ";
 const fullTitle = `春秋・戦国時代 合戦マップ | ${SITE_NAME}`;
@@ -12,7 +13,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/chunqiu-zhanguo-battles" },
+  alternates: bilingualAlternates("/chunqiu-zhanguo-battles", "ja"),
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/chunqiu-zhanguo-battles" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };

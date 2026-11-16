@@ -242,3 +242,16 @@ export function bilingualAlternates(jaPath, lang) {
     languages: { ja: jaPath, en: enPath, "x-default": jaPath },
   };
 }
+
+// Japanese figure name (ruby stripped) in an era → its English heritage item ({ name, imageUrl, credit, href? }), or null.
+// Heritage lists are index-aligned between lib/data.js and the English merge.
+export function figureEnByJa(eraId, jaName) {
+  const ja = ERAS.find((e) => e.id === eraId);
+  const en = findEraEn(eraId);
+  if (!ja || !en) return null;
+  for (let i = 0; i < ja.events.length; i++) {
+    const idx = (ja.events[i].heritage || []).findIndex((h) => h.type === "figure" && stripRuby(h.name) === jaName);
+    if (idx >= 0) return en.events[i].heritage[idx] || null;
+  }
+  return null;
+}

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { COLORS, stripRuby } from "@/lib/constants";
 import { RubyText } from "@/components/Ruby";
+import { localizeFrames } from "@/lib/borderMapI18n";
 
 // 中国本土の輪郭（/suitang-battlesの合戦マップと同じ、実際の海岸線をもとにした投影データ）
 export const CHINA_OUTLINE =
@@ -60,7 +61,7 @@ const F = {
 const ALL_REGIONS = Object.keys(REGIONS);
 const except = (...ids) => CHINA_PROPER.filter((r) => !ids.includes(r));
 
-const FRAMES = [
+const FRAMES_JA = [
   {
     year: "589年",
     era: "{{隋|ずい}}の南北統一",
@@ -217,7 +218,8 @@ const FRAMES = [
 
 const STEP_MS = 3800;
 
-export function SuitangBorderMap() {
+export function SuitangBorderMap({ t } = {}) {
+  const FRAMES = localizeFrames(FRAMES_JA, t);
   const [index, setIndex] = useState(0);
   const [playing, setPlaying] = useState(false);
 
@@ -249,7 +251,7 @@ export function SuitangBorderMap() {
   return (
     <div style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: 16, marginBottom: 28 }}>
       <p style={{ fontSize: 11.5, color: COLORS.inkSoft, marginBottom: 10 }}>
-        589年の<ruby>隋<rt>ずい</rt></ruby>の統一から979年の<ruby>宋<rt>そう</rt></ruby>の統一まで、勢力図の移り変わりを簡略化した区画単位のアニメーションでたどります（国境は史実を厳密に示すものではありません）。
+        {t ? t.intro : <>589年の<ruby>隋<rt>ずい</rt></ruby>の統一から979年の<ruby>宋<rt>そう</rt></ruby>の統一まで、勢力図の移り変わりを簡略化した区画単位のアニメーションでたどります（国境は史実を厳密に示すものではありません）。</>}
       </p>
 
       {/* 長安から江南・嶺南までを収めるよう、合戦マップの東半分を拡大表示する */}
@@ -301,7 +303,7 @@ export function SuitangBorderMap() {
               strokeLinejoin: "round",
             }}
           >
-            {stripRuby(f.name).replace(/（.*$/, "")}
+            {stripRuby(f.name).replace(/\s*[（(].*$/, "")}
           </text>
         ))}
       </svg>
@@ -311,7 +313,7 @@ export function SuitangBorderMap() {
           type="button"
           onClick={() => setIndex((i) => Math.max(0, i - 1))}
           disabled={index === 0}
-          aria-label="前の時代へ"
+          aria-label={t ? t.prev : "前の時代へ"}
           style={{
             width: 30,
             height: 30,
@@ -337,13 +339,13 @@ export function SuitangBorderMap() {
             color: playing ? COLORS.vermilion : "#fff",
           }}
         >
-          {playing ? "一時停止" : index >= FRAMES.length - 1 ? "はじめから再生" : "再生"}
+          {playing ? (t ? t.pause : "一時停止") : index >= FRAMES.length - 1 ? (t ? t.replay : "はじめから再生") : (t ? t.play : "再生")}
         </button>
         <button
           type="button"
           onClick={() => setIndex((i) => Math.min(FRAMES.length - 1, i + 1))}
           disabled={index === FRAMES.length - 1}
-          aria-label="次の時代へ"
+          aria-label={t ? t.next : "次の時代へ"}
           style={{
             width: 30,
             height: 30,

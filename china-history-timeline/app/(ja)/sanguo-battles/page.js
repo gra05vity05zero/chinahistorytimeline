@@ -3,6 +3,7 @@ import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb } from "@/c
 import { RubyText } from "@/components/Ruby";
 import { SanguoBorderMap } from "@/components/SanguoBorderMap";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "三国時代 合戦マップ";
 const fullTitle = `三国時代 合戦マップ | ${SITE_NAME}`;
@@ -12,7 +13,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/sanguo-battles" },
+  alternates: bilingualAlternates("/sanguo-battles", "ja"),
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/sanguo-battles" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };

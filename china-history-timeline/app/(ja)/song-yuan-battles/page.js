@@ -3,6 +3,7 @@ import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb } from "@/c
 import { RubyText } from "@/components/Ruby";
 import { SongYuanBorderMap } from "@/components/SongYuanBorderMap";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "宋・金・元 合戦マップ";
 const fullTitle = `宋・金・元 合戦マップ | ${SITE_NAME}`;
@@ -12,7 +13,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/song-yuan-battles" },
+  alternates: bilingualAlternates("/song-yuan-battles", "ja"),
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/song-yuan-battles" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };

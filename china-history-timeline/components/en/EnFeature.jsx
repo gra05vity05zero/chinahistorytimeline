@@ -201,7 +201,7 @@ export function DataTable({ head, rows }) {
 }
 
 // Map of China (same projection as lib/chinaOutline, viewBox 0 0 500 366) with numbered points.
-export function PointMap({ outline, taiwan, points, note, connect = false, labels = [] }) {
+export function PointMap({ outline, taiwan, points, note, connect = false, labels = [], refs = [] }) {
   return (
     <div style={{ ...cardStyle, padding: 16, marginBottom: 24 }}>
       {note && <p style={{ fontSize: 12, color: COLORS.inkSoft, marginBottom: 10 }}>{note}</p>}
@@ -212,6 +212,12 @@ export function PointMap({ outline, taiwan, points, note, connect = false, label
           <text key={`l${i}`} x={r.x} y={r.y} textAnchor={r.anchor || "middle"} style={{ ...serif, fontSize: 10.5, fill: COLORS.inkSoft, opacity: 0.85 }}>
             {r.label}
           </text>
+        ))}
+        {refs.map((r, i) => (
+          <g key={`r${i}`}>
+            <circle cx={r.x} cy={r.y} r="4" fill={COLORS.gold} stroke={COLORS.paper} strokeWidth="1.2" />
+            <text x={r.x + (r.dx ?? -8)} y={r.y + (r.dy ?? -9)} textAnchor={r.anchor || "end"} style={{ ...serif, fontSize: 10, fill: COLORS.inkSoft }}>{r.label}</text>
+          </g>
         ))}
         {connect && (
           <polyline points={points.map((p) => `${p.x},${p.y}`).join(" ")} fill="none" stroke={COLORS.vermilionSoft} strokeWidth="1.5" strokeDasharray="4 3" />
@@ -232,4 +238,74 @@ export function PointMap({ outline, taiwan, points, note, connect = false, label
 // Find an English event by slug for "related event" links
 export function eventLink(slug, label = "Read the event") {
   return slug ? [{ href: `/en/events/${slug}`, label }] : [];
+}
+
+// A vertical list of dated steps; each item may link to an event (href) or an anchor on the page.
+export function FlowList({ items }) {
+  return (
+    <div className="flex flex-col gap-2">
+      {items.map((f, i) => {
+        const inner = (
+          <div className="flex items-baseline gap-3 px-4 py-2.5" style={{ ...cardStyle, borderLeft: `3px solid ${COLORS.vermilion}` }}>
+            <span style={{ ...serif, fontSize: 13, color: COLORS.inkSoft, whiteSpace: "nowrap" }}>{f.year}</span>
+            <div className="flex-1 min-w-0">
+              <div style={{ ...serif, fontSize: 15, fontWeight: 700, color: COLORS.ink }}>{f.title}</div>
+              {f.note && <div style={{ fontSize: 13, color: COLORS.inkSoft, lineHeight: 1.6, marginTop: 2 }}>{f.note}</div>}
+            </div>
+            {(f.href || f.anchor) && <span className="shrink-0" style={{ color: COLORS.vermilion, fontSize: 13 }}>→</span>}
+          </div>
+        );
+        if (f.href) return <Link key={i} href={f.href}>{inner}</Link>;
+        if (f.anchor) return <a key={i} href={`#${f.anchor}`}>{inner}</a>;
+        return <div key={i}>{inner}</div>;
+      })}
+    </div>
+  );
+}
+
+// One battle: number, name, year, place, the two sides, narrative, optional portrait and links.
+export function BattleCard({ b }) {
+  return (
+    <div id={b.id} style={{ ...cardStyle, scrollMarginTop: 16 }}>
+      <div className="flex gap-3 p-4">
+        {b.portrait?.imageUrl && (
+          <div className="flex items-center justify-center shrink-0" style={{ width: 88, height: 88, backgroundColor: "#EFE7D0", border: `1px solid ${COLORS.mist}`, overflow: "hidden" }}>
+            <HeritageThumb imageUrl={b.portrait.imageUrl} name={b.portrait.name} type="figure" />
+          </div>
+        )}
+        <div className="flex-1 min-w-0">
+          <div className="flex items-baseline gap-2 flex-wrap">
+            <NumberBadge n={b.no} />
+            <span style={{ ...serif, fontSize: 17, fontWeight: 700, color: COLORS.ink }}>{b.name}</span>
+            <span style={{ fontSize: 12.5, color: COLORS.gold, ...serif }}>{b.year}</span>
+          </div>
+          {b.location && <div style={{ fontSize: 12, color: COLORS.vermilionSoft, marginTop: 4 }}>{b.location}</div>}
+          {b.sides?.length > 0 && (
+            <div className="flex flex-wrap gap-x-4 gap-y-1 mt-3" style={{ fontSize: 13 }}>
+              {b.sides.map(([side, people]) => (
+                <div key={side}>
+                  <span style={{ color: COLORS.gold, fontWeight: 700 }}>{side}: </span>
+                  <span style={{ color: COLORS.inkSoft }}>{people}</span>
+                </div>
+              ))}
+            </div>
+          )}
+          <p style={{ fontSize: 14, lineHeight: 1.85, color: COLORS.inkSoft, marginTop: 10 }}>{b.body}</p>
+          {b.portrait?.credit && <div style={{ fontSize: 10, color: COLORS.mist, marginTop: 4 }}>{b.portrait.credit}</div>}
+          {b.links?.filter((l) => l.href && isLive(l.href)).length > 0 && (
+            <div className="flex items-center gap-3 flex-wrap mt-3" style={{ fontSize: 13 }}>
+              {b.links.filter((l) => l.href && isLive(l.href)).map((l) => (
+                <Link key={l.href + l.label} href={l.href} style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>{l.label} →</Link>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Helpers for feature pages: find a Japanese event by era and title fragment, and an English figure by era and Japanese name.
+export function jaEventSlug(ERAS, stripRuby, eraId, key) {
+  return ERAS.find((e) => e.id === eraId)?.events.find((ev) => stripRuby(ev.title).includes(key))?.slug || null;
 }

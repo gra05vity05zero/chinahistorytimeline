@@ -3,6 +3,7 @@ import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock 
 import { RubyText } from "@/components/Ruby";
 import { SanguoBorderMap } from "@/components/SanguoBorderMap";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
+import { bilingualAlternates } from "@/lib/en";
 
 const title = "魏・呉・蜀の違いとは？三国の国力・君主・人物を比較";
 const fullTitle = `${title} | ${SITE_NAME}`;
@@ -12,7 +13,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/sanguo-comparison" },
+  alternates: bilingualAlternates("/sanguo-comparison", "ja"),
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/sanguo-comparison", type: "article" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };

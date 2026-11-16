@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { COLORS, stripRuby } from "@/lib/constants";
 import { RubyText } from "@/components/Ruby";
+import { localizeFrames } from "@/lib/borderMapI18n";
 
 // 中国本土の輪郭（/chunqiu-zhanguo-battlesの合戦マップと同じ、実際の海岸線をもとにした投影データ）
 const CHINA_OUTLINE =
@@ -57,7 +58,7 @@ const F = {
 
 const ALL_REGIONS = Object.keys(REGIONS);
 
-const FRAMES = [
+const FRAMES_JA = [
   {
     year: "前403年",
     era: "{{戦国七雄|せんごくしちゆう}}の成立",
@@ -200,7 +201,8 @@ const FRAMES = [
 
 const STEP_MS = 3600;
 
-export function ZhanguoBorderMap() {
+export function ZhanguoBorderMap({ t } = {}) {
+  const FRAMES = localizeFrames(FRAMES_JA, t);
   const [index, setIndex] = useState(0);
   const [playing, setPlaying] = useState(false);
 
@@ -232,7 +234,7 @@ export function ZhanguoBorderMap() {
   return (
     <div style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: 16, marginBottom: 28 }}>
       <p style={{ fontSize: 11.5, color: COLORS.inkSoft, marginBottom: 10 }}>
-        前403年の<ruby>戦国七雄<rt>せんごくしちゆう</rt></ruby>の成立から前221年の<ruby>秦<rt>しん</rt></ruby>の統一まで、勢力図の移り変わりを簡略化した区画単位のアニメーションでたどります（国境は史実を厳密に示すものではありません）。
+        {t ? t.intro : <>前403年の<ruby>戦国七雄<rt>せんごくしちゆう</rt></ruby>の成立から前221年の<ruby>秦<rt>しん</rt></ruby>の統一まで、勢力図の移り変わりを簡略化した区画単位のアニメーションでたどります（国境は史実を厳密に示すものではありません）。</>}
       </p>
 
       {/* 七雄がひしめく中原を読み取れるよう、合戦マップの東半分を拡大表示する */}
@@ -284,7 +286,7 @@ export function ZhanguoBorderMap() {
               strokeLinejoin: "round",
             }}
           >
-            {stripRuby(f.name).replace(/（.*$/, "")}
+            {stripRuby(f.name).replace(/\s*[（(].*$/, "")}
           </text>
         ))}
       </svg>
@@ -294,7 +296,7 @@ export function ZhanguoBorderMap() {
           type="button"
           onClick={() => setIndex((i) => Math.max(0, i - 1))}
           disabled={index === 0}
-          aria-label="前の時代へ"
+          aria-label={t ? t.prev : "前の時代へ"}
           style={{
             width: 30,
             height: 30,
@@ -320,13 +322,13 @@ export function ZhanguoBorderMap() {
             color: playing ? COLORS.vermilion : "#fff",
           }}
         >
-          {playing ? "一時停止" : index >= FRAMES.length - 1 ? "はじめから再生" : "再生"}
+          {playing ? (t ? t.pause : "一時停止") : index >= FRAMES.length - 1 ? (t ? t.replay : "はじめから再生") : (t ? t.play : "再生")}
         </button>
         <button
           type="button"
           onClick={() => setIndex((i) => Math.min(FRAMES.length - 1, i + 1))}
           disabled={index === FRAMES.length - 1}
-          aria-label="次の時代へ"
+          aria-label={t ? t.next : "次の時代へ"}
           style={{
             width: 30,
             height: 30,
