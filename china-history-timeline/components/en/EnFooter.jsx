@@ -14,6 +14,8 @@ export default function EnFooter() {
       {sep}
       <Link href="/en/eras" style={linkStyle}>All Eras</Link>
       {sep}
+      <Link href="/en/people" style={linkStyle}>People</Link>
+      {sep}
       <Link href="/privacy" hrefLang="ja" style={linkStyle}>Privacy Policy (Japanese)</Link>
       {sep}
       <LanguageSwitch lang="en" />

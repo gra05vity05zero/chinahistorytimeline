@@ -2,7 +2,9 @@
 // lib/data.js stays the single source for years, slugs, categories and images;
 // the files in lib/en/eras/ supply only the English text (name, description,
 // event title/summary, heritage [name, description]) and are merged onto it here.
-import { ERAS, stripRuby, SITE_URL } from "@/lib/data";
+import { ERAS, stripRuby, personSlug, SITE_URL } from "@/lib/data";
+import { PERSON_DETAILS } from "@/lib/personDetails";
+import { PEOPLE_EN, enPersonSlug } from "./people";
 import ancient from "./eras/ancient";
 import zhou from "./eras/zhou";
 import qinhan from "./eras/qinhan";
@@ -54,6 +56,30 @@ export function translateCredit(credit) {
     .trim();
 }
 
+// Figures with a translated person page get bio/life and the English page URL (href, used by HeritageGrid).
+const usedPeople = new Set();
+function withPersonPage(eraId, h, item) {
+  const jaSlug = personSlug(h.name);
+  const key = `${eraId}/${jaSlug}`;
+  const p = PEOPLE_EN[key];
+  if (!p) return item;
+  usedPeople.add(key);
+  const jaLife = PERSON_DETAILS[key]?.life;
+  if ((jaLife?.length || 0) !== (p.life?.length || 0)) {
+    throw new Error(`English life rows (${p.life?.length || 0}) differ from lib/personDetails (${jaLife?.length || 0}): ${key}`);
+  }
+  if (!p.bio) throw new Error(`Missing English bio: ${key}`);
+  const slug = p.slug || enPersonSlug(item.name);
+  return {
+    ...item,
+    bio: p.bio,
+    life: jaLife ? jaLife.map(([year, , approx], i) => [year, p.life[i], approx]) : null,
+    slug,
+    jaSlug,
+    href: `/en/people/${eraId}/${slug}`,
+  };
+}
+
 function mergeEra(era) {
   const t = EN_TEXT[era.id];
   if (!t) throw new Error(`Missing English translation for era: ${era.id}`);
@@ -72,7 +98,7 @@ function mergeEra(era) {
       const heritage = (ev.heritage || []).map((h, i) => {
         const pair = e.heritage?.[i];
         if (!pair) throw new Error(`Missing English heritage #${i} for event: ${ev.slug}`);
-        return {
+        const item = {
           type: h.type,
           name: pair[0],
           description: pair[1],
@@ -80,6 +106,7 @@ function mergeEra(era) {
           objectPosition: h.objectPosition,
           credit: translateCredit(h.credit),
         };
+        return h.type === "figure" && h.bio ? withPersonPage(era.id, h, item) : item;
       });
       return { year: ev.year, slug: ev.slug, category: ev.category, title: e.title, summary: e.summary, heritage };
     }),
@@ -87,6 +114,54 @@ function mergeEra(era) {
 }
 
 export const ERAS_EN = ERAS.map(mergeEra);
+
+Object.keys(PEOPLE_EN).forEach((key) => {
+  if (!usedPeople.has(key)) throw new Error(`English person entry matches no figure with a Japanese bio: ${key}`);
+});
+
+// ---- Person pages ----
+const PEOPLE_BY_ERA = ERAS_EN.map((era) => {
+  const people = [];
+  const seen = new Set();
+  era.events.forEach((ev) =>
+    ev.heritage.forEach((h) => {
+      if (!h.href || seen.has(h.slug)) return;
+      seen.add(h.slug);
+      people.push(h);
+    })
+  );
+  return { era, people };
+});
+
+{
+  const slugs = new Map();
+  PEOPLE_BY_ERA.forEach(({ era, people }) =>
+    people.forEach((p) => {
+      const k = `${era.id}/${p.slug}`;
+      if (slugs.has(k) && slugs.get(k) !== p.jaSlug) throw new Error(`Duplicate English person slug: ${k}`);
+      slugs.set(k, p.jaSlug);
+    })
+  );
+}
+
+export function getPeopleByEraEn() {
+  return PEOPLE_BY_ERA;
+}
+
+// { era, person } where person also carries the events it appears in (from getEraFiguresEn)
+export function findPersonEn(eraId, slug) {
+  const row = PEOPLE_BY_ERA.find((r) => r.era.id === eraId);
+  if (!row) return null;
+  const person = getEraFiguresEn(row.era).find((p) => p.slug === slug);
+  return person ? { era: row.era, person } : null;
+}
+
+// Japanese person page (/people/eraId/<ja slug>) → English page path, or null
+export function englishPersonPath(eraId, jaSlug) {
+  const row = PEOPLE_BY_ERA.find((r) => r.era.id === eraId);
+  const p = row?.people.find((x) => x.jaSlug === jaSlug);
+  return p ? p.href : null;
+}
 
 const FLAT = ERAS_EN.flatMap((era) => era.events.map((event) => ({ event, era })));
 
@@ -140,7 +215,7 @@ export function displayPeriodEn(period) {
 }
 
 // Japanese path ⇄ English path for pages that exist in both languages.
-const PAIRED = [/^\/$/, /^\/eras$/, /^\/eras\/[^/]+$/, /^\/events\/[^/]+$/];
+const PAIRED = [/^\/$/, /^\/eras$/, /^\/people$/, /^\/eras\/[^/]+$/, /^\/events\/[^/]+$/];
 
 export function englishPathFor(jaPath) {
   return PAIRED.some((re) => re.test(jaPath)) ? (jaPath === "/" ? "/en" : `/en${jaPath}`) : null;

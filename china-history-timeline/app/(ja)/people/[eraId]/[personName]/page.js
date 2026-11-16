@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { ERAS, SITE_URL, getEraFigures, personSlug, stripRuby, buildOpenGraph, buildTwitter } from "@/lib/data";
 import PersonDetail from "@/components/PersonDetail";
 import { formatLifeYear, lifeAge } from "@/lib/personDetails";
+import { englishPersonPath } from "@/lib/en";
 
 // 生涯年表の行を表示用に整える（先頭行=誕生、最後の行=死去）
 function buildLifeRows(life) {
@@ -43,10 +44,12 @@ export function generateMetadata({ params }) {
   const description = stripRuby(person.description);
   const path = `/people/${era.id}/${personSlug(person.name)}`;
   const image = { title: `${name}とは？`, subtitle: "生涯と業績", kicker: `${stripRuby(era.name)}の人物`, seal: era.seal };
+  // 英語版の人物ページがある人物は hreflang で対にする（英語版はURLの人物名が英語表記）
+  const enPath = englishPersonPath(era.id, personSlug(person.name));
   return {
     title,
     description,
-    alternates: { canonical: path },
+    alternates: enPath ? { canonical: path, languages: { ja: path, en: enPath, "x-default": path } } : { canonical: path },
     openGraph: buildOpenGraph({ title, description, path, type: "article", image }),
     twitter: buildTwitter({ title, description }),
   };

@@ -303,7 +303,8 @@ export function HeritageGrid({ items, eraId }) {
   return (
     <div className="grid gap-3" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))" }}>
       {items.map((it, idx) => {
-        const href = eraId && it.type === "figure" && it.bio ? `/people/${eraId}/${encodeURIComponent(personSlug(it.name))}` : null;
+        // 英語版は items 側に href を持たせる（英語の人物ページのURL）
+        const href = it.href || (eraId && it.type === "figure" && it.bio ? `/people/${eraId}/${encodeURIComponent(personSlug(it.name))}` : null);
         return (
           <div key={idx} style={{ border: `1px solid ${COLORS.mist}`, backgroundColor: "#fff" }}>
             <div

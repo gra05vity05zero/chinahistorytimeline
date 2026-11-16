@@ -3,6 +3,7 @@ import { ERAS, ERA_ALIASES, COLORS, SITE_NAME, getEraFigures, buildOpenGraph, bu
 import { SealMark, BackToTopButton, MiscLinksSection } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { personSlug } from "@/lib/constants";
+import { bilingualAlternates } from "@/lib/en";
 
 // 解説文の最初の一文だけを取り出して簡素な説明にする
 function shortDescription(text) {
@@ -19,7 +20,7 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: { canonical: "/people" },
+  alternates: bilingualAlternates("/people", "ja"),
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/people" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };
