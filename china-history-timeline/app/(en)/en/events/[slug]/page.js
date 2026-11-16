@@ -14,6 +14,8 @@ import {
   bilingualAlternates,
 } from "@/lib/en";
 import { buildOpenGraphEn, buildTwitterEn, leadSentencesEn } from "@/lib/en/seo";
+import { getEventDetailEn } from "@/lib/en/eventDetails";
+import EventArticle from "@/components/EventArticle";
 
 const serif = { fontFamily: "var(--font-serif), serif" };
 
@@ -67,6 +69,7 @@ export default function EnglishEventPage({ params }) {
   const { prev, next } = getAdjacentEventsEn(event.slug);
   const cat = CATEGORY_STYLE[event.category] || CATEGORY_STYLE["文化"];
   const year = displayYearEn(event.year);
+  const detail = getEventDetailEn(event.slug);
   const groups = ["building", "artifact", "figure"]
     .map((type) => ({ type, items: event.heritage.filter((h) => h.type === type) }))
     .filter((g) => g.items.length > 0);
@@ -78,6 +81,7 @@ export default function EnglishEventPage({ params }) {
     description: leadSentencesEn(event.summary),
     inLanguage: "en",
     articleSection: era.name,
+    ...(detail && { datePublished: detail.publishedAt, dateModified: detail.updatedAt }),
     isPartOf: { "@type": "WebSite", name: SITE_NAME_EN, url: `${SITE_URL}/en` },
     mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_URL}/en/events/${event.slug}` },
   };
@@ -95,6 +99,18 @@ export default function EnglishEventPage({ params }) {
     <div style={{ backgroundColor: COLORS.paper, minHeight: "100%" }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      {detail?.faq?.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: detail.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+            }),
+          }}
+        />
+      )}
       <article className="max-w-2xl mx-auto px-6 py-8">
         <nav className="flex items-center gap-2 flex-wrap" style={{ fontSize: 12.5 }} aria-label="Breadcrumb">
           <Link href="/en" style={{ color: COLORS.vermilion }}>Timeline</Link>
@@ -113,6 +129,8 @@ export default function EnglishEventPage({ params }) {
         <h1 style={{ ...serif, fontSize: 28, fontWeight: 900, color: COLORS.ink, lineHeight: 1.3, marginTop: 14 }}>{event.title}</h1>
 
         <p style={{ fontSize: 16, lineHeight: 1.9, color: COLORS.ink, marginTop: 16 }}>{event.summary}</p>
+
+        {detail && <EventArticle detail={detail} lang="en" />}
 
         {groups.map((g) => (
           <section key={g.type} className="mt-8">

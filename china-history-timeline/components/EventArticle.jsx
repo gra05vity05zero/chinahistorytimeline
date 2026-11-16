@@ -11,6 +11,20 @@ const serif = { fontFamily: "var(--font-serif), serif" };
 const panel = { backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8" };
 const bodyText = { fontSize: 14.5, lineHeight: 1.95, color: COLORS.inkSoft };
 
+// 英語版（/en）でも同じ部品を使うため、固定の文言だけ言語別に持つ
+const LABELS = {
+  ja: { points: "ざっくり言うと", faq: "よくある質問", updated: "更新日：", sources: "　主な出典：", map: "地図", colon: "：" },
+  en: { points: "In a nutshell", faq: "Frequently asked questions", updated: "Updated: ", sources: " · Main sources: ", map: "Map", colon: ": " },
+};
+
+function formatDate(date, lang) {
+  if (lang === "en") {
+    const d = new Date(`${date}T00:00:00Z`);
+    return d.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
+  }
+  return date.replace(/^(\d+)-0?(\d+)-0?(\d+)$/, "$1年$2月$3日");
+}
+
 function Paragraph({ text }) {
   return (
     <p style={bodyText}>
@@ -19,7 +33,7 @@ function Paragraph({ text }) {
   );
 }
 
-function BulletList({ items }) {
+function BulletList({ items, lang = "ja" }) {
   return (
     <ul className="grid gap-2">
       {items.map((item, i) => (
@@ -36,7 +50,8 @@ function BulletList({ items }) {
                 <strong style={{ color: COLORS.ink }}>
                   <RubyText text={item.title} />
                 </strong>
-                ：<RubyText text={item.text} />
+                {LABELS[lang].colon}
+                <RubyText text={item.text} />
               </>
             )}
           </span>
@@ -225,13 +240,13 @@ const projX = (lon) => 7.458 * lon - 528.2;
 const projY = (lat) => 511.6 - 9.138 * lat;
 const toPoints = (coords) => coords.map(([lon, lat]) => `${projX(lon).toFixed(1)},${projY(lat).toFixed(1)}`).join(" ");
 
-function MapBlock({ caption, viewBox = [0, 0, 500, 366], points = [], routes = [], areas = [], legend }) {
+function MapBlock({ caption, viewBox = [0, 0, 500, 366], points = [], routes = [], areas = [], legend, lang = "ja" }) {
   const [, , w] = viewBox;
   const k = w / 500; // 拡大しても文字や線の太さが変わらないようにする係数
   const id = useId().replace(/:/g, "");
   return (
     <figure style={{ ...panel, padding: 8 }}>
-      <svg viewBox={viewBox.join(" ")} role="img" aria-label={stripRuby(caption || "地図")} style={{ width: "100%", maxHeight: 520, display: "block", backgroundColor: "#F4F1E8" }}>
+      <svg viewBox={viewBox.join(" ")} role="img" aria-label={stripRuby(caption || LABELS[lang].map)} style={{ width: "100%", maxHeight: 520, display: "block", backgroundColor: "#F4F1E8" }}>
         <defs>
           {routes.map((r, i) => (
             <marker key={i} id={`${id}-arrow-${i}`} viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto">
@@ -301,16 +316,18 @@ function MapBlock({ caption, viewBox = [0, 0, 500, 366], points = [], routes = [
 
 const BLOCKS = { p: Paragraph, list: BulletList, table: Table, flow: Flow, compare: Compare, note: Note, related: Related, figures: Figures, image: Figure, map: MapBlock };
 
-function Block({ block }) {
+function Block({ block, lang }) {
   const Component = BLOCKS[block.type];
-  return Component ? <Component {...block} /> : null;
+  return Component ? <Component {...block} lang={lang} /> : null;
 }
 
-export default function EventArticle({ detail }) {
+// lang="en" は英語版の出来事ページ（app/(en)/en/events/[slug]）で使う
+export default function EventArticle({ detail, lang = "ja" }) {
+  const t = LABELS[lang];
   return (
     <div className="mt-8">
       <div className="px-5 py-4" style={{ ...panel, borderLeft: `4px solid ${COLORS.vermilion}` }}>
-        <div style={{ ...serif, fontSize: 14, fontWeight: 900, color: COLORS.vermilion, letterSpacing: "0.1em", marginBottom: 8 }}>ざっくり言うと</div>
+        <div style={{ ...serif, fontSize: 14, fontWeight: 900, color: COLORS.vermilion, letterSpacing: "0.1em", marginBottom: 8 }}>{t.points}</div>
         <ol className="grid gap-2">
           {detail.points.map((point, i) => (
             <li key={i} className="flex gap-3" style={{ fontSize: 14.5, lineHeight: 1.85, color: COLORS.ink }}>
@@ -336,7 +353,7 @@ export default function EventArticle({ detail }) {
           </h2>
           <div className="grid gap-4">
             {section.blocks.map((block, i) => (
-              <Block key={i} block={block} />
+              <Block key={i} block={block} lang={lang} />
             ))}
           </div>
         </section>
@@ -345,7 +362,7 @@ export default function EventArticle({ detail }) {
       {detail.faq && detail.faq.length > 0 && (
         <section className="mt-9">
           <h2 style={{ ...serif, fontSize: 19, fontWeight: 900, color: COLORS.ink, paddingBottom: 6, marginBottom: 14, borderBottom: `2px solid ${COLORS.vermilion}` }}>
-            よくある質問
+            {t.faq}
           </h2>
           <div className="grid gap-3">
             {detail.faq.map((f) => (
@@ -371,8 +388,14 @@ export default function EventArticle({ detail }) {
       )}
 
       <p className="mt-6" style={{ fontSize: 11.5, color: COLORS.inkSoft }}>
-        更新日：<time dateTime={detail.updatedAt}>{detail.updatedAt.replace(/^(\d+)-0?(\d+)-0?(\d+)$/, "$1年$2月$3日")}</time>
-        {detail.sources && <>　主な出典：<RubyText text={detail.sources} /></>}
+        {t.updated}
+        <time dateTime={detail.updatedAt}>{formatDate(detail.updatedAt, lang)}</time>
+        {detail.sources && (
+          <>
+            {t.sources}
+            <RubyText text={detail.sources} />
+          </>
+        )}
       </p>
     </div>
   );
