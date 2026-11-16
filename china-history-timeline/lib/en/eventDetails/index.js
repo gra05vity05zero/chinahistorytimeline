@@ -18,6 +18,8 @@ import westernhan from "./westernhan";
 import xin from "./xin";
 import easternhan from "./easternhan";
 import sanguo from "./sanguo";
+import westernjin from "./westernjin";
+import sixteenkingdoms from "./sixteenkingdoms";
 
 const EN_STRINGS = {
   ...neolithic,
@@ -31,6 +33,8 @@ const EN_STRINGS = {
   ...xin,
   ...easternhan,
   ...sanguo,
+  ...westernjin,
+  ...sixteenkingdoms,
 };
 
 const CJK = /[　-ヿ㐀-鿿＀-￯]/;
