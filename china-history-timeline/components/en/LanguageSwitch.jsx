@@ -39,8 +39,8 @@ function alternateFromHead(lang) {
   }
 }
 
-// lang: the language of the page this is shown on. Links to the same page in the other language when it exists.
-export default function LanguageSwitch({ lang, style }) {
+// URL of the same page in the other language (top page of that language when there is no pair).
+export function useCounterpartHref(lang) {
   const pathname = usePathname() || "/";
   const [fromHead, setFromHead] = useState(null);
   useEffect(() => {
@@ -49,7 +49,12 @@ export default function LanguageSwitch({ lang, style }) {
     const t = setTimeout(() => setFromHead(alternateFromHead(lang)), 300);
     return () => clearTimeout(t);
   }, [pathname, lang]);
-  const href = fromHead || counterpart(pathname, lang);
+  return fromHead || counterpart(pathname, lang);
+}
+
+// lang: the language of the page this is shown on. Links to the same page in the other language when it exists.
+export default function LanguageSwitch({ lang, style }) {
+  const href = useCounterpartHref(lang);
   const linkStyle = { color: COLORS.vermilion, textDecoration: "none", ...style };
   return lang === "ja" ? (
     <Link href={href} hrefLang="en" lang="en" style={linkStyle}>

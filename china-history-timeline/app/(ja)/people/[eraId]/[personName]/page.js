@@ -49,7 +49,7 @@ export function generateMetadata({ params }) {
   return {
     title,
     description,
-    alternates: enPath ? { canonical: path, languages: { ja: path, en: enPath, "x-default": path } } : { canonical: path },
+    alternates: enPath ? { canonical: path, languages: { ja: path, en: enPath, "x-default": enPath } } : { canonical: path },
     openGraph: buildOpenGraph({ title, description, path, type: "article", image }),
     twitter: buildTwitter({ title, description }),
   };

@@ -240,7 +240,7 @@ export function bilingualAlternates(jaPath, lang) {
   const enPath = englishPathFor(jaPath);
   return {
     canonical: lang === "en" ? enPath : jaPath,
-    languages: { ja: jaPath, en: enPath, "x-default": jaPath },
+    languages: { ja: jaPath, en: enPath, "x-default": enPath || jaPath },
   };
 }
 

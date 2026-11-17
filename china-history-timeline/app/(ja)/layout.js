@@ -3,6 +3,7 @@ import { bilingualAlternates } from "@/lib/en";
 import { Noto_Serif_JP, Noto_Sans_JP } from "next/font/google";
 import Footer from "@/components/Footer";
 import SiteHeader from "@/components/SiteHeader";
+import EnglishVersionBanner from "@/components/en/EnglishVersionBanner";
 import { ADSENSE_CLIENT_ID, GA_MEASUREMENT_ID, SITE_URL, SITE_NAME, SITE_DESCRIPTION, buildOpenGraph, buildTwitter } from "@/lib/data";
 
 // 日本語サイトなので日本の字形（JP）のフォントを使う（SCだと「直」「骨」などが中国式の字形になる）。
@@ -81,6 +82,7 @@ export default function RootLayout({ children }) {
         )}
       </head>
       <body>
+        <EnglishVersionBanner />
         <SiteHeader />
         {children}
         <Footer />

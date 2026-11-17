@@ -24,7 +24,7 @@ export function generateMetadata({ params }) {
   return {
     title,
     description,
-    alternates: { canonical: person.href, languages: { ja: jaPath, en: person.href, "x-default": jaPath } },
+    alternates: { canonical: person.href, languages: { ja: jaPath, en: person.href, "x-default": person.href } },
     openGraph: buildOpenGraphEn({
       title: `${title} | ${SITE_NAME_EN}`,
       description,
