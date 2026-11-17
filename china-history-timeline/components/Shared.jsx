@@ -99,6 +99,8 @@ const MISC_SECTIONS = [
     links: [
       { href: "/hundred-schools", label: "{{諸子百家|しょしひゃっか}}とは" },
       { href: "/four-inventions", label: "四大発明" },
+      { href: "/eto", label: "干支（十二支）の由来" },
+      { href: "/shunsetsu", label: "春節（旧正月）とは" },
       { href: "/four-great-novels", label: "四大名著" },
       { href: "/four-beauties", label: "中国四大美女" },
       { href: "/yangjiajiang", label: "{{楊家将|ようかしょう}}とは" },

@@ -8,6 +8,8 @@ export const FEATURES_EN = [
   { slug: "qinshihuang", title: "Qin Shi Huang, the First Emperor", seal: "秦", blurb: "The man who unified China in 221 BC, his reforms and his legend." },
   { slug: "qin-fall", title: "Why the Qin Dynasty Fell So Fast", seal: "亡", blurb: "How the first unified empire collapsed only fifteen years after unification." },
   { slug: "four-inventions", title: "The Four Great Inventions", seal: "明", blurb: "Paper, printing, gunpowder and the compass — and how they changed the world." },
+  { slug: "eto", title: "The Chinese Zodiac and the 60-Year Cycle", seal: "支", blurb: "The twelve animals, the stems and branches, and famous events named after their year." },
+  { slug: "shunsetsu", title: "Chinese New Year (Spring Festival)", seal: "春", blurb: "The date each year, two thousand years of history, and the meaning of its customs." },
   { slug: "emperors", title: "Emperors of China", seal: "帝", blurb: "The famous emperors of each dynasty, from the First Emperor to Puyi." },
   { slug: "hundred-schools", title: "The Hundred Schools of Thought", seal: "思", blurb: "Confucianism, Daoism, Legalism, Mohism and the other philosophies of the Warring States." },
   { slug: "keju", title: "The Imperial Examinations (Keju)", seal: "科", blurb: "1,300 years of choosing officials by examination: how it worked and what it cost." },
@@ -50,7 +52,7 @@ export const FEATURES_EN = [
 ];
 
 // Only slugs whose English page has been written are paired / listed.
-const READY = new Set(["great-wall", "silk-road", "terracotta-army", "qinshihuang", "qin-fall", "four-inventions", "emperors", "hundred-schools", "keju", "world-heritage", "four-great-novels", "four-beauties", "eunuchs", "women-rulers", "harem-ranks", "china-capitals", "ancient-capitals", "dynasty-territory-map", "china-castles", "ancient-towns", "chuhan-battles", "sanguo-battles", "sanguo-comparison", "chunqiu-zhanguo-battles", "suitang-battles", "song-yuan-battles", "history-books", "novelists", "suikoden", "yangjiajiang", "saiyuki", "kingdom", "wuxia-games", "koei-sangokushi", "musou", "kusuriya", "funny-episodes", "dramas", "glossary", "idioms", "mnemonics", "year-mnemonics", "quiz", "japan-china-timeline", "printable-timeline"]);
+const READY = new Set(["great-wall", "silk-road", "terracotta-army", "qinshihuang", "qin-fall", "four-inventions", "eto", "shunsetsu", "emperors", "hundred-schools", "keju", "world-heritage", "four-great-novels", "four-beauties", "eunuchs", "women-rulers", "harem-ranks", "china-capitals", "ancient-capitals", "dynasty-territory-map", "china-castles", "ancient-towns", "chuhan-battles", "sanguo-battles", "sanguo-comparison", "chunqiu-zhanguo-battles", "suitang-battles", "song-yuan-battles", "history-books", "novelists", "suikoden", "yangjiajiang", "saiyuki", "kingdom", "wuxia-games", "koei-sangokushi", "musou", "kusuriya", "funny-episodes", "dramas", "glossary", "idioms", "mnemonics", "year-mnemonics", "quiz", "japan-china-timeline", "printable-timeline"]);
 export const FEATURES_READY = FEATURES_EN.filter((f) => READY.has(f.slug));
 export const FEATURE_SLUGS = FEATURES_READY.map((f) => f.slug);
 

@@ -32,6 +32,8 @@ export default function sitemap() {
     { url: `${SITE_URL}/great-wall`, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/hundred-schools`, changeFrequency: "yearly", priority: 0.6 },
     { url: `${SITE_URL}/four-inventions`, changeFrequency: "yearly", priority: 0.5 },
+    { url: `${SITE_URL}/eto`, changeFrequency: "yearly", priority: 0.6 },
+    { url: `${SITE_URL}/shunsetsu`, changeFrequency: "yearly", priority: 0.6 },
     { url: `${SITE_URL}/four-great-novels`, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/four-beauties`, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/harem-ranks`, changeFrequency: "yearly", priority: 0.6 },
