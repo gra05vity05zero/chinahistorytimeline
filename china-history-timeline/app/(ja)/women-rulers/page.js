@@ -3,6 +3,7 @@ import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Share
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
+import { PageJsonLd } from "@/components/JsonLd";
 
 const title = "中国の女帝と三大悪女とは？呂后・武則天・西太后ら権力を握った女性を解説";
 const fullTitle = `${title} | ${SITE_NAME}`;
@@ -235,6 +236,7 @@ function Badge({ text }) {
 export default function WomenRulersPage() {
   return (
     <div style={{ backgroundColor: COLORS.paper, minHeight: "100%" }}>
+      <PageJsonLd path="/women-rulers" title={title} description={description} breadcrumbName="中国の女帝と三大悪女" faq={FAQ} />
       <div className="max-w-2xl mx-auto px-6 py-12">
         <BackToTopButton />
 

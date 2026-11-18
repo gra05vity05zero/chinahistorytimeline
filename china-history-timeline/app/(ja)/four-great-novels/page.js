@@ -3,6 +3,7 @@ import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock 
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
+import { PageJsonLd } from "@/components/JsonLd";
 
 // 「水滸伝 西遊記 王朝」「〜が成立したのは何という王朝の時代」といった検索が多いため、
 // タイトルと説明文の冒頭で「どの王朝の時代に成立したか」に答える
@@ -88,6 +89,7 @@ const RESOLVED = NOVELS.map((n) => ({ ...n, eraLink: eraHref(n.era) }));
 export default function FourGreatNovelsPage() {
   return (
     <div style={{ backgroundColor: COLORS.paper, minHeight: "100%" }}>
+      <PageJsonLd path="/four-great-novels" title={title} description={description} breadcrumbName="中国の四大名著とは" />
       <div className="max-w-2xl mx-auto px-6 py-12">
         <BackToTopButton />
 

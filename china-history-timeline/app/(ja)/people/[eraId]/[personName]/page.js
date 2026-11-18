@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { ERAS, SITE_URL, getEraFigures, personSlug, stripRuby, buildOpenGraph, buildTwitter } from "@/lib/data";
+import { leadWithSubject, personSubject } from "@/lib/constants";
 import PersonDetail from "@/components/PersonDetail";
 import { formatLifeYear, lifeAge } from "@/lib/personDetails";
 import { englishPersonPath } from "@/lib/en";
@@ -41,7 +42,7 @@ export function generateMetadata({ params }) {
   const name = stripRuby(person.name);
   // 検索される呼び名が見出しの表記と違う人物（例: 唐太宗→李世民）は、データ側のseoTitleを優先する
   const title = person.seoTitle ?? `${name}とは？生涯と業績`;
-  const description = stripRuby(person.description);
+  const description = stripRuby(leadWithSubject(personSubject(person), person.description));
   const path = `/people/${era.id}/${personSlug(person.name)}`;
   const image = { title: `${name}とは？`, subtitle: "生涯と業績", kicker: `${stripRuby(era.name)}の人物`, seal: era.seal };
   // 英語版の人物ページがある人物は hreflang で対にする（英語版はURLの人物名が英語表記）

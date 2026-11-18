@@ -3,6 +3,7 @@ import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock,
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
+import { PageJsonLd } from "@/components/JsonLd";
 
 // 「万里の長城 いつ作られた」「作った人」「豆知識」といった検索が多いため、タイトルでそれに答える
 const title = "万里の長城とは？いつ・誰が作ったか、歴史と豆知識をわかりやすく解説";
@@ -189,6 +190,7 @@ function GreatWallMap({ stops }) {
 export default function GreatWallPage() {
   return (
     <div style={{ backgroundColor: COLORS.paper, minHeight: "100%" }}>
+      <PageJsonLd path="/great-wall" title={title} description={description} breadcrumbName="万里の長城" />
       <div className="max-w-2xl mx-auto px-6 py-12">
         <BackToTopButton />
 

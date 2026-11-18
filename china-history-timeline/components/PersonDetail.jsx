@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { COLORS, displayEventYear, displayPeriod } from "@/lib/constants";
+import { COLORS, displayEventYear, displayPeriod, leadWithSubject, personSubject } from "@/lib/constants";
 import { SealMark, HeritageThumb, MiscLinksSection, A8AdBlock } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 
@@ -30,7 +30,7 @@ export default function PersonDetail({ person, era, lifeRows = [], relatedPeople
         </h1>
 
         <p style={{ fontSize: 15, lineHeight: 1.9, color: COLORS.inkSoft, fontWeight: 600 }}>
-          <RubyText text={person.description} />
+          <RubyText text={leadWithSubject(personSubject(person), person.description)} />
         </p>
 
         {person.imageUrl && (

@@ -5,6 +5,7 @@ import { RubyText } from "@/components/Ruby";
 import { DynastyTerritoryMap } from "@/components/DynastyTerritoryMap";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
+import { PageJsonLd } from "@/components/JsonLd";
 
 const title = "中国 歴代王朝の領土（版図）の変遷を地図で見る";
 const fullTitle = `中国 歴代王朝の領土（版図）の変遷を地図で見る | ${SITE_NAME}`;
@@ -45,6 +46,7 @@ const POINTS = [
 export default function DynastyTerritoryMapPage() {
   return (
     <div style={{ backgroundColor: COLORS.paper, minHeight: "100%" }}>
+      <PageJsonLd path="/dynasty-territory-map" title={title} description={description} breadcrumbName="王朝の領土地図" />
       <div className="max-w-2xl mx-auto px-6 py-12">
         <BackToTopButton />
 

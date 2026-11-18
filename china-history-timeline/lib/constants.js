@@ -196,6 +196,23 @@ export function personSlug(name) {
   return stripRuby(name).replace(/[（(].*$/, "").trim();
 }
 
+// 人物の説明文の頭に「〇〇とは、」を付け、検索で「〇〇とは」と調べた人に一文目で答える形にする。
+// subject は検索される呼び名（seoTitle が「李世民（唐の太宗）とは？…」なら「李世民（唐の太宗）」）。
+// 一文目が動詞で終わる説明（「…とされる。」など）は「〇〇とは、…とされる」と不自然になるのでそのまま返す。
+export function personSubject(person) {
+  const fromSeo = person.seoTitle?.split("とは")[0];
+  return fromSeo && fromSeo !== person.seoTitle ? fromSeo : stripRuby(person.name);
+}
+
+export function leadWithSubject(subject, text) {
+  if (!text || !subject) return text;
+  const plain = stripRuby(text);
+  if (plain.startsWith(subject)) return text;
+  const first = plain.split("。")[0];
+  if (/[たるいだすくうむぬぶつ]$/.test(first)) return text;
+  return `${subject}とは、${text}`;
+}
+
 export const HERITAGE_TYPES = {
   building: { label: "建造物・{{遺跡|いせき}}" },
   artifact: { label: "国宝・出土品" },

@@ -3,6 +3,7 @@ import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Share
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
+import { PageJsonLd } from "@/components/JsonLd";
 
 const title = "科挙とは？しくみ・倍率・カンニングまで中国の官僚試験をわかりやすく解説";
 const fullTitle = `${title} | ${SITE_NAME}`;
@@ -113,6 +114,7 @@ export default function KejuPage() {
 
   return (
     <div style={{ backgroundColor: COLORS.paper, minHeight: "100%" }}>
+      <PageJsonLd path="/keju" title={title} description={description} breadcrumbName="科挙とは" faq={FAQ} />
       <div className="max-w-2xl mx-auto px-6 py-12">
         <BackToTopButton />
 

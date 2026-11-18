@@ -3,6 +3,7 @@ import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Share
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
+import { PageJsonLd } from "@/components/JsonLd";
 
 const title = "宦官とは？中国史で権力を握った有名な宦官となぜ力を持ったかを解説";
 const fullTitle = `${title} | ${SITE_NAME}`;
@@ -149,7 +150,24 @@ const RESOLVED = EUNUCHS.map((e) => {
   };
 });
 
+// ページ冒頭の「ひとことで」ボックス。検索で「宦官とは」と調べた人がすぐ答えを得られるようにする
+const KEY_POINTS = [
+  { label: "読み方", text: "{{宦官|かんがん}}" },
+  { label: "意味", text: "{{去勢|きょせい}}されて皇帝や{{後宮|こうきゅう}}に{{仕|つか}}えた男性の役人" },
+  { label: "いつから", text: "遅くとも{{周|しゅう}}の時代から、1923年に清の宮廷から追放されるまで" },
+  { label: "主な役目", text: "皇帝の身の回りの世話、後宮の管理、命令や書類の取り次ぎ" },
+  { label: "有名な人", text: "{{趙高|ちょうこう}}（秦）・{{蔡倫|さいりん}}（後漢）・{{鄭和|ていわ}}（明）・{{魏忠賢|ぎちゅうけん}}（明）" },
+];
+
 const FAQ = [
+  {
+    q: "宦官とは簡単に言うと？",
+    a: "{{去勢|きょせい}}されたうえで皇帝や{{後宮|こうきゅう}}に{{仕|つか}}えた男性のこと。皇帝の妻や{{側室|そくしつ}}が暮らす後宮には、皇帝以外の男性はふつう入れなかったため、{{去勢|きょせい}}された{{宦官|かんがん}}が宮殿の奥の仕事を担った。皇帝にもっとも近い立場だったので、ときに皇帝を{{操|あやつ}}って政治を動かした。",
+  },
+  {
+    q: "宦官はいつまでいたのか？",
+    a: "清が{{滅亡|めつぼう}}した1912年のあとも、{{退位|たいい}}した{{溥儀|ふぎ}}は{{紫禁城|しきんじょう}}に住み続け、{{宦官|かんがん}}も仕えていた。1923年に{{溥儀|ふぎ}}が{{宦官|かんがん}}の大半を追放し、二千年以上続いた制度は事実上終わった。",
+  },
   {
     q: "なぜ宦官は権力を握れたのか？",
     a: "{{宦官|かんがん}}は皇帝の生活の世話から書類の取り次ぎまでを担い、一日中皇帝のそばにいた。幼い皇帝にとっては育ての親のような存在で、子孫を残せないため自分の家を{{興|おこ}}して王朝を{{乗|の}}っ取る心配も少ないと考えられた。そのため皇帝は、力をつけた{{外戚|がいせき}}や{{官僚|かんりょう}}に対抗する味方として{{宦官|かんがん}}を頼り、{{宦官|かんがん}}は皇帝の命令を伝える立場を利用して権力をふくらませていった。",
@@ -173,6 +191,7 @@ const cardStyle = { backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8" };
 export default function EunuchsPage() {
   return (
     <div style={{ backgroundColor: COLORS.paper, minHeight: "100%" }}>
+      <PageJsonLd path="/eunuchs" title={title} description={description} breadcrumbName="宦官とは" faq={FAQ} />
       <div className="max-w-2xl mx-auto px-6 py-12">
         <BackToTopButton />
 
@@ -187,6 +206,22 @@ export default function EunuchsPage() {
             }
           />
         </p>
+
+        <div style={{ ...cardStyle, padding: "12px 14px", marginBottom: 16 }}>
+          <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 13, fontWeight: 700, color: COLORS.vermilion, marginBottom: 6 }}>
+            ひとことで言うと
+          </div>
+          <dl style={{ display: "grid", gridTemplateColumns: "auto 1fr", columnGap: 12, rowGap: 4, fontSize: 12.5, lineHeight: 1.75 }}>
+            {KEY_POINTS.map((k) => (
+              <div key={k.label} style={{ display: "contents" }}>
+                <dt style={{ color: COLORS.gold, fontWeight: 700, whiteSpace: "nowrap" }}>{k.label}</dt>
+                <dd style={{ color: COLORS.inkSoft }}>
+                  <RubyText text={k.text} />
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2" style={{ marginBottom: 8 }}>
           {RESOLVED.map((e) => (

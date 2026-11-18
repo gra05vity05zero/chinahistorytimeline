@@ -3,6 +3,7 @@ import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock 
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
+import { PageJsonLd } from "@/components/JsonLd";
 
 const title = "中国 歴代王朝の都（古都）一覧";
 const fullTitle = `中国 歴代王朝の都（古都）一覧 | ${SITE_NAME}`;
@@ -492,6 +493,7 @@ function ChinaMap({ capitals }) {
 export default function ChinaCapitalsPage() {
   return (
     <div style={{ backgroundColor: COLORS.paper, minHeight: "100%" }}>
+      <PageJsonLd path="/china-capitals" title={title} description={description} breadcrumbName="中国の歴代首都" />
       <div className="max-w-2xl mx-auto px-6 py-12">
         <BackToTopButton />
 

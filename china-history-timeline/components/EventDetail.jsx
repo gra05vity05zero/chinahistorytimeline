@@ -76,6 +76,11 @@ export default function EventDetail({ event, era, prev, next, japanTimeline, dra
           <RubyText text={event.title} />
         </h1>
 
+        {/* 「〇〇が起きた時の王朝は？」のような検索に、本文の一文目で答える */}
+        <p style={{ fontSize: 14, lineHeight: 1.8, color: COLORS.ink, fontWeight: 600, marginBottom: 10 }}>
+          <RubyText text={`${event.title}は、${era.name}の時代、${displayEventYear(event.year).replace(/(\d)(頃)?$/, "$1年$2")}の出来事。`} />
+        </p>
+
         <p style={{ fontSize: 15, lineHeight: 1.9, color: COLORS.inkSoft }}>
           <RubyText text={event.summary} />
         </p>

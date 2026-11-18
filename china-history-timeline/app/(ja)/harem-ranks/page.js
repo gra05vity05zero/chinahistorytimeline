@@ -4,6 +4,7 @@ import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Share
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
+import { PageJsonLd } from "@/components/JsonLd";
 
 const title = "後宮の位（妃の階級）一覧｜皇后・皇貴妃・貴妃の違いを清・唐・漢で解説";
 const fullTitle = `${title} | ${SITE_NAME}`;
@@ -106,6 +107,7 @@ export default function HaremRanksPage() {
 
   return (
     <div style={{ backgroundColor: COLORS.paper, minHeight: "100%" }}>
+      <PageJsonLd path="/harem-ranks" title={title} description={description} breadcrumbName="後宮の位一覧" faq={FAQ} />
       <div className="max-w-2xl mx-auto px-6 py-12">
         <BackToTopButton />
 
@@ -305,6 +307,7 @@ export default function HaremRanksPage() {
             <NavButton href="/emperors" variant="outline">歴代皇帝一覧</NavButton>
             <NavButton href="/four-beauties" variant="outline">中国四大美女とは</NavButton>
             <NavButton href="/women-rulers" variant="outline">女帝と権力を握った女性</NavButton>
+            <NavButton href="/eunuchs" variant="outline">後宮に仕えた宦官とは</NavButton>
           </div>
         </section>
 
