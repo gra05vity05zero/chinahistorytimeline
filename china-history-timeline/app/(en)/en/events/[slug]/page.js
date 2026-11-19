@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { EnThemeLinks } from "@/components/en/EnMiscLinks";
 import { notFound } from "next/navigation";
 import { COLORS, CATEGORY_STYLE } from "@/lib/constants";
 import { SealMark, HeritageGrid } from "@/components/Shared";
@@ -145,6 +146,10 @@ export default function EnglishEventPage({ params }) {
           <AdjacentLink item={prev} label="← Previous" align="left" />
           <AdjacentLink item={next} label="Next →" align="right" />
         </nav>
+
+        <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
+          <EnThemeLinks />
+        </div>
 
         <div className="mt-8 pt-5 flex flex-wrap gap-x-6 gap-y-2" style={{ borderTop: `1px solid ${COLORS.mist}`, fontSize: 13 }}>
           <Link href={`/en/eras/${era.id}`} style={{ color: COLORS.vermilion }}>More from the {era.name} era →</Link>

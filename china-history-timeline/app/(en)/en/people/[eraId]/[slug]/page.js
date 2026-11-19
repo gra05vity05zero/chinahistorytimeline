@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { EnThemeLinks } from "@/components/en/EnMiscLinks";
 import { notFound } from "next/navigation";
 import { COLORS } from "@/lib/constants";
 import { SealMark, HeritageThumb } from "@/components/Shared";
@@ -196,6 +197,10 @@ export default function EnglishPersonPage({ params }) {
             </ul>
           </section>
         )}
+
+        <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
+          <EnThemeLinks />
+        </div>
 
         <div className="mt-8 pt-5 flex flex-wrap gap-x-6 gap-y-2" style={{ borderTop: `1px solid ${COLORS.mist}`, fontSize: 13 }}>
           <Link href={`/en/eras/${era.id}`} style={{ color: COLORS.vermilion }}>About the {era.name} era →</Link>

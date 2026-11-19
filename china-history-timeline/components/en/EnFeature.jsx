@@ -2,6 +2,7 @@ import Link from "next/link";
 import { COLORS } from "@/lib/constants";
 import { HeritageThumb, NavButton } from "@/components/Shared";
 import { FEATURES_EN, FEATURES_READY } from "@/lib/en/features";
+import { EnThemeLinks } from "@/components/en/EnMiscLinks";
 
 // Building blocks for the English feature pages (app/(en)/en/<slug>).
 export const serif = { fontFamily: "var(--font-serif), serif" };
@@ -15,7 +16,6 @@ export const isLive = (href) => !PLANNED.has(href) || READY_PATHS.has(href);
 
 export function FeaturePage({ title, intro, jaPath, children, related: relatedAll = [] }) {
   const related = relatedAll.filter((r) => isLive(r.href));
-  const others = FEATURES_READY.filter((f) => `/${f.slug}` !== jaPath).slice(0, 6);
   return (
     <div style={{ backgroundColor: COLORS.paper, minHeight: "100%" }}>
       <article className="max-w-2xl mx-auto px-6 py-10">
@@ -39,18 +39,9 @@ export function FeaturePage({ title, intro, jaPath, children, related: relatedAl
           </div>
         )}
 
-        {others.length > 0 && (
-          <section className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
-            <h2 style={{ ...serif, fontSize: 15, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>More topics</h2>
-            <ul className="flex flex-col gap-1.5" style={{ fontSize: 13.5 }}>
-              {others.map((f) => (
-                <li key={f.slug}>
-                  <Link href={`/en/${f.slug}`} style={{ color: COLORS.vermilion }}>{f.title}</Link>
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
+        <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
+          <EnThemeLinks />
+        </div>
 
         <div className="mt-8 pt-5" style={{ borderTop: `1px solid ${COLORS.mist}`, fontSize: 13 }}>
           <Link href={jaPath} hrefLang="ja" lang="ja" style={{ color: COLORS.inkSoft }}>

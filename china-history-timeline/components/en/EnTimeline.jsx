@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { EnThemeLinks } from "@/components/en/EnMiscLinks";
 import { COLORS, CATEGORY_STYLE } from "@/lib/constants";
 import { SealMark } from "@/components/Shared";
 import { EnSiteTitle } from "@/components/en/EnSiteHeader";
@@ -181,6 +182,9 @@ export default function EnTimeline({ eras }) {
             </Link>
           ))}
         </div>
+        <div className="mt-8">
+          <EnThemeLinks variant="full" />
+        </div>
       </div>
 
       <section className="max-w-2xl mx-auto px-5 pb-8">
@@ -226,6 +230,10 @@ export default function EnTimeline({ eras }) {
             </div>
           ))}
         </div>
+      </div>
+
+      <div className="max-w-2xl mx-auto px-5 pb-16">
+        <EnThemeLinks />
       </div>
     </div>
   );
