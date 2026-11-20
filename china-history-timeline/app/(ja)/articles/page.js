@@ -3,7 +3,6 @@ import { COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
 import { ARTICLE_CATEGORIES } from "@/lib/articles";
 import { BackToTopButton } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
-import { bilingualAlternates } from "@/lib/en";
 
 const serif = "var(--font-serif), serif";
 const title = "中国史の記事一覧｜時代・人物・合戦・文化のテーマ別解説";
@@ -14,7 +13,8 @@ const description =
 export const metadata = {
   title,
   description,
-  alternates: bilingualAlternates("/articles", "ja"),
+  // 英語版の記事一覧は /en/topics（URLが異なるので明示的にペアにする）
+  alternates: { canonical: "/articles", languages: { ja: "/articles", en: "/en/topics", "x-default": "/en/topics" } },
   openGraph: buildOpenGraph({ title: fullTitle, description, path: "/articles" }),
   twitter: buildTwitter({ title: fullTitle, description }),
 };

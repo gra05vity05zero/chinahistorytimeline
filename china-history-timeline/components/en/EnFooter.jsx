@@ -16,7 +16,7 @@ export default function EnFooter() {
       {sep}
       <Link href="/en/people" style={linkStyle}>People</Link>
       {sep}
-      <Link href="/en/topics" style={linkStyle}>Topics</Link>
+      <Link href="/en/topics" style={linkStyle}>All Articles</Link>
       {sep}
       <Link href="/en/search" style={linkStyle}>Search</Link>
       {sep}

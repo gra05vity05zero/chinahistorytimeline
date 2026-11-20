@@ -134,6 +134,11 @@ export function EnThemeLinks({ variant = "compact", heading = "Read by Theme" })
             </div>
           ))}
         </div>
+        <div className="text-right" style={{ marginTop: 12, fontSize: 13 }}>
+          <Link href="/en/topics" className="hover:underline" style={linkColor}>
+            See all articles →
+          </Link>
+        </div>
       </section>
     );
   }
@@ -156,6 +161,11 @@ export function EnThemeLinks({ variant = "compact", heading = "Read by Theme" })
             </div>
           </div>
         ))}
+      </div>
+      <div className="text-right" style={{ marginTop: 12, fontSize: 13 }}>
+        <Link href="/en/topics" className="hover:underline" style={linkColor}>
+          See all articles →
+        </Link>
       </div>
     </section>
   );

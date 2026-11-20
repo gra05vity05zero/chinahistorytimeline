@@ -34,3 +34,12 @@ export function getNewsEn() {
       return { ...n, title: t.title, summary: t.summary, related: (n.related || []).map((r, i) => ({ href: `/en${r.href}`, label: t.related[i] || r.href })) };
     });
 }
+
+// Latest `count` English items for the top page, or [] when the newest one is older than maxAgeDays
+// (a stale "latest news" block makes the site look abandoned).
+export function getFreshNewsEn(count = 3, maxAgeDays = 60, now = new Date()) {
+  const items = getNewsEn();
+  if (items.length === 0) return [];
+  const ageDays = (now - new Date(`${items[0].date}T00:00:00+09:00`)) / 86400000;
+  return ageDays > maxAgeDays ? [] : items.slice(0, count);
+}

@@ -5,19 +5,10 @@ import Link from "next/link";
 import { EnThemeLinks } from "@/components/en/EnMiscLinks";
 import { COLORS, CATEGORY_STYLE } from "@/lib/constants";
 import { SealMark } from "@/components/Shared";
-import { EnSiteTitle } from "@/components/en/EnSiteHeader";
-import LanguageSwitch from "@/components/en/LanguageSwitch";
 
 const serif = { fontFamily: "var(--font-serif), serif" };
 const LINE_X = 20;
 const RAIL = 56;
-
-const PRIMARY_LINKS = [
-  { href: "/en/eras", seal: "代", label: "All Eras", desc: "24 dynasties and periods, one page each" },
-  { href: "/en/eras/qin", seal: "秦", label: "The First Emperor", desc: "How Qin unified China in 221 BC" },
-  { href: "/en/eras/sanguo", seal: "三", label: "Three Kingdoms", desc: "Cao Cao, Liu Bei and Sun Quan" },
-  { href: "/en/eras/tang", seal: "唐", label: "Tang Dynasty", desc: "China’s cosmopolitan golden age" },
-];
 
 const INTRO_PARAGRAPHS = [
   "Chinese history begins with the Neolithic cultures of the Yellow River and Yangtze basins. After the Shang and Zhou, and the rivalries of the Spring and Autumn and Warring States periods, the First Emperor of Qin unified China for the first time in 221 BC.",
@@ -68,6 +59,8 @@ function EventItem({ ev, onClick }) {
   );
 }
 
+// /en/timeline: the former English top page's scrolling timeline as its own page. The current era stays pinned
+// at the top (tap for all dynasties) and every event is listed with a short summary.
 // eras: [{ id, seal, name, periodLabel, description, events: [{ slug, yearLabel, sortYear, category, categoryLabel, title, summary }] }]
 export default function EnTimeline({ eras }) {
   const [activeEra, setActiveEra] = useState(eras[0].id);
@@ -145,46 +138,14 @@ export default function EnTimeline({ eras }) {
         </div>
       )}
 
-      <div className="relative px-6 pt-10 pb-6 text-center">
-        <div className="absolute" style={{ top: 12, right: 16 }}>
-          <LanguageSwitch lang="en" style={{ fontSize: 13 }} />
-        </div>
-        <EnSiteTitle headingAs="h1" />
-        <div className="max-w-3xl mx-auto mt-6" style={{ border: `1.5px solid ${COLORS.gold}` }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/hero.webp"
-            width={1774}
-            height={887}
-            alt="Bronze vessels and terracotta warriors, mounted armies, the Great Wall, the Forbidden City, a pagoda, sailing ships on a great river and the skyline of modern Shanghai, painted as one continuous scroll with a dragon in the sky"
-            fetchPriority="high"
-            style={{ display: "block", width: "100%", height: "auto", aspectRatio: "5 / 2", objectFit: "cover", objectPosition: "50% 35%" }}
-          />
-        </div>
-        <div className="max-w-3xl mx-auto mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 text-left">
-          {PRIMARY_LINKS.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="flex items-start gap-3 px-3 py-3 transition-shadow hover:shadow-md"
-              style={{ backgroundColor: "#FBF8F0", border: `1.5px solid ${COLORS.vermilion}` }}
-            >
-              <span
-                aria-hidden="true"
-                className="seal-char flex items-center justify-center shrink-0"
-                data-char={item.seal}
-                style={{ width: 32, height: 32, backgroundColor: COLORS.vermilion, color: "#fff", ...serif, fontSize: 16, fontWeight: 700 }}
-              />
-              <span className="min-w-0">
-                <span className="block" style={{ ...serif, fontSize: 14, fontWeight: 700, color: COLORS.ink }}>{item.label}</span>
-                <span className="block" style={{ fontSize: 11, lineHeight: 1.5, color: COLORS.inkSoft, marginTop: 2 }}>{item.desc}</span>
-              </span>
-            </Link>
-          ))}
-        </div>
-        <div className="mt-8">
-          <EnThemeLinks variant="full" />
-        </div>
+      <div className="max-w-2xl mx-auto px-5 pt-8 pb-4">
+        <Link href="/en" className="hover:underline" style={{ fontSize: 13, color: COLORS.vermilion, ...serif }}>
+          ← Back to the top page
+        </Link>
+        <h1 style={{ ...serif, fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, lineHeight: 1.3 }}>Scroll Through the Timeline</h1>
+        <p style={{ fontSize: 14, lineHeight: 1.75, color: COLORS.inkSoft, marginTop: 10 }}>
+          Every era from the Neolithic to the People’s Republic, with each event in order and a short summary. Tap the bar at the top to jump to any dynasty.
+        </p>
       </div>
 
       <section className="max-w-2xl mx-auto px-5 pb-8">
@@ -194,14 +155,14 @@ export default function EnTimeline({ eras }) {
             {text}
           </p>
         ))}
-        <h2 style={{ ...serif, fontSize: 18, fontWeight: 700, color: COLORS.ink, marginTop: 24 }}>Timeline of Chinese history ({eras.length} eras)</h2>
+        <h2 style={{ ...serif, fontSize: 18, fontWeight: 700, color: COLORS.ink, marginTop: 24 }}>The timeline ({eras.length} eras)</h2>
       </section>
 
       <div className="relative max-w-2xl mx-auto px-5 pb-24">
         <div className="relative">
           <span aria-hidden className="absolute" style={{ left: LINE_X - 1, top: 8, bottom: 8, width: 2, backgroundColor: COLORS.mist }} />
           {eras.map((era) => (
-            <div key={era.id} id={era.id} ref={(el) => (sectionRefs.current[era.id] = el)} data-era-id={era.id} className="relative pt-2 pb-10">
+            <div key={era.id} id={`era-${era.id}`} style={{ scrollMarginTop: 72 }} ref={(el) => (sectionRefs.current[era.id] = el)} data-era-id={era.id} className="relative pt-2 pb-10">
               <div className="relative mb-4" style={{ paddingLeft: RAIL }}>
                 <div className="absolute left-0 top-0">
                   <SealMark char={era.seal} active={era.id === activeEra} />

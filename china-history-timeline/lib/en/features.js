@@ -58,5 +58,5 @@ export const FEATURES_READY = FEATURES_EN.filter((f) => READY.has(f.slug));
 export const FEATURE_SLUGS = FEATURES_READY.map((f) => f.slug);
 
 // Sub-pages paired along with a ready feature (every drama has an English page)
-export const SITE_PAGES = ["about", "privacy", "search", "news"];
+export const SITE_PAGES = ["about", "privacy", "search", "news", "timeline"];
 export const EXTRA_PAIRED = [...(READY.has("dramas") ? [/^\/dramas\/[^/]+$/] : []), ...SITE_PAGES.map((p) => new RegExp(`^/${p}$`))];

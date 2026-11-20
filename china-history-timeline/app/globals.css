@@ -80,6 +80,10 @@ rt {
 @media (min-width: 900px) {
   .era-chips { grid-template-columns: repeat(6, minmax(0, 1fr)); }
 }
+/* 英語版：時代名が長いので、格子表示のときはチップ内で折り返す */
+@media (min-width: 640px) {
+  .era-chips-wrap .hp-chip { white-space: normal; line-height: 1.25; }
+}
 
 /* トップページ「目的から探す」：カード全体が1つのリンク */
 .hp-purpose {
