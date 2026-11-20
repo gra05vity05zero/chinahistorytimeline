@@ -66,6 +66,7 @@ const CATEGORIES = [
       ["four-inventions", "Four Great Inventions"],
       ["eto", "The Chinese zodiac"],
       ["shunsetsu", "Chinese New Year"],
+      ["chinese-food", "The history of Chinese food"],
       ["four-great-novels", "Four Great Novels"],
       ["four-beauties", "Four Beauties"],
       ["yangjiajiang", "Generals of the Yang Family"],
