@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { COLORS, CATEGORY_STYLE } from "@/lib/constants";
 import { RubyText } from "@/components/Ruby";
@@ -33,6 +33,13 @@ const TEXT = {
 export default function SearchClient({ index, lang = "ja" }) {
   const T = TEXT[lang];
   const [query, setQuery] = useState("");
+
+  // トップページの検索窓（<form action="/search">）から ?q=キーワード で来たときは、その語で検索した状態で開く。
+  // 静的生成のページなので useSearchParams ではなく、表示後に location から読む
+  useEffect(() => {
+    const initial = new URLSearchParams(window.location.search).get("q");
+    if (initial) setQuery(initial);
+  }, []);
 
   const q = normalize(query.trim());
   const results = useMemo(() => {

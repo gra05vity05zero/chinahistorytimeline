@@ -47,3 +47,82 @@ rt {
 .seal-char::before {
   content: attr(data-char);
 }
+
+/* トップページの24時代クイックナビ：スマホは2段の横スクロール、640px以上は格子で全件表示 */
+.era-chips {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(2, auto);
+  grid-auto-columns: max-content;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+}
+.era-chips > li { scroll-snap-align: start; }
+.hp-chip {
+  display: flex; align-items: center; gap: 6px; height: 100%; min-height: 40px; padding: 6px 10px;
+  background: #FBF8F0; border: 1px solid #DCD3B8; white-space: nowrap;
+  font-family: var(--font-serif), serif; font-size: 13.5px; font-weight: 700; color: #211D18;
+}
+.hp-chip:hover { border-color: #A6332A; }
+.hp-chip > span { min-width: 14px; font-family: var(--font-sans), sans-serif; font-size: 10px; font-weight: 400; color: #A9822F; }
+@media (min-width: 640px) {
+  .era-chips {
+    grid-auto-flow: row;
+    grid-template-rows: none;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    overflow-x: visible;
+    padding-bottom: 0;
+  }
+}
+@media (min-width: 900px) {
+  .era-chips { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+}
+
+/* トップページ「目的から探す」：カード全体が1つのリンク */
+.hp-purpose {
+  display: flex; gap: 12px; height: 100%; padding: 14px 14px 12px;
+  background: #FBF8F0; border: 1px solid #DCD3B8; color: inherit; text-decoration: none;
+  transition: border-color .15s, box-shadow .15s, transform .15s;
+}
+.hp-purpose:hover, .hp-purpose:focus-visible { border-color: #A6332A; box-shadow: 0 4px 12px rgba(33,29,24,.12); transform: translateY(-1px); }
+.hp-purpose-seal {
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 34px; height: 34px;
+  background: #A6332A; color: #fff; font-family: var(--font-serif), serif; font-size: 17px; font-weight: 700;
+}
+.hp-purpose-title { font-family: var(--font-serif), serif; font-size: 16px; font-weight: 700; color: #211D18; }
+.hp-purpose-desc { flex: 1; font-size: 12.5px; line-height: 1.7; color: #4A443B; margin-top: 2px; }
+.hp-purpose-more { margin-top: 8px; font-size: 13px; font-weight: 700; color: #A6332A; }
+.hp-purpose:hover .hp-purpose-more { text-decoration: underline; text-underline-offset: 3px; }
+/* 7枚目：2列のときは中央寄せで1枚分の幅、3列のときは3段目の中央 */
+@media (min-width: 640px) {
+  .hp-purpose-last { grid-column: 1 / -1; justify-self: center; width: calc(50% - 6px); }
+}
+@media (min-width: 1024px) {
+  .hp-purpose-last { grid-column: 2; width: auto; justify-self: stretch; }
+}
+.hp-all-articles {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 22px;
+  border: 1.5px solid #A6332A; background: #FBF8F0; color: #A6332A;
+  font-family: var(--font-serif), serif; font-size: 15px; font-weight: 700;
+}
+.hp-all-articles:hover { background: #A6332A; color: #fff; }
+
+/* トップページの年表カード（全24時代 × 出来事で繰り返すため、インラインstyleではなくクラスで指定してHTMLを軽くする） */
+.hp-card { background: #FBF8F0; border: 1px solid #DCD3B8; }
+.hp-era { padding: 14px 16px; scroll-margin-top: 16px; }
+.hp-era-name { font-family: var(--font-serif), serif; font-size: 18px; font-weight: 700; line-height: 1.4; color: #211D18; }
+.hp-era-name a:hover { text-decoration: underline; }
+.hp-era-period { font-family: var(--font-serif), serif; font-size: 12px; color: #A9822F; }
+.hp-era-lead { margin-top: 8px; font-size: 12.5px; line-height: 1.75; color: #4A443B; }
+.hp-era-people { margin-top: 6px; font-size: 12.5px; line-height: 1.8; color: #211D18; }
+.hp-era-people b { margin-right: 6px; }
+.hp-link { color: #A6332A; text-decoration: underline; text-decoration-color: #B9AD90; text-underline-offset: 3px; }
+.hp-events { margin-top: 8px; border-top: 1px solid #E4DBC4; }
+.hp-events li { display: flex; gap: 8px; padding: 5px 0; border-bottom: 1px dotted #DCD3B8; font-size: 13px; line-height: 1.6; }
+.hp-events li > span { flex-shrink: 0; width: 92px; padding-top: 1px; font-family: var(--font-serif), serif; font-size: 11.5px; color: #A9822F; }
+.hp-events a { color: #211D18; }
+.hp-events a:hover { text-decoration: underline; }
+.hp-era-more { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: 10px; font-size: 12.5px; }

@@ -46,8 +46,8 @@ export default function EventDetail({ event, era, prev, next, japanTimeline, dra
   return (
     <div style={{ backgroundColor: COLORS.paper, minHeight: "100%" }}>
       <div className="sticky top-0 z-20 px-5 py-3" style={{ backgroundColor: COLORS.paperDeep, borderBottom: `1px solid ${COLORS.mist}` }}>
-        {/* Timeline側がsessionStorageの returnToEra を見てスクロール復元する */}
-        <Link href="/" className="flex items-center gap-2" style={{ color: COLORS.vermilion, fontFamily: "var(--font-serif), serif", fontSize: 13 }}>
+        {/* トップページの年表のうち、この出来事の時代（#era-<id>）へ戻る */}
+        <Link href={`/#era-${era.id}`} className="flex items-center gap-2" style={{ color: COLORS.vermilion, fontFamily: "var(--font-serif), serif", fontSize: 13 }}>
           <span aria-hidden>←</span> 年表に戻る
         </Link>
       </div>

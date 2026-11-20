@@ -11,6 +11,12 @@ export default function Footer() {
       style={{ backgroundColor: COLORS.paperDeep, borderTop: `1px solid ${COLORS.mist}`, fontSize: 12 }}
     >
       <FooterAds />
+      <Link href="/eras" style={linkStyle}>時代一覧</Link>
+      <span style={{ color: COLORS.mist }}>|</span>
+      <Link href="/people" style={linkStyle}>人物事典</Link>
+      <span style={{ color: COLORS.mist }}>|</span>
+      <Link href="/articles" style={linkStyle}>記事一覧</Link>
+      <span style={{ color: COLORS.mist }}>|</span>
       <Link href="/about" style={linkStyle}>このサイトについて</Link>
       <span style={{ color: COLORS.mist }}>|</span>
       <Link href="/privacy" style={linkStyle}>プライバシーポリシー</Link>

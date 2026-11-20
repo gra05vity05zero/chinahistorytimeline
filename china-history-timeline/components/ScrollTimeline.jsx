@@ -5,35 +5,14 @@ import Link from "next/link";
 import { ERAS, COLORS, ADSENSE_SLOT_TIMELINE, displayPeriod } from "@/lib/data";
 import { SealMark, AdSenseSlot, MiscLinksSection } from "@/components/Shared";
 import { TimelineEvent, TimelineMilestone, yearNumber, formatYear } from "@/components/EraOverview";
-import { SiteTitle } from "@/components/SiteHeader";
-import LanguageSwitch from "@/components/en/LanguageSwitch";
-import HeroImage from "@/components/HeroImage";
 import { RubyText } from "@/components/Ruby";
-import { NewsList } from "@/components/NewsList";
-
-// トップページ上部の主要な入口
-const PRIMARY_LINKS = [
-  { href: "/people", seal: "人", label: "人物一覧", desc: "時代別の人物事典" },
-  { href: "/eras", seal: "代", label: "時代一覧", desc: "各時代の解説と年表" },
-  { href: "/japan-china-timeline", seal: "日", label: "日中対照年表", desc: "同じ時期の日本と{{比較|ひかく}}" },
-  { href: "/search", seal: "検", label: "サイト内{{検索|けんさく}}", desc: "人物・出来事を探す" },
-];
-
-// 合戦マップ（時代順）
-const BATTLE_MAP_LINKS = [
-  { href: "/chunqiu-zhanguo-battles", label: "春秋・戦国" },
-  { href: "/chuhan-battles", label: "{{楚漢戦争|そかんせんそう}}" },
-  { href: "/sanguo-battles", label: "三国時代" },
-  { href: "/suitang-battles", label: "{{隋唐|ずいとう}}・五代" },
-  { href: "/song-yuan-battles", label: "{{宋|そう}}・金・元" },
-];
 
 // 年表の各時代見出しの下に「〜とはどんな時代？」と並べて出す特集記事へのリンク
 const ERA_FEATURE_LINKS = {
   qin: [{ href: "/qin-fall", label: "{{秦|しん}}はなぜ15年で{{滅亡|めつぼう}}したのか？" }],
 };
 
-// トップページの導入文（ルビ記法 {{漢字|ふりがな}} 対応）
+// 導入文（ルビ記法 {{漢字|ふりがな}} 対応）
 const INTRO_PARAGRAPHS = [
   "中国史は、{{黄河|こうが}}・{{長江|ちょうこう}}流域で生まれた新石器文化から始まります。{{殷|いん}}・周の時代を経て、{{諸侯|しょこう}}が争った春秋・戦国時代のあと、紀元前221年に{{秦|しん}}の{{始皇帝|しこうてい}}が初めて中国を統一しました。",
   "その後、漢・三国・{{晋|しん}}・南北朝・{{隋|ずい}}・{{唐|とう}}・五代十国・{{宋|そう}}・元・明・{{清|しん}}と、王朝の{{興亡|こうぼう}}を{{繰|く}}り返しながら五千年の歴史が続き、1912年の{{中華民国|ちゅうかみんこく}}、1949年の{{中華人民共和国|ちゅうかじんみんきょうわこく}}へとつながります。",
@@ -63,7 +42,9 @@ function YearGap({ years }) {
   return <li aria-hidden style={{ height }} />;
 }
 
-export default function Timeline({ milestonesByEra = {}, latestNews = [] }) {
+// /timeline：旧トップページの「時代をスクロールして辿る」年表をそのまま1ページにしたもの。
+// 上部に現在の時代を示す固定ナビ（タップで王朝一覧）、各時代の出来事を要約つきで年代順に並べる。
+export default function ScrollTimeline({ milestonesByEra = {} }) {
   const [activeEra, setActiveEra] = useState(ERAS[0].id);
   const [navOpen, setNavOpen] = useState(false);
   const sectionRefs = useRef({});
@@ -144,81 +125,19 @@ export default function Timeline({ milestonesByEra = {}, latestNews = [] }) {
         </div>
       )}
 
-      <div className="relative px-6 pt-10 pb-6 text-center">
-        <div className="absolute" style={{ top: 12, right: 16 }}>
-          <LanguageSwitch lang="ja" style={{ fontSize: 13 }} />
-        </div>
-        <SiteTitle headingAs="h1" />
-        <div className="max-w-3xl mx-auto mt-6" style={{ border: `1.5px solid ${COLORS.gold}` }}>
-          <HeroImage />
-        </div>
-        <div className="max-w-3xl mx-auto mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 text-left">
-          {PRIMARY_LINKS.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="flex items-start gap-3 px-3 py-3 transition-shadow hover:shadow-md"
-              style={{ backgroundColor: "#FBF8F0", border: `1.5px solid ${COLORS.vermilion}` }}
-            >
-              <span
-                aria-hidden="true"
-                className="seal-char flex items-center justify-center shrink-0"
-                data-char={item.seal}
-                style={{ width: 32, height: 32, backgroundColor: COLORS.vermilion, color: "#fff", fontFamily: "var(--font-serif), serif", fontSize: 16, fontWeight: 700 }}
-              />
-              <span className="min-w-0">
-                <span className="block" style={{ fontFamily: "var(--font-serif), serif", fontSize: 14, fontWeight: 700, color: COLORS.ink }}>
-                  <RubyText text={item.label} />
-                </span>
-                <span className="block" style={{ fontSize: 11, lineHeight: 1.5, color: COLORS.inkSoft, marginTop: 2 }}>
-                  <RubyText text={item.desc} />
-                </span>
-              </span>
-            </Link>
-          ))}
-        </div>
-        <div className="max-w-3xl mx-auto mt-4 flex items-center justify-center gap-2 flex-wrap">
-          <span className="w-full sm:w-auto sm:mr-1" style={{ fontFamily: "var(--font-serif), serif", fontSize: 12, fontWeight: 700, color: COLORS.inkSoft }}>
-            合戦マップ
-          </span>
-          {BATTLE_MAP_LINKS.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="inline-flex items-center"
-              style={{
-                height: 34,
-                padding: "0 14px",
-                fontFamily: "var(--font-serif), serif",
-                fontSize: 12.5,
-                fontWeight: 700,
-                color: COLORS.vermilion,
-                border: `1.5px solid ${COLORS.vermilion}`,
-              }}
-            >
-              <RubyText text={item.label} />
-            </Link>
-          ))}
-        </div>
-        {latestNews.length > 0 && (
-          <section className="max-w-2xl mx-auto mt-8 text-left">
-            <div className="flex items-baseline justify-between gap-3" style={{ marginBottom: 10 }}>
-              <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 18, fontWeight: 700, color: COLORS.ink }}>
-                中国史の最新ニュース
-              </h2>
-              <Link href="/news" style={{ fontSize: 12.5, color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>
-                ニュース一覧 →
-              </Link>
-            </div>
-            <NewsList items={latestNews} compact />
-          </section>
-        )}
-        <div className="mt-8">
-          <MiscLinksSection variant="full" />
-        </div>
+      <div className="max-w-2xl mx-auto px-5 pt-8 pb-4">
+        <Link href="/" className="hover:underline" style={{ fontSize: 13, color: COLORS.vermilion }}>
+          ← トップに戻る
+        </Link>
+        <h1 style={{ fontFamily: "var(--font-serif), serif", fontSize: 26, fontWeight: 900, color: COLORS.ink, marginTop: 16, lineHeight: 1.4 }}>
+          スクロールで辿る中国史年表
+        </h1>
+        <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginTop: 10 }}>
+          新石器時代から中華人民共和国まで、全{ERAS.length}時代の出来事を要約つきで年代順に並べた年表です。上の帯をタップすると、王朝一覧から好きな時代へ移動できます。
+        </p>
       </div>
 
-      {/* 「中国史」「中国の歴史」で検索した人向けの導入文。年表本体の前に全体の流れを短く示す */}
+      {/* 年表本体の前に全体の流れを短く示す */}
       <section className="max-w-2xl mx-auto px-5 pb-8">
         <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 18, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>
           中国史（中国の歴史）の流れ
@@ -229,7 +148,7 @@ export default function Timeline({ milestonesByEra = {}, latestNews = [] }) {
           </p>
         ))}
         <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 18, fontWeight: 700, color: COLORS.ink, marginTop: 24 }}>
-          中国史年表（全{ERAS.length}時代）
+          年表（全{ERAS.length}時代）
         </h2>
       </section>
 
@@ -240,12 +159,12 @@ export default function Timeline({ milestonesByEra = {}, latestNews = [] }) {
           {ERAS.map((era) => {
             const items = eraItems(era, milestonesByEra[era.id] || []);
             return (
-              <div key={era.id} ref={(el) => (sectionRefs.current[era.id] = el)} data-era-id={era.id} className="relative pt-2 pb-10">
+              <div key={era.id} id={`era-${era.id}`} ref={(el) => (sectionRefs.current[era.id] = el)} data-era-id={era.id} className="relative pt-2 pb-10" style={{ scrollMarginTop: 72 }}>
                 <div className="relative mb-4" style={{ paddingLeft: RAIL }}>
                   <div className="absolute left-0 top-0">
                     <SealMark char={era.seal} active={era.id === activeEra} />
                   </div>
-                  <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 20, fontWeight: 700, color: COLORS.ink }}><RubyText text={era.name} /></div>
+                  <h3 style={{ fontFamily: "var(--font-serif), serif", fontSize: 20, fontWeight: 700, color: COLORS.ink }}><RubyText text={era.name} /></h3>
                   <div style={{ fontSize: 12, color: COLORS.gold, fontFamily: "var(--font-serif), serif" }}><RubyText text={displayPeriod(era.period)} /></div>
                   {era.description && (
                     <p style={{ fontSize: 12.5, lineHeight: 1.8, color: COLORS.inkSoft, marginTop: 8 }}><RubyText text={era.description} /></p>

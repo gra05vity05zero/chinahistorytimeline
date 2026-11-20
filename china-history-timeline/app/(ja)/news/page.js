@@ -8,7 +8,7 @@ import { bilingualAlternates } from "@/lib/en";
 const title = "中国史・考古学のニュース｜遺跡の発掘や新発見、文化財の最新情報";
 const fullTitle = `${title} | ${SITE_NAME}`;
 const description =
-  "中国の遺跡の発掘調査、考古学の新発見、文化財や博物館の話題など、中国史に関するニュースを毎日更新でまとめます。各記事に出典と、関連する時代・人物の解説ページへのリンク付き。";
+  "中国の遺跡の発掘調査、考古学の新発見、文化財や博物館の話題など、中国史に関するニュースをまとめています。各記事に出典と、関連する時代・人物の解説ページへのリンク付き。";
 
 export const metadata = {
   title,
@@ -29,7 +29,7 @@ export default function NewsPage() {
           中国史のニュース
         </h1>
         <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 20 }}>
-          <RubyText text="中国の遺跡の{{発掘|はっくつ}}や考古学の新発見、文化財に関するニュースを、内容を要約して新しい順に紹介します（毎日更新）。くわしくは各記事の出典元をご覧ください。" />
+          <RubyText text="中国の遺跡の{{発掘|はっくつ}}や考古学の新発見、文化財に関するニュースを、内容を要約して新しい順に紹介します。くわしくは各記事の出典元をご覧ください。" />
         </p>
 
         <NewsList items={news} />

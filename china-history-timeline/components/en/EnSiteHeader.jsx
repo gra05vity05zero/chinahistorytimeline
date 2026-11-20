@@ -39,16 +39,9 @@ function CompactHeader() {
 }
 
 // Shown on every English page except the top page (the timeline renders its own title block).
+// A one-line bar (site name linking home + language switch) so each page's H1 and opening answer stay near the top.
 export default function EnSiteHeader() {
   const pathname = usePathname();
   if (pathname === "/en") return null;
-  if (pathname.startsWith("/en/events/")) return <CompactHeader />;
-  return (
-    <header className="relative px-6 pt-8 pb-6 text-center" style={{ backgroundColor: COLORS.paper, borderBottom: `1px solid ${COLORS.mist}` }}>
-      <div className="absolute" style={{ top: 10, right: 16 }}>
-        <LanguageSwitch lang="en" style={{ fontSize: 13 }} />
-      </div>
-      <EnSiteTitle />
-    </header>
-  );
+  return <CompactHeader />;
 }

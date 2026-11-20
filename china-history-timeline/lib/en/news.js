@@ -1,5 +1,5 @@
 // English versions of the news items in lib/news.json, keyed by id.
-// Items without an entry here are simply not shown on /en/news (the Japanese list is updated daily).
+// Items without an entry here are simply not shown on /en/news (the Japanese list is updated regularly).
 import { getNews } from "@/lib/news";
 
 const NEWS_EN = {

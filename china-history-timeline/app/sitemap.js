@@ -9,7 +9,9 @@ export default function sitemap() {
   // 「更新された」扱いになり、Googleがこの値自体を信用しなくなるため。
   const staticRoutes = [
     { url: `${SITE_URL}/`, changeFrequency: "monthly", priority: 1 },
-    { url: `${SITE_URL}/news`, changeFrequency: "daily", priority: 0.6 },
+    { url: `${SITE_URL}/timeline`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${SITE_URL}/articles`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${SITE_URL}/news`, changeFrequency: "weekly", priority: 0.6 },
     { url: `${SITE_URL}/about`, changeFrequency: "yearly", priority: 0.3 },
     { url: `${SITE_URL}/people`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${SITE_URL}/eras`, changeFrequency: "monthly", priority: 0.6 },

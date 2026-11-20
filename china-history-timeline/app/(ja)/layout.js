@@ -15,7 +15,7 @@ const sans = Noto_Sans_JP({ weight: ["400", "500"], subsets: ["latin"], display:
 // 他ページと違いあえて付けない（末尾に付けると文字数が伸びSERP上で見切れやすくなるため）。
 // サイト自体のブランド名はWebSiteのJSON-LD（name）やOGP（siteName）側で担保する。
 // 「中国史」「中国の歴史（中国歴史）」の両方の検索語に対応するよう、両表記を含める。
-const DEFAULT_TITLE = "中国史年表｜中国の歴史五千年を王朝・人物・出来事で年代順に解説";
+const DEFAULT_TITLE = "中国史年表｜中国の歴史五千年を王朝・人物・出来事でわかりやすく";
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
