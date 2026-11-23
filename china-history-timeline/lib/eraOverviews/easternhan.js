@@ -102,6 +102,7 @@ export default {
   ],
 
   related: [
+    { href: "/tyrants", label: "中国の暴君・暗君ランキング", note: "官位を売った{{霊帝|れいてい}}" },
     { href: "/sanguo-battles", label: "三国時代 合戦マップ", note: "{{黄巾|こうきん}}の乱から{{赤壁|せきへき}}の戦いまで" },
     { href: "/four-inventions", label: "中国の四大発明とは", note: "{{蔡倫|さいりん}}の製紙法" },
     { href: "/silk-road", label: "シルクロードとは", note: "{{班超|はんちょう}}の西域経営" },

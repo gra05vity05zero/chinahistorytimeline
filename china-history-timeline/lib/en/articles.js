@@ -31,6 +31,7 @@ const CATEGORIES = [
       "emperors",
       "qinshihuang",
       "women-rulers",
+      "tyrants",
       "four-beauties",
     ],
   },

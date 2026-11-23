@@ -31,6 +31,7 @@ export const MISC_SECTIONS = [
       { href: "/keju", label: "科挙とは" },
       { href: "/eunuchs", label: "{{宦官|かんがん}}とは" },
       { href: "/women-rulers", label: "女帝・権力を握った女性" },
+      { href: "/tyrants", label: "暴君・暗君ランキング" },
     ],
   },
   {

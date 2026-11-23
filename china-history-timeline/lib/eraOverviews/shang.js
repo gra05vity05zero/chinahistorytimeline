@@ -77,6 +77,7 @@ export default {
   ],
 
   related: [
+    { href: "/tyrants", label: "中国の暴君・暗君ランキング", note: "酒池肉林の{{紂王|ちゅうおう}}は第1位" },
     { href: "/china-capitals", label: "歴代王朝の都一覧", note: "{{殷墟|いんきょ}}（{{安陽|あんよう}}）の位置" },
     { href: "/world-heritage", label: "中国の世界遺産まとめ", note: "{{殷墟|いんきょ}}の遺跡" },
     { href: "/china-castles", label: "中国の城まとめ", note: "{{殷|いん}}の都の城壁" },

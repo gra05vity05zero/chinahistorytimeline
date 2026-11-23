@@ -109,6 +109,7 @@ export default {
   ],
 
   related: [
+    { href: "/tyrants", label: "中国の暴君・暗君ランキング", note: "芸術家皇帝{{徽宗|きそう}}の失政" },
     { href: "/song-yuan-battles", label: "{{宋|そう}}・金・元 合戦マップ", note: "{{澶淵|せんえん}}の盟・{{靖康|せいこう}}の変を地図で" },
     { href: "/yangjiajiang", label: "{{楊家将|ようかしょう}}とは", note: "{{宋|そう}}と{{遼|りょう}}の戦いを描いた物語" },
     { href: "/suikoden", label: "水滸伝とは", note: "{{北宋|ほくそう}}末期の{{梁山泊|りょうざんぱく}}の物語" },

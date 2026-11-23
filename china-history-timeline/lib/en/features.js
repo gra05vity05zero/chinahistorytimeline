@@ -19,6 +19,7 @@ export const FEATURES_EN = [
   { slug: "four-beauties", title: "The Four Beauties of Ancient China", seal: "美", blurb: "Xi Shi, Wang Zhaojun, Diaochan and Yang Guifei — history and legend." },
   { slug: "eunuchs", title: "Eunuchs in Chinese History", seal: "宦", blurb: "Palace servants who sometimes ruled empires: famous eunuchs and their times." },
   { slug: "women-rulers", title: "Women Who Ruled China", seal: "后", blurb: "Empress Lü, Wu Zetian, Empress Dowager Cixi and other women who held power." },
+  { slug: "tyrants", title: "Tyrants and Incompetent Rulers of China", seal: "暴", blurb: "King Zhou, Emperor Yang of Sui, Huizong, the Wanli Emperor and other rulers who ruined their dynasties — and how they are reassessed." },
   { slug: "harem-ranks", title: "Ranks of the Imperial Harem", seal: "宮", blurb: "Empress, consorts and concubines: how the inner palace was ranked, dynasty by dynasty." },
   { slug: "china-capitals", title: "Capitals of China Through History", seal: "都", blurb: "Where each dynasty ruled from, from Anyang and Xi’an to Nanjing and Beijing." },
   { slug: "ancient-capitals", title: "The Great Ancient Capitals of China", seal: "京", blurb: "Xi’an, Luoyang, Nanjing, Beijing, Kaifeng, Hangzhou and more, on a map." },
@@ -53,7 +54,7 @@ export const FEATURES_EN = [
 ];
 
 // Only slugs whose English page has been written are paired / listed.
-const READY = new Set(["great-wall", "silk-road", "terracotta-army", "qinshihuang", "qin-fall", "four-inventions", "eto", "shunsetsu", "chinese-food", "emperors", "hundred-schools", "keju", "world-heritage", "four-great-novels", "four-beauties", "eunuchs", "women-rulers", "harem-ranks", "china-capitals", "ancient-capitals", "dynasty-territory-map", "china-castles", "ancient-towns", "chuhan-battles", "sanguo-battles", "sanguo-comparison", "chunqiu-zhanguo-battles", "suitang-battles", "song-yuan-battles", "history-books", "novelists", "suikoden", "yangjiajiang", "saiyuki", "kingdom", "wuxia-games", "koei-sangokushi", "musou", "kusuriya", "funny-episodes", "dramas", "glossary", "idioms", "mnemonics", "year-mnemonics", "quiz", "japan-china-timeline", "printable-timeline"]);
+const READY = new Set(["great-wall", "silk-road", "terracotta-army", "qinshihuang", "qin-fall", "four-inventions", "eto", "shunsetsu", "chinese-food", "emperors", "hundred-schools", "keju", "world-heritage", "four-great-novels", "four-beauties", "eunuchs", "women-rulers", "tyrants", "harem-ranks", "china-capitals", "ancient-capitals", "dynasty-territory-map", "china-castles", "ancient-towns", "chuhan-battles", "sanguo-battles", "sanguo-comparison", "chunqiu-zhanguo-battles", "suitang-battles", "song-yuan-battles", "history-books", "novelists", "suikoden", "yangjiajiang", "saiyuki", "kingdom", "wuxia-games", "koei-sangokushi", "musou", "kusuriya", "funny-episodes", "dramas", "glossary", "idioms", "mnemonics", "year-mnemonics", "quiz", "japan-china-timeline", "printable-timeline"]);
 export const FEATURES_READY = FEATURES_EN.filter((f) => READY.has(f.slug));
 export const FEATURE_SLUGS = FEATURES_READY.map((f) => f.slug);
 

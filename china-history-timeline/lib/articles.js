@@ -29,6 +29,7 @@ export const ARTICLE_CATEGORIES = [
       { href: "/emperors", label: "歴代{{皇帝|こうてい}}一覧" },
       { href: "/qinshihuang", label: "{{始皇帝|しこうてい}}とは" },
       { href: "/women-rulers", label: "女帝・権力を握った女性" },
+      { href: "/tyrants", label: "暴君・暗君ランキング" },
       { href: "/four-beauties", label: "中国四大美女" },
     ],
   },

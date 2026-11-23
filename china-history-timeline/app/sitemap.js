@@ -43,6 +43,7 @@ export default function sitemap() {
     { url: `${SITE_URL}/keju`, changeFrequency: "yearly", priority: 0.6 },
     { url: `${SITE_URL}/eunuchs`, changeFrequency: "yearly", priority: 0.6 },
     { url: `${SITE_URL}/women-rulers`, changeFrequency: "yearly", priority: 0.6 },
+    { url: `${SITE_URL}/tyrants`, changeFrequency: "yearly", priority: 0.6 },
     { url: `${SITE_URL}/quiz`, changeFrequency: "yearly", priority: 0.6 },
     { url: `${SITE_URL}/glossary`, changeFrequency: "yearly", priority: 0.6 },
     { url: `${SITE_URL}/history-books`, changeFrequency: "yearly", priority: 0.5 },

@@ -113,6 +113,7 @@ export default {
   ],
 
   related: [
+    { href: "/tyrants", label: "中国の暴君・暗君ランキング", note: "約30年政治を放り出した{{万暦帝|ばんれきてい}}" },
     { href: "/wuxia-games", label: "中国発の武侠・神話ゲーム", note: "『明末：ウツロノハネ』と明末の四川" },
     { href: "/great-wall", label: "万里の長城とは", note: "明代に築かれたレンガの長城" },
     { href: "/emperors#ming", label: "明の歴代{{皇帝|こうてい}}", note: "{{洪武帝|こうぶてい}}から{{崇禎帝|すうていてい}}まで" },

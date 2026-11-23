@@ -36,6 +36,7 @@ const CATEGORIES = [
       ["keju", "Imperial examinations"],
       ["eunuchs", "Eunuchs"],
       ["women-rulers", "Women who ruled"],
+      ["tyrants", "Tyrants and incompetent rulers"],
     ],
   },
   {

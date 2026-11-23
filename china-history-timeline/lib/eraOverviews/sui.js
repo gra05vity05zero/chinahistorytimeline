@@ -93,6 +93,7 @@ export default {
   ],
 
   related: [
+    { href: "/tyrants", label: "中国の暴君・暗君ランキング", note: "{{煬帝|ようだい}}は何をしたのか" },
     { href: "/suitang-battles", label: "隋唐・五代 合戦マップ", note: "{{陳|ちん}}の平定や{{高句麗|こうくり}}遠征を地図で" },
     { href: "/emperors#sui", label: "{{隋|ずい}}の歴代{{皇帝|こうてい}}", note: "文帝・{{煬帝|ようだい}}・{{恭帝|きょうてい}}" },
     { href: "/world-heritage", label: "中国の世界遺産まとめ", note: "中国大運河" },
