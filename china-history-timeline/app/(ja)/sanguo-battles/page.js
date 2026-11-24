@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { SanguoBorderMap } from "@/components/SanguoBorderMap";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
@@ -319,6 +319,8 @@ export default function SanguoBattlesPage() {
           このページでは、後漢の滅亡から<ruby>西晋<rt>せいしん</rt></ruby>による再統一までの流れを、<ruby>官渡<rt>かんと</rt></ruby>・<ruby>赤壁<rt>せきへき</rt></ruby>・<ruby>夷陵<rt>いりょう</rt></ruby>・<ruby>五丈原<rt>ごじょうげん</rt></ruby>など8つの主要な合戦と、
           そこで活躍した武将たちにスポットを当てて詳しく紹介します。
         </p>
+
+        <InArticleAd />
 
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 12 }}>

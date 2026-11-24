@@ -2,7 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { COLORS, CATEGORY_STYLE, ADSENSE_CLIENT_ID, A8_ADS, stripRuby, wikimediaThumb, personSlug, displayEventYear } from "@/lib/constants";
+import { usePathname } from "next/navigation";
+import { COLORS, CATEGORY_STYLE, ADSENSE_CLIENT_ID, ADSENSE_SLOT_IN_ARTICLE, A8_ADS, stripRuby, wikimediaThumb, personSlug, displayEventYear } from "@/lib/constants";
 import { RubyText } from "@/components/Ruby";
 import { MISC_SECTIONS } from "@/lib/miscLinks";
 
@@ -447,6 +448,21 @@ export function A8AdBlock({ ad, className = "mt-8" }) {
 // 出来事ページ・人物ページはフッターの共通バナーを出さず、本文の後ろの1ブロックにまとめる
 export function isSingleAdBlockPage(pathname) {
   return pathname.startsWith("/events/") || /^\/people\/[^/]+\/[^/]+/.test(pathname);
+}
+
+// 記事の導入文の直後に置くAdSense広告枠。ページを移ったときに新しい広告を読み込むよう、パスごとに作り直す。
+// 広告が配信されなかったとき（data-ad-status="unfilled"）は globals.css でラベルごと隠す
+export function InArticleAd({ lang = "ja", className = "my-6" }) {
+  const pathname = usePathname();
+  if (!ADSENSE_SLOT_IN_ARTICLE) return null;
+  return (
+    <div className={`in-article-ad ${className}`}>
+      <div style={{ fontSize: 10.5, color: COLORS.inkSoft, marginBottom: 6, textAlign: "center" }}>
+        {lang === "en" ? "Advertisement" : "広告"}
+      </div>
+      <AdSenseSlot key={pathname} slot={ADSENSE_SLOT_IN_ARTICLE} />
+    </div>
+  );
 }
 
 export function AdSenseSlot({ slot }) {

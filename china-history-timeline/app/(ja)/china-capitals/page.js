@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock } from "@/components/Shared";
+import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
@@ -504,6 +504,8 @@ export default function ChinaCapitalsPage() {
           中国では王朝が交代するたびに、あるいは同じ王朝の中でも遷都によって、都の位置がたびたび移り変わってきました。
           ここでは、夏の二里頭から<ruby>中華人民共和国<rt>ちゅうかじんみんきょうわこく</rt></ruby>の北京まで、歴代王朝の都を移り変わりの順に紹介します。
         </p>
+
+        <InArticleAd />
 
         <EraCapitalsTable />
 

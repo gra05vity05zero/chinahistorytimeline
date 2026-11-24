@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter, buildAmazonUrl } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock, HeritageThumb } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock, HeritageThumb, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
@@ -424,6 +424,8 @@ export default function YangjiajiangPage() {
           民間の語り物や芝居を通じて広まり、明代には小説（演義）としてまとめられ、現代日本では<ruby>北方謙三<rt>きたかたけんぞう</rt></ruby>の小説『<ruby>楊家将<rt>ようかしょう</rt></ruby>』によって新たな読者を得ました。
           このページでは、史実・演義・北方版の3つの視点から、<ruby>楊家将<rt>ようかしょう</rt></ruby>の舞台となった<ruby>宋<rt>そう</rt></ruby>と<ruby>遼<rt>りょう</rt></ruby>の戦いをたどります。
         </p>
+
+        <InArticleAd />
 
         <section style={{ marginBottom: 36 }} id="background">
           <h2 style={sectionHeading}>時代背景：<ruby>燕雲十六州<rt>えんうんじゅうろくしゅう</rt></ruby>をめぐる<ruby>宋<rt>そう</rt></ruby>と<ruby>遼<rt>りょう</rt></ruby></h2>

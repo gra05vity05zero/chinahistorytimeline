@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock, KeyFacts } from "@/components/Shared";
+import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock, KeyFacts, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
@@ -553,6 +553,8 @@ export default function SilkRoadPage() {
             }
           />
         </p>
+
+        <InArticleAd />
 
         <div
           className="relative"

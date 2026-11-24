@@ -145,3 +145,6 @@ rt {
 .hp-events a { color: #211D18; }
 .hp-events a:hover { text-decoration: underline; }
 .hp-era-more { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: 10px; font-size: 12.5px; }
+
+/* 記事内のAdSense枠。広告が配信されなかったときは「広告」ラベルごと隠して空白を残さない */
+.in-article-ad:has(ins.adsbygoogle[data-ad-status="unfilled"]) { display: none; }

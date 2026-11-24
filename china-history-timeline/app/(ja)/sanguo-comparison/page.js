@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock } from "@/components/Shared";
+import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { SanguoBorderMap } from "@/components/SanguoBorderMap";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
@@ -250,6 +250,8 @@ export default function SanguoComparisonPage() {
             }
           />
         </p>
+
+        <InArticleAd />
 
         <div className="flex gap-2 mb-8">
           {KINGDOMS.map((k) => (

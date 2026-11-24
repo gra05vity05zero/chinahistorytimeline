@@ -1,5 +1,5 @@
 import { ERAS, personSlug, COLORS, SITE_NAME, buildOpenGraph, buildTwitter, buildAmazonUrl } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
@@ -133,6 +133,8 @@ export default function KusuriyaPage() {
             "舞台は中華風の架空の国だが、後宮の位、{{毒見|どくみ}}、{{宦官|かんがん}}、花街といった設定の多くは、実際の中国の歴史にモデルを見つけることができる。このページでは、作品の設定と史実を並べて解説する。"
           }
         />
+
+        <InArticleAd />
         <Note>
           <RubyText text="作品の序盤の基本設定には触れますが、物語の大きなネタバレは書いていません。作品との対応は、制度や風俗の共通点から読み取った当サイトの見立てです。" />
         </Note>

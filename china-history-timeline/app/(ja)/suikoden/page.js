@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter, buildAmazonUrl } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock, HeritageThumb } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock, HeritageThumb, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
@@ -373,6 +373,8 @@ export default function SuikodenPage() {
           <RubyText text="『{{水滸伝|すいこでん}}』は、{{北宋末|ほくそうまつ}}の{{徽宗|きそう}}の時代を{{舞台|ぶたい}}に、{{腐敗|ふはい}}した役人や{{奸臣|かんしん}}に追われた108人の好漢たちが{{梁山泊|りょうざんぱく}}に集い、「{{替天行道|たいてんこうどう}}（天に{{替|か}}わりて道を行う）」を{{掲|かか}}げて戦う長編小説です。『三国志演義』『西遊記』『{{紅楼夢|こうろうむ}}』と並ぶ中国の四大名著の一つに数えられます。" />
           物語のもとになったのは、<ruby>北宋末<rt>ほくそうまつ</rt></ruby>に実際に起きた<ruby>宋江<rt>そうこう</rt></ruby>の反乱でした。このページでは、あらすじや人物の紹介に加えて、<ruby>梁山泊<rt>りょうざんぱく</rt></ruby>の実像や史実と物語の違いまで、<ruby>水滸伝<rt>すいこでん</rt></ruby>の世界をひととおりたどります。
         </p>
+
+        <InArticleAd />
 
         <section style={{ marginBottom: 36 }} id="story">
           <h2 style={sectionHeading}>あらすじ</h2>

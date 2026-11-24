@@ -1,5 +1,5 @@
 import { ERAS, getEraFigures, personSlug, stripRuby, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
@@ -167,6 +167,8 @@ export default function IdiomsPage() {
           「<ruby>臥薪嘗胆<rt>がしんしょうたん</rt></ruby>」や「<ruby>矛盾<rt>むじゅん</rt></ruby>」のように、中国の歴史上の出来事や人物のエピソードがもとになって、今も日本語の慣用句・四字熟語として使われている言葉があります。
           国語や漢文のテスト対策として、由来となった時代とあわせて覚えておきましょう。
         </p>
+
+        <InArticleAd />
 
         <section style={{ marginBottom: 28 }}>
           <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>

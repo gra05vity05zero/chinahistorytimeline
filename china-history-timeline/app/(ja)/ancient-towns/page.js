@@ -1,5 +1,5 @@
 import { stripRuby, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock } from "@/components/Shared";
+import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { CHINA_OUTLINE, TAIWAN_OUTLINE } from "@/lib/chinaOutline";
@@ -559,6 +559,8 @@ export default function AncientTownsPage() {
           <RubyText text="中国で「古城」といえば、お城の建物ではなく、{{城壁|じょうへき}}に囲まれた昔ながらの町並みのこと。明清時代の石畳や商家がそのまま残る町もあれば、三国志の武将が守り、王朝の運命を決める戦いの舞台になった町もあります。" />
           <RubyText text="このページでは「中国四大古城」の{{平遥|へいよう}}・{{麗江|れいこう}}・{{閬中|ろうちゅう}}・{{歙県|きゅうけん}}をはじめ、中国史の年表とゆかりの深い10の古城について、成り立ちと歴史、いま訪ねられる見どころを写真とともに{{紹介|しょうかい}}します。" />
         </p>
+
+        <InArticleAd />
 
         <nav aria-label="目次" className="p-4 mb-8" style={card}>
           <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 13, fontWeight: 700, color: COLORS.ink, marginBottom: 6 }}>目次</div>

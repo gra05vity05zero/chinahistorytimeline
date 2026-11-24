@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ERAS, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
 import { ROWS, CN_JUMPS, JP_JUMPS, ERA_CORRESPONDENCE, hasAnchor } from "@/lib/japanChinaTimeline";
-import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { TimelineIcon } from "@/components/TimelineIcons";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
@@ -186,6 +186,8 @@ export default function JapanChinaTimelinePage() {
           日本と中国では時代区分の年代がそれぞれ異なるため、無理に時代同士を横並びにせず、中国の出来事と日本の出来事を実際の年代順に1本の年表として並べました。
           <ruby>遣隋使<rt>けんずいし</rt></ruby>や<ruby>元寇<rt>げんこう</rt></ruby>のように、両国の出来事が近い時期に重なっていることも見えてきます。中国側の出来事や王朝名、日本側の「中国側：」から、それぞれの詳しい解説へ進めます。
         </p>
+
+        <InArticleAd />
 
         <EraCorrespondenceTable />
 

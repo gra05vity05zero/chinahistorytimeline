@@ -1,5 +1,5 @@
 import { ERAS, COLORS, SITE_NAME, AMAZON_ASSOCIATE_TAG, buildOpenGraph, buildTwitter, buildAmazonUrl } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
@@ -161,6 +161,8 @@ export default function NovelistsPage() {
           日本では<ruby>江戸時代<rt>えどじだい</rt></ruby>の『三国志演義』翻訳以来、中国の歴史は多くの小説家たちを<ruby>魅了<rt>みりょう</rt></ruby>してきました。
           代表作とあわせて紹介しますので、興味のある時代の一冊から手に取ってみてください。
         </p>
+
+        <InArticleAd />
 
         <div className="flex flex-col gap-3">
           {NOVELISTS.map((n, i) => (

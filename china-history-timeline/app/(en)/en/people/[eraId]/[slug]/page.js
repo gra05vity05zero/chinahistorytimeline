@@ -2,7 +2,7 @@ import Link from "next/link";
 import { EnThemeLinks } from "@/components/en/EnMiscLinks";
 import { notFound } from "next/navigation";
 import { COLORS } from "@/lib/constants";
-import { SealMark, HeritageThumb } from "@/components/Shared";
+import { SealMark, HeritageThumb, InArticleAd } from "@/components/Shared";
 import { SITE_URL, SITE_NAME_EN, getPeopleByEraEn, findPersonEn, displayYearEn, displayPeriodEn } from "@/lib/en";
 import { formatLifeYearEn } from "@/lib/en/people";
 import { lifeAge } from "@/lib/personDetails";
@@ -101,6 +101,8 @@ export default function EnglishPersonPage({ params }) {
 
         <h1 style={{ ...serif, fontSize: 28, fontWeight: 900, color: COLORS.ink, lineHeight: 1.3, marginTop: 14 }}>{person.name}</h1>
         <p style={{ fontSize: 16, lineHeight: 1.8, color: COLORS.inkSoft, fontWeight: 600, marginTop: 12 }}>{person.description}</p>
+
+        <InArticleAd lang="en" />
 
         {person.imageUrl && (
           <figure className="mt-6" style={{ maxWidth: 280 }}>

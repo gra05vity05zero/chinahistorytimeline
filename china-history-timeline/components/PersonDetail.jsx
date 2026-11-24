@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { COLORS, displayEventYear, displayPeriod, leadWithSubject, personSubject } from "@/lib/constants";
-import { SealMark, HeritageThumb, MiscLinksSection, A8AdBlock } from "@/components/Shared";
+import { SealMark, HeritageThumb, MiscLinksSection, A8AdBlock, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 
 export default function PersonDetail({ person, era, lifeRows = [], relatedPeople = [] }) {
@@ -32,6 +32,8 @@ export default function PersonDetail({ person, era, lifeRows = [], relatedPeople
         <p style={{ fontSize: 15, lineHeight: 1.9, color: COLORS.inkSoft, fontWeight: 600 }}>
           <RubyText text={leadWithSubject(personSubject(person), person.description)} />
         </p>
+
+        <InArticleAd />
 
         {person.imageUrl && (
           <div className="mt-6" style={{ maxWidth: 280 }}>

@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { ZhanguoBorderMap } from "@/components/ZhanguoBorderMap";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
@@ -486,6 +486,8 @@ export default function ChunqiuZhanguoBattlesPage() {
           数十の国が興亡を繰り返した中国史上もっとも長い分裂の時代です。このページでは前半の「春秋時代」と
           後半の「戦国時代」に分けて、代表的な合戦とそこで活躍した武将たちを地図とともに紹介します。
         </p>
+
+        <InArticleAd />
 
         <div className="flex items-center gap-2.5 flex-wrap mb-10" style={{ fontSize: 12.5 }}>
           <a href="#chunqiu" style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>

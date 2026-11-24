@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter, findEventBySlug as findEventEntry } from "@/lib/data";
-import { BackToTopButton, NavButton, EventListItem, MiscLinksSection, KeyFacts } from "@/components/Shared";
+import { BackToTopButton, NavButton, EventListItem, MiscLinksSection, KeyFacts, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
@@ -407,6 +407,8 @@ export default function HundredSchoolsPage() {
             }
           />
         </p>
+
+        <InArticleAd />
 
         <KeyFacts heading="諸子百家の基本データ" items={KEY_FACTS} />
 

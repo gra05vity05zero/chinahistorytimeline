@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { COLORS, CATEGORY_STYLE, HERITAGE_TYPES, resolveMediaUrl, stripRuby, displayEventYear, displayPeriod } from "@/lib/constants";
-import { SealMark, HeritageGrid, A8AdBlock, MiscLinksSection, JapanTimelineCallout } from "@/components/Shared";
+import { SealMark, HeritageGrid, A8AdBlock, InArticleAd, MiscLinksSection, JapanTimelineCallout } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { DramaBacklinks } from "@/components/DramaBlocks";
 
@@ -84,6 +84,8 @@ export default function EventDetail({ event, era, prev, next, japanTimeline, dra
         <p style={{ fontSize: 15, lineHeight: 1.9, color: COLORS.inkSoft }}>
           <RubyText text={event.summary} />
         </p>
+
+        <InArticleAd />
 
         {article}
 

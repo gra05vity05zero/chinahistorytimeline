@@ -1,5 +1,5 @@
 import { ERAS, getEraFigures, personSlug, stripRuby, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import FourKoma from "@/components/FourKoma";
 import { MANGA } from "./manga";
@@ -464,6 +464,8 @@ export default function FunnyEpisodesPage() {
             }
           />
         </p>
+
+        <InArticleAd />
 
         <section style={{ marginBottom: 28 }}>
           <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>

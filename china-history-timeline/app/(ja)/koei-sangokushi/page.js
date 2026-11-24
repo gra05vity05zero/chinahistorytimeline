@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter, buildAmazonUrl } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock, HeritageThumb } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock, HeritageThumb, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
@@ -322,6 +322,8 @@ export default function KoeiSangokushiPage() {
           <RubyText text="『{{三國志|さんごくし}}』は、1985年に光栄（現・コーエーテクモゲームス）が発売した{{歴史|れきし}}シミュレーションゲームのシリーズです。プレイヤーは後漢末から三国時代の{{群雄|ぐんゆう}}や武将となり、内政・外交・戦争を通じて天下統一を目指します。" />
           <RubyText text="生みの親はシブサワ・コウ（{{襟川陽一|えりかわよういち}}）。2025年に40周年を{{迎|むか}}え、世界累計950万本を{{超|こ}}えるロングセラーとなりました。このページでは、最新作からシリーズの{{歴史|れきし}}、作品一覧、選び方までをまとめ、ゲームに登場する武将の史実もあわせて{{紹介|しょうかい}}します。" />
         </p>
+
+        <InArticleAd />
 
         <nav aria-label="目次" className="p-4 mb-9" style={card}>
           <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 13, fontWeight: 700, color: COLORS.ink, marginBottom: 6 }}>目次</div>

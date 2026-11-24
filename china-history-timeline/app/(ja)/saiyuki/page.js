@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock, HeritageThumb } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock, HeritageThumb, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { WORLD_OUTLINE } from "@/lib/worldOutline";
@@ -402,6 +402,8 @@ export default function SaiyukiPage() {
           <RubyText text="『{{西遊記|さいゆうき}}』は、{{唐|とう}}の{{僧|そう}}・{{三蔵法師|さんぞうほうし}}が、{{孫悟空|そんごくう}}・{{猪八戒|ちょはっかい}}・{{沙悟浄|さごじょう}}の三人の弟子を供に、{{妖怪|ようかい}}たちの{{襲撃|しゅうげき}}をくぐり{{抜|ぬ}}けながら{{天竺|てんじく}}（インド）へ経典を取りに行く長編小説です。明代の16世紀に全100回の形にまとまり、『三国志演義』『{{水滸伝|すいこでん}}』『{{紅楼夢|こうろうむ}}』と並ぶ中国の四大名著の一つに数えられます。" />
           物語のもとになったのは、<ruby>唐<rt>とう</rt></ruby>の時代に実際にインドへ旅した僧・<ruby>玄奘<rt>げんじょう</rt></ruby>の大旅行でした。このページでは、あらすじや登場人物に加えて、<ruby>玄奘<rt>げんじょう</rt></ruby>の旅の道のりや史実と物語の違いまで、西遊記の世界をひととおりたどります。
         </p>
+
+        <InArticleAd />
 
         <Figure
           imageUrl={commons("Journey to the West at Long Corridor.JPG")}

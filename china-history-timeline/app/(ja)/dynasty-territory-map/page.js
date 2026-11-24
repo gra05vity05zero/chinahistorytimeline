@@ -1,6 +1,6 @@
 import { ERAS, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
 import { TERRITORY_FRAMES } from "@/lib/dynastyTerritories";
-import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { DynastyTerritoryMap } from "@/components/DynastyTerritoryMap";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
@@ -58,6 +58,8 @@ export default function DynastyTerritoryMapPage() {
           <ruby>唐<rt>とう</rt></ruby>や元、清の時代には中央アジアやモンゴル高原にまで広がります。
           ここでは<ruby>殷<rt>いん</rt></ruby>から清まで16の時点を選び、各王朝と周辺勢力の<ruby>版図<rt>はんと</rt></ruby>の移り変わりを地図でたどります。
         </p>
+
+        <InArticleAd />
 
         <section style={{ marginBottom: 12 }}>
           <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 18, fontWeight: 700, color: COLORS.ink, marginBottom: 10 }}>

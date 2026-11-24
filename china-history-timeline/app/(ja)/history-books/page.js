@@ -1,5 +1,5 @@
 import { ERAS, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock } from "@/components/Shared";
+import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
@@ -215,6 +215,8 @@ export default function HistoryBooksPage() {
             }
           />
         </p>
+
+        <InArticleAd />
 
         <section style={{ marginBottom: 32, backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: "14px 16px" }}>
           <h2 style={{ ...headingStyle, fontSize: 16, marginBottom: 8 }}>紀伝体と編年体</h2>

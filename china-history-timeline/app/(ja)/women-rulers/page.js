@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, personSlug, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
@@ -251,6 +251,8 @@ export default function WomenRulersPage() {
             }
           />
         </p>
+
+        <InArticleAd />
 
         <div style={{ ...cardStyle, padding: "12px 14px", marginBottom: 8 }}>
           <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", color: COLORS.gold, marginBottom: 6 }}>結論</div>

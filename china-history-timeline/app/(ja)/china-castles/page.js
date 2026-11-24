@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock } from "@/components/Shared";
+import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
@@ -143,6 +143,8 @@ export default function ChinaCastlesPage() {
           中国史には、都を守る城壁や国境を分かつ長城、<ruby>要衝<rt>ようしょう</rt></ruby>を<ruby>扼<rt>やく</rt></ruby>する関所など、数多くの「城」が登場します。
           ここでは、このサイトの年表に登場する<ruby>城郭<rt>じょうかく</rt></ruby>・関所を、由来となった時代とあわせて紹介します。
         </p>
+
+        <InArticleAd />
 
         <div className="relative">
           <div className="sticky top-3 z-10">

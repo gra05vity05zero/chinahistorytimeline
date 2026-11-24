@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, personSlug, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
@@ -333,6 +333,8 @@ export default function TyrantsPage() {
             }
           />
         </p>
+
+        <InArticleAd />
 
         <div style={{ ...cardStyle, padding: "12px 14px", marginBottom: 12 }}>
           <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 13, fontWeight: 700, color: COLORS.vermilion, marginBottom: 6 }}>

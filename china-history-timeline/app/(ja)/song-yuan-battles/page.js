@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { SongYuanBorderMap } from "@/components/SongYuanBorderMap";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
@@ -564,6 +564,8 @@ export default function SongYuanBattlesPage() {
           経済と文化が大きく花開いた<ruby>宋<rt>そう</rt></ruby>が、<ruby>遼<rt>りょう</rt></ruby>・<ruby>西夏<rt>せいか</rt></ruby>・金、そしてモンゴルと、北方の強国に次々と立ち向かった時代です。
           このページでは前半の「<ruby>北宋<rt>ほくそう</rt></ruby>と<ruby>遼<rt>りょう</rt></ruby>・<ruby>西夏<rt>せいか</rt></ruby>・金」と後半の「<ruby>南宋<rt>なんそう</rt></ruby>と金・モンゴル」に分けて、代表的な合戦とそこで活躍した人物たちを地図とともに紹介します。日本を<ruby>襲<rt>おそ</rt></ruby>った<ruby>元寇<rt>げんこう</rt></ruby>も取り上げています。
         </p>
+
+        <InArticleAd />
 
         <div className="flex items-center gap-2.5 flex-wrap mb-10" style={{ fontSize: 12.5 }}>
           <a href="#early" style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>

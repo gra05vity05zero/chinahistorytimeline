@@ -1,5 +1,5 @@
 import { stripRuby, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter, buildAmazonUrl } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
@@ -307,6 +307,8 @@ export default function KingdomPage() {
           <RubyText text="『キングダム』は、原{{泰久|やすひさ}}が『週刊ヤングジャンプ』で2006年から連載している歴史漫画です。舞台は紀元前3世紀、中国の戦国時代の末期。{{下僕|げぼく}}の少年・信が「天下の大将軍」を、{{秦|しん}}の若き王・{{嬴政|えいせい}}（のちの{{始皇帝|しこうてい}}）が中華統一を目指し、ともに乱世を{{駆|か}}け上がっていきます。" />
           <RubyText text="登場人物の多くは司馬{{遷|せん}}の『{{史記|しき}}』に名前が残る実在の人物ですが、史書の記述はほんの数行ということも少なくありません。このページでは作品の{{紹介|しょうかい}}とあわせて、主な登場人物と戦いを史実と{{比|くら}}べ、アニメ・実写映画もまとめて{{紹介|しょうかい}}します。" />
         </p>
+
+        <InArticleAd />
 
         <nav aria-label="目次" className="p-4 mb-9" style={card}>
           <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 13, fontWeight: 700, color: COLORS.ink, marginBottom: 6 }}>目次</div>

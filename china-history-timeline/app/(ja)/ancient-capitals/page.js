@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock } from "@/components/Shared";
+import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { CHINA_OUTLINE, TAIWAN_OUTLINE } from "@/lib/chinaOutline";
@@ -622,6 +622,8 @@ export default function AncientCapitalsPage() {
           <RubyText text="{{唐|とう}}の都・{{長安|ちょうあん}}は今の西安、六朝の都・{{建康|けんこう}}は今の南京、{{北宋|ほくそう}}の都・{{汴京|べんけい}}は今の{{開封|かいほう}}――。中国の歴代王朝が都を置いた古都の多くは、名前を変えながら現在も大都市として続いています。" />
           <RubyText text="このページでは「中国八大古都」と呼ばれる8都市に、{{北魏|ほくぎ}}の大同と{{蜀漢|しょくかん}}の{{成都|せいと}}を加えた10の古都について、都としての歩み、高層ビルや高速鉄道の駅が立ち並ぶ現在の街並みの写真、訪ねてみたい歴史的な観光地を{{紹介|しょうかい}}します。" />
         </p>
+
+        <InArticleAd />
 
         <nav aria-label="目次" className="p-4 mb-8" style={card}>
           <div style={{ fontFamily: "var(--font-serif), serif", fontSize: 13, fontWeight: 700, color: COLORS.ink, marginBottom: 6 }}>目次</div>

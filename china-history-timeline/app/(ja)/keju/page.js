@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, personSlug, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
@@ -128,6 +128,8 @@ export default function KejuPage() {
             "合格すれば{{貧|まず}}しい家の出身でも高い地位と富を手にできたため、多くの男性が人生をかけて勉強に打ちこんだ。"
           }
         />
+
+        <InArticleAd />
 
         <div style={{ ...cardStyle, marginBottom: 8 }}>
           <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", color: COLORS.gold, marginBottom: 6 }}>結論：明・清の科挙の流れ</div>

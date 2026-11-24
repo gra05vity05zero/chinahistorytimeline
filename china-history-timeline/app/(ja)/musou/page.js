@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter, buildAmazonUrl } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
@@ -282,6 +282,8 @@ export default function MusouPage() {
           <RubyText text="『真・{{三國無双|さんごくむそう}}』は、コーエー（現・コーエーテクモゲームス）が2000年に発売したアクションゲームのシリーズです。プレイヤーは{{呂布|りょふ}}や{{関羽|かんう}}、{{趙雲|ちょううん}}などの武将を{{操作|そうさ}}し、戦場にあふれる敵兵を次々となぎ{{倒|たお}}す「{{一騎当千|いっきとうせん}}」の{{爽快感|そうかいかん}}で人気を集め、2025年に25周年を{{迎|むか}}えました。" />
           <RubyText text="このページでは、作品の歩みと最新作に加えて、ゲームでおなじみの武将や武器、名場面が実際の歴史ではどうだったのかを紹介します。" />
         </p>
+
+        <InArticleAd />
         <div style={{ ...card, padding: "12px 14px", marginBottom: 20 }}>
           <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", color: COLORS.gold, marginBottom: 6 }}>結論：ベースは『三国志演義』、そこにゲーム独自の創作</div>
           <div style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.ink }}>

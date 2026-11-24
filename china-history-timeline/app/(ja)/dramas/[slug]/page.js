@@ -10,7 +10,7 @@ import {
   realPersonHref,
   dramaDescription,
 } from "@/lib/dramas";
-import { MiscLinksSection, SealMark } from "@/components/Shared";
+import { MiscLinksSection, SealMark, InArticleAd } from "@/components/Shared";
 import { SectionHeading, yearNumber, displayEventYear } from "@/components/EraOverview";
 import { StarRating, CharacterTypeBadge, DramaCard } from "@/components/DramaBlocks";
 import { RubyText } from "@/components/Ruby";
@@ -211,6 +211,8 @@ export default function DramaPage({ params }) {
             </ul>
           </div>
         </section>
+
+        <InArticleAd />
 
         <Streaming streaming={drama.streaming} className="mt-6" />
 

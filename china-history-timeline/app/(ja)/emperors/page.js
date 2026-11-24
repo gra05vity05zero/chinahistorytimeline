@@ -1,5 +1,5 @@
 import { ERAS, getEraFigures, personSlug, stripRuby, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
@@ -542,6 +542,8 @@ export default function EmperorsPage() {
           「皇帝」という称号は、紀元前221年に<ruby>秦<rt>しん</rt></ruby>の<ruby>始皇帝<rt>しこうてい</rt></ruby>が初めて名乗り、1912年に清の<ruby>宣統帝<rt>せんとうてい</rt></ruby>（<ruby>溥儀<rt>ふぎ</rt></ruby>）が退位するまで、約2100年にわたって受け継がれました。
           分裂期の<ruby>諸国<rt>しょこく</rt></ruby>まで数えると、その数は400人前後にのぼるといわれます。
         </p>
+
+        <InArticleAd />
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 28 }}>
           このページでは、統一王朝と三国・南朝・五代の皇帝{TOTAL}人を、在位の順にひとこと解説付きで紹介します。
           <span style={{ color: COLORS.vermilion }}>★</span>は特に有名な皇帝です。

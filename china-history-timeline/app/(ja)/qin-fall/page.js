@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, EventListItem, MiscLinksSection, KeyFacts } from "@/components/Shared";
+import { BackToTopButton, NavButton, EventListItem, MiscLinksSection, KeyFacts, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
@@ -295,6 +295,8 @@ export default function QinFallPage() {
             }
           />
         </p>
+
+        <InArticleAd />
 
         <KeyFacts heading="{{秦|しん}}の{{滅亡|めつぼう}}を一言でいうと" items={KEY_FACTS} />
 

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ERAS, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
 import { formatPeriodJa } from "@/lib/japanChinaTimeline";
-import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
@@ -122,6 +122,8 @@ export default function MnemonicsPage() {
           中学・高校の定期テストや大学入試の世界史では、中国の王朝を正しい順番で答えさせる問題が繰り返し出題されます。
           <ruby>殷<rt>いん</rt></ruby>から<ruby>中華人民共和国<rt>ちゅうかじんみんきょうわこく</rt></ruby>までの流れを語呂合わせで一気に暗記し、続く一覧と暗記のコツで理解を固めましょう。
         </p>
+
+        <InArticleAd />
 
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 6 }}>

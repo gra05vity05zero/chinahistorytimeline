@@ -1,5 +1,5 @@
 import { stripRuby, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter, buildAmazonUrl } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
@@ -398,6 +398,8 @@ export default function WuxiaGamesPage() {
         <p style={{ ...bodyText, fontSize: 13.5, marginBottom: 16 }}>
           <RubyText text="2024年の『黒神話：{{悟空|ごくう}}』の大ヒットをきっかけに、中国のゲーム会社が自国の歴史や神話、武侠を題材にした大作を次々と送り出しています。このページでは、近年話題になった5つの作品について、ゲームの内容と、舞台になった時代や元ネタの史実・伝説を紹介します。" />
         </p>
+
+        <InArticleAd />
         <div style={{ ...card, padding: "12px 14px", marginBottom: 20 }}>
           <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", color: COLORS.gold, marginBottom: 6 }}>まとめ：元ネタは3タイプ</div>
           <div style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.ink }}>

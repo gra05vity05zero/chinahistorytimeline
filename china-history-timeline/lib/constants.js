@@ -155,6 +155,9 @@ export function wikimediaThumb(url, width = 480) {
 export const ADSENSE_CLIENT_ID = "ca-pub-4606423913155675";
 // 手動広告ユニットのスロットID。未設定（空）の間は広告枠を描画しない（自動広告のみ）
 export const ADSENSE_SLOT_TIMELINE = "";
+// 記事の導入文の直後に置くレスポンシブ広告（AdSenseの広告ユニット「記事導入文の下」）。
+// 自動広告は記事の下の方に入りやすく画面に表示される率が低いため、読まれやすい位置に1枠だけ固定で置く
+export const ADSENSE_SLOT_IN_ARTICLE = "3951123689";
 
 // ---- Google Analytics（GA4）設定 ---------------------------------------
 export const GA_MEASUREMENT_ID = "G-GRELCCWWNV";

@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, personSlug, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
@@ -130,6 +130,8 @@ export default function GlossaryPage() {
         <p style={{ fontSize: 13, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 16 }}>
           <RubyText text="世界史の中国史でよく出る用語を、分野ごとに時代順で並べました。制度の名前は、前の時代の何を受け{{継|つ}}ぎ、何を改めたのかという流れで覚えると忘れにくくなります。まぎらわしい用語の違いは最初の表にまとめています。" />
         </p>
+
+        <InArticleAd />
 
         <nav className="flex gap-x-4 gap-y-1 flex-wrap" style={{ fontSize: 12, marginBottom: 8 }}>
           <a href="#compare" style={linkStyle}>まぎらわしい用語の違い</a>

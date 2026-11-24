@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, HeritageGrid, EventListItem, MiscLinksSection } from "@/components/Shared";
+import { BackToTopButton, NavButton, HeritageGrid, EventListItem, MiscLinksSection, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
@@ -159,6 +159,8 @@ export default function QinShiHuangPage() {
             }
           />
         </p>
+
+        <InArticleAd />
 
         <nav
           aria-label="目次"

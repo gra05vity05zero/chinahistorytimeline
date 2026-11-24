@@ -1,5 +1,5 @@
 import { COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { EtoCalculator } from "@/components/EtoCalculator";
@@ -116,6 +116,8 @@ export default function EtoPage() {
             }
           />
         </p>
+
+        <InArticleAd />
 
         <div style={{ ...CARD, padding: "14px 18px", marginBottom: 8, borderLeft: `4px solid ${COLORS.gold}` }}>
           <div style={{ fontSize: 12, fontWeight: 700, color: COLORS.gold }}>2027年の干支</div>

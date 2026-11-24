@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, personSlug, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection } from "@/components/Shared";
+import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
@@ -140,6 +140,8 @@ export default function FourBeautiesPage() {
             }
           />
         </p>
+
+        <InArticleAd />
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2" style={{ marginBottom: 28 }}>
           {RESOLVED.map((b) => (

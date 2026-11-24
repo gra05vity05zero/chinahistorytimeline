@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { SuitangBorderMap } from "@/components/SuitangBorderMap";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
@@ -499,6 +499,8 @@ export default function SuitangBattlesPage() {
           世界帝国・<ruby>唐<rt>とう</rt></ruby>の繁栄と、安史の乱・黄巣の乱を経た崩壊、そして目まぐるしく王朝が入れ替わる五代十国の動乱が続いた時代です。
           このページでは前半の「<ruby>隋<rt>ずい</rt></ruby>・<ruby>唐<rt>とう</rt></ruby>前期」と後半の「<ruby>唐<rt>とう</rt></ruby>後期・五代十国」に分けて、代表的な合戦とそこで活躍した人物たちを地図とともに紹介します。
         </p>
+
+        <InArticleAd />
 
         <div className="flex items-center gap-2.5 flex-wrap mb-10" style={{ fontSize: 12.5 }}>
           <a href="#early" style={{ color: COLORS.vermilion, textDecoration: "underline", textDecorationColor: COLORS.mist }}>

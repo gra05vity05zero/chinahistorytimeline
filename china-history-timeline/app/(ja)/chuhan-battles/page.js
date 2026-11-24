@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
@@ -291,6 +291,8 @@ export default function ChuHanBattlesPage() {
           <ruby>項羽<rt>こうう</rt></ruby>と<ruby>劉邦<rt>りゅうほう</rt></ruby>という対照的な二人の英雄が天下を賭けて戦った、中国史でも屈指の劇的な時代です。
           このページでは、<ruby>鉅鹿<rt>きょろく</rt></ruby>・<ruby>鴻門<rt>こうもん</rt></ruby>・<ruby>彭城<rt>ほうじょう</rt></ruby>・<ruby>垓下<rt>がいか</rt></ruby>など8つの主要な合戦と、そこで活躍した武将たちにスポットを当てて詳しく紹介します。
         </p>
+
+        <InArticleAd />
 
         <section style={{ marginBottom: 32 }}>
           <h2 style={{ fontFamily: "var(--font-serif), serif", fontSize: 17, fontWeight: 700, color: COLORS.ink, marginBottom: 12 }}>

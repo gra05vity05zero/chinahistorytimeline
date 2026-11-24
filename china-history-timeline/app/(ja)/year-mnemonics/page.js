@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { bilingualAlternates } from "@/lib/en";
 
@@ -135,6 +135,8 @@ export default function YearMnemonicsPage() {
           中学・高校のテストや大学入試の世界史では、王朝の順番だけでなく、建国・滅亡の年号そのものを問われることもあります。
           数字の音を言葉に置き換えるゴロ合わせで、重要な年号を覚えてしまいましょう。
         </p>
+
+        <InArticleAd />
         <p style={{ fontSize: 12, lineHeight: 1.8, color: COLORS.inkSoft, marginBottom: 28 }}>
           ※ ここで紹介するゴロ合わせは、覚えやすさを優先した一例です。自分なりの言葉に置き換えてもかまいません。
         </p>

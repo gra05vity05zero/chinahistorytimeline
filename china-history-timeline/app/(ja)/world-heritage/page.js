@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock } from "@/components/Shared";
+import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
@@ -150,6 +150,8 @@ export default function WorldHeritagePage() {
           中国には数多くのユネスコ世界遺産がありますが、その多くは特定の王朝の歴史と深く結びついています。
           ここでは、このサイトの年表に登場する世界遺産を、由来となった時代とあわせて紹介します。
         </p>
+
+        <InArticleAd />
 
         <div className="relative">
           <div className="sticky top-3 z-10">

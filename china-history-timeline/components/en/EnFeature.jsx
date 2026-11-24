@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { COLORS } from "@/lib/constants";
-import { HeritageThumb, NavButton } from "@/components/Shared";
+import { HeritageThumb, NavButton, InArticleAd } from "@/components/Shared";
 import { FEATURES_EN, FEATURES_READY } from "@/lib/en/features";
 import { EnThemeLinks } from "@/components/en/EnMiscLinks";
 
@@ -26,6 +26,7 @@ export function FeaturePage({ title, intro, jaPath, children, related: relatedAl
         </nav>
         <h1 style={{ ...serif, fontSize: 28, fontWeight: 900, color: COLORS.ink, lineHeight: 1.3, marginTop: 14, marginBottom: 14 }}>{title}</h1>
         {intro && <p style={{ fontSize: 15.5, lineHeight: 1.85, color: COLORS.ink, marginBottom: 22 }}>{intro}</p>}
+        {intro && <InArticleAd lang="en" className="mb-6" />}
 
         {children}
 

@@ -3,7 +3,7 @@ import { COLORS, CATEGORY_STYLE, displayEventYear } from "@/lib/constants";
 
 export { displayEventYear };
 import { RubyText } from "@/components/Ruby";
-import { HeritageGrid } from "@/components/Shared";
+import { HeritageGrid, InArticleAd } from "@/components/Shared";
 
 // 時代ページの解説パート（lib/eraOverviews/ に登録された王朝のみ表示）。
 // サーバーコンポーネントとして描画し、出来事・人物は lib/data.js のデータをそのまま使う
@@ -206,6 +206,8 @@ export function EraOverview({ era, overview, figures, prevEra, nextEra, japanCal
       <p style={{ ...bodyText, fontSize: 14, color: COLORS.ink, marginTop: 12 }}>
         <RubyText text={overview.lead} />
       </p>
+
+      <InArticleAd className="mt-6" />
 
       <nav aria-label="目次" className="mt-6 px-4 py-3" style={panel}>
         <div style={{ fontSize: 11, color: COLORS.gold, letterSpacing: "0.1em", marginBottom: 6 }}>目次</div>

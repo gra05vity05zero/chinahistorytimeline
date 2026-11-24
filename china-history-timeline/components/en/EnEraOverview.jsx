@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { COLORS, CATEGORY_STYLE } from "@/lib/constants";
-import { HeritageGrid } from "@/components/Shared";
+import { HeritageGrid, InArticleAd } from "@/components/Shared";
 import { yearNumber } from "@/components/EraOverview";
 import { CATEGORY_LABEL_EN, displayYearEn } from "@/lib/en";
 import { formatYearEn } from "@/lib/en/overviews";
@@ -163,6 +163,8 @@ export function EnEraOverview({ era, overview, figures, prevEra, nextEra }) {
   return (
     <>
       <p style={{ ...bodyText, fontSize: 16, color: COLORS.ink, marginTop: 12 }}>{overview.lead}</p>
+
+      <InArticleAd lang="en" className="mt-6" />
 
       <nav aria-label="Contents" className="mt-6 px-4 py-3" style={panel}>
         <div style={{ fontSize: 11, color: COLORS.gold, letterSpacing: "0.1em", marginBottom: 6 }}>CONTENTS</div>

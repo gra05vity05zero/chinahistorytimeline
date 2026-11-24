@@ -2,7 +2,7 @@ import Link from "next/link";
 import { EnThemeLinks } from "@/components/en/EnMiscLinks";
 import { notFound } from "next/navigation";
 import { COLORS, CATEGORY_STYLE } from "@/lib/constants";
-import { SealMark, HeritageGrid } from "@/components/Shared";
+import { SealMark, HeritageGrid, InArticleAd } from "@/components/Shared";
 import {
   ERAS_EN,
   SITE_URL,
@@ -130,6 +130,8 @@ export default function EnglishEventPage({ params }) {
         <h1 style={{ ...serif, fontSize: 28, fontWeight: 900, color: COLORS.ink, lineHeight: 1.3, marginTop: 14 }}>{event.title}</h1>
 
         <p style={{ fontSize: 16, lineHeight: 1.9, color: COLORS.ink, marginTop: 16 }}>{event.summary}</p>
+
+        <InArticleAd lang="en" />
 
         {detail && <EventArticle detail={detail} lang="en" />}
 

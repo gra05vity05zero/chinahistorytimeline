@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, HeritageGrid, MiscLinksSection, A8AdBlock } from "@/components/Shared";
+import { BackToTopButton, NavButton, HeritageGrid, MiscLinksSection, A8AdBlock, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
@@ -33,6 +33,8 @@ export default function TerracottaArmyPage() {
         <p style={{ fontSize: 13.5, lineHeight: 1.9, color: COLORS.inkSoft, marginBottom: 28 }}>
           <RubyText text="中国を初めて統一した{{始皇帝|しこうてい}}が{{眠|ねむ}}るとされる{{巨大|きょだい}}な{{陵墓|りょうぼ}}と、その{{副葬|ふくそう}}として作られた{{兵馬俑|へいばよう}}には、今なお解明されていない{{謎|なぞ}}が数多く残されています。発見の{{経緯|けいい}}から本体の{{陵墓|りょうぼ}}が{{未発掘|みはっくつ}}のままである理由まで、まとめて{{紹介|しょうかい}}します。" />
         </p>
+
+        <InArticleAd />
 
         {heritageItems.length > 0 && (
           <section style={{ marginBottom: 28 }}>

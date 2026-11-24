@@ -1,6 +1,6 @@
 import { ERAS, personSlug, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
 import { DRAMAS } from "@/lib/dramas";
-import { BackToTopButton, NavButton, MiscLinksSection } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, InArticleAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
@@ -120,6 +120,8 @@ export default function HaremRanksPage() {
             "位の名前と数は王朝ごとに変わったが、もっとも整い、中国ドラマでもおなじみなのが清の制度で、{{皇后|こうごう}}を頂点に8段階に分かれていた。"
           }
         />
+
+        <InArticleAd />
 
         <div style={{ backgroundColor: "#FBF8F0", border: "1px solid #DCD3B8", padding: "12px 14px", marginBottom: 8 }}>
           <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", color: COLORS.gold, marginBottom: 6 }}>結論：清の後宮の位（上から順に）</div>
