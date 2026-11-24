@@ -114,6 +114,21 @@ rt {
 }
 .hp-all-articles:hover { background: #A6332A; color: #fff; }
 
+/* トップページ末尾の記事一覧（タイトルだけ・カテゴリ別の段組み） */
+.hp-index { display: grid; grid-template-columns: 1fr; gap: 20px 28px; }
+@media (min-width: 640px) { .hp-index { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .hp-index { grid-template-columns: 1fr 1fr 1fr; } }
+.hp-index-title {
+  font-family: var(--font-serif), serif; font-size: 15px; font-weight: 700; color: #211D18;
+  padding-bottom: 4px; margin-bottom: 4px; border-bottom: 1.5px solid #A6332A;
+}
+.hp-index-title a:hover { color: #A6332A; }
+.hp-index ul a {
+  display: flex; align-items: center; min-height: 34px; font-size: 13.5px; line-height: 1.4; color: #A6332A;
+}
+.hp-index ul a::before { content: "›"; color: #B9AD90; margin-right: 6px; }
+.hp-index ul a:hover { text-decoration: underline; }
+
 /* トップページの年表カード（全24時代 × 出来事で繰り返すため、インラインstyleではなくクラスで指定してHTMLを軽くする） */
 .hp-card { background: #FBF8F0; border: 1px solid #DCD3B8; }
 .hp-era { padding: 14px 16px; scroll-margin-top: 16px; }

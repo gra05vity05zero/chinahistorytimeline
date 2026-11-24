@@ -56,6 +56,38 @@ function eraKeyFigures(era) {
     .map(({ p }) => ({ href: `/people/${era.id}/${personSlug(p.name)}`, name: p.name.replace(/（.*?）$/, "") }));
 }
 
+// ⑧ 記事一覧：記事一覧ページと同じ7カテゴリで、全記事のタイトルだけを並べる（説明文なし）
+function ArticleIndex() {
+  return (
+    <section aria-labelledby="all-articles" className="max-w-4xl mx-auto px-5 pt-12 pb-12">
+      <SectionHeading id="all-articles">記事一覧</SectionHeading>
+      <div className="hp-index">
+        {ARTICLE_CATEGORIES.map((c) => (
+          <div key={c.id}>
+            <h3 className="hp-index-title">
+              <Link href={`/articles#${c.id}`}>{c.title}</Link>
+            </h3>
+            <ul>
+              {c.links.map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href}>
+                    <RubyText text={l.label} />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+      <div className="mt-8 text-center">
+        <Link href="/articles" className="hp-all-articles">
+          カテゴリの説明つきで記事一覧を見る<span aria-hidden> →</span>
+        </Link>
+      </div>
+    </section>
+  );
+}
+
 function SectionHeading({ id, children, sub }) {
   return (
     <div style={{ marginBottom: 14 }}>
@@ -282,12 +314,8 @@ export default function HomePage({ latestNews = [] }) {
         </section>
       )}
 
-      {/* 特集記事はすべて記事一覧ページにまとめる */}
-      <div className="max-w-4xl mx-auto px-5 pt-12 pb-12 text-center">
-        <Link href="/articles" className="hp-all-articles">
-          すべての記事を見る（記事一覧）<span aria-hidden> →</span>
-        </Link>
-      </div>
+      {/* ⑧ 記事一覧（タイトルだけ）。全特集記事へトップから直接リンクする */}
+      <ArticleIndex />
 
       {ADSENSE_SLOT_TIMELINE && (
         <div className="max-w-2xl mx-auto px-5 pb-16">

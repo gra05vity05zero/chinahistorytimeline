@@ -45,6 +45,36 @@ function eraKeyFigures(era) {
     .map(({ p }) => ({ href: p.href, name: p.name }));
 }
 
+// All articles, titles only, in the same 7 categories as /en/topics (no blurbs)
+function ArticleIndex() {
+  return (
+    <section aria-labelledby="all-articles" className="max-w-4xl mx-auto px-5 pt-12 pb-12">
+      <SectionHeading id="all-articles">All Articles</SectionHeading>
+      <div className="hp-index">
+        {EN_ARTICLE_CATEGORIES.map((c) => (
+          <div key={c.id}>
+            <h3 className="hp-index-title">
+              <Link href={`/en/topics#${c.id}`}>{c.title}</Link>
+            </h3>
+            <ul>
+              {c.links.map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href}>{l.title}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+      <div className="mt-8 text-center">
+        <Link href="/en/topics" className="hp-all-articles">
+          See all articles with descriptions<span aria-hidden> →</span>
+        </Link>
+      </div>
+    </section>
+  );
+}
+
 function SectionHeading({ id, children, sub }) {
   return (
     <div style={{ marginBottom: 14 }}>
@@ -270,12 +300,8 @@ export default function EnHomePage({ latestNews = [] }) {
         </section>
       )}
 
-      {/* Every feature article is on the article list */}
-      <div className="max-w-4xl mx-auto px-5 pt-12 pb-12 text-center">
-        <Link href="/en/topics" className="hp-all-articles">
-          See all articles<span aria-hidden> →</span>
-        </Link>
-      </div>
+      {/* Every feature article, titles only, linked straight from the top page */}
+      <ArticleIndex />
     </div>
   );
 }
