@@ -10,6 +10,10 @@ import { RubyText } from "@/components/Ruby";
 // 年表の各時代見出しの下に「〜とはどんな時代？」と並べて出す特集記事へのリンク
 const ERA_FEATURE_LINKS = {
   qin: [{ href: "/qin-fall", label: "{{秦|しん}}はなぜ15年で{{滅亡|めつぼう}}したのか？" }],
+  sanguo: [{ href: "/sanguo-fall", label: "三国はなぜ{{滅|ほろ}}び、{{晋|しん}}が統一したのか？" }],
+  tang: [{ href: "/tang-fall", label: "{{唐|とう}}はなぜ{{滅亡|めつぼう}}したのか？" }],
+  ming: [{ href: "/ming-fall", label: "明はなぜ{{滅亡|めつぼう}}したのか？" }],
+  qing: [{ href: "/qing-fall", label: "{{清|しん}}はなぜ{{滅亡|めつぼう}}したのか？" }],
 };
 
 // 導入文（ルビ記法 {{漢字|ふりがな}} 対応）

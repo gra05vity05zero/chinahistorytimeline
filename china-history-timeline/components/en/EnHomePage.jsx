@@ -25,6 +25,10 @@ const POPULAR_ARTICLES = POPULAR_SLUGS.map((s) => FEATURE_BY_SLUG.get(s)).filter
 // Feature articles shown next to "Explore the … era" in the timeline
 const ERA_FEATURE_LINKS = {
   qin: FEATURE_BY_SLUG.has("qin-fall") ? [{ href: "/en/qin-fall", label: "Why did the Qin fall in only 15 years?" }] : [],
+  sanguo: FEATURE_BY_SLUG.has("sanguo-fall") ? [{ href: "/en/sanguo-fall", label: "Why did the Three Kingdoms fall to the Jin?" }] : [],
+  tang: FEATURE_BY_SLUG.has("tang-fall") ? [{ href: "/en/tang-fall", label: "Why did the Tang fall?" }] : [],
+  ming: FEATURE_BY_SLUG.has("ming-fall") ? [{ href: "/en/ming-fall", label: "Why did the Ming fall?" }] : [],
+  qing: FEATURE_BY_SLUG.has("qing-fall") ? [{ href: "/en/qing-fall", label: "Why did the Qing fall?" }] : [],
 };
 
 // First sentence of the era page's lead (falls back to the era description)

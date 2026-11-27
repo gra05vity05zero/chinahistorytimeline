@@ -115,6 +115,7 @@ export default {
   ],
 
   related: [
+    { href: "/qing-fall", label: "{{清|しん}}はなぜ{{滅亡|めつぼう}}したのか", note: "アヘン戦争から辛亥革命まで、5つの理由" },
     { href: "/emperors#qing", label: "清の歴代{{皇帝|こうてい}}", note: "ヌルハチから宣統帝{{溥儀|ふぎ}}まで" },
     { href: "/dynasty-territory-map", label: "歴代王朝の領土（版図）の{{変遷|へんせん}}", note: "清の最大版図" },
     { href: "/world-heritage", label: "中国の世界遺産まとめ", note: "{{故宮|こきゅう}}・{{頤和園|いわえん}}・{{避暑山荘|ひしょさんそう}}" },

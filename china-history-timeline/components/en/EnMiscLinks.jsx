@@ -27,6 +27,10 @@ const CATEGORIES = [
     links: [
       ["qinshihuang", "Qin Shi Huang"],
       ["qin-fall", "Why the Qin fell"],
+      ["sanguo-fall", "Why the Three Kingdoms fell"],
+      ["tang-fall", "Why the Tang fell"],
+      ["ming-fall", "Why the Ming fell"],
+      ["qing-fall", "Why the Qing fell"],
       ["terracotta-army", "The Terracotta Army"],
       ["emperors", "Emperors of China"],
       ["china-capitals", "Capitals through history"],
