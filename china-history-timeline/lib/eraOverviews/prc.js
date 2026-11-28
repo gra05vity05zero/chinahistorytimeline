@@ -103,6 +103,7 @@ export default {
   ],
 
   related: [
+    { href: "/history-movies", label: "中国歴史映画おすすめ", note: "『活きる』『{{芙蓉鎮|ふようちん}}』と文化大革命" },
     { href: "/japan-china-timeline", label: "日本史・中国史 対照年表", note: "昭和・平成と中華人民共和国" },
     { href: "/china-capitals", label: "歴代王朝の都一覧", note: "首都・北京の歴史" },
     { href: "/world-heritage", label: "中国の世界遺産まとめ", note: "現在の中国の世界遺産" },

@@ -46,7 +46,7 @@ export const FEATURES_EN = [
   { slug: "kusuriya", title: "The Apothecary Diaries and Chinese History", seal: "薬", blurb: "The Tang inner palace, food tasters, eunuchs and pharmacology behind Maomao’s world." },
   { slug: "funny-episodes", title: "Strange and Funny Episodes from Chinese History", seal: "笑", blurb: "The odd, absurd and very human side of China’s emperors and officials." },
   { slug: "dramas", title: "Chinese Historical Dramas", seal: "劇", blurb: "Popular Chinese period dramas and the eras they are set in." },
-  { slug: "history-movies", title: "Movies About Chinese History", seal: "映", blurb: "Hero, Red Cliff, The Last Emperor and 15 more films, in historical order, with what is fact and what is fiction." },
+  { slug: "history-movies", title: "Movies About Chinese History", seal: "映", blurb: "Hero, Red Cliff, The Last Emperor, To Live and 23 more films, in historical order, with what is fact and what is fiction." },
   { slug: "glossary", title: "Glossary of Chinese History", seal: "辞", blurb: "Key terms of Chinese history explained in plain English." },
   { slug: "idioms", title: "Chinese Idioms from History", seal: "語", blurb: "Chengyu born from historical events, and the stories behind them." },
   { slug: "mnemonics", title: "How to Remember the Chinese Dynasties", seal: "憶", blurb: "Tips and a song for memorizing the order of the dynasties." },

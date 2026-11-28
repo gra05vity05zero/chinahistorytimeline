@@ -97,6 +97,7 @@ export default {
   ],
 
   related: [
+    { href: "/history-movies", label: "中国歴史映画おすすめ", note: "『{{満江紅|まんこうこう}}』と{{岳飛|がくひ}}・{{秦檜|しんかい}}" },
     { href: "/song-yuan-battles", label: "{{宋|そう}}・金・元 合戦マップ", note: "{{岳飛|がくひ}}の{{北伐|ほくばつ}}から{{崖山|がいざん}}の戦いまで" },
     { href: "/ancient-towns", label: "中国の古城めぐり", note: "元軍に5年包囲された{{襄陽|じょうよう}}城" },
     { href: "/emperors#southernsong", label: "{{南宋|なんそう}}の歴代{{皇帝|こうてい}}", note: "{{高宗|こうそう}}から{{趙昺|ちょうへい}}まで" },

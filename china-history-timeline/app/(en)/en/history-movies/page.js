@@ -3,9 +3,9 @@ import { ERAS, stripRuby, COLORS } from "@/lib/data";
 import { SITE_NAME_EN, bilingualAlternates, englishPersonPath } from "@/lib/en";
 import { buildOpenGraphEn, buildTwitterEn } from "@/lib/en/seo";
 import { FeaturePage, Section, ItemCard, cardStyle, serif } from "@/components/en/EnFeature";
-const title = "18 Best Movies About Chinese History, in Order — and How Accurate They Are";
+const title = "27 Best Movies About Chinese History, in Order — and How Accurate They Are";
 const description =
-  "Hero, Red Cliff, Kingdom, The Last Emperor and more: 18 films set in Chinese history, in the order of the periods they show, with the real events behind each one, what is fact and what is invented, and a historical-accuracy rating.";
+  "Hero, Red Cliff, Kingdom, The Last Emperor, To Live, Red Sorghum and more: 27 films set in Chinese history, in the order of the periods they show, with the real events behind each one, what is fact and what is invented, and a historical-accuracy rating.";
 
 export const metadata = {
   title,
@@ -27,7 +27,7 @@ const person = (eraId, jaSlug, label) => {
 const GROUPS = [
   {
     id: "ancient",
-    heading: "Spring and Autumn, Warring States and Qin",
+    heading: "Spring and Autumn, Warring States, Qin and the Chu–Han Contention",
     films: [
       { id: "bokko", title: "A Battle of Wits", original: "墨攻", year: "2006", director: "Jacob Cheung", period: "Warring States", score: 2, setting: "The Mohists’ art of defending cities",
         body: "When the small state of Liang is threatened by a huge Zhao army, a lone Mohist named Ge Li arrives to organize its defense. Based on a Japanese novel by Sakemi Ken’ichi and the manga by Mori Hideki, it was a joint production of China, Japan, Hong Kong and South Korea. The fighting centers on siege engines and clever defenses, which gives a good feel for Warring States warfare.",
@@ -45,6 +45,10 @@ const GROUPS = [
         body: "A nameless swordsman who claims to have killed three assassins is brought before the King of Qin, and each time his story is retold the truth shifts. Famous for scenes washed in red, blue or white, it helped Chinese wuxia films find a worldwide audience.",
         diff: "Nameless, Broken Sword, Flying Snow and Sky are all fictional; the assassination attempt borrows from Jing Ke. Its ending — sparing the king for the sake of “all under heaven” — drew criticism for seeming to justify conquest in the name of unity.",
         event: slug("qin", "中国統一"), era: "qin" },
+      { id: "last-supper", title: "The Last Supper", original: "王的盛宴", year: "2012", director: "Lu Chuan", period: "End of Qin to early Han", score: 3, setting: "The Feast at Hong Gate (206 BC) and the Chu–Han Contention",
+        body: "Liu Bang, now an aging emperor tormented by nightmares and suspicion, looks back on his struggle with Xiang Yu for the empire and on the feast at Hong Gate that decided their fates. Daniel Wu plays Xiang Yu, Liu Ye plays Liu Bang and Chang Chen plays Han Xin.",
+        diff: "Fan Zeng having Xiang Zhuang perform a sword dance to kill Liu Bang, Fan Kuai bursting into the feast and Liu Bang slipping away on the pretext of going to the latrine all follow the Records of the Grand Historian. Han Xin really was killed by Empress Lü in 196 BC. But the film reinterprets what went on behind the feast, and paints Liu Bang as a dark ruler who never stops suspecting his own loyal followers.",
+        event: slug("qin", "鴻門の会"), era: "qin", person: person("qin", "項羽", "Xiang Yu"), extra: { href: "/en/chuhan-battles", label: "Chu–Han Contention battle map" } },
     ],
   },
   {
@@ -85,6 +89,10 @@ const GROUPS = [
         body: "European mercenaries who come to China in search of gunpowder join a secret army that fights the Taotie, monsters that attack the Wall every sixty years. A Hollywood–Chinese co-production starring Matt Damon.",
         diff: "The Taotie is a monster motif from Shang and Zhou bronzes, and the story is pure fantasy. Most of the Wall that survives today was built under the Ming; the Song did not carry out major work on it. Gunpowder weapons did begin to be used in battle under the Song.",
         era: "northernsong", extra: { href: "/en/great-wall", label: "The Great Wall of China" } },
+      { id: "full-river-red", title: "Full River Red", original: "満江紅", year: "2023", director: "Zhang Yimou", period: "Southern Song", score: 1, setting: "A murder in Qin Hui’s compound after Yue Fei’s death",
+        body: "Four years after Yue Fei’s death, a Jin envoy is murdered on the night before he is to meet Chancellor Qin Hui, and low-ranking soldiers race against a deadline to find the killer and a missing secret letter. A mystery set almost entirely inside the compound over a single night, it was a huge hit when it opened over the 2023 Spring Festival.",
+        diff: "Qin Hui really did push for peace with the Jin, and Yue Fei was executed in 1142, but the case and most of the characters are invented. The lyric “Full River Red” (“My hair bristles in rage…”) is famous as Yue Fei’s work, but it does not appear in Song-dynasty sources and only surfaces in the Ming, so his authorship is debated.",
+        event: slug("southernsong", "岳飛"), era: "southernsong", person: person("southernsong", "岳飛", "Yue Fei") },
     ],
   },
   {
@@ -115,16 +123,50 @@ const GROUPS = [
   },
   {
     id: "modern",
-    heading: "Modern China",
+    heading: "The Republic and the war with Japan",
     films: [
       { id: "last-emperor", title: "The Last Emperor", original: "The Last Emperor", year: "1987", director: "Bernardo Bertolucci", period: "Late Qing to the People’s Republic", score: 4, setting: "The life of Puyi, the last Qing emperor (1906–1967)",
         body: "Puyi is enthroned at two, abdicates in the 1911 Revolution but goes on living in the Forbidden City, becomes emperor of Manchukuo, spends the postwar years in a prison camp as a war criminal and ends his life as an ordinary citizen. It was the first Western film allowed to shoot inside the Forbidden City, and won nine Academy Awards including Best Picture.",
         diff: "Based on Puyi’s autobiography among other sources, its overall course is accurate. It does lean toward showing Puyi in Manchukuo as a victim used by Japan. Amakasu Masahiko, played by Sakamoto Ryūichi, shoots himself in the film; the real Amakasu took cyanide in 1945.",
         event: slug("roc", "満洲事変"), era: "roc", person: person("roc", "溥儀", "Puyi"), extra: { href: "/en/emperors", label: "Emperors of China" } },
+      { id: "red-sorghum", title: "Red Sorghum", original: "紅高粱", year: "1987", director: "Zhang Yimou", period: "Republic (1920s–1930s)", score: 2, setting: "A Shandong village and the Japanese invasion",
+        body: "In Gaomi, Shandong, a woman who comes to run a sorghum-wine distillery and the men around her live fiercely, as told by her grandson. Zhang Yimou’s debut as a director, it won the Golden Bear at Berlin and drew the world’s attention to Chinese cinema. It is based on a novel by Mo Yan, later a Nobel laureate.",
+        diff: "The characters and the distillery are invented. In the second half Japanese troops force villagers to build a road through the sorghum fields and carry out a brutal execution. The Japanese army really did requisition people and supplies from north China’s villages, but the events on screen are not based on a specific incident.",
+        event: slug("roc", "日中戦争"), era: "roc" },
+      { id: "yellow-earth", title: "Yellow Earth", original: "黄土地", year: "1984", director: "Chen Kaige", period: "Republic (1939)", score: 3, setting: "A village in northern Shaanxi and the Communists’ folk-song collecting",
+        body: "In 1939 a soldier of the Communist Eighth Route Army comes to a poor village in northern Shaanxi to collect folk songs, and meets a girl facing an arranged marriage. Shot by Zhang Yimou, it was the starting point of the “Fifth Generation” of Chinese directors and is remembered for its vast images of the loess plateau.",
+        diff: "The characters are fictional. But the Communists did collect folk songs around Yan’an and rework them into propaganda songs, and marriage by purchase was common in the countryside. Its ending, in which the Communist soldier fails to save the girl, stirred debate in China.",
+        event: slug("roc", "日中戦争"), era: "roc" },
+      { id: "devils", title: "Devils on the Doorstep", original: "鬼子来了", year: "2000", director: "Jiang Wen", period: "Republic (1945)", score: 2, setting: "A north China village around the Japanese surrender",
+        body: "In a Japanese-occupied village in north China, a mysterious stranger forces the villagers to look after a captured Japanese soldier and his interpreter, and chaos follows — told in black and white with dark humor. Director Jiang Wen also stars, and the Japanese soldier is played by Kagawa Teruyuki. It won the Grand Prix at Cannes but was not approved for release in China.",
+        diff: "The village and characters are fictional. The background is the plight of occupied villagers caught between the Japanese army, the Nationalists and the Communists around the surrender. Unlike most Chinese anti-Japanese war films of its time, it paints neither the Japanese soldiers nor the villagers as simply good or evil.",
+        event: slug("roc", "日本の敗戦"), era: "roc" },
+      { id: "assembly", title: "Assembly", original: "集結号", year: "2007", director: "Feng Xiaogang", period: "Republic to the People’s Republic", score: 3, setting: "The Huaihai Campaign of the civil war (1948)",
+        body: "During the civil war a Communist company commander is ordered to hold his position until he hears the bugle call to regroup. It never comes, and he loses all 47 of his men. Surviving, he learns they are listed as missing rather than killed, and spends the postwar years trying to restore their honor. Its powerful battle scenes made it a hit in China.",
+        diff: "The commander and his men are fictional. The Huaihai Campaign (1948–1949), fought around Xuzhou, really did decide the civil war, and the film later moves on to the Korean War. It took up a subject earlier Chinese war films avoided: the sacrifice and honor of soldiers on the winning side.",
+        event: slug("roc", "国共内戦"), era: "roc" },
+    ],
+  },
+  {
+    id: "prc",
+    heading: "The People’s Republic",
+    films: [
       { id: "farewell", title: "Farewell My Concubine", original: "覇王別姫", year: "1993", director: "Chen Kaige", period: "Republic to the Cultural Revolution", score: 3, setting: "Fifty years in the lives of two opera actors (1920s–1970s)",
         body: "Two actors raised in a Peking opera school become stars playing the parting of Xiang Yu and Lady Yu in Farewell My Concubine, only to be torn apart by the war with Japan, the civil war, the founding of the People’s Republic and the Cultural Revolution. It won the Palme d’Or at Cannes.",
         diff: "The leads are fictional, but the background — the brutal training of opera schools, performing under Japanese occupation, traditional actors being denounced at struggle sessions in the Cultural Revolution — reflects history closely. It was briefly banned in China. The opera within the film depicts the Battle of Gaixia in the Chu–Han Contention.",
         event: slug("prc", "文化大革命"), era: "prc", extra: { href: "/en/chuhan-battles", label: "Chu–Han Contention battle map" } },
+      { id: "to-live", title: "To Live", original: "活着", year: "1994", director: "Zhang Yimou", period: "Republic to the Cultural Revolution", score: 3, setting: "Thirty years in the life of one family (1940s–1970s)",
+        body: "Fugui gambles away his family’s fortune and then lives on with his family through the civil war, the Great Leap Forward and the Cultural Revolution. Based on Yu Hua’s novel, it won the Grand Prix and Best Actor (Ge You) at Cannes, but was banned in China.",
+        diff: "The family is fictional, but the film shows concretely the political campaigns ordinary people lived through: landlords executed in land reform, villages melting down their pots for steel in the Great Leap Forward, and a hospital left to inexperienced students after the doctors were denounced in the Cultural Revolution.",
+        event: slug("prc", "大躍進"), era: "prc" },
+      { id: "hibiscus-town", title: "Hibiscus Town", original: "芙蓉鎮", year: "1986", director: "Xie Jin", period: "People’s Republic (1963–1979)", score: 3, setting: "A small town in Hunan and the Cultural Revolution",
+        body: "A woman whose rice-tofu stall prospers in a small Hunan town is branded a “new rich peasant” in a campaign launched in 1963, stripped of her property and persecuted in the Cultural Revolution — yet she survives until her name is cleared in 1979. Based on Gu Hua’s novel, with Jiang Wen, later a director himself, in a leading role.",
+        diff: "The people and town are fictional. The political background — the Four Cleanups campaign that hunted “class enemies” in the countryside, struggle sessions and forced labor in the Cultural Revolution, and the rehabilitations after 1978 — follows history. One of the best-known films about the scars of the Cultural Revolution.",
+        event: slug("prc", "文化大革命"), era: "prc" },
+      { id: "youth", title: "Youth", original: "芳華", year: "2017", director: "Feng Xiaogang", period: "People’s Republic (1970s onward)", score: 3, setting: "An army song-and-dance troupe and the Sino-Vietnamese War (1979)",
+        body: "Young people who join a People’s Liberation Army song-and-dance troupe in the 1970s, and what becomes of them. As Mao dies, war with Vietnam breaks out and reform and opening begin, the friends drift apart. The novel and screenplay are by Yan Geling, who served in such a troupe herself.",
+        diff: "The characters are fictional, but the army arts troupes were real and the story draws on the author’s own experience. It also shows combat in the 1979 Sino-Vietnamese War and the troupes being disbanded after reform began. Its release in China was postponed at the last minute before it eventually opened.",
+        event: slug("prc", "改革開放"), era: "prc" },
     ],
   },
 ];
@@ -137,12 +179,14 @@ const PICKS = [
   { label: "For Three Kingdoms fans", ids: ["redcliff", "guanyu"] },
   { label: "The First Emperor’s age", ids: ["assassin", "kingdom", "hero"] },
   { label: "For visuals and wuxia", ids: ["hero", "crouching-tiger", "golden-flower"] },
+  { label: "Classics of Chinese cinema", ids: ["farewell", "to-live", "red-sorghum", "devils"] },
 ];
 
 const FAQ = [
   { q: "Which movie about Chinese history is the most accurate?", a: "On this page the most accurate are The Last Emperor, based partly on Puyi’s own autobiography; 1911, which follows the course of the revolution; and The Opium War, centered on Lin Zexu. All three show modern events, for which the records are rich. Among films about ancient China, The Emperor and the Assassin, built on the story of Jing Ke in the Records of the Grand Historian, is comparatively close to the sources." },
   { q: "Are the Three Kingdoms movies historically accurate?", a: "Most Three Kingdoms films are based not on the official Records of the Three Kingdoms but on the Ming-dynasty novel Romance of the Three Kingdoms. Many of the famous scenes in Red Cliff and The Lost Bladesman come from the novel or are the filmmakers’ own. Watch them as a way in, then look up how the official history differs." },
   { q: "How accurate is the live-action Kingdom?", a: "Ying Zheng (the future First Emperor), Li Xin, Wang Qi and Yang Duanhe were real, and so is the broad story of Qin conquering the other six states. But Xin’s background, his friendship with Piao and the details of the battles are almost entirely invented — the histories say very little about Li Xin." },
+  { q: "What are the most famous Chinese-made historical films?", a: "In the 1980s the “Fifth Generation” of directors emerged, and Chen Kaige’s Yellow Earth and Zhang Yimou’s Red Sorghum caught the attention of festivals abroad. In the 1990s Farewell My Concubine won the Palme d’Or and To Live the Grand Prix at Cannes. Since the 2000s big-budget epics such as Hero and Curse of the Golden Flower have become common, and recent hits include Full River Red." },
   { q: "Are Hero and Curse of the Golden Flower true stories?", a: "Both are Zhang Yimou films, and their assassins and imperial family are fictional. Hero borrows from Jing Ke’s attempt on the King of Qin, and Curse of the Golden Flower from Cao Yu’s play Thunderstorm. Enjoy them as wuxia and court drama in a historical setting." },
 ];
 
@@ -196,7 +240,7 @@ export default function EnglishHistoryMoviesPage() {
     <FeaturePage
       title="Movies About Chinese History"
       jaPath="/history-movies"
-      intro="The films best suited to learning real Chinese history are those about the modern era, such as The Last Emperor, 1911 and The Opium War. Epics about ancient China like Hero and Red Cliff are built on history but invent much of their story. This page lists 18 films set in Chinese history, from the Warring States to the Cultural Revolution, in the order of the periods they show, with the real events behind each one and what is fact and what is fiction."
+      intro="The films best suited to learning real Chinese history are those about the modern era, such as The Last Emperor, 1911 and The Opium War. Epics about ancient China like Hero and Red Cliff are built on history but invent much of their story. Classics made in China such as To Live and Hibiscus Town often confront the political campaigns ordinary people lived through. This page lists 27 films set in Chinese history, from the Warring States to the reform era, in the order of the periods they show, with the real events behind each one and what is fact and what is fiction."
       related={[
         { href: "/en/dramas", label: "Chinese historical dramas" },
         { href: "/en/kingdom", label: "Kingdom and real history" },
@@ -220,7 +264,7 @@ export default function EnglishHistoryMoviesPage() {
         <div style={{ marginTop: 6, fontSize: 12.5 }}>The accuracy rating (out of five stars) is this site’s rough guide, based on whether the main characters were real, whether the main events happened, and whether the sequence follows the record. Years are home-country release years.</div>
       </div>
 
-      <Section title="All 18 films in historical order">
+      <Section title="All 27 films in historical order">
         <div style={{ overflowX: "auto" }}>
           <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13, lineHeight: 1.6 }}>
             <thead>
