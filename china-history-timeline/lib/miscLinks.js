@@ -78,6 +78,7 @@ export const MISC_SECTIONS = [
     title: "作品で楽しむ中国史",
     links: [
       { href: "/dramas", label: "中国歴史ドラマの史実" },
+      { href: "/history-movies", label: "中国歴史映画おすすめ" },
       { href: "/kingdom", label: "漫画『キングダム』と史実" },
       { href: "/kusuriya", label: "『{{薬屋|くすりや}}のひとりごと』のモデル" },
       { href: "/koei-sangokushi", label: "ゲーム『{{三國志|さんごくし}}』シリーズ" },

@@ -108,6 +108,7 @@ export default {
   ],
 
   related: [
+    { href: "/history-movies", label: "中国歴史映画おすすめ", note: "『ラストエンペラー』の{{溥儀|ふぎ}}と満洲国" },
     { href: "/japan-china-timeline", label: "日本史・中国史 対照年表", note: "大正・昭和時代と中華民国" },
     { href: "/china-capitals", label: "歴代王朝の都一覧", note: "南京と北京" },
   ],

@@ -72,7 +72,7 @@ const CATEGORIES = [
     seal: "作",
     title: "History in Fiction & Games",
     desc: "Dramas, manga, games and novels, and the real history behind them.",
-    links: ["dramas", "kingdom", "kusuriya", "koei-sangokushi", "musou", "wuxia-games", "novelists"],
+    links: ["dramas", "history-movies", "kingdom", "kusuriya", "koei-sangokushi", "musou", "wuxia-games", "novelists"],
   },
 ];
 

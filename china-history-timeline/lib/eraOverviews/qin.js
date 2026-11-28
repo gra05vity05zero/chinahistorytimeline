@@ -83,6 +83,7 @@ export default {
   ],
 
   related: [
+    { href: "/history-movies", label: "中国歴史映画おすすめ", note: "『HERO』『始皇帝暗殺』と{{荊軻|けいか}}の暗殺未遂" },
     { href: "/qinshihuang", label: "{{始皇帝|しこうてい}}とは", note: "生涯・統一・死因の{{謎|なぞ}}まで" },
     { href: "/qin-fall", label: "{{秦|しん}}はなぜ{{滅亡|めつぼう}}したのか", note: "わずか15年で{{滅|ほろ}}びた5つの理由" },
     { href: "/terracotta-army", label: "{{兵馬俑|へいばよう}}・{{始皇帝陵|しこうていりょう}}の{{謎|なぞ}}", note: "8000体の兵士像と未発掘の陵墓" },

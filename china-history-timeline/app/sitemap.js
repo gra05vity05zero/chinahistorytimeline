@@ -68,6 +68,7 @@ export default function sitemap() {
     { url: `${SITE_URL}/kusuriya`, changeFrequency: "yearly", priority: 0.6 },
     { url: `${SITE_URL}/funny-episodes`, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/dramas`, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${SITE_URL}/history-movies`, changeFrequency: "yearly", priority: 0.6 },
   ];
 
   // ドラマの解説ページは本文の更新日（updatedAt）を持っているので、ここだけlastModifiedを付ける

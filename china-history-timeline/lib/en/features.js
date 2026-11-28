@@ -46,6 +46,7 @@ export const FEATURES_EN = [
   { slug: "kusuriya", title: "The Apothecary Diaries and Chinese History", seal: "薬", blurb: "The Tang inner palace, food tasters, eunuchs and pharmacology behind Maomao’s world." },
   { slug: "funny-episodes", title: "Strange and Funny Episodes from Chinese History", seal: "笑", blurb: "The odd, absurd and very human side of China’s emperors and officials." },
   { slug: "dramas", title: "Chinese Historical Dramas", seal: "劇", blurb: "Popular Chinese period dramas and the eras they are set in." },
+  { slug: "history-movies", title: "Movies About Chinese History", seal: "映", blurb: "Hero, Red Cliff, The Last Emperor and 15 more films, in historical order, with what is fact and what is fiction." },
   { slug: "glossary", title: "Glossary of Chinese History", seal: "辞", blurb: "Key terms of Chinese history explained in plain English." },
   { slug: "idioms", title: "Chinese Idioms from History", seal: "語", blurb: "Chengyu born from historical events, and the stories behind them." },
   { slug: "mnemonics", title: "How to Remember the Chinese Dynasties", seal: "憶", blurb: "Tips and a song for memorizing the order of the dynasties." },
@@ -58,7 +59,7 @@ export const FEATURES_EN = [
 ];
 
 // Only slugs whose English page has been written are paired / listed.
-const READY = new Set(["great-wall", "silk-road", "terracotta-army", "qinshihuang", "qin-fall", "sanguo-fall", "tang-fall", "ming-fall", "qing-fall", "four-inventions", "eto", "shunsetsu", "chinese-food", "emperors", "hundred-schools", "keju", "world-heritage", "four-great-novels", "four-beauties", "eunuchs", "women-rulers", "tyrants", "harem-ranks", "china-capitals", "ancient-capitals", "dynasty-territory-map", "china-castles", "ancient-towns", "chuhan-battles", "sanguo-battles", "sanguo-comparison", "chunqiu-zhanguo-battles", "suitang-battles", "song-yuan-battles", "history-books", "novelists", "suikoden", "yangjiajiang", "saiyuki", "kingdom", "wuxia-games", "koei-sangokushi", "musou", "kusuriya", "funny-episodes", "dramas", "glossary", "idioms", "mnemonics", "year-mnemonics", "quiz", "japan-china-timeline", "printable-timeline"]);
+const READY = new Set(["great-wall", "silk-road", "terracotta-army", "qinshihuang", "qin-fall", "sanguo-fall", "tang-fall", "ming-fall", "qing-fall", "four-inventions", "eto", "shunsetsu", "chinese-food", "emperors", "hundred-schools", "keju", "world-heritage", "four-great-novels", "four-beauties", "eunuchs", "women-rulers", "tyrants", "harem-ranks", "china-capitals", "ancient-capitals", "dynasty-territory-map", "china-castles", "ancient-towns", "chuhan-battles", "sanguo-battles", "sanguo-comparison", "chunqiu-zhanguo-battles", "suitang-battles", "song-yuan-battles", "history-books", "novelists", "suikoden", "yangjiajiang", "saiyuki", "kingdom", "wuxia-games", "koei-sangokushi", "musou", "kusuriya", "funny-episodes", "dramas", "history-movies", "glossary", "idioms", "mnemonics", "year-mnemonics", "quiz", "japan-china-timeline", "printable-timeline"]);
 export const FEATURES_READY = FEATURES_EN.filter((f) => READY.has(f.slug));
 export const FEATURE_SLUGS = FEATURES_READY.map((f) => f.slug);
 

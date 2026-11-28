@@ -83,6 +83,7 @@ const CATEGORIES = [
     title: "History in Fiction & Games",
     links: [
       ["dramas", "Historical dramas"],
+      ["history-movies", "Movies about Chinese history"],
       ["kingdom", "Kingdom (manga)"],
       ["kusuriya", "The Apothecary Diaries"],
       ["koei-sangokushi", "Romance of the Three Kingdoms games"],

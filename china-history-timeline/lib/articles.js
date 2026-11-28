@@ -106,6 +106,7 @@ export const ARTICLE_CATEGORIES = [
     desc: "ドラマ・漫画・ゲーム・小説と史実の関係を紹介。",
     links: [
       { href: "/dramas", label: "中国歴史ドラマの史実" },
+      { href: "/history-movies", label: "中国歴史映画おすすめ" },
       { href: "/kingdom", label: "漫画『キングダム』と史実" },
       { href: "/kusuriya", label: "『{{薬屋|くすりや}}のひとりごと』のモデル" },
       { href: "/koei-sangokushi", label: "ゲーム『{{三國志|さんごくし}}』シリーズ" },
