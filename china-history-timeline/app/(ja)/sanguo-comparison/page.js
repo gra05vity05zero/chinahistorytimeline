@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock, InArticleAd } from "@/components/Shared";
+import { BackToTopButton, NavButton, HeritageThumb, MiscLinksSection, A8AdBlock, InArticleAd, ArticleEndAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { SanguoBorderMap } from "@/components/SanguoBorderMap";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
@@ -469,6 +469,8 @@ export default function SanguoComparisonPage() {
         </section>
 
         <A8AdBlock ad="audible" className="mt-10" />
+
+        <ArticleEndAd />
 
         <RelatedEraGuides path="/sanguo-comparison" />
 

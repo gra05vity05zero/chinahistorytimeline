@@ -1,5 +1,5 @@
 import { COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection, InArticleAd } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, InArticleAd, ArticleEndAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
@@ -284,6 +284,8 @@ export default function ChineseFoodPage() {
             <NavButton href="/kusuriya" variant="outline">『薬屋のひとりごと』のモデル</NavButton>
           </div>
         </section>
+
+        <ArticleEndAd />
 
         <RelatedEraGuides path="/chinese-food" eraIds={["neolithic", "westernhan", "northernsong", "ming", "qing"]} />
 

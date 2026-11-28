@@ -3,7 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { COLORS, CATEGORY_STYLE, ADSENSE_CLIENT_ID, ADSENSE_SLOT_IN_ARTICLE, A8_ADS, stripRuby, wikimediaThumb, personSlug, displayEventYear } from "@/lib/constants";
+import { createPortal } from "react-dom";
+import { COLORS, CATEGORY_STYLE, ADSENSE_CLIENT_ID, ADSENSE_SLOT_IN_ARTICLE, ADSENSE_SLOT_MID_ARTICLE, ADSENSE_SLOT_ARTICLE_END, A8_ADS, stripRuby, wikimediaThumb, personSlug, displayEventYear } from "@/lib/constants";
 import { RubyText } from "@/components/Ruby";
 import { MISC_SECTIONS } from "@/lib/miscLinks";
 
@@ -456,16 +457,93 @@ export function InArticleAd({ lang = "ja", className = "my-6" }) {
   const pathname = usePathname();
   if (!ADSENSE_SLOT_IN_ARTICLE) return null;
   return (
-    <div className={`in-article-ad ${className}`}>
-      <div style={{ fontSize: 10.5, color: COLORS.inkSoft, marginBottom: 6, textAlign: "center" }}>
-        {lang === "en" ? "Advertisement" : "広告"}
+    <>
+      <div className={`in-article-ad ${className}`} data-ad-anchor="intro">
+        <AdLabel lang={lang} />
+        <AdSenseSlot key={pathname} slot={ADSENSE_SLOT_IN_ARTICLE} />
       </div>
-      <AdSenseSlot key={pathname} slot={ADSENSE_SLOT_IN_ARTICLE} />
+      <MidArticleAd key={`mid-${pathname}`} lang={lang} />
+    </>
+  );
+}
+
+// 本文の最後（関連リンク欄の直前）に置くAdSense広告枠（広告ユニット「記事の下」）。
+// 中央の広告は、導入文の下の広告とこの広告の間にある見出しを探して入れる
+export function ArticleEndAd({ lang = "ja", className = "mt-10" }) {
+  const pathname = usePathname();
+  if (!ADSENSE_SLOT_ARTICLE_END) return null;
+  return (
+    <div className={`in-article-ad ${className}`} data-ad-anchor="end">
+      <AdLabel lang={lang} />
+      <AdSenseSlot key={pathname} slot={ADSENSE_SLOT_ARTICLE_END} />
     </div>
   );
 }
 
-export function AdSenseSlot({ slot }) {
+function AdLabel({ lang }) {
+  return (
+    <div style={{ fontSize: 10.5, color: COLORS.inkSoft, marginBottom: 6, textAlign: "center" }}>
+      {lang === "en" ? "Advertisement" : "広告"}
+    </div>
+  );
+}
+
+// 導入文の下の広告と記事の下の広告から十分離れた h2 見出しのうち、本文の真ん中に最も近いものの手前に
+// 記事内広告（広告ユニット「記事の中央」）を差し込む。ページごとに構成が違うので、表示後のDOMから位置を決める。
+// 見出しが少ない・本文が短いページでは入れない
+const MID_AD_MIN_GAP_FROM_INTRO = 700;
+const MID_AD_MIN_GAP_TO_END = 500;
+
+function MidArticleAd({ lang }) {
+  const [host, setHost] = useState(null);
+
+  useEffect(() => {
+    if (!ADSENSE_SLOT_MID_ARTICLE) return;
+    const intro = document.querySelector('[data-ad-anchor="intro"]');
+    const end = document.querySelector('[data-ad-anchor="end"]');
+    if (!intro || !end) return;
+    const follows = (a, b) => Boolean(a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING);
+    const y = (el) => el.getBoundingClientRect().top + window.scrollY;
+    const top = y(intro) + intro.offsetHeight;
+    const bottom = y(end);
+    const middle = (top + bottom) / 2;
+
+    let best = null;
+    for (const h2 of document.querySelectorAll("h2")) {
+      if (!follows(intro, h2) || !follows(h2, end)) continue;
+      // 見出しが「小見出し＋h2」の入れ物に入っているときは入れ物ごと押し下げる
+      let anchor = h2;
+      while (
+        anchor.parentElement &&
+        !anchor.parentElement.contains(intro) &&
+        anchor.parentElement.textContent.length - anchor.textContent.length < 60
+      ) {
+        anchor = anchor.parentElement;
+      }
+      const at = y(anchor);
+      if (at - top < MID_AD_MIN_GAP_FROM_INTRO || bottom - at < MID_AD_MIN_GAP_TO_END) continue;
+      if (!best || Math.abs(at - middle) < Math.abs(best.at - middle)) best = { anchor, at };
+    }
+    if (!best) return;
+
+    const div = document.createElement("div");
+    div.className = "in-article-ad my-8";
+    best.anchor.parentElement.insertBefore(div, best.anchor);
+    setHost(div);
+    return () => div.remove();
+  }, []);
+
+  if (!host) return null;
+  return createPortal(
+    <>
+      <AdLabel lang={lang} />
+      <AdSenseSlot slot={ADSENSE_SLOT_MID_ARTICLE} layout="in-article" />
+    </>,
+    host
+  );
+}
+
+export function AdSenseSlot({ slot, layout }) {
   const loaded = useRef(false);
   useEffect(() => {
     if (loaded.current) return;
@@ -476,6 +554,18 @@ export function AdSenseSlot({ slot }) {
       // AdSenseスクリプト未読み込み時は何もしない
     }
   }, []);
+  if (layout === "in-article") {
+    return (
+      <ins
+        className="adsbygoogle"
+        style={{ display: "block", textAlign: "center" }}
+        data-ad-client={ADSENSE_CLIENT_ID}
+        data-ad-slot={slot}
+        data-ad-layout="in-article"
+        data-ad-format="fluid"
+      />
+    );
+  }
   return (
     <ins
       className="adsbygoogle"

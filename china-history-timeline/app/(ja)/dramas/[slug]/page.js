@@ -10,7 +10,7 @@ import {
   realPersonHref,
   dramaDescription,
 } from "@/lib/dramas";
-import { MiscLinksSection, SealMark, InArticleAd } from "@/components/Shared";
+import { MiscLinksSection, SealMark, InArticleAd, ArticleEndAd } from "@/components/Shared";
 import { SectionHeading, yearNumber, displayEventYear } from "@/components/EraOverview";
 import { StarRating, CharacterTypeBadge, DramaCard } from "@/components/DramaBlocks";
 import { RubyText } from "@/components/Ruby";
@@ -400,6 +400,8 @@ export default function DramaPage({ params }) {
           </Link>
           <span style={{ fontSize: 11, color: COLORS.inkSoft }}>最終更新：{drama.updatedAt.replaceAll("-", "/")}</span>
         </div>
+
+        <ArticleEndAd />
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <MiscLinksSection />

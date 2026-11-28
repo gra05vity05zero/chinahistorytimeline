@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ERAS, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
 import { formatPeriodJa } from "@/lib/japanChinaTimeline";
-import { BackToTopButton, NavButton, MiscLinksSection, InArticleAd } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, InArticleAd, ArticleEndAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
@@ -265,6 +265,8 @@ export default function MnemonicsPage() {
             <NavButton href="/printable-timeline" variant="outline">印刷できる一枚年表</NavButton>
           </div>
         </section>
+
+        <ArticleEndAd />
 
         <RelatedEraGuides path="/mnemonics" />
 

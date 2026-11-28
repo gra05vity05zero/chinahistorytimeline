@@ -2,7 +2,7 @@ import Link from "next/link";
 import { EnThemeLinks } from "@/components/en/EnMiscLinks";
 import { notFound } from "next/navigation";
 import { COLORS } from "@/lib/constants";
-import { SealMark, HeritageThumb, InArticleAd } from "@/components/Shared";
+import { SealMark, HeritageThumb, InArticleAd, ArticleEndAd } from "@/components/Shared";
 import { SITE_URL, SITE_NAME_EN, getPeopleByEraEn, findPersonEn, displayYearEn, displayPeriodEn } from "@/lib/en";
 import { formatLifeYearEn } from "@/lib/en/people";
 import { lifeAge } from "@/lib/personDetails";
@@ -199,6 +199,8 @@ export default function EnglishPersonPage({ params }) {
             </ul>
           </section>
         )}
+
+        <ArticleEndAd lang="en" />
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <EnThemeLinks />

@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, personSlug, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection, InArticleAd } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, InArticleAd, ArticleEndAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
@@ -355,6 +355,8 @@ export default function WomenRulersPage() {
             <NavButton href="/dramas" variant="outline">中国歴史ドラマの史実</NavButton>
           </div>
         </section>
+
+        <ArticleEndAd />
 
         <RelatedEraGuides path="/women-rulers" />
 

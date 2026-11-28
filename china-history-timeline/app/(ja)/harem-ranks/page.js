@@ -1,6 +1,6 @@
 import { ERAS, personSlug, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
 import { DRAMAS } from "@/lib/dramas";
-import { BackToTopButton, NavButton, MiscLinksSection, InArticleAd } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, InArticleAd, ArticleEndAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
@@ -312,6 +312,8 @@ export default function HaremRanksPage() {
             <NavButton href="/eunuchs" variant="outline">後宮に仕えた宦官とは</NavButton>
           </div>
         </section>
+
+        <ArticleEndAd />
 
         <RelatedEraGuides path="/harem-ranks" />
 

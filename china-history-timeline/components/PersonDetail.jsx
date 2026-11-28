@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { COLORS, displayEventYear, displayPeriod, leadWithSubject, personSubject } from "@/lib/constants";
-import { SealMark, HeritageThumb, MiscLinksSection, A8AdBlock, InArticleAd } from "@/components/Shared";
+import { SealMark, HeritageThumb, MiscLinksSection, A8AdBlock, InArticleAd, ArticleEndAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 
 export default function PersonDetail({ person, era, lifeRows = [], relatedPeople = [] }) {
@@ -154,7 +154,9 @@ export default function PersonDetail({ person, era, lifeRows = [], relatedPeople
           </Link>
         </div>
 
-        {/* 広告は本文の後ろにこの1ブロックだけ置く */}
+        <ArticleEndAd />
+
+        {/* アフィリエイト広告は本文の後ろにこの1ブロックだけ置く */}
         <A8AdBlock ad={["audible", "travelist"]} className="mt-10" />
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>

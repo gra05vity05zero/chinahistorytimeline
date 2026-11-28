@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection, InArticleAd } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, InArticleAd, ArticleEndAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { bilingualAlternates } from "@/lib/en";
 
@@ -173,6 +173,8 @@ export default function YearMnemonicsPage() {
             <NavButton href="/quiz" variant="outline">年号クイズに挑戦</NavButton>
           </div>
         </section>
+
+        <ArticleEndAd />
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <MiscLinksSection />

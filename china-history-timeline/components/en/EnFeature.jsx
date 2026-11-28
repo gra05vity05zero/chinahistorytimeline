@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { COLORS } from "@/lib/constants";
-import { HeritageThumb, NavButton, InArticleAd } from "@/components/Shared";
+import { HeritageThumb, NavButton, InArticleAd, ArticleEndAd } from "@/components/Shared";
 import { FEATURES_EN, FEATURES_READY } from "@/lib/en/features";
 import { EnThemeLinks } from "@/components/en/EnMiscLinks";
 
@@ -39,6 +39,8 @@ export function FeaturePage({ title, intro, jaPath, children, related: relatedAl
             ))}
           </div>
         )}
+
+        {intro && <ArticleEndAd lang="en" />}
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <EnThemeLinks />

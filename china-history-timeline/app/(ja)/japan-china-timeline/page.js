@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ERAS, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
 import { ROWS, CN_JUMPS, JP_JUMPS, ERA_CORRESPONDENCE, hasAnchor } from "@/lib/japanChinaTimeline";
-import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock, InArticleAd } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock, InArticleAd, ArticleEndAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { TimelineIcon } from "@/components/TimelineIcons";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
@@ -226,6 +226,8 @@ export default function JapanChinaTimelinePage() {
         </section>
 
         <A8AdBlock ad="audible" className="mt-10" />
+
+        <ArticleEndAd />
 
         <RelatedEraGuides path="/japan-china-timeline" />
 

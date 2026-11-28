@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter, findEventBySlug as findEventEntry } from "@/lib/data";
-import { BackToTopButton, NavButton, EventListItem, MiscLinksSection, KeyFacts, InArticleAd } from "@/components/Shared";
+import { BackToTopButton, NavButton, EventListItem, MiscLinksSection, KeyFacts, InArticleAd, ArticleEndAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
@@ -579,6 +579,8 @@ export default function HundredSchoolsPage() {
             <NavButton href="/keju" variant="outline">科挙とは</NavButton>
           </div>
         </section>
+
+        <ArticleEndAd />
 
         <RelatedEraGuides path={PATH} />
 

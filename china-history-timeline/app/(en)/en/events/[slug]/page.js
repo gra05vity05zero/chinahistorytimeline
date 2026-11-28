@@ -2,7 +2,7 @@ import Link from "next/link";
 import { EnThemeLinks } from "@/components/en/EnMiscLinks";
 import { notFound } from "next/navigation";
 import { COLORS, CATEGORY_STYLE } from "@/lib/constants";
-import { SealMark, HeritageGrid, InArticleAd } from "@/components/Shared";
+import { SealMark, HeritageGrid, InArticleAd, ArticleEndAd } from "@/components/Shared";
 import {
   ERAS_EN,
   SITE_URL,
@@ -148,6 +148,8 @@ export default function EnglishEventPage({ params }) {
           <AdjacentLink item={prev} label="← Previous" align="left" />
           <AdjacentLink item={next} label="Next →" align="right" />
         </nav>
+
+        <ArticleEndAd lang="en" />
 
         <div className="mt-10 pt-6" style={{ borderTop: `1px solid ${COLORS.mist}` }}>
           <EnThemeLinks />

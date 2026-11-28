@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb, InArticleAd } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb, InArticleAd, ArticleEndAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { SuitangBorderMap } from "@/components/SuitangBorderMap";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
@@ -612,6 +612,8 @@ export default function SuitangBattlesPage() {
             <NavButton href="/yangjiajiang" variant="outline"><ruby>楊家将<rt>ようかしょう</rt></ruby>の特集を見る</NavButton>
           </div>
         </section>
+
+        <ArticleEndAd />
 
         <RelatedEraGuides path="/suitang-battles" />
 

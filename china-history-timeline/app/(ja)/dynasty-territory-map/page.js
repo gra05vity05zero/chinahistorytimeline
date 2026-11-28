@@ -1,6 +1,6 @@
 import { ERAS, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
 import { TERRITORY_FRAMES } from "@/lib/dynastyTerritories";
-import { BackToTopButton, NavButton, MiscLinksSection, InArticleAd } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, InArticleAd, ArticleEndAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { DynastyTerritoryMap } from "@/components/DynastyTerritoryMap";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
@@ -135,6 +135,8 @@ export default function DynastyTerritoryMapPage() {
             <NavButton href="/suitang-battles" variant="outline"><ruby>隋唐<rt>ずいとう</rt></ruby>の合戦マップ</NavButton>
           </div>
         </section>
+
+        <ArticleEndAd />
 
         <RelatedEraGuides path="/dynasty-territory-map" />
 

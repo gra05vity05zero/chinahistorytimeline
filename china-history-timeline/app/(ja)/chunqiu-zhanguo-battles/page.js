@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb, InArticleAd } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb, InArticleAd, ArticleEndAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { ZhanguoBorderMap } from "@/components/ZhanguoBorderMap";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
@@ -594,6 +594,8 @@ export default function ChunqiuZhanguoBattlesPage() {
             <NavButton href="/kingdom" variant="outline">漫画『キングダム』と史実</NavButton>
           </div>
         </section>
+
+        <ArticleEndAd />
 
         <RelatedEraGuides path="/chunqiu-zhanguo-battles" />
 

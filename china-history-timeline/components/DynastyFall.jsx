@@ -2,7 +2,7 @@
 // /qin-fall と同じ構成（結論 → 基本情報 → 人物相関図 → 5つの理由 → 比較表 → 年表 → もしも → その後 → まとめ → FAQ）を、
 // ページごとのデータで組み立てる。文字列はすべてルビ記法 {{漢字|ふりがな}} に対応する。
 import { stripRuby, COLORS, SITE_URL } from "@/lib/data";
-import { BackToTopButton, NavButton, EventListItem, MiscLinksSection, KeyFacts, InArticleAd } from "@/components/Shared";
+import { BackToTopButton, NavButton, EventListItem, MiscLinksSection, KeyFacts, InArticleAd, ArticleEndAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 
@@ -478,6 +478,8 @@ export function DynastyFallArticle({ a }) {
             ))}
           </div>
         </section>
+
+        <ArticleEndAd />
 
         <RelatedEraGuides path={a.path} eraIds={a.relatedEraIds} />
 

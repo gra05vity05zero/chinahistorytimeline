@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { COLORS, CATEGORY_STYLE } from "@/lib/constants";
-import { SealMark, HeritageGrid } from "@/components/Shared";
+import { SealMark, HeritageGrid, ArticleEndAd } from "@/components/Shared";
 import { ERAS_EN, SITE_URL, SITE_NAME_EN, CATEGORY_LABEL_EN, findEraEn, getEraFiguresEn, displayYearEn, displayPeriodEn, bilingualAlternates } from "@/lib/en";
 import { buildOpenGraphEn, buildTwitterEn, leadSentencesEn } from "@/lib/en/seo";
 import { getEraOverviewEn } from "@/lib/en/overviews";
@@ -102,6 +102,7 @@ export default function EnglishEraPage({ params }) {
           <>
             <h1 style={{ ...serif, fontSize: 26, fontWeight: 900, color: COLORS.ink, lineHeight: 1.35 }}>{overview.title}</h1>
             <EnEraOverview era={era} overview={overview} figures={figures} prevEra={prevEra} nextEra={nextEra} />
+            <ArticleEndAd lang="en" />
           </>
         ) : (
           <>

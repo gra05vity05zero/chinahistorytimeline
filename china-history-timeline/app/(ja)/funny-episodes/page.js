@@ -1,5 +1,5 @@
 import { ERAS, getEraFigures, personSlug, stripRuby, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection, InArticleAd } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, InArticleAd, ArticleEndAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import FourKoma from "@/components/FourKoma";
 import { MANGA } from "./manga";
@@ -566,6 +566,8 @@ export default function FunnyEpisodesPage() {
             <NavButton href="/eras" variant="outline">時代一覧を見る</NavButton>
           </div>
         </section>
+
+        <ArticleEndAd />
 
         <RelatedEraGuides path="/funny-episodes" />
 

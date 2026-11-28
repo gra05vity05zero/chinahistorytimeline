@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, getEraFigures, personSlug, COLORS, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb, InArticleAd } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, HeritageThumb, InArticleAd, ArticleEndAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { SongYuanBorderMap } from "@/components/SongYuanBorderMap";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
@@ -677,6 +677,8 @@ export default function SongYuanBattlesPage() {
             <NavButton href="/japan-china-timeline" variant="outline">日中対照年表を見る</NavButton>
           </div>
         </section>
+
+        <ArticleEndAd />
 
         <RelatedEraGuides path="/song-yuan-battles" />
 

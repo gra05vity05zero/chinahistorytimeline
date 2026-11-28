@@ -1,5 +1,5 @@
 import { ERAS, COLORS, SITE_NAME, AMAZON_ASSOCIATE_TAG, buildOpenGraph, buildTwitter, buildAmazonUrl } from "@/lib/data";
-import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock, InArticleAd } from "@/components/Shared";
+import { BackToTopButton, NavButton, MiscLinksSection, A8AdBlock, InArticleAd, ArticleEndAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
@@ -242,6 +242,8 @@ export default function NovelistsPage() {
         </section>
 
         <A8AdBlock ad="audible" className="mt-10" />
+
+        <ArticleEndAd />
 
         <RelatedEraGuides path="/novelists" />
 

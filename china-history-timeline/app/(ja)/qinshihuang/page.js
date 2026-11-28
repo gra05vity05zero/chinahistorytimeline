@@ -1,5 +1,5 @@
 import { ERAS, stripRuby, COLORS, SITE_URL, SITE_NAME, buildOpenGraph, buildTwitter } from "@/lib/data";
-import { BackToTopButton, NavButton, HeritageGrid, EventListItem, MiscLinksSection, InArticleAd } from "@/components/Shared";
+import { BackToTopButton, NavButton, HeritageGrid, EventListItem, MiscLinksSection, InArticleAd, ArticleEndAd } from "@/components/Shared";
 import { RubyText } from "@/components/Ruby";
 import { RelatedEraGuides } from "@/components/RelatedEraGuides";
 import { bilingualAlternates } from "@/lib/en";
@@ -554,6 +554,8 @@ export default function QinShiHuangPage() {
             <NavButton href="/kingdom" variant="outline">漫画『キングダム』と史実</NavButton>
           </div>
         </section>
+
+        <ArticleEndAd />
 
         <RelatedEraGuides path="/qinshihuang" />
 

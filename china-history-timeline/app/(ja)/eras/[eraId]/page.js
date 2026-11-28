@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { ERAS, ERA_ALIASES, COLORS, stripRuby, SITE_URL, buildOpenGraph, buildTwitter, getEraFigures, displayPeriod } from "@/lib/data";
 import { getEraOverview } from "@/lib/eraOverviews";
 import { EraOverview } from "@/components/EraOverview";
-import { SealMark, EventListItem, BackToTopButton, MiscLinksSection, JapanTimelineCallout } from "@/components/Shared";
+import { SealMark, EventListItem, BackToTopButton, MiscLinksSection, JapanTimelineCallout, ArticleEndAd } from "@/components/Shared";
 import { japanChinaTimelineHref, japaneseErasDuring } from "@/lib/japanChinaTimeline";
 import { RubyText } from "@/components/Ruby";
 import { getDramaIndex, toDramaCard } from "@/lib/dramas";
@@ -113,6 +113,8 @@ export default function EraEventsPage({ params }) {
             nextEra={ERAS[idx + 1]}
             japanCallout={japanCallout}
           />
+
+          <ArticleEndAd />
 
           {dramaBlock}
 
