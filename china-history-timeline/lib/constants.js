@@ -13,10 +13,13 @@ export const SITE_DESCRIPTION =
 // Next.jsはopenGraph/twitterをページ単位で完全に上書きする（親と深いマージをしない）ため、
 // 各ページで欠落フィールド（type, siteName, card, image等）が出ないよう共通ヘルパーで組み立てる。
 //
-// OGP画像はトップページだけサイト共通の /opengraph-image を使い、それ以外は
-// /og ルート（app/og/route.js）でページごとにタイトル入りの画像を生成する。
+// OGP画像は /og ルート（app/og/route.js）でページごとにタイトル入りの画像を生成する。
+// トップページはサイト名入りの共通画像（TOP_OG_IMAGE）を使う。以前は app/(ja)/opengraph-image.js を
+// /opengraph-image で参照していたが、ルートグループ内のため実際のURLにハッシュが付き404になっていた。
 // image: { title, subtitle, kicker, seal } で画像の文言を指定できる。省略時は
 // title から「 | 中国五千年史」を除き、「？」の後ろをサブタイトルに回して使う。
+const TOP_OG_IMAGE = { title: SITE_NAME, subtitle: "文明の黎明から現代までの年表", seal: "史" };
+
 export function buildOgImageUrl({ title, image = {} }) {
   let main = image.title ?? title.replace(new RegExp(`\\s*\\|\\s*${SITE_NAME}$`), "");
   let subtitle = image.subtitle ?? "";
@@ -33,7 +36,7 @@ export function buildOgImageUrl({ title, image = {} }) {
 }
 
 export function buildOpenGraph({ title, description, path, type = "website", image }) {
-  const url = path === "/" ? "/opengraph-image" : buildOgImageUrl({ title, image });
+  const url = buildOgImageUrl({ title, image: path === "/" ? { ...TOP_OG_IMAGE, ...image } : image });
   return {
     type,
     locale: "ja_JP",
